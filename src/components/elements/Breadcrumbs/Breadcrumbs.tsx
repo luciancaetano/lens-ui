@@ -18,6 +18,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
             data-testid={item.testingID}
             href={item.url}
             onClick={item.onClick}
+            className={styles.breadcrumbsItem}
           >{item.title}
           </a><span className={styles.breadcrumbsSpacer}>/</span>
         </Fragment>
@@ -29,7 +30,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
         <span
           data-testid={item.testingID}
           onClick={item.onClick}
-          className={last ? styles.breadcrumbsLast : null}
+          className={clsx(styles.breadcrumbsItem, last && styles.breadcrumbsLast)}
         >{item.title}
         </span>{!last && <><span className={styles.breadcrumbsSpacer}>/</span></>}
       </Fragment>

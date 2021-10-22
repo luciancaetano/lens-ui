@@ -5,19 +5,7 @@
   @include lens-ui-typography;
   display: flex;
 
-  &__spacer {
-    padding: 0 .5rem;
-    color: var(--lens-ui-typography-faded-text-color);
-  }
-
-  &__last {
-    color: var(--lens-ui-intents-primary-lighten);
-    cursor: default;
-    font-weight: bold;
-  }
-
-  span,
-  a {
+  &__item {
     text-decoration: none;
     color: var(--lens-ui-typography-most-faded-text-color);
     cursor: pointer;
@@ -27,4 +15,22 @@
       color: var(--lens-ui-intents-primary-lighten);
     }
   }
+
+  &__spacer {
+    padding: 0 .5rem;
+    color: var(--lens-ui-typography-faded-text-color);
+
+  }
+
+  &__last {
+    color: var(--lens-ui-intents-primary-darken);
+    cursor: default;
+    font-weight: bold;
+
+    &:hover {
+      color: var(--lens-ui-intents-primary-darken);
+    }
+  }
+
+
 }
