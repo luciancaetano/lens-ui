@@ -1,0 +1,39 @@
+import React from 'react';
+import DeviceProvider from '../DeviceProvider/DeviceProvider';
+import AlertProvider from '../AlertProvider/AlertProvider';
+import ModalProvider from '../ModalProvider/ModalProvider';
+import ToastProvider from '../ToastProvider/ToastProvider';
+import LocaleProvider from '../LocaleProvider/LocaleProvider';
+import { ILensProviderProps } from './LensProvider.types';
+import { GlobalClasses, TableClasses } from '../../../css-classes/index';
+import GlobalStyle from './GlobalStyle';
+import { DefaultLocales } from '../../../i18n';
+
+const LensProvider = ({
+  children, deviceContextUpdateDebounceTime = 100,
+  initialLocale = DefaultLocales.enUs,
+  alertSettings = {
+    responseLimit: 10,
+  },
+  toastSettings = {
+    placement: 'bottom-right',
+  },
+}: React.PropsWithChildren<ILensProviderProps>) => (
+  <DeviceProvider debounceTime={deviceContextUpdateDebounceTime}>
+    <LocaleProvider initialLocale={initialLocale}>
+      <AlertProvider {...alertSettings}>
+        <ToastProvider {...toastSettings}>
+          <ModalProvider>
+            <TableClasses />
+            <GlobalStyle />
+            <GlobalClasses />
+            <div id="lens-ui-portal-root" />
+            {children}
+          </ModalProvider>
+        </ToastProvider>
+      </AlertProvider>
+    </LocaleProvider>
+  </DeviceProvider>
+);
+
+export default LensProvider;

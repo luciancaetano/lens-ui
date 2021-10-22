@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils Layers 1`] = `
+Object {
+  "Alerts": 1060,
+  "Modal": 1050,
+  "OverlaySurfaces": 1040,
+  "Toast": 1070,
+  "default": 1,
+}
+`;
+
+exports[`utils Layers 2`] = `
+Object {
+  "Alerts": 1060,
+  "Modal": 1050,
+  "OverlaySurfaces": 1040,
+  "Toast": 1070,
+  "default": 1,
+}
+`;

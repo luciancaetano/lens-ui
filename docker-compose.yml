@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+
+##################################### Data Stack ######################################
+
+    redis:
+      image: nginx
+      container_name: lens-ui-nginx
+      restart: always
+      volumes:
+        - ./storybook-static:/usr/share/nginx/html:ro
+      ports:
+       - "80:80"

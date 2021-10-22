@@ -1,0 +1,61 @@
+import clsx from 'clsx';
+import React, { useCallback, useRef, useEffect } from 'react';
+import { PORTAL_ROOT_ID } from '../../../css-classes';
+import { useDevice } from '../../../hooks';
+import { modalCanEscape } from '../../../utils';
+import { Backdrop, ModalContainer } from './Modal.styles';
+import { IModalProps } from './Modal.types';
+
+const Modal: React.FC<IModalProps> = ({
+  className, testingID, id, children, size = 'normal', onBackdropClick, onEscape,
+}) => {
+  const { isPhone } = useDevice();
+  const backDropRef = useRef<HTMLDivElement>(null);
+  const onEscapeRef = useRef<(e: KeyboardEvent) => void>(null);
+
+  const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (onBackdropClick && (e.target as HTMLDivElement).classList.contains('lens-ui-modal-backdrop')) {
+      onBackdropClick('backdrop');
+    }
+  }, [onBackdropClick]);
+
+  useEffect(() => {
+    onEscapeRef.current = (e: KeyboardEvent) => {
+      if (typeof window !== 'undefined') {
+        const portalRoot = window.document.getElementById(PORTAL_ROOT_ID);
+
+        if (onEscape && e.key === 'Escape' && modalCanEscape(portalRoot, backDropRef)) {
+          onEscape('escape');
+        }
+      }
+    };
+  }, [onEscape]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.document.addEventListener('keydown', onEscapeRef.current);
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.document.removeEventListener('keydown', onEscapeRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <Backdrop onClick={handleBackdropClick} className="lens-ui-modal-backdrop" ref={backDropRef} aria-modal="true">
+      <ModalContainer
+        id={id}
+        data-testid={testingID}
+        className={clsx('lens-ui-modal', className, `size-${isPhone ? 'fullscreen' : size}`)}
+      >
+        {children}
+      </ModalContainer>
+    </Backdrop>
+  );
+};
+
+export default Modal;

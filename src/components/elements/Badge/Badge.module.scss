@@ -1,0 +1,26 @@
+@import '../../../style-lib.scss';
+
+
+.badge {
+  @include lens-ui-typography;
+  display: inline-block;
+  min-width: .625rem;
+  padding: .188rem .438rem;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: .625rem;
+  margin-right: .3rem;
+
+
+  @each $intent in $intent-type {
+    &--intent-#{$intent} {
+      color: var(--lens-ui-intents-#{$intent}-text);
+      border: .063rem solid var(--lens-ui-intents-#{$intent}-border);
+      background-color: var(--lens-ui-intents-#{$intent});
+    }
+  }
+}

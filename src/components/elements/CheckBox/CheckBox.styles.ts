@@ -1,0 +1,55 @@
+import styled from 'styled-components';
+
+export const CheckBoxContainer = styled.div`
+  position: relative;
+  text-align: left;
+  display: block;
+  min-height: 1.3125rem;
+  padding-left: 1.5em;
+  box-sizing: border-box;
+`;
+
+export const Input = styled.input`
+  width: 1em;
+  height: 1em;
+  margin-top: .17em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: .063rem solid rgba(0,0,0,.25);
+  appearance: none;
+  transition: background-color .15s ease-in-out,background-position .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+  margin-left: -1.5em;
+  border-radius: .25em;
+  position: absolute;
+
+  &:checked {
+    background-color: #525ce5;
+    border-color: #525ce5;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+  }
+
+  &:active {
+    filter: brightness(90%);
+  }
+
+  &:focus {
+    border-color: #b1bbc4;
+    outline: 0;
+    box-shadow: var(--lens-ui-input-base--active-box-shadow);
+  }
+`;
+
+export const Label = styled.label`
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
+  font-weight: 500;
+  box-sizing: border-box;
+  color: var(--lens-ui-typography-faded-text-color);
+`;
