@@ -23,7 +23,12 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((
   }, [onBlur]);
 
   return (
-    <SwitchContainer id={id} data-testid={testingID} className={clsx('lens-ui-switch', className)}>
+    <SwitchContainer
+      id={id}
+      data-testid={testingID}
+      data-lens-element="switch"
+      className={clsx('lens-ui-switch', className)}
+    >
       <Input
         type="checkbox"
         id={`${id}-input`}

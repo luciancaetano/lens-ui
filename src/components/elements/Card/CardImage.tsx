@@ -1,14 +1,24 @@
 import clsx from 'clsx';
 import React from 'react';
-import { CardImageStyle } from './Card.styles';
 import { ICardImageProps } from './Card.types';
+import { CLASSES } from '../../../css-classes';
+import styles from './Card.module.scss';
 
 const CardImage: React.FC<ICardImageProps> = ({
-  children, className, roudTop, roudBottom, testingID, ...props
+  className, roudTop, roudBottom, testingID, alt, ...props
 }) => (
-  <CardImageStyle {...props as any} data-testid={testingID} className={clsx('lens-ui-card__image', roudTop && 'image-top', roudBottom && 'image-bottom', className)}>
-    {children}
-  </CardImageStyle>
+  <img
+    {...props as any}
+    data-testid={testingID}
+    data-lens-card-element="image"
+    alt={alt}
+    className={clsx(
+      CLASSES.ComponentName('CardImage'),
+      roudTop && styles['card-image--image-top'],
+      roudBottom && styles['card-image--image-bottom'],
+      className,
+    )}
+  />
 );
 
 export default CardImage;

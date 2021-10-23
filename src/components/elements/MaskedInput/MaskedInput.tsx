@@ -1,13 +1,15 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
-import { MaskedInputContainer, Input } from './MaskedInput.styles';
+import InputMask from 'react-input-mask';
+import { CLASSES } from '../../../css-classes';
+import styles from './MaskedInput.module.scss';
 import { IMaskedInputProps } from './MaskedInput.types';
 
-const MaskedInput = React.forwardRef<HTMLInputElement, IMaskedInputProps>(({
+const MaskedInput: React.FC<IMaskedInputProps> = ({
   className, testingID, id, onChange, tabIndex, placeholder,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, mask,
   alwaysShowMask, beforeMaskedStateChange, maskPlaceholder,
-}, ref) => {
+}) => {
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(event.target.value, event);
@@ -21,8 +23,8 @@ const MaskedInput = React.forwardRef<HTMLInputElement, IMaskedInputProps>(({
   }, [onBlur]);
 
   return (
-    <MaskedInputContainer id={id} data-testid={testingID} className={clsx('lens-ui-MaskedInput', className)}>
-      <Input
+    <div id={id} data-testid={testingID} className={clsx(styles.container, CLASSES.ComponentName('MaskedInput'), className)}>
+      <InputMask
         mask={mask}
         name={name}
         placeholder={placeholder}
@@ -32,17 +34,16 @@ const MaskedInput = React.forwardRef<HTMLInputElement, IMaskedInputProps>(({
         type="MaskedInput"
         id={`${id}-input`}
         tabIndex={tabIndex}
-        className={clsx('lens-ui-money-input', isError && 'pinput-error')}
+        className={clsx(styles.input, isError && styles.inputError)}
         onChange={handleChange}
         value={value}
         defaultValue={defaultValue}
         onBlur={handleBlur}
         disabled={disabled}
         autoFocus={autoFocus}
-        inputRef={ref}
       />
-    </MaskedInputContainer>
+    </div>
   );
-});
+};
 
 export default MaskedInput;

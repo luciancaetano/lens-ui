@@ -1,8 +1,9 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import { randomId } from '../../../utils';
-import { CheckBoxContainer, Label, Input } from './CheckBox.styles';
+import styles from './CheckBox.module.scss';
 import { ICheckBoxProps } from './CheckBox.types';
+import { CLASSES } from '../../../css-classes';
 
 const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
   className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
@@ -21,12 +22,17 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
   }, [onBlur]);
 
   return (
-    <CheckBoxContainer id={id} data-testid={testingID} className={clsx('lens-ui-checkbox', className)}>
-      <Input
+    <div
+      id={id}
+      data-testid={testingID}
+      data-lens-element="checkbox"
+      className={clsx(styles.container, CLASSES.ComponentName('CheckBox'), className)}
+    >
+      <input
         type="checkbox"
         id={`${id}-input`}
         tabIndex={tabIndex}
-        className="lens-ui-checkbox-input"
+        className={styles.input}
         onChange={handleChange}
         checked={checked}
         defaultChecked={defaultChecked}
@@ -36,8 +42,8 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
         name={name}
         ref={ref}
       />
-      <Label htmlFor={`${id}-input`}>{label}</Label>
-    </CheckBoxContainer>
+      <label htmlFor={`${id}-input`} className={styles.label}>{label}</label>
+    </div>
   );
 });
 

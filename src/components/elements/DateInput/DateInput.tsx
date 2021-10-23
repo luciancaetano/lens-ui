@@ -7,10 +7,10 @@ import TimePicker from 'react-multi-date-picker/plugins/time_picker';
 import DatePickerHeader from 'react-multi-date-picker/plugins/date_picker_header';
 import DatePicker, { DateObject } from 'react-multi-date-picker';
 import isObject from 'lodash/isObject';
-import { DateInputContainer } from './DateInput.styles';
 import { IDateInputProps } from './DateInput.types';
 import { useDevice } from '../../../hooks';
 import { DatePickerLocalePtBR } from './pt_BR.locale';
+import './Dateinput.scss';
 
 /**
  * TODO
@@ -114,14 +114,14 @@ const DateInput: React.FC<IDateInputProps> = React.forwardRef(({
   }, [displayFormat, type]);
 
   return (
-    <DateInputContainer id={id} data-testid={testingID} className={clsx('lens-ui-date-input', className)} tabIndex={tabIndex}>
+    <div id={id} data-testid={testingID} className={clsx('lensUi__DateInput', className)} tabIndex={tabIndex}>
       <DatePicker
         name={name}
         numberOfMonths={type === 'range' ? 2 : 1}
         readOnly={readOnly}
         multiple={type === 'multiple'}
         range={type === 'range'}
-        className={clsx('lens-ui-date-input', isError && 'pinput-error', { 'rmdp-mobile': isPhone || isTablet })}
+        className={clsx('lensUi__DateInput__element', isError && 'pinput-error', { 'rmdp-mobile': isPhone || isTablet })}
         onChange={handleChange}
         disableDayPicker={type === 'time-only'}
         hideMonth={hideMonth}
@@ -159,7 +159,7 @@ const DateInput: React.FC<IDateInputProps> = React.forwardRef(({
           ...((time === 'analog' && type === 'time-only') ? [<AnalogTimePicker />] : []),
         ]}
       />
-    </DateInputContainer>
+    </div>
   );
 });
 

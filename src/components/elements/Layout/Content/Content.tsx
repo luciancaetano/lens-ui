@@ -1,19 +1,22 @@
 import clsx from 'clsx';
 import React from 'react';
-import styles from './Content.styles';
+import styles from './Content.module.scss';
 import { ILayoutContentProps } from './Content.types';
 import { CLASSES } from '../../../../css-classes';
 
 const Content: React.FC<ILayoutContentProps> = ({
   children, layout = 'vertical', className, testingID,
 }) => (
-  <styles.Content
+  <div
     data-testid={testingID}
-    flexDirection={layout === 'vertical' ? 'column' : 'row'}
-    className={clsx(CLASSES.FontReset, 'lens-ui-layout__content', className)}
+    className={clsx(
+      styles.content, styles[`content--direction-${layout === 'vertical' ? 'column' : 'row'}`],
+      CLASSES.ComponentName('Layout__Content'),
+      className,
+    )}
   >
     {children}
-  </styles.Content>
+  </div>
 );
 
 export default Content;

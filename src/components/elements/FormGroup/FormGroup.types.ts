@@ -11,5 +11,4 @@ export interface IFormGroupProps extends ITestableProps, IPropsWithClassName, IP
   helperTextIntent?: IntentType;
   labelFor?: string;
   required?: boolean;
-  disabled?: boolean;
 }

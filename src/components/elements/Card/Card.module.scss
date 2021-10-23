@@ -1,0 +1,116 @@
+@import '../../../style-lib.scss';
+
+
+.card {
+  @include lens-ui-typography;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: var(--lens-ui-elements-card-backgrounds-default-background-color);
+  color: var(--lens-ui-elements-card-backgrounds-default-color);
+  background-clip: border-box;
+  border: 0 solid var(--lens-ui-elements-card-backgrounds-default-border-color);
+  border-radius: var(--lens-ui-elements-card-border-radius);
+  box-shadow: var(--lens-ui-elements-card-box-shadow);
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @each $intent in $intent-type {
+    &--bg-#{$intent} {
+      background-color: var(--lens-ui-elements-card-backgrounds-#{$intent}-background-color);
+      background-clip: border-box;
+      border: 0 solid var(--lens-ui-elements-card-backgrounds-#{$intent}-border-color);
+
+      [data-lens-card-element='title'] {
+        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-title-color);
+      }
+
+      [data-lens-card-element='subtitle'] {
+        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-sub-title-color);
+      }
+
+      [data-lens-card-element='text'] {
+        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-color);
+      }
+
+      [data-lens-card-element='link'] {
+        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-link-color);
+
+        &:hover {
+          color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-link-hover-color);
+        }
+      }
+    }
+  }
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--lens-ui-elements-card-elements-card-body-padding);
+  box-sizing: border-box;
+  color: var(--lens-ui-typography-text-color);
+}
+
+.card-text {
+  margin-top: 0;
+  margin: var(--lens-ui-elements-card-elements-card-text-margin);
+  box-sizing: border-box;
+  color: var(--lens-ui-typography-text-color);
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  &--image-top {
+    border-top-left-radius: var(--lens-ui-elements-card-border-radius);
+    border-top-right-radius: var(--lens-ui-elements-card-border-radius);
+  }
+
+  &--image-bottom {
+    border-bottom-left-radius: var(--lens-ui-elements-card-border-radius);
+    border-bottom-right-radius: var(--lens-ui-elements-card-border-radius);
+  }
+}
+
+
+.card-title {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: .5rem;
+  color: var(--lens-ui-elements-card-backgrounds-default-card-title-color);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+  color: var(--lens-ui-typography-text-color);
+}
+
+.card-subtitle {
+  margin-top: -var(--lens-ui-elements-card-border-radius);
+  margin-bottom: 0;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: .875rem;
+  color: var(--lens-ui-elements-card-backgrounds-default-card-sub-title-color);
+  box-sizing: border-box;
+  color: var(--lens-ui-typography-text-color);
+}
+
+.card-link {
+  text-decoration: none;
+  color: var(--lens-ui-elements-card-backgrounds-default-card-link-color);
+  cursor: pointer;
+  user-select: none;
+  padding: .47rem .75rem;
+  font-size: .875rem;
+  color: var(--lens-ui-typography-text-color);
+
+  &:hover {
+    color: var(--lens-ui-elements-card-backgrounds-default-card-link-hover-color);
+    text-decoration: underline;
+  }
+}

@@ -1,15 +1,20 @@
 import clsx from 'clsx';
 import React from 'react';
 import { ITestableProps } from '../../../types';
-import { CardLinkStyle } from './Card.styles';
 import { CLASSES } from '../../../css-classes';
+import styles from './Card.module.scss';
 
 const CardLink: React.FC<React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & ITestableProps> = ({
   children, className, testingID, ...props
 }) => (
-  <CardLinkStyle {...props as any} data-testid={testingID} className={clsx(CLASSES.FontReset, 'lens-ui-card__link', className)}>
+  <a
+    {...props as any}
+    data-testid={testingID}
+    data-lens-card-element="link"
+    className={clsx(styles.cardLink, CLASSES.ComponentName('CardLink'), className)}
+  >
     {children}
-  </CardLinkStyle>
+  </a>
 );
 
 export default CardLink;

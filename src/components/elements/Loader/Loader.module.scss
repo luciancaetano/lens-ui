@@ -1,0 +1,23 @@
+@import '../../../style-lib.scss';
+
+
+.loader {
+  @include lens-ui-typography;
+  display: flex;
+  overflow: hidden;
+  font-size: .65625rem;
+  border-radius: .25rem;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

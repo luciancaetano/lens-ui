@@ -4,8 +4,6 @@ import { CLASSES } from '../../../css-classes';
 import { IBadgeProps } from './Badge.types';
 import styles from './Badge.module.scss';
 
-console.log(styles);
-
 const Badge:React.FC<IBadgeProps> = ({
   className, testingID, id, children, intent = 'primary',
 }) => (

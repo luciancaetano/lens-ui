@@ -1,0 +1,13 @@
+.form-footer {
+  display: flex;
+  color: var(--lens-ui-elements-divider-text-color);
+
+  &__delete-container {
+    display: flex;
+    flex: 1;
+  }
+
+  &__button {
+    margin-right: .625rem;
+  }
+}

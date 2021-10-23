@@ -1,15 +1,17 @@
-import styled from 'styled-components';
+@import '../../../style-lib.scss';
 
-export const CheckBoxContainer = styled.div`
+
+.container {
+  @include lens-ui-typography;
   position: relative;
   text-align: left;
   display: block;
   min-height: 1.3125rem;
   padding-left: 1.5em;
   box-sizing: border-box;
-`;
+}
 
-export const Input = styled.input`
+.input {
   width: 1em;
   height: 1em;
   margin-top: .17em;
@@ -43,13 +45,14 @@ export const Input = styled.input`
     outline: 0;
     box-shadow: var(--lens-ui-input-base--active-box-shadow);
   }
-`;
+}
 
-export const Label = styled.label`
+.label {
+  @include lens-ui-typography;
   user-select: none;
   cursor: pointer;
   margin-bottom: 0;
   font-weight: 500;
   box-sizing: border-box;
   color: var(--lens-ui-typography-faded-text-color);
-`;
+}

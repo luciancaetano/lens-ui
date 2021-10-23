@@ -1,0 +1,45 @@
+@import '../../../style-lib.scss';
+
+.list {
+  @include lens-ui-typography;
+
+  &__item {
+    padding: .75rem .75rem;
+    font-size: .95rem;
+    border-top: 1px solid var(--lens-ui-elements-list-border);
+  }
+
+  &__heading {
+    border-top: 1px solid var(--lens-ui-elements-list-border);
+    padding: .3rem .75rem;
+    font-size: .8rem;
+    background-color: var(--lens-ui-elements-tabs-header-bg);
+
+    &:hover {
+      background-color: var(--lens-ui-elements-tabs-header-bg);
+    }
+  }
+
+
+  &__item:last-child,
+  &__heading:last-child {
+    border-bottom: 1px solid var(--lens-ui-elements-list-border);
+  }
+
+  @each $intent in $intent-type {
+    &__intent-#{$intent} {
+
+      &:hover {
+        background-color: hsl(var(--lens-ui-hue-#{$intent}), 74%, 95%);
+      }
+    }
+  }
+
+  @each $intent in $intent-type {
+    &__active-intent-#{$intent} {
+      color: var(--lens-ui-intents-#{$intent}-lighten-text);
+      background-color: var(--lens-ui-intents-#{$intent}-lighten);
+    }
+  }
+
+}

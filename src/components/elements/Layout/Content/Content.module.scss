@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+@import '../../../../style-lib.scss';
 
-const Content = styled.div<{flexDirection: string}>`
-  flex-direction: ${(props) => props.flexDirection};
+.content {
+  @include lens-ui-typography;
   display: flex;
   flex: 1;
   flex-wrap: nowrap;
@@ -12,6 +12,12 @@ const Content = styled.div<{flexDirection: string}>`
   line-height: 1.5;
   color: var(--lens-ui-typography-text-color);
   background-color: var(--lens-ui-conent-bg-color);
-`;
 
-export default { Content };
+  &--direction-column {
+    flex-direction: column;
+  }
+
+  &--direction-row {
+    flex-direction: row;
+  }
+}

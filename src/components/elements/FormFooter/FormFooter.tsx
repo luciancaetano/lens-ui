@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { useCallback, useMemo } from 'react';
 import { useInternalLensLocale } from '../../..';
 import Button from '../Button/Button';
-import styles from './FormFooter.styles';
+import styles from './FormFooter.module.scss';
 import { IFormFooterProps } from './FormFooter.types';
 import { CLASSES } from '../../../css-classes';
 
@@ -57,12 +57,12 @@ const FormFooter:React.FC<IFormFooterProps> = ({
   const isLoading = useMemo(() => state !== 'ready', [state]);
 
   return (
-    <styles.FormFooter id={id} data-testid={testingID} className={clsx(CLASSES.FontReset, 'lens-ui-form-footer', className)}>
-      <div className="lens-ui-form-footer__delete-container">
+    <div id={id} data-testid={testingID} className={clsx(styles.formFooter, CLASSES.ComponentName('FormFooter'), className)}>
+      <div className={styles.formFooterDeleteContainer}>
         {childrenPos === 'beforeDelete' && children}
         {onDelete && (
           <Button
-            className="lens-ui-form-footer-button lens-ui-form-footer-button__delete"
+            className={styles.formFooterButton}
             intent="danger"
             appearance={deleteAppearance}
             disabled={deleteDisabled || isLoading}
@@ -75,7 +75,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
       {childrenPos === 'beforeCancel' && children}
       {onCancel && (
         <Button
-          className="lens-ui-form-footer-button lens-ui-form-footer-button__cancel"
+          className={styles.formFooterButton}
           intent="warning"
           type={cancelButtonType}
           appearance={cancelAppearance}
@@ -87,7 +87,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
       {childrenPos === 'betweenSaveAndCancel' && children}
       {onSave && (
         <Button
-          className="lens-ui-form-footer-button lens-ui-form-footer-button__save"
+          className={styles.formFooterButton}
           intent="success"
           type={onSave === 'submit' ? 'submit' : 'button'}
           appearance={saveAppearance}
@@ -97,7 +97,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
         </Button>
       )}
       {childrenPos === 'afterSave' && children}
-    </styles.FormFooter>
+    </div>
   );
 };
 

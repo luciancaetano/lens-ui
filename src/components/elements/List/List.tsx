@@ -2,10 +2,12 @@
 import clsx from 'clsx';
 import React, { useCallback, useMemo } from 'react';
 import { CLASSES } from '../../../css-classes';
-import { Container } from './List.styles';
+import styles from './List.module.scss';
 import { IListProps, IListItem } from './List.types';
 
-const List:React.FC<IListProps> = ({
+console.info(styles);
+
+const List: React.FC<IListProps> = ({
   className, testingID, id, items, renderer, onItemClick, activeIndex, intent = 'primary',
 }) => {
   const handleItemClick = useCallback((item: IListItem) => (e: React.MouseEvent<HTMLDivElement>) => {
@@ -20,25 +22,29 @@ const List:React.FC<IListProps> = ({
     }
     return (
       <div
-        className={clsx(item.isHeading ? 'lens-ui-list-heading' : 'lens-ui-list-item', item.className, { active: index === activeIndex })}
+        className={clsx(
+          item.isHeading ? styles.listHeading : styles.listItem,
+          styles[`list__intent-${intent}`],
+          index === activeIndex && styles[`list__active-intent-${intent}`],
+          item.className,
+        )}
         onClick={handleItemClick(item)}
         key={`${index}`}
       >
         {item.content}
       </div>
     );
-  }), [handleItemClick, items, activeIndex, renderer]);
+  }), [handleItemClick, items, activeIndex, renderer, intent]);
 
   return (
-    <Container
-      intent={intent}
+    <div
       id={id}
       data-testid={testingID}
-      className={clsx(CLASSES.FontReset, 'lens-ui-list', intent && `intent-${intent}`, className)}
+      className={clsx(styles.list, CLASSES.ComponentName('List'), className)}
       data-role="list"
     >
       {nodes}
-    </Container>
+    </div>
   );
 };
 

@@ -1,13 +1,19 @@
 import React from 'react';
 import clsx from 'clsx';
-import { LoaderContainer } from './Loader.styles';
+import styles from './Loader.module.scss';
 import { ILoaderProps } from './Loader.types';
+import { CLASSES } from '../../..';
 
 const Loader: React.FC<ILoaderProps> = ({
   className, testingID, id, children, type = 'eclipse', intent = 'primary', size = 5,
 }) => (
-  <LoaderContainer id={id} data-testid={testingID} className={clsx('lens-ui-loader', intent && `intent-${intent}`, type && `type-${type}`, className)} loaderRem={size}>
-    <div className="lens-ui-loader-content-container">
+  <div
+    id={id}
+    data-testid={testingID}
+    className={clsx(styles.loader, CLASSES.ComponentName('Loader'), className)}
+    style={{ width: `${size}rem`, height: `${size}rem` }}
+  >
+    <div className={styles.loaderContent}>
       {children}
     </div>
     {type === 'oval' && (
@@ -291,7 +297,7 @@ const Loader: React.FC<ILoaderProps> = ({
         </rect>
       </svg>
     )}
-  </LoaderContainer>
+  </div>
 );
 
 export default Loader;

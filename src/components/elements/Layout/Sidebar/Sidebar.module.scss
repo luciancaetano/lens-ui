@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 
-const Sidebar = styled.aside`
+.sidebar {
   display: flex;
   flex-direction: column;
   background-color: var(--lens-ui-elements-layout-sidebar-background-color);
@@ -9,6 +8,4 @@ const Sidebar = styled.aside`
   border-right: var(--lens-ui-elements-layout-sidebar-border-right);
   max-height: 100%;
   z-index: 1;
-`;
-
-export default { Sidebar };
+}

@@ -8,6 +8,7 @@ export interface ICardProps extends ITestableProps, HTMLElementPropsType<HTMLDiv
 export interface ICardImageProps extends ITestableProps, React.DetailedHTMLProps< React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   roudTop?: boolean;
   roudBottom?: boolean;
+  alt: string;
 }
 
 export interface ICardTitleProps extends ITestableProps, HTMLElementPropsType<HTMLParagraphElement>{

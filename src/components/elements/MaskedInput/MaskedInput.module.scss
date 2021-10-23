@@ -1,7 +1,5 @@
-import styled from 'styled-components';
-import InputMask from 'react-input-mask';
 
-export const MaskedInputContainer = styled.div`
+.container {
   position: relative;
   text-align: left;
   display: block;
@@ -9,9 +7,9 @@ export const MaskedInputContainer = styled.div`
   padding-left: 1.5em;
   box-sizing: border-box;
   padding-bottom: .75rem;
-`;
+}
 
-export const Input: typeof InputMask = (styled.input`
+.input {
   display: block;
   width: 100%;
   padding: .47rem .75rem;
@@ -32,7 +30,7 @@ export const Input: typeof InputMask = (styled.input`
     outline: 0;
   }
 
-  &.pinput-error {
+  &--error {
     border: 1px solid var(--lens-ui-intents-danger-border);
   }
-`).withComponent(InputMask) as any;
+}

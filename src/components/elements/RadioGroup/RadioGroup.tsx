@@ -51,6 +51,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
     <RadioGroupContainer
       id={id}
       data-testid={testingID}
+      data-lens-element="radio-group"
       className={clsx('lens-ui-radio-group', className)}
       tabIndex={tabIndex}
       onChange={handleChange}

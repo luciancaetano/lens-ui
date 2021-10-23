@@ -1,5 +1,7 @@
+@import '../../../style-lib.scss';
 
 .callout {
+  @include lens-ui-typography;
   display: flex;
   align-items: center;
   justify-content: center;

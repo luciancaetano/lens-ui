@@ -1,31 +1,35 @@
 import clsx from 'clsx';
 import React from 'react';
-import styles from './FormGroup.styles';
+import styles from './FormGroup.module.scss';
 import { IFormGroupProps } from './FormGroup.types';
 import { CLASSES } from '../../../css-classes';
 
 const FormGroup: React.FC<IFormGroupProps> = ({
-  children, className, contentClassName, id, helperText, helperTextIntent = 'danger', inline, label, labelFor, required, disabled, testingID,
+  children, className, contentClassName, id, helperText, helperTextIntent = 'danger', inline, label, labelFor, required, testingID,
 }) => (
-  <styles.FormGroup
+  <div
     data-testid={testingID}
-    className={clsx(CLASSES.FontReset, 'lens-ui-form-group', { disabled }, className)}
-    inline={inline}
+    className={clsx(
+      styles.formGroup,
+      inline && styles.formGroupInline,
+      CLASSES.ComponentName('FormGroup'),
+      className,
+    )}
     id={id}
   >
-    <label htmlFor={labelFor} className="lens-ui-font-definition">
+    <label htmlFor={labelFor} data-lens-form-group-role="label">
       {label}
-      {required && (<span className="lens-ui-form-group__required-helper">&nbsp;*</span>)}
+      {required && (<span className={styles.formGroupRequiredHelper}>&nbsp;*</span>)}
     </label>
-    <styles.Content inline={inline} className={clsx('lens-ui-form-group__content', contentClassName)}>
+    <div className={clsx(styles.content, { inline }, contentClassName)}>
       {children}
       {helperText && (
-        <div className={clsx(CLASSES.FontReset, 'lens-ui-form-group__helper-text', `intent-${helperTextIntent}`)}>
+        <div className={clsx(styles.formGroupHelperText, styles[`form-group__helper-text--intent-${helperTextIntent}`])}>
           {helperText}
         </div>
       )}
-    </styles.Content>
-  </styles.FormGroup>
+    </div>
+  </div>
 );
 
 export default FormGroup;
