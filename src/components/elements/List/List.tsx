@@ -5,8 +5,6 @@ import { CLASSES } from '../../../css-classes';
 import styles from './List.module.scss';
 import { IListProps, IListItem } from './List.types';
 
-console.info(styles);
-
 const List: React.FC<IListProps> = ({
   className, testingID, id, items, renderer, onItemClick, activeIndex, intent = 'primary',
 }) => {

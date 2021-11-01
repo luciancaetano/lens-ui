@@ -1,7 +1,8 @@
-@import '../../../style-lib.scss';
+@import '../../../style-lib';
 
 .callout {
   @include lens-ui-typography;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +21,7 @@
 
     h1 {
       font-size: 1rem;
-      color: dataColor;
+      color: datacolor;
       text-align: center;
       font-weight: bold;
       margin-bottom: 0;
@@ -34,12 +35,12 @@
       padding: 1rem;
 
       svg {
-        fill: dataColorLighten;
+        fill: datacolorlighten;
       }
     }
 
     &__content-handler {
-      color: dataColorLight;
+      color: datacolorlight;
       font-size: .8rem;
     }
   }

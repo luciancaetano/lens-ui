@@ -1,4 +1,3 @@
-
 .drop-down-menu {
   display: flex;
   flex-direction: row;
@@ -43,11 +42,11 @@
   min-width: 15rem;
 
   &__active-item {
-    color: hsl(0, 0%, 40%) !important;
+    color: hsl(0deg 0% 40%) !important;
     font-weight: bold;
   }
 
-  &> ul {
+  & > ul {
     list-style: none;
     padding-left: 0;
     margin-bottom: 0;
@@ -67,7 +66,7 @@
 
       &:hover {
         background-color: #f9f9f9;
-        color: hsl(0, 0%, 20%);
+        color: hsl(0deg 0% 20%);
       }
 
       &:last-child {

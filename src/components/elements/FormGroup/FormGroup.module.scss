@@ -1,7 +1,8 @@
-@import '../../../style-lib.scss';
+@import '../../../style-lib';
 
 .form-group {
   @include lens-ui-typography;
+
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -9,6 +10,7 @@
 
   [data-lens-form-group-role='label'] {
     @include lens-ui-typography;
+
     margin-bottom: .5rem;
     margin-right: 0;
     color: var(--lens-ui-typography-faded-text-color);
@@ -31,6 +33,7 @@
 
   &__helper-text {
     @include lens-ui-typography;
+
     font-size: .75rem;
     margin-top: .125rem;
     font-weight: 500;
@@ -75,7 +78,6 @@
   [data-lens-element='switch'] {
     padding-left: 3.3rem;
   }
-
 }
 
 .content {

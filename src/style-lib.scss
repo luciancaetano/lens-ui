@@ -1,7 +1,4 @@
-
-
 $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'danger');
-
 
 @mixin lens-ui-typography {
   font-family: var(--lens-ui-typography-font-family);

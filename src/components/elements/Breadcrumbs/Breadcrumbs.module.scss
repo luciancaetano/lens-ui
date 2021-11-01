@@ -1,8 +1,8 @@
-@import '../../../style-lib.scss';
-
+@import '../../../style-lib';
 
 .breadcrumbs {
   @include lens-ui-typography;
+
   display: flex;
 
   &__item {
@@ -19,7 +19,6 @@
   &__spacer {
     padding: 0 .5rem;
     color: var(--lens-ui-typography-faded-text-color);
-
   }
 
   &__last {
@@ -31,6 +30,4 @@
       color: var(--lens-ui-intents-primary-darken);
     }
   }
-
-
 }

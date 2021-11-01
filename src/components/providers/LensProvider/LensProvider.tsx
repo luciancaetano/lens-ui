@@ -7,7 +7,7 @@ import LocaleProvider from '../LocaleProvider/LocaleProvider';
 import { ILensProviderProps } from './LensProvider.types';
 import { GlobalClasses, TableClasses } from '../../../css-classes/index';
 import GlobalStyle from './GlobalStyle';
-import { DefaultLocales } from '../../../i18n';
+import { DefaultLocales } from '../../../i18n/index';
 
 const LensProvider = ({
   children, deviceContextUpdateDebounceTime = 100,

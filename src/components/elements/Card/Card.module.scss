@@ -1,8 +1,8 @@
-@import '../../../style-lib.scss';
-
+@import '../../../style-lib';
 
 .card {
   @include lens-ui-typography;
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,6 @@
 }
 
 .card-text {
-  margin-top: 0;
   margin: var(--lens-ui-elements-card-elements-card-text-margin);
   box-sizing: border-box;
   color: var(--lens-ui-typography-text-color);
@@ -77,7 +76,6 @@
   }
 }
 
-
 .card-title {
   font-size: 1rem;
   margin-top: 0;
@@ -85,8 +83,6 @@
   color: var(--lens-ui-elements-card-backgrounds-default-card-title-color);
   font-weight: 500;
   line-height: 1.2;
-  margin-bottom: .5rem;
-  color: var(--lens-ui-typography-text-color);
 }
 
 .card-subtitle {
@@ -97,7 +93,6 @@
   font-size: .875rem;
   color: var(--lens-ui-elements-card-backgrounds-default-card-sub-title-color);
   box-sizing: border-box;
-  color: var(--lens-ui-typography-text-color);
 }
 
 .card-link {
@@ -107,7 +102,6 @@
   user-select: none;
   padding: .47rem .75rem;
   font-size: .875rem;
-  color: var(--lens-ui-typography-text-color);
 
   &:hover {
     color: var(--lens-ui-elements-card-backgrounds-default-card-link-hover-color);

@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './Loader.module.scss';
 import { ILoaderProps } from './Loader.types';
-import { CLASSES } from '../../..';
+import { CLASSES } from '../../../css-classes';
 
 const Loader: React.FC<ILoaderProps> = ({
   className, testingID, id, children, type = 'eclipse', intent = 'primary', size = 5,

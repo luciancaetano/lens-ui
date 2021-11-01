@@ -1,10 +1,10 @@
-@import '../../../style-lib.scss';
+@import '../../../style-lib';
 
 .list {
   @include lens-ui-typography;
 
   &__item {
-    padding: .75rem .75rem;
+    padding: .75rem;
     font-size: .95rem;
     border-top: 1px solid var(--lens-ui-elements-list-border);
   }
@@ -20,7 +20,6 @@
     }
   }
 
-
   &__item:last-child,
   &__heading:last-child {
     border-bottom: 1px solid var(--lens-ui-elements-list-border);
@@ -28,9 +27,8 @@
 
   @each $intent in $intent-type {
     &__intent-#{$intent} {
-
       &:hover {
-        background-color: hsl(var(--lens-ui-hue-#{$intent}), 74%, 95%);
+        background-color: hsl(var(--lens-ui-hue-#{$intent}) 74% 95%);
       }
     }
   }
@@ -41,5 +39,4 @@
       background-color: var(--lens-ui-intents-#{$intent}-lighten);
     }
   }
-
 }

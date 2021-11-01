@@ -5,7 +5,7 @@ import React, {
   useRef,
 } from 'react';
 import swal from 'sweetalert2';
-import { randomId } from '../../../utils';
+import { randomId } from '../../../utils/index';
 import AlertContext from './AlertContext';
 import {
   IAlertItemData, IAlertItemRequest, IAlertProviderProps, IAlertResult,

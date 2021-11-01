@@ -4,8 +4,6 @@ import { IButtonProps } from './Button.types';
 import { CLASSES } from '../../../css-classes';
 import styles from './Button.module.scss';
 
-console.info(styles);
-
 const Button: React.FC<IButtonProps> = ({
   children,
   intent = 'primary',

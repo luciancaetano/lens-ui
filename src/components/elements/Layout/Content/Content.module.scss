@@ -1,7 +1,8 @@
-@import '../../../../style-lib.scss';
+@import '../../../../style-lib';
 
 .content {
   @include lens-ui-typography;
+
   display: flex;
   flex: 1;
   flex-wrap: nowrap;

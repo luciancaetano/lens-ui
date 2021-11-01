@@ -1,8 +1,8 @@
-@import '../../../style-lib.scss';
-
+@import '../../../style-lib';
 
 .loader {
   @include lens-ui-typography;
+
   display: flex;
   overflow: hidden;
   font-size: .65625rem;

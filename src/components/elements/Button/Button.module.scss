@@ -1,8 +1,8 @@
-@import '../../../style-lib.scss';
-
+@import '../../../style-lib';
 
 .button {
   @include lens-ui-typography;
+
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -17,7 +17,7 @@
   font-size: .875rem;
   border-radius: .25rem;
   outline: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
   &--size-small {
     padding: .25rem .5rem;
@@ -70,20 +70,18 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-primary-disabled-text-color);
       background-color: var(--lens-ui-elements-button-primary-disabled-background-color);
       border-color: var(--lens-ui-elements-button-primary-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-primary-background-color);
       }
     }
   }
-
 
   &--intent-secondary {
     color: var(--lens-ui-elements-button-secondary-text-color);
@@ -124,14 +122,13 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-secondary-disabled-text-color);
       background-color: var(--lens-ui-elements-button-secondary-disabled-background-color);
       border-color: var(--lens-ui-elements-button-secondary-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-secondary-background-color);
       }
@@ -177,14 +174,13 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-success-disabled-text-color);
       background-color: var(--lens-ui-elements-button-success-disabled-background-color);
       border-color: var(--lens-ui-elements-button-success-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-success-background-color);
       }
@@ -230,14 +226,13 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-info-disabled-text-color);
       background-color: var(--lens-ui-elements-button-info-disabled-background-color);
       border-color: var(--lens-ui-elements-button-info-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-info-background-color);
       }
@@ -283,14 +278,13 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-warning-disabled-text-color);
       background-color: var(--lens-ui-elements-button-warning-disabled-background-color);
       border-color: var(--lens-ui-elements-button-warning-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-warning-background-color);
       }
@@ -336,14 +330,13 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-danger-disabled-text-color);
       background-color: var(--lens-ui-elements-button-danger-disabled-background-color);
       border-color: var(--lens-ui-elements-button-danger-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-danger-background-color);
       }
@@ -389,14 +382,13 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-light-disabled-text-color);
       background-color: var(--lens-ui-elements-button-light-disabled-background-color);
       border-color: var(--lens-ui-elements-button-light-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-light-text-color);
       }
@@ -442,14 +434,13 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: .65;
+      opacity: 65%;
       color: var(--lens-ui-elements-button-dark-disabled-text-color);
       background-color: var(--lens-ui-elements-button-dark-disabled-background-color);
       border-color: var(--lens-ui-elements-button-dark-disabled-border-color);
     }
 
     &--appearance-outlined {
-
       &:focus {
         color: var(--lens-ui-elements-button-dark-background-color);
       }
@@ -457,14 +448,12 @@
   }
 
   &--appearance-minimal {
-
     &:hover {
       text-decoration: underline;
     }
   }
 
   &--appearance-outlined {
-
     &:focus {
       background-color: #fff;
     }

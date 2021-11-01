@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { useCallback, useMemo } from 'react';
-import { useInternalLensLocale } from '../../..';
+import { useInternalLensLocale } from '../../../hooks';
 import Button from '../Button/Button';
 import styles from './FormFooter.module.scss';
 import { IFormFooterProps } from './FormFooter.types';

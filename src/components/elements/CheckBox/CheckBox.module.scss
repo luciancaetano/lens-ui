@@ -1,8 +1,8 @@
-@import '../../../style-lib.scss';
-
+@import '../../../style-lib';
 
 .container {
   @include lens-ui-typography;
+
   position: relative;
   text-align: left;
   display: block;
@@ -20,9 +20,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: .063rem solid rgba(0,0,0,.25);
+  border: .063rem solid rgb(0 0 0 / 25%);
   appearance: none;
-  transition: background-color .15s ease-in-out,background-position .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: background-color .15s ease-in-out, background-position .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   box-sizing: border-box;
   cursor: pointer;
   float: left;
@@ -49,6 +49,7 @@
 
 .label {
   @include lens-ui-typography;
+
   user-select: none;
   cursor: pointer;
   margin-bottom: 0;

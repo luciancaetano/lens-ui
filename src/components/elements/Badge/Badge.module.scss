@@ -1,8 +1,8 @@
-@import '../../../style-lib.scss';
-
+@import '../../../style-lib';
 
 .badge {
   @include lens-ui-typography;
+
   display: inline-block;
   min-width: .625rem;
   padding: .188rem .438rem;
@@ -14,7 +14,6 @@
   vertical-align: middle;
   border-radius: .625rem;
   margin-right: .3rem;
-
 
   @each $intent in $intent-type {
     &--intent-#{$intent} {

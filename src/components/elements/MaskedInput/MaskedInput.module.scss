@@ -1,4 +1,3 @@
-
 .container {
   position: relative;
   text-align: left;
@@ -22,12 +21,11 @@
   border: 1px solid #ced4da;
   appearance: none;
   border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
   &:focus {
     outline: 0;
     border: var(--lens-ui-input-base-border--active);
-    outline: 0;
   }
 
   &--error {
