@@ -267,7 +267,7 @@ exports[`<Toast/> render <Toast/> 1`] = `
         class="toast-close-button"
       >
         <svg
-          class="lens-ui-icon"
+          class="lensUi__Icon"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -553,7 +553,7 @@ exports[`<Toast/> render <Toast/> with invalid dismiss 1`] = `
         class="toast-close-button"
       >
         <svg
-          class="lens-ui-icon"
+          class="lensUi__Icon"
           fill="currentColor"
           height="1em"
           stroke="currentColor"

@@ -126,8 +126,10 @@
     "webpack-cli": "^4.9.1",
     "webpack-node-externals": "^3.0.0"
   },
-  "hooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "src/**/*.ts?(x)": [
@@ -136,13 +138,8 @@
       "git add"
     ],
     "src/**/*.scss": [
-      "stylelint --syntax scss"
-    ],
-    "src/**/*.css": [
       "stylelint"
-    ],
-    "*.js": "eslint --cache --fix",
-    "*.css": "stylelint --fix"
+    ]
   },
   "gacp": {
     "push": true,

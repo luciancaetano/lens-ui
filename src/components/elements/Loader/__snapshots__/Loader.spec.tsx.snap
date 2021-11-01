@@ -2,11 +2,12 @@
 
 exports[`<Loader/> should render correct Loader intents: danger 1`] = `
 <div
-  class="sc-bdfBQB kZkfFW lens-ui-loader intent-danger type-eclipse"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 20rem; height: 20rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -38,11 +39,12 @@ exports[`<Loader/> should render correct Loader intents: danger 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: info 1`] = `
 <div
-  class="sc-bdfBQB kZkfFW lens-ui-loader intent-info type-eclipse"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 20rem; height: 20rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -73,54 +75,13 @@ exports[`<Loader/> should render correct Loader intents: info 1`] = `
 `;
 
 exports[`<Loader/> should render correct Loader intents: primary 1`] = `
-.c0 {
-  --loader-width: 20rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-  font-size: .65625rem;
-  border-radius: .25rem;
-  position: relative;
-  width: var(--loader-width);
-  height: var(--loader-width);
-}
-
-.c0 .lens-ui-loader-content-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0 .content-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 <div
-  class="c0 lens-ui-loader intent-primary type-eclipse"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 20rem; height: 20rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -152,11 +113,12 @@ exports[`<Loader/> should render correct Loader intents: primary 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: secondary 1`] = `
 <div
-  class="sc-bdfBQB kZkfFW lens-ui-loader intent-secondary type-eclipse"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 20rem; height: 20rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -188,11 +150,12 @@ exports[`<Loader/> should render correct Loader intents: secondary 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: success 1`] = `
 <div
-  class="sc-bdfBQB kZkfFW lens-ui-loader intent-success type-eclipse"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 20rem; height: 20rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -224,11 +187,12 @@ exports[`<Loader/> should render correct Loader intents: success 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: warning 1`] = `
 <div
-  class="sc-bdfBQB kZkfFW lens-ui-loader intent-warning type-eclipse"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 20rem; height: 20rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -259,54 +223,13 @@ exports[`<Loader/> should render correct Loader intents: warning 1`] = `
 `;
 
 exports[`<Loader/> should render correct Loader types: eclipse 1`] = `
-.c0 {
-  --loader-width: 5rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-  font-size: .65625rem;
-  border-radius: .25rem;
-  position: relative;
-  width: var(--loader-width);
-  height: var(--loader-width);
-}
-
-.c0 .lens-ui-loader-content-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0 .content-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 <div
-  class="c0 lens-ui-loader intent-primary type-eclipse"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 5rem; height: 5rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -338,11 +261,12 @@ exports[`<Loader/> should render correct Loader types: eclipse 1`] = `
 
 exports[`<Loader/> should render correct Loader types: oval 1`] = `
 <div
-  class="sc-bdfBQB iOOGuR lens-ui-loader intent-primary type-oval"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 5rem; height: 5rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
@@ -384,11 +308,12 @@ exports[`<Loader/> should render correct Loader types: oval 1`] = `
 
 exports[`<Loader/> should render correct Loader types: spinner 1`] = `
 <div
-  class="sc-bdfBQB iOOGuR lens-ui-loader intent-primary type-spinner"
+  class="loader lensUi__Loader"
   data-testid="my-testing-id"
+  style="width: 5rem; height: 5rem;"
 >
   <div
-    class="lens-ui-loader-content-container"
+    class="loaderContent"
   >
     1
   </div>
