@@ -5,6 +5,7 @@ const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const loaderUtils = require('loader-utils');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -82,6 +83,33 @@ module.exports = {
               modules: {
                 auto: true,
                 exportLocalsConvention: 'camelCase',
+                getLocalIdent: (context, _, exportName, options) => {
+                  const relativePath = path
+                    .relative(context.rootContext, context.resourcePath)
+                    .replace(/\\+/g, '/');
+
+                  const hash = loaderUtils.getHashDigest(
+                    Buffer.from(`${relativePath}`),
+                    'sha1',
+                    'base64',
+                    128,
+                  );
+
+                  return (
+                    loaderUtils
+                      .interpolateName(
+                        context,
+                        `lens-ui__${exportName}__${hash}`,
+                        options,
+                      )
+                      .replace(
+                        /\.module_/,
+                        '_',
+                      )
+                      .replace(/[^a-zA-Z0-9-_]/g, '_')
+                      .replace(/^(\d|--|-\d)/, '__$1')
+                  );
+                },
               },
               sourceMap: true,
             },
