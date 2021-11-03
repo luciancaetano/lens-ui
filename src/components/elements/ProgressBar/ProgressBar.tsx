@@ -1,9 +1,17 @@
 import clsx from 'clsx';
 import clamp from 'lodash/clamp';
+import isnumber from 'lodash/isNumber';
 import isString from 'lodash/isString';
 import React, { useMemo } from 'react';
-import { ProgressBarContainer, Progress, ProgressBarSizeValues } from './ProgressBar.styles';
+import styles from './ProgressBar.module.scss';
 import { IProgressBarProps } from './ProgressBar.types';
+
+const ProgressBarSizeValues = {
+  tiny: 0.400,
+  normal: 0.625,
+  medium: 0.925,
+  big: 1.200,
+};
 
 const ProgressBar = React.forwardRef<HTMLDivElement, IProgressBarProps>(({
   className, testingID, id, progress, intent = 'primary', withLabel, size = 'normal', striped,
@@ -33,25 +41,30 @@ const ProgressBar = React.forwardRef<HTMLDivElement, IProgressBarProps>(({
     return ProgressBarSizeValues.normal;
   }, [size]);
   return (
-    <ProgressBarContainer
+    <div
       id={id}
       data-testid={testingID}
-      className={clsx('lens-ui-progress-bar', className, { striped })}
-      size={height}
+      data-lens-element="progress-bar"
+      data-lens-intent={intent}
+      className={clsx(styles.progressBar, striped && styles.progressBarStriped, className)}
+      style={{ height: isnumber(height) ? `${height}rem` : height }}
       ref={ref}
     >
-      <Progress
-        percent={percent}
-        intent={intent}
+      <div
+        data-lens-element="progress-bar__indicator"
         role="progressbar"
-        className={clsx('lens-ui-progress-bar-progress', { striped }, intent && `intent-${intent}`)}
+        className={clsx(
+          styles[`progress-bar__indicator-intent-${intent}`],
+          striped && styles[`progress-bar__indicator-intent-${intent}--striped`],
+        )}
         aria-valuenow={progress}
         aria-valuemin={0}
         aria-valuemax={100}
+        style={{ width: percent }}
       >
         {withLabel && size !== 'tiny' && percent}
-      </Progress>
-    </ProgressBarContainer>
+      </div>
+    </div>
   );
 });
 

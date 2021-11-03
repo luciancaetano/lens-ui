@@ -1,8 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
-import { CLASSES } from '../../../css-classes';
 import Icon from '../Icon/Icon';
-import { Container } from './ModalHeader.styles';
+import styles from './ModalHeader.module.scss';
 import { IModalHeaderProps } from './ModalHeader.types';
 
 const ModalHeader: React.FC<IModalHeaderProps> = ({
@@ -15,21 +14,21 @@ const ModalHeader: React.FC<IModalHeaderProps> = ({
   }, [onClose]);
 
   return (
-    <Container
+    <div
       id={id}
+      data-lens-element="modal__header"
       data-testid={testingID}
-      className={clsx(CLASSES.FontReset, 'lens-ui-modal-header', className)}
-      rightPadding={onClose ? 0.8 : 1}
+      className={clsx(styles.modalHeader, onClose && styles.modalHeaderHasCloseButton, className)}
     >
-      <header>
+      <header data-lens-element="modal__header__title" className={styles.modalHeaderTitle}>
         {children}
       </header>
       {onClose && (
-        <button className="close-button-holder" onClick={handleClose}>
+        <button className={styles.modalHeaderCloseButtonHolder} data-lens-element="modal__header__close-button" onClick={handleClose}>
           <Icon name="BsX" size="1.5rem" />
         </button>
       )}
-    </Container>
+    </div>
   );
 };
 

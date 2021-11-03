@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import InputMask from 'react-input-mask';
-import { CLASSES } from '../../../css-classes';
 import styles from './MaskedInput.module.scss';
 import { IMaskedInputProps } from './MaskedInput.types';
 
@@ -23,7 +22,12 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
   }, [onBlur]);
 
   return (
-    <div id={id} data-testid={testingID} className={clsx(styles.container, CLASSES.ComponentName('MaskedInput'), className)}>
+    <div
+      id={id}
+      data-testid={testingID}
+      data-lens-element="masked-input"
+      className={clsx(styles.maskedInput, className)}
+    >
       <InputMask
         mask={mask}
         name={name}
@@ -34,7 +38,7 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
         type="MaskedInput"
         id={`${id}-input`}
         tabIndex={tabIndex}
-        className={clsx(styles.input, isError && styles.inputError)}
+        className={clsx(styles.maskedInputField, isError && styles.maskedInputFieldError)}
         onChange={handleChange}
         value={value}
         defaultValue={defaultValue}

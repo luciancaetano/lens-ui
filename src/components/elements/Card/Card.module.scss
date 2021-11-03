@@ -23,19 +23,19 @@
       background-clip: border-box;
       border: 0 solid var(--lens-ui-elements-card-backgrounds-#{$intent}-border-color);
 
-      [data-lens-card-element='title'] {
+      [data-lens-element='card__title'] {
         color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-title-color);
       }
 
-      [data-lens-card-element='subtitle'] {
+      [data-lens-element='card__subtitle'] {
         color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-sub-title-color);
       }
 
-      [data-lens-card-element='text'] {
+      [data-lens-element='card__text'] {
         color: var(--lens-ui-elements-card-backgrounds-#{$intent}-color);
       }
 
-      [data-lens-card-element='link'] {
+      [data-lens-element='card__link'] {
         color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-link-color);
 
         &:hover {

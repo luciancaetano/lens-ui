@@ -1,0 +1,81 @@
+@import '../../../style-lib';
+
+.callout {
+  @include lens-ui-typography;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: .65625rem;
+  border-radius: .25rem;
+  position: relative;
+  color: var(--lens-ui-typography-text-color);
+
+  &__content-container-intent-default {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 1rem;
+
+    &__title {
+      font-size: 1rem;
+      color: var(--lens-ui-typography-text-color);
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 0;
+      padding-bottom: .5rem;
+    }
+
+    &__icon-handler {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+
+      svg {
+        fill: var(--lens-ui-typography-faded-text-color);
+      }
+    }
+
+    &__content-handler {
+      color: var(--lens-ui-typography-faded-text-color);
+      font-size: .8rem;
+    }
+  }
+
+  @each $intent in $intent-type {
+    &__content-container-intent-#{$intent} {
+      display: flex;
+      flex-direction: column;
+      max-width: 350px;
+      margin: 1rem;
+
+      &__title {
+        font-size: 1rem;
+        color: var(--lens-ui-intents-#{$intent});
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: .5rem;
+      }
+
+      &__icon-handler {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        svg {
+          fill: var(--lens-ui-intents-#{$intent}-lighten);
+        }
+      }
+
+      &__content-handler {
+        color: var(--lens-ui-intents-#{$intent}-light);
+        font-size: .8rem;
+      }
+    }
+  }
+}

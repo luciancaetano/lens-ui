@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import clsx from 'clsx';
 import React, { useCallback, useMemo } from 'react';
-import { CLASSES } from '../../../css-classes';
 import styles from './List.module.scss';
 import { IListProps, IListItem } from './List.types';
 
@@ -26,6 +25,7 @@ const List: React.FC<IListProps> = ({
           index === activeIndex && styles[`list__active-intent-${intent}`],
           item.className,
         )}
+        data-lens-element={item.isHeading ? 'list__item--heading' : 'list__item'}
         onClick={handleItemClick(item)}
         key={`${index}`}
       >
@@ -38,7 +38,8 @@ const List: React.FC<IListProps> = ({
     <div
       id={id}
       data-testid={testingID}
-      className={clsx(styles.list, CLASSES.ComponentName('List'), className)}
+      data-lens-element="list"
+      className={clsx(styles.list, className)}
       data-role="list"
     >
       {nodes}

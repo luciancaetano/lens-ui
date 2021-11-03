@@ -1,19 +1,20 @@
 import clsx from 'clsx';
 import React from 'react';
-import { CLASSES } from '../../../css-classes';
-import { Container } from './ModalFooter.styles';
+import styles from './ModalFooter.module.scss';
 import { IModalFooterProps } from './ModalFooter.types';
 
 const ModalFooter: React.FC<IModalFooterProps> = ({
   className, testingID, id, children,
 }) => (
-  <Container
+  <footer
     id={id}
     data-testid={testingID}
-    className={clsx(CLASSES.FontReset, 'lens-ui-modal-footer', className)}
+    data-lens-element="modal__footer"
+    data-role="modal-footer"
+    className={clsx(styles.modalFooter, className)}
   >
     {children}
-  </Container>
+  </footer>
 );
 
 export default ModalFooter;

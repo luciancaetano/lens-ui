@@ -14,3 +14,11 @@ $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'dange
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+$layers: (
+  'default': 1,
+  'OverlaySurfaces': 1040,
+  'Modal': 1050,
+  'Alerts': 1060,
+  'Toast': 1070,
+);

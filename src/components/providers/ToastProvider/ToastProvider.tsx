@@ -8,7 +8,7 @@ import ToastContext from './ToastContext';
 import {
   IToastCreationData, IToastData, IToastProviderProps,
 } from './ToastProvider.types';
-import { RenderContainer } from './ToastProvider.styles';
+import styles from './ToastProvider.module.scss';
 import Toast from '../../elements/Toast/Toast';
 
 const ToastProvider: React.FC<IToastProviderProps> = ({ children, placement }) => {
@@ -37,9 +37,16 @@ const ToastProvider: React.FC<IToastProviderProps> = ({ children, placement }) =
     }}
     >
       {toasts.length > 0 && (
-        <RenderContainer className={clsx('lens-ui-toasts-render', { mobile: isPhone }, placement)}>
+        <div
+          data-lens-element="toast-provider"
+          className={clsx(
+            styles.toastsProvider,
+            styles[`toasts-provider--${placement}`],
+            isPhone && styles.toastsProviderMobile,
+          )}
+        >
           {toatsItems}
-        </RenderContainer>
+        </div>
       )}
       {React.Children.toArray(children)}
     </ToastContext.Provider>

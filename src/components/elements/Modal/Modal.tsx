@@ -3,7 +3,7 @@ import React, { useCallback, useRef, useEffect } from 'react';
 import { PORTAL_ROOT_ID } from '../../../css-classes';
 import { useDevice } from '../../../hooks';
 import { modalCanEscape } from '../../../utils';
-import { Backdrop, ModalContainer } from './Modal.styles';
+import styles from './Modal.module.scss';
 import { IModalProps } from './Modal.types';
 
 const Modal: React.FC<IModalProps> = ({
@@ -46,15 +46,22 @@ const Modal: React.FC<IModalProps> = ({
   }, []);
 
   return (
-    <Backdrop onClick={handleBackdropClick} className="lens-ui-modal-backdrop" ref={backDropRef} aria-modal="true">
-      <ModalContainer
+    <div
+      onClick={handleBackdropClick}
+      className={styles.backdrop}
+      data-lens-element="modal__backdrop"
+      ref={backDropRef}
+      aria-modal="true"
+    >
+      <div
         id={id}
+        data-lens-element="modal"
         data-testid={testingID}
-        className={clsx('lens-ui-modal', className, `size-${isPhone ? 'fullscreen' : size}`)}
+        className={clsx(styles.modal, className, styles[`modal--size-${isPhone ? 'fullscreen' : size}`])}
       >
         {children}
-      </ModalContainer>
-    </Backdrop>
+      </div>
+    </div>
   );
 };
 

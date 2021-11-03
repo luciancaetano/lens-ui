@@ -4,9 +4,7 @@ import clsx from 'clsx';
 import React, { useMemo } from 'react';
 import map from 'lodash/map';
 import get from 'lodash/get';
-import {
-  Container, Tr, Td,
-} from './Table.styles';
+import styles from './Table.module.scss';
 import { ITableProps } from './Table.types';
 import { CLASSES } from '../../../css-classes';
 
@@ -20,24 +18,32 @@ const Table:React.FC<ITableProps> = ({
   )), [columns]);
 
   const tableItems = useMemo(() => map(items, (item, index) => (
-    <Tr className={clsx(CLASSES.FontReset, item.rowClassName)} intent={item.rowIntent} key={index}>
-      {map(columns, (col, key) => (
-        <Td
-          key={`${index}-${key}`}
-          className={clsx(CLASSES.FontReset, col.cellClassName)}
-          intent={typeof col.cellIntent === 'function' && col.cellIntent(item, index)}
-        >
-          {typeof col.cellRenderer === 'function' ? col.cellRenderer(item) : get(item, key)}
-        </Td>
-      ))}
-    </Tr>
+    <tr className={clsx(styles[`table__tr--intent-${item.rowIntent || 'default'}`], item.rowClassName)} key={index}>
+      {map(columns, (col, key) => {
+        const colIntent = typeof col.cellIntent === 'function' ? col.cellIntent(item, index) : 'default';
+
+        return (
+          <td
+            key={`${index}-${key}`}
+            className={clsx(
+              styles.tableTd,
+              styles[`table__td--intent-${colIntent}`],
+              col.cellClassName,
+            )}
+          >
+            {typeof col.cellRenderer === 'function' ? col.cellRenderer(item) : get(item, key)}
+          </td>
+        );
+      })}
+    </tr>
   )), [items, columns]);
 
   return (
-    <Container
+    <div
       id={id}
       data-testid={testingID}
-      className={clsx(CLASSES.FontReset, 'lens-ui-table', className)}
+      data-lens-element="table"
+      className={clsx(styles.table, className)}
       data-role="table-container"
     >
       <table className={CLASSES.Table}>
@@ -53,7 +59,7 @@ const Table:React.FC<ITableProps> = ({
           <tfoot>{footer()}</tfoot>
         )}
       </table>
-    </Container>
+    </div>
   );
 };
 

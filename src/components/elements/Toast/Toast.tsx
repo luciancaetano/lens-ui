@@ -7,11 +7,10 @@ import React, {
 } from 'react';
 import Icon from '../Icon/Icon';
 import { useDevice, useToast } from '../../../hooks';
-import { ToastContainer } from './Toast.styles';
+import styles from './Toast.module.scss';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import { IToastProps } from './Toast.types';
 import Button from '../Button/Button';
-import { CLASSES } from '../../../css-classes';
 
 const INTERVAL = 250;
 
@@ -30,7 +29,7 @@ const FormDivider:React.FC<IToastProps> = ({
   const updateProgress = useCallback((timePassed: number) => {
     if (!isNumber(data.dismiss) || !progressBar.current) return;
 
-    const element = progressBar.current.querySelector<HTMLDivElement>('.lens-ui-progress-bar-progress');
+    const element = progressBar.current.querySelector<HTMLDivElement>('[data-lens-element=\'progress-bar__indicator\']');
     if (element) {
       element.style.width = `${clamp((timePassed / data.dismiss) * 100, 0, 100)}%`;
     }
@@ -58,27 +57,32 @@ const FormDivider:React.FC<IToastProps> = ({
   }, [removeToast, data]);
 
   const actions = useMemo(() => map(data.actions, ({ content, ...action }) => (
-    <Button {...action} size="small">{content}</Button>
+    <Button {...action} className={clsx(styles.toastActionsContainerButton, action.className)} size="small">{content}</Button>
   )), [data.actions]);
 
   return (
-    <ToastContainer data-testid={testingID} className={clsx(CLASSES.FontReset, 'lens-ui-toasts-toast', { mobile: isPhone }, `intent-${data.intent}`, data.className)}>
-      <div className="lens-ui-toasts-toast-main">
-        {data.icon && (<div className="lens-ui-toasts-toast-icon">{data.icon}</div>)}
-        <div className="lens-ui-font-definition lens-ui-toasts-toast-content">{data.content}</div>
+    <div
+      data-lens-element="toast"
+      data-lens-intent={data.intent}
+      data-testid={testingID}
+      className={clsx(styles.toast, isPhone && styles.toastMobile, styles[`toast--intent-${data.intent}`], data.className)}
+    >
+      <div className={styles.toastMain}>
+        {data.icon && (<div className={styles.toastIcon}>{data.icon}</div>)}
+        <div className={styles.toastContent}>{data.content}</div>
         {actions.length > 0 && (
-          <div className={clsx('toast-close-actions-container', data.actionsContainerClassName)}>
+          <div className={clsx(styles.toastActionsContainer, data.actionsContainerClassName)}>
             {actions}
           </div>
         )}
-        <div className="toast-close-button-container" onClick={handleClose}>
-          <button className="toast-close-button">
+        <div className={styles.toastButtonContainer} onClick={handleClose}>
+          <button data-lens-element="toast-close-button">
             <Icon name="BsXSquareFill" />
           </button>
         </div>
       </div>
       {autoDismiss && <ProgressBar progress={0} size="tiny" ref={progressBar} />}
-    </ToastContainer>
+    </div>
   );
 };
 export default FormDivider;

@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import { IButtonProps } from './Button.types';
-import { CLASSES } from '../../../css-classes';
 import styles from './Button.module.scss';
 
 const Button: React.FC<IButtonProps> = ({
@@ -26,6 +25,8 @@ const Button: React.FC<IButtonProps> = ({
     id={id}
     data-testid={testingID}
     tabIndex={tabIndex}
+    data-lens-element="button"
+    data-lens-intent={intent}
     className={clsx(
       styles.button,
       styles[`button--intent-${intent}`],
@@ -33,7 +34,6 @@ const Button: React.FC<IButtonProps> = ({
       styles[`button--appearance-${appearance}`],
       styles[`button--intent-${intent}--appearance-${appearance}`],
       active && styles[`button--intent-${intent}--active`],
-      CLASSES.ComponentName('Button'),
       className,
     )}
     disabled={disabled}

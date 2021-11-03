@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import React, { useCallback, useMemo } from 'react';
 import ReactSelect from 'react-select';
 import { randomId } from '../../../utils';
-import { SelectContainer } from './Select.styles';
+import './Select.scss';
 import { ISelectOption, ISelectProps } from './Select.types';
 
 const Select: React.FC<ISelectProps> = React.forwardRef(({
@@ -54,14 +54,15 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
   }, [formatOptionLabel]);
 
   return (
-    <SelectContainer
+    <div
       id={id}
       data-testid={testingID}
-      className={clsx('lens-ui-select', className)}
+      data-lens-element="select"
+      className={clsx('lens-ui-select-input', className)}
     >
       <ReactSelect
         placeholder={placeholder}
-        className={isError && 'pinput-error'}
+        className={isError && 'select-input-error'}
         classNamePrefix="lens-ui-select-input"
         isMulti={isMulti}
         isClearable={isClearable}
@@ -81,7 +82,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
         autoFocus={autoFocus}
         ref={ref as any}
       />
-    </SelectContainer>
+    </div>
   );
 });
 

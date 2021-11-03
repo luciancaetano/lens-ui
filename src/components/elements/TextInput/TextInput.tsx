@@ -1,9 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import Icon from '../Icon/Icon';
-import {
-  TextInputContainer, Input, Textarea, SearchIcon,
-} from './TextInput.styles';
+import styles from './TextInput.module.scss';
 import { ITextInputProps } from './TextInput.types';
 
 const TextInput = React.forwardRef<HTMLElement, ITextInputProps>(({
@@ -24,13 +22,14 @@ const TextInput = React.forwardRef<HTMLElement, ITextInputProps>(({
 
   if (type === 'textarea') {
     return (
-      <TextInputContainer id={id} data-testid={testingID} className={clsx('lens-ui-TextInput', className)}>
-        <Textarea
+      <div data-lens-element="text-input" id={id} data-testid={testingID} className={clsx(styles.textInput, className)}>
+        <textarea
+          data-lens-element="text-input__input"
           placeholder={placeholder}
           name={name}
-          id={`${id}-input`}
+          id={id && `${id}-input`}
           tabIndex={tabIndex}
-          className={clsx('lens-ui-text-input', isError && 'pinput-error')}
+          className={clsx(styles.textInputTextarea, isError && styles.textInputTextareaError)}
           onChange={handleChange as any}
           value={value}
           defaultValue={defaultValue}
@@ -41,23 +40,29 @@ const TextInput = React.forwardRef<HTMLElement, ITextInputProps>(({
           required={required}
           ref={ref as any}
         />
-      </TextInputContainer>
+      </div>
     );
   }
 
   return (
-    <TextInputContainer
+    <div
       id={id}
+      data-lens-element="text-input"
       data-testid={testingID}
-      className={clsx('lens-ui-TextInput', className, { search: type === 'search' })}
+      className={clsx(styles.textInput, type === 'search' && styles.textInputSearch, className, { search: type === 'search' })}
     >
-      <Input
+      <input
         placeholder={placeholder}
+        data-lens-element="text-input__input"
         name={name}
         type={type}
-        id={`${id}-input`}
+        id={id && `${id}-input`}
         tabIndex={tabIndex}
-        className={clsx('lens-ui-text-input', isError && 'pinput-error', { search: type === 'search' })}
+        className={clsx(
+          styles.textInputInput,
+          isError && styles.textInputInputError,
+          type === 'search' && styles.textInputInputSearch,
+        )}
         onChange={handleChange}
         value={value}
         defaultValue={defaultValue}
@@ -68,8 +73,8 @@ const TextInput = React.forwardRef<HTMLElement, ITextInputProps>(({
         required={required}
         ref={ref as any}
       />
-      {type === 'search' && <SearchIcon><Icon name="BsSearch" /></SearchIcon>}
-    </TextInputContainer>
+      {type === 'search' && <div className={styles.textInputSearchIcon}><Icon name="BsSearch" /></div>}
+    </div>
   );
 });
 

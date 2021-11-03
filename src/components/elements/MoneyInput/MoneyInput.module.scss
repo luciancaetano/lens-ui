@@ -1,22 +1,20 @@
-import styled from 'styled-components';
+@import '../../../style-lib';
 
-export const DateInputContainer = styled.div`
+.money-input {
+  @include lens-ui-typography;
+
   position: relative;
   text-align: left;
-  display: block;
+  display: flex;
   min-height: 1.3125rem;
   padding-left: 1.5em;
   box-sizing: border-box;
   padding-bottom: .75rem;
 
-  .rmdp-container {
-    width: 100%;
-  }
-
-  .rmdp-input {
+  &__field {
     display: block;
     width: 100%;
-    padding: .41rem .75rem;
+    padding: .47rem .75rem;
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
@@ -26,16 +24,15 @@ export const DateInputContainer = styled.div`
     border: 1px solid #ced4da;
     appearance: none;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     &:focus {
       outline: 0;
       border: var(--lens-ui-input-base-border--active);
-      outline: 0;
     }
 
-    &.pinput-error {
+    &--error {
       border: 1px solid var(--lens-ui-intents-danger-border);
     }
   }
-`;
+}

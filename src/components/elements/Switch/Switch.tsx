@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import { randomId } from '../../../utils';
-import { SwitchContainer, Label, Input } from './Switch.styles';
+import styles from './Switch.module.scss';
 import { ISwitchProps } from './Switch.types';
 
 const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((
@@ -23,17 +23,17 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((
   }, [onBlur]);
 
   return (
-    <SwitchContainer
+    <div
       id={id}
       data-testid={testingID}
       data-lens-element="switch"
-      className={clsx('lens-ui-switch', className)}
+      className={clsx(styles.switch, className)}
     >
-      <Input
+      <input
         type="checkbox"
         id={`${id}-input`}
         tabIndex={tabIndex}
-        className="lens-ui-switch-input"
+        className={styles.switchInput}
         onChange={handleChange}
         checked={checked}
         defaultChecked={defaultChecked}
@@ -43,8 +43,8 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((
         ref={ref}
         name={name}
       />
-      <Label htmlFor={`${id}-input`}>{label}</Label>
-    </SwitchContainer>
+      <label htmlFor={`${id}-input`} className={styles.switchLabel}>{label}</label>
+    </div>
   );
 });
 

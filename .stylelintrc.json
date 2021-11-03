@@ -4,12 +4,18 @@
   "rules": {
     "max-nesting-depth": 20,
     "number-max-precision": null,
-    "selector-max-id": 8,
     "number-leading-zero": "never",
+    "no-descending-specificity": null,
+    "scss/no-global-function-names": null,
     "string-quotes": "single",
     "no-duplicate-selectors": null,
     "property-no-unknown": null,
     "declaration-block-no-redundant-longhand-properties": null,
     "max-line-length": null
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.sss"]
+    }
+  ]
 }

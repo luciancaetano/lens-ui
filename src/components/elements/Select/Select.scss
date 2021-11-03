@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+@import '../../../style-lib';
 
-export const SelectContainer = styled.div`
+.lens-ui-select-input {
+  @include lens-ui-typography;
   position: relative;
   text-align: left;
   display: block;
@@ -24,8 +25,8 @@ export const SelectContainer = styled.div`
     outline: 0;
   }
 
-  .pinput-error .lens-ui-select-input__control--is-focused,
-  .pinput-error .lens-ui-select-input__control {
+  .select-input-error .lens-ui-select-input__control--is-focused,
+  .select-input-error .lens-ui-select-input__control {
     border: 1px solid var(--lens-ui-intents-danger-border);
     box-shadow: none;
   }
@@ -33,6 +34,4 @@ export const SelectContainer = styled.div`
   &:active {
     filter: brightness(90%);
   }
-
-
-`;
+}

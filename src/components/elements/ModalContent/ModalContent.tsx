@@ -1,19 +1,19 @@
 import clsx from 'clsx';
 import React from 'react';
-
-import { Container } from './ModalContent.styles';
+import styles from './ModalContent.module.scss';
 import { IModalContentProps } from './ModalContent.types';
 
 const ModalContent: React.FC<IModalContentProps> = ({
   className, testingID, id, children,
 }) => (
-  <Container
+  <main
     id={id}
     data-testid={testingID}
-    className={clsx('lens-ui-font-definition lens-ui-modal-content', className)}
+    data-lens-element="modal__content"
+    className={clsx(styles.modalContent, className)}
   >
     {children}
-  </Container>
+  </main>
 );
 
 export default ModalContent;

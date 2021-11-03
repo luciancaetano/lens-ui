@@ -10,4 +10,4 @@ export {
   Layers, getPortalContainer, randomId, sleep,
 } from './utils';
 
-export { CLASSES, ANIMATIONS } from './css-classes';
+export { CLASSES } from './css-classes';

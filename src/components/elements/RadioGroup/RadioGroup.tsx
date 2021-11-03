@@ -5,7 +5,7 @@ import get from 'lodash/get';
 import find from 'lodash/find';
 import React, { useCallback, useMemo } from 'react';
 import { randomId } from '../../../utils';
-import { RadioGroupContainer, Label, Input } from './RadioGroup.styles';
+import styles from './RadioGroup.module.scss';
 import { IRadioGroupProps } from './RadioGroup.types';
 
 const RadioGroup: React.FC<IRadioGroupProps> = ({
@@ -30,35 +30,41 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
     const inputId = randomId();
 
     return (
-      <div key={String(option.value)} className="lens-ui-radio-group-item-container">
-        <Input
+      <div key={String(option.value)} className={styles.radioGroupContainer}>
+        <input
           tabIndex={option.tabIndex}
           type="radio"
           id={`${inputId}-input`}
           name={name}
+          data-lens-element="radio-group__input"
           value={toString(option.value)}
-          className={clsx('lens-ui-radio-group-input', option.className)}
+          className={clsx(styles.radioGroupInput, option.className)}
           checked={value !== undefined ? toString(value) === toString(option.value) : undefined}
           defaultChecked={defaultValue !== undefined ? toString(defaultValue) === toString(option.value) : undefined}
           disabled={disabled}
         />
-        <Label htmlFor={`${inputId}-input`}>{option.label}</Label>
+        <label
+          htmlFor={`${inputId}-input`}
+          className={styles.radioGroupLabel}
+          data-lens-element="radio-group__label"
+        >{option.label}
+        </label>
       </div>
     );
   }), [defaultValue, options, value, name, disabled]);
 
   return (
-    <RadioGroupContainer
+    <div
       id={id}
       data-testid={testingID}
       data-lens-element="radio-group"
-      className={clsx('lens-ui-radio-group', className)}
+      className={clsx(styles.radioGroup, className)}
       tabIndex={tabIndex}
       onChange={handleChange}
       onBlur={onBlur}
     >
       {items}
-    </RadioGroupContainer>
+    </div>
   );
 };
 

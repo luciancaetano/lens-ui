@@ -51,11 +51,11 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
     return items.map((item: IDropdownItemBasicType, key) => {
       if ((item as any).divider) {
         return (
-          <li role="menuitem" className={clsx(styles.divider, item.className)} key={key}>{item.label}</li>
+          <li role="menuitem" data-lens-element="drop-down-menu__list_item" className={clsx(styles.divider, item.className)} key={key}>{item.label}</li>
         );
       }
       return (
-        <li role="menuitem" key={key} className={clsx(item.className, { [styles.dropDownMenuListActiveItem]: activeId === item.id })} onClick={handleItemClick(item.id)}>{item.label}</li>
+        <li role="menuitem" data-lens-element="drop-down-menu__list_item" key={key} className={clsx(item.className, { [styles.dropDownMenuListActiveItem]: activeId === item.id })} onClick={handleItemClick(item.id)}>{item.label}</li>
       );
     });
   }, [isOpen, items, handleItemClick, activeId]);
@@ -67,7 +67,8 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
       id={id}
       ref={setReferenceElement}
       data-testid={testingID}
-      className={clsx('lens-ui-drop-down-menu', styles.dropDownMenu, className)}
+      data-lens-element="drop-down-menu"
+      className={clsx(styles.dropDownMenu, className)}
       onClick={toggleMenu}
     >
       <div className={styles.dropDownMenuChildren}>
@@ -80,7 +81,8 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
         ReactDOM.createPortal((
           <div
             role="list"
-            className={clsx(styles.dropDownMenuList, 'lens-ui-drop-down-menu__list')}
+            className={styles.dropDownMenuList}
+            data-lens-element="drop-down-menu__list"
             ref={(r) => {
               ref.current = r;
               setPopperElement(r);
@@ -91,7 +93,7 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
               zIndex: Layers.OverlaySurfaces,
             }}
           >
-            <ul role="menu">
+            <ul data-lens-element="drop-down-menu__ul">
               {listItems}
             </ul>
           </div>

@@ -4,7 +4,6 @@ import { useInternalLensLocale } from '../../../hooks';
 import Button from '../Button/Button';
 import styles from './FormFooter.module.scss';
 import { IFormFooterProps } from './FormFooter.types';
-import { CLASSES } from '../../../css-classes';
 
 const FormFooter:React.FC<IFormFooterProps> = ({
   className, testingID, id, onCancel, onDelete, onSave = 'submit', isUpdate, state,
@@ -57,7 +56,12 @@ const FormFooter:React.FC<IFormFooterProps> = ({
   const isLoading = useMemo(() => state !== 'ready', [state]);
 
   return (
-    <div id={id} data-testid={testingID} className={clsx(styles.formFooter, CLASSES.ComponentName('FormFooter'), className)}>
+    <div
+      id={id}
+      data-testid={testingID}
+      data-lens-element="form-footer"
+      className={clsx(styles.formFooter, className)}
+    >
       <div className={styles.formFooterDeleteContainer}>
         {childrenPos === 'beforeDelete' && children}
         {onDelete && (
@@ -67,6 +71,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
             appearance={deleteAppearance}
             disabled={deleteDisabled || isLoading}
             onClick={handleDelete}
+            data-lens-element="form-footer__delete"
           >{deleteButtonLabel}
           </Button>
         )}
@@ -81,6 +86,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
           appearance={cancelAppearance}
           disabled={cancelDisabled || isLoading}
           onClick={handleCancel}
+          data-lens-element="form-footer__cancel"
         >{cancelButtonLabel}
         </Button>
       )}
@@ -93,6 +99,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
           appearance={saveAppearance}
           disabled={saveDisabled || isLoading}
           onClick={handleSave}
+          data-lens-element="form-footer__save"
         >{saveButtonLabel}
         </Button>
       )}

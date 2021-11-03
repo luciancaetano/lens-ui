@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
 import { ICardTitleProps } from './Card.types';
-import { CLASSES } from '../../../css-classes';
 import styles from './Card.module.scss';
 
 const CardTitle: React.FC<ICardTitleProps> = ({
@@ -11,9 +10,9 @@ const CardTitle: React.FC<ICardTitleProps> = ({
     return (
       <h6
         {...props as any}
-        data-lens-card-element="subtitle"
+        data-lens-element="card__subtitle"
         data-testid={testingID}
-        className={clsx(styles.cardSubtitle, CLASSES.ComponentName('CardTitle'), CLASSES.ComponentName('CardTitle--subtitle'), className)}
+        className={clsx(styles.cardSubtitle, className)}
       >
         {children}
       </h6>
@@ -23,9 +22,9 @@ const CardTitle: React.FC<ICardTitleProps> = ({
   return (
     <h4
       {...props as any}
-      data-lens-card-element="title"
+      data-lens-element="card__title"
       data-testid={testingID}
-      className={clsx(styles.cardTitle, CLASSES.ComponentName('CardTitle'), className)}
+      className={clsx(styles.cardTitle, className)}
     >
       {children}
     </h4>

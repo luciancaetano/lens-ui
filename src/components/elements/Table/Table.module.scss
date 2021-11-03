@@ -1,0 +1,40 @@
+@import '../../../style-lib';
+
+.table {
+  display: flex;
+
+  &__tr {
+    @each $intent in $intent-type {
+      &--intent-#{$intent} {
+        color: var(--lens-ui-intents-#{$intent}-lighten-text);
+        background-color: var(--lens-ui-intents-#{$intent}-lighten);
+        border-color: var(--lens-ui-intents-#{$intent}-lighten-border);
+
+        &:hover {
+          color: var(--lens-ui-intents-#{$intent}-text) !important;
+          background-color: var(--lens-ui-intents-#{$intent}) !important;
+          border-color: var(--lens-ui-intents-#{$intent}-border) !important;
+        }
+      }
+    }
+  }
+
+  &__td {
+    @include lens-ui-typography;
+
+    @each $intent in $intent-type {
+      &--intent-#{$intent} {
+        color: var(--lens-ui-intents-#{$intent}-lighten-text);
+        background-color: var(--lens-ui-intents-#{$intent}-lighten);
+        border-color: var(--lens-ui-intents-#{$intent}-lighten-border);
+
+        &:hover {
+          color: var(--lens-ui-intents-#{$intent}-text);
+          background-color: var(--lens-ui-intents-#{$intent});
+          border-color: var(--lens-ui-intents-#{$intent}-border);
+        }
+      }
+    }
+  }
+
+}

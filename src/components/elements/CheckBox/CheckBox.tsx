@@ -3,7 +3,6 @@ import React, { useCallback } from 'react';
 import { randomId } from '../../../utils';
 import styles from './CheckBox.module.scss';
 import { ICheckBoxProps } from './CheckBox.types';
-import { CLASSES } from '../../../css-classes';
 
 const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
   className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
@@ -26,7 +25,7 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
       id={id}
       data-testid={testingID}
       data-lens-element="checkbox"
-      className={clsx(styles.container, CLASSES.ComponentName('CheckBox'), className)}
+      className={clsx(styles.container, className)}
     >
       <input
         type="checkbox"

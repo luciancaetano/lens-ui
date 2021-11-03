@@ -1,30 +1,28 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Container } from './Callout.styles';
+import styles from './Callout.module.scss';
 import { ICalloutProps } from './Callout.types';
-import { CLASSES } from '../../../css-classes';
 
 const Callout: React.FC<ICalloutProps> = ({
   className, testingID, id, children, icon, intent, title,
 }) => (
-  <Container
+  <div
     id={id}
+    data-lens-element="callout"
+    data-lens-intent={intent}
     data-testid={testingID}
-    className={clsx(CLASSES.FontReset, 'lens-ui-callout', intent && `intent-${intent}`, className)}
-    dataColor={intent ? `var(--lens-ui-intents-${intent})` : 'var(--lens-ui-typography-text-color)'}
-    dataColorLight={intent ? `var(--lens-ui-intents-${intent}-light)` : 'var(--lens-ui-typography-faded-text-color)'}
-    dataColorLighten={intent ? `var(--lens-ui-intents-${intent}-lighten)` : 'var(--lens-ui-typography-faded-text-color)'}
+    className={clsx(styles.callout, className)}
   >
-    <div className="lens-ui-callout-content-container">
-      <div className="lens-ui-callout-icon-holder">
+    <div className={styles[`callout__content-container-intent-${intent || 'default'}`]} data-lens-element="callout__container">
+      <div className={styles[`callout__content-container-intent-${intent || 'default'}__icon-handler`]} data-lens-element="callout__icon">
         {icon && icon}
       </div>
-      <h1>{title}</h1>
-      <div className="lens-ui-callout-content-holder">
+      <h1 className={styles[`callout__content-container-intent-${intent || 'default'}__title`]} data-lens-element="callout__title">{title}</h1>
+      <div className={styles[`callout__content-container-intent-${intent || 'default'}__content-handler`]} data-lens-element="callout__content">
         {children}
       </div>
     </div>
-  </Container>
+  </div>
 );
 
 export default Callout;

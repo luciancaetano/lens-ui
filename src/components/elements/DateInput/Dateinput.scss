@@ -1,7 +1,7 @@
 .lens-ui-date-input {
   position: relative;
   text-align: left;
-  display: block;
+  display: flex;
   min-height: 1.3125rem;
   padding-left: 1.5em;
   box-sizing: border-box;
@@ -9,10 +9,12 @@
 
   .rmdp-container {
     width: 100%;
+    display: inline-flex !important;
+    box-sizing: border-box;
   }
 
   .rmdp-input {
-    display: block;
+    display: inline-flex;
     width: 100%;
     padding: .41rem .75rem;
     font-size: .875rem;

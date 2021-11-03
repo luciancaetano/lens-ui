@@ -1,12 +1,13 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
-import { MoneyInputContainer, Input } from './MoneyInput.styles';
+import CurrencyInput from 'react-currency-input';
+import styles from './MoneyInput.module.scss';
 import { IMoneyInputProps } from './MoneyInput.types';
 
-const MoneyInput: React.FC<IMoneyInputProps> = React.forwardRef(({
+const MoneyInput: React.FC<IMoneyInputProps> = ({
   className, testingID, id, onChange, tabIndex, decimalSeparator = ',', precision = 3, thousandSeparator = '.',
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder,
-}, ref) => {
+}) => {
   const handleChange = useCallback((event, maskedvalue, floatvalue) => {
     if (onChange) {
       onChange(floatvalue, maskedvalue, event);
@@ -20,13 +21,19 @@ const MoneyInput: React.FC<IMoneyInputProps> = React.forwardRef(({
   }, [onBlur]);
 
   return (
-    <MoneyInputContainer id={id} data-testid={testingID} className={clsx('lens-ui-MoneyInput', className)}>
-      <Input
+    <div
+      data-lens-element="money-input"
+      id={id}
+      data-testid={testingID}
+      className={clsx(styles.moneyInput, className)}
+    >
+      <CurrencyInput
         name={name}
         placeholder={placeholder}
+        data-lens-element="money-input__input"
         id={`${id}-input`}
         tabIndex={tabIndex}
-        className={clsx('lens-ui-money-input', isError && 'pinput-error')}
+        className={clsx(styles.moneyInputField, isError && styles.moneyInputFieldError)}
         onChangeEvent={handleChange}
         value={defaultValue || value}
         onBlur={handleBlur}
@@ -35,10 +42,9 @@ const MoneyInput: React.FC<IMoneyInputProps> = React.forwardRef(({
         decimalSeparator={decimalSeparator}
         precision={precision}
         thousandSeparator={thousandSeparator}
-        ref={ref as any}
       />
-    </MoneyInputContainer>
+    </div>
   );
-});
+};
 
 export default MoneyInput;

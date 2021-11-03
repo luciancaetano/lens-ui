@@ -1,49 +1,48 @@
-import styled from 'styled-components';
-import { Layers } from '../../../utils';
+@import '../../../style-lib';
 
-export const RenderContainer = styled.div`
+.toasts-provider {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   pointer-events: none;
-  z-index: ${Layers.Toast};
+  z-index: map-get($layers, 'Toast');
   display: flex;
   flex-direction: column;
   padding: .5rem;
 
-  &.top-left {
+  &--top-left {
     align-items: flex-start;
     justify-content: flex-start;
   }
 
-  &.top-right {
+  &--top-right {
     align-items: flex-end;
     justify-content: flex-start;
   }
 
-  &.bottom-left {
+  &--bottom-left {
     align-items: flex-start;
     justify-content: flex-end;
   }
 
-  &.bottom-right {
+  &--bottom-right {
     align-items: flex-end;
     justify-content: flex-end;
   }
 
-  &.top-center {
+  &--top-center {
     align-items: center;
     justify-content: flex-start;
   }
 
-  &.bottom-center {
+  &--bottom-center {
     align-items: center;
     justify-content: flex-end;
   }
 
-  &.mobile {
+  &--mobile {
     align-items: center;
   }
-`;
+}

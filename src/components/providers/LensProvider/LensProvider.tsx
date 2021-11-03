@@ -5,8 +5,6 @@ import ModalProvider from '../ModalProvider/ModalProvider';
 import ToastProvider from '../ToastProvider/ToastProvider';
 import LocaleProvider from '../LocaleProvider/LocaleProvider';
 import { ILensProviderProps } from './LensProvider.types';
-import { GlobalClasses, TableClasses } from '../../../css-classes/index';
-import GlobalStyle from './GlobalStyle';
 import { DefaultLocales } from '../../../i18n/index';
 
 const LensProvider = ({
@@ -24,9 +22,6 @@ const LensProvider = ({
       <AlertProvider {...alertSettings}>
         <ToastProvider {...toastSettings}>
           <ModalProvider>
-            <TableClasses />
-            <GlobalStyle />
-            <GlobalClasses />
             <div id="lens-ui-portal-root" />
             {children}
           </ModalProvider>

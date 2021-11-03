@@ -114,7 +114,13 @@ const DateInput: React.FC<IDateInputProps> = React.forwardRef(({
   }, [displayFormat, type]);
 
   return (
-    <div id={id} data-testid={testingID} className={clsx('lens-ui-date-input', className)} tabIndex={tabIndex}>
+    <div
+      id={id}
+      data-testid={testingID}
+      data-lens-element="card"
+      className={clsx('lens-ui-date-input', className)}
+      tabIndex={tabIndex}
+    >
       <DatePicker
         name={name}
         numberOfMonths={type === 'range' ? 2 : 1}

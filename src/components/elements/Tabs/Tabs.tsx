@@ -2,8 +2,7 @@ import clsx from 'clsx';
 import React, {
   useState, useEffect, useCallback, useMemo,
 } from 'react';
-import { CLASSES } from '../../../css-classes';
-import { Container } from './Tabs.styles';
+import styles from './Tabs.module.scss';
 import { ITabsProps } from './Tabs.types';
 
 const Tabs:React.FC<ITabsProps> = ({
@@ -12,6 +11,8 @@ const Tabs:React.FC<ITabsProps> = ({
   const [activeTabId, setActiveTabId] = useState<string | null>(initialActiveTab || null);
 
   const activeTabItem = useMemo(() => tabs.find((t) => t.id === activeTabId), [tabs, activeTabId]);
+
+  const tabStylePrefix = useMemo(() => `tabs--${vertical ? 'vertical' : 'horizontal'}`, [vertical]);
 
   useEffect(() => {
     if (activeTab !== undefined) {
@@ -33,30 +34,35 @@ const Tabs:React.FC<ITabsProps> = ({
 
   const tabItems = useMemo(() => tabs.map((tab) => (
     <div
-      className={clsx(CLASSES.FontReset, 'lens-ui-tabs-tab-item', { active: activeTabId === tab.id }, tab.className)}
+      className={clsx(
+        styles[`${tabStylePrefix}__container__tab-item`],
+        activeTabId === tab.id && styles[`${tabStylePrefix}__container__tab-item--active`],
+        tab.className,
+      )}
       onClick={handleTabClick(tab.id, tab.onClick)}
       key={tab.id}
       data-bs-toggle="tab"
     >
       {tab.title}
     </div>
-  )), [activeTabId, tabs, handleTabClick]);
+  )), [activeTabId, tabs, handleTabClick, tabStylePrefix]);
 
   return (
-    <Container
+    <div
       id={id}
+      data-lens-element="tabs"
       data-testid={testingID}
-      className={clsx(CLASSES.FontReset, 'lens-ui-tabs', `lens-ui-tabs-style-${vertical ? 'vertical' : 'horizontal'}`, className)}
+      className={clsx(styles.tabs, styles[`${tabStylePrefix}`], className)}
     >
-      <div className="lens-ui-tabs-container">
+      <div className={styles[`${tabStylePrefix}__container`]}>
         {tabItems}
       </div>
       {typeof children === 'function' && (
-        <div className={clsx(CLASSES.FontReset, 'lens-ui-tabs-content')}>
+        <div className={styles[`${tabStylePrefix}__content`]}>
           {children(activeTabItem)}
         </div>
       )}
-    </Container>
+    </div>
   );
 };
 

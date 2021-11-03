@@ -4,7 +4,7 @@ import React, {
   useRef, useState, useCallback, useEffect,
   useMemo,
 } from 'react';
-import { Container } from './MessageBox.styles';
+import styles from './MessageBox.module.scss';
 import { IMessageBoxProps } from './MessageBox.types';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Icon from '../Icon/Icon';
@@ -33,7 +33,7 @@ const MessageBox: React.FC<IMessageBoxProps> = ({
 
   const updateProgressBar = useCallback((progress: number) => {
     if (!progressBar.current) return;
-    const element = progressBar.current.querySelector<HTMLDivElement>('.lens-ui-progress-bar-progress');
+    const element = progressBar.current.querySelector<HTMLDivElement>('[data-lens-element=\'progress-bar__indicator\']');
     if (element) {
       element.style.width = `${progress}%`;
     }
@@ -73,19 +73,34 @@ const MessageBox: React.FC<IMessageBoxProps> = ({
   if (renderDisabled && !show) return null;
 
   return (
-    <Container
+    <div
       id={id}
       data-testid={testingID}
-      className={clsx('lens-ui-message-box', className, { striped }, `intent-${intent}`, { hidden: !show })}
+      data-lens-element="message-box"
+      className={clsx(
+        styles.messageBox,
+        striped && styles.messageBoxStriped,
+        !show && styles.messageBoxHidden,
+        styles[`message-box--intent-${intent}`],
+        className,
+      )}
     >
-      {title && <div className="lens-ui-font-definition lens-ui-message-box-title">{title}</div>}
-      {closable && <button className="lens-ui-message-box-close-button" onClick={handleClose}><Icon name="BsXSquareFill" size="0.8rem" /></button>}
-      <div className="lens-ui-message-box-main">
-        {icon && <div className="lens-ui-message-box-icon">{icon}</div>}
-        <div className="lens-ui-font-definition lens-ui-message-box-content">{children}</div>
+      {title && <div data-lens-element="message-box__title" className={styles.messageBoxTitle}>{title}</div>}
+      {closable && (
+        <button
+          data-lens-element="message-box__close-button"
+          className={clsx(styles.messageBoxCloseButton, styles[`message-box--intent-${intent}__close-button`])}
+          onClick={handleClose}
+        >
+          <Icon name="BsXSquareFill" size="0.8rem" />
+        </button>
+      )}
+      <div>
+        {icon && <div data-lens-element="message-box__icon">{icon}</div>}
+        <div className={clsx(styles.messageBoxContent)}>{children}</div>
       </div>
       {timeout && <ProgressBar progress={0} ref={progressBar} />}
-    </Container>
+    </div>
   );
 };
 

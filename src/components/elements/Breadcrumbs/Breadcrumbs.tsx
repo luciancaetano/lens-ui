@@ -2,7 +2,6 @@
 import clsx from 'clsx';
 import React, { Fragment, useMemo } from 'react';
 import { IBreadcrumbsProps } from './Breadcrumbs.types';
-import { CLASSES } from '../../../css-classes';
 import styles from './Breadcrumbs.module.scss';
 
 const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
@@ -19,6 +18,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
             href={item.url}
             onClick={item.onClick}
             className={styles.breadcrumbsItem}
+            data-lens-element="breadcrumbs__link"
           >{item.title}
           </a><span className={styles.breadcrumbsSpacer}>/</span>
         </Fragment>
@@ -31,6 +31,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
           data-testid={item.testingID}
           onClick={item.onClick}
           className={clsx(styles.breadcrumbsItem, last && styles.breadcrumbsLast)}
+          data-lens-element="breadcrumbs__link--current"
         >{item.title}
         </span>{!last && <><span className={styles.breadcrumbsSpacer}>/</span></>}
       </Fragment>
@@ -40,8 +41,9 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
   return (
     <div
       id={id}
+      data-lens-element="breadcrumbs"
       data-testid={testingID}
-      className={clsx(styles.breadcrumbs, CLASSES.ComponentName('Breadcrumbs'), className)}
+      className={clsx(styles.breadcrumbs, className)}
     >
       {items}
     </div>

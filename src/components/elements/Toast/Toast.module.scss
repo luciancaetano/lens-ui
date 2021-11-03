@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+@import '../../../style-lib';
 
-export const ToastContainer = styled.div`
+.toast{
+  @include lens-ui-typography;
   pointer-events: all;
   min-width: 300px;
   border-radius: .1rem;
@@ -10,26 +11,31 @@ export const ToastContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
 
-  .lens-ui-progress-bar,
-  .lens-ui-progress-bar-progress {
+  &--mobile {
+    width: 100%;
+  }
+
+  [data-lens-element='progress-bar'],
+  [data-lens-element='progress-bar__indicator'] {
     border-radius: 0;
     height: .3rem;
   }
 
-  .lens-ui-toasts-toast-main {
+  &__main {
     display: flex;
     flex: 1;
     padding: .25rem .5rem;
   }
 
-  .lens-ui-toasts-toast-icon {
+  &__icon {
     display: flex;
     padding-right: .2rem;
     align-items: center;
     justify-content: center;
   }
 
-  .lens-ui-toasts-toast-content {
+  &__content {
+    @include lens-ui-typography;
     display: flex;
     padding: .2rem;
     flex: 1;
@@ -37,17 +43,13 @@ export const ToastContainer = styled.div`
     align-items: center;
   }
 
-  &.mobile {
-    width: 100%;
-  }
-
-  .toast-close-button-container {
+  &__button-container {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 
-    .toast-close-button {
+    &__button {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,134 +60,134 @@ export const ToastContainer = styled.div`
     }
   }
 
-  .toast-close-actions-container {
+  &__actions-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 1rem;
 
-    .lens-ui-button {
+    &__button {
       padding: .2rem .2rem;
     }
   }
 
-  &.intent-primary {
+  &--intent-primary {
     background-color: var(--lens-ui-intents-primary-dark);
     color: var(--lens-ui-intents-primary-dark-text);
     border: 1px solid var(--lens-ui-intents-primary-dark-border);
 
-    .toast-close-button {
+    [data-lens-element='toast-close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-primary-dark-text);
     }
 
-    .lens-ui-progress-bar {
+    [data-lens-element='progress-bar'] {
       background-color: var(--lens-ui-intents-primary-darken);
     }
 
-    .lens-ui-progress-bar-progress {
+    [data-lens-element='progress-bar__indicator'] {
       background-color: #fff;
     }
   }
 
-  &.intent-secondary {
+  &--intent-secondary {
     background-color: var(--lens-ui-intents-secondary-dark);
     color: var(--lens-ui-intents-secondary-dark-text);
     border: 1px solid var(--lens-ui-intents-secondary-dark-border);
 
-    .toast-close-button {
+    [data-lens-element='toast-close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-secondary-dark-text);
     }
 
-    .lens-ui-progress-bar {
+    [data-lens-element='progress-bar'] {
       background-color: var(--lens-ui-intents-secondary-darken);
     }
 
-    .lens-ui-progress-bar-progress {
+    [data-lens-element='progress-bar__indicator'] {
       background-color: #fff;
     }
   }
 
-  &.intent-success {
+  &--intent-success {
     background-color: var(--lens-ui-intents-success-dark);
     color: var(--lens-ui-intents-success-dark-text);
     border: 1px solid var(--lens-ui-intents-success-dark-border);
 
-    .toast-close-button {
+    [data-lens-element='toast-close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-success-dark-text);
     }
 
-    .lens-ui-progress-bar {
+    [data-lens-element='progress-bar'] {
       background-color: var(--lens-ui-intents-success-darken);
     }
 
-    .lens-ui-progress-bar-progress {
+    [data-lens-element='progress-bar__indicator'] {
       background-color: #fff;
     }
   }
 
-  &.intent-info {
+  &--intent-info {
     background-color: var(--lens-ui-intents-info-dark);
     color: var(--lens-ui-intents-info-dark-text);
     border: 1px solid var(--lens-ui-intents-info-dark-border);
 
-    .toast-close-button {
+    [data-lens-element='toast-close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-info-dark-text);
     }
 
-    .lens-ui-progress-bar {
+    [data-lens-element='progress-bar'] {
       background-color: var(--lens-ui-intents-info-darken);
     }
 
-    .lens-ui-progress-bar-progress {
+    [data-lens-element='progress-bar__indicator'] {
       background-color: #fff;
     }
   }
 
-  &.intent-warning {
+  &--intent-warning {
     background-color: var(--lens-ui-intents-warning-dark);
     color: var(--lens-ui-intents-warning-dark-text);
     border: 1px solid var(--lens-ui-intents-warning-dark-border);
 
-    .toast-close-button {
+    [data-lens-element='toast-close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-warning-dark-text);
     }
 
-    .lens-ui-progress-bar {
+    [data-lens-element='progress-bar'] {
       background-color: var(--lens-ui-intents-warning-darken);
     }
 
-    .lens-ui-progress-bar-progress {
+    [data-lens-element='progress-bar__indicator'] {
       background-color: #fff;
     }
   }
 
-  &.intent-danger {
+  &--intent-danger {
     background-color: var(--lens-ui-intents-danger-dark);
     color: var(--lens-ui-intents-danger-dark-text);
     border: 1px solid var(--lens-ui-intents-danger-dark-border);
 
-    .toast-close-button {
+    [data-lens-element='toast-close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-danger-dark-text);
     }
 
-    .lens-ui-progress-bar {
+    [data-lens-element='progress-bar'] {
       background-color: var(--lens-ui-intents-danger-darken);
     }
 
-    .lens-ui-progress-bar-progress {
+    [data-lens-element='progress-bar__indicator'] {
       background-color: #fff;
     }
   }
-`;
+}

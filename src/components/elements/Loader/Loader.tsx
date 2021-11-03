@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './Loader.module.scss';
 import { ILoaderProps } from './Loader.types';
-import { CLASSES } from '../../../css-classes';
 
 const Loader: React.FC<ILoaderProps> = ({
   className, testingID, id, children, type = 'eclipse', intent = 'primary', size = 5,
@@ -10,7 +9,9 @@ const Loader: React.FC<ILoaderProps> = ({
   <div
     id={id}
     data-testid={testingID}
-    className={clsx(styles.loader, CLASSES.ComponentName('Loader'), className)}
+    data-lens-element="loader"
+    data-lens-intent={intent}
+    className={clsx(styles.loader, className)}
     style={{ width: `${size}rem`, height: `${size}rem` }}
   >
     <div className={styles.loaderContent}>

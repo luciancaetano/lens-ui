@@ -1,4 +1,8 @@
+@import '../../../style-lib';
+
 .divider {
+  @include lens-ui-typography;
+
   color: var(--lens-ui-elements-divider-text-color);
   display: flex;
   flex-direction: row;

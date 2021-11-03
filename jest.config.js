@@ -28,8 +28,6 @@ module.exports = {
     'jestGlobalMocks.ts',
     '.module.ts',
     '<rootDir>/index.ts',
-    '.styles.ts',
-    '.styles.tsx',
     '.types.tsx',
   ],
 };

@@ -3,12 +3,12 @@
   flex-direction: row;
 
   &--horizontal {
-    button:not(:last-child) {
+    [data-lens-element='button']:not(:last-child) {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
 
-    button:not(:first-child) {
+    [data-lens-element='button']:not(:first-child) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
@@ -18,12 +18,12 @@
     display: flex;
     flex-direction: column;
 
-    button:not(:last-child) {
+    [data-lens-element='button']:not(:last-child) {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
 
-    button:not(:first-child) {
+    [data-lens-element='button']:not(:first-child) {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
