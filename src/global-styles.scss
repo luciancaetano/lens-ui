@@ -1,15 +1,7 @@
 @import './style-lib';
 
 body {
-  font-family: var(--lens-ui-typography-font-family);
-  font-size: .875rem;
-  font-style: normal;
-  letter-spacing: 0;
-  text-align: left;
-  text-decoration: none;
-  text-indent: 0;
-  text-shadow: none;
-  text-transform: none;
+  @include lens-ui-typography-base;
 }
 
 .swal2-styled.swal2-confirm {
@@ -30,6 +22,36 @@ body {
 
 .lens-ui-typography {
   @include lens-ui-typography;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include lens-ui-typography-base;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 @keyframes lens-ui-fade-in {

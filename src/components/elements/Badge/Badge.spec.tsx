@@ -14,13 +14,13 @@ describe('<Badge/>', () => {
 
   it('should render correct badge intents', () => {
     const testingId = 'my-testing-id';
-    const { getByTestId, rerender } = render(<Badge testingID={testingId} intent={null}>1</Badge>);
+    const { getByTestId, rerender, container } = render(<Badge testingID={testingId}>1</Badge>);
 
-    expect(getByTestId(testingId).classList.contains('intent-secondary')).toBe(true);
+    expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe('primary');
 
     Object.keys(IntentEnum).forEach((intent) => {
       rerender(<Badge testingID={testingId} intent={intent as any}>1</Badge>);
-      expect(getByTestId(testingId).classList.contains(`intent-${intent}`)).toBe(true);
+      expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe(intent);
     });
   });
 });

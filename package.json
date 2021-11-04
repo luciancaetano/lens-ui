@@ -1,6 +1,6 @@
 {
   "name": "lens-ui",
-  "version": "1.0.0",
+  "version": "4.0.1",
   "main": "build/main.min.js",
   "files": [
     "build"
@@ -12,8 +12,6 @@
     "test": "jest --coverage --silent",
     "check:licenses": "license-checker --production --csv --out build/licenses.csv",
     "test:dev": "jest --watchAll --coverage",
-    "storybook": "start-storybook -p 3210",
-    "storybook:export": "npm run build && build-storybook",
     "lint": "npm run lint:code && npm run lint:styles",
     "types": "tsc src/index.ts --declaration --allowJs --emitDeclarationOnly --outDir build/types --esModuleInterop --jsx react --skipLibCheck",
     "lint:code": "eslint ./src --ext .tsx --ext .ts --max-warnings=0 && eslint ./stories --ext .tsx --ext .ts --max-warnings=0",
@@ -55,12 +53,6 @@
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@namics/stylelint-bem": "^7.0.0",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/addon-viewport": "^6.3.12",
-    "@storybook/builder-webpack5": "^6.3.12",
-    "@storybook/manager-webpack5": "^6.3.12",
-    "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.3.12",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
@@ -108,7 +100,6 @@
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "standard-version": "^9.3.2",
-    "storybook-mobile": "^0.1.32",
     "style-loader": "^3.3.1",
     "stylelint": "^14.0.1",
     "stylelint-config-airbnb": "^0.0.0",
@@ -157,6 +148,7 @@
     "react-popper": "^2.2.5",
     "react-select": "^5.1.0",
     "react-tooltip": "^4.2.21",
+    "reset-css": "^5.0.1",
     "sweetalert2": "^11.1.9",
     "use-debounce": "^7.0.0"
   }

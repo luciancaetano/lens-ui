@@ -4,4 +4,5 @@ import {
 
 export interface IBadgeProps extends IPropsWithClassName, ITestableProps, IPropsWithId {
   intent?: IntentType;
+  type?: 'solid' | 'subtle' | 'outlined';
 }

@@ -32,14 +32,14 @@ describe('<FormGroup/>', () => {
       <>
         <FormGroup testingID="testing-target" helperTextIntent={helperTextIntent} helperText="helper text" />
       </>,
-    ).container.querySelector('.lens-ui-form-group__helper-text').classList.contains(`intent-${helperTextIntent}`);
+    ).container.querySelector(`[data-lens-form-group-helpertext-intent="${helperTextIntent}"]`);
 
-    expect(testRender('danger')).toBe(true);
-    expect(testRender('info')).toBe(true);
-    expect(testRender('primary')).toBe(true);
-    expect(testRender('secondary')).toBe(true);
-    expect(testRender('success')).toBe(true);
-    expect(testRender('warning')).toBe(true);
+    expect(testRender('danger')).toBeInTheDocument();
+    expect(testRender('info')).toBeInTheDocument();
+    expect(testRender('primary')).toBeInTheDocument();
+    expect(testRender('secondary')).toBeInTheDocument();
+    expect(testRender('success')).toBeInTheDocument();
+    expect(testRender('warning')).toBeInTheDocument();
   });
 
   it('test required attibute', () => {
@@ -49,7 +49,7 @@ describe('<FormGroup/>', () => {
       </>,
     );
 
-    expect(container.querySelector('.lens-ui-form-group__required-helper')).toBeInTheDocument();
-    expect(container.querySelector('.lens-ui-form-group__required-helper').innerHTML).toBe('&nbsp;*');
+    expect(container.querySelector('[data-lens-element="form-group__required_helper"]')).toBeInTheDocument();
+    expect(container.querySelector('[data-lens-element="form-group__required_helper"]').innerHTML).toBe('&nbsp;*');
   });
 });

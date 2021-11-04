@@ -17,7 +17,7 @@ const Modal: React.FC<IModalProps> = ({
     e.preventDefault();
     e.stopPropagation();
 
-    if (onBackdropClick && (e.target as HTMLDivElement).classList.contains('lens-ui-modal-backdrop')) {
+    if (onBackdropClick && (e.target as HTMLDivElement).getAttribute('data-lens-element') === 'modal__backdrop') {
       onBackdropClick('backdrop');
     }
   }, [onBackdropClick]);
@@ -50,6 +50,7 @@ const Modal: React.FC<IModalProps> = ({
       onClick={handleBackdropClick}
       className={styles.backdrop}
       data-lens-element="modal__backdrop"
+      data-lens-modal-size={isPhone ? 'fullscreen' : size}
       ref={backDropRef}
       aria-modal="true"
     >

@@ -39,6 +39,7 @@ const List: React.FC<IListProps> = ({
       id={id}
       data-testid={testingID}
       data-lens-element="list"
+      data-lens-intent={intent}
       className={clsx(styles.list, className)}
       data-role="list"
     >

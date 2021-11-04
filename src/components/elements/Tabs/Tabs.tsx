@@ -42,6 +42,7 @@ const Tabs:React.FC<ITabsProps> = ({
       onClick={handleTabClick(tab.id, tab.onClick)}
       key={tab.id}
       data-bs-toggle="tab"
+      data-lens-element="tabs__tab"
     >
       {tab.title}
     </div>
@@ -51,6 +52,7 @@ const Tabs:React.FC<ITabsProps> = ({
     <div
       id={id}
       data-lens-element="tabs"
+      data-lens-tabs-orientation={tabStylePrefix}
       data-testid={testingID}
       className={clsx(styles.tabs, styles[`${tabStylePrefix}`], className)}
     >

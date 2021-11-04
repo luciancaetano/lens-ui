@@ -2,14 +2,20 @@
 
 exports[`<FormFooter/> should render children positions 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/save
@@ -19,7 +25,8 @@ exports[`<FormFooter/> should render children positions 1`] = `
 
 exports[`<FormFooter/> should render children positions 2`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
@@ -28,7 +35,12 @@ exports[`<FormFooter/> should render children positions 2`] = `
     My-Children-Component
   </div>
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/save
@@ -38,14 +50,20 @@ exports[`<FormFooter/> should render children positions 2`] = `
 
 exports[`<FormFooter/> should render children positions 3`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/save
@@ -56,7 +74,8 @@ exports[`<FormFooter/> should render children positions 3`] = `
 
 exports[`<FormFooter/> should render children positions 4`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
@@ -64,7 +83,12 @@ exports[`<FormFooter/> should render children positions 4`] = `
   />
   My-Children-Component
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/save
@@ -74,7 +98,8 @@ exports[`<FormFooter/> should render children positions 4`] = `
 
 exports[`<FormFooter/> should render children positions 5`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
@@ -83,7 +108,12 @@ exports[`<FormFooter/> should render children positions 5`] = `
     My-Children-Component
   </div>
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/save
@@ -93,7 +123,8 @@ exports[`<FormFooter/> should render children positions 5`] = `
 
 exports[`<FormFooter/> should render children positions 6`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
@@ -101,7 +132,12 @@ exports[`<FormFooter/> should render children positions 6`] = `
   />
   My-Children-Component
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/save
@@ -111,14 +147,20 @@ exports[`<FormFooter/> should render children positions 6`] = `
 
 exports[`<FormFooter/> should validate "cancelIsReset" option 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     disabled=""
     type="submit"
   >
@@ -129,14 +171,20 @@ exports[`<FormFooter/> should validate "cancelIsReset" option 1`] = `
 
 exports[`<FormFooter/> should validate "canceling" state 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     disabled=""
     type="submit"
   >
@@ -147,14 +195,20 @@ exports[`<FormFooter/> should validate "canceling" state 1`] = `
 
 exports[`<FormFooter/> should validate "deleting" state 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     disabled=""
     type="submit"
   >
@@ -165,14 +219,20 @@ exports[`<FormFooter/> should validate "deleting" state 1`] = `
 
 exports[`<FormFooter/> should validate "ready" state 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/save
@@ -182,14 +242,20 @@ exports[`<FormFooter/> should validate "ready" state 1`] = `
 
 exports[`<FormFooter/> should validate "ready" state when isUpdate 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     type="submit"
   >
     FormFooter/update
@@ -199,14 +265,20 @@ exports[`<FormFooter/> should validate "ready" state when isUpdate 1`] = `
 
 exports[`<FormFooter/> should validate "saving" state 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     disabled=""
     type="submit"
   >
@@ -217,14 +289,20 @@ exports[`<FormFooter/> should validate "saving" state 1`] = `
 
 exports[`<FormFooter/> should validate "saving" state when cancelIsReset is false 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     disabled=""
     type="submit"
   >
@@ -235,14 +313,20 @@ exports[`<FormFooter/> should validate "saving" state when cancelIsReset is fals
 
 exports[`<FormFooter/> should validate "saving" state when cancelIsReset is true 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     disabled=""
     type="submit"
   >
@@ -253,14 +337,20 @@ exports[`<FormFooter/> should validate "saving" state when cancelIsReset is true
 
 exports[`<FormFooter/> should validate "saving" state when isUpdate 1`] = `
 <div
-  class="formFooter lensUi__FormFooter"
+  class="formFooter"
+  data-lens-element="form-footer"
   data-testid="testing-target"
 >
   <div
     class="formFooterDeleteContainer"
   />
   <button
-    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default lensUi__Button formFooterButton"
+    class="button button--intent-success button--size-normal button--appearance-default button--intent-success--appearance-default formFooterButton"
+    data-lens-appearance="default"
+    data-lens-button-size="normal"
+    data-lens-element="button"
+    data-lens-element-button-parent="form-footer__save"
+    data-lens-intent="success"
     disabled=""
     type="submit"
   >

@@ -120,7 +120,7 @@ describe('<Tabs/>', () => {
       </LensProvider>,
     );
 
-    expect(getByTestId('testingID')).toHaveClass('lens-ui-tabs-style-vertical');
+    expect(document.querySelector('[data-lens-tabs-orientation="tabs--vertical"]')).toBeInTheDocument();
 
     rerender(
       <LensProvider>
@@ -130,6 +130,6 @@ describe('<Tabs/>', () => {
       </LensProvider>,
     );
 
-    expect(getByTestId('testingID')).toHaveClass('lens-ui-tabs-style-horizontal');
+    expect(document.querySelector('[data-lens-tabs-orientation="tabs--horizontal"]')).toBeInTheDocument();
   });
 });

@@ -52,6 +52,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, IProgressBarProps>(({
     >
       <div
         data-lens-element="progress-bar__indicator"
+        data-lens-intent={intent}
         role="progressbar"
         className={clsx(
           styles[`progress-bar__indicator-intent-${intent}`],

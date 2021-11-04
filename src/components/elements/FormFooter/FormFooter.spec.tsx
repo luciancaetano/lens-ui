@@ -150,7 +150,7 @@ describe('<FormFooter/>', () => {
     const onCancel = jest.fn();
     const onDelete = jest.fn();
 
-    const { container } = render(
+    const { container, getByText } = render(
       <>
         <FormFooter
           state="ready"
@@ -162,9 +162,9 @@ describe('<FormFooter/>', () => {
       </>,
     );
 
-    fireEvent.click(container.querySelector('button.lens-ui-form-footer-button__save'));
-    fireEvent.click(container.querySelector('button.lens-ui-form-footer-button__cancel'));
-    fireEvent.click(container.querySelector('button.lens-ui-form-footer-button__delete'));
+    fireEvent.click(container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));
+    fireEvent.click(container.querySelector('[data-lens-element-button-parent="form-footer__cancel"]'));
+    fireEvent.click(container.querySelector('[data-lens-element-button-parent="form-footer__delete"]'));
 
     expect(onSave).toHaveBeenCalledTimes(1);
     expect(onCancel).toHaveBeenCalledTimes(1);
@@ -188,9 +188,9 @@ describe('<FormFooter/>', () => {
       </>,
     );
 
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__save'));
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__cancel'));
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__delete'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__cancel"]'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__delete"]'));
 
     expect(onSave).toHaveBeenCalledTimes(0);
     expect(onCancel).toHaveBeenCalledTimes(0);
@@ -214,9 +214,9 @@ describe('<FormFooter/>', () => {
       </>,
     );
 
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__save'));
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__cancel'));
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__delete'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__cancel"]'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__delete"]'));
 
     expect(onSave).toHaveBeenCalledTimes(0);
     expect(onCancel).toHaveBeenCalledTimes(0);
@@ -240,9 +240,9 @@ describe('<FormFooter/>', () => {
       </>,
     );
 
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__save'));
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__cancel'));
-    fireEvent.click(result.container.querySelector('button.lens-ui-form-footer-button__delete'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__cancel"]'));
+    fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__delete"]'));
 
     expect(onSave).toHaveBeenCalledTimes(0);
     expect(onCancel).toHaveBeenCalledTimes(0);

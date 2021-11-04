@@ -1,3 +1,4 @@
+import 'reset-css';
 import '../node_modules/@fontsource/inter/index.css';
 import '../node_modules/@fontsource/inter/100.css';
 import '../node_modules/@fontsource/inter/300.css';

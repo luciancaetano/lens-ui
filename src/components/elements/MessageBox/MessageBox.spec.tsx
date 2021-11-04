@@ -51,16 +51,16 @@ describe('<MessageBox/>', () => {
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByText(title)).toBeInTheDocument();
     expect(childrenEl).toBeInTheDocument();
-    expect(container.querySelector('.lens-ui-message-box-close-button')).toBeInTheDocument();
+    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).toBeInTheDocument();
 
-    fireEvent.click(container.querySelector('.lens-ui-message-box-close-button'));
+    fireEvent.click(container.querySelector('[data-lens-element="message-box__close-button"]'));
 
     jest.advanceTimersByTime(10000);
 
     await sleep(1000);
 
     expect(childrenEl).not.toBeInTheDocument();
-    expect(container.querySelector('.lens-ui-message-box-close-button')).not.toBeInTheDocument();
+    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).not.toBeInTheDocument();
   });
 
   it('should test automatic closing', async () => {
@@ -82,7 +82,7 @@ describe('<MessageBox/>', () => {
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByText(title)).toBeInTheDocument();
     expect(childrenEl).toBeInTheDocument();
-    expect(container.querySelector('.lens-ui-message-box-close-button')).toBeInTheDocument();
+    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).toBeInTheDocument();
 
     jest.advanceTimersByTime(10000);
 
@@ -90,6 +90,6 @@ describe('<MessageBox/>', () => {
 
     expect(onClose).toBeCalled();
     expect(childrenEl).not.toBeInTheDocument();
-    expect(container.querySelector('.lens-ui-message-box-close-button')).not.toBeInTheDocument();
+    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).not.toBeInTheDocument();
   });
 });

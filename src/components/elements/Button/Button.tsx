@@ -15,8 +15,10 @@ const Button: React.FC<IButtonProps> = ({
   id,
   tabIndex,
   onBlur, onClick, onDoubleClick, onFocus, className, style,
+  parentId
 }) => (
   <button
+    data-lens-element-button-parent={typeof parentId === 'string' ? parentId : undefined}
     type={type}
     onClick={onClick}
     onBlur={onBlur}
@@ -27,6 +29,8 @@ const Button: React.FC<IButtonProps> = ({
     tabIndex={tabIndex}
     data-lens-element="button"
     data-lens-intent={intent}
+    data-lens-appearance={appearance}
+    data-lens-button-size={size}
     className={clsx(
       styles.button,
       styles[`button--intent-${intent}`],

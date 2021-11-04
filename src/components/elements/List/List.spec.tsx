@@ -21,13 +21,13 @@ describe('<List/>', () => {
         content: 'Heading item',
       },
     ];
-    const { getByText } = render(<List items={items} />);
+    const { getByText, container } = render(<List items={items} />);
 
     items.forEach((item) => {
       expect(getByText(item.content as any)).toBeInTheDocument();
     });
 
-    expect(getByText(items[2].content as string).classList.contains('lens-ui-list-heading')).toBe(true);
+    expect(container.querySelector('[data-lens-element="list__item--heading"]')).toBeInTheDocument();
     expect(getByText(items[1].content as string).classList.contains(items[1].className)).toBe(true);
   });
 
@@ -41,7 +41,7 @@ describe('<List/>', () => {
 
     Object.keys(IntentEnum).forEach((intent, index) => {
       rerender(<List items={items} intent={intent as any} testingID="testingID" key={index} />);
-      expect(getByTestId('testingID').classList.contains(`intent-${intent}`));
+      expect(getByTestId('testingID').getAttribute('data-lens-intent')).toBe(intent);
     });
   });
 

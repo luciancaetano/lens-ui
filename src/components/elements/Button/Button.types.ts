@@ -31,4 +31,5 @@ export interface IButtonProps extends IPropsWithClassName, ITestableProps, IProp
   appearance?: ButtonAppearanceType;
   style?: React.CSSProperties;
   tabIndex?: number;
+  parentId?: string;
 }

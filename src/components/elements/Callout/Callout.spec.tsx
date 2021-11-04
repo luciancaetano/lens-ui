@@ -37,17 +37,15 @@ describe('<Callout/>', () => {
   it('should render all intents', () => {
     const { getByTestId, rerender } = render(<Callout testingID={testingId} icon={<div>{icon}</div>} />);
 
-    Object.keys(IntentEnum).forEach((intent) => {
+    [...Object.keys(IntentEnum), 'default'].forEach((intent) => {
       rerender(<Callout testingID={testingId} intent={intent as any} icon={<div>{icon}</div>} />);
-      expect(getByTestId(testingId).classList.contains(`intent-${intent}`)).toBe(true);
+      expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe(intent);
     });
   });
 
-  it('should not have an intent', () => {
+  it('should not have an intent prop', () => {
     const { getByTestId } = render(<Callout testingID={testingId} icon={<div>{icon}</div>} intent={undefined} />);
 
-    Object.keys(IntentEnum).forEach((intent) => {
-      expect(getByTestId(testingId).classList.contains(`intent-${intent}`)).toBe(false);
-    });
+    expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe(null);
   });
 });

@@ -4,7 +4,7 @@ import { IBadgeProps } from './Badge.types';
 import styles from './Badge.module.scss';
 
 const Badge:React.FC<IBadgeProps> = ({
-  className, testingID, id, children, intent = 'primary',
+  className, testingID, id, children, intent = 'primary', type = 'solid',
 }) => (
   <div
     id={id}
@@ -13,7 +13,7 @@ const Badge:React.FC<IBadgeProps> = ({
     data-lens-element="badge"
     className={clsx(
       styles.badge,
-      styles[`badge--intent-${intent}`],
+      styles[`badge--${type}-${intent}`],
       className,
     )}
   >

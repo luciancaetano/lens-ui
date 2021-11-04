@@ -17,7 +17,7 @@ describe('<ModalHeader/>', () => {
 
     render(<LensProvider><ModalHeader onClose={onClose} /></LensProvider>);
 
-    fireEvent.click(window.document.querySelector('.close-button-holder'));
+    fireEvent.click(window.document.querySelector('[data-lens-element="modal__header__close-button"]'));
 
     expect(onClose).toBeCalled();
   });

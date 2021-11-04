@@ -68,7 +68,7 @@ describe('<Toast/>', () => {
     );
     jest.advanceTimersByTime(1000);
 
-    fireEvent.click(window.document.querySelector('.toast-close-button-container'));
+    fireEvent.click(window.document.querySelector('[data-lens-element="toast-close-button"]'));
 
     expect(removeToast).toHaveBeenCalled();
   });

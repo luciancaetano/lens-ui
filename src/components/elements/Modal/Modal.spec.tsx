@@ -46,7 +46,7 @@ describe('<Modal/>', () => {
       </LensProvider>,
     );
 
-    const backdrop = container.querySelector('.lens-ui-modal-backdrop');
+    const backdrop = container.querySelector('[data-lens-element="modal__backdrop"]');
 
     expect(backdrop).toBeInTheDocument();
     fireEvent.click(backdrop);
@@ -94,7 +94,7 @@ describe('<Modal/>', () => {
       </LensProvider>,
     );
 
-    expect(window.document.querySelector('.lens-ui-modal.size-fullscreen')).toBeInTheDocument();
+    expect(window.document.querySelector(`[data-lens-modal-size="${ModalSizeEnum.fullscreen}"]`)).toBeInTheDocument();
   });
 
   it('render sizes', async () => {
@@ -119,16 +119,12 @@ describe('<Modal/>', () => {
 
     const { rerender } = render(runTest(ModalSizeEnum.normal));
 
-    expect(window.document.querySelector(`.lens-ui-modal.size-${ModalSizeEnum.normal}`)).toBeInTheDocument();
+    expect(window.document.querySelector(`[data-lens-modal-size="${ModalSizeEnum.normal}"]`)).toBeInTheDocument();
 
     rerender(runTest(ModalSizeEnum.medium));
-    expect(window.document.querySelector(`.lens-ui-modal.size-${ModalSizeEnum.medium}`)).toBeInTheDocument();
+    expect(window.document.querySelector(`[data-lens-modal-size="${ModalSizeEnum.medium}"]`)).toBeInTheDocument();
 
     rerender(runTest(ModalSizeEnum.fullscreen));
-    expect(window.document.querySelector(`.lens-ui-modal.size-${ModalSizeEnum.fullscreen}`)).toBeInTheDocument();
+    expect(window.document.querySelector(`[data-lens-modal-size="${ModalSizeEnum.fullscreen}"]`)).toBeInTheDocument();
   });
-
-//   it('should test component rederization', async () => {
-//     const {} = render(<LensProvider><Modal></Modal></LensProvider>);
-//   });
 });

@@ -60,37 +60,37 @@ describe('<Card/>', () => {
     expect(result.getByTestId(imgTextingId).getAttribute('src')).toBe(mockedCardImg);
   });
 
-  it('should test card element backgrounds', () => {
+  it('should test card element intents', () => {
     const result = render(
       (
         <LensProvider>
-          <Card.Card background="primary" testingID="primary">
+          <Card.Card intent="primary" testingID="primary">
             content here
           </Card.Card>
-          <Card.Card background="secondary" testingID="secondary">
+          <Card.Card intent="secondary" testingID="secondary">
             content here
           </Card.Card>
-          <Card.Card background="success" testingID="success">
+          <Card.Card intent="success" testingID="success">
             content here
           </Card.Card>
-          <Card.Card background="info" testingID="info">
+          <Card.Card intent="info" testingID="info">
             content here
           </Card.Card>
-          <Card.Card background="warning" testingID="warning">
+          <Card.Card intent="warning" testingID="warning">
             content here
           </Card.Card>
-          <Card.Card background="danger" testingID="danger">
+          <Card.Card intent="danger" testingID="danger">
             content here
           </Card.Card>
         </LensProvider>
       ),
     );
 
-    expect(result.getByTestId('primary').classList.contains('bg-primary')).toBe(true);
-    expect(result.getByTestId('secondary').classList.contains('bg-secondary')).toBe(true);
-    expect(result.getByTestId('success').classList.contains('bg-success')).toBe(true);
-    expect(result.getByTestId('info').classList.contains('bg-info')).toBe(true);
-    expect(result.getByTestId('warning').classList.contains('bg-warning')).toBe(true);
-    expect(result.getByTestId('danger').classList.contains('bg-danger')).toBe(true);
+    expect(result.container.querySelector(`[data-lens-intent='primary']`)).toBeInTheDocument();
+    expect(result.container.querySelector(`[data-lens-intent='secondary']`)).toBeInTheDocument();
+    expect(result.container.querySelector(`[data-lens-intent='success']`)).toBeInTheDocument();
+    expect(result.container.querySelector(`[data-lens-intent='info']`)).toBeInTheDocument();
+    expect(result.container.querySelector(`[data-lens-intent='warning']`)).toBeInTheDocument();
+    expect(result.container.querySelector(`[data-lens-intent='danger']`)).toBeInTheDocument();
   });
 });

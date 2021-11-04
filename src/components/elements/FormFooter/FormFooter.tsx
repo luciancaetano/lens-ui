@@ -71,8 +71,9 @@ const FormFooter:React.FC<IFormFooterProps> = ({
             appearance={deleteAppearance}
             disabled={deleteDisabled || isLoading}
             onClick={handleDelete}
-            data-lens-element="form-footer__delete"
-          >{deleteButtonLabel}
+            parentId="form-footer__delete"
+          >
+            {deleteButtonLabel}
           </Button>
         )}
         {childrenPos === 'afterDelete' && children}
@@ -86,8 +87,9 @@ const FormFooter:React.FC<IFormFooterProps> = ({
           appearance={cancelAppearance}
           disabled={cancelDisabled || isLoading}
           onClick={handleCancel}
-          data-lens-element="form-footer__cancel"
-        >{cancelButtonLabel}
+          parentId="form-footer__cancel"
+        >
+          {cancelButtonLabel}
         </Button>
       )}
       {childrenPos === 'betweenSaveAndCancel' && children}
@@ -99,8 +101,9 @@ const FormFooter:React.FC<IFormFooterProps> = ({
           appearance={saveAppearance}
           disabled={saveDisabled || isLoading}
           onClick={handleSave}
-          data-lens-element="form-footer__save"
-        >{saveButtonLabel}
+          parentId="form-footer__save"
+        >
+          {saveButtonLabel}
         </Button>
       )}
       {childrenPos === 'afterSave' && children}

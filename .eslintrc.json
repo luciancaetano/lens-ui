@@ -131,7 +131,9 @@
       {
         "extensions": [
           ".ts",
-          ".tsx"
+          ".tsx",
+          ".spec.tsx",
+          ".spec.ts"
         ]
       }
     ],

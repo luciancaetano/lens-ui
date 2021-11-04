@@ -22,7 +22,7 @@ const FormGroup: React.FC<IFormGroupProps> = ({
       data-lens-element="form-group__label"
     >
       {label}
-      {required && (<span className={styles.formGroupRequiredHelper}>&nbsp;*</span>)}
+      {required && (<span data-lens-element="form-group__required_helper" className={styles.formGroupRequiredHelper}>&nbsp;*</span>)}
     </label>
     <div
       className={clsx(styles.content, { inline }, contentClassName)}
@@ -33,6 +33,7 @@ const FormGroup: React.FC<IFormGroupProps> = ({
         <div
           className={clsx(styles.formGroupHelperText, styles[`form-group__helper-text--intent-${helperTextIntent}`])}
           data-lens-element="form-group__helper-text"
+          data-lens-form-group-helpertext-intent={helperTextIntent}
         >
           {helperText}
         </div>

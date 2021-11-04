@@ -2,7 +2,9 @@
 
 exports[`<Loader/> should render correct Loader intents: danger 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="danger"
   data-testid="my-testing-id"
   style="width: 20rem; height: 20rem;"
 >
@@ -39,7 +41,9 @@ exports[`<Loader/> should render correct Loader intents: danger 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: info 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="info"
   data-testid="my-testing-id"
   style="width: 20rem; height: 20rem;"
 >
@@ -76,7 +80,9 @@ exports[`<Loader/> should render correct Loader intents: info 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: primary 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="primary"
   data-testid="my-testing-id"
   style="width: 20rem; height: 20rem;"
 >
@@ -113,7 +119,9 @@ exports[`<Loader/> should render correct Loader intents: primary 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: secondary 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="secondary"
   data-testid="my-testing-id"
   style="width: 20rem; height: 20rem;"
 >
@@ -150,7 +158,9 @@ exports[`<Loader/> should render correct Loader intents: secondary 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: success 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="success"
   data-testid="my-testing-id"
   style="width: 20rem; height: 20rem;"
 >
@@ -187,7 +197,9 @@ exports[`<Loader/> should render correct Loader intents: success 1`] = `
 
 exports[`<Loader/> should render correct Loader intents: warning 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="warning"
   data-testid="my-testing-id"
   style="width: 20rem; height: 20rem;"
 >
@@ -224,7 +236,9 @@ exports[`<Loader/> should render correct Loader intents: warning 1`] = `
 
 exports[`<Loader/> should render correct Loader types: eclipse 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="primary"
   data-testid="my-testing-id"
   style="width: 5rem; height: 5rem;"
 >
@@ -261,7 +275,9 @@ exports[`<Loader/> should render correct Loader types: eclipse 1`] = `
 
 exports[`<Loader/> should render correct Loader types: oval 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="primary"
   data-testid="my-testing-id"
   style="width: 5rem; height: 5rem;"
 >
@@ -308,7 +324,9 @@ exports[`<Loader/> should render correct Loader types: oval 1`] = `
 
 exports[`<Loader/> should render correct Loader types: spinner 1`] = `
 <div
-  class="loader lensUi__Loader"
+  class="loader"
+  data-lens-element="loader"
+  data-lens-intent="primary"
   data-testid="my-testing-id"
   style="width: 5rem; height: 5rem;"
 >

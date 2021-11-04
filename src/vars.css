@@ -272,7 +272,7 @@
   --lens-ui-intents-secondary-dark-text: hsl(var(--lens-ui-hue-secondary-text), 29%, 95%);
   --lens-ui-intents-secondary-dark-border: hsl(var(--lens-ui-hue-secondary-dark), 10%, 44%);
   --lens-ui-intents-secondary-lighten: hsl(var(--lens-ui-hue-secondary-lighten), 26%, 74%);
-  --lens-ui-intents-secondary-lighten-text: hsl(0, 0%, 11%);
+  --lens-ui-intents-secondary-lighten-text: hsl(0, 0%, 35%);
   --lens-ui-intents-secondary-lighten-border: hsl(var(--lens-ui-hue-secondary-lighten), 26%, 74%);
   --lens-ui-intents-secondary-darken: hsl(var(--lens-ui-hue-secondary-darken), 10%, 30%);
   --lens-ui-intents-secondary-darken-text: hsl(var(--lens-ui-hue-secondary-text), 29%, 95%);

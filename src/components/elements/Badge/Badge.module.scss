@@ -16,10 +16,23 @@
   margin-right: .3rem;
 
   @each $intent in $intent-type {
-    &--intent-#{$intent} {
+    &--solid-#{$intent} {
       color: var(--lens-ui-intents-#{$intent}-text);
       border: .063rem solid var(--lens-ui-intents-#{$intent}-border);
       background-color: var(--lens-ui-intents-#{$intent});
     }
+
+    &--outlined-#{$intent} {
+      color: var(--lens-ui-intents-#{$intent}-border);
+      border: .063rem solid var(--lens-ui-intents-#{$intent}-border);
+      background-color: #fff;
+    }
+
+    &--subtle-#{$intent} {
+      color: var(--lens-ui-intents-#{$intent}-lighten-text);
+      border: .063rem solid var(--lens-ui-intents-#{$intent}-lighten-border);
+      background-color: var(--lens-ui-intents-#{$intent}-lighten);
+    }
+
   }
 }
