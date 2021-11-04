@@ -38,7 +38,6 @@ In this public version I bring some improvements as well as design simplificatio
 #Providers
 - LensProvider
 
-# TODO
-- Implement visual regression tests
-- Move to BEM css
-- Write documentation or Write documented storybook's
+# ROADMAP
+- Write a gread documentation
+- Write more tests
