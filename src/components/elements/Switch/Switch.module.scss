@@ -2,6 +2,7 @@
 
 .switch {
   @include lens-ui-typography;
+
   position: relative;
   text-align: left;
   display: block;
@@ -14,13 +15,13 @@
 
     width: 2em;
     height: 1em;
-    margin-top: .20em;
+    margin-top: .2em;
     vertical-align: top;
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: left center;
     background-size: contain;
-    border: .063rem solid rgba(0,0,0,.25);
+    border: .063rem solid rgb(0 0 0 / 25%);
     appearance: none;
     box-sizing: border-box;
     cursor: pointer;
@@ -51,6 +52,7 @@
 
   &__label {
     @include lens-ui-typography;
+
     user-select: none;
     cursor: pointer;
     margin-bottom: 0;
@@ -58,5 +60,4 @@
     box-sizing: border-box;
     color: var(--lens-ui-typography-faded-text-color);
   }
-
 }

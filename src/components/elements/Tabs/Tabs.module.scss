@@ -9,6 +9,7 @@
 
     &__content {
       @include lens-ui-typography;
+
       padding: .5rem .5rem .5rem 1rem;
     }
 
@@ -20,6 +21,7 @@
 
       &__tab-item {
         @include lens-ui-typography;
+
         display: block;
         padding: .5rem 1rem;
         margin-right: -1px;
@@ -48,13 +50,12 @@
         }
       }
     }
-
   }
 
   &--horizontal {
-
     &__content {
       @include lens-ui-typography;
+
       padding: 1rem .5rem;
     }
 
@@ -66,6 +67,7 @@
 
       &__tab-item {
         @include lens-ui-typography;
+
         display: block;
         padding: .5rem 1rem;
         margin-bottom: -1px;

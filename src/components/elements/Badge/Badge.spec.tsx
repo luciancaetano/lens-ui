@@ -14,7 +14,7 @@ describe('<Badge/>', () => {
 
   it('should render correct badge intents', () => {
     const testingId = 'my-testing-id';
-    const { getByTestId, rerender, container } = render(<Badge testingID={testingId}>1</Badge>);
+    const { getByTestId, rerender } = render(<Badge testingID={testingId}>1</Badge>);
 
     expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe('primary');
 

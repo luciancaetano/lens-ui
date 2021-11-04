@@ -13,6 +13,7 @@
 
   &__input {
     @include lens-ui-typography;
+
     display: block;
     width: 100%;
     padding: .47rem .75rem;
@@ -25,7 +26,7 @@
     border: 1px solid #ced4da;
     appearance: none;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     &--search {
       padding-right: 2.125rem;
@@ -34,7 +35,6 @@
     &:focus {
       outline: 0;
       border: var(--lens-ui-input-base-border--active);
-      outline: 0;
     }
 
     &--error {
@@ -44,6 +44,7 @@
 
   &__textarea {
     @include lens-ui-typography;
+
     display: block;
     width: 100%;
     padding: .47rem .75rem;
@@ -56,7 +57,7 @@
     border: 1px solid #ced4da;
     appearance: none;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     min-height: 100px;
     scrollbar-width: thin;
     scrollbar-color: var(--lens-ui-scrollbar-thumb) var(--lens-ui-scrollbar-track);
@@ -72,7 +73,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: var(--lens-ui-scrollbar-thumb) ;
+      background-color: var(--lens-ui-scrollbar-thumb);
       border-radius: 6px;
       border: 3px solid var(--lens-ui-scrollbar-track);
     }
@@ -80,7 +81,6 @@
     &:focus {
       outline: 0;
       border: var(--lens-ui-input-base-border--active);
-      outline: 0;
     }
 
     &--error {
@@ -94,6 +94,3 @@
     right: .75rem;
   }
 }
-
-
-

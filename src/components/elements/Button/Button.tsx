@@ -15,7 +15,7 @@ const Button: React.FC<IButtonProps> = ({
   id,
   tabIndex,
   onBlur, onClick, onDoubleClick, onFocus, className, style,
-  parentId
+  parentId,
 }) => (
   <button
     data-lens-element-button-parent={typeof parentId === 'string' ? parentId : undefined}

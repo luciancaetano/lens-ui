@@ -86,11 +86,11 @@ describe('<Card/>', () => {
       ),
     );
 
-    expect(result.container.querySelector(`[data-lens-intent='primary']`)).toBeInTheDocument();
-    expect(result.container.querySelector(`[data-lens-intent='secondary']`)).toBeInTheDocument();
-    expect(result.container.querySelector(`[data-lens-intent='success']`)).toBeInTheDocument();
-    expect(result.container.querySelector(`[data-lens-intent='info']`)).toBeInTheDocument();
-    expect(result.container.querySelector(`[data-lens-intent='warning']`)).toBeInTheDocument();
-    expect(result.container.querySelector(`[data-lens-intent='danger']`)).toBeInTheDocument();
+    expect(result.container.querySelector('[data-lens-intent=\'primary\']')).toBeInTheDocument();
+    expect(result.container.querySelector('[data-lens-intent=\'secondary\']')).toBeInTheDocument();
+    expect(result.container.querySelector('[data-lens-intent=\'success\']')).toBeInTheDocument();
+    expect(result.container.querySelector('[data-lens-intent=\'info\']')).toBeInTheDocument();
+    expect(result.container.querySelector('[data-lens-intent=\'warning\']')).toBeInTheDocument();
+    expect(result.container.querySelector('[data-lens-intent=\'danger\']')).toBeInTheDocument();
   });
 });

@@ -2,6 +2,7 @@
 
 .lens-ui-select-input {
   @include lens-ui-typography;
+
   position: relative;
   text-align: left;
   display: block;
@@ -14,7 +15,7 @@
   &* {
     z-index: 1;
   }
-
+  /* stylelint-disable */
   .lens-ui-select-input__control {
     border: var(--lens-ui-input-base-border);
   }
@@ -30,6 +31,7 @@
     border: 1px solid var(--lens-ui-intents-danger-border);
     box-shadow: none;
   }
+  /* stylelint-enable */
 
   &:active {
     filter: brightness(90%);

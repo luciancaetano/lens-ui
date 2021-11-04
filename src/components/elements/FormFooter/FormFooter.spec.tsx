@@ -150,7 +150,7 @@ describe('<FormFooter/>', () => {
     const onCancel = jest.fn();
     const onDelete = jest.fn();
 
-    const { container, getByText } = render(
+    const { container } = render(
       <>
         <FormFooter
           state="ready"

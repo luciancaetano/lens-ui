@@ -61,7 +61,7 @@ describe('<ProgressBar/>', () => {
 
     forEach(IntentEnum, (intent) => {
       rerender(renderTest(intent as any));
-      expect(container.querySelector(`[data-lens-element="progress-bar__indicator"]`).getAttribute('data-lens-intent')).toBe(intent);
+      expect(container.querySelector('[data-lens-element="progress-bar__indicator"]').getAttribute('data-lens-intent')).toBe(intent);
     });
   });
 

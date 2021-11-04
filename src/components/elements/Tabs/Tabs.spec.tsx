@@ -112,7 +112,7 @@ describe('<Tabs/>', () => {
   });
 
   it('test <Tabs/> vertical prop', async () => {
-    const { getByTestId, rerender } = render(
+    const { rerender } = render(
       <LensProvider>
         <Tabs tabs={tabs} vertical testingID="testingID">
           {tabsRenderer}
