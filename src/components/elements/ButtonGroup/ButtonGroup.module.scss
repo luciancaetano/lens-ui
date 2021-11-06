@@ -1,8 +1,9 @@
 .button-group {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
 
   &--horizontal {
+    flex-direction: row;
+
     [data-lens-element='button']:not(:last-child) {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -15,7 +16,6 @@
   }
 
   &--vertical {
-    display: flex;
     flex-direction: column;
 
     [data-lens-element='button']:not(:last-child) {

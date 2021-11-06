@@ -21,10 +21,6 @@ export type ButtonSizeType = keyof typeof ButtonSizeEnum;
 export interface IButtonProps extends IPropsWithClassName, ITestableProps, IPropsWithId{
   type?: 'submit' | 'reset' | 'button';
   intent?: AdvancedIntentType;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  onBlur?: React.FocusEventHandler<HTMLButtonElement>;
-  onDoubleClick?: React.MouseEventHandler<HTMLButtonElement>;
-  onFocus?: React.FocusEventHandler<HTMLButtonElement>;
   disabled?: boolean;
   active?: boolean;
   size?: ButtonSizeType;
@@ -32,4 +28,8 @@ export interface IButtonProps extends IPropsWithClassName, ITestableProps, IProp
   style?: React.CSSProperties;
   tabIndex?: number;
   parentId?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onBlur?: React.FocusEventHandler<HTMLButtonElement>;
+  onDoubleClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onFocus?: React.FocusEventHandler<HTMLButtonElement>;
 }

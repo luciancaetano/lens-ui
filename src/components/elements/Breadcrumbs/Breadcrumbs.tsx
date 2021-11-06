@@ -1,12 +1,18 @@
 /* eslint-disable react/no-array-index-key */
 import clsx from 'clsx';
-import React, { Fragment, useMemo } from 'react';
-import { IBreadcrumbsProps } from './Breadcrumbs.types';
+import React, { Fragment, useCallback, useMemo } from 'react';
+import { IBreadcrumbsProps, IBreadcrumbLink } from './Breadcrumbs.types';
 import styles from './Breadcrumbs.module.scss';
 
 const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
-  className, testingID, id, history,
+  className, testingID, id, history, onItemClick,
 }) => {
+  const handleItemClick = useCallback((item: IBreadcrumbLink) => (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (onItemClick) {
+      onItemClick(item, event);
+    }
+  }, [onItemClick]);
+
   const items = useMemo(() => history.map((item, index) => {
     const last = index === history.length - 1;
 
@@ -16,7 +22,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
           <a
             data-testid={item.testingID}
             href={item.url}
-            onClick={item.onClick}
+            onClick={handleItemClick(item)}
             className={styles.breadcrumbsItem}
             data-lens-element="breadcrumbs__link"
           >{item.title}
@@ -29,14 +35,14 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
       <Fragment key={`${index}-${item.title}-span`}>
         <span
           data-testid={item.testingID}
-          onClick={item.onClick}
+          onClick={handleItemClick(item)}
           className={clsx(styles.breadcrumbsItem, last && styles.breadcrumbsLast)}
           data-lens-element="breadcrumbs__link--current"
         >{item.title}
         </span>{!last && <><span className={styles.breadcrumbsSpacer}>/</span></>}
       </Fragment>
     );
-  }), [history]);
+  }), [history, handleItemClick]);
 
   return (
     <div
