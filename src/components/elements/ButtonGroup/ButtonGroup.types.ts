@@ -1,5 +1,6 @@
-import { IPropsWithClassName, IPropsWithId, ITestableProps } from '../../../types';
+import React from 'react';
+import { ITestableProps } from '../../../types';
 
-export interface IButtonGroupProps extends IPropsWithClassName, ITestableProps, IPropsWithId {
+export interface IButtonGroupProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   vertical?: boolean;
 }

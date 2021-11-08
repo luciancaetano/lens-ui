@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPropsWithClassName, IPropsWithId, ITestableProps } from '../../../types';
+import { ITestableProps } from '../../../types';
 
 export interface IBreadcrumbLink {
   title: React.ReactNode;
@@ -7,7 +7,7 @@ export interface IBreadcrumbLink {
   testingID?: string;
 }
 
-export interface IBreadcrumbsProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IBreadcrumbsProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   history: IBreadcrumbLink[];
   onItemClick?: (link: IBreadcrumbLink, event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }

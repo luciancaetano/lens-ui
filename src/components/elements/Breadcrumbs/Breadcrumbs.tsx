@@ -5,7 +5,7 @@ import { IBreadcrumbsProps, IBreadcrumbLink } from './Breadcrumbs.types';
 import styles from './Breadcrumbs.module.scss';
 
 const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
-  className, testingID, id, history, onItemClick,
+  className, testingID, id, history, onItemClick, ...props
 }) => {
   const handleItemClick = useCallback((item: IBreadcrumbLink) => (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (onItemClick) {
@@ -46,6 +46,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
 
   return (
     <div
+      {...props}
       id={id}
       data-lens-element="breadcrumbs"
       data-testid={testingID}

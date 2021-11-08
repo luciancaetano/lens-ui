@@ -1,8 +1,9 @@
+import React from 'react';
 import {
-  IPropsWithClassName, IPropsWithId, ITestableProps, IntentType,
+  ITestableProps, IntentType,
 } from '../../../types';
 
-export interface IBadgeProps extends IPropsWithClassName, ITestableProps, IPropsWithId {
+export interface IBadgeProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   intent?: IntentType;
   type?: 'solid' | 'subtle' | 'outlined';
 }

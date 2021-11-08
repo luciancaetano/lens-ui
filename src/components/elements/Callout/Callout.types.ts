@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  IntentType, IPropsWithClassName, IPropsWithId, ITestableProps,
+  IntentType, ITestableProps,
 } from '../../../types';
 
-export interface ICalloutProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface ICalloutProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   icon?: React.ReactNode;
   intent?: IntentType;
   title?: string;

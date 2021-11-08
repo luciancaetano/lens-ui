@@ -4,9 +4,10 @@ import styles from './Callout.module.scss';
 import { ICalloutProps } from './Callout.types';
 
 const Callout: React.FC<ICalloutProps> = ({
-  className, testingID, id, children, icon, intent, title,
+  className, testingID, id, children, icon, intent, title, ...props
 }) => (
   <div
+    {...props}
     id={id}
     data-lens-element="callout"
     data-lens-intent={intent}

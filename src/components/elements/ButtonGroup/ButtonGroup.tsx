@@ -4,9 +4,10 @@ import { IButtonGroupProps } from './ButtonGroup.types';
 import styles from './ButtonGroup.module.scss';
 
 const ButtonGroup:React.FC<IButtonGroupProps> = ({
-  children, vertical, className, testingID, id,
+  children, vertical, className, testingID, id, ...props
 }) => (
   <div
+    {...props}
     id={id}
     data-testid={testingID}
     data-lens-element="button-grpup"

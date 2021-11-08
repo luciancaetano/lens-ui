@@ -6,7 +6,7 @@ import { ICheckBoxProps } from './CheckBox.types';
 
 const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
   className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
-  autoFocus,
+  autoFocus, inputProps, ...props
 }, ref) => {
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -22,12 +22,14 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="checkbox"
       className={clsx(styles.container, className)}
     >
       <input
+        {...inputProps}
         type="checkbox"
         id={`${id}-input`}
         tabIndex={tabIndex}

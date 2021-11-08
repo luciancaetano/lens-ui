@@ -4,9 +4,10 @@ import { IBadgeProps } from './Badge.types';
 import styles from './Badge.module.scss';
 
 const Badge:React.FC<IBadgeProps> = ({
-  className, testingID, id, children, intent = 'primary', type = 'solid',
+  className, testingID, id, children, intent = 'primary', type = 'solid', ...props
 }) => (
   <div
+    {...props}
     id={id}
     data-testid={testingID}
     data-lens-intent={intent}

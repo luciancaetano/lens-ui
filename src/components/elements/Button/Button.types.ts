@@ -18,7 +18,9 @@ export const ButtonSizeEnum = {
 export type ButtonAppearanceType = keyof typeof ButtonAppearanceEnum;
 export type ButtonSizeType = keyof typeof ButtonSizeEnum;
 
-export interface IButtonProps extends IPropsWithClassName, ITestableProps, IPropsWithId{
+export interface IButtonProps extends IPropsWithClassName, ITestableProps, IPropsWithId,
+  Omit<React.HtmlHTMLAttributes<HTMLButtonElement>, 'onClick' | 'OnBlur' | 'type' | 'onDoubleClick' | 'onFocus' | 'tabIndex' | 'style'>
+{
   type?: 'submit' | 'reset' | 'button';
   intent?: AdvancedIntentType;
   disabled?: boolean;

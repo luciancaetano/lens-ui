@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
-import { HTMLElementPropsType, ITestableProps } from '../../../types';
+import { ICardTextProps } from './Card.types';
 import styles from './Card.module.scss';
 
-const CardText: React.FC<HTMLElementPropsType<HTMLParagraphElement> & ITestableProps> = ({
+const CardText: React.FC<ICardTextProps> = ({
   children, className, testingID, ...props
 }) => (
   <p

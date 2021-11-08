@@ -1,9 +1,7 @@
 import React, { ReactNode } from 'react';
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { ITestableProps } from '../../../types';
 
-export interface ICheckBoxProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface ICheckBoxProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur'> {
   label: ReactNode;
   checked?: boolean;
   defaultChecked?: boolean;
@@ -13,4 +11,5 @@ export interface ICheckBoxProps extends ITestableProps, IPropsWithClassName, IPr
   disabled?: boolean;
   autoFocus?: boolean;
   name?: string;
+  inputProps?: React.HtmlHTMLAttributes<HTMLInputElement>;
 }
