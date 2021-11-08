@@ -9,7 +9,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
   className, testingID, id, onCancel, onDelete, onSave = 'submit', isUpdate, state,
   cancelAppearance, cancelDisabled, deleteAppearance, deleteDisabled,
   saveAppearance, saveDisabled, cancelIsReset,
-  children, childrenPos = 'betweenSaveAndCancel',
+  children, childrenPos = 'betweenSaveAndCancel', ...props
 }) => {
   const [_] = useInternalLensLocale();
 
@@ -61,6 +61,7 @@ const FormFooter:React.FC<IFormFooterProps> = ({
       data-testid={testingID}
       data-lens-element="form-footer"
       className={clsx(styles.formFooter, className)}
+      {...props}
     >
       <div className={styles.formFooterDeleteContainer}>
         {childrenPos === 'beforeDelete' && children}

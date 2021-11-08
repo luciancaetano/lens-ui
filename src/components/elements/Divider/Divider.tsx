@@ -4,9 +4,10 @@ import styles from './Divider.module.scss';
 import { IDividerProps } from './Divider.types';
 
 const Divider:React.FC<IDividerProps> = ({
-  className, testingID, id, children,
+  className, testingID, id, children, ...props
 }) => (
   <div
+    {...props}
     id={id}
     data-lens-element="card"
     data-testid={testingID}

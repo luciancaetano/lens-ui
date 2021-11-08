@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  IntentType, IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { IntentType, ITestableProps } from '../../../types';
 
-export interface IFormGroupProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IFormGroupProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   label?: React.ReactNode;
   contentClassName?: string;
   inline?: boolean;
@@ -11,4 +9,5 @@ export interface IFormGroupProps extends ITestableProps, IPropsWithClassName, IP
   helperTextIntent?: IntentType;
   labelFor?: string;
   required?: boolean;
+  labelProps?: React.HtmlHTMLAttributes<HTMLLabelElement>;
 }

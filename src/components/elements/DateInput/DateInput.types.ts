@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { ITestableProps } from '../../../types';
 
 export interface IDateInputLocale {
   name: string;
@@ -10,7 +8,7 @@ export interface IDateInputLocale {
   monthsShort: string[]; // 12
   weekDaysShort: string[]; // 7
 }
-export interface IDateInputProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IDateInputProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange'> {
   name?: string;
   placeholder?: string;
   value?: string | string[];

@@ -1,7 +1,8 @@
-import { IPropsWithClassName, IPropsWithId, ITestableProps } from '../../../types';
+import React from 'react';
+import { ITestableProps } from '../../../types';
 import { ButtonAppearanceType } from '../Button/Button.types';
 
-export interface IFormFooterProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IFormFooterProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   saveAppearance?: ButtonAppearanceType;
   cancelAppearance?: ButtonAppearanceType;
   deleteAppearance?: ButtonAppearanceType;

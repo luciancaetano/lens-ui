@@ -4,9 +4,11 @@ import styles from './FormGroup.module.scss';
 import { IFormGroupProps } from './FormGroup.types';
 
 const FormGroup: React.FC<IFormGroupProps> = ({
-  children, className, contentClassName, id, helperText, helperTextIntent = 'danger', inline, label, labelFor, required, testingID,
+  children, className, contentClassName, id, helperText, helperTextIntent = 'danger',
+  inline, label, labelFor, required, testingID, labelProps, ...props
 }) => (
   <div
+    {...props}
     data-testid={testingID}
     data-lens-element="form-group"
     className={clsx(
@@ -17,6 +19,7 @@ const FormGroup: React.FC<IFormGroupProps> = ({
     id={id}
   >
     <label
+      {...labelProps}
       htmlFor={labelFor}
       data-lens-form-group-role="label"
       data-lens-element="form-group__label"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPropsWithClassName, IPropsWithId, ITestableProps } from '../../../types';
+import { ITestableProps } from '../../../types';
 
 export type IDropdownItemBasicType = {
   label: React.ReactNode;
@@ -15,7 +15,7 @@ export type IDropdownItemDividerType = {
 
 export type IDropdownItemType = IDropdownItemBasicType | IDropdownItemDividerType;
 
-export interface IDropDownMenuProps extends IPropsWithClassName, IPropsWithId, ITestableProps{
+export interface IDropDownMenuProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement>{
   items: IDropdownItemType[];
   onItemClick?: (id: string) => void;
   offset?: [number, number];

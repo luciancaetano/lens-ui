@@ -21,7 +21,7 @@ const DateInput: React.FC<IDateInputProps> = React.forwardRef(({
   className, testingID, id, onChange, tabIndex, displayFormat = 'DD/MM/YYYY', dateFormat = 'yyyy-MM-dd HH:mm:ss', placeholder, time,
   disabled, value, name, isError, children, readOnly,
   onCalendarClose, onCalendarOpen, required, type, locale = DatePickerLocalePtBR(),
-  weekStartDayIndex, hideMonth, hideOnScroll, hideWeekDays, hideYear,
+  weekStartDayIndex, hideMonth, hideOnScroll, hideWeekDays, hideYear, ...props
 }, ref) => {
   const { isPhone, isTablet } = useDevice();
 
@@ -115,6 +115,7 @@ const DateInput: React.FC<IDateInputProps> = React.forwardRef(({
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="card"

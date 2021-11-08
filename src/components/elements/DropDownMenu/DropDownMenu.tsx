@@ -14,7 +14,7 @@ import { getPortalContainer, Layers } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
 
 const DropDownMenu:React.FC<IDropDownMenuProps> = ({
-  className, testingID, id, children, items, onItemClick, offset = [10, 10], activeId,
+  className, testingID, id, children, items, onItemClick, offset = [10, 10], activeId, ...props
 }) => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -64,6 +64,7 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
 
   return (
     <div
+      {...props}
       id={id}
       ref={setReferenceElement}
       data-testid={testingID}
