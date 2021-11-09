@@ -9,7 +9,7 @@ import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
 
 export default {
-  title: '2. Components/useToast',
+  title: '3. Hooks/useToast',
   component: Toast,
   decorators: [
     (Story) => <LensProvider><Story /></LensProvider>,
