@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
-import { HTMLElementPropsType, ITestableProps } from '../../../types';
+import { ITestableProps } from '../../../types';
 import styles from './Card.module.scss';
 
-const CardBody: React.FC<HTMLElementPropsType<HTMLDivElement> & ITestableProps> = ({
+const CardBody: React.FC<React.HtmlHTMLAttributes<HTMLDivElement> & ITestableProps> = ({
   children, className, testingID, ...props
 }) => (
   <div

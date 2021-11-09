@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  AdvancedIntentType, IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { AdvancedIntentType, ITestableProps } from '../../../types';
 
 export const ButtonAppearanceEnum = {
   default: 'default',
@@ -18,7 +16,7 @@ export const ButtonSizeEnum = {
 export type ButtonAppearanceType = keyof typeof ButtonAppearanceEnum;
 export type ButtonSizeType = keyof typeof ButtonSizeEnum;
 
-export interface IButtonProps extends IPropsWithClassName, ITestableProps, IPropsWithId,
+export interface IButtonProps extends ITestableProps,
   Omit<React.HtmlHTMLAttributes<HTMLButtonElement>, 'onClick' | 'OnBlur' | 'type' | 'onDoubleClick' | 'onFocus' | 'tabIndex' | 'style'>
 {
   type?: 'submit' | 'reset' | 'button';
