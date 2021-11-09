@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.4](https://github.com/luciancaetano/lens-ui/compare/v4.3.3...v4.3.4) (2021-11-09)
+
+
+### Bug Fixes
+
+* **styles:**  import reset-css from node_modules to build with bundle ([5f4885d](https://github.com/luciancaetano/lens-ui/commit/5f4885d290f4a4d6ff11abd67f365dbc0ad4aa8d))
+
 ### [4.3.3](https://github.com/luciancaetano/lens-ui/compare/v4.3.2...v4.3.3) (2021-11-09)
 
 
