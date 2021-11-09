@@ -6,10 +6,10 @@ import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 
 export default {
-  title: 'Components/Layout',
+  title: '2. Components/Layout',
   component: Layout.AppLayout,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof Layout.AppLayout>;
 

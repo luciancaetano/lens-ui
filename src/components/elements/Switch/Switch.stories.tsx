@@ -7,10 +7,10 @@ import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 
 export default {
-  title: 'Components/Switch',
+  title: '2. Components/Switch',
   component: Switch,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof Switch>;
 

@@ -6,10 +6,10 @@ import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 
 export default {
-  title: 'Components/ProgressBar',
+  title: '2. Components/ProgressBar',
   component: ProgressBarCmp,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof ProgressBar>;
 

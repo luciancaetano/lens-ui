@@ -8,10 +8,10 @@ import { ITableColumns, ITableItem } from './Table.types';
 import Icon from '../Icon/Icon';
 
 export default {
-  title: 'Components/Table',
+  title: '2. Components/Table',
   component: Table,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof Table>;
 

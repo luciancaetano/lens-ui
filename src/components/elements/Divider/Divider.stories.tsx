@@ -6,10 +6,10 @@ import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 
 export default {
-  title: 'Components/Divider',
+  title: '2. Components/Divider',
   component: Divider,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof Divider>;
 

@@ -5,6 +5,9 @@ import Button from '../Button/Button';
 import styles from './FormFooter.module.scss';
 import { IFormFooterProps } from './FormFooter.types';
 
+/**
+ * FormFooter display's form actions like, save, cancel delete etc.
+ */
 const FormFooter:React.FC<IFormFooterProps> = ({
   className, testingID, id, onCancel, onDelete, onSave = 'submit', isUpdate, state,
   cancelAppearance, cancelDisabled, deleteAppearance, deleteDisabled,

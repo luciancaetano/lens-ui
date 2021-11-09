@@ -6,10 +6,10 @@ import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 
 export default {
-  title: 'Components/MaskedInput',
+  title: '2. Components/MaskedInput',
   component: MaskedInput,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof MaskedInput>;
 

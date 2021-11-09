@@ -14,6 +14,9 @@ import Button from '../Button/Button';
 
 const INTERVAL = 250;
 
+/**
+ * Toast displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
+ */
 const Toast:React.FC<IToastProps> = ({
   testingID, data,
 }) => {

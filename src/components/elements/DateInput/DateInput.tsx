@@ -13,9 +13,7 @@ import { DatePickerLocalePtBR } from './pt_BR.locale';
 import './Dateinput.scss';
 
 /**
- * TODO
- * - Ajustar locale
- * - Tratar os modos only-[month, year, time]
+ * DateInput's let the user select a date.
  */
 const DateInput: React.FC<IDateInputProps> = React.forwardRef(({
   className, testingID, id, onChange, tabIndex, displayFormat = 'DD/MM/YYYY', dateFormat = 'yyyy-MM-dd HH:mm:ss', placeholder, time,

@@ -4,6 +4,9 @@ import List from '../List/List';
 import styles from './MenuList.module.scss';
 import { IMenuListProps } from './MenuList.types';
 
+/**
+ * MenuList display a list of choices on constant surfaces.
+ */
 const MenuList: React.FC<IMenuListProps> = ({ items, ...props }) => {
   const menuItems = useMemo(() => items.map((item) => ({
     ...item,

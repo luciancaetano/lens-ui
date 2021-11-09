@@ -6,10 +6,10 @@ import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 
 export default {
-  title: 'Components/RadioGroup',
+  title: '2. Components/RadioGroup',
   component: RadioGroupCmp,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof RadioGroupCmp>;
 

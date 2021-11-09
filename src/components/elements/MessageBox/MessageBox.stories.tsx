@@ -8,10 +8,10 @@ import '../../../styles';
 import { IntentEnum } from '../../../types';
 
 export default {
-  title: 'Components/MessageBox',
+  title: '2. Components/MessageBox',
   component: MessageBox,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof MessageBox>;
 

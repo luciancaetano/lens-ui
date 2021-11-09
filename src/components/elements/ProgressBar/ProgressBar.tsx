@@ -13,6 +13,9 @@ const ProgressBarSizeValues = {
   big: 1.200,
 };
 
+/**
+ * Progress indicators express the length of a process.
+ */
 const ProgressBar = React.forwardRef<HTMLDivElement, IProgressBarProps>(({
   className, testingID, id, progress, intent = 'primary', withLabel, size = 'normal', striped, ...props
 }, ref) => {

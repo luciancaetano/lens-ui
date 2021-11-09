@@ -6,6 +6,12 @@ import { modalCanEscape } from '../../../utils';
 import styles from './Modal.module.scss';
 import { IModalProps } from './Modal.types';
 
+/**
+ * The modal component provides a solid foundation for creating dialogs interrupting the user's task.
+ * You can call modals using useModal hook
+ * @example const { showModal } = useModal();
+ * @example showModal(SimpleModalCMP, args);
+ */
 const Modal: React.FC<IModalProps> = ({
   className, testingID, id, children, size = 'normal', onBackdropClick, onEscape,
   ...props

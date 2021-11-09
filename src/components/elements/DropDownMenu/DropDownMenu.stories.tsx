@@ -7,10 +7,10 @@ import '../../../styles';
 import { IDropdownItemType } from './DropDownMenu.types';
 
 export default {
-  title: 'Components/DropDownMenu',
+  title: '2. Components/DropDownMenu',
   component: DropDownMenu,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof DropDownMenu>;
 

@@ -8,10 +8,10 @@ import '../../../styles';
 import { IntentEnum } from '../../../types';
 
 export default {
-  title: 'Components/Card',
+  title: '2. Components/Card',
   component: Card.Card,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof Card.Card>;
 

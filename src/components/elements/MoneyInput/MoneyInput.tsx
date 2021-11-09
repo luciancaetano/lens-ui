@@ -4,6 +4,9 @@ import CurrencyInput from 'react-currency-input';
 import styles from './MoneyInput.module.scss';
 import { IMoneyInputProps } from './MoneyInput.types';
 
+/**
+ * MoneyInput fields let users enter and edit monetary formated value.
+ */
 const MoneyInput: React.FC<IMoneyInputProps> = ({
   className, testingID, id, onChange, tabIndex, decimalSeparator = ',', precision = 3, thousandSeparator = '.',
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, ...props

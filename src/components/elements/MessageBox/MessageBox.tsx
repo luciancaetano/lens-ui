@@ -13,6 +13,9 @@ import { sleep } from '../../../utils';
 
 const STOP_RENDER_TIMEOUT = 500;
 
+/**
+ * MessageBox alert displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
+ */
 const MessageBox: React.FC<IMessageBoxProps> = ({
   className, testingID, id, intent = 'primary', striped, title, children, timeout, icon, closable = true, onClose, isOpen,
   ...props

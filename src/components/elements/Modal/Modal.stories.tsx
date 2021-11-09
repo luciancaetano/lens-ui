@@ -13,7 +13,7 @@ import Button from '../Button/Button';
 import { ModalSizeEnum } from './Modal.types';
 
 export default {
-  title: 'Components/Modal',
+  title: '2. Components/useModal',
   component: Modal,
   decorators: [
     (Story) => <LensProvider><Story /></LensProvider>,

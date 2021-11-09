@@ -13,6 +13,9 @@ import Icon from '../Icon/Icon';
 import { getPortalContainer, Layers } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
 
+/**
+ * DropDownMenu display a list of choices on temporary surfaces.
+ */
 const DropDownMenu:React.FC<IDropDownMenuProps> = ({
   className, testingID, id, children, items, onItemClick, offset = [10, 10], activeId, ...props
 }) => {

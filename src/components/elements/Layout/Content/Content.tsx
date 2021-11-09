@@ -3,6 +3,9 @@ import React from 'react';
 import styles from './Content.module.scss';
 import { ILayoutContentProps } from './Content.types';
 
+/**
+ * The Content component handles content parts of the app
+ */
 const Content: React.FC<ILayoutContentProps> = ({
   children, layout = 'vertical', className, testingID, ...props
 }) => (

@@ -4,6 +4,10 @@ import { randomId } from '../../../utils';
 import styles from './CheckBox.module.scss';
 import { ICheckBoxProps } from './CheckBox.types';
 
+/**
+ * Checkboxes allow the user to select one or more items from a set.
+ * @tip Checkboxes can be used to turn an option on or off.
+ */
 const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
   className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
   autoFocus, inputProps, ...props

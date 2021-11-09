@@ -8,6 +8,9 @@ import styles from './Table.module.scss';
 import { ITableProps } from './Table.types';
 import { CLASSES } from '../../../css-classes';
 
+/**
+ * Table display sets of data.
+ */
 const Table:React.FC<ITableProps> = ({
   className, testingID, id, columns, items, footer, ...props
 }) => {

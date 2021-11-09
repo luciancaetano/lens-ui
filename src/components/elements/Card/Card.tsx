@@ -3,6 +3,9 @@ import React from 'react';
 import { ICardProps } from './Card.types';
 import styles from './Card.module.scss';
 
+/**
+ * Cards contain content and actions about a single subject.
+ */
 const Card: React.FC<ICardProps> = ({
   children, className, intent, testingID, ...props
 }) => (

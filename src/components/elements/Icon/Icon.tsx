@@ -3,6 +3,9 @@ import React from 'react';
 import * as BsIcon from 'react-icons/bs';
 import { IIconProps } from './Icon.types';
 
+/**
+ * Guidance and suggestions for using icons with LensUI.
+ */
 const Icon:React.FC<IIconProps> = ({
   className, testingID, id, name, fill = null, size, ...props
 }) => React.createElement(BsIcon[name], {

@@ -3,6 +3,10 @@ import React from 'react';
 import styles from './FormGroup.module.scss';
 import { IFormGroupProps } from './FormGroup.types';
 
+/**
+ * The FormGroup component can be used to group related buttons.
+ * @tip The FormGroup brings some utilities for inputs like labels, errors and more
+ */
 const FormGroup: React.FC<IFormGroupProps> = ({
   children, className, contentClassName, id, helperText, helperTextIntent = 'danger',
   inline, label, labelFor, required, testingID, labelProps, ...props

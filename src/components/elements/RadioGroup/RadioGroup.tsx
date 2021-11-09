@@ -9,6 +9,9 @@ import styles from './RadioGroup.module.scss';
 import { IRadioGroupProps } from './RadioGroup.types';
 import { useDevice } from '../../../hooks';
 
+/**
+ * RadioGroup allow the user to select one option from a set.
+ */
 const RadioGroup: React.FC<IRadioGroupProps> = ({
   className, testingID, id, onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled, ...props
 }) => {

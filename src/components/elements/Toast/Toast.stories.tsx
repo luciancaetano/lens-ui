@@ -5,66 +5,33 @@ import Toast from './Toast';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 import { useToast } from '../../../hooks';
-import { IntentEnum } from '../../../types';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
 
 export default {
-  title: 'Components/useToast',
+  title: '2. Components/useToast',
+  component: Toast,
   decorators: [
     (Story) => <LensProvider><Story /></LensProvider>,
   ],
-};
+} as ComponentMeta<typeof Toast>;
 
 export const _Toast = () => {
-  const { addToast, toasts } = useToast();
+  const { addToast } = useToast();
 
   return (
-    <div>
-      {Object.keys(IntentEnum).map((intent) => (
-        <div style={{ width: '100%', paddingBottom: 10 }}>
-          <Button
-            intent={intent as any}
-            onClick={async () => {
-              addToast({
-                content: 'lorem impsum',
-                icon: <Icon name="BsExclamationTriangleFill" />,
-                intent: intent as any,
-                dismiss: 3000,
-              });
-            }}
-          >
-            Show Toast {intent.toUpperCase()}
-          </Button>
-        </div>
-      ))}
-
-      <Button
-        intent="success"
-        onClick={async () => {
-          addToast({
-            content: 'lorem impsum',
-            icon: <Icon name="BsExclamationTriangleFill" />,
-            intent: 'success',
-            actions: [
-              {
-                content: <div>My Action</div>,
-                intent: 'success',
-              },
-            ],
-          });
-        }}
-      >
-        Show Toast with action
-      </Button>
-
-      <div style={{ maxHeight: 500, overflowY: 'scroll' }}>
-        <code>
-          <pre>
-            {JSON.stringify(toasts, null, '\t')}
-          </pre>
-        </code>
-      </div>
-    </div>
+    <Button
+      intent="success"
+      onClick={async () => {
+        addToast({
+          content: 'lorem impsum',
+          icon: <Icon name="BsExclamationTriangleFill" />,
+          intent: 'success',
+          dismiss: 3000,
+        });
+      }}
+    >
+      Show Toast
+    </Button>
   );
 };

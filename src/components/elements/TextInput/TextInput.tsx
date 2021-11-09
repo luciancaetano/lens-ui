@@ -4,6 +4,9 @@ import Icon from '../Icon/Icon';
 import styles from './TextInput.module.scss';
 import { TextInputPropsType } from './TextInput.types';
 
+/**
+ * MoneyInput fields let users enter and edit text.
+ */
 const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
   className, testingID, id, onChange, tabIndex, maxLength, required, placeholder,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, type = 'text',

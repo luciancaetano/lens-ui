@@ -3,6 +3,9 @@ import React from 'react';
 import { IButtonGroupProps } from './ButtonGroup.types';
 import styles from './ButtonGroup.module.scss';
 
+/**
+ * The ButtonGroup component can be used to group related buttons.
+ */
 const ButtonGroup:React.FC<IButtonGroupProps> = ({
   children, vertical, className, testingID, id, ...props
 }) => (

@@ -7,6 +7,9 @@ import { randomId } from '../../../utils';
 import './Select.scss';
 import { ISelectOption, ISelectProps } from './Select.types';
 
+/**
+ * The Select component are used for collecting user provided information from a list of options.
+ */
 const Select: React.FC<ISelectProps> = React.forwardRef(({
   className, testingID, id = randomId('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
   isClearable = true, isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '',

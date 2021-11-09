@@ -3,6 +3,9 @@ import React from 'react';
 import { IBadgeProps } from './Badge.types';
 import styles from './Badge.module.scss';
 
+/**
+ * Badge generates a small badge to the top-right of its child(ren).
+ */
 const Badge:React.FC<IBadgeProps> = ({
   className, testingID, id, children, intent = 'primary', type = 'solid', ...props
 }) => (

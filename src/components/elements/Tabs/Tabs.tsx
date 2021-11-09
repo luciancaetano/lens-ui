@@ -5,6 +5,9 @@ import React, {
 import styles from './Tabs.module.scss';
 import { ITabsProps } from './Tabs.types';
 
+/**
+ * The Tabs component make easy to explore and switch between different views.
+ */
 const Tabs:React.FC<ITabsProps> = ({
   className, testingID, id, children, activeTab, initialActiveTab, onChange, tabs, vertical, ...props
 }) => {

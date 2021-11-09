@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import styles from './Loader.module.scss';
 import { ILoaderProps } from './Loader.types';
 
+/**
+ * Progress indicators express an unspecified wait time of a process.
+ */
 const Loader: React.FC<ILoaderProps> = ({
   className, testingID, id, children, type = 'eclipse', intent = 'primary', size = 5, ...props
 }) => (

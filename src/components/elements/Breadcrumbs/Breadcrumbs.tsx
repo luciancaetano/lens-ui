@@ -4,6 +4,9 @@ import React, { Fragment, useCallback, useMemo } from 'react';
 import { IBreadcrumbsProps, IBreadcrumbLink } from './Breadcrumbs.types';
 import styles from './Breadcrumbs.module.scss';
 
+/**
+ * Breadcrumbs allow users to make selections from a range of pages or navigation history.
+ */
 const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
   className, testingID, id, history, onItemClick, ...props
 }) => {

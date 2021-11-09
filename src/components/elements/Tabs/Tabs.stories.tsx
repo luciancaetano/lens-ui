@@ -7,10 +7,10 @@ import '../../../styles';
 import { ITabsItem } from './Tabs.types';
 
 export default {
-  title: 'Components/Tabs',
+  title: '2. Components/Tabs',
   component: Tabs,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
 } as ComponentMeta<typeof Tabs>;
 

@@ -3,6 +3,9 @@ import React from 'react';
 import { ITestableProps } from '../../../../types';
 import styles from './AppLayout.module.scss';
 
+/**
+ * The AppLayout component handles entrie application layout parts
+ */
 const AppLayout: React.FC<ITestableProps & React.HtmlHTMLAttributes<HTMLElement>> = ({ children, className, ...props }) => (
   <div
     {...props}

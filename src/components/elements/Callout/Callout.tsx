@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import styles from './Callout.module.scss';
 import { ICalloutProps } from './Callout.types';
 
+/**
+ * Callouts contains call to actions in a single subject.
+ */
 const Callout: React.FC<ICalloutProps> = ({
   className, testingID, id, children, icon, intent, title, ...props
 }) => (

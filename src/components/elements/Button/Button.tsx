@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import { IButtonProps } from './Button.types';
 import styles from './Button.module.scss';
 
+/**
+ * Buttons allow users to take actions, and make actions, with a single click.
+ */
 const Button: React.FC<IButtonProps> = ({
   children,
   intent = 'primary',
