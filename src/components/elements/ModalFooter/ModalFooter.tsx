@@ -4,9 +4,10 @@ import styles from './ModalFooter.module.scss';
 import { IModalFooterProps } from './ModalFooter.types';
 
 const ModalFooter: React.FC<IModalFooterProps> = ({
-  className, testingID, id, children,
+  className, testingID, id, children, ...props
 }) => (
   <footer
+    {...props}
     id={id}
     data-testid={testingID}
     data-lens-element="modal__footer"

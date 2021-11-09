@@ -1,6 +1,5 @@
-import {
-  IntentType, IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import React from 'react';
+import { IntentType, ITestableProps } from '../../../types';
 
 export const ProgressBarSizeEnum = {
   tiny: 'tiny',
@@ -10,7 +9,7 @@ export const ProgressBarSizeEnum = {
 };
 
 export type ProgressBarSizeEnumType = keyof typeof ProgressBarSizeEnum | string | number;
-export interface IProgressBarProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IProgressBarProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   intent?: IntentType;
   progress: number;
   withLabel?: boolean;

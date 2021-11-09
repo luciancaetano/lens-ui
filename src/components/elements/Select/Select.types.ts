@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react';
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { ITestableProps } from '../../../types';
 
 export type SelectOptionValueType = string | number | boolean;
 
@@ -17,7 +15,7 @@ export interface ISelectGroupedOption {
   readonly options: ISelectOption[] | ISelectGroupedOption[];
 }
 
-export interface ISelectProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface ISelectProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur' | 'value' | 'defaultValue'> {
   options: ISelectOption[] | ISelectGroupedOption[];
   value?: SelectOptionValueType | SelectOptionValueType[];
   name?: string;

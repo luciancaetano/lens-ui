@@ -7,7 +7,7 @@ import { ISwitchProps } from './Switch.types';
 const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((
   {
     className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
-    autoFocus,
+    autoFocus, inputProps, ...props
   }, ref,
 ) => {
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,12 +24,14 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="switch"
       className={clsx(styles.switch, className)}
     >
       <input
+        {...inputProps}
         type="checkbox"
         id={`${id}-input`}
         tabIndex={tabIndex}

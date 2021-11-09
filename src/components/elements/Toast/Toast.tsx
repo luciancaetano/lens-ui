@@ -14,7 +14,7 @@ import Button from '../Button/Button';
 
 const INTERVAL = 250;
 
-const FormDivider:React.FC<IToastProps> = ({
+const Toast:React.FC<IToastProps> = ({
   testingID, data,
 }) => {
   const { removeToast } = useToast();
@@ -69,14 +69,14 @@ const FormDivider:React.FC<IToastProps> = ({
     >
       <div className={styles.toastMain}>
         {data.icon && (<div className={styles.toastIcon}>{data.icon}</div>)}
-        <div className={styles.toastContent}>{data.content}</div>
+        <div className={styles.toastContent} data-lens-element="toast__content">{data.content}</div>
         {actions.length > 0 && (
-          <div className={clsx(styles.toastActionsContainer, data.actionsContainerClassName)}>
+          <div data-lens-element="toast__actions" className={clsx(styles.toastActionsContainer, data.actionsContainerClassName)}>
             {actions}
           </div>
         )}
         <div className={styles.toastButtonContainer} onClick={handleClose}>
-          <button data-lens-element="toast-close-button">
+          <button data-lens-element="toast__close-button">
             <Icon name="BsXSquareFill" />
           </button>
         </div>
@@ -85,4 +85,4 @@ const FormDivider:React.FC<IToastProps> = ({
     </div>
   );
 };
-export default FormDivider;
+export default Toast;

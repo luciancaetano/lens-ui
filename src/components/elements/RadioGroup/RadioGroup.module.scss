@@ -3,11 +3,11 @@
 .radio-group {
   @include lens-ui-typography;
 
+  display: flex;
+  flex-direction: column;
   position: relative;
   text-align: left;
-  display: block;
   min-height: 1.3125rem;
-  padding-left: 1.5em;
   box-sizing: border-box;
 
   &__container {
@@ -16,7 +16,7 @@
   }
 
   &__container:first-child {
-    padding-top: 0;
+    padding-top: .2rem;
   }
 
   &__container:last-child {
@@ -24,9 +24,9 @@
   }
 
   &__input {
-    width: 1em;
-    height: 1em;
-    margin-top: .08em;
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
     vertical-align: top;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -37,10 +37,9 @@
     transition: background-color .15s ease-in-out, background-position .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     box-sizing: border-box;
     cursor: pointer;
-    float: left;
-    margin-left: -1.5em;
     border-radius: 50%;
     position: absolute;
+    margin-top: .1rem;
 
     &:checked {
       background-color: #525ce5;
@@ -57,14 +56,30 @@
       outline: 0;
       box-shadow: var(--lens-ui-input-base--active-box-shadow);
     }
+
+    &--mobile {
+      width: 1.4rem;
+      height: 1.4rem;
+      margin-top: -.17rem;
+    }
   }
 
   &__label {
+    display: inline-block;
+    display: inline-flex;
+    padding-top: .1rem;
     user-select: none;
     cursor: pointer;
     margin-bottom: 0;
+    font-size: 1rem;
     font-weight: 500;
     box-sizing: border-box;
     color: var(--lens-ui-typography-faded-text-color);
+    padding-left: 3rem;
+
+    &--mobile {
+      font-size: 1rem;
+      padding-left: 3rem;
+    }
   }
 }

@@ -6,7 +6,7 @@ import { IMoneyInputProps } from './MoneyInput.types';
 
 const MoneyInput: React.FC<IMoneyInputProps> = ({
   className, testingID, id, onChange, tabIndex, decimalSeparator = ',', precision = 3, thousandSeparator = '.',
-  onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder,
+  onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, ...props
 }) => {
   const handleChange = useCallback((event, maskedvalue, floatvalue) => {
     if (onChange) {
@@ -22,6 +22,7 @@ const MoneyInput: React.FC<IMoneyInputProps> = ({
 
   return (
     <div
+      {...props}
       data-lens-element="money-input"
       id={id}
       data-testid={testingID}

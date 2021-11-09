@@ -5,7 +5,7 @@ import styles from './List.module.scss';
 import { IListProps, IListItem } from './List.types';
 
 const List: React.FC<IListProps> = ({
-  className, testingID, id, items, renderer, onItemClick, activeIndex, intent = 'primary',
+  className, testingID, id, items, renderer, onItemClick, activeIndex, intent = 'primary', ...props
 }) => {
   const handleItemClick = useCallback((item: IListItem) => (e: React.MouseEvent<HTMLDivElement>) => {
     if (onItemClick) {
@@ -19,6 +19,7 @@ const List: React.FC<IListProps> = ({
     }
     return (
       <div
+        {...item.elementProps}
         className={clsx(
           item.isHeading ? styles.listHeading : styles.listItem,
           styles[`list__intent-${intent}`],
@@ -36,6 +37,7 @@ const List: React.FC<IListProps> = ({
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="list"

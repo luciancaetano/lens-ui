@@ -1,7 +1,6 @@
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import React from 'react';
+import { ITestableProps } from '../../../types';
 
-export interface IModalFooterProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IModalFooterProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
 
 }

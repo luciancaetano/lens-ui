@@ -14,7 +14,7 @@ const ProgressBarSizeValues = {
 };
 
 const ProgressBar = React.forwardRef<HTMLDivElement, IProgressBarProps>(({
-  className, testingID, id, progress, intent = 'primary', withLabel, size = 'normal', striped,
+  className, testingID, id, progress, intent = 'primary', withLabel, size = 'normal', striped, ...props
 }, ref) => {
   const percent = useMemo(() => `${clamp(progress, 0, 100)}%`, [progress]);
   const height = useMemo(() => {
@@ -42,6 +42,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, IProgressBarProps>(({
   }, [size]);
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="progress-bar"

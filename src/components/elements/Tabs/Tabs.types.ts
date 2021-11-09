@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPropsWithClassName, IPropsWithId, ITestableProps } from '../../../types';
+import { ITestableProps } from '../../../types';
 
 export interface ITabsItem {
   title: React.ReactNode;
@@ -8,7 +8,7 @@ export interface ITabsItem {
   className?: string;
 }
 
-export interface ITabsProps extends IPropsWithClassName, ITestableProps, IPropsWithId {
+export interface ITabsProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange'> {
   vertical?: boolean;
   tabs: ITabsItem[];
   initialActiveTab?: string | null;

@@ -1,5 +1,6 @@
-import { IPropsWithClassName, IPropsWithId, ITestableProps } from '../../../../types';
+import React from 'react';
+import { ITestableProps } from '../../../../types';
 
-export interface ILayoutSidebarProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface ILayoutSidebarProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
 
 }

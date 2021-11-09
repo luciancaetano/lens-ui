@@ -10,7 +10,7 @@ import { ISelectOption, ISelectProps } from './Select.types';
 const Select: React.FC<ISelectProps> = React.forwardRef(({
   className, testingID, id = randomId('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
   isClearable = true, isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '',
-  autoFocus, isError,
+  autoFocus, isError, ...props
 }, ref) => {
   const handleChange = useCallback((option: any) => {
     if (onChange) {
@@ -55,6 +55,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="select"

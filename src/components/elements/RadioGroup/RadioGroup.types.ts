@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react';
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { ITestableProps } from '../../../types';
 
 export type RadioGroupOptionValueType = string | number | boolean;
 
@@ -12,7 +10,7 @@ export interface IRadioGroupOption {
   tabIndex?: number;
 }
 
-export interface IRadioGroupProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IRadioGroupProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'value' | 'defaultValue'> {
   options: IRadioGroupOption[];
   value?: RadioGroupOptionValueType;
   name: string;

@@ -7,7 +7,7 @@ import { IMaskedInputProps } from './MaskedInput.types';
 const MaskedInput: React.FC<IMaskedInputProps> = ({
   className, testingID, id, onChange, tabIndex, placeholder,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, mask,
-  alwaysShowMask, beforeMaskedStateChange, maskPlaceholder,
+  alwaysShowMask, beforeMaskedStateChange, maskPlaceholder, ...props
 }) => {
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -23,6 +23,7 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="masked-input"

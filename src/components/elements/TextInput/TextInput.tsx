@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import Icon from '../Icon/Icon';
 import styles from './TextInput.module.scss';
-import { ITextInputProps } from './TextInput.types';
+import { TextInputPropsType } from './TextInput.types';
 
-const TextInput = React.forwardRef<HTMLElement, ITextInputProps>(({
+const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
   className, testingID, id, onChange, tabIndex, maxLength, required, placeholder,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, type = 'text',
+  multiline, inputProps, ...props
 }, ref) => {
   const handleChange = useCallback((e: React.ChangeEvent<any>) => {
     if (onChange) {
@@ -20,10 +21,11 @@ const TextInput = React.forwardRef<HTMLElement, ITextInputProps>(({
     }
   }, [onBlur]);
 
-  if (type === 'textarea') {
+  if (multiline) {
     return (
-      <div data-lens-element="text-input" id={id} data-testid={testingID} className={clsx(styles.textInput, className)}>
+      <div {...props} data-lens-element="text-input" id={id} data-testid={testingID} className={clsx(styles.textInput, className)}>
         <textarea
+          {...inputProps as any}
           data-lens-element="text-input__input"
           placeholder={placeholder}
           name={name}
@@ -46,12 +48,14 @@ const TextInput = React.forwardRef<HTMLElement, ITextInputProps>(({
 
   return (
     <div
+      {...props}
       id={id}
       data-lens-element="text-input"
       data-testid={testingID}
       className={clsx(styles.textInput, type === 'search' && styles.textInputSearch, className, { search: type === 'search' })}
     >
       <input
+        {...inputProps as any}
         placeholder={placeholder}
         data-lens-element="text-input__input"
         name={name}

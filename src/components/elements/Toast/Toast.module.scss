@@ -78,7 +78,11 @@
     color: var(--lens-ui-intents-primary-dark-text);
     border: 1px solid var(--lens-ui-intents-primary-dark-border);
 
-    [data-lens-element='toast-close-button'] {
+    [data-lens-element='toast__content'] {
+      color: var(--lens-ui-intents-primary-dark-text);
+    }
+
+    [data-lens-element='toast__close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-primary-dark-text);
@@ -98,7 +102,11 @@
     color: var(--lens-ui-intents-secondary-dark-text);
     border: 1px solid var(--lens-ui-intents-secondary-dark-border);
 
-    [data-lens-element='toast-close-button'] {
+    [data-lens-element='toast__content'] {
+      color: var(--lens-ui-intents-secondary-dark-text);
+    }
+
+    [data-lens-element='toast__close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-secondary-dark-text);
@@ -118,7 +126,11 @@
     color: var(--lens-ui-intents-success-dark-text);
     border: 1px solid var(--lens-ui-intents-success-dark-border);
 
-    [data-lens-element='toast-close-button'] {
+    [data-lens-element='toast__content'] {
+      color: var(--lens-ui-intents-success-dark-text);
+    }
+
+    [data-lens-element='toast__close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-success-dark-text);
@@ -138,7 +150,11 @@
     color: var(--lens-ui-intents-info-dark-text);
     border: 1px solid var(--lens-ui-intents-info-dark-border);
 
-    [data-lens-element='toast-close-button'] {
+    [data-lens-element='toast__content'] {
+      color: var(--lens-ui-intents-info-dark-text);
+    }
+
+    [data-lens-element='toast__close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-info-dark-text);
@@ -158,7 +174,11 @@
     color: var(--lens-ui-intents-warning-dark-text);
     border: 1px solid var(--lens-ui-intents-warning-dark-border);
 
-    [data-lens-element='toast-close-button'] {
+    [data-lens-element='toast__content'] {
+      color: var(--lens-ui-intents-warning-dark-text);
+    }
+
+    [data-lens-element='toast__close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-warning-dark-text);
@@ -178,7 +198,11 @@
     color: var(--lens-ui-intents-danger-dark-text);
     border: 1px solid var(--lens-ui-intents-danger-dark-border);
 
-    [data-lens-element='toast-close-button'] {
+    [data-lens-element='toast__content'] {
+      color: var(--lens-ui-intents-danger-dark-text);
+    }
+
+    [data-lens-element='toast__close-button'] {
       background-color: transparent;
       border: 0;
       color: var(--lens-ui-intents-danger-dark-text);

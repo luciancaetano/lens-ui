@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Card from './index';
 import Layout from '../Layout/index';
 import LensProvider from '../../providers/LensProvider/LensProvider';
@@ -17,10 +17,14 @@ export default {
 
 const cardStyle = { maxWidth: 300, margin: 10 } as any;
 
-export const _Card = () => (
+const Template: ComponentStory<typeof Card.Card> = (args) => (
+  <Card.Card {...args} />
+);
+
+export const _Card = (args) => (
   <LensProvider>
     <Layout.Content layout="horizontal">
-      <Card.Card style={cardStyle}>
+      <Template style={cardStyle} {...args}>
         <Card.Image roudTop src="https://images-na.ssl-images-amazon.com/images/I/91k1M7ujpmL._SX500_.jpg" />
         <Card.Body>
           <Card.Text>
@@ -32,9 +36,9 @@ export const _Card = () => (
             Card Link
           </Card.Link>
         </Card.Body>
-      </Card.Card>
+      </Template>
 
-      <Card.Card style={cardStyle}>
+      <Template style={cardStyle} {...args}>
         <Card.Body>
           <Card.Title>Title</Card.Title>
           <Card.Title subtitle>subtitle</Card.Title>
@@ -45,9 +49,9 @@ export const _Card = () => (
             Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
           </Card.Text>
         </Card.Body>
-      </Card.Card>
+      </Template>
 
-      <Card.Card style={cardStyle}>
+      <Template style={cardStyle} {...args}>
         <Card.Body>
           <Card.Title>Title</Card.Title>
           <Card.Title subtitle>subtitle</Card.Title>
@@ -58,7 +62,7 @@ export const _Card = () => (
             Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
           </Card.Text>
         </Card.Body>
-      </Card.Card>
+      </Template>
     </Layout.Content>
   </LensProvider>
 );

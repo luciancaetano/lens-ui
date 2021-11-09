@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  IntentType,
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { IntentType, ITestableProps } from '../../../types';
 
 export interface ITableItem {
   rowClassName?: string;
@@ -24,7 +21,7 @@ export interface ITableColumns<T extends ITableItem = any> {
   };
 }
 
-export interface ITableProps extends IPropsWithClassName, ITestableProps, IPropsWithId {
+export interface ITableProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   items: ITableItem[];
   columns: ITableColumns<any>;
   footer?: () => React.ReactNode;

@@ -4,9 +4,10 @@ import styles from './Loader.module.scss';
 import { ILoaderProps } from './Loader.types';
 
 const Loader: React.FC<ILoaderProps> = ({
-  className, testingID, id, children, type = 'eclipse', intent = 'primary', size = 5,
+  className, testingID, id, children, type = 'eclipse', intent = 'primary', size = 5, ...props
 }) => (
   <div
+    {...props}
     id={id}
     data-testid={testingID}
     data-lens-element="loader"

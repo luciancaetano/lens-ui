@@ -9,7 +9,7 @@ import { ITableProps } from './Table.types';
 import { CLASSES } from '../../../css-classes';
 
 const Table:React.FC<ITableProps> = ({
-  className, testingID, id, columns, items, footer,
+  className, testingID, id, columns, items, footer, ...props
 }) => {
   const heading = useMemo(() => map(columns, (col, key) => (
     <th key={key} className={col.headerClassName}>
@@ -40,6 +40,7 @@ const Table:React.FC<ITableProps> = ({
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="table"

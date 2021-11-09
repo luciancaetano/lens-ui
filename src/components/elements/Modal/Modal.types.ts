@@ -1,4 +1,5 @@
-import { IPropsWithClassName, IPropsWithId, ITestableProps } from '../../../types';
+import React from 'react';
+import { ITestableProps } from '../../../types';
 
 export const ModalSizeEnum = {
   normal: 'normal',
@@ -8,7 +9,7 @@ export const ModalSizeEnum = {
 
 export type ModalSizeEnumType = keyof typeof ModalSizeEnum;
 
-export interface IModalProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IModalProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   size?: ModalSizeEnumType;
   onBackdropClick?: (reason: 'backdrop') => void;
   onEscape?: (reason: 'escape') => void;

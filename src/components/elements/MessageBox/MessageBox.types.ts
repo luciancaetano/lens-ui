@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  IntentType, IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { IntentType, ITestableProps } from '../../../types';
 
-export interface IMessageBoxProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IMessageBoxProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'title'> {
   intent?: IntentType;
   icon?: React.ReactNode;
   title?: React.ReactNode;

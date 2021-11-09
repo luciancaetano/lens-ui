@@ -1,4 +1,4 @@
-import { useMemo, useContext, useCallback } from 'react';
+import { useMemo, useContext } from 'react';
 import { IDeviceInfo, DeviceOSType } from '../components/providers';
 import DeviceContext from '../components/providers/DeviceProvider/DeviceContext';
 
@@ -20,22 +20,10 @@ export interface IUseDeviceProps {
   };
 }
 
-export interface IUseDeviceResponse extends IDeviceInfo {
-  deviceModifier: (className: string) => string;
-}
-
-const defaultBemModifiersSuffix = {
-  phone: 'is-phone',
-  tablet: 'is-tablet',
-  desktop: 'is-desktop',
-};
-
-const useDevice = (props:IUseDeviceProps = {
-  bemModifiersSuffix: defaultBemModifiersSuffix,
-}): IUseDeviceResponse => {
+const useDevice = (): IDeviceInfo => {
   const { orientation, online, windowSize } = useContext(DeviceContext);
 
-  const result = useMemo(() => ({
+  return useMemo(() => ({
     orientation,
     cordova: !!(window as any).cordova, // support cordova instance checking
     online,
@@ -45,16 +33,6 @@ const useDevice = (props:IUseDeviceProps = {
     isDesktop: windowSize.width > 850,
     windowSize,
   }), [online, orientation, windowSize]);
-
-  const deviceModifier = useCallback((className: string) => {
-    if (result.isPhone) return `${className} ${className}--${props.bemModifiersSuffix.phone || defaultBemModifiersSuffix.phone}`;
-    if (result.isTablet) return `${className} ${className}--${props.bemModifiersSuffix.tablet || defaultBemModifiersSuffix.tablet}`;
-    if (result.isDesktop) return `${className} ${className}--${props.bemModifiersSuffix.desktop || defaultBemModifiersSuffix.desktop}`;
-
-    return className;
-  }, [props.bemModifiersSuffix, result.isDesktop, result.isPhone, result.isTablet]);
-
-  return { ...result, deviceModifier };
 };
 
 export default useDevice;

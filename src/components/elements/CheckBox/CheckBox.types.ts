@@ -11,5 +11,8 @@ export interface ICheckBoxProps extends ITestableProps, Omit<React.HtmlHTMLAttri
   disabled?: boolean;
   autoFocus?: boolean;
   name?: string;
-  inputProps?: React.HtmlHTMLAttributes<HTMLInputElement>;
+  inputProps?: Omit<React.HtmlHTMLAttributes<HTMLInputElement>,
+  'onChange' | 'onBlur' | 'value' | 'defaultValue' | 'placeholder' | 'tabIndex' | 'disabled'
+  | 'name' | 'autoFocus' | 'maxLength' | 'required'
+  >;
 }

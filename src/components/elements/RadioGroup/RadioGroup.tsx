@@ -7,10 +7,12 @@ import React, { useCallback, useMemo } from 'react';
 import { randomId } from '../../../utils';
 import styles from './RadioGroup.module.scss';
 import { IRadioGroupProps } from './RadioGroup.types';
+import { useDevice } from '../../../hooks';
 
 const RadioGroup: React.FC<IRadioGroupProps> = ({
-  className, testingID, id, onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
+  className, testingID, id, onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled, ...props
 }) => {
+  const { isPhone, isTablet } = useDevice();
   const handleChange = useCallback((e: React.FormEvent<HTMLDivElement>) => {
     if (onChange && e.target) {
       const target = e.target as HTMLInputElement;
@@ -38,23 +40,24 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
           name={name}
           data-lens-element="radio-group__input"
           value={toString(option.value)}
-          className={clsx(styles.radioGroupInput, option.className)}
+          className={clsx(styles.radioGroupInput, (isPhone || isTablet) && styles.radioGroupInputMobile, option.className)}
           checked={value !== undefined ? toString(value) === toString(option.value) : undefined}
           defaultChecked={defaultValue !== undefined ? toString(defaultValue) === toString(option.value) : undefined}
           disabled={disabled}
         />
         <label
           htmlFor={`${inputId}-input`}
-          className={styles.radioGroupLabel}
+          className={clsx(styles.radioGroupLabel, (isPhone || isTablet) && styles.radioGroupLabelMobile)}
           data-lens-element="radio-group__label"
         >{option.label}
         </label>
       </div>
     );
-  }), [defaultValue, options, value, name, disabled]);
+  }), [defaultValue, options, value, name, disabled, isPhone, isTablet]);
 
   return (
     <div
+      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="radio-group"

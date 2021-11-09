@@ -6,7 +6,7 @@ import styles from './Tabs.module.scss';
 import { ITabsProps } from './Tabs.types';
 
 const Tabs:React.FC<ITabsProps> = ({
-  className, testingID, id, children, activeTab, initialActiveTab, onChange, tabs, vertical,
+  className, testingID, id, children, activeTab, initialActiveTab, onChange, tabs, vertical, ...props
 }) => {
   const [activeTabId, setActiveTabId] = useState<string | null>(initialActiveTab || null);
 
@@ -50,6 +50,7 @@ const Tabs:React.FC<ITabsProps> = ({
 
   return (
     <div
+      {...props}
       id={id}
       data-lens-element="tabs"
       data-lens-tabs-orientation={tabStylePrefix}

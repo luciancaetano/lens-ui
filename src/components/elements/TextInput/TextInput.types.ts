@@ -1,20 +1,35 @@
 import React from 'react';
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { ITestableProps } from '../../../types';
 
-export interface ITextInputProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
-  type?: 'text' | 'textarea' | 'search' | string;
+interface IBaseTextInputProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange'> {
   name?: string;
   value?: string;
   placeholder?: string;
   defaultValue?: string;
   onChange?: (value: string) => void;
-  onBlur?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   tabIndex?: number;
   disabled?: boolean;
   autoFocus?: boolean;
   isError?: boolean;
   maxLength?: number;
   required?: boolean;
+  type?: 'text' | 'search' | string;
 }
+
+export type TextInputPropsType = {
+  inputProps?: Omit<React.HtmlHTMLAttributes<HTMLInputElement>,
+  'onChange' | 'onBlur' | 'value' | 'defaultValue' | 'placeholder' | 'tabIndex' | 'disabled'
+  | 'name' | 'autoFocus' | 'maxLength' | 'required'
+  >;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  multiline?: false;
+} & IBaseTextInputProps |
+{
+  inputProps?: Omit<React.HtmlHTMLAttributes<HTMLTextAreaElement>,
+  'onChange' | 'onBlur' | 'value' | 'defaultValue' | 'placeholder' | 'tabIndex' | 'disabled'
+  | 'name' | 'autoFocus' | 'maxLength' | 'required'
+  >;
+  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  multiline: true;
+  type?: undefined;
+} & IBaseTextInputProps;

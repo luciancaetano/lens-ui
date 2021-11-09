@@ -8,6 +8,7 @@ import { IModalProps } from './Modal.types';
 
 const Modal: React.FC<IModalProps> = ({
   className, testingID, id, children, size = 'normal', onBackdropClick, onEscape,
+  ...props
 }) => {
   const { isPhone } = useDevice();
   const backDropRef = useRef<HTMLDivElement>(null);
@@ -55,8 +56,10 @@ const Modal: React.FC<IModalProps> = ({
       aria-modal="true"
     >
       <div
+        {...props}
         id={id}
         data-lens-element="modal"
+        aria-modal="true"
         data-testid={testingID}
         className={clsx(styles.modal, className, styles[`modal--size-${isPhone ? 'fullscreen' : size}`])}
       >

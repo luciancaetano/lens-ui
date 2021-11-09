@@ -1,8 +1,9 @@
+import React from 'react';
 import {
-  IntentType, IPropsWithClassName, IPropsWithId, ITestableProps,
+  IntentType, ITestableProps,
 } from '../../../types';
 
-export interface ILoaderProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface ILoaderProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   type?: 'eclipse' | 'spinner' | 'oval';
   intent?: IntentType;
   size?: number;

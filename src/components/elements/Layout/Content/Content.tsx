@@ -4,9 +4,10 @@ import styles from './Content.module.scss';
 import { ILayoutContentProps } from './Content.types';
 
 const Content: React.FC<ILayoutContentProps> = ({
-  children, layout = 'vertical', className, testingID,
+  children, layout = 'vertical', className, testingID, ...props
 }) => (
   <div
+    {...props}
     data-testid={testingID}
     data-lens-element="layout__content"
     className={clsx(

@@ -1,10 +1,8 @@
 import React from 'react';
 import { BeforeMaskedStateChangeStates, InputState } from 'react-input-mask';
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { ITestableProps } from '../../../types';
 
-export interface IMaskedInputProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IMaskedInputProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur'> {
   name?: string;
   value?: string;
   defaultValue?: string;

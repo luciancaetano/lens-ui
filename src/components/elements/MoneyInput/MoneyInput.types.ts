@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  IPropsWithClassName, IPropsWithId, ITestableProps,
-} from '../../../types';
+import { ITestableProps } from '../../../types';
 
-export interface IMoneyInputProps extends ITestableProps, IPropsWithClassName, IPropsWithId {
+export interface IMoneyInputProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur' | 'placeholder' | 'value'> {
   name?: string;
   value?: number;
   placeholder?: number;
