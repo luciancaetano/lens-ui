@@ -5,7 +5,7 @@ import LensProvider from './components/providers/LensProvider/LensProvider';
 import { useAlert } from './hooks';
 
 export default {
-  title: '3. Hooks/Alert',
+  title: '3. Hooks/useAlert',
   excludeStories: /__.*$/,
   decorators: [
     (Story) => (<LensProvider><Story /></LensProvider>),
