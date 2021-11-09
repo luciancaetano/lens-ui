@@ -20,14 +20,9 @@ To install and save in your `package.json` dependencies, run:
 
 # Usage
 
-Get started with React and LensUI in no time.
+Get started with React and LensUI in no time, to access css variables you need to import css files.
 
-LensUI components work in isolation.
-**They are self-supporting**, and will only inject the styles they need to display.
-They don't rely on any global style-sheets such as [normalize.css](https://github.com/necolas/normalize.css/).
-
-You can use any of the components as demonstrated in the documentation.
-Please refer to each component's [demo page](/components/buttons/) to see how they should be imported.
+`import 'node_modules/lens-ui/build/main.css';`
 
 ## Quick start
 
@@ -37,6 +32,7 @@ Here's a quick example to get you started, **it's literally all you need**:
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button, LensProvider } from 'lens-ui';
+import 'node_modules/lens-ui/build/main.css';
 
 function App() {
   return (
