@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.5](https://github.com/luciancaetano/lens-ui/compare/v4.3.4...v4.3.5) (2021-11-11)
+
+
+### Bug Fixes
+
+* **css:** :lipstick:  Fix some css bugs ([31d767e](https://github.com/luciancaetano/lens-ui/commit/31d767e0019b26cc55a04d49226e4cb1e480943c))
+
 ### [4.3.4](https://github.com/luciancaetano/lens-ui/compare/v4.3.3...v4.3.4) (2021-11-09)
 
 
