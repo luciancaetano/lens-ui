@@ -3,9 +3,10 @@
 .drop-down-menu {
   @include lens-ui-typography;
 
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   user-select: none;
+  align-items: center;
 
   &__children {
     display: flex;

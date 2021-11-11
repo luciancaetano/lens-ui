@@ -3,6 +3,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from './Button';
 import LensProvider from '../../providers/LensProvider/LensProvider';
+import Icon from '../Icon/Icon';
 import '../../../styles';
 
 export default {
@@ -56,3 +57,9 @@ Default.args = {
 export const Intents = TemplateIntents.bind({});
 
 export const Appearance = TemplateIntentsAppearance.bind({});
+
+export const withIcon = () => (
+  <Button>
+    <Icon name="BsHouse" />
+  </Button>
+);
