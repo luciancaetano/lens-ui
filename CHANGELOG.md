@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.7](https://github.com/luciancaetano/lens-ui/compare/v4.3.6...v4.3.7) (2021-12-12)
+
+
+### Bug Fixes
+
+* **css:** :lipstick:  fix button align ([ea114c9](https://github.com/luciancaetano/lens-ui/commit/ea114c955bcb71c0841ebfb13018fca3edbb54b0))
+
 ### [4.3.6](https://github.com/luciancaetano/lens-ui/compare/v4.3.5...v4.3.6) (2021-12-12)
 
 ### [4.3.5](https://github.com/luciancaetano/lens-ui/compare/v4.3.4...v4.3.5) (2021-11-11)
