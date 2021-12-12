@@ -13,9 +13,9 @@ export default {
   ],
 } as ComponentMeta<typeof ProgressBar>;
 
-const ProgressBarTemplate: ComponentStory<typeof ProgressBarCmp> = (args) => (
-  <ProgressBarCmp {...args} />
-);
+const ProgressBarTemplate: ComponentStory<typeof ProgressBarCmp> = function (args) {
+  return <ProgressBarCmp {...args} />;
+};
 
 export const ProgressBar = ProgressBarTemplate.bind({});
 ProgressBar.args = {

@@ -10,7 +10,7 @@ import React, {
 import ModalContext from './ModalContext';
 import { PORTAL_ROOT_ID } from '../../../css-classes';
 
-const ModalProvider: React.FC = ({ children }) => {
+const ModalProvider: React.FC = function ({ children }) {
   const [isOpenLayers, setIsOpen] = useState<Record<number, boolean>>({});
   const activeModalComponent = useRef<React.ComponentType[]>([]);
   const [props, setProps] = useState<Record<number, any>>({});
@@ -68,10 +68,10 @@ const ModalProvider: React.FC = ({ children }) => {
     }}
     >
       <div id={PORTAL_ROOT_ID} />
-      {activeModalComponent.current && typeof window !== 'undefined' && map(activeModalComponent.current,
-        (ModalComponent: any, layer) => ReactDOM.createPortal(
-          <ModalComponent key={layer} {...(props || {})[layer] || {}} />, typeof window !== 'undefined' ? window.document.getElementById('lens-ui-portal-modal-root') : null,
-        ))}
+      {activeModalComponent.current && typeof window !== 'undefined' && map(
+        activeModalComponent.current,
+        (ModalComponent: any, layer) => ReactDOM.createPortal(<ModalComponent key={layer} {...(props || {})[layer] || {}} />, typeof window !== 'undefined' ? window.document.getElementById('lens-ui-portal-modal-root') : null),
+      )}
       {React.Children.toArray(children)}
     </ModalContext.Provider>
   );

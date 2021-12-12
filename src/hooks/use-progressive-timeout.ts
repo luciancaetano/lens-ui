@@ -2,7 +2,8 @@ import React, { useCallback, useRef } from 'react';
 
 const useProgressiveTimeout = (
   onProgress: (percent: number) => void,
-  onComplete: () => void, msPerStep = 255,
+  onComplete: () => void,
+  msPerStep = 255,
 ): [
     (ms: number) => void,
     (

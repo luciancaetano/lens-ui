@@ -7,9 +7,7 @@ describe('<FormFooter/>', () => {
   it('should check if the children content is present', () => {
     const childrenContent = 'My-Children-Component';
     const { getByText } = render(
-      <>
-        <FormFooter state="ready" testingID="testing-target">{childrenContent}</FormFooter>
-      </>,
+      <FormFooter state="ready" testingID="testing-target">{childrenContent}</FormFooter>,
     );
 
     expect(getByText(childrenContent)).toBeInTheDocument();
@@ -19,47 +17,33 @@ describe('<FormFooter/>', () => {
     const childrenContent = 'My-Children-Component';
 
     expect(render(
-      <>
-        <FormFooter state="ready" childrenPos="afterCancel" testingID="testing-target">{childrenContent}</FormFooter>
-      </>,
+      <FormFooter state="ready" childrenPos="afterCancel" testingID="testing-target">{childrenContent}</FormFooter>,
     ).container.firstChild).toMatchSnapshot();
 
     expect(render(
-      <>
-        <FormFooter state="ready" childrenPos="afterDelete" testingID="testing-target">{childrenContent}</FormFooter>
-      </>,
+      <FormFooter state="ready" childrenPos="afterDelete" testingID="testing-target">{childrenContent}</FormFooter>,
     ).container.firstChild).toMatchSnapshot();
 
     expect(render(
-      <>
-        <FormFooter state="ready" childrenPos="afterSave" testingID="testing-target">{childrenContent}</FormFooter>
-      </>,
+      <FormFooter state="ready" childrenPos="afterSave" testingID="testing-target">{childrenContent}</FormFooter>,
     ).container.firstChild).toMatchSnapshot();
 
     expect(render(
-      <>
-        <FormFooter state="ready" childrenPos="beforeCancel" testingID="testing-target">{childrenContent}</FormFooter>
-      </>,
+      <FormFooter state="ready" childrenPos="beforeCancel" testingID="testing-target">{childrenContent}</FormFooter>,
     ).container.firstChild).toMatchSnapshot();
 
     expect(render(
-      <>
-        <FormFooter state="ready" childrenPos="beforeDelete" testingID="testing-target">{childrenContent}</FormFooter>
-      </>,
+      <FormFooter state="ready" childrenPos="beforeDelete" testingID="testing-target">{childrenContent}</FormFooter>,
     ).container.firstChild).toMatchSnapshot();
 
     expect(render(
-      <>
-        <FormFooter state="ready" childrenPos="betweenSaveAndCancel" testingID="testing-target">{childrenContent}</FormFooter>
-      </>,
+      <FormFooter state="ready" childrenPos="betweenSaveAndCancel" testingID="testing-target">{childrenContent}</FormFooter>,
     ).container.firstChild).toMatchSnapshot();
   });
 
   it('should validate "ready" state', () => {
     const { container } = render(
-      <>
-        <FormFooter state="ready" testingID="testing-target" />
-      </>,
+      <FormFooter state="ready" testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -67,9 +51,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "saving" state', () => {
     const { container } = render(
-      <>
-        <FormFooter state="saving" testingID="testing-target" />
-      </>,
+      <FormFooter state="saving" testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -77,9 +59,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "saving" state when isUpdate', () => {
     const { container } = render(
-      <>
-        <FormFooter state="saving" isUpdate testingID="testing-target" />
-      </>,
+      <FormFooter state="saving" isUpdate testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -87,9 +67,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "ready" state when isUpdate', () => {
     const { container } = render(
-      <>
-        <FormFooter state="ready" isUpdate testingID="testing-target" />
-      </>,
+      <FormFooter state="ready" isUpdate testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -97,9 +75,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "saving" state when cancelIsReset is true', () => {
     const { container } = render(
-      <>
-        <FormFooter state="saving" cancelIsReset testingID="testing-target" />
-      </>,
+      <FormFooter state="saving" cancelIsReset testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -107,9 +83,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "saving" state when cancelIsReset is false', () => {
     const { container } = render(
-      <>
-        <FormFooter state="saving" cancelIsReset={false} testingID="testing-target" />
-      </>,
+      <FormFooter state="saving" cancelIsReset={false} testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -117,9 +91,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "deleting" state', () => {
     const { container } = render(
-      <>
-        <FormFooter state="deleting" testingID="testing-target" />
-      </>,
+      <FormFooter state="deleting" testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -127,9 +99,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "canceling" state', () => {
     const { container } = render(
-      <>
-        <FormFooter state="canceling" testingID="testing-target" />
-      </>,
+      <FormFooter state="canceling" testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -137,9 +107,7 @@ describe('<FormFooter/>', () => {
 
   it('should validate "cancelIsReset" option', () => {
     const { container } = render(
-      <>
-        <FormFooter state="canceling" cancelIsReset testingID="testing-target" />
-      </>,
+      <FormFooter state="canceling" cancelIsReset testingID="testing-target" />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -151,15 +119,13 @@ describe('<FormFooter/>', () => {
     const onDelete = jest.fn();
 
     const { container } = render(
-      <>
-        <FormFooter
-          state="ready"
-          onSave={onSave}
-          onCancel={onCancel}
-          onDelete={onDelete}
-          testingID="testing-target"
-        />
-      </>,
+      <FormFooter
+        state="ready"
+        onSave={onSave}
+        onCancel={onCancel}
+        onDelete={onDelete}
+        testingID="testing-target"
+      />,
     );
 
     fireEvent.click(container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));
@@ -177,15 +143,13 @@ describe('<FormFooter/>', () => {
     const onDelete = jest.fn();
 
     const result = render(
-      <>
-        <FormFooter
-          state="saving"
-          onSave={onSave}
-          onCancel={onCancel}
-          onDelete={onDelete}
-          testingID="testing-target"
-        />
-      </>,
+      <FormFooter
+        state="saving"
+        onSave={onSave}
+        onCancel={onCancel}
+        onDelete={onDelete}
+        testingID="testing-target"
+      />,
     );
 
     fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));
@@ -203,15 +167,13 @@ describe('<FormFooter/>', () => {
     const onDelete = jest.fn();
 
     const result = render(
-      <>
-        <FormFooter
-          state="deleting"
-          onSave={onSave}
-          onCancel={onCancel}
-          onDelete={onDelete}
-          testingID="testing-target"
-        />
-      </>,
+      <FormFooter
+        state="deleting"
+        onSave={onSave}
+        onCancel={onCancel}
+        onDelete={onDelete}
+        testingID="testing-target"
+      />,
     );
 
     fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));
@@ -229,15 +191,13 @@ describe('<FormFooter/>', () => {
     const onDelete = jest.fn();
 
     const result = render(
-      <>
-        <FormFooter
-          state="canceling"
-          onSave={onSave}
-          onCancel={onCancel}
-          onDelete={onDelete}
-          testingID="testing-target"
-        />
-      </>,
+      <FormFooter
+        state="canceling"
+        onSave={onSave}
+        onCancel={onCancel}
+        onDelete={onDelete}
+        testingID="testing-target"
+      />,
     );
 
     fireEvent.click(result.container.querySelector('[data-lens-element-button-parent="form-footer__save"]'));

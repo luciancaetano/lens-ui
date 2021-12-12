@@ -13,16 +13,16 @@ export default {
   ],
 } as ComponentMeta<typeof MoneyInput>;
 
-const MoneyInputTemplate: ComponentStory<typeof MoneyInput> = (args) => (
-  <MoneyInput {...args} />
-);
+const MoneyInputTemplate: ComponentStory<typeof MoneyInput> = function (args) {
+  return <MoneyInput {...args} />;
+};
 
 export const Uncontrolled = MoneyInputTemplate.bind({});
 Uncontrolled.args = {
   defaultValue: 100,
 };
 
-export const Controlled = (args) => {
+export var Controlled = function (args) {
   const [state, setState] = useState(0);
 
   return (

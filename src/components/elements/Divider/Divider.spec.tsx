@@ -7,9 +7,7 @@ describe('<Divider/>', () => {
   it('should check if the children content is present', () => {
     const childrenContent = 'My-Children-Component';
     const { getByText } = render(
-      <>
-        <Divider testingID="testing-target">{childrenContent}</Divider>
-      </>,
+      <Divider testingID="testing-target">{childrenContent}</Divider>,
     );
 
     expect(getByText(childrenContent)).toBeInTheDocument();

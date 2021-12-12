@@ -7,9 +7,9 @@ import styles from './Breadcrumbs.module.scss';
 /**
  * Breadcrumbs allow users to make selections from a range of pages or navigation history.
  */
-const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
+const Breadcrumbs:React.FC<IBreadcrumbsProps> = function ({
   className, testingID, id, history, onItemClick, ...props
-}) => {
+}) {
   const handleItemClick = useCallback((item: IBreadcrumbLink) => (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (onItemClick) {
       onItemClick(item, event);
@@ -42,7 +42,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
           className={clsx(styles.breadcrumbsItem, last && styles.breadcrumbsLast)}
           data-lens-element="breadcrumbs__link--current"
         >{item.title}
-        </span>{!last && <><span className={styles.breadcrumbsSpacer}>/</span></>}
+        </span>{!last && <span className={styles.breadcrumbsSpacer}>/</span>}
       </Fragment>
     );
   }), [history, handleItemClick]);

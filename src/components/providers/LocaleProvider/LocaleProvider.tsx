@@ -3,7 +3,7 @@ import AlertContext from './LocaleContext';
 import { ILocaleProviderProps } from './LocaleProvider.types';
 import { LocaleType } from '../../../i18n';
 
-const LocaleProvider: React.FC<ILocaleProviderProps> = ({ children, initialLocale }) => {
+const LocaleProvider: React.FC<ILocaleProviderProps> = function ({ children, initialLocale }) {
   const [locale, setLocale] = useState<LocaleType>(initialLocale);
 
   return (

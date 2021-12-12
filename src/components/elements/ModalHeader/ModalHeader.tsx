@@ -4,9 +4,9 @@ import Icon from '../Icon/Icon';
 import styles from './ModalHeader.module.scss';
 import { IModalHeaderProps } from './ModalHeader.types';
 
-const ModalHeader: React.FC<IModalHeaderProps> = ({
+const ModalHeader: React.FC<IModalHeaderProps> = function ({
   className, testingID, id, children, onClose,
-}) => {
+}) {
   const handleClose = useCallback(() => {
     if (onClose) {
       onClose('x-close-header');

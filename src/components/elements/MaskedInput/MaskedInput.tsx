@@ -4,11 +4,11 @@ import InputMask from 'react-input-mask';
 import styles from './MaskedInput.module.scss';
 import { IMaskedInputProps } from './MaskedInput.types';
 
-const MaskedInput: React.FC<IMaskedInputProps> = ({
+const MaskedInput: React.FC<IMaskedInputProps> = function ({
   className, testingID, id, onChange, tabIndex, placeholder,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, mask,
   alwaysShowMask, beforeMaskedStateChange, maskPlaceholder, ...props
-}) => {
+}) {
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(event.target.value, event);

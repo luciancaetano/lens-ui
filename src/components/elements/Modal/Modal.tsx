@@ -12,10 +12,10 @@ import { IModalProps } from './Modal.types';
  * @example const { showModal } = useModal();
  * @example showModal(SimpleModalCMP, args);
  */
-const Modal: React.FC<IModalProps> = ({
+const Modal: React.FC<IModalProps> = function ({
   className, testingID, id, children, size = 'normal', onBackdropClick, onEscape,
   ...props
-}) => {
+}) {
   const { isPhone } = useDevice();
   const backDropRef = useRef<HTMLDivElement>(null);
   const onEscapeRef = useRef<(e: KeyboardEvent) => void>(null);

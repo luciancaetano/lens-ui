@@ -11,9 +11,9 @@ import { CLASSES } from '../../../css-classes';
 /**
  * Table display sets of data.
  */
-const Table:React.FC<ITableProps> = ({
+const Table:React.FC<ITableProps> = function ({
   className, testingID, id, columns, items, footer, ...props
-}) => {
+}) {
   const heading = useMemo(() => map(columns, (col, key) => (
     <th key={key} className={col.headerClassName}>
       {col.header}

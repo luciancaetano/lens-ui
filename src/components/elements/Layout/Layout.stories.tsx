@@ -13,47 +13,17 @@ export default {
   ],
 } as ComponentMeta<typeof Layout.AppLayout>;
 
-const AppLayout: ComponentStory<typeof Layout.AppLayout> = (args) => (
-  <Layout.AppLayout {...args} />
-);
+const AppLayout: ComponentStory<typeof Layout.AppLayout> = function (args) {
+  return <Layout.AppLayout {...args} />;
+};
 
-export const _AppLayout = (args) => (
-  <LensProvider>
-    <AppLayout {...args}>
-      <div>
-        App Header
-      </div>
-      <Layout.Content>
+export var _AppLayout = function (args) {
+  return (
+    <LensProvider>
+      <AppLayout {...args}>
         <div>
-          Line 1
+          App Header
         </div>
-        <div>
-          Line 2
-        </div>
-      </Layout.Content>
-      <div>
-        AppFooter
-      </div>
-    </AppLayout>
-  </LensProvider>
-);
-
-export const _Sidebar = (args) => (
-  <LensProvider>
-    <AppLayout {...args}>
-      <div>
-        App Header
-      </div>
-      <Layout.Content layout="horizontal">
-        <Layout.Sidebar>
-          Side content
-          <div>
-            Line 1
-          </div>
-          <div>
-            Line 2
-          </div>
-        </Layout.Sidebar>
         <Layout.Content>
           <div>
             Line 1
@@ -62,10 +32,44 @@ export const _Sidebar = (args) => (
             Line 2
           </div>
         </Layout.Content>
-      </Layout.Content>
-      <div>
-        AppFooter
-      </div>
-    </AppLayout>
-  </LensProvider>
-);
+        <div>
+          AppFooter
+        </div>
+      </AppLayout>
+    </LensProvider>
+  );
+};
+
+export var _Sidebar = function (args) {
+  return (
+    <LensProvider>
+      <AppLayout {...args}>
+        <div>
+          App Header
+        </div>
+        <Layout.Content layout="horizontal">
+          <Layout.Sidebar>
+            Side content
+            <div>
+              Line 1
+            </div>
+            <div>
+              Line 2
+            </div>
+          </Layout.Sidebar>
+          <Layout.Content>
+            <div>
+              Line 1
+            </div>
+            <div>
+              Line 2
+            </div>
+          </Layout.Content>
+        </Layout.Content>
+        <div>
+          AppFooter
+        </div>
+      </AppLayout>
+    </LensProvider>
+  );
+};

@@ -16,9 +16,9 @@ import { useOnClickOutside } from '../../../hooks';
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
  */
-const DropDownMenu:React.FC<IDropDownMenuProps> = ({
+const DropDownMenu:React.FC<IDropDownMenuProps> = function ({
   className, testingID, id, children, items, onItemClick, offset = [10, 10], activeId, ...props
-}) => {
+}) {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
@@ -82,26 +82,28 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
         <Icon name="BsChevronDown" />
       </div>
       {isOpen && (
-        ReactDOM.createPortal((
-          <div
-            role="list"
-            className={styles.dropDownMenuList}
-            data-lens-element="drop-down-menu__list"
-            ref={(r) => {
-              ref.current = r;
-              setPopperElement(r);
-            }}
-            {...attributes.popper}
-            style={{
-              ...popper.styles.popper,
-              zIndex: Layers.OverlaySurfaces,
-            }}
-          >
-            <ul data-lens-element="drop-down-menu__ul">
-              {listItems}
-            </ul>
-          </div>
-        ), getPortalContainer('lens-ui-drop-down-menu__list-portal'))
+        ReactDOM.createPortal(
+          (
+            <div
+              role="list"
+              className={styles.dropDownMenuList}
+              data-lens-element="drop-down-menu__list"
+              ref={(r) => {
+                ref.current = r;
+                setPopperElement(r);
+              }}
+              {...attributes.popper}
+              style={{
+                ...popper.styles.popper,
+                zIndex: Layers.OverlaySurfaces,
+              }}
+            >
+              <ul data-lens-element="drop-down-menu__ul">
+                {listItems}
+              </ul>
+            </div>
+          ), getPortalContainer('lens-ui-drop-down-menu__list-portal'),
+        )
       )}
     </div>
   );

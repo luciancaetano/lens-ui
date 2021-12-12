@@ -15,9 +15,9 @@ export default {
   ],
 } as ComponentMeta<typeof Table>;
 
-const TableTemplate: ComponentStory<typeof Table> = (args) => (
-  <Table {...args} />
-);
+const TableTemplate: ComponentStory<typeof Table> = function (args) {
+  return <Table {...args} />;
+};
 
 interface IItemTypeData extends ITableItem {
   id: number;

@@ -7,15 +7,13 @@ import TextInput from './TextInput';
 describe('<TextInput/>', () => {
   it('should render TextInput input', () => {
     const { container } = render(
-      <>
-        <TextInput
-          defaultValue="lorem impsum"
-          id="testing-id"
-          testingID="testing-target"
-          type="search"
-          isError
-        />
-      </>,
+      <TextInput
+        defaultValue="lorem impsum"
+        id="testing-id"
+        testingID="testing-target"
+        type="search"
+        isError
+      />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -23,15 +21,13 @@ describe('<TextInput/>', () => {
 
   it('should test input with defaultValue prop', () => {
     const { container } = render(
-      <>
-        <TextInput
-          defaultValue="lorem impsum"
-          id="testing-id"
-          testingID="testing-target"
-          type="textarea"
-          isError
-        />
-      </>,
+      <TextInput
+        defaultValue="lorem impsum"
+        id="testing-id"
+        testingID="testing-target"
+        type="textarea"
+        isError
+      />,
     );
 
     expect(container.querySelector('textarea')).toBeInTheDocument();
@@ -42,9 +38,7 @@ describe('<TextInput/>', () => {
     const onChange = jest.fn();
     const onBlur = jest.fn();
     const { container } = render(
-      <>
-        <TextInput testingID="testing-target" onChange={onChange} onBlur={onBlur} />
-      </>,
+      <TextInput testingID="testing-target" onChange={onChange} onBlur={onBlur} />,
     );
 
     fireEvent.click(container.querySelector('input'));

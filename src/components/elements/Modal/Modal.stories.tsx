@@ -20,15 +20,15 @@ export default {
   ],
 } as ComponentMeta<typeof Modal>;
 
-const ModalTemplate: ComponentStory<typeof Modal> = (args) => (
-  <Modal {...args} />
-);
+const ModalTemplate: ComponentStory<typeof Modal> = function (args) {
+  return <Modal {...args} />;
+};
 
 interface ISimpleModalCMPProps{
   size?: any;
 }
 
-const SimpleModalCMP: React.FC<ISimpleModalCMPProps> = (args) => {
+const SimpleModalCMP: React.FC<ISimpleModalCMPProps> = function (args) {
   const { closeModal } = useModal();
   return (
     <ModalTemplate {...args} onBackdropClick={(r) => closeModal(r)} onEscape={(r) => closeModal(r)}>
@@ -48,7 +48,7 @@ const SimpleModalCMP: React.FC<ISimpleModalCMPProps> = (args) => {
   );
 };
 
-export const _Modal = (args) => {
+export var _Modal = function (args) {
   const [response, setResponse] = useState('');
   const { showModal } = useModal();
   return (
@@ -64,7 +64,7 @@ export const _Modal = (args) => {
   );
 };
 
-export const Sizes = (args) => {
+export var Sizes = function (args) {
   const [response, setResponse] = useState('');
   const { showModal } = useModal();
   return (
@@ -86,7 +86,7 @@ export const Sizes = (args) => {
   );
 };
 
-const SimpleModalStackedCMP: React.FC<ISimpleModalCMPProps> = ({ size }) => {
+const SimpleModalStackedCMP: React.FC<ISimpleModalCMPProps> = function ({ size }) {
   const { closeModal, showModal } = useModal();
   const { addAlert } = useAlert();
   return (
@@ -116,7 +116,7 @@ const SimpleModalStackedCMP: React.FC<ISimpleModalCMPProps> = ({ size }) => {
   );
 };
 
-export const Stacked = (args) => {
+export var Stacked = function (args) {
   const [response, setResponse] = useState('');
   const { showModal } = useModal();
   return (

@@ -4,7 +4,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import { DeviceOrientationType, IDeviceProviderProps } from './DeviceProvider.types';
 import DeviceContext from './DeviceContext';
 
-const DeviceProvider = ({ children, debounceTime = 100 }: React.PropsWithChildren<IDeviceProviderProps>) => {
+const DeviceProvider = function ({ children, debounceTime = 100 }: React.PropsWithChildren<IDeviceProviderProps>) {
   if (typeof window === 'undefined') {
     return null;
   }

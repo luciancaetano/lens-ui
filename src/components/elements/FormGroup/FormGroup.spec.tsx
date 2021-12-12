@@ -8,9 +8,7 @@ describe('<FormGroup/>', () => {
   it('should check if the children content is present', () => {
     const childrenContent = 'My-Children-Component';
     const { getByText } = render(
-      <>
-        <FormGroup testingID="testing-target">{childrenContent}</FormGroup>
-      </>,
+      <FormGroup testingID="testing-target">{childrenContent}</FormGroup>,
     );
 
     expect(getByText(childrenContent)).toBeInTheDocument();
@@ -19,9 +17,7 @@ describe('<FormGroup/>', () => {
   it('test helperText attibute', () => {
     const testingText = 'My-Children-Component';
     const { getByText } = render(
-      <>
-        <FormGroup testingID="testing-target" helperText={testingText} />
-      </>,
+      <FormGroup testingID="testing-target" helperText={testingText} />,
     );
 
     expect(getByText(testingText)).toBeInTheDocument();
@@ -29,9 +25,7 @@ describe('<FormGroup/>', () => {
 
   it('test helperTextIntent attibute', () => {
     const testRender = (helperTextIntent: IntentType) => render(
-      <>
-        <FormGroup testingID="testing-target" helperTextIntent={helperTextIntent} helperText="helper text" />
-      </>,
+      <FormGroup testingID="testing-target" helperTextIntent={helperTextIntent} helperText="helper text" />,
     ).container.querySelector(`[data-lens-form-group-helpertext-intent="${helperTextIntent}"]`);
 
     expect(testRender('danger')).toBeInTheDocument();
@@ -44,9 +38,7 @@ describe('<FormGroup/>', () => {
 
   it('test required attibute', () => {
     const { container } = render(
-      <>
-        <FormGroup testingID="testing-target" required />
-      </>,
+      <FormGroup testingID="testing-target" required />,
     );
 
     expect(container.querySelector('[data-lens-element="form-group__required_helper"]')).toBeInTheDocument();

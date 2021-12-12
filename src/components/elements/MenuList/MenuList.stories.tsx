@@ -14,9 +14,9 @@ export default {
   ],
 } as ComponentMeta<typeof MenuList>;
 
-const MenuListTemplate: ComponentStory<typeof MenuList> = (args) => (
-  <MenuList {...args} />
-);
+const MenuListTemplate: ComponentStory<typeof MenuList> = function (args) {
+  return <MenuList {...args} />;
+};
 
 const itemsData = (intent: any): IMenuListItemType[] => [
   { content: intent || 'Item 1' },

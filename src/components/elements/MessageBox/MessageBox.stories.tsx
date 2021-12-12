@@ -15,7 +15,9 @@ export default {
   ],
 } as ComponentMeta<typeof MessageBox>;
 
-const Template: ComponentStory<typeof MessageBox> = (args) => <MessageBox {...args} />;
+const Template: ComponentStory<typeof MessageBox> = function (args) {
+  return <MessageBox {...args} />;
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -42,9 +44,7 @@ _Timeout.args = {
 } as IMessageBoxProps;
 
 export const AllIntents = (args) => Object.keys(IntentEnum).map((intent: any) => (
-  <>
-    <Template intent={intent} {...args} />
-  </>
+  <Template intent={intent} {...args} />
 ));
 
 AllIntents.args = {

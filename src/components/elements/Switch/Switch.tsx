@@ -7,12 +7,10 @@ import { ISwitchProps } from './Switch.types';
 /**
  * The Switch component toggle the state of a single setting on or off.
  */
-const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((
-  {
-    className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
-    autoFocus, inputProps, ...props
-  }, ref,
-) => {
+const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>(({
+  className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
+  autoFocus, inputProps, ...props
+}, ref) => {
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(!!e.target.checked);

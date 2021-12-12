@@ -7,7 +7,7 @@ import LocaleProvider from '../LocaleProvider/LocaleProvider';
 import { ILensProviderProps } from './LensProvider.types';
 import { DefaultLocales } from '../../../i18n/index';
 
-const LensProvider = ({
+const LensProvider = function ({
   children, deviceContextUpdateDebounceTime = 100,
   initialLocale = DefaultLocales.enUs,
   alertSettings = {
@@ -16,19 +16,21 @@ const LensProvider = ({
   toastSettings = {
     placement: 'bottom-right',
   },
-}: React.PropsWithChildren<ILensProviderProps>) => (
-  <DeviceProvider debounceTime={deviceContextUpdateDebounceTime}>
-    <LocaleProvider initialLocale={initialLocale}>
-      <AlertProvider {...alertSettings}>
-        <ToastProvider {...toastSettings}>
-          <ModalProvider>
-            <div id="lens-ui-portal-root" />
-            {children}
-          </ModalProvider>
-        </ToastProvider>
-      </AlertProvider>
-    </LocaleProvider>
-  </DeviceProvider>
-);
+}: React.PropsWithChildren<ILensProviderProps>) {
+  return (
+    <DeviceProvider debounceTime={deviceContextUpdateDebounceTime}>
+      <LocaleProvider initialLocale={initialLocale}>
+        <AlertProvider {...alertSettings}>
+          <ToastProvider {...toastSettings}>
+            <ModalProvider>
+              <div id="lens-ui-portal-root" />
+              {children}
+            </ModalProvider>
+          </ToastProvider>
+        </AlertProvider>
+      </LocaleProvider>
+    </DeviceProvider>
+  );
+};
 
 export default LensProvider;

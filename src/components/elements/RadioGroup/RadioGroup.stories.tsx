@@ -13,20 +13,22 @@ export default {
   ],
 } as ComponentMeta<typeof RadioGroupCmp>;
 
-const RadioGroupTemplate: ComponentStory<typeof RadioGroupCmp> = (args) => (
-  <RadioGroupCmp {...args} />
-);
+const RadioGroupTemplate: ComponentStory<typeof RadioGroupCmp> = function (args) {
+  return <RadioGroupCmp {...args} />;
+};
 
-export const Uncontrolled = (args) => (
-  <RadioGroupTemplate
-    name="input"
-    options={[{ label: 'Option1', value: '1' }, { label: 'Option2', value: '2' }, { label: 'Option3', value: '3' }]}
-    defaultValue="2"
-    {...args}
-  />
-);
+export var Uncontrolled = function (args) {
+  return (
+    <RadioGroupTemplate
+      name="input"
+      options={[{ label: 'Option1', value: '1' }, { label: 'Option2', value: '2' }, { label: 'Option3', value: '3' }]}
+      defaultValue="2"
+      {...args}
+    />
+  );
+};
 
-export const Controlled = (args) => {
+export var Controlled = function (args) {
   const [state, setState] = useState('');
 
   return (

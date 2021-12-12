@@ -18,14 +18,12 @@ describe('<MaskedInput/>', () => {
 
   it('should render MaskedInput input', () => {
     const { container } = render(
-      <>
-        <MaskedInput
-          mask="99/99/9999"
-          defaultValue="11/22/1111"
-          id="testing-id"
-          testingID="testing-target"
-        />
-      </>,
+      <MaskedInput
+        mask="99/99/9999"
+        defaultValue="11/22/1111"
+        id="testing-id"
+        testingID="testing-target"
+      />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -33,14 +31,12 @@ describe('<MaskedInput/>', () => {
 
   it('should test input with defaultValue prop', () => {
     const { container } = render(
-      <>
-        <MaskedInput
-          mask="99/99/9999"
-          defaultValue="11/22/1111"
-          id="testing-id"
-          testingID="testing-target"
-        />
-      </>,
+      <MaskedInput
+        mask="99/99/9999"
+        defaultValue="11/22/1111"
+        id="testing-id"
+        testingID="testing-target"
+      />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -51,9 +47,7 @@ describe('<MaskedInput/>', () => {
     const onChange = jest.fn();
     const onBlur = jest.fn();
     const { container } = render(
-      <>
-        <MaskedInput mask="99/99/9999" testingID="testing-target" onChange={onChange} onBlur={onBlur} />
-      </>,
+      <MaskedInput mask="99/99/9999" testingID="testing-target" onChange={onChange} onBlur={onBlur} />,
     );
 
     fireEvent.click(container.querySelector('input'));

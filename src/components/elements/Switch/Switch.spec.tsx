@@ -6,9 +6,7 @@ import Switch from './Switch';
 describe('<Switch/>', () => {
   it('should render Switch input', () => {
     const { container } = render(
-      <>
-        <Switch label="TestSwitch" id="testing-id" checked testingID="testing-target" />
-      </>,
+      <Switch label="TestSwitch" id="testing-id" checked testingID="testing-target" />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -16,9 +14,7 @@ describe('<Switch/>', () => {
 
   it('should test input with defaultChecked prop', () => {
     const { container } = render(
-      <>
-        <Switch label="TestSwitch" defaultChecked testingID="testing-target" />
-      </>,
+      <Switch label="TestSwitch" defaultChecked testingID="testing-target" />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -27,9 +23,7 @@ describe('<Switch/>', () => {
 
   it('should test input with defaultChecked prop to be false', () => {
     const { container } = render(
-      <>
-        <Switch label="TestSwitch" defaultChecked={false} testingID="testing-target" />
-      </>,
+      <Switch label="TestSwitch" defaultChecked={false} testingID="testing-target" />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -40,9 +34,7 @@ describe('<Switch/>', () => {
     const onChange = jest.fn();
     const onBlur = jest.fn();
     const { container } = render(
-      <>
-        <Switch label="TestSwitch" testingID="testing-target" onChange={onChange} onBlur={onBlur} />
-      </>,
+      <Switch label="TestSwitch" testingID="testing-target" onChange={onChange} onBlur={onBlur} />,
     );
 
     fireEvent.click(container.querySelector('input'));

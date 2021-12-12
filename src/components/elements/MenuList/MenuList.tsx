@@ -7,7 +7,7 @@ import { IMenuListProps } from './MenuList.types';
 /**
  * MenuList display a list of choices on constant surfaces.
  */
-const MenuList: React.FC<IMenuListProps> = ({ items, ...props }) => {
+const MenuList: React.FC<IMenuListProps> = function ({ items, ...props }) {
   const menuItems = useMemo(() => items.map((item) => ({
     ...item,
     className: clsx(styles.menuItem, {

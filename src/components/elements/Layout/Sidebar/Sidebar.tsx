@@ -6,18 +6,20 @@ import { ILayoutSidebarProps } from './Sidebar.types';
 /**
  * The Content component handles sidebar parts of the app
  */
-const Sidebar:React.FC<ILayoutSidebarProps> = ({
+const Sidebar:React.FC<ILayoutSidebarProps> = function ({
   className, testingID, id, children, ...props
-}) => (
-  <aside
-    {...props}
-    id={id}
-    data-testid={testingID}
-    data-lens-element="layout__sidebar"
-    className={clsx(styles.sidebar, className)}
-  >
-    {children}
-  </aside>
-);
+}) {
+  return (
+    <aside
+      {...props}
+      id={id}
+      data-testid={testingID}
+      data-lens-element="layout__sidebar"
+      className={clsx(styles.sidebar, className)}
+    >
+      {children}
+    </aside>
+  );
+};
 
 export default Sidebar;

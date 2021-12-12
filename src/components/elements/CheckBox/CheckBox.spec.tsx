@@ -6,9 +6,7 @@ import CheckBox from './CheckBox';
 describe('<CheckBox/>', () => {
   it('should render checkbox input', () => {
     const { container } = render(
-      <>
-        <CheckBox label="TestCheckbox" id="testing-id" checked testingID="testing-target" />
-      </>,
+      <CheckBox label="TestCheckbox" id="testing-id" checked testingID="testing-target" />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -16,9 +14,7 @@ describe('<CheckBox/>', () => {
 
   it('should render checkbox input with defaultChecked prop', () => {
     const { container } = render(
-      <>
-        <CheckBox label="TestCheckbox" defaultChecked testingID="testing-target" />
-      </>,
+      <CheckBox label="TestCheckbox" defaultChecked testingID="testing-target" />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -26,9 +22,7 @@ describe('<CheckBox/>', () => {
 
   it('should test input with defaultChecked prop', () => {
     const { container } = render(
-      <>
-        <CheckBox label="TestCheckBox" defaultChecked testingID="testing-target" />
-      </>,
+      <CheckBox label="TestCheckBox" defaultChecked testingID="testing-target" />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -37,9 +31,7 @@ describe('<CheckBox/>', () => {
 
   it('should test input with defaultChecked prop to be false', () => {
     const { container } = render(
-      <>
-        <CheckBox label="TestCheckBox" defaultChecked={false} testingID="testing-target" />
-      </>,
+      <CheckBox label="TestCheckBox" defaultChecked={false} testingID="testing-target" />,
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -50,9 +42,7 @@ describe('<CheckBox/>', () => {
     const onChange = jest.fn();
     const onBlur = jest.fn();
     const { container } = render(
-      <>
-        <CheckBox label="TestCheckbox" testingID="testing-target" onChange={onChange} onBlur={onBlur} />
-      </>,
+      <CheckBox label="TestCheckbox" testingID="testing-target" onChange={onChange} onBlur={onBlur} />,
     );
 
     fireEvent.click(container.querySelector('input'));

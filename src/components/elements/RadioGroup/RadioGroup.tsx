@@ -12,9 +12,9 @@ import { useDevice } from '../../../hooks';
 /**
  * RadioGroup allow the user to select one option from a set.
  */
-const RadioGroup: React.FC<IRadioGroupProps> = ({
+const RadioGroup: React.FC<IRadioGroupProps> = function ({
   className, testingID, id, onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled, ...props
-}) => {
+}) {
   const { isPhone, isTablet } = useDevice();
   const handleChange = useCallback((e: React.FormEvent<HTMLDivElement>) => {
     if (onChange && e.target) {

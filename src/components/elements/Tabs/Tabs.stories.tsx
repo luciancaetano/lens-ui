@@ -59,9 +59,9 @@ const renderRabsContentData = (tab: ITabsItem | null) => (
   </>
 );
 
-const TabsTemplate: ComponentStory<typeof Tabs> = (args) => (
-  <Tabs {...args} />
-);
+const TabsTemplate: ComponentStory<typeof Tabs> = function (args) {
+  return <Tabs {...args} />;
+};
 
 const tabsItemsData:ITabsItem[] = [
   {
@@ -78,7 +78,7 @@ const tabsItemsData:ITabsItem[] = [
   },
 ];
 
-export const _TabsControlled = (args) => {
+export var _TabsControlled = function (args) {
   const [activeTab, setActiveTab] = useState(tabsItemsData[0].id);
 
   return (

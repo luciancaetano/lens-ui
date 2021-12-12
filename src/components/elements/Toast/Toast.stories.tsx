@@ -16,7 +16,7 @@ export default {
   ],
 } as ComponentMeta<typeof Toast>;
 
-export const _Toast = () => {
+export var _Toast = function () {
   const { addToast } = useToast();
 
   return (

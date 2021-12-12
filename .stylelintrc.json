@@ -11,7 +11,8 @@
     "no-duplicate-selectors": null,
     "property-no-unknown": null,
     "declaration-block-no-redundant-longhand-properties": null,
-    "max-line-length": null
+    "max-line-length": null,
+    "import/no-relative-packages": null
   },
   "overrides": [
     {

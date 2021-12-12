@@ -3,9 +3,9 @@ import React from 'react';
 import { ICardTitleProps } from './Card.types';
 import styles from './Card.module.scss';
 
-const CardTitle: React.FC<ICardTitleProps> = ({
+const CardTitle: React.FC<ICardTitleProps> = function ({
   children, className, subtitle, testingID, ...props
-}) => {
+}) {
   if (subtitle) {
     return (
       <h6

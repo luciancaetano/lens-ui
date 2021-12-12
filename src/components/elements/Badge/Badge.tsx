@@ -6,23 +6,25 @@ import styles from './Badge.module.scss';
 /**
  * Badge generates a small badge to the top-right of its child(ren).
  */
-const Badge:React.FC<IBadgeProps> = ({
+const Badge:React.FC<IBadgeProps> = function ({
   className, testingID, id, children, intent = 'primary', type = 'solid', ...props
-}) => (
-  <div
-    {...props}
-    id={id}
-    data-testid={testingID}
-    data-lens-intent={intent}
-    data-lens-element="badge"
-    className={clsx(
-      styles.badge,
-      styles[`badge--${type}-${intent}`],
-      className,
-    )}
-  >
-    {children}
-  </div>
-);
+}) {
+  return (
+    <div
+      {...props}
+      id={id}
+      data-testid={testingID}
+      data-lens-intent={intent}
+      data-lens-element="badge"
+      className={clsx(
+        styles.badge,
+        styles[`badge--${type}-${intent}`],
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default Badge;

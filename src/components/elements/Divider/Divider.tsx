@@ -6,18 +6,20 @@ import { IDividerProps } from './Divider.types';
 /**
  * A divider is a thin line that groups content in layouts.
  */
-const Divider:React.FC<IDividerProps> = ({
+const Divider:React.FC<IDividerProps> = function ({
   className, testingID, id, children, ...props
-}) => (
-  <div
-    {...props}
-    id={id}
-    data-lens-element="card"
-    data-testid={testingID}
-    className={clsx(styles.divider, className)}
-  >
-    {children}
-  </div>
-);
+}) {
+  return (
+    <div
+      {...props}
+      id={id}
+      data-lens-element="card"
+      data-testid={testingID}
+      className={clsx(styles.divider, className)}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default Divider;

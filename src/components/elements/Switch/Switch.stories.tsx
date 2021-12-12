@@ -14,17 +14,19 @@ export default {
   ],
 } as ComponentMeta<typeof Switch>;
 
-const SwitchTemplate: ComponentStory<typeof Switch> = (args) => (
-  <Switch {...args} />
-);
+const SwitchTemplate: ComponentStory<typeof Switch> = function (args) {
+  return <Switch {...args} />;
+};
 
-export const Uncontrolled = (args) => (
-  <FormGroup>
-    <SwitchTemplate {...args} label="Night Mode" />
-  </FormGroup>
-);
+export var Uncontrolled = function (args) {
+  return (
+    <FormGroup>
+      <SwitchTemplate {...args} label="Night Mode" />
+    </FormGroup>
+  );
+};
 
-export const Controlled = (args) => {
+export var Controlled = function (args) {
   const [state, setState] = useState(false);
 
   return (

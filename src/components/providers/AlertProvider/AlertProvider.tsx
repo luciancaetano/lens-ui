@@ -18,7 +18,7 @@ const limitResponses = (responses: Record<string, IAlertResult>, responseLimit: 
   return omit(responses, omitKeys);
 };
 
-const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit }) => {
+const AlertProvider: React.FC<IAlertProviderProps> = function ({ children, responseLimit }) {
   const [activeAlert, setActiveAlert] = useState<IAlertItemData | null>(null);
   const [queue, setQueue] = useState<IAlertItemData[]>([]);
   const [results, setResults] = useState<Record<string, IAlertResult>>({});

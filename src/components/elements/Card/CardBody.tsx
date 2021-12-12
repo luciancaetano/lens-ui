@@ -3,17 +3,19 @@ import React from 'react';
 import { ITestableProps } from '../../../types';
 import styles from './Card.module.scss';
 
-const CardBody: React.FC<React.HtmlHTMLAttributes<HTMLDivElement> & ITestableProps> = ({
+const CardBody: React.FC<React.HtmlHTMLAttributes<HTMLDivElement> & ITestableProps> = function ({
   children, className, testingID, ...props
-}) => (
-  <div
-    {...props as any}
-    data-testid={testingID}
-    data-lens-element="card__body"
-    className={clsx(styles.cardBody, className)}
-  >
-    {children}
-  </div>
-);
+}) {
+  return (
+    <div
+      {...props as any}
+      data-testid={testingID}
+      data-lens-element="card__body"
+      className={clsx(styles.cardBody, className)}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default CardBody;

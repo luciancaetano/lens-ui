@@ -13,22 +13,24 @@ export default {
   ],
 } as ComponentMeta<typeof Badge>;
 
-const TemplateDefault: ComponentStory<typeof Badge> = (args) => (
-  <>
+const TemplateDefault: ComponentStory<typeof Badge> = function (args) {
+  return (
     <Badge {...args}>Hello World!</Badge>
-  </>
-);
+  );
+};
 
-const Template: ComponentStory<typeof Badge> = (args) => (
-  <>
-    <Badge type={args.type} intent="primary">primary</Badge>
-    <Badge type={args.type} intent="secondary">secondary</Badge>
-    <Badge type={args.type} intent="info">info</Badge>
-    <Badge type={args.type} intent="success">success</Badge>
-    <Badge type={args.type} intent="warning">warning</Badge>
-    <Badge type={args.type} intent="danger">danger</Badge>
-  </>
-);
+const Template: ComponentStory<typeof Badge> = function (args) {
+  return (
+    <>
+      <Badge type={args.type} intent="primary">primary</Badge>
+      <Badge type={args.type} intent="secondary">secondary</Badge>
+      <Badge type={args.type} intent="info">info</Badge>
+      <Badge type={args.type} intent="success">success</Badge>
+      <Badge type={args.type} intent="warning">warning</Badge>
+      <Badge type={args.type} intent="danger">danger</Badge>
+    </>
+  );
+};
 
 export const Default = TemplateDefault.bind({});
 

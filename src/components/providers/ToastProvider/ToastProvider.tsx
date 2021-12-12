@@ -11,7 +11,7 @@ import {
 import styles from './ToastProvider.module.scss';
 import Toast from '../../elements/Toast/Toast';
 
-const ToastProvider: React.FC<IToastProviderProps> = ({ children, placement }) => {
+const ToastProvider: React.FC<IToastProviderProps> = function ({ children, placement }) {
   const [toasts, setToasts] = useState<IToastData[]>([]);
   const { isPhone } = useDevice();
 
