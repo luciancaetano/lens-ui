@@ -7,9 +7,9 @@ import styles from './Breadcrumbs.module.scss';
 /**
  * Breadcrumbs allow users to make selections from a range of pages or navigation history.
  */
-const Breadcrumbs:React.FC<IBreadcrumbsProps> = function ({
+const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
   className, testingID, id, history, onItemClick, ...props
-}) {
+}) => {
   const handleItemClick = useCallback((item: IBreadcrumbLink) => (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (onItemClick) {
       onItemClick(item, event);

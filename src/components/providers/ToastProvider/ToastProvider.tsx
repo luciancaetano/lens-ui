@@ -11,7 +11,7 @@ import {
 import styles from './ToastProvider.module.scss';
 import Toast from '../../elements/Toast/Toast';
 
-const ToastProvider: React.FC<IToastProviderProps> = function ({ children, placement }) {
+const ToastProvider: React.FC<IToastProviderProps> = ({ children, placement }) => {
   const [toasts, setToasts] = useState<IToastData[]>([]);
   const { isPhone } = useDevice();
 
@@ -31,11 +31,12 @@ const ToastProvider: React.FC<IToastProviderProps> = function ({ children, place
 
   const toatsItems = useMemo(() => toasts.map((toast) => (<Toast data={toast} key={toast.id} />)), [toasts]);
 
+  const data = useMemo(() => ({
+    add, close, closeAll, toasts, placement,
+  }), [add, close, closeAll, toasts, placement]);
+
   return (
-    <ToastContext.Provider value={{
-      add, close, closeAll, toasts, placement,
-    }}
-    >
+    <ToastContext.Provider value={data}>
       {toasts.length > 0 && (
         <div
           data-lens-element="toast-provider"

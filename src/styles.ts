@@ -1,3 +1,4 @@
+/* eslint-disable import/no-relative-packages */
 import '../node_modules/reset-css/reset.css';
 import '../node_modules/@fontsource/inter/index.css';
 import '../node_modules/@fontsource/inter/100.css';

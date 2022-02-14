@@ -14,26 +14,24 @@ export default {
   ],
 } as ComponentMeta<typeof DropDownMenu>;
 
-const TemplateDefault: ComponentStory<typeof DropDownMenu> = function (args) {
-  return (
-    <LensProvider>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'end',
-      } as any}
-      >
-        <div style={{ maxWidth: 180, display: 'flex' } as any}>
-          <DropDownMenu {...args}>
-            Menu
-          </DropDownMenu>
-        </div>
-
+const TemplateDefault: ComponentStory<typeof DropDownMenu> = (args) => (
+  <LensProvider>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'end',
+    } as any}
+    >
+      <div style={{ maxWidth: 180, display: 'flex' } as any}>
+        <DropDownMenu {...args}>
+          Menu
+        </DropDownMenu>
       </div>
-    </LensProvider>
-  );
-};
+
+    </div>
+  </LensProvider>
+);
 
 const items: IDropdownItemType[] = [
   {

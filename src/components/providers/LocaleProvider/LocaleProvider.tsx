@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import AlertContext from './LocaleContext';
 import { ILocaleProviderProps } from './LocaleProvider.types';
 import { LocaleType } from '../../../i18n';
 
-const LocaleProvider: React.FC<ILocaleProviderProps> = function ({ children, initialLocale }) {
+const LocaleProvider: React.FC<ILocaleProviderProps> = ({ children, initialLocale }) => {
   const [locale, setLocale] = useState<LocaleType>(initialLocale);
+
+  const data = useMemo(() => ({
+    locale,
+    setLocale,
+  }), [locale, setLocale]);
 
   return (
 
-    <AlertContext.Provider value={{
-      locale,
-      setLocale,
-    }}
-    >
+    <AlertContext.Provider value={data}>
       {children}
     </AlertContext.Provider>
   );

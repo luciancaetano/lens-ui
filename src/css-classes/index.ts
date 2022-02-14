@@ -41,4 +41,6 @@ export const CLASSES = {
   IntentDangerDarken: 'lens-ui-intent-danger-darken',
   IntentInfoDarken: 'lens-ui-intent-info-darken',
   IntentWarningDarken: 'lens-ui-intent-warning-darken',
+
+  PortalRootContainer: 'lens-ui-portal-root',
 };

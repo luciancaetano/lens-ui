@@ -72,7 +72,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-primary-disabled-text-color);
       background-color: var(--lens-ui-elements-button-primary-disabled-background-color);
       border-color: var(--lens-ui-elements-button-primary-disabled-border-color);
@@ -124,7 +124,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-secondary-disabled-text-color);
       background-color: var(--lens-ui-elements-button-secondary-disabled-background-color);
       border-color: var(--lens-ui-elements-button-secondary-disabled-border-color);
@@ -176,7 +176,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-success-disabled-text-color);
       background-color: var(--lens-ui-elements-button-success-disabled-background-color);
       border-color: var(--lens-ui-elements-button-success-disabled-border-color);
@@ -228,7 +228,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-info-disabled-text-color);
       background-color: var(--lens-ui-elements-button-info-disabled-background-color);
       border-color: var(--lens-ui-elements-button-info-disabled-border-color);
@@ -280,7 +280,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-warning-disabled-text-color);
       background-color: var(--lens-ui-elements-button-warning-disabled-background-color);
       border-color: var(--lens-ui-elements-button-warning-disabled-border-color);
@@ -332,7 +332,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-danger-disabled-text-color);
       background-color: var(--lens-ui-elements-button-danger-disabled-background-color);
       border-color: var(--lens-ui-elements-button-danger-disabled-border-color);
@@ -384,7 +384,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-light-disabled-text-color);
       background-color: var(--lens-ui-elements-button-light-disabled-background-color);
       border-color: var(--lens-ui-elements-button-light-disabled-border-color);
@@ -436,7 +436,7 @@
 
     &:disabled {
       pointer-events: none;
-      opacity: 65%;
+      opacity: .65;
       color: var(--lens-ui-elements-button-dark-disabled-text-color);
       background-color: var(--lens-ui-elements-button-dark-disabled-background-color);
       border-color: var(--lens-ui-elements-button-dark-disabled-border-color);

@@ -4,9 +4,9 @@ import React, { useCallback, useMemo } from 'react';
 import styles from './List.module.scss';
 import { IListProps, IListItem } from './List.types';
 
-const List: React.FC<IListProps> = function ({
+const List: React.FC<IListProps> = ({
   className, testingID, id, items, renderer, onItemClick, activeIndex, intent = 'primary', ...props
-}) {
+}) => {
   const handleItemClick = useCallback((item: IListItem) => (e: React.MouseEvent<HTMLDivElement>) => {
     if (onItemClick) {
       onItemClick(item, e);

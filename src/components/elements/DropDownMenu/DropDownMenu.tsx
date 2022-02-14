@@ -16,9 +16,9 @@ import { useOnClickOutside } from '../../../hooks';
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
  */
-const DropDownMenu:React.FC<IDropDownMenuProps> = function ({
+const DropDownMenu:React.FC<IDropDownMenuProps> = ({
   className, testingID, id, children, items, onItemClick, offset = [10, 10], activeId, ...props
-}) {
+}) => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
@@ -75,10 +75,10 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = function ({
       className={clsx(styles.dropDownMenu, className)}
       onClick={toggleMenu}
     >
-      <div className={styles.dropDownMenuChildren}>
+      <div className={styles.dropDownMenuChildren} data-lens-element="drop-down-menu__content">
         {children}
       </div>
-      <div className={styles.dropDownMenuChevron}>
+      <div className={styles.dropDownMenuChevron} data-lens-element="drop-down-menu__chevron">
         <Icon name="BsChevronDown" />
       </div>
       {isOpen && (

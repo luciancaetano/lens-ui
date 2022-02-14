@@ -6,8 +6,9 @@ import ToastProvider from '../ToastProvider/ToastProvider';
 import LocaleProvider from '../LocaleProvider/LocaleProvider';
 import { ILensProviderProps } from './LensProvider.types';
 import { DefaultLocales } from '../../../i18n/index';
+import { CLASSES } from '../../..';
 
-const LensProvider = function ({
+const LensProvider = ({
   children, deviceContextUpdateDebounceTime = 100,
   initialLocale = DefaultLocales.enUs,
   alertSettings = {
@@ -16,21 +17,19 @@ const LensProvider = function ({
   toastSettings = {
     placement: 'bottom-right',
   },
-}: React.PropsWithChildren<ILensProviderProps>) {
-  return (
-    <DeviceProvider debounceTime={deviceContextUpdateDebounceTime}>
-      <LocaleProvider initialLocale={initialLocale}>
-        <AlertProvider {...alertSettings}>
-          <ToastProvider {...toastSettings}>
-            <ModalProvider>
-              <div id="lens-ui-portal-root" />
-              {children}
-            </ModalProvider>
-          </ToastProvider>
-        </AlertProvider>
-      </LocaleProvider>
-    </DeviceProvider>
-  );
-};
+}: React.PropsWithChildren<ILensProviderProps>) => (
+  <DeviceProvider debounceTime={deviceContextUpdateDebounceTime}>
+    <LocaleProvider initialLocale={initialLocale}>
+      <AlertProvider {...alertSettings}>
+        <ToastProvider {...toastSettings}>
+          <ModalProvider>
+            <div id={CLASSES.PortalRootContainer} />
+            {children}
+          </ModalProvider>
+        </ToastProvider>
+      </AlertProvider>
+    </LocaleProvider>
+  </DeviceProvider>
+);
 
 export default LensProvider;

@@ -13,9 +13,7 @@ export default {
   ],
 } as ComponentMeta<typeof Breadcrumbs>;
 
-const Template: ComponentStory<typeof Breadcrumbs> = function (args) {
-  return <Breadcrumbs {...args}>Hello World</Breadcrumbs>;
-};
+const Template: ComponentStory<typeof Breadcrumbs> = (args) => <Breadcrumbs {...args}>Hello World</Breadcrumbs>;
 
 export const Default = Template.bind({});
 

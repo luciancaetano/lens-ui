@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { DeviceOrientationType, IDeviceProviderProps } from './DeviceProvider.types';
 import DeviceContext from './DeviceContext';
 
-const DeviceProvider = function ({ children, debounceTime = 100 }: React.PropsWithChildren<IDeviceProviderProps>) {
+const DeviceProvider = ({ children, debounceTime = 100 }: React.PropsWithChildren<IDeviceProviderProps>) => {
   if (typeof window === 'undefined') {
     return null;
   }
@@ -46,8 +46,10 @@ const DeviceProvider = function ({ children, debounceTime = 100 }: React.PropsWi
     };
   });
 
+  const data = useMemo(() => ({ online, orientation, windowSize: { width, height } }), [online, orientation, width, height]);
+
   return (
-    <DeviceContext.Provider value={{ online, orientation, windowSize: { width, height } }}>
+    <DeviceContext.Provider value={data}>
       {React.Children.toArray(children)}
     </DeviceContext.Provider>
   );

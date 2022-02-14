@@ -12,7 +12,7 @@
     "property-no-unknown": null,
     "declaration-block-no-redundant-longhand-properties": null,
     "max-line-length": null,
-    "import/no-relative-packages": null
+    "custom-property-pattern": null
   },
   "overrides": [
     {

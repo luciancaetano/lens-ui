@@ -16,14 +16,12 @@ export default {
   },
 } as ComponentMeta<typeof LensProvider>;
 
-const Template: ComponentStory<typeof LensProvider> = function (args) {
-  return (
-    <LensProvider {...args}>
-      <p>LensProvider is required for some functionality like modals, alerts, settings and more.</p>
-      <p>Just put LensProvider with your redux Provider :p</p>
-    </LensProvider>
-  );
-};
+const Template: ComponentStory<typeof LensProvider> = (args) => (
+  <LensProvider {...args}>
+    <p>LensProvider is required for some functionality like modals, alerts, settings and more.</p>
+    <p>Just put LensProvider with your redux Provider :p</p>
+  </LensProvider>
+);
 
 export const _Default = Template.bind({});
 

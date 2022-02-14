@@ -13,9 +13,7 @@ export default {
   ],
 } as ComponentMeta<typeof TextInput>;
 
-const TextInputTemplate: ComponentStory<typeof TextInput> = function (args) {
-  return <TextInput {...args} />;
-};
+const TextInputTemplate: ComponentStory<typeof TextInput> = (args) => <TextInput {...args} />;
 
 export const Uncontrolled = TextInputTemplate.bind({});
 Uncontrolled.args = {
@@ -23,7 +21,7 @@ Uncontrolled.args = {
   defaultValue: 'Hello World',
 };
 
-export var Controlled = function () {
+export const Controlled = () => {
   const [state, setState] = useState('');
 
   return (

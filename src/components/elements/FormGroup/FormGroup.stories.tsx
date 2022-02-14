@@ -14,43 +14,37 @@ export default {
   ],
 } as ComponentMeta<typeof FormGroup>;
 
-const Template: ComponentStory<typeof FormGroup> = function (args) {
-  return <FormGroup {...args} />;
-};
+const Template: ComponentStory<typeof FormGroup> = (args) => <FormGroup {...args} />;
 
-export var _FormGroup = function (args) {
-  return (
+export const _FormGroup = (args) => (
+  <Template
+    {...args}
+    label="Input Label"
+    helperText="Helper text"
+    helperTextIntent="danger"
+    required
+    labelFor="inputId"
+    inline
+  >
+    <input type="text" id="inputId" />
+  </Template>
+);
+
+export const UsingDivider = (args) => (
+  <>
     <Template
       {...args}
-      label="Input Label"
-      helperText="Helper text"
-      helperTextIntent="danger"
-      required
-      labelFor="inputId"
-      inline
+      label="Input 1"
     >
-      <input type="text" id="inputId" />
+      <input type="text" />
     </Template>
-  );
-};
+    <Divider>Divider title</Divider>
 
-export var UsingDivider = function (args) {
-  return (
-    <>
-      <Template
-        {...args}
-        label="Input 1"
-      >
-        <input type="text" />
-      </Template>
-      <Divider>Divider title</Divider>
-
-      <Template
-        {...args}
-        label="Input 1"
-      >
-        <input type="text" />
-      </Template>
-    </>
-  );
-};
+    <Template
+      {...args}
+      label="Input 1"
+    >
+      <input type="text" />
+    </Template>
+  </>
+);

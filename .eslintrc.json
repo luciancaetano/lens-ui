@@ -71,6 +71,8 @@
         "extendDefaults": false
       }
     ],
+    "no-promise-executor-return": "off",
+    "react/function-component-definition": "off",
     "jsx-a11y/control-has-associated-label": "off",
     "react/jsx-props-no-spreading": "off",
     "no-shadow":"off",

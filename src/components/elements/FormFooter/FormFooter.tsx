@@ -8,12 +8,12 @@ import { IFormFooterProps } from './FormFooter.types';
 /**
  * FormFooter display's form actions like, save, cancel delete etc.
  */
-const FormFooter:React.FC<IFormFooterProps> = function ({
+const FormFooter:React.FC<IFormFooterProps> = ({
   className, testingID, id, onCancel, onDelete, onSave = 'submit', isUpdate, state,
   cancelAppearance, cancelDisabled, deleteAppearance, deleteDisabled,
   saveAppearance, saveDisabled, cancelIsReset,
   children, childrenPos = 'betweenSaveAndCancel', ...props
-}) {
+}) => {
   const [_] = useInternalLensLocale();
 
   const saveButtonLabel = useMemo(() => {

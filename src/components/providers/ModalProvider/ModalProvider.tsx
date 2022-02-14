@@ -10,7 +10,7 @@ import React, {
 import ModalContext from './ModalContext';
 import { PORTAL_ROOT_ID } from '../../../css-classes';
 
-const ModalProvider: React.FC = function ({ children }) {
+const ModalProvider: React.FC = ({ children }) => {
   const [isOpenLayers, setIsOpen] = useState<Record<number, boolean>>({});
   const activeModalComponent = useRef<React.ComponentType[]>([]);
   const [props, setProps] = useState<Record<number, any>>({});
@@ -59,14 +59,15 @@ const ModalProvider: React.FC = function ({ children }) {
 
   const isOpen = useMemo(() => filter(isOpenLayers, (l) => !!l).length > 0, [isOpenLayers]);
 
+  const data = useMemo(() => ({
+    isOpen,
+    props,
+    closeModal,
+    showModal,
+  }), [isOpen, props, closeModal, showModal]);
+
   return (
-    <ModalContext.Provider value={{
-      isOpen,
-      props,
-      closeModal,
-      showModal,
-    }}
-    >
+    <ModalContext.Provider value={data}>
       <div id={PORTAL_ROOT_ID} />
       {activeModalComponent.current && typeof window !== 'undefined' && map(
         activeModalComponent.current,

@@ -22,7 +22,7 @@ export type TextInputPropsType = {
   | 'name' | 'autoFocus' | 'maxLength' | 'required'
   >;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-  multiline?: false;
+  multiline?: true;
 } & IBaseTextInputProps |
 {
   inputProps?: Omit<React.HtmlHTMLAttributes<HTMLTextAreaElement>,
@@ -30,6 +30,6 @@ export type TextInputPropsType = {
   | 'name' | 'autoFocus' | 'maxLength' | 'required'
   >;
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
-  multiline: true;
+  multiline: false;
   type?: undefined;
 } & IBaseTextInputProps;

@@ -14,9 +14,7 @@ export default {
   ],
 } as ComponentMeta<typeof List>;
 
-const ListTemplate: ComponentStory<typeof List> = function (args) {
-  return <List {...args} />;
-};
+const ListTemplate: ComponentStory<typeof List> = (args) => <List {...args} />;
 
 const itemsData = (intent: any): IListItem[] => [
   { content: intent || 'Item 1' },

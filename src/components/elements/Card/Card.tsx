@@ -6,24 +6,22 @@ import styles from './Card.module.scss';
 /**
  * Cards contain content and actions about a single subject.
  */
-const Card: React.FC<ICardProps> = function ({
+const Card: React.FC<ICardProps> = ({
   children, className, intent, testingID, ...props
-}) {
-  return (
-    <div
-      {...props as any}
-      data-testid={testingID}
-      data-lens-element="card"
-      data-lens-intent={intent}
-      className={clsx(
-        styles.card,
-        intent && styles[`card--bg-${intent}`],
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div
+    {...props as any}
+    data-testid={testingID}
+    data-lens-element="card"
+    data-lens-intent={intent}
+    className={clsx(
+      styles.card,
+      intent && styles[`card--bg-${intent}`],
+      className,
+    )}
+  >
+    {children}
+  </div>
+);
 
 export default Card;

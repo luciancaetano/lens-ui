@@ -3,19 +3,17 @@ import React from 'react';
 import { ICardTextProps } from './Card.types';
 import styles from './Card.module.scss';
 
-const CardText: React.FC<ICardTextProps> = function ({
+const CardText: React.FC<ICardTextProps> = ({
   children, className, testingID, ...props
-}) {
-  return (
-    <p
-      {...props as any}
-      data-testid={testingID}
-      data-lens-element="card__text"
-      className={clsx(styles.cardText, className)}
-    >
-      {children}
-    </p>
-  );
-};
+}) => (
+  <p
+    {...props as any}
+    data-testid={testingID}
+    data-lens-element="card__text"
+    className={clsx(styles.cardText, className)}
+  >
+    {children}
+  </p>
+);
 
 export default CardText;

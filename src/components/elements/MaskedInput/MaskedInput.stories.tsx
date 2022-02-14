@@ -13,9 +13,7 @@ export default {
   ],
 } as ComponentMeta<typeof MaskedInput>;
 
-const MaskedInputTemplate: ComponentStory<typeof MaskedInput> = function (args) {
-  return <MaskedInput {...args} />;
-};
+const MaskedInputTemplate: ComponentStory<typeof MaskedInput> = (args) => <MaskedInput {...args} />;
 
 export const Uncontrolled = MaskedInputTemplate.bind({});
 
@@ -25,7 +23,7 @@ Uncontrolled.args = {
   defaultValue: '03/03/1991',
 };
 
-export var Controlled = function (args) {
+export const Controlled = (args) => {
   const [state, setState] = useState('03/03/1991');
 
   return (

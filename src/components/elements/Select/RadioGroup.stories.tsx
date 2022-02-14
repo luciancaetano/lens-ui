@@ -13,22 +13,18 @@ export default {
   ],
 } as ComponentMeta<typeof SelectCmp>;
 
-const SelectTemplate: ComponentStory<typeof SelectCmp> = function (args) {
-  return <SelectCmp {...args} />;
-};
+const SelectTemplate: ComponentStory<typeof SelectCmp> = (args) => <SelectCmp {...args} />;
 
-export var Uncontrolled = function (args) {
-  return (
-    <SelectTemplate
-      name="input"
-      options={[{ label: 'Option1', value: '1' }, { label: 'Option2', value: '2' }, { label: 'Option3', value: '3' }]}
-      defaultValue="2"
-      {...args}
-    />
-  );
-};
+export const Uncontrolled = (args) => (
+  <SelectTemplate
+    name="input"
+    options={[{ label: 'Option1', value: '1' }, { label: 'Option2', value: '2' }, { label: 'Option3', value: '3' }]}
+    defaultValue="2"
+    {...args}
+  />
+);
 
-export var Controlled = function (args) {
+export const Controlled = (args) => {
   const [state, setState] = useState('');
 
   return (

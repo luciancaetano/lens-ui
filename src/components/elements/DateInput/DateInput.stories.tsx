@@ -14,13 +14,11 @@ export default {
   ],
 } as ComponentMeta<typeof DateInput>;
 
-const Template: ComponentStory<typeof DateInput> = function (args) {
-  return <DateInput {...args} />;
-};
+const Template: ComponentStory<typeof DateInput> = (args) => <DateInput {...args} />;
 
 export const Default = Template.bind({});
 
-export var Controlled = function (args) {
+export const Controlled = (args) => {
   const [state, setState] = useState(formatISO(new Date('1991-03-03')));
 
   return (
@@ -38,66 +36,54 @@ export var Controlled = function (args) {
   );
 };
 
-export var Uncontrolled = function (args) {
-  return (
-    <Template
-      name="input"
-      value={formatISO(new Date())} /* value work as initialValue */
-      {...args}
-    />
-  );
-};
-export var _MultiDateInput = function (args) {
-  return (
-    <Template
-      name="input"
-      type="multiple"
-      value={['1991-03-03 00:00:00']}
-      {...args}
-    />
-  );
-};
+export const Uncontrolled = (args) => (
+  <Template
+    name="input"
+    value={formatISO(new Date())} /* value work as initialValue */
+    {...args}
+  />
+);
+export const _MultiDateInput = (args) => (
+  <Template
+    name="input"
+    type="multiple"
+    value={['1991-03-03 00:00:00']}
+    {...args}
+  />
+);
 
-export var Range = function (args) {
-  return (
-    <Template
-      name="input"
-      type="range"
-      {...args}
-    />
-  );
-};
+export const Range = (args) => (
+  <Template
+    name="input"
+    type="range"
+    {...args}
+  />
+);
 
-export var MonthPicker = function (args) {
-  return (
-    <Template
-      type="month-only"
-      name="input"
-      displayFormat="MM"
-      {...args}
-    />
-  );
-};
+export const MonthPicker = (args) => (
+  <Template
+    type="month-only"
+    name="input"
+    displayFormat="MM"
+    {...args}
+  />
+);
 
-export var YearPicker = function (args) {
-  return (
-    <Template
-      name="input"
-      type="year-only"
-      displayFormat="YYYY"
-      {...args}
-    />
-  );
-};
+export const YearPicker = (args) => (
+  <Template
+    name="input"
+    type="year-only"
+    displayFormat="YYYY"
+    {...args}
+  />
+);
 
-export var TimePicker = function (args) {
-  return (
-    <Template
-      name="input"
-      type="time-only"
-      time="analog"
-      displayFormat="HH:mm:ss"
-      {...args}
-    />
-  );
-};
+export const TimePicker = (args) => (
+  <Template
+    name="input"
+    type="time-only"
+    time="analog"
+    displayFormat="HH:mm:ss"
+    {...args}
+  />
+);

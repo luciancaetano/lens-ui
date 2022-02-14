@@ -12,7 +12,7 @@ export default {
   ],
 };
 
-export var Alert = function () {
+export const Alert = () => {
   const { addAlert } = useAlert();
 
   return (

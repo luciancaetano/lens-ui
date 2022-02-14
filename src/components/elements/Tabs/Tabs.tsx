@@ -8,9 +8,9 @@ import { ITabsProps } from './Tabs.types';
 /**
  * The Tabs component make easy to explore and switch between different views.
  */
-const Tabs:React.FC<ITabsProps> = function ({
+const Tabs:React.FC<ITabsProps> = ({
   className, testingID, id, children, activeTab, initialActiveTab, onChange, tabs, vertical, ...props
-}) {
+}) => {
   const [activeTabId, setActiveTabId] = useState<string | null>(initialActiveTab || null);
 
   const activeTabItem = useMemo(() => tabs.find((t) => t.id === activeTabId), [tabs, activeTabId]);

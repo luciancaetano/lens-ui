@@ -14,9 +14,13 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
 }, ref) => {
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
-      onChange(!!e.target.checked, e);
+      if (checked !== undefined) {
+        onChange(!checked, e);
+      } else {
+        onChange(e.target.checked, e);
+      }
     }
-  }, [onChange]);
+  }, [onChange, checked]);
 
   const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
     if (onBlur) {
@@ -39,13 +43,12 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
         tabIndex={tabIndex}
         className={styles.input}
         onChange={handleChange}
-        checked={checked}
-        defaultChecked={defaultChecked}
         onBlur={handleBlur}
         disabled={disabled}
         autoFocus={autoFocus}
         name={name}
         ref={ref}
+        {...(checked !== undefined ? ({ checked }) : { defaultChecked })}
       />
       <label htmlFor={`${id}-input`} className={styles.label}>{label}</label>
     </div>

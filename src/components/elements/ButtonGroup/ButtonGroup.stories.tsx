@@ -14,17 +14,15 @@ export default {
   ],
 } as ComponentMeta<typeof ButtonGroup>;
 
-const Template: ComponentStory<typeof ButtonGroup> = function (args) {
-  return (
-    <div>
-      <ButtonGroup {...args}>
-        <Button>Button 1</Button>
-        <Button>Button 2</Button>
-        <Button>Button 3</Button>
-      </ButtonGroup>
-    </div>
-  );
-};
+const Template: ComponentStory<typeof ButtonGroup> = (args) => (
+  <div>
+    <ButtonGroup {...args}>
+      <Button>Button 1</Button>
+      <Button>Button 2</Button>
+      <Button>Button 3</Button>
+    </ButtonGroup>
+  </div>
+);
 
 export const Horizontal = Template.bind({});
 Horizontal.args = {

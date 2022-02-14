@@ -6,24 +6,22 @@ import styles from './ButtonGroup.module.scss';
 /**
  * The ButtonGroup component can be used to group related buttons.
  */
-const ButtonGroup:React.FC<IButtonGroupProps> = function ({
+const ButtonGroup:React.FC<IButtonGroupProps> = ({
   children, vertical, className, testingID, id, ...props
-}) {
-  return (
-    <div
-      {...props}
-      id={id}
-      data-testid={testingID}
-      data-lens-element="button-grpup"
-      className={clsx(
-        styles.buttonGroup,
-        vertical ? styles.buttonGroupVertical : styles.buttonGroupHorizontal,
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div
+    {...props}
+    id={id}
+    data-testid={testingID}
+    data-lens-element="button-grpup"
+    className={clsx(
+      styles.buttonGroup,
+      vertical ? styles.buttonGroupVertical : styles.buttonGroupHorizontal,
+      className,
+    )}
+  >
+    {children}
+  </div>
+);
 
 export default ButtonGroup;

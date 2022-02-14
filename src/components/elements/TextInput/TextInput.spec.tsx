@@ -25,7 +25,7 @@ describe('<TextInput/>', () => {
         defaultValue="lorem impsum"
         id="testing-id"
         testingID="testing-target"
-        type="textarea"
+        multiline
         isError
       />,
     );

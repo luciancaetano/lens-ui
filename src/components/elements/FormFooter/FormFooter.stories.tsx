@@ -14,13 +14,11 @@ export default {
   ],
 } as ComponentMeta<typeof FormFooter>;
 
-const Template: ComponentStory<typeof FormFooter> = function (args) {
-  return (
-    <div style={{ maxWidth: 500 }}>
-      <FormFooter {...args} />
-    </div>
-  );
-};
+const Template: ComponentStory<typeof FormFooter> = (args) => (
+  <div style={{ maxWidth: 500 }}>
+    <FormFooter {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
 

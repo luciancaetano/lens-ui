@@ -2,7 +2,7 @@ import sortBy from 'lodash/sortBy';
 import omit from 'lodash/omit';
 import React, {
   useState, useEffect, useCallback,
-  useRef,
+  useRef, useMemo,
 } from 'react';
 import swal from 'sweetalert2';
 import { randomId } from '../../../utils/index';
@@ -18,7 +18,7 @@ const limitResponses = (responses: Record<string, IAlertResult>, responseLimit: 
   return omit(responses, omitKeys);
 };
 
-const AlertProvider: React.FC<IAlertProviderProps> = function ({ children, responseLimit }) {
+const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit }) => {
   const [activeAlert, setActiveAlert] = useState<IAlertItemData | null>(null);
   const [queue, setQueue] = useState<IAlertItemData[]>([]);
   const [results, setResults] = useState<Record<string, IAlertResult>>({});
@@ -115,17 +115,18 @@ const AlertProvider: React.FC<IAlertProviderProps> = function ({ children, respo
     setResults({});
   }, []);
 
+  const data = useMemo(() => ({
+    queue,
+    activeAlert,
+    results,
+    addAlert,
+    cancelAlert,
+    clearQueue,
+    clearResults,
+  }), [queue, activeAlert, results, addAlert, cancelAlert, clearQueue, clearResults]);
+
   return (
-    <AlertContext.Provider value={{
-      queue,
-      activeAlert,
-      results,
-      addAlert,
-      cancelAlert,
-      clearQueue,
-      clearResults,
-    }}
-    >
+    <AlertContext.Provider value={data}>
       {React.Children.toArray(children)}
     </AlertContext.Provider>
   );

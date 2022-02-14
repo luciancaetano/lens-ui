@@ -1,6 +1,7 @@
 import {
   Layers, getPortalContainer, randomId, sleep,
 } from '.';
+import { CLASSES } from '..';
 
 describe('utils', () => {
   it('Layers', () => {
@@ -9,7 +10,7 @@ describe('utils', () => {
 
   it('getPortalContainer', () => {
     const root = window.document.createElement('div');
-    root.id = 'lens-ui-portal-root';
+    root.id = CLASSES.PortalRootContainer;
     window.document.body.appendChild(root);
 
     expect(getPortalContainer('my_portal')).toBeInTheDocument();

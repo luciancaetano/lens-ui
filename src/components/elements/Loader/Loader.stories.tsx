@@ -14,13 +14,11 @@ export default {
   ],
 } as ComponentMeta<typeof Loader>;
 
-const LoaderTemplate: ComponentStory<typeof Loader> = function (args) {
-  return (
-    <Loader {...args}>
-      <Icon name="BsCamera" size={30} />
-    </Loader>
-  );
-};
+const LoaderTemplate: ComponentStory<typeof Loader> = (args) => (
+  <Loader {...args}>
+    <Icon name="BsCamera" size={30} />
+  </Loader>
+);
 
 export const _Loader = LoaderTemplate.bind({});
 _Loader.args = {

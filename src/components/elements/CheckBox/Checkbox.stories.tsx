@@ -14,28 +14,20 @@ export default {
   ],
 } as ComponentMeta<typeof CheckBox>;
 
-const Template: ComponentStory<typeof CheckBox> = function (args) {
-  return <CheckBox {...args} />;
-};
+const Template: ComponentStory<typeof CheckBox> = (args) => <CheckBox {...args} />;
 
-export var Uncontrolled = function (args) {
-  return (
-    <FormGroup>
-      <Template label="HTML Label" {...args} />
-    </FormGroup>
-  );
-};
+export const Uncontrolled = (args) => (
+  <FormGroup>
+    <Template label="HTML Label" {...args} />
+  </FormGroup>
+);
 
-export var Controlled = function (args) {
+export const Controlled = (args) => {
   const [state, setState] = useState(false);
 
   return (
-    <>
-
-      <div>Item is chacked: {JSON.stringify(state)}</div>
-      <FormGroup>
-        <Template label="HTML Label" checked={state} onChange={(v) => setState(v)} {...args} />
-      </FormGroup>
-    </>
+    <FormGroup label={`Item is chacked: ${JSON.stringify(state)}`}>
+      <Template {...args} label="HTML Label" checked={state} onChange={(v) => setState(v)} />
+    </FormGroup>
   );
 };

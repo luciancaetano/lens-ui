@@ -17,13 +17,13 @@
   transition: opacity linear .3s;
 
   &--hidden {
-    opacity: 0%;
+    opacity: 0;
   }
 
   &__title {
     padding: .2rem;
     flex: 1;
-    font-size: .8rem;
+    font-size: .84rem;
     font-weight: bold;
   }
 

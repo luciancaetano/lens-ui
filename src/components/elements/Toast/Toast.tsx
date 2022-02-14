@@ -17,9 +17,9 @@ const INTERVAL = 250;
 /**
  * Toast displays a short, important message in a way that attracts the user's attention without interrupting the user's task.
  */
-const Toast:React.FC<IToastProps> = function ({
+const Toast:React.FC<IToastProps> = ({
   testingID, data,
-}) {
+}) => {
   const { removeToast } = useToast();
   const initialized = useRef(false);
   const interval = useRef<any>(INTERVAL);

@@ -1,5 +1,6 @@
 import isNaN from 'lodash/isNaN';
 import { MutableRefObject } from 'react';
+import { CLASSES } from '../css-classes/index';
 
 const possibilities = {
   low: 'abcdefghijklmnopqrstuvwxyz',
@@ -34,7 +35,7 @@ export const getPortalContainer = (id: string) => {
     return null;
   }
 
-  const root = window.document.getElementById('lens-ui-portal-root');
+  const root = window.document.getElementById(CLASSES.PortalRootContainer);
   let container = window.document.getElementById(id);
 
   if (!container) {

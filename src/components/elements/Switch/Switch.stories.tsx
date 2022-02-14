@@ -14,27 +14,20 @@ export default {
   ],
 } as ComponentMeta<typeof Switch>;
 
-const SwitchTemplate: ComponentStory<typeof Switch> = function (args) {
-  return <Switch {...args} />;
-};
+const SwitchTemplate: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
 
-export var Uncontrolled = function (args) {
-  return (
-    <FormGroup>
-      <SwitchTemplate {...args} label="Night Mode" />
-    </FormGroup>
-  );
-};
+export const Uncontrolled = (args) => (
+  <FormGroup>
+    <SwitchTemplate {...args} label="Night Mode" />
+  </FormGroup>
+);
 
-export var Controlled = function (args) {
+export const Controlled = (args) => {
   const [state, setState] = useState(false);
 
   return (
-    <>
-      <div>Item is chacked: {JSON.stringify(state)}</div>
-      <FormGroup>
-        <SwitchTemplate label="Night Mode" {...args} checked={state} onChange={(v) => setState(v)} />
-      </FormGroup>
-    </>
+    <FormGroup label={`Item is chacked: ${JSON.stringify(state)}`}>
+      <SwitchTemplate label="Night Mode" {...args} checked={state} onChange={(v) => setState(v)} />
+    </FormGroup>
   );
 };

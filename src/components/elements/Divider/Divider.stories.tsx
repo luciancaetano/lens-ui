@@ -13,11 +13,9 @@ export default {
   ],
 } as ComponentMeta<typeof Divider>;
 
-const Template: ComponentStory<typeof Divider> = function (args) {
-  return (
-    <Divider {...args}>Divider</Divider>
-  );
-};
+const Template: ComponentStory<typeof Divider> = (args) => (
+  <Divider {...args}>Divider</Divider>
+);
 
 export const Default = Template.bind({});
 

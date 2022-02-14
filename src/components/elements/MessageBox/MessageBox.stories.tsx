@@ -15,9 +15,7 @@ export default {
   ],
 } as ComponentMeta<typeof MessageBox>;
 
-const Template: ComponentStory<typeof MessageBox> = function (args) {
-  return <MessageBox {...args} />;
-};
+const Template: ComponentStory<typeof MessageBox> = (args) => <MessageBox {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
