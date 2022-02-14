@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.8](https://github.com/luciancaetano/lens-ui/compare/v4.2.1...v4.3.8) (2022-02-14)
+
+
+### Bug Fixes
+
+* **build:** :bug:  fix build and npm packages ([f6e007e](https://github.com/luciancaetano/lens-ui/commit/f6e007e7618b5b81b4be4716c74526dd30fec202))
+* **code|styles:** :bug:  Fix code and styles ([e7dde06](https://github.com/luciancaetano/lens-ui/commit/e7dde06239898c5e22e5faad04b89db2dab73195))
+* **css:** :lipstick:  fix button align ([ea114c9](https://github.com/luciancaetano/lens-ui/commit/ea114c955bcb71c0841ebfb13018fca3edbb54b0))
+* **css:** :lipstick:  Fix some css bugs ([31d767e](https://github.com/luciancaetano/lens-ui/commit/31d767e0019b26cc55a04d49226e4cb1e480943c))
+* **docs:** :bug:  fix storybook alert docs ([ed87d35](https://github.com/luciancaetano/lens-ui/commit/ed87d35ff3fc161ebf8703d5b8019c2e931705a0))
+* **styles:**  import reset-css from node_modules to build with bundle ([5f4885d](https://github.com/luciancaetano/lens-ui/commit/5f4885d290f4a4d6ff11abd67f365dbc0ad4aa8d))
+* **types:** :label:  fix types ([5db2ab8](https://github.com/luciancaetano/lens-ui/commit/5db2ab8b353d66a078c91f276915d0f0eb18b550))
+
 ### [4.3.7](https://github.com/luciancaetano/lens-ui/compare/v4.3.6...v4.3.7) (2021-12-12)
 
 
