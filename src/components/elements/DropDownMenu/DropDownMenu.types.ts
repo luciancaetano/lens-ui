@@ -17,7 +17,7 @@ export type IDropdownItemType = IDropdownItemBasicType | IDropdownItemDividerTyp
 
 export interface IDropDownMenuProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement>{
   items: IDropdownItemType[];
-  onItemClick?: (id: string) => void;
+  onItemClick?: (item: IDropdownItemBasicType) => void;
   offset?: [number, number];
   activeId?: string;
 }

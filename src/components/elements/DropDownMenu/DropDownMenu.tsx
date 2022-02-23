@@ -42,9 +42,9 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
 
   useOnClickOutside(ref, () => setOpen(false));
 
-  const handleItemClick = useCallback((id: string) => () => {
+  const handleItemClick = useCallback((item: IDropdownItemBasicType) => () => {
     if (onItemClick) {
-      onItemClick(id);
+      onItemClick(item);
     }
   }, [onItemClick]);
 
@@ -58,7 +58,14 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
         );
       }
       return (
-        <li role="menuitem" data-lens-element="drop-down-menu__list_item" key={key} className={clsx(item.className, { [styles.dropDownMenuListActiveItem]: activeId === item.id })} onClick={handleItemClick(item.id)}>{item.label}</li>
+        <li
+          role="menuitem"
+          data-lens-element="drop-down-menu__list_item"
+          key={key}
+          className={clsx(item.className, { [styles.dropDownMenuListActiveItem]: activeId === item.id })}
+          onClick={handleItemClick(item)}
+        >{item.label}
+        </li>
       );
     });
   }, [isOpen, items, handleItemClick, activeId]);
