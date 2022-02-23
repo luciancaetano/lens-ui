@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.4.0](https://github.com/luciancaetano/lens-ui/compare/v4.3.8...v4.4.0) (2022-02-23)
+
+
+### Features
+
+* **dropdown menu:** :recycle:  passing the item as a parameter instead of the id ([b28423a](https://github.com/luciancaetano/lens-ui/commit/b28423a8beb37dc167ed7fb01ff44b4cc579404f))
+
 ### [4.3.8](https://github.com/luciancaetano/lens-ui/compare/v4.2.1...v4.3.8) (2022-02-14)
 
 
