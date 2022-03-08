@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.5.3](https://github.com/luciancaetano/lens-ui/compare/v4.5.2...v4.5.3) (2022-03-08)
+
+
+### Features
+
+* **types:** :label:  add custom id type for dropdown menu ([5158222](https://github.com/luciancaetano/lens-ui/commit/5158222ba9a7538aa38dd1f9007efedf962dff0b))
+
 ### [4.5.2](https://github.com/luciancaetano/lens-ui/compare/v4.5.1...v4.5.2) (2022-03-08)
 
 ### [4.5.1](https://github.com/luciancaetano/lens-ui/compare/v4.5.0...v4.5.1) (2022-03-08)
