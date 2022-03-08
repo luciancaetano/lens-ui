@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.5.1](https://github.com/luciancaetano/lens-ui/compare/v4.5.0...v4.5.1) (2022-03-08)
+
+
+### Bug Fixes
+
+* **types:** :bug:  fix dropdown menu types ([33e882c](https://github.com/luciancaetano/lens-ui/commit/33e882cbd938bbbbb26ca913114be393d7912ea3))
+
 ## [4.5.0](https://github.com/luciancaetano/lens-ui/compare/v4.4.1...v4.5.0) (2022-03-08)
 
 
