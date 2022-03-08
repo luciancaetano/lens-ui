@@ -1,11 +1,11 @@
 import React from 'react';
 import { ITestableProps } from '../../../types';
 
-export type IDropdownClickableItemType<TPayload> = {
+export type IDropdownClickableItemType<TPayload = any> = {
   label: React.ReactNode;
   id: string;
   className?: string;
-  payload: TPayload;
+  payload?: TPayload;
 };
 
 export type IDropdownItemDividerType = {
@@ -14,9 +14,9 @@ export type IDropdownItemDividerType = {
   divider: true;
 };
 
-export type IDropdownItemType<TPayload> = IDropdownClickableItemType<TPayload> | IDropdownItemDividerType;
+export type IDropdownItemType<TPayload = any> = IDropdownClickableItemType<TPayload> | IDropdownItemDividerType;
 
-export interface IDropDownMenuProps<TPayload> extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement>{
+export interface IDropDownMenuProps<TPayload = any> extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement>{
   items: IDropdownItemType<TPayload>[];
   onItemClick?: (item: IDropdownClickableItemType<TPayload>) => void;
   offset?: [number, number];
