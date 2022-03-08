@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { usePopper } from 'react-popper';
 import styles from './DropDownMenu.module.scss';
 import {
-  IDropDownMenuProps, IDropdownItemBasicType,
+  IDropDownMenuProps, IDropdownClickableItemType,
 } from './DropDownMenu.types';
 import Icon from '../Icon/Icon';
 import { getPortalContainer, Layers } from '../../../utils';
@@ -16,9 +16,9 @@ import { useOnClickOutside } from '../../../hooks';
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
  */
-const DropDownMenu:React.FC<IDropDownMenuProps> = ({
+function DropDownMenu<TPayload = any | undefined>({
   className, testingID, id, children, items, onItemClick, offset = [10, 10], activeId, ...props
-}) => {
+}: IDropDownMenuProps<TPayload>) {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
@@ -42,16 +42,16 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
 
   useOnClickOutside(ref, () => setOpen(false));
 
-  const handleItemClick = useCallback((item: IDropdownItemBasicType) => () => {
+  const handleItemClick = useCallback((item: IDropdownClickableItemType<TPayload>) => () => {
     if (onItemClick) {
       onItemClick(item);
     }
   }, [onItemClick]);
 
   const listItems = useMemo(() => {
-    if (!isOpen) return null;
+    if (!isOpen) { return null; }
 
-    return items.map((item: IDropdownItemBasicType, key) => {
+    return items.map((item: IDropdownClickableItemType<TPayload>, key) => {
       if ((item as any).divider) {
         return (
           <li role="menuitem" data-lens-element="drop-down-menu__list_item" className={clsx(styles.divider, item.className)} key={key}>{item.label}</li>
@@ -114,6 +114,6 @@ const DropDownMenu:React.FC<IDropDownMenuProps> = ({
       )}
     </div>
   );
-};
+}
 
 export default DropDownMenu;
