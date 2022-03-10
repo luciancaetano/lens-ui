@@ -5,9 +5,9 @@ import styles from './List.module.scss';
 import { IListProps, IListItem } from './List.types';
 import ListItem from './ListItem';
 
-const List: React.FC<IListProps> = ({
+const List = React.forwardRef<HTMLDivElement, IListProps>(({
   className, testingID, id, items, renderer, onItemClick, activeIndex, intent = 'primary', ...props
-}) => {
+}, ref) => {
   const handleItemClick = useCallback((item: IListItem) => (e: React.MouseEvent<HTMLDivElement>) => {
     if (onItemClick) {
       onItemClick(item, e);
@@ -20,10 +20,11 @@ const List: React.FC<IListProps> = ({
     }
     return (
       <ListItem
-        data={item}
         isActive={index === activeIndex}
         intent={intent}
         onClick={handleItemClick(item)}
+        className={item.className}
+        isHeading={item.isHeading}
       >
         {item.content}
       </ListItem>
@@ -39,10 +40,11 @@ const List: React.FC<IListProps> = ({
       data-lens-intent={intent}
       className={clsx(styles.list, className)}
       data-role="list"
+      ref={ref}
     >
       {nodes}
     </div>
   );
-};
+});
 
 export default List;

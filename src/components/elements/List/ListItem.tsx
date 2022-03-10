@@ -6,21 +6,23 @@ import { IListItemProps } from './List.types';
 /**
  * ListItem is a item from List component
  */
-const ListItem: React.FC<IListItemProps> = ({
-  data, intent, isActive, onClick, children,
-}) => (
+
+const ListItem = React.forwardRef<HTMLDivElement, IListItemProps>(({
+  intent = 'primary', isActive, onClick, children, isHeading, className,
+}, ref) => (
   <div
     className={clsx(
-      data.isHeading ? styles.listHeading : styles.listItem,
+      isHeading ? styles.listHeading : styles.listItem,
       styles[`list__intent-${intent}`],
       isActive && styles[`list__active-intent-${intent}`],
-      data.className,
+      className,
     )}
-    data-lens-element={data.isHeading ? 'list__item--heading' : 'list__item'}
+    data-lens-element={isHeading ? 'list__item--heading' : 'list__item'}
     onClick={onClick}
+    ref={ref}
   >
     {children}
   </div>
-);
+));
 
 export default ListItem;
