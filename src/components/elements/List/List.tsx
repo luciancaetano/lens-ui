@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import React, { useCallback, useMemo } from 'react';
 import styles from './List.module.scss';
 import { IListProps, IListItem } from './List.types';
+import ListItem from './ListItem';
 
 const List: React.FC<IListProps> = ({
   className, testingID, id, items, renderer, onItemClick, activeIndex, intent = 'primary', ...props
@@ -18,20 +19,14 @@ const List: React.FC<IListProps> = ({
       return renderer(item, index);
     }
     return (
-      <div
-        {...item.elementProps}
-        className={clsx(
-          item.isHeading ? styles.listHeading : styles.listItem,
-          styles[`list__intent-${intent}`],
-          index === activeIndex && styles[`list__active-intent-${intent}`],
-          item.className,
-        )}
-        data-lens-element={item.isHeading ? 'list__item--heading' : 'list__item'}
+      <ListItem
+        data={item}
+        isActive={index === activeIndex}
+        intent={intent}
         onClick={handleItemClick(item)}
-        key={`${index}`}
       >
         {item.content}
-      </div>
+      </ListItem>
     );
   }), [handleItemClick, items, activeIndex, renderer, intent]);
 

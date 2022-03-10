@@ -1,5 +1,6 @@
 export { default as Button } from './Button/Button';
 export { default as List } from './List/List';
+export { default as ListItem } from './List/ListItem';
 export { default as MessageBox } from './MessageBox/MessageBox';
 export { default as ButtonGroup } from './ButtonGroup/ButtonGroup';
 export { default as FormGroup } from './FormGroup/FormGroup';
