@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './ListItem.module.scss';
+import styles from './List.module.scss';
 import { IListItemProps } from './List.types';
 
 /**
