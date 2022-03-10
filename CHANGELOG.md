@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.5.4](https://github.com/luciancaetano/lens-ui/compare/v4.5.3...v4.5.4) (2022-03-10)
+
+
+### Features
+
+* **list:** :sparkles:  expose list item from list component ([6799b45](https://github.com/luciancaetano/lens-ui/commit/6799b452c49a99ed9ebd3040ef7c218408d1b315))
+
 ### [4.5.3](https://github.com/luciancaetano/lens-ui/compare/v4.5.2...v4.5.3) (2022-03-08)
 
 
