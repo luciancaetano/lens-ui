@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.5.5](https://github.com/luciancaetano/lens-ui/compare/v4.5.4...v4.5.5) (2022-03-10)
+
+
+### Bug Fixes
+
+* **css:** :truck:  fix filename naming on import ([bb1f81e](https://github.com/luciancaetano/lens-ui/commit/bb1f81eddd6d18a086cfe4b57be974a7d5959c44))
+
 ### [4.5.4](https://github.com/luciancaetano/lens-ui/compare/v4.5.3...v4.5.4) (2022-03-10)
 
 
