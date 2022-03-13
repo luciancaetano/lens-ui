@@ -17,7 +17,7 @@ import { useOnClickOutside } from '../../../hooks';
  * DropDownMenu display a list of choices on temporary surfaces.
  */
 function DropDownMenu<TPayload = any | undefined>({
-  className, testingID, id, children, items, onItemClick, offset = [10, 10], activeId, ...props
+  className, testingID, id, children, items, onItemClick, offset, activeId, dropDownClassName, ...props
 }: IDropDownMenuProps<TPayload>) {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -25,12 +25,7 @@ function DropDownMenu<TPayload = any | undefined>({
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
   const { attributes, ...popper } = usePopper(referenceElement, popperElement, {
     modifiers: [
-      {
-        name: 'offset',
-        options: {
-          offset,
-        },
-      },
+      ...(offset ? [{ name: 'offset', options: { offset } }] : []),
       {
         name: 'preventOverflow',
         options: {
@@ -93,7 +88,7 @@ function DropDownMenu<TPayload = any | undefined>({
           (
             <div
               role="list"
-              className={styles.dropDownMenuList}
+              className={clsx(styles.dropDownMenuList, dropDownClassName)}
               data-lens-element="drop-down-menu__list"
               ref={(r) => {
                 ref.current = r;

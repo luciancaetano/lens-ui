@@ -20,5 +20,6 @@ export interface IDropDownMenuProps<TPayload = any, TId = string> extends ITesta
   items: IDropdownItemType<TPayload, TId>[];
   onItemClick?: (item: IDropdownClickableItemType<TPayload, TId>) => void;
   offset?: [number, number];
-  activeId?: string;
+  activeId?: TId;
+  dropDownClassName?: string;
 }

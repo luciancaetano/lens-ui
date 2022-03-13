@@ -45,6 +45,20 @@
   border: 1px solid var(--lens-ui-elements-drop-down-menu-shadow-color);
   background-color: #fff;
   min-width: 15rem;
+  opacity: 1;
+  animation-name: lens-ui-animation-fade-in--drop-down-menu-list;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+
+  @keyframes lens-ui-animation-fade-in--drop-down-menu-list {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   &__active-item {
     color: hsl(0deg 0% 40%) !important;
