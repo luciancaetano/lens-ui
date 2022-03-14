@@ -48,4 +48,10 @@
     border: 0;
     border-radius: 0;
   }
+
+  & > form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
 }

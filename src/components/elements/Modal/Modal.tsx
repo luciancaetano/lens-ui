@@ -67,7 +67,7 @@ const Modal: React.FC<IModalProps> = ({
         data-lens-element="modal"
         aria-modal="true"
         data-testid={testingID}
-        className={clsx(styles.modal, className, styles[`modal--size-${isPhone ? 'fullscreen' : size}`])}
+        className={clsx(styles.modal, styles[`modal--size-${isPhone ? 'fullscreen' : size}`], className)}
       >
         {children}
       </div>
