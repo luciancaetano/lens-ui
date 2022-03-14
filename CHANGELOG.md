@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.1](https://github.com/luciancaetano/lens-ui/compare/v4.5.6...v4.7.1) (2022-03-14)
+
+
+### Bug Fixes
+
+* **modal:** :lipstick:  fix modal style order ([b72df73](https://github.com/luciancaetano/lens-ui/commit/b72df7391dc8779f8893ef5c0c457efe0d9ae5a7))
+
 ### [4.5.6](https://github.com/luciancaetano/lens-ui/compare/v4.5.5...v4.5.6) (2022-03-10)
 
 ### [4.5.5](https://github.com/luciancaetano/lens-ui/compare/v4.5.4...v4.5.5) (2022-03-10)
