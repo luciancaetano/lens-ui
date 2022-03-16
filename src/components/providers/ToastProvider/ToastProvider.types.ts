@@ -2,7 +2,7 @@ import React from 'react';
 import { IntentType } from '../../../types';
 import { IButtonProps } from '../../elements/Button/Button.types';
 
-export interface IToastAction extends Omit<IButtonProps, 'size' | 'type' | 'disabled' | 'onBlur' | 'onDoubleClick' | 'onFocus' | 'active' | 'style' | 'tabIndex'> {
+export interface IToastAction extends Omit<IButtonProps, 'size' | 'type'| 'content' | 'disabled' | 'onBlur' | 'onDoubleClick' | 'onFocus' | 'active' | 'style' | 'tabIndex'> {
   content?: React.ReactNode;
 }
 export interface IToastCreationData {
