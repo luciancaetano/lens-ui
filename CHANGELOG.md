@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.3](https://github.com/luciancaetano/lens-ui/compare/v4.7.2...v4.7.3) (2022-03-16)
+
+
+### Features
+
+* **styles:** :sparkles:  fix styles and implement button custom styles ([411e8a6](https://github.com/luciancaetano/lens-ui/commit/411e8a6bf31d7b8963dbd2791eb8e6eab452b1b4))
+
 ### [4.7.2](https://github.com/luciancaetano/lens-ui/compare/v4.7.1...v4.7.2) (2022-03-16)
 
 ### [4.7.1](https://github.com/luciancaetano/lens-ui/compare/v4.5.6...v4.7.1) (2022-03-14)
