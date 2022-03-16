@@ -15,7 +15,7 @@ export interface IRadioGroupProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   value?: RadioGroupOptionValueType;
   name: string;
   defaultValue?: RadioGroupOptionValueType;
-  onChange?: (checked: RadioGroupOptionValueType) => void;
+  onChange?: (e: React.MouseEvent<HTMLInputElement>, value: RadioGroupOptionValueType) => void;
   onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
   tabIndex?: number;
   disabled?: boolean;
