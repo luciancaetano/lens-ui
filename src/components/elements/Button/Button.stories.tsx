@@ -5,6 +5,7 @@ import Button from './Button';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import Icon from '../Icon/Icon';
 import '../../../styles';
+import { IButtonCustomIntent } from './Button.types';
 
 export default {
   title: '2. Components/Button',
@@ -60,6 +61,40 @@ export const Appearance = TemplateIntentsAppearance.bind({});
 
 export const withIcon = () => (
   <Button>
+    <Icon name="BsHouse" />
+  </Button>
+);
+
+const customStyle: IButtonCustomIntent = {
+  normal: {
+    backgroundColor: '#f00',
+    border: '1px solid #610f0f',
+    color: '#fff',
+  },
+  hover: {
+    backgroundColor: '#ff9898',
+    border: '1px solid #ff8888',
+    color: '#fff',
+  },
+  active: {
+    backgroundColor: '#700000',
+    border: '1px solid #f00',
+    color: '#fff',
+  },
+  disabled: {
+    backgroundColor: '#f00',
+    border: '1px solid #f00',
+    color: '#fff',
+  },
+  focused: {
+    backgroundColor: '#700000',
+    border: '1px solid #f00',
+    color: '#fff',
+  },
+};
+
+export const Custom = () => (
+  <Button intent={customStyle}>
     <Icon name="BsHouse" />
   </Button>
 );

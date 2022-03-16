@@ -1,5 +1,7 @@
 @import '../../../style-lib';
 
+$default-padding: .5rem;
+
 .radio-group {
   @include lens-ui-typography;
 
@@ -10,25 +12,46 @@
   min-height: 1.3125rem;
   box-sizing: border-box;
 
+  &--inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+  }
+
   &__container {
-    padding-top: .4rem;
-    padding-bottom: .4rem;
+    padding-top: $default-padding;
+    padding-bottom: $default-padding;
+    padding-right: 0.5rem;
     display: inline-flex;
     align-items: center;
+
+    &--normal{
+      &:first-child {
+        padding-top: .2rem;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    &--inline {
+      &:first-child {
+        padding-top: $default-padding;
+      }
+      &:last-child {
+        padding-bottom: $default-padding;
+      }
+    }
   }
 
-  &__container:first-child {
-    padding-top: .2rem;
-  }
 
-  &__container:last-child {
-    padding-bottom: 0;
-  }
 
   &__input {
     display: inline-block;
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 1.3rem;
+    height: 1.3rem;
     vertical-align: top;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -76,7 +99,7 @@
     font-weight: 500;
     box-sizing: border-box;
     color: var(--lens-ui-typography-faded-text-color);
-    padding-left: 1.5rem;
+    padding-left: 1.8rem;
 
     &--mobile {
       font-size: 1rem;

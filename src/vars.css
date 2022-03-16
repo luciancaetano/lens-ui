@@ -328,7 +328,7 @@
   --lens-ui-intents-dark-text: hsl(var(--lens-ui-hue-dark-text) 29% 95%);
   --lens-ui-intents-dark-border: hsl(var(--lens-ui-hue-dark-text) 10% 23%);
   --lens-ui-typography-font-family: 'Roboto', sans-serif;
-  --lens-ui-typography-font-size: .875rem;
+  --lens-ui-typography-font-size: .9333333333rem;
   --lens-ui-typography-text-color: hsl(var(--lens-ui-hue-bg-text) 9% 31%);
   --lens-ui-typography-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 48%);
   --lens-ui-typography-most-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 80%);

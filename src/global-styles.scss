@@ -21,7 +21,7 @@ body {
 }
 
 .lens-ui-typography {
-  @include lens-ui-typography;
+  @include lens-ui-typography-no-color;
 }
 
 h1,

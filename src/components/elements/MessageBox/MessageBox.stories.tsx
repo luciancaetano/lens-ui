@@ -21,7 +21,6 @@ export const Default = Template.bind({});
 Default.args = {
   children: 'Hello world',
   intent: 'info',
-  title: 'title',
 } as IMessageBoxProps;
 
 export const _MessageBoxStripped = Template.bind({});

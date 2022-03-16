@@ -28,7 +28,7 @@ const FormGroup: React.FC<IFormGroupProps> = ({
       data-lens-form-group-role="label"
       data-lens-element="form-group__label"
     >
-      {label}
+      {label}:
       {required && (<span data-lens-element="form-group__required_helper" className={styles.formGroupRequiredHelper}>&nbsp;*</span>)}
     </label>
     <div

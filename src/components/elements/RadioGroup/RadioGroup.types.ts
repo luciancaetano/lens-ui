@@ -19,4 +19,5 @@ export interface IRadioGroupProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
   tabIndex?: number;
   disabled?: boolean;
+  inline?: boolean;
 }

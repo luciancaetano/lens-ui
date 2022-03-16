@@ -26,7 +26,7 @@ export const Controlled = (args) => {
   const [state, setState] = useState(false);
 
   return (
-    <FormGroup label={`Item is chacked: ${JSON.stringify(state)}`}>
+    <FormGroup label={`Item is checked: ${JSON.stringify(state)}`}>
       <SwitchTemplate label="Night Mode" {...args} checked={state} onChange={(v) => setState(v)} />
     </FormGroup>
   );

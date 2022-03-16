@@ -2,7 +2,7 @@
 
 .form-group {
   @include lens-ui-typography;
-
+  line-height: 1rem;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
