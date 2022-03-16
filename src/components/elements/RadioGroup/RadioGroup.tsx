@@ -15,16 +15,16 @@ import { useDevice } from '../../../hooks';
  * RadioGroup allow the user to select one option from a set.
  */
 const RadioGroup: React.FC<IRadioGroupProps> = ({
-  className, testingID, id, onChange, options, defaultValue, name, tabIndex, onBlur, disabled, inline, ...props
+  className, testingID, id, onChange, options, defaultValue, value, name, tabIndex, onBlur, disabled, inline, ...props
 }) => {
   const { isPhone, isTablet } = useDevice();
-  const [value, setValue] = useState(props.value || defaultValue || null);
+  const [currentValue, setValue] = useState(value || defaultValue || null);
 
   useEffect(() => {
     if (defaultValue === undefined) {
-      setValue(props.value || null);
+      setValue(value || null);
     }
-  }, [props.value, defaultValue]);
+  }, [value, defaultValue]);
 
   const handleChange = useCallback((value: RadioGroupOptionValueType) => (e: React.MouseEvent<HTMLInputElement>) => {
     const targetType = typeof get(find(options, (opt) => toString(opt.value) === toString(value)), 'value');
@@ -44,32 +44,39 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
     }
   }, [onChange, options]);
 
-  const items = useMemo(() => options.map((option) => {
-    const inputId = randomId();
+  const inputIds = useMemo(() => options.reduce((prev, next) => {
+    const { value } = next;
 
-    return (
-      <div key={String(option.value)} className={clsx(styles.radioGroupContainer, inline ? styles.radioGroupContainer : styles.radioGroupContainerNormal, (isPhone || isTablet) && styles.radioGroupContainerMobile)}>
-        <input
-          tabIndex={option.tabIndex}
-          type="radio"
-          id={`${inputId}-input`}
-          name={name}
-          data-lens-element="radio-group__input"
-          value={toString(option.value)}
-          className={clsx(styles.radioGroupInput, (isPhone || isTablet) && styles.radioGroupInputMobile, option.className)}
-          checked={value !== undefined ? toString(value) === toString(option.value) : undefined}
-          disabled={disabled}
-          onClick={handleChange(option.value)}
-        />
-        <label
-          htmlFor={`${inputId}-input`}
-          className={clsx(styles.radioGroupLabel, (isPhone || isTablet) && styles.radioGroupLabelMobile)}
-          data-lens-element="radio-group__label"
-        >{option.label}
-        </label>
-      </div>
-    );
-  }), [options, inline, isPhone, isTablet, name, value, disabled, handleChange]);
+    prev[toString(value)] = randomId();
+
+    return prev;
+  }, {}), [options]);
+
+  const items = useMemo(() => options.map((option) => (
+    <div
+      onClick={handleChange(option.value)}
+      key={toString(option.value)}
+      className={clsx(styles.radioGroupContainer, inline ? styles.radioGroupContainer : styles.radioGroupContainerNormal, (isPhone || isTablet) && styles.radioGroupContainerMobile)}
+    >
+      <input
+        tabIndex={option.tabIndex}
+        type="radio"
+        id={`${inputIds[option[toString(value)]]}-input`}
+        name={name}
+        data-lens-element="radio-group__input"
+        value={toString(option.value)}
+        className={clsx(styles.radioGroupInput, (isPhone || isTablet) && styles.radioGroupInputMobile, option.className)}
+        checked={currentValue !== undefined ? toString(currentValue) === toString(option.value) : undefined}
+        disabled={disabled}
+      />
+      <label
+        htmlFor={`${inputIds[option[toString(value)]]}-input`}
+        className={clsx(styles.radioGroupLabel, (isPhone || isTablet) && styles.radioGroupLabelMobile)}
+        data-lens-element="radio-group__label"
+      >{option.label}
+      </label>
+    </div>
+  )), [options, handleChange, inline, isPhone, isTablet, inputIds, value, name, currentValue, disabled]);
 
   return (
     <div
