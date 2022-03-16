@@ -1,6 +1,6 @@
 {
   "name": "lens-ui",
-  "version": "4.7.3",
+  "version": "4.7.4",
   "main": "build/index.min.js",
   "files": [
     "build"

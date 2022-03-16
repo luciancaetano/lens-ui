@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.4](https://github.com/luciancaetano/lens-ui/compare/v4.7.3...v4.7.4) (2022-03-16)
+
+
+### Bug Fixes
+
+* **types:** :label:  fix type ([0b2bc45](https://github.com/luciancaetano/lens-ui/commit/0b2bc45b6149bce2d13ed20baeb5ee46d54a224c))
+
 ### [4.7.3](https://github.com/luciancaetano/lens-ui/compare/v4.7.2...v4.7.3) (2022-03-16)
 
 
