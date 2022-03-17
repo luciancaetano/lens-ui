@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.7](https://github.com/luciancaetano/lens-ui/compare/v4.7.6...v4.7.7) (2022-03-17)
+
+
+### Bug Fixes
+
+* **css:** :lipstick:  remove padding left from masked input ([e9218a8](https://github.com/luciancaetano/lens-ui/commit/e9218a85d552d45e76119f016eab360fcf6ab739))
+
 ### [4.7.6](https://github.com/luciancaetano/lens-ui/compare/v4.7.5...v4.7.6) (2022-03-16)
 
 
