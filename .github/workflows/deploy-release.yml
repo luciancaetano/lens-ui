@@ -6,10 +6,11 @@ on:
       release_as:
         description: 'Release as'
         required: true
+        type: choice
         options:
-          - "patch"
-          - "minor"
-          - "major"
+          - patch
+          - minor
+          - major
 
 jobs:
   build:
