@@ -1,12 +1,5 @@
 @import '../../../style-lib';
 
-/* stylelint-disable */
-.lens-ui-select-input__menu-portal,
-.lens-ui-select-input__menu-portal > .lens-ui-select-input__menu {
-  z-index: map-get($layers, 'Select');
-}
-/* stylelint-enable */
-
 .lens-ui-select-input {
   @include lens-ui-typography;
 
