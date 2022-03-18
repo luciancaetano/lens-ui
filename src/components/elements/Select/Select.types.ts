@@ -24,7 +24,6 @@ export interface ISelectProps extends ITestableProps, Omit<React.HtmlHTMLAttribu
   onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
   tabIndex?: number;
   disabled?: boolean;
-  isClearable?: boolean;
   isLoading?: boolean;
   isSearchable?: boolean;
   isRtl?: boolean;
@@ -34,4 +33,5 @@ export interface ISelectProps extends ITestableProps, Omit<React.HtmlHTMLAttribu
   placeholder?: string;
   formatGroupLabel?: (group: ISelectGroupedOption) => ReactNode;
   formatOptionLabel?: (option: ISelectOption, selectValue: SelectOptionValueType | SelectOptionValueType[]) => ReactNode;
+  menuPortalTarget?: HTMLElement;
 }
