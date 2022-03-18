@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.9-0](https://github.com/luciancaetano/lens-ui/compare/v4.7.8...v4.7.9-0) (2022-03-18)
+
+
+### Bug Fixes
+
+* **elements/select:** :bug:  Fix select portal option ([cfc6901](https://github.com/luciancaetano/lens-ui/commit/cfc690173e26bcc390eb7947f5e916b67be1e5e6))
+
 ### [4.7.8](https://github.com/luciancaetano/lens-ui/compare/v4.7.7...v4.7.8) (2022-03-17)
 
 ### [4.7.7](https://github.com/luciancaetano/lens-ui/compare/v4.7.6...v4.7.7) (2022-03-17)
