@@ -70,6 +70,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
         classNamePrefix="lens-ui-select-input"
         isMulti={isMulti}
         isLoading={isLoading}
+        menuIsOpen
         isRtl={isRtl}
         isSearchable={isSearchable}
         name={name}
