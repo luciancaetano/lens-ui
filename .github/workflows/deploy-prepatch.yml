@@ -37,7 +37,7 @@ jobs:
         github_token: ${{ secrets.GH_TOKEN }}
         branch: ${{ github.ref }}
         tags: true
-    - run: npm publish --access public
+    - run: npm publish --tag next --access public
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
     - uses: actions/upload-artifact@v3
