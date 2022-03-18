@@ -3,7 +3,7 @@ import map from 'lodash/map';
 import get from 'lodash/get';
 import React, { useCallback, useMemo } from 'react';
 import ReactSelect from 'react-select';
-import { randomId } from '../../../utils';
+import { getPortalContainer, Layers, randomId } from '../../../utils';
 import './Select.scss';
 import { ISelectOption, ISelectProps } from './Select.types';
 
@@ -12,7 +12,7 @@ import { ISelectOption, ISelectProps } from './Select.types';
  */
 const Select: React.FC<ISelectProps> = React.forwardRef(({
   className, testingID, id = randomId('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
-  isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '', menuPortalTarget = document.body,
+  isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '', menuPortalTarget = getPortalContainer('lens-ui-select-menu-portal-target', Layers.Select),
   autoFocus, isError, ...props
 }, ref) => {
   const handleChange = useCallback((option: any) => {
