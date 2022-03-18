@@ -5,6 +5,7 @@
 
   &__item {
     @include lens-ui-typography;
+
     padding: .75rem;
     font-size: .95rem;
     border-top: 1px solid var(--lens-ui-elements-list-border);

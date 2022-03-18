@@ -23,14 +23,15 @@ $default-padding: .5rem;
   &__container {
     padding-top: $default-padding;
     padding-bottom: $default-padding;
-    padding-right: 0.5rem;
+    padding-right: .5rem;
     display: inline-flex;
     align-items: center;
 
-    &--normal{
+    &--normal {
       &:first-child {
         padding-top: .2rem;
       }
+
       &:last-child {
         padding-bottom: 0;
       }
@@ -40,13 +41,12 @@ $default-padding: .5rem;
       &:first-child {
         padding-top: $default-padding;
       }
+
       &:last-child {
         padding-bottom: $default-padding;
       }
     }
   }
-
-
 
   &__input {
     display: inline-block;
@@ -90,6 +90,7 @@ $default-padding: .5rem;
 
   &__label {
     @include lens-ui-typography;
+
     display: inline-block;
     display: inline-flex;
     padding-top: .1rem;
