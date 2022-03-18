@@ -7,13 +7,13 @@ import { IMaskedInputProps } from './MaskedInput.types';
 const MaskedInput: React.FC<IMaskedInputProps> = ({
   className, testingID, id, onChange, tabIndex, placeholder,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, mask,
-  alwaysShowMask, beforeMaskedStateChange, maskPlaceholder, ...props
+  alwaysShowMask, beforeMaskedStateChange, maskPlaceholder, filter, ...props
 }) => {
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
-      onChange(event.target.value, event);
+      onChange(filter ? filter(event.target.value) : event.target.value, event);
     }
-  }, [onChange]);
+  }, [filter, onChange]);
 
   const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (onBlur) {
