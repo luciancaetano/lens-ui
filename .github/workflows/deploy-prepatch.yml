@@ -1,7 +1,10 @@
 name: Deploy Prepatch
 
 on:
-  deployment
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Test scenario tags'  
 
 jobs:
   build:
