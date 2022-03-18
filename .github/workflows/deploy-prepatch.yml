@@ -1,8 +1,7 @@
 name: Deploy Prepatch
 
 on:
-  workflow_run:
-    branches: all
+  deployment
 
 jobs:
   build:
