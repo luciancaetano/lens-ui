@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ["14.x"]
+        node-version: ["16.x"]
 
     steps:
     - uses: actions/checkout@v2
@@ -26,3 +26,7 @@ jobs:
     - run: npm run test
     - run: npm run lint
     - run: npm run build
+    - uses: actions/upload-artifact@v3
+      with:
+        name: code-coverage
+        path: coverage
