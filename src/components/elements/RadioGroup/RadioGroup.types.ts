@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { ITestableProps } from '../../../types';
 
-export type RadioGroupOptionValueType = string | number | boolean;
+export type RadioGroupOptionValueType = string | number | null;
 
-export interface IRadioGroupOption {
+export interface IRadioGroupOption extends ITestableProps {
   label: ReactNode;
   value: RadioGroupOptionValueType;
   className?: string;

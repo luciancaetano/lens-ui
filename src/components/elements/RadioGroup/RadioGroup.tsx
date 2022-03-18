@@ -1,8 +1,5 @@
 import clsx from 'clsx';
 import toString from 'lodash/toString';
-import toNumber from 'lodash/toNumber';
-import get from 'lodash/get';
-import find from 'lodash/find';
 import React, {
   useCallback, useMemo, useState, useEffect,
 } from 'react';
@@ -18,31 +15,21 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
   className, testingID, id, onChange, options, defaultValue, value, name, tabIndex, onBlur, disabled, inline, ...props
 }) => {
   const { isPhone, isTablet } = useDevice();
-  const [currentValue, setValue] = useState(value || defaultValue || null);
+  const [currentValue, setValue] = useState(value || defaultValue || undefined);
 
   useEffect(() => {
     if (defaultValue === undefined) {
-      setValue(value || null);
+      setValue(value || undefined);
     }
   }, [value, defaultValue]);
 
   const handleChange = useCallback((value: RadioGroupOptionValueType) => (e: React.MouseEvent<HTMLInputElement>) => {
-    const targetType = typeof get(find(options, (opt) => toString(opt.value) === toString(value)), 'value');
-
-    let newValue = value;
-
-    switch (targetType) {
-      case 'boolean': newValue = toString(value) === 'true'; break;
-      case 'number': newValue = toNumber(value); break;
-      default: newValue = value; break;
-    }
-
-    setValue(toString(newValue));
+    setValue(toString(value));
 
     if (onChange) {
-      onChange(e, newValue);
+      onChange(e, value);
     }
-  }, [onChange, options]);
+  }, [onChange]);
 
   const inputIds = useMemo(() => options.reduce((prev, next) => {
     const { value } = next;
@@ -57,6 +44,7 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
       onClick={handleChange(option.value)}
       key={toString(option.value)}
       className={clsx(styles.radioGroupContainer, inline ? styles.radioGroupContainer : styles.radioGroupContainerNormal, (isPhone || isTablet) && styles.radioGroupContainerMobile)}
+      data-testid={option.testingID}
     >
       <input
         tabIndex={option.tabIndex}
