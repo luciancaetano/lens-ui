@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       tags:
-        description: 'Test scenario tags'  
+        description: 'Tags'
+        required: false
 
 jobs:
   build:
@@ -26,3 +27,7 @@ jobs:
     - run: npm run test
     - run: npm run lint
     - run: npm run build
+    - run: npx standard-version --prerelease
+    - run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
