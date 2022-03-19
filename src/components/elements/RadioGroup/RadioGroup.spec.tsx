@@ -7,9 +7,9 @@ import RadioGroup from './RadioGroup';
 import { IRadioGroupOption, RadioGroupOptionValueType } from './RadioGroup.types';
 
 const options: IRadioGroupOption[] = [
-  { label: 'option1', value: 1 },
-  { label: 'option2', value: true },
-  { label: 'option3', value: 'option_3_value' },
+  { label: 'option1', value: 1, testingID: 'option1_testing' },
+  { label: 'option2', value: 0, testingID: 'option2_testing' },
+  { label: 'option3', value: 'option_3_value', testingID: 'option3_testing' },
 ];
 
 describe('<RadioGroup/>', () => {
@@ -40,7 +40,7 @@ describe('<RadioGroup/>', () => {
 
     const hook = renderHook(() => useState(null));
 
-    const onChange = (value: RadioGroupOptionValueType) => {
+    const onChange = (e: any, value: RadioGroupOptionValueType) => {
       act(() => {
         hook.result.current[1](value);
       });
@@ -70,13 +70,13 @@ describe('<RadioGroup/>', () => {
 
     const hook = renderHook(() => useState(null));
 
-    const onChange = (value: RadioGroupOptionValueType) => {
+    const onChange = (e: any, value: RadioGroupOptionValueType) => {
       act(() => {
         hook.result.current[1](value);
       });
     };
 
-    const { getByTestId, getByText } = render(
+    const { getByTestId } = render(
       <LensProvider>
         <RadioGroup
           value={hook.result.current[0]}
@@ -88,18 +88,20 @@ describe('<RadioGroup/>', () => {
       </LensProvider>,
     );
 
-    fireEvent.click(getByText(options[0].label as string));
-    fireEvent.blur(getByText(options[0].label as string));
-
     expect(getByTestId(testingID)).toBeInTheDocument();
+
+    const getElement = (index: number) => getByTestId(options[index].testingID);
+
+    fireEvent.click(getElement(0));
+    fireEvent.blur(getElement(0));
     expect(hook.result.current[0]).toBe(options[0].value);
 
-    fireEvent.click(getByText(options[1].label as string));
-    fireEvent.blur(getByText(options[1].label as string));
+    fireEvent.click(getElement(1));
+    fireEvent.blur(getElement(1));
     expect(hook.result.current[0]).toBe(options[1].value);
 
-    fireEvent.click(getByText(options[2].label as string));
-    fireEvent.blur(getByText(options[2].label as string));
+    fireEvent.click(getElement(2));
+    fireEvent.blur(getElement(2));
     expect(hook.result.current[0]).toBe(options[2].value);
   });
 });

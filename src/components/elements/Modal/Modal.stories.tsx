@@ -5,6 +5,7 @@ import Modal from './Modal';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 import useModal from '../../../hooks/use-modal';
+import Select from '../Select/Select';
 import useAlert from '../../../hooks/use-alert';
 import ModalHeader from '../ModalHeader/ModalHeader';
 import ModalContent from '../ModalContent/ModalContent';
@@ -33,6 +34,7 @@ const SimpleModalCMP: React.FC<ISimpleModalCMPProps> = (args) => {
       <ModalHeader onClose={(r) => closeModal(r)}>Header</ModalHeader>
       <ModalContent>
         Content ${args.size}
+        <Select options={[{ label: 'option1', value: 1 }, { label: 'option2', value: 2 }]} />
       </ModalContent>
       <ModalFooter>
         <Button intent="danger" onClick={() => closeModal('cancel')}>

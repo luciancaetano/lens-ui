@@ -16,13 +16,13 @@
   box-sizing: border-box;
   transition: opacity linear .3s;
 
-
   &--hidden {
     opacity: 0;
   }
 
   &__title {
     @include lens-ui-typography-no-color;
+
     padding: .2rem;
     flex: 1;
     font-size: .84rem;

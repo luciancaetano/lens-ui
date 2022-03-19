@@ -54,7 +54,7 @@ const Modal: React.FC<IModalProps> = ({
 
   return (
     <div
-      onClick={handleBackdropClick}
+      onMouseDown={handleBackdropClick}
       className={styles.backdrop}
       data-lens-element="modal__backdrop"
       data-lens-modal-size={isPhone ? 'fullscreen' : size}

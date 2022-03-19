@@ -6,7 +6,6 @@ import ToastProvider from '../ToastProvider/ToastProvider';
 import LocaleProvider from '../LocaleProvider/LocaleProvider';
 import { ILensProviderProps } from './LensProvider.types';
 import { DefaultLocales } from '../../../i18n/index';
-import { CLASSES } from '../../..';
 
 const LensProvider = ({
   children, deviceContextUpdateDebounceTime = 100,
@@ -23,7 +22,6 @@ const LensProvider = ({
       <AlertProvider {...alertSettings}>
         <ToastProvider {...toastSettings}>
           <ModalProvider>
-            <div id={CLASSES.PortalRootContainer} />
             {children}
           </ModalProvider>
         </ToastProvider>

@@ -1,6 +1,6 @@
 {
   "name": "lens-ui",
-  "version": "4.7.8",
+  "version": "4.7.9-10",
   "main": "build/index.min.js",
   "files": [
     "build"
@@ -9,7 +9,7 @@
   "description": "LensUI Design System",
   "scripts": {
     "build": "rimraf build/ && cross-env NODE_ENV=production webpack --mode production && npm run check:licenses && npm run types",
-    "test": "jest --coverage --silent && npm run lint",
+    "test": "jest --coverage --silent",
     "check:licenses": "license-checker --production --csv --out build/licenses.csv",
     "test:dev": "jest --watchAll --coverage",
     "lint": "npm run lint:code && npm run lint:styles",

@@ -15,16 +15,14 @@ exports[`<Loader/> should render correct Loader intents: danger 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="0 0 100 100"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"
-      fill="var(--lens-ui-intents-danger)"
+      fill=""
     >
       <animatetransform
         attributeName="transform"
@@ -54,16 +52,14 @@ exports[`<Loader/> should render correct Loader intents: info 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="0 0 100 100"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"
-      fill="var(--lens-ui-intents-info)"
+      fill=""
     >
       <animatetransform
         attributeName="transform"
@@ -93,16 +89,14 @@ exports[`<Loader/> should render correct Loader intents: primary 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="0 0 100 100"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
     >
       <animatetransform
         attributeName="transform"
@@ -132,16 +126,14 @@ exports[`<Loader/> should render correct Loader intents: secondary 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="0 0 100 100"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"
-      fill="var(--lens-ui-intents-secondary)"
+      fill=""
     >
       <animatetransform
         attributeName="transform"
@@ -171,16 +163,14 @@ exports[`<Loader/> should render correct Loader intents: success 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="0 0 100 100"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"
-      fill="var(--lens-ui-intents-success)"
+      fill=""
     >
       <animatetransform
         attributeName="transform"
@@ -210,16 +200,14 @@ exports[`<Loader/> should render correct Loader intents: warning 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="0 0 100 100"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"
-      fill="var(--lens-ui-intents-warning)"
+      fill=""
     >
       <animatetransform
         attributeName="transform"
@@ -249,16 +237,14 @@ exports[`<Loader/> should render correct Loader types: eclipse 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="0 0 100 100"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 50a40 40 0 0080 0 40 42 0 01-80 0"
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
     >
       <animatetransform
         attributeName="transform"
@@ -287,10 +273,8 @@ exports[`<Loader/> should render correct Loader types: oval 1`] = `
     1
   </div>
   <svg
-    height="var(--loader-width)"
-    stroke="var(--lens-ui-intents-primary)"
+    stroke=""
     viewBox="-5.8 -5.8 50 50"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g
@@ -337,15 +321,13 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
   </div>
   <svg
     display="block"
-    height="var(--loader-width)"
     preserveAspectRatio="xMidYMid"
     style="margin: auto;"
     viewBox="20 20 60 60"
-    width="var(--loader-width)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -363,7 +345,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -382,7 +364,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -401,7 +383,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -420,7 +402,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -439,7 +421,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -458,7 +440,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -477,7 +459,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -496,7 +478,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -515,7 +497,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -534,7 +516,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"
@@ -553,7 +535,7 @@ exports[`<Loader/> should render correct Loader types: spinner 1`] = `
       />
     </rect>
     <rect
-      fill="var(--lens-ui-intents-primary)"
+      fill=""
       height="12"
       rx="3"
       ry="6"

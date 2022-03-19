@@ -30,18 +30,28 @@ export function randomId(prefix = '', len = 30, pattern = 'aA0') {
   return `${prefix}${result}`;
 }
 
-export const getPortalContainer = (id: string) => {
+export const getPortalContainer = (id: string, zIndex?: number) => {
   if (typeof window === 'undefined') {
     return null;
   }
 
-  const root = window.document.getElementById(CLASSES.PortalRootContainer);
+  let root = window.document.getElementById(CLASSES.PortalRootContainer);
   let container = window.document.getElementById(id);
+
+  if (!root) {
+    root = window.document.createElement('div');
+    root.id = CLASSES.PortalRootContainer;
+    window.document.body.appendChild(root);
+  }
 
   if (!container) {
     container = window.document.createElement('div');
     container.setAttribute('id', id);
     root.appendChild(container);
+  }
+
+  if (zIndex !== undefined && zIndex !== null) {
+    container.style.zIndex = zIndex.toString();
   }
 
   return container;
@@ -56,6 +66,7 @@ export const Layers = {
   Modal: 1050,
   Alerts: 1060,
   Toast: 1070,
+  Select: 1080,
 };
 
 export const sleep = (ms: number, clear?: MutableRefObject<Function>) => new Promise<'completed' | 'canceled'>((resolve) => {

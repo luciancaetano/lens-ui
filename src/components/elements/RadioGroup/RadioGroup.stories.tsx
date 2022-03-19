@@ -26,7 +26,7 @@ export const Uncontrolled = (args) => (
 );
 
 export const Controlled = (args) => {
-  const [state, setState] = useState('');
+  const [state, setState] = useState(1);
 
   return (
     <FormGroup label={`Selected Option is ${state}`}>
@@ -38,7 +38,7 @@ export const Controlled = (args) => {
           { label: 'Option3', value: '3' },
         ]}
         {...args}
-        onChange={(v) => setState(v as any)}
+        onChange={(_, v) => setState(v as any)}
         value={state}
       />
     </FormGroup>

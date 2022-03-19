@@ -2,6 +2,8 @@ import React from 'react';
 import { BeforeMaskedStateChangeStates, InputState } from 'react-input-mask';
 import { ITestableProps } from '../../../types';
 
+export type MakedInputFilterType = (value: string) => string;
+
 export interface IMaskedInputProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur'> {
   name?: string;
   value?: string;
@@ -17,6 +19,7 @@ export interface IMaskedInputProps extends ITestableProps, Omit<React.HtmlHTMLAt
   alwaysShowMask?: boolean;
   inputRef?: React.Ref<HTMLInputElement>;
   placeholder?: string;
+  filter?: MakedInputFilterType;
   /**
     * In case you need to implement more complex masking behavior, you can provide
     * beforeMaskedStateChange function to change masked value and cursor position

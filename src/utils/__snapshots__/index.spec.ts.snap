@@ -5,6 +5,7 @@ Object {
   "Alerts": 1060,
   "Modal": 1050,
   "OverlaySurfaces": 1040,
+  "Select": 1080,
   "Toast": 1070,
   "default": 1,
 }
@@ -15,6 +16,7 @@ Object {
   "Alerts": 1060,
   "Modal": 1050,
   "OverlaySurfaces": 1040,
+  "Select": 1080,
   "Toast": 1070,
   "default": 1,
 }

@@ -12,7 +12,7 @@ import { ISelectOption, ISelectProps } from './Select.types';
  */
 const Select: React.FC<ISelectProps> = React.forwardRef(({
   className, testingID, id = randomId('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
-  isClearable = true, isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '',
+  isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '', menuPortalTarget = document.body,
   autoFocus, isError, ...props
 }, ref) => {
   const handleChange = useCallback((option: any) => {
@@ -69,7 +69,6 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
         className={isError && 'select-input-error'}
         classNamePrefix="lens-ui-select-input"
         isMulti={isMulti}
-        isClearable={isClearable}
         isLoading={isLoading}
         isRtl={isRtl}
         isSearchable={isSearchable}
@@ -85,6 +84,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
         onChange={handleChange}
         autoFocus={autoFocus}
         ref={ref as any}
+        menuPortalTarget={menuPortalTarget}
       />
     </div>
   );

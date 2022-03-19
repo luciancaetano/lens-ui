@@ -308,3 +308,10 @@ h6 {
   border-color: var(--lens-ui-intents-warning-darken-border);
   background-color: var(--lens-ui-intents-warning-darken);
 }
+
+/* stylelint-disable */
+.lens-ui-select-input__menu-portal,
+.lens-ui-select-input__menu {
+  z-index: map-get($layers, 'Select') !important;
+}
+/* stylelint-enable */
