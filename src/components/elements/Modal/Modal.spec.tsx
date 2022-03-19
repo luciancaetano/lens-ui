@@ -49,7 +49,7 @@ describe('<Modal/>', () => {
     const backdrop = container.querySelector('[data-lens-element="modal__backdrop"]');
 
     expect(backdrop).toBeInTheDocument();
-    fireEvent.mouseDown(backdrop);
+    fireEvent.click(backdrop);
 
     expect(onBackdropClick).toBeCalled();
   });
