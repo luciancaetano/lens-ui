@@ -19,7 +19,7 @@
     "release:minor": "standard-version --release-as minor && npm run build && git push --follow-tags origin main && npm publish",
     "release:major": "standard-version --release-as major && npm run build && git push --follow-tags origin main && npm publish",
     "release:patch": "standard-version --release-as patch && npm run build && git push --follow-tags origin main && npm publish",
-    "release:pre": "standard-version --prerelease && npm run build && git push --follow-tags origin main && npm publish",
+    "release:pre": "standard-version --prerelease && npm run build && git push --follow-tags origin main && npm publish --tag next",
     "prepare": "husky install",
     "storybook": "start-storybook -p 3003",
     "deploy-storybook": "build-storybook && storybook-to-ghpages"
