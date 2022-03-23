@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.11](https://github.com/luciancaetano/lens-ui/compare/v4.7.10...v4.7.11) (2022-03-23)
+
+
+### Features
+
+* :sparkles: allow all react-icons in icon element ([255fe1d](https://github.com/luciancaetano/lens-ui/commit/255fe1d5dee94763230d56d7bfb1f8ae2604a7df))
+
+
+### Bug Fixes
+
+* :bug: fix icon collors and add more icons to design ([c03f462](https://github.com/luciancaetano/lens-ui/commit/c03f4625a9fcbf9ab74494e45afccc8e49296c0f))
+* :lipstick: fix button line height ([0480aa9](https://github.com/luciancaetano/lens-ui/commit/0480aa9b5070cba5db7d6ebafe3fe9015ff8700c))
+* :lipstick: fix stylelint warning ([7703480](https://github.com/luciancaetano/lens-ui/commit/7703480497d6f6fabe9760250e463bfe4e8bdf1d))
+
 ### 4.7.10 (2022-03-19)
 
 ### 4.7.9 (2022-03-19)
