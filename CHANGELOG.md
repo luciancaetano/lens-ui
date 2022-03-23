@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.15-1](https://github.com/luciancaetano/lens-ui/compare/v4.7.15-0...v4.7.15-1) (2022-03-23)
+
+
+### Bug Fixes
+
+* :bug:  add missing 3rd dep ([585d4a4](https://github.com/luciancaetano/lens-ui/commit/585d4a435f06aae24853df9f428e44ece3165875))
+
 ### 4.7.15-0 (2022-03-23)
 
 ### 4.7.14 (2022-03-23)
