@@ -33,49 +33,6 @@
     border-radius: .4rem;
   }
 
-  &--intent-custom {
-    opacity: var(--lens-ui-elements-button-custom-normal-opacity);
-    color: var(--lens-ui-elements-button-custom-normal-text-color);
-    background-color: var(--lens-ui-elements-button-custom-normal-background-color);
-    border: var(--lens-ui-elements-button-custom-normal);
-    box-shadow: var(--lens-ui-elements-button-custom-normal-box-shadow);
-
-    &--active,
-    &:active {
-      opacity: var(--lens-ui-elements-button-custom-active-opacity) !important;
-      color: var(--lens-ui-elements-button-custom-active-text-color) !important;
-      background-color: var(--lens-ui-elements-button-custom-active-background-color) !important;
-      border: var(--lens-ui-elements-button-custom-active) !important;
-      box-shadow: var(--lens-ui-elements-button-custom-active-box-shadow) !important;
-    }
-
-    &:focus {
-      opacity: var(--lens-ui-elements-button-custom-focus-opacity);
-      color: var(--lens-ui-elements-button-custom-focus-text-color);
-      background-color: var(--lens-ui-elements-button-custom-focus-background-color);
-      border: var(--lens-ui-elements-button-custom-focus);
-      box-shadow: var(--lens-ui-elements-button-custom-focus-box-shadow);
-    }
-
-    &:hover {
-      opacity: var(--lens-ui-elements-button-custom-hover-opacity);
-      color: var(--lens-ui-elements-button-custom-hover-text-color);
-      background-color: var(--lens-ui-elements-button-custom-hover-background-color);
-      border: var(--lens-ui-elements-button-custom-hover);
-      box-shadow: var(--lens-ui-elements-button-custom-hover-box-shadow);
-    }
-
-    &:disabled {
-      pointer-events: none;
-      opacity: .65;
-      opacity: var(--lens-ui-elements-button-custom-disabled-text-color) !important;
-      color: var(--lens-ui-elements-button-custom-disabled-text-color) !important;
-      background-color: var(--lens-ui-elements-button-custom-disabled-background-color) !important;
-      border: var(--lens-ui-elements-button-custom-disabled) !important;
-      box-shadow: var(--lens-ui-elements-button-custom-disabled-box-shadow) !important;
-    }
-  }
-
   &--intent-primary {
     color: var(--lens-ui-elements-button-primary-text-color);
     background-color: var(--lens-ui-elements-button-primary-background-color);
