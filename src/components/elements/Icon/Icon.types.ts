@@ -1,10 +1,10 @@
 import React from 'react';
-import * as BsIcon from 'react-icons/bs';
+import * as AllIcons from 'react-icons/all';
 import {
   ITestableProps, IntentType,
 } from '../../../types';
 
-export type IconType = keyof typeof BsIcon;
+export type IconType = keyof typeof AllIcons;
 
 export interface IIconProps extends ITestableProps, Omit<React.SVGAttributes<SVGElement>, 'fill' | 'name' | 'size'> {
   fill?: IntentType | string;

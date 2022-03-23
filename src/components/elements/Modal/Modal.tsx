@@ -21,10 +21,10 @@ const Modal: React.FC<IModalProps> = ({
   const onEscapeRef = useRef<(e: KeyboardEvent) => void>(null);
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-
     if (onBackdropClick && (e.target as HTMLDivElement).getAttribute('data-lens-element') === 'modal__backdrop') {
+      e.preventDefault();
+      e.stopPropagation();
+
       onBackdropClick('backdrop');
     }
   }, [onBackdropClick]);
