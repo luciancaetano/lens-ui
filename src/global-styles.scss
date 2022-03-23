@@ -312,6 +312,6 @@ h6 {
 /* stylelint-disable */
 .lens-ui-select-input__menu-portal,
 .lens-ui-select-input__menu {
-  z-index: map-get($layers, 'Select') !important;
+  z-index: map-get($layers, 'OverlaySurfaces') !important;
 }
 /* stylelint-enable */

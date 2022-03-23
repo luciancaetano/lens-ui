@@ -29,9 +29,8 @@ $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'dange
 
 $layers: (
   'default': 1,
-  'OverlaySurfaces': 1040,
   'Modal': 1050,
   'Alerts': 1060,
   'Toast': 1070,
-  'Select': 1080,
+  'OverlaySurfaces': 1080,
 );

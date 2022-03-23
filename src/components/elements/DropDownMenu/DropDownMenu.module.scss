@@ -8,6 +8,11 @@
   user-select: none;
   align-items: center;
 
+  &> span {
+    display: inline-flex;
+    flex-direction: row;
+  }
+
   &__children {
     display: flex;
     flex: 1;
@@ -27,18 +32,21 @@
 }
 
 .divider {
+  display: flex;
   padding: 0 !important;
   color: #989898 !important;
   font-weight: bold;
   align-items: center;
   justify-content: center;
   background-color: var(--lens-ui-elements-drop-down-menu-divider-shadow-color) !important;
+  border-bottom: 1px solid var(--lens-ui-elements-drop-down-menu-shadow-color);
   height: 1rem;
   font-size: .7rem;
   cursor: default !important;
 }
 
 .drop-down-menu-list {
+  opacity: 0;
   display: flex;
   box-shadow: var(--lens-ui-elements-card-box-shadow);
   border-radius: var(--lens-ui-elements-card-border-radius);
@@ -46,19 +54,31 @@
   background-color: #fff;
   min-width: 15rem;
   opacity: 1;
-  animation-name: lens-ui-animation-fade-in-drop-down-menu-list;
+  z-index: map-get($layers, 'OverlaySurfaces');
+  position: var(--strategy);
+  top: var(--y);
+  left: var(--x);
+  transition: opacity 0.2s ease-in-out;
+  animation-name: lens-ui-animation-show-drop-down-menu-list;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: .2s;
+  animation-duration: .1s;
 
-  @keyframes lens-ui-animation-fade-in-drop-down-menu-list {
+
+  @keyframes lens-ui-animation-show-drop-down-menu-list {
     0% {
       opacity: 0;
+      transform: translateY(-1rem);
     }
 
     100% {
       opacity: 1;
+      transform: translateY(0rem);
     }
+  }
+
+  &--hide {
+    opacity: 0;
   }
 
   &__active-item {
@@ -67,16 +87,18 @@
   }
 
   & > [data-lens-element='drop-down-menu__ul'] {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     list-style: none;
     padding-left: 0;
     padding-top: 0;
     margin: 0;
-    width: 100%;
     overflow: hidden;
 
     [data-lens-element='drop-down-menu__list_item'] {
       display: flex;
-      width: 100%;
+      flex: 1;
       padding: .7rem .4rem;
       flex-direction: row;
       border-bottom: 1px solid var(--lens-ui-elements-drop-down-menu-shadow-color);
@@ -90,6 +112,11 @@
         color: hsl(0deg 0% 20%);
       }
 
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    [data-lens-element="drop-down-menu__divider"] {
       &:last-child {
         border-bottom: 0;
       }

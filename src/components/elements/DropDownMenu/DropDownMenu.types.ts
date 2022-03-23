@@ -16,10 +16,14 @@ export type IDropdownItemDividerType = {
 
 export type IDropdownItemType<TPayload = any, TId = string> = IDropdownClickableItemType<TPayload, TId> | IDropdownItemDividerType;
 
+export type DropDownMenuPlacementType = 'top' | 'right' | 'bottom' | 'left' | 'top-start' | 'top-end' | 'right-start' | 'right-end' | 'bottom-start' | 'bottom-end' | 'left-start' | 'left-end';
 export interface IDropDownMenuProps<TPayload = any, TId = string> extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement>{
   items: IDropdownItemType<TPayload, TId>[];
   onItemClick?: (item: IDropdownClickableItemType<TPayload, TId>) => void;
-  offset?: [number, number];
+  offsetX?: number;
+  offsetY?: number;
   activeId?: TId;
   dropDownClassName?: string;
+  disableChevron?: boolean;
+  placement?: DropDownMenuPlacementType;
 }

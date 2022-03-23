@@ -1,41 +1,48 @@
 /* eslint-disable react/no-array-index-key */
 import clsx from 'clsx';
 import React, {
-  useCallback, useMemo, useRef, useState,
+  useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
 import ReactDOM from 'react-dom';
-import { usePopper } from 'react-popper';
+import {
+  useFloating, shift, flip, offset as offsetFloating,
+} from '@floating-ui/react-dom';
 import styles from './DropDownMenu.module.scss';
 import {
   IDropDownMenuProps, IDropdownClickableItemType,
 } from './DropDownMenu.types';
 import Icon from '../Icon/Icon';
-import { getPortalContainer, Layers } from '../../../utils';
+import { convertRemToPixels, getPortalContainer } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
-
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
  */
 function DropDownMenu<TPayload = any | undefined>({
-  className, testingID, id, children, items, onItemClick, offset, activeId, dropDownClassName, ...props
+  className, testingID, id, children, items, onItemClick, activeId, dropDownClassName,
+  disableChevron, offsetX = 0, offsetY = 0, placement = 'bottom-end', ...props
 }: IDropDownMenuProps<TPayload>) {
-  const [isOpen, setOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const timeout = useRef<NodeJS.Timeout | undefined>();
+
   const ref = useRef<HTMLDivElement>(null);
-  const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
-  const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
-  const { attributes, ...popper } = usePopper(referenceElement, popperElement, {
-    modifiers: [
-      ...(offset ? [{ name: 'offset', options: { offset } }] : []),
-      {
-        name: 'preventOverflow',
-        options: {
-          padding: 8,
-        },
-      },
-    ],
+
+  const {
+    x, y, reference, floating, strategy,
+  } = useFloating({
+    placement,
+    strategy: 'fixed',
+    middleware: [offsetFloating({
+      alignmentAxis: offsetX,
+      mainAxis: offsetY,
+    }), shift({ padding: convertRemToPixels(0.5) }), flip()],
   });
 
-  useOnClickOutside(ref, () => setOpen(false));
+  useOnClickOutside([ref], () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  });
 
   const handleItemClick = useCallback((item: IDropdownClickableItemType<TPayload>) => () => {
     if (onItemClick) {
@@ -43,62 +50,71 @@ function DropDownMenu<TPayload = any | undefined>({
     }
   }, [onItemClick]);
 
-  const listItems = useMemo(() => {
-    if (!isOpen) { return null; }
-
-    return items.map((item: IDropdownClickableItemType<TPayload>, key) => {
-      if ((item as any).divider) {
-        return (
-          <li role="menuitem" data-lens-element="drop-down-menu__list_item" className={clsx(styles.divider, item.className)} key={key}>{item.label}</li>
-        );
-      }
+  const listItems = useMemo(() => items.map((item: IDropdownClickableItemType<TPayload>, key) => {
+    if ((item as any).divider) {
       return (
-        <li
-          role="menuitem"
-          data-lens-element="drop-down-menu__list_item"
-          key={key}
-          className={clsx(item.className, { [styles.dropDownMenuListActiveItem]: activeId === item.id })}
-          onClick={handleItemClick(item)}
-        >{item.label}
-        </li>
+        <li role="menuitem" data-lens-element="drop-down-menu__divider" className={clsx(styles.divider, item.className)} key={key}>{item.label}</li>
       );
-    });
-  }, [isOpen, items, handleItemClick, activeId]);
+    }
+    return (
+      <li
+        role="menuitem"
+        data-lens-element="drop-down-menu__list_item"
+        key={key}
+        className={clsx(item.className, { [styles.dropDownMenuListActiveItem]: activeId === item.id })}
+        onClick={handleItemClick(item)}
+      >{item.label}
+      </li>
+    );
+  }), [items, handleItemClick, activeId]);
 
-  const toggleMenu = useCallback(() => setOpen((open) => !open), []);
+  const toggleMenu = useCallback(() => setIsOpen((open) => !open), []);
+
+  useEffect(() => {
+    if (timeout.current) return;
+    if (!isOpen) {
+      timeout.current = setTimeout(() => {
+        setIsVisible(false);
+        timeout.current = null;
+      }, 200);
+    } else {
+      setIsVisible(true);
+    }
+  }, [isOpen]);
 
   return (
     <div
       {...props}
       id={id}
-      ref={setReferenceElement}
       data-testid={testingID}
       data-lens-element="drop-down-menu"
       className={clsx(styles.dropDownMenu, className)}
       onClick={toggleMenu}
+      ref={ref}
     >
-      <div className={styles.dropDownMenuChildren} data-lens-element="drop-down-menu__content">
-        {children}
-      </div>
-      <div className={styles.dropDownMenuChevron} data-lens-element="drop-down-menu__chevron">
-        <Icon name="BsChevronDown" />
-      </div>
-      {isOpen && (
+      <span ref={reference}>
+        <div className={styles.dropDownMenuChildren} data-lens-element="drop-down-menu__content">
+          {children}
+        </div>
+        {!disableChevron && (
+          <div className={styles.dropDownMenuChevron} data-lens-element="drop-down-menu__chevron">
+            <Icon name="BsChevronDown" />
+          </div>
+        ) }
+      </span>
+      {isVisible && (
         ReactDOM.createPortal(
           (
             <div
               role="list"
-              className={clsx(styles.dropDownMenuList, dropDownClassName)}
+              className={clsx(styles.dropDownMenuList, !isOpen && styles.dropDownMenuListHide, dropDownClassName)}
               data-lens-element="drop-down-menu__list"
-              ref={(r) => {
-                ref.current = r;
-                setPopperElement(r);
-              }}
-              {...attributes.popper}
+              ref={floating}
               style={{
-                ...popper.styles.popper,
-                zIndex: Layers.OverlaySurfaces,
-              }}
+                '--strategy': strategy,
+                '--y': y ? `${y}px` : undefined,
+                '--x': x ? `${x}px` : undefined,
+              } as React.CSSProperties}
             >
               <ul data-lens-element="drop-down-menu__ul">
                 {listItems}
