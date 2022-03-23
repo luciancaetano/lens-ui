@@ -1,13 +1,13 @@
 import { RefObject, useEffect } from 'react';
 
-export default function useOnClickOutside<T extends HTMLElement>(ref: RefObject<T>, handler: (e:MouseEvent) => void) {
+export default function useOnClickOutside<T extends HTMLElement>(refs: RefObject<T>[], handler: (e:MouseEvent) => void) {
   useEffect(
     () => {
       const listener = (event) => {
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
+        // Do nothing if clicking ref's element or descendent elements
+        if (!refs.some((ref) => ref.current && ref.current.contains(event.target as Node))) {
+          handler(event);
         }
-        handler(event);
       };
       if (typeof window !== 'undefined') {
         window.document.addEventListener('mousedown', listener);
@@ -20,6 +20,6 @@ export default function useOnClickOutside<T extends HTMLElement>(ref: RefObject<
         }
       };
     },
-    [ref, handler],
+    [refs, handler],
   );
 }

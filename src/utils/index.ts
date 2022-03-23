@@ -80,3 +80,7 @@ export const sleep = (ms: number, clear?: MutableRefObject<Function>) => new Pro
 });
 
 export const modalCanEscape = (portalRoot: HTMLElement, backDropRef: MutableRefObject<HTMLDivElement>) => portalRoot && portalRoot.lastChild === backDropRef.current;
+
+export function convertRemToPixels(rem: number) {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}

@@ -190,7 +190,8 @@
     "page": true,
     "browser": true,
     "cy": true,
-    "BigInt": true
+    "BigInt": true,
+    "NodeJS": true
   },
   "settings": {
     "react": {

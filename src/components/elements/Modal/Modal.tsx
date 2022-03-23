@@ -12,10 +12,10 @@ import { IModalProps } from './Modal.types';
  * @example const { showModal } = useModal();
  * @example showModal(SimpleModalCMP, args);
  */
-const Modal: React.FC<IModalProps> = ({
+const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
   className, testingID, id, children, size = 'normal', onBackdropClick, onEscape,
   ...props
-}) => {
+}, ref) => {
   const { isPhone } = useDevice();
   const backDropRef = useRef<HTMLDivElement>(null);
   const onEscapeRef = useRef<(e: KeyboardEvent) => void>(null);
@@ -52,13 +52,22 @@ const Modal: React.FC<IModalProps> = ({
     };
   }, []);
 
+  const handleRef = useCallback((element: HTMLDivElement) => {
+    backDropRef.current = element;
+    if (typeof ref === 'function') {
+      ref(element);
+    } else if (ref) {
+      ref.current = element;
+    }
+  }, [ref]);
+
   return (
     <div
       onClick={handleBackdropClick}
       className={styles.backdrop}
       data-lens-element="modal__backdrop"
       data-lens-modal-size={isPhone ? 'fullscreen' : size}
-      ref={backDropRef}
+      ref={handleRef}
       aria-modal="true"
     >
       <div
@@ -73,6 +82,6 @@ const Modal: React.FC<IModalProps> = ({
       </div>
     </div>
   );
-};
+});
 
 export default Modal;
