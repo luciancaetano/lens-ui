@@ -19,7 +19,7 @@ import { useOnClickOutside } from '../../../hooks';
  */
 function DropDownMenu<TPayload = any | undefined>({
   className, testingID, id, children, items, onItemClick, activeId, dropDownClassName,
-  disableChevron, offsetX = 0, offsetY = 0, placement = 'bottom-end', ...props
+  disableChevron, offsetX, offsetY, placement = 'bottom-end', ...props
 }: IDropDownMenuProps<TPayload>) {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -32,10 +32,10 @@ function DropDownMenu<TPayload = any | undefined>({
   } = useFloating({
     placement,
     strategy: 'fixed',
-    middleware: [offsetFloating({
-      alignmentAxis: offsetX,
-      mainAxis: offsetY,
-    }), shift({ padding: convertRemToPixels(0.5) }), flip()],
+    middleware: [...(offsetX || offsetY ? [offsetFloating({
+      ...(offsetX ? { alignmentAxis: convertRemToPixels(offsetX) } : {}),
+      ...(offsetY ? { mainAxis: convertRemToPixels(offsetY) } : {}),
+    })] : []), shift({ padding: convertRemToPixels(0.5) }), flip()],
   });
 
   useOnClickOutside([ref], () => {
@@ -51,6 +51,8 @@ function DropDownMenu<TPayload = any | undefined>({
   }, [onItemClick]);
 
   const listItems = useMemo(() => items.map((item: IDropdownClickableItemType<TPayload>, key) => {
+    if (!item) return null;
+
     if ((item as any).divider) {
       return (
         <li role="menuitem" data-lens-element="drop-down-menu__divider" className={clsx(styles.divider, item.className)} key={key}>{item.label}</li>

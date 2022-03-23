@@ -20,7 +20,9 @@ export type DropDownMenuPlacementType = 'top' | 'right' | 'bottom' | 'left' | 't
 export interface IDropDownMenuProps<TPayload = any, TId = string> extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement>{
   items: IDropdownItemType<TPayload, TId>[];
   onItemClick?: (item: IDropdownClickableItemType<TPayload, TId>) => void;
+  // Offset-X in rem
   offsetX?: number;
+  // Offset-Y in rem
   offsetY?: number;
   activeId?: TId;
   dropDownClassName?: string;
