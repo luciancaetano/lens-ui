@@ -1,5 +1,10 @@
 @import '../../../style-lib';
 
+@keyframes lens-ui-modal-fade-in-animation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -13,10 +18,10 @@
   z-index: map-get($layers, 'Modal');
   box-sizing: border-box;
   background-color: hsl(0deg 0% 20% / 50%);
-  animation: 'lens-ui-fade-in' .2s linear;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: lens-ui-modal-fade-in-animation .2s;
 }
 
 .modal {
