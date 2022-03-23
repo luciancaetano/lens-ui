@@ -142,6 +142,7 @@
     "emoji": "code"
   },
   "dependencies": {
+    "@floating-ui/dom": "^0.4.1",
     "@floating-ui/react-dom": "^0.6.0",
     "@fontsource/fira-mono": "^4.5.4",
     "@fontsource/inter": "^4.5.5",
