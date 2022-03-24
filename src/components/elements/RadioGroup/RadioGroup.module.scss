@@ -66,6 +66,7 @@ $default-padding: .5rem;
     position: absolute;
     margin-top: .1rem;
 
+    &__checked,
     &:checked {
       background-color: #525ce5;
       border-color: #525ce5;
