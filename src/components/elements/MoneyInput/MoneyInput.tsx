@@ -9,7 +9,7 @@ import { IMoneyInputProps } from './MoneyInput.types';
  */
 const MoneyInput: React.FC<IMoneyInputProps> = ({
   className, testingID, id, onChange, tabIndex, decimalSeparator = ',', precision = 3, thousandSeparator = '.',
-  onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, ...props
+  onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, prefix, suffix, ...props
 }) => {
   const handleChange = useCallback((event, maskedvalue, floatvalue) => {
     if (onChange) {
@@ -46,6 +46,8 @@ const MoneyInput: React.FC<IMoneyInputProps> = ({
         decimalSeparator={decimalSeparator}
         precision={precision}
         thousandSeparator={thousandSeparator}
+        prefix={prefix}
+        suffix={suffix}
       />
     </div>
   );

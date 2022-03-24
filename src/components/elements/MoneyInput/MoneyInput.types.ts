@@ -15,4 +15,6 @@ export interface IMoneyInputProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   decimalSeparator?: string;
   thousandSeparator?: string;
   precision?: number;
+  prefix?: string;
+  suffix?: string;
 }
