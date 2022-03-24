@@ -5,7 +5,7 @@ import MessageBox from './MessageBox';
 import { IMessageBoxProps } from './MessageBox.types';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
-import { IntentEnum } from '../../../types';
+import { Intents } from '../../../types';
 
 export default {
   title: '2. Components/MessageBox',
@@ -40,7 +40,7 @@ _Timeout.args = {
   timeout: 3000,
 } as IMessageBoxProps;
 
-export const AllIntents = (args) => Object.keys(IntentEnum).map((intent: any) => (
+export const AllIntents = (args) => Object.keys(Intents).map((intent: any) => (
   <Template intent={intent} {...args} />
 ));
 

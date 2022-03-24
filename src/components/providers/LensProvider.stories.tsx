@@ -3,7 +3,6 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LensProvider from './LensProvider/LensProvider';
 import '../../styles';
-import { DefaultLocales } from '../../i18n/index';
 
 export default {
   title: '1. Providers/LensProvider',
@@ -27,7 +26,6 @@ export const _Default = Template.bind({});
 
 _Default.args = {
   deviceContextUpdateDebounceTime: 100,
-  initialLocale: DefaultLocales.enUs,
   alertSettings: {
     responseLimit: 10,
   },

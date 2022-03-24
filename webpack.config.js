@@ -11,6 +11,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
+    regenerator: 'regenerator-runtime/runtime',
     index: './src/index.ts',
   },
   externals: [nodeExternals()],

@@ -18,7 +18,7 @@ export interface IIconProps<T extends IconType = IconType> extends ITestableProp
   iconsSet?: Record<string, React.ComponentType<any>>;
 }
 
-export const IconTypeNames = Object.keys({
+export const IconsNameEnum = Object.keys({
   ...BsIcons,
   ...AiIcons,
   ...FaIcons,

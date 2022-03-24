@@ -6,7 +6,7 @@ import styles from './AppLayout.module.scss';
 /**
  * The AppLayout component handles entrie application layout parts
  */
-const AppLayout: React.FC<ITestableProps & React.HtmlHTMLAttributes<HTMLElement>> = ({ children, className, ...props }) => (
+const AppLayout: React.FC<ITestableProps & React.HtmlHTMLAttributes<HTMLDivElement>> = ({ children, className, ...props }) => (
   <div
     {...props}
     className={clsx(styles.appLayout, className)}

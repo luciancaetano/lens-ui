@@ -12,7 +12,7 @@ import {
   IDropDownMenuProps, IDropdownClickableItemType,
 } from './DropDownMenu.types';
 import Icon from '../Icon/Icon';
-import { convertRemToPixels, getPortalContainer } from '../../../utils';
+import { rem2px, getPortalContainer } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
@@ -33,9 +33,9 @@ function DropDownMenu<TPayload = any | undefined>({
     placement,
     strategy: 'fixed',
     middleware: [...(offsetX || offsetY ? [offsetFloating({
-      ...(offsetX ? { alignmentAxis: convertRemToPixels(offsetX) } : {}),
-      ...(offsetY ? { mainAxis: convertRemToPixels(offsetY) } : {}),
-    })] : []), shift({ padding: convertRemToPixels(0.5) }), flip()],
+      ...(offsetX ? { alignmentAxis: rem2px(offsetX) } : {}),
+      ...(offsetY ? { mainAxis: rem2px(offsetY) } : {}),
+    })] : []), shift({ padding: rem2px(0.5) }), flip()],
   });
 
   useOnClickOutside([ref], () => {

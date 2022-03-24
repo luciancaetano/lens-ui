@@ -5,7 +5,7 @@ import forEach from 'lodash/forEach';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import ProgressBar from './ProgressBar';
 import { ProgressBarSizeEnum, ProgressBarSizeEnumType } from './ProgressBar.types';
-import { IntentEnum, IntentType } from '../../../types';
+import { Intent, IntentType } from '../../../types';
 
 const ProgressBarSizeValues = {
   tiny: 0.400,
@@ -59,7 +59,7 @@ describe('<ProgressBar/>', () => {
 
     expect(getByTestId(testingId)).toBeInTheDocument();
 
-    forEach(IntentEnum, (intent) => {
+    forEach(Intent, (intent) => {
       rerender(renderTest(intent as any));
       expect(container.querySelector('[data-lens-element="progress-bar__indicator"]').getAttribute('data-lens-intent')).toBe(intent);
     });

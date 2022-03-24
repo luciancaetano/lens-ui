@@ -4,7 +4,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import List from './List';
 import { IListItem } from './List.types';
-import { IntentEnum } from '../../../types';
+import { Intent } from '../../../types';
 
 describe('<List/>', () => {
   it('should render list items', () => {
@@ -39,7 +39,7 @@ describe('<List/>', () => {
     ];
     const { getByTestId, rerender } = render(<List items={items} testingID="testingID" />);
 
-    Object.keys(IntentEnum).forEach((intent, index) => {
+    Object.keys(Intent).forEach((intent, index) => {
       rerender(<List items={items} intent={intent as any} testingID="testingID" key={index} />);
       expect(getByTestId('testingID').getAttribute('data-lens-intent')).toBe(intent);
     });

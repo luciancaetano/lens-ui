@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import { IntentEnum } from '../../../types';
+import { Intent } from '../../../types';
 import Badge from './Badge';
 
 describe('<Badge/>', () => {
@@ -18,7 +18,7 @@ describe('<Badge/>', () => {
 
     expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe('primary');
 
-    Object.keys(IntentEnum).forEach((intent) => {
+    Object.keys(Intent).forEach((intent) => {
       rerender(<Badge testingID={testingId} intent={intent as any}>1</Badge>);
       expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe(intent);
     });

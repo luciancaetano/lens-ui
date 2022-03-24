@@ -7,7 +7,7 @@ import * as GoIcons from 'react-icons/go';
 import * as MdIcons from 'react-icons/md';
 import { IIconProps } from './Icon.types';
 import styles from './Icon.module.scss';
-import { IntentEnum } from '../../../types';
+import { Intents } from '../../../types';
 
 const icons = {
   ...BsIcons, ...AiIcons, ...FaIcons, ...GoIcons, ...MdIcons,
@@ -19,7 +19,7 @@ const Icon:React.FC<IIconProps> = ({
   className, testingID, id, name, fill = null, size = '1rem', spin, iconsSet = icons, ...props
 }) => React.createElement(iconsSet[name], {
   ...props,
-  fill: Object.keys(IntentEnum).indexOf(fill) > -1 ? `var(--lens-ui-intents-${fill})` : fill,
+  fill: Object.keys(Intents).indexOf(fill) > -1 ? `var(--lens-ui-intents-${fill})` : fill,
   'data-lens-element': 'icon',
   className: clsx(spin && styles.spin, className),
   ...({ 'data-testid': testingID } as any),

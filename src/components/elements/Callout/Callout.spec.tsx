@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import { IntentEnum } from '../../../types';
+import { Intent } from '../../../types';
 import Callout from './Callout';
 
 const testingId = 'myTestingId';
@@ -37,7 +37,7 @@ describe('<Callout/>', () => {
   it('should render all intents', () => {
     const { getByTestId, rerender } = render(<Callout testingID={testingId} icon={<div>{icon}</div>} />);
 
-    [...Object.keys(IntentEnum), 'default'].forEach((intent) => {
+    [...Object.keys(Intent), 'default'].forEach((intent) => {
       rerender(<Callout testingID={testingId} intent={intent as any} icon={<div>{icon}</div>} />);
       expect(getByTestId(testingId).getAttribute('data-lens-intent')).toBe(intent);
     });

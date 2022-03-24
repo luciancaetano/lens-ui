@@ -66,8 +66,9 @@
     color: var(--lens-ui-intents-primary-text);
     border: 1px solid var(--lens-ui-intents-primary-border);
 
-    &__close-button {
-      color: var(--lens-ui-intents-primary-text);
+    [data-lens-element='message-box__close-button'],
+    [data-lens-element='message-box__close-button'] > svg {
+      fill: var(--lens-ui-intents-primary-text);
     }
 
     [data-lens-element='toast-close-button'] {
@@ -90,8 +91,9 @@
     color: var(--lens-ui-intents-secondary-text);
     border: 1px solid var(--lens-ui-intents-secondary-border);
 
-    &__close-button {
-      color: var(--lens-ui-secondary-primary-text);
+    [data-lens-element='message-box__close-button'],
+    [data-lens-element='message-box__close-button'] > svg {
+      fill: var(--lens-ui-intents-secondary-text);
     }
 
     [data-lens-element='toast-close-button'] {
@@ -114,8 +116,9 @@
     color: var(--lens-ui-intents-success-text);
     border: 1px solid var(--lens-ui-intents-success-border);
 
-    &__close-button {
-      color: var(--lens-ui-success-primary-text);
+    [data-lens-element='message-box__close-button'],
+    [data-lens-element='message-box__close-button'] > svg {
+      fill: var(--lens-ui-intents-success-text);
     }
 
     [data-lens-element='toast-close-button'] {
@@ -138,8 +141,9 @@
     color: var(--lens-ui-intents-info-text);
     border: 1px solid var(--lens-ui-intents-info-border);
 
-    &__close-button {
-      color: var(--lens-ui-success-info-text);
+    [data-lens-element='message-box__close-button'],
+    [data-lens-element='message-box__close-button'] > svg {
+      fill: var(--lens-ui-intents-info-text);
     }
 
     [data-lens-element='toast-close-button'] {
@@ -162,8 +166,9 @@
     color: var(--lens-ui-intents-warning-text);
     border: 1px solid var(--lens-ui-intents-warning-border);
 
-    &__close-button {
-      color: var(--lens-ui-success-warning-text);
+    [data-lens-element='message-box__close-button'],
+    [data-lens-element='message-box__close-button'] > svg {
+      fill: var(--lens-ui-intents-warning-text);
     }
 
     [data-lens-element='toast-close-button'] {
@@ -186,8 +191,9 @@
     color: var(--lens-ui-intents-danger-text);
     border: 1px solid var(--lens-ui-intents-danger-border);
 
-    &__close-button {
-      color: var(--lens-ui-success-danger-text);
+    [data-lens-element='message-box__close-button'],
+    [data-lens-element='message-box__close-button'] > svg {
+      fill: var(--lens-ui-intents-danger-text);
     }
 
     [data-lens-element='toast-close-button'] {

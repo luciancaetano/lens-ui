@@ -1,13 +1,19 @@
 import React from 'react';
-import { ITestableProps } from '../../../types';
-import { IListItem } from '../List/List.types';
+import { IntentType, ITestableProps } from '../../../types';
 
-export type IMenuListItemType<T = any> = IListItem<T> & { isActive?: boolean };
+export interface IMenuListItem<T = any> {
+  intent?: IntentType | null;
+  isHeading?: boolean;
+  content: React.ReactNode;
+  payload?: T;
+  className?: string;
+}
 
-export type MenuListItemRendererType = (item: IMenuListItemType, index: number) => React.ReactNode;
+export type MenuListItemRendererType<T = any> = (item: IMenuListItem<T>, index: number) => React.ReactNode;
 
-export interface IMenuListProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
-  items: IMenuListItemType[];
-  renderer?: MenuListItemRendererType;
-  onItemClick?: (item: IMenuListItemType, e: React.MouseEvent<HTMLDivElement>) => void;
+export interface IMenuListProps<TPayload = any> extends ITestableProps {
+  items: IMenuListItem<TPayload>[];
+  activeIndex?: number | null;
+  renderer?: MenuListItemRendererType<TPayload>;
+  onItemClick?: (item: IMenuListItem<TPayload>, e: React.MouseEvent<HTMLDivElement>) => void;
 }

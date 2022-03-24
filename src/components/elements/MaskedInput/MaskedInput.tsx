@@ -23,13 +23,13 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
 
   return (
     <div
-      {...props}
       id={id}
       data-testid={testingID}
       data-lens-element="masked-input"
       className={clsx(styles.maskedInput, className)}
     >
       <InputMask
+        {...props}
         mask={mask}
         name={name}
         placeholder={placeholder}
