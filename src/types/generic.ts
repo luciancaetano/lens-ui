@@ -1,5 +1,3 @@
-import { LocaleType } from '../i18n';
-
 export const IntentEnum = {
   primary: 'primary',
   secondary: 'secondary',
@@ -20,8 +18,3 @@ export const AdvancedIntentEnum = {
 export type AdvancedIntentType = keyof typeof AdvancedIntentEnum;
 
 export type UserScriptStateType = 'loading' | 'idle' | 'ready' | 'error';
-
-export interface ILocaleProviderContext {
-  locale: LocaleType;
-  setLocale: (locale: LocaleType) => void;
-}
