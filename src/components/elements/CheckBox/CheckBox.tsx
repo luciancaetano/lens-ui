@@ -5,7 +5,7 @@ import styles from './CheckBox.module.scss';
 import { ICheckBoxProps } from './CheckBox.types';
 
 /**
- * Checkboxes allow the user to select one or more items from a set.
+ * The checkbox is a simple checkbox that can be used to toggle the checked state of a component.
  * @tip Checkboxes can be used to turn an option on or off.
  */
 const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({

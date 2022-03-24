@@ -1,7 +1,7 @@
 import React from 'react';
 import { IntentType, ITestableProps } from '../../../types';
 
-export interface ICardProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
+export interface ICardProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLDivElement> {
   intent?: IntentType;
 }
 
@@ -15,6 +15,6 @@ export interface ICardTitleProps extends ITestableProps, React.HtmlHTMLAttribute
   subtitle?: boolean;
 }
 
-export interface ICardTextProps extends React.HtmlHTMLAttributes<HTMLElement>, ITestableProps {
+export interface ICardTextProps extends React.HtmlHTMLAttributes<HTMLParagraphElement>, ITestableProps {
 
 }

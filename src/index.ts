@@ -5,7 +5,6 @@ export * from './components/elements/index';
 export * from './components/providers/index';
 export * from './hooks/index';
 export * from './types/index';
-export { DefaultLocales, LocaleType, LocaleKeyType } from './i18n/index';
 export {
   Layers, getPortalContainer, randomId, sleep,
 } from './utils';

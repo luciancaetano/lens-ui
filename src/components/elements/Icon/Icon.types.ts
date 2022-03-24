@@ -17,3 +17,11 @@ export interface IIconProps<T extends IconType = IconType> extends ITestableProp
   spin?: boolean;
   iconsSet?: Record<string, React.ComponentType<any>>;
 }
+
+export const IconTypeNames = Object.keys({
+  ...BsIcons,
+  ...AiIcons,
+  ...FaIcons,
+  ...GoIcons,
+  ...MdIcons,
+}) as IconType[];

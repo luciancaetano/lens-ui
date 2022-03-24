@@ -6,5 +6,5 @@ import {
 export interface ICalloutProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   icon?: React.ReactNode;
   intent?: IntentType;
-  title?: string;
+  title?: React.ReactNode;
 }

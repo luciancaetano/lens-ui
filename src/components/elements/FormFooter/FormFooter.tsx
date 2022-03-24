@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import React, { useCallback, useMemo } from 'react';
-import { useInternalLensLocale } from '../../../hooks';
 import Button from '../Button/Button';
 import styles from './FormFooter.module.scss';
 import { IFormFooterProps } from './FormFooter.types';
@@ -11,30 +10,39 @@ import { IFormFooterProps } from './FormFooter.types';
 const FormFooter:React.FC<IFormFooterProps> = ({
   className, testingID, id, onCancel, onDelete, onSave = 'submit', isUpdate, state,
   cancelAppearance, cancelDisabled, deleteAppearance, deleteDisabled,
-  saveAppearance, saveDisabled, cancelIsReset,
+  saveAppearance, saveDisabled, cancelIsReset, locale = {
+    cancel: 'Cancel',
+    canceling: 'Cancelling',
+    cleaning: 'Cleaning',
+    clear: 'Clear',
+    delete: 'Delete',
+    deleting: 'Deleting',
+    save: 'Save',
+    saving: 'Saving',
+    update: 'Update',
+    updating: 'Updating',
+  },
   children, childrenPos = 'betweenSaveAndCancel', ...props
 }) => {
-  const [_] = useInternalLensLocale();
-
   const saveButtonLabel = useMemo(() => {
     if (state === 'saving') {
-      return isUpdate ? _('FormFooter/updating') : _('FormFooter/saving');
+      return isUpdate ? locale.updating : locale.saving;
     } if (isUpdate) {
-      return _('FormFooter/update');
+      return locale.update;
     }
 
-    return _('FormFooter/save');
-  }, [state, _, isUpdate]);
+    return locale.save;
+  }, [state, isUpdate, locale.save, locale.updating, locale.saving, locale.update]);
 
   const cancelButtonLabel = useMemo(() => {
-    if (state === 'canceling') return cancelIsReset ? _('FormFooter/cleaning') : _('FormFooter/cancel=>loading');
-    return cancelIsReset ? _('FormFooter/clear') : _('FormFooter/cancel');
-  }, [state, _, cancelIsReset]);
+    if (state === 'canceling') return cancelIsReset ? locale.cleaning : locale.canceling;
+    return cancelIsReset ? locale.clear : locale.cancel;
+  }, [state, cancelIsReset, locale.cleaning, locale.canceling, locale.clear, locale.cancel]);
 
   const deleteButtonLabel = useMemo(() => {
-    if (state === 'deleting') return _('FormFooter/deleting');
-    return _('FormFooter/delete');
-  }, [state, _]);
+    if (state === 'deleting') return locale.deleting;
+    return locale.delete;
+  }, [locale.delete, locale.deleting, state]);
 
   const handleSave = useCallback(() => {
     if (typeof onSave === 'function') {

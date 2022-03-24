@@ -10,7 +10,6 @@ import AlertContext from './AlertContext';
 import {
   IAlertItemData, IAlertItemRequest, IAlertProviderProps, IAlertResult,
 } from './AlertProvider.types';
-import useInternalLensLocale from '../../../hooks/use-internal-lens-locale';
 
 const limitResponses = (responses: Record<string, IAlertResult>, responseLimit: number) => {
   const sortedItems = sortBy(responses, ['at']);
@@ -24,7 +23,6 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
   const [results, setResults] = useState<Record<string, IAlertResult>>({});
   const [showingId, setShowingId] = useState<string | null>(null);
   const promiseResolvers = useRef<Record<string, Function>>({});
-  const [_] = useInternalLensLocale();
 
   const runAlert = useCallback(() => {
     if (activeAlert && activeAlert.id !== showingId) {
@@ -44,9 +42,9 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
         title,
         icon,
         text,
-        cancelButtonText: cancelButtonText || _('AlertProvider/cancel'),
-        confirmButtonText: confirmButtonText || _('AlertProvider/confirm'),
-        denyButtonText: denyButtonText || _('AlertProvider/deny'),
+        cancelButtonText: cancelButtonText || 'Cancel',
+        confirmButtonText: confirmButtonText || 'Confirm',
+        denyButtonText: denyButtonText || 'Deny',
         showCancelButton,
         showCloseButton,
         showConfirmButton: showConfirmButton === undefined ? true : showConfirmButton,
@@ -76,7 +74,7 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
         }
       });
     }
-  }, [activeAlert, responseLimit, _, showingId]);
+  }, [activeAlert, responseLimit, showingId]);
 
   runAlert();
 

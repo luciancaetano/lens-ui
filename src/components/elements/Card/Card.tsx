@@ -4,7 +4,7 @@ import { ICardProps } from './Card.types';
 import styles from './Card.module.scss';
 
 /**
- * Cards contain content and actions about a single subject.
+ * Cards are used to display content in a way that is easily digestible and discoverable.
  */
 const Card: React.FC<ICardProps> = ({
   children, className, intent, testingID, ...props
