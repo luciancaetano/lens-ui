@@ -23,6 +23,7 @@ export type TextInputPropsType = {
   >;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   multiline?: true;
+  onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void;
 } & IBaseTextInputProps |
 {
   inputProps?: Omit<React.HtmlHTMLAttributes<HTMLTextAreaElement>,
@@ -32,4 +33,5 @@ export type TextInputPropsType = {
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
   multiline: false;
   type?: undefined;
+  onChange?: (value: string, e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 } & IBaseTextInputProps;

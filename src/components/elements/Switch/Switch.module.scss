@@ -33,6 +33,7 @@
     border-radius: 2em;
     transition: background-position .15s ease-in-out;
 
+    &--checked,
     &:checked {
       background-color: #525ce5;
       border-color: #525ce5;

@@ -30,6 +30,7 @@
         border-top-left-radius: .25rem;
         border-bottom-left-radius: .25rem;
         cursor: pointer;
+        user-select: none;
 
         &:hover {
           color: var(--lens-ui-typography-faded-text-color);
@@ -76,6 +77,7 @@
         border-top-left-radius: .25rem;
         border-top-right-radius: .25rem;
         cursor: pointer;
+        user-select: none;
 
         &:hover {
           color: var(--lens-ui-typography-faded-text-color);

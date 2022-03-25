@@ -4,26 +4,23 @@ import { IntentType, ITestableProps } from '../../../types';
 export interface ITableItem {
   rowClassName?: string;
   rowIntent?: IntentType;
-  [attrs: string]: unknown;
 }
 
 export type TableCellRendererType<T extends ITableItem> = (item: T) => React.ReactNode;
 
-export interface ITableColumns<T extends ITableItem = any> {
+export interface ITableCol<T extends ITableItem> {
+  header: React.ReactNode;
+  headerClassName?: string;
 
-  [attr: string]: {
-    header: React.ReactNode;
-    headerClassName?: string;
-
-    cellRenderer?: TableCellRendererType<T>;
-    cellClassName?: string;
-    cellIntent?: (item: T, index: number) => IntentType;
-  };
+  cellRenderer?: TableCellRendererType<T>;
+  cellClassName?: string;
+  cellIntent?: (item: T, index: number) => IntentType;
 }
 
-export interface ITableProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
-  items: ITableItem[];
-  columns: ITableColumns<any>;
+export type TableClumnsRecordType<T extends ITableItem> = Record<keyof Omit<T, 'rowClassName' | 'rowIntent'>, ITableCol<T>>;
+export interface ITableProps<T extends ITableItem> extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
+  items: T[];
+  cols: TableClumnsRecordType<T>;
   footer?: () => React.ReactNode;
-  onRowClick?: <T = ITableItem>(item: T, index: number) => void;
+  onRowClick?: (item: T, index: number) => void;
 }

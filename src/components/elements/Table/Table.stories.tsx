@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './Table';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
-import { ITableColumns, ITableItem } from './Table.types';
+import { TableClumnsRecordType, ITableItem } from './Table.types';
 import Icon from '../Icon/Icon';
 
 export default {
@@ -23,7 +23,7 @@ interface IItemTypeData extends ITableItem {
   phone: string;
 }
 
-const columnsData: ITableColumns<IItemTypeData> = {
+const columnsData: TableClumnsRecordType<IItemTypeData> = {
   id: {
     header: '#ID',
   },

@@ -4,7 +4,6 @@ import { ITestableProps } from '../../../types';
 export interface ITabsItem {
   title: React.ReactNode;
   id: string;
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
   className?: string;
 }
 

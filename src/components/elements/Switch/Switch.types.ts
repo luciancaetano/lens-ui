@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { ITestableProps } from '../../../types';
 
-export interface ISwitchProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur' | 'value' | 'defaultValue'> {
+export interface ISwitchProps extends ITestableProps, Omit<React.HTMLAttributes<HTMLElement>, 'onChange' | 'onBlur' | 'value' | 'defaultValue'> {
   label: ReactNode;
   checked?: boolean;
   defaultChecked?: boolean;
@@ -11,8 +11,4 @@ export interface ISwitchProps extends ITestableProps, Omit<React.HtmlHTMLAttribu
   disabled?: boolean;
   autoFocus?: boolean;
   name?: string;
-  inputProps?: Omit<React.HtmlHTMLAttributes<HTMLInputElement>,
-  'onChange' | 'onBlur' | 'value' | 'defaultValue' | 'placeholder' | 'tabIndex' | 'disabled'
-  | 'name' | 'autoFocus' | 'maxLength' | 'required'
-  >;
 }

@@ -23,12 +23,9 @@ const Tabs:React.FC<ITabsProps> = ({
     }
   }, [activeTab]);
 
-  const handleTabClick = useCallback((id: string, tabClick?: React.MouseEventHandler<HTMLDivElement>) => (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleTabClick = useCallback((id: string) => (e: React.MouseEvent<HTMLDivElement>) => {
     if (onChange) {
       onChange(id, e);
-    }
-    if (tabClick) {
-      tabClick(e);
     }
     if (activeTab === undefined) {
       setActiveTabId(id);
@@ -42,7 +39,7 @@ const Tabs:React.FC<ITabsProps> = ({
         activeTabId === tab.id && styles[`${tabStylePrefix}__container__tab-item--active`],
         tab.className,
       )}
-      onClick={handleTabClick(tab.id, tab.onClick)}
+      onClick={handleTabClick(tab.id)}
       key={tab.id}
       data-bs-toggle="tab"
       data-lens-element="tabs__tab"

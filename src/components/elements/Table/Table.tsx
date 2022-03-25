@@ -5,24 +5,24 @@ import React, { useMemo } from 'react';
 import map from 'lodash/map';
 import get from 'lodash/get';
 import styles from './Table.module.scss';
-import { ITableProps } from './Table.types';
+import { ITableItem, ITableProps } from './Table.types';
 import { CLASSES } from '../../../css-classes';
 
 /**
  * Table display sets of data.
  */
-const Table:React.FC<ITableProps> = ({
-  className, testingID, id, columns, items, footer, ...props
-}) => {
-  const heading = useMemo(() => map(columns, (col, key) => (
+function Table<T extends ITableItem = {}>({
+  className, testingID, id, cols, items, footer, ...props
+}: ITableProps<T>) {
+  const heading = useMemo(() => map(cols, (col, key) => (
     <th key={key} className={col.headerClassName}>
       {col.header}
     </th>
-  )), [columns]);
+  )), [cols]);
 
   const tableItems = useMemo(() => map(items, (item, index) => (
     <tr className={clsx(styles[`table__tr--intent-${item.rowIntent || 'default'}`], item.rowClassName)} key={index}>
-      {map(columns, (col, key) => {
+      {map(cols, (col, key) => {
         const colIntent = typeof col.cellIntent === 'function' ? col.cellIntent(item, index) : 'default';
 
         return (
@@ -39,7 +39,7 @@ const Table:React.FC<ITableProps> = ({
         );
       })}
     </tr>
-  )), [items, columns]);
+  )), [items, cols]);
 
   return (
     <div
@@ -65,6 +65,6 @@ const Table:React.FC<ITableProps> = ({
       </table>
     </div>
   );
-};
+}
 
 export default Table;
