@@ -12,7 +12,6 @@ export { default as Select } from './Select/Select';
 export { default as Toast } from './Toast/Toast';
 export { default as Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
 export { default as TextInput } from './TextInput/TextInput';
-export { default as DateInput } from './DateInput/DateInput';
 export { default as Callout } from './Callout/Callout';
 export { default as ProgressBar } from './ProgressBar/ProgressBar';
 export { default as MoneyInput } from './MoneyInput/MoneyInput';
@@ -30,9 +29,13 @@ export { default as Layout } from './Layout';
 export { default as Icon } from './Icon/Icon';
 export { default as Tabs } from './Tabs/Tabs';
 export { default as Table } from './Table/Table';
+export { default as Typography } from './Typography/Typography';
+export { default as DatePicker } from './DatePicker/DatePicker';
 /**
  * Export Component types
  */
+export * from './DatePicker/DatePicker.types';
+export * from './Typography/Typography.types';
 export * from './Table/Table.types';
 export * from './Tabs/Tabs.types';
 export * from './List/List.types';
@@ -52,8 +55,6 @@ export * from './MessageBox/MessageBox.types';
 export * from './CheckBox/CheckBox.types';
 export * from './ProgressBar/ProgressBar.types';
 export * from './Switch/Switch.types';
-export * from './DateInput/pt_BR.locale';
-export * from './DateInput/DateInput.types';
 export * from './Select/Select.types';
 export * from './TextInput/TextInput.types';
 export * from './MaskedInput/MaskedInput.types';

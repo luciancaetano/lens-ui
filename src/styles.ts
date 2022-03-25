@@ -16,6 +16,5 @@ import '../node_modules/@fontsource/roboto/900-italic.css';
 // fontawesome
 import '../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css';
 // others
-import '../node_modules/react-multi-date-picker/styles/layouts/mobile.css';
 import './vars.css';
 import './global-styles.scss';

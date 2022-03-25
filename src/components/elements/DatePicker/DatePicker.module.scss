@@ -1,0 +1,13 @@
+@import '../../../style-lib';
+
+.container {
+  @include lens-ui-typography;
+
+  position: relative;
+  text-align: left;
+  min-height: 1.3125rem;
+  padding-left: 1.5em;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+}

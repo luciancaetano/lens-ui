@@ -1,0 +1,92 @@
+@import '../../../style-lib';
+
+.root {
+  @include lens-ui-typography;
+}
+
+.h1 {
+  font-weight: 300;
+  font-size: 6rem;
+  line-height: 1.167;
+  letter-spacing: -.01562em;
+}
+
+.h2 {
+  font-weight: 300;
+  font-size: 3.75rem;
+  line-height: 1.2;
+  letter-spacing: -.00833em;
+}
+
+.h3 {
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0;
+}
+
+.h4 {
+  font-weight: 400;
+  font-size: 2.125rem;
+  line-height: 1.235;
+  letter-spacing: .00735em;
+}
+
+.h5 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0;
+}
+
+.h6 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: .0075em;
+}
+
+.subtitle1 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: .00938em;
+}
+
+.subtitle2 {
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.57;
+  letter-spacing: .00714em;
+}
+
+.body1 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: .00938em;
+}
+
+.body2 {
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 1.43;
+  letter-spacing: .01071em;
+}
+
+.caption {
+  font-weight: 400;
+  font-size: .75rem;
+  line-height: 1.66;
+  letter-spacing: .03333em;
+  display: block;
+}
+
+.overline {
+  font-weight: 400;
+  font-size: .75rem;
+  line-height: 2.66;
+  letter-spacing: .08333em;
+  text-transform: uppercase;
+  display: block;
+}

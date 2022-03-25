@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { formatISO } from 'date-fns';
 /* eslint-disable react/destructuring-assignment */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import DateInput from './DateInput';
+import DatePicker from './DatePicker';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
 
 export default {
-  title: '2. Components/DateInput',
-  component: DateInput,
+  title: '2. Components/DatePicker',
+  component: DatePicker,
   decorators: [
     (Story) => <LensProvider>{Story()}</LensProvider>,
   ],
-} as ComponentMeta<typeof DateInput>;
+} as ComponentMeta<typeof DatePicker>;
 
-const Template: ComponentStory<typeof DateInput> = (args) => <DateInput {...args} />;
+const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...args} />;
 
 export const Default = Template.bind({});
 
@@ -26,7 +26,6 @@ export const Controlled = (args) => {
       <div>Value is {state} </div>
       <Template
         name="input"
-        displayFormat="MM/DD/YYYY"
         onChange={(v) => setState(v as any)}
         value={state}
         {...args}
@@ -43,7 +42,7 @@ export const Uncontrolled = (args) => (
     {...args}
   />
 );
-export const _MultiDateInput = (args) => (
+export const _MultiDatePicker = (args) => (
   <Template
     name="input"
     type="multiple"
