@@ -316,3 +316,70 @@ h6 {
   z-index: map-get($layers, 'OverlaySurfaces') !important;
 }
 /* stylelint-enable */
+
+/**
+* React date picker styles
+*/
+.rmdp-wrapper {
+  border: 1px solid var(--lens-ui-intents-secondary) !important;
+}
+
+.rmdp-panel-body li {
+  background-color: var(--lens-ui-intents-primary) !important;
+  box-shadow: var(--lens-ui-input-base--active-box-shadow) !important;
+}
+
+.rmdp-week-day {
+  color: var(--lens-ui-intents-primary) !important;
+}
+
+.rmdp-day.rmdp-deactive {
+  color: var(--lens-ui-intents-secondary) !important;
+}
+
+.rmdp-range {
+  background-color: var(--lens-ui-intents-primary) !important;
+  box-shadow: var(--lens-ui-input-base--active-box-shadow) !important;
+}
+
+.rmdp-arrow-container:hover {
+  background-color: var(--lens-ui-intents-primary) !important;
+  box-shadow: var(--lens-ui-input-base--active-box-shadow) !important;
+}
+
+.rmdp-panel-body::-webkit-scrollbar-thumb {
+  background: var(--lens-ui-intents-primary) !important;
+}
+
+.rmdp-day.rmdp-today span {
+  background-color: var(--lens-ui-intents-primary-light) !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: var(--lens-ui-intents-primary) !important;
+}
+
+.rmdp-day:not(.rmdp-day-hidden) span:hover {
+  background-color: var(--lens-ui-intents-primary-lighten) !important;
+}
+
+.b-deselect {
+  color: var(--lens-ui-intents-secondary) !important;
+  background-color: white !important;
+}
+
+.rmdp-action-button {
+  color: var(--lens-ui-intents-primary) !important;
+}
+
+.rmdp-button:not(.rmdp-action-button) {
+  background-color: var(--lens-ui-intents-primary) !important;
+}
+
+.rmdp-button:not(.rmdp-action-button):hover {
+  background-color: var(--lens-ui-intents-secondary) !important;
+}
+
+.rmdp-wrapper {
+  border: none !important;
+}

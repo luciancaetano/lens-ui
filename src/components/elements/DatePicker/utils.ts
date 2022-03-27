@@ -8,11 +8,15 @@ export function toDate(value: Date): DateObject {
 
 export function parseValue(value: Date | number | string | Date[] | [Date, Date], type: DatePickerType) {
   if (Array.isArray(value) && type === 'range') {
-    return value.length === 0 ? [toDateObject(new Date()), toDateObject(new Date())] : value.map((v: Date) => toDate(v));
+    return value.length === 0 ? [] : value.map((v: Date) => toDate(v));
   }
 
-  if (!value && type === 'range') {
-    return [toDateObject(new Date()), toDateObject(new Date())];
+  if (Array.isArray(value) && type === 'week') {
+    return value.length === 0 ? [] : value.map((v: Date) => toDate(v));
+  }
+
+  if (Array.isArray(value) && type === 'multiple') {
+    return value.length === 0 ? [] : value.map((v: Date) => toDate(v));
   }
 
   if (typeof value === 'number' && type === 'month') {
@@ -21,26 +25,32 @@ export function parseValue(value: Date | number | string | Date[] | [Date, Date]
     return dt;
   }
 
-  if (!value && type === 'month') {
-    return toDateObject(new Date());
-  }
-
   if (typeof value === 'number' && type === 'year') {
     const dt = toDateObject(new Date());
     dt.setYear(value);
     return dt;
   }
 
-  if (!value && type === 'year') {
-    return toDateObject(new Date());
-  }
-
-  if (!Array.isArray(value) && typeof value === 'string' && type === 'time') {
-    return toDateObject(new Date(value));// todo handle time
-  }
-
   if (!Array.isArray(value) && type === 'date') {
     return toDate(value as Date);
+  }
+
+  if (!value) {
+    switch (type) {
+      case 'date':
+        return toDateObject(new Date());
+      case 'month':
+        return toDateObject(new Date());
+      case 'year':
+        return toDateObject(new Date());
+      case 'range':
+        return [];
+      case 'multiple':
+        return [];
+      case 'week':
+        return [];
+      default: break;
+    }
   }
 
   return toDateObject(new Date());

@@ -80,3 +80,13 @@ export const TimePicker = (args) => (
     {...args}
   />
 );
+
+export const Multiple = (args) => (
+  <Template
+    name="input"
+    type={'multiple' as DatePickerType}
+    time="analog"
+    displayFormat="HH:mm:ss"
+    {...args}
+  />
+);
