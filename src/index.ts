@@ -1,6 +1,5 @@
 /// <reference path="./react-lib-env.d.ts" />
 import 'regenerator-runtime/runtime';
-import 'react-dates/initialize';
 import './styles';
 
 export * from './components/elements/index';

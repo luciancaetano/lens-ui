@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { formatISO } from 'date-fns';
 /* eslint-disable react/destructuring-assignment */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import DatePicker from './DatePicker';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
+import { DatePickerType } from './DatePicker.types';
 
 export default {
   title: '2. Components/DatePicker',
@@ -14,21 +14,22 @@ export default {
   ],
 } as ComponentMeta<typeof DatePicker>;
 
-const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...args} />;
+const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...args} type={args.type as any || 'date'} />;
 
 export const Default = Template.bind({});
 
 export const Controlled = (args) => {
-  const [state, setState] = useState(formatISO(new Date('1991-03-03')));
+  const [state, setState] = useState(new Date('1991-03-03'));
 
   return (
     <>
-      <div>Value is {state} </div>
+      <div>Value is {state?.toISOString()} </div>
       <Template
         name="input"
-        onChange={(v) => setState(v as any)}
-        value={state}
+        type={'date' as DatePickerType}
         {...args}
+        onChange={setState}
+        value={state}
       />
     </>
 
@@ -38,15 +39,8 @@ export const Controlled = (args) => {
 export const Uncontrolled = (args) => (
   <Template
     name="input"
-    value={formatISO(new Date())} /* value work as initialValue */
-    {...args}
-  />
-);
-export const _MultiDatePicker = (args) => (
-  <Template
-    name="input"
-    type="multiple"
-    value={['1991-03-03 00:00:00']}
+    type={'date' as DatePickerType}
+    value={new Date()} /* value work as initialValue */
     {...args}
   />
 );
@@ -54,14 +48,14 @@ export const _MultiDatePicker = (args) => (
 export const Range = (args) => (
   <Template
     name="input"
-    type="range"
+    type={'range' as DatePickerType}
     {...args}
   />
 );
 
 export const MonthPicker = (args) => (
   <Template
-    type="month-only"
+    type={'month' as DatePickerType}
     name="input"
     displayFormat="MM"
     {...args}
@@ -70,9 +64,9 @@ export const MonthPicker = (args) => (
 
 export const YearPicker = (args) => (
   <Template
+    type={'year' as DatePickerType}
     name="input"
-    type="year-only"
-    displayFormat="YYYY"
+    displayFormat="MM"
     {...args}
   />
 );
@@ -80,7 +74,7 @@ export const YearPicker = (args) => (
 export const TimePicker = (args) => (
   <Template
     name="input"
-    type="time-only"
+    type={'time' as DatePickerType}
     time="analog"
     displayFormat="HH:mm:ss"
     {...args}

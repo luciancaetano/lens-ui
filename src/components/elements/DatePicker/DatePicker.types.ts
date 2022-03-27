@@ -9,50 +9,61 @@ export interface IDateInputLocale {
   weekDaysShort: string[]; // 7
 }
 
-export interface IBasePickerProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange'>{
+export interface IBasePickerProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'defaultValue'>{
   name?: string;
   placeholder?: string;
   readOnly?: boolean;
   ariaLabel?: string;
-  tabIndex?: number;
   disabled?: boolean;
   isError?: boolean;
   required?: boolean;
-  onCalendarClose?: () => void;
-  onCalendarOpen?: () => void;
+  withPortal?: boolean;
+  onPickerOpen?: () => void;
+  onPickerClose?: () => void;
+  children?: (strDate: string, openCalendar: Function, handleValueChange: React.ChangeEventHandler<HTMLElement>) => React.ReactNode;
 }
 
+export type DatePickerType = 'date' | 'month' | 'range' | 'time' | 'year';
+
 export interface IDatePickerProps extends IBasePickerProps {
-  value?: string;
-  defaultValue?: string;
-  onChange?: (month: string) => void;
-  children?: (month: string) => React.ReactNode;
+  value?: Date;
+  defaultValue?: Date;
+  onChange?: (date: Date) => void;
   type: 'date';
+  numberOfMonths?: number;
+  displayFormat?: string;
 }
 
 export interface IMonthPickerProps extends IBasePickerProps {
   value?: number;
   defaultValue?: number;
   onChange?: (month: number) => void;
-  children?: (month: number) => React.ReactNode;
   type: 'month';
 }
 
+export interface IYearPickerProps extends IBasePickerProps {
+  value?: number;
+  defaultValue?: number;
+  onChange?: (month: number) => void;
+  type: 'year';
+}
+
 export interface IRangeDatePickerProps extends IBasePickerProps {
-  format?: string;
-  value?: [string, string];
-  defaultValue?: [string, string];
-  onChange?: (value: [string, string]) => void;
-  children?: (value: [string, string]) => React.ReactNode;
+  format?: Date;
+  value?: [Date, Date];
+  defaultValue?: [Date, Date];
+  onChange?: (value: [Date, Date]) => void;
   type: 'range';
+  numberOfMonths?: number;
+  displayFormat?: string;
 }
 
 export interface ITimePickerProps extends IBasePickerProps {
   value?: string;
   defaultValue?: string;
   onChange?: (time: string) => void;
-  children?: (time: string) => React.ReactNode;
   type: 'time';
+  displayFormat?: string;
 }
 
-export type IDatePickerPropsType = IDatePickerProps | IMonthPickerProps | IRangeDatePickerProps | ITimePickerProps;
+export type IDatePickerPropsType = IDatePickerProps | IMonthPickerProps | IRangeDatePickerProps | ITimePickerProps | IYearPickerProps;

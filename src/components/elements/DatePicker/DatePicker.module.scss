@@ -6,8 +6,14 @@
   position: relative;
   text-align: left;
   min-height: 1.3125rem;
-  padding-left: 1.5em;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
+  width: 100%;
+}
+
+.month-picker {
+  [class*='rmdp-header'] {
+    display: none;
+  }
 }
