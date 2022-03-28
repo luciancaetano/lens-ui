@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -14,7 +14,7 @@ module.exports = {
     regenerator: 'regenerator-runtime/runtime',
     index: './src/index.ts',
   },
-  externals: [],
+  externals: [nodeExternals()],
   output: {
     filename: '[name].min.js',
     path: path.resolve(__dirname, 'build'),
