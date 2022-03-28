@@ -1,6 +1,6 @@
 {
   "name": "lens-ui",
-  "version": "4.8.0-35",
+  "version": "4.8.0-36",
   "source": "src/index.ts",
   "main": "dist/index.min.js",
   "types": "dist/types/index.d.ts",
