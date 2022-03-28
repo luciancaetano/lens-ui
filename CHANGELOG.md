@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.0-1](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-0...v4.8.0-1) (2022-03-28)
+
+
+### Features
+
+* :sparkles: add maskFormat option to DatePicker ([58435ec](https://github.com/luciancaetano/lens-ui/commit/58435ec1115727d53eedf549e3731b2db3cb36d2))
+
+
+### Bug Fixes
+
+* :bug: fix datepicker mask ([2b776da](https://github.com/luciancaetano/lens-ui/commit/2b776da25aa40d77516c17face1cd7593adfe209))
+
 ## [4.8.0-0](https://github.com/luciancaetano/lens-ui/compare/v4.7.15-5...v4.8.0-0) (2022-03-28)
 
 
