@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.0-2](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-1...v4.8.0-2) (2022-03-28)
+
+
+### Features
+
+* update icons and some styles ([ebe73b5](https://github.com/luciancaetano/lens-ui/commit/ebe73b57e0803d5b0df5fba4aa34c53d5e15eb32))
+
 ## [4.8.0-1](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-0...v4.8.0-1) (2022-03-28)
 
 
