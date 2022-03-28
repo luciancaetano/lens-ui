@@ -2,10 +2,10 @@
   "compilerOptions": {
     "rootDir": "src",
     "declaration": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "declarationDir": "build",
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "ES6",
     "target": "ESNext",
     "lib": ["es5", "es6", "dom", "DOM.Iterable", "es2016", "es2017", "ESNext"],
     "sourceMap": true,
@@ -23,7 +23,7 @@
       "@types/node", "jest", "@types/testing-library__jest-dom"
     ]
   },
-  "include": ["src/index.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",
     "build",

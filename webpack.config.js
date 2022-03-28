@@ -16,7 +16,9 @@ module.exports = {
   output: {
     filename: '[name].min.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs',
+    libraryTarget: 'umd',
+    library: 'lens-ui',
+    umdNamedDefine: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -27,7 +29,8 @@ module.exports = {
     new CssMinimizerPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, 'scripts'), to: path.resolve(__dirname, 'build', 'scripts') },
+        { from: path.resolve(__dirname, 'scripts', 'getBemCssLocalIdent.js'), to: path.resolve(__dirname, 'dist', 'getBemCssLocalIdent.js') },
+        { from: path.resolve(__dirname, 'node_modules', 'reset-css', 'reset.css'), to: path.resolve(__dirname, 'dist', 'reset.css') },
       ],
       options: {
         concurrency: 100,
