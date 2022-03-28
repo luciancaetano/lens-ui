@@ -10,7 +10,7 @@
   ],
   "description": "LensUI Design System",
   "scripts": {
-    "build": "parcel build --no-cache",
+    "build": "rimraf dist && rimraf .parcel-cache && parcel build --no-cache",
     "test": "tsc --noEmit && jest --coverage --silent",
     "check:licenses": "license-checker --production --csv --out build/licenses.csv",
     "test:dev": "jest --watchAll --coverage",
