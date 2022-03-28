@@ -5,7 +5,6 @@ import React, {
 } from 'react';
 import ReactDOM from 'react-dom';
 import { useFloating } from '@floating-ui/react-dom';
-import { shift, flip, offset as offsetFloating } from '@floating-ui/dom';
 import styles from './DropDownMenu.module.scss';
 import {
   IDropDownMenuProps, IDropdownClickableItemType,
@@ -13,6 +12,9 @@ import {
 import Icon from '../Icon/Icon';
 import { rem2px, getPortalContainer } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const fui = require('@floating-ui/dom/dist/floating-ui.dom.js');
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
  */
@@ -31,10 +33,10 @@ function DropDownMenu<TPayload = any | undefined>({
   } = useFloating({
     placement,
     strategy: 'fixed',
-    middleware: [...(offsetX || offsetY ? [offsetFloating({
+    middleware: [...(offsetX || offsetY ? [fui.offset({
       ...(offsetX ? { alignmentAxis: rem2px(offsetX) } : {}),
       ...(offsetY ? { mainAxis: rem2px(offsetY) } : {}),
-    })] : []), shift({ padding: rem2px(0.5) }), flip()],
+    })] : []), fui.shift({ padding: rem2px(0.5) }), fui.flip()],
   });
 
   useOnClickOutside([ref], () => {
