@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.0-6](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-5...v4.8.0-6) (2022-03-28)
+
+
+### Bug Fixes
+
+* :bug:  tentative to fix floating ui imports bug ([f7dd266](https://github.com/luciancaetano/lens-ui/commit/f7dd2667836c8877436bd3225275b894032a72ec))
+
 ## [4.8.0-5](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-4...v4.8.0-5) (2022-03-28)
 
 ## [4.8.0-4](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-3...v4.8.0-4) (2022-03-28)
