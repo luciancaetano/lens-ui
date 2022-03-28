@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.0-32](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-31...v4.8.0-32) (2022-03-28)
+
+
+### Bug Fixes
+
+* :green_heart: fix parcel build ([2f8ebcf](https://github.com/luciancaetano/lens-ui/commit/2f8ebcfe3f9ace35cc12c7588c591789aa02e2dd))
+* :label: fix types ([3fffb1c](https://github.com/luciancaetano/lens-ui/commit/3fffb1ccb01b691e4bb9ba906d24702767ecb427))
+
 ## [4.8.0-31](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-30...v4.8.0-31) (2022-03-28)
 
 ## [4.8.0-30](https://github.com/luciancaetano/lens-ui/compare/v4.8.0-29...v4.8.0-30) (2022-03-28)
