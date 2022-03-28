@@ -336,10 +336,12 @@
   --lens-ui-scrollbar-track: hsl(0deg 0% 100%);
   --lens-ui-input-base-border: 1px solid hsl(210deg 14% 83%);
   --lens-ui-input-base-border--active: 1px solid hsl(210deg 97% 65%);
+  --lens-ui-input-base-bg--active: hsl(210deg 97% 65%);
   --lens-ui-input-base--active-box-shadow: 0 0 0 .15rem rgb(82 92 229 / 25%);
   --lens-ui-conent-bg-color: hsl(0deg 0% 97%);
   --lens-ui-elements-modal-background-color: hsl(var(--lens-ui-hue-bg) 0% 100%);
   --lens-ui-elements-modal-border-color: hsl(var(--lens-ui-hue-bg) 29% 95%);
+  --lens-ui-overlay-box-shadow: rgb(0 0 0 / 20%) 0 5px 5px -3px, rgb(0 0 0 / 14%) 0 8px 10px 1px, rgb(0 0 0 / 12%) 0 3px 14px 2px;
 }
 
 .lens-ui-font-definition {

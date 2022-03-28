@@ -16,12 +16,12 @@ const icons = {
  * Guidance and suggestions for using icons with LensUI.
  */
 const Icon:React.FC<IIconProps> = ({
-  className, testingID, id, name, fill = null, size = '1rem', spin, iconsSet = icons, ...props
+  className, testingID, id, name, fill = null, size = '1.2rem', spin, iconsSet = icons, ...props
 }) => React.createElement(iconsSet[name], {
   ...props,
-  fill: Object.keys(Intents).indexOf(fill) > -1 ? `var(--lens-ui-intents-${fill})` : fill,
+  ...(fill ? { fill: Object.keys(Intents).indexOf(fill) > -1 ? `var(--lens-ui-intents-${fill})` : fill } : {}),
   'data-lens-element': 'icon',
-  className: clsx(spin && styles.spin, className),
+  className: clsx(styles.icon, spin && styles.spin, className),
   ...({ 'data-testid': testingID } as any),
   size,
   id,

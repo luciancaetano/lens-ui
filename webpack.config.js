@@ -40,6 +40,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.module.scss', '.module.css'],
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {

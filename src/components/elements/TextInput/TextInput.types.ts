@@ -26,6 +26,8 @@ export type TextInputPropsType = {
   onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void;
   min?: number;
   max?: number;
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
 } & IBaseTextInputProps |
 {
   inputProps?: Omit<React.HtmlHTMLAttributes<HTMLTextAreaElement>,

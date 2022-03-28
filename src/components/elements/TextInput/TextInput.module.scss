@@ -11,6 +11,42 @@
     position: relative;
   }
 
+  &__prefix {
+    position: absolute;
+    background: #ced4da;
+    top: .05rem;
+    left: .05rem;
+    bottom: .05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    border-top-left-radius: .1rem;
+    border-bottom-left-radius: .1rem;
+    border-right: 1px solid #ced4da;
+    color: #79838d;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__suffix {
+    position: absolute;
+    background: #ced4da;
+    top: .05rem;
+    right: .05rem;
+    bottom: .05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    border-top-right-radius: .1rem;
+    border-bottom-right-radius: .1rem;
+    border-right: 1px solid #ced4da;
+    color: #79838d;
+    pointer-events: none;
+    z-index: 1;
+  }
+
   &__input {
     @include lens-ui-typography;
 
@@ -27,6 +63,14 @@
     appearance: none;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    &--with-prefix {
+      padding-left: 3.3rem;
+    }
+
+    &--with-prefix {
+      padding-right: 3.3rem;
+    }
 
     &--search {
       padding-right: 2.125rem;

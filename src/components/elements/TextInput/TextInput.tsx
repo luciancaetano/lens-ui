@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { get } from 'lodash';
-import React, { useCallback } from 'react';
+import get from 'lodash/get';
+import React, { useCallback, useMemo } from 'react';
 import Icon from '../Icon/Icon';
 import styles from './TextInput.module.scss';
 import { TextInputPropsType } from './TextInput.types';
@@ -13,6 +13,9 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, type = 'text',
   multiline, inputProps, readonly, ...props
 }, ref) => {
+  const prefix = useMemo(() => get(props, 'prefix', null), [props]);
+  const suffix = useMemo(() => type !== 'search' && get(props, 'suffix', null), [props, type]);
+
   const handleChange = useCallback((e: React.ChangeEvent<any>) => {
     if (onChange) {
       onChange(e.target.value, e);
@@ -59,6 +62,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
       data-testid={testingID}
       className={clsx(styles.textInput, type === 'search' && styles.textInputSearch, className, { search: type === 'search' })}
     >
+      {prefix && <div data-lens-element="text-input__input__prefix" className={styles.textInputPrefix}>{prefix}</div>}
       <input
         {...inputProps as any}
         placeholder={placeholder}
@@ -71,6 +75,8 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
           styles.textInputInput,
           isError && styles.textInputInputError,
           type === 'search' && styles.textInputInputSearch,
+          prefix && styles.textInputInputWithPrefix,
+          suffix && styles.textInputInputWithSuffix,
         )}
         onChange={handleChange}
         value={value}
@@ -85,7 +91,8 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
         min={get(props, 'min', undefined)}
         max={get(props, 'max', undefined)}
       />
-      {type === 'search' && <div className={styles.textInputSearchIcon}><Icon name="BsSearch" /></div>}
+      {suffix && <div data-lens-element="text-input__input__suffix" className={styles.textInputSuffix}>{suffix}</div>}
+      {type === 'search' && <div data-lens-element="text-input__input__search-icon" className={styles.textInputSearchIcon}><Icon name="BsSearch" /></div>}
     </div>
   );
 });
