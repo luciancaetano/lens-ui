@@ -72,7 +72,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
     if (renderType === 'date') {
       return (
         <MaskedInput
-          mask={format?.replace(/[a-zA-Z]/g, '9') || '9999/99/99'}
+          mask={format?.replace(/[a-zA-Z]/g, '9') || get(props, 'maskFormat', '9999/99/99')}
           value={strDate}
           onClick={openCalendar}
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
@@ -122,7 +122,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
         }}
       />
     );
-  }, [children, renderType]);
+  }, [children, format, props, renderType]);
 
   const Component: typeof Calendar & typeof RMDatePicker = useMemo(() => get(props, 'inline', false) ? Calendar : RMDatePicker, [props]);
 

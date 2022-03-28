@@ -41,6 +41,7 @@ export interface IDatePickerProps extends IBasePickerProps {
   type: 'date';
   numberOfMonths?: number;
   displayFormat?: string;
+  maskFormat?: string;
   hideWeekDays?: boolean;
   displayWeekNumbers?: boolean;
   minDate?: Date;
