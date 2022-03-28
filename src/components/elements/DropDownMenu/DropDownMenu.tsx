@@ -15,7 +15,7 @@ import { rem2px, getPortalContainer } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-console.info(require('@floating-ui/core'));
+console.info(require('@floating-ui/core'), { offset, shift, flip });
 
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
