@@ -20,6 +20,7 @@ module.exports = {
     library: 'lens-ui',
     umdNamedDefine: true,
   },
+  devtool: isDevelopment ? 'inline-source-map' : 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
