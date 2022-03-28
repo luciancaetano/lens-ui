@@ -14,7 +14,7 @@ import { rem2px, getPortalContainer } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const fui = require('@floating-ui/dom/dist/floating-ui.dom.js');
+const fui = require('@floating-ui/dom');
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
  */
