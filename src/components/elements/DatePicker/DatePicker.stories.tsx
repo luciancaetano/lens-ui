@@ -14,19 +14,17 @@ export default {
   ],
 } as ComponentMeta<typeof DatePicker>;
 
-const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...args} type={args.type as any || 'date'} />;
+const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...args} />;
 
-export const Default = Template.bind({});
-
-export const Controlled = (args) => {
-  const [state, setState] = useState(new Date('1991-03-03'));
+// eslint-disable-next-line func-names
+const TemplateControlled = (args) => {
+  const [state, setState] = useState((args as any).initial);
 
   return (
     <>
-      <div>Value is {state?.toISOString()} </div>
-      <Template
+      <div>Value is {JSON.stringify(state)} </div>
+      <DatePicker
         name="input"
-        type={'date' as DatePickerType}
         {...args}
         onChange={setState}
         value={state}
@@ -36,17 +34,19 @@ export const Controlled = (args) => {
   );
 };
 
-export const Uncontrolled = (args) => (
+export const Date = Template.bind({});
+export const DateControlled = TemplateControlled.bind({});
+
+export const Range = (args) => (
   <Template
     name="input"
-    type={'date' as DatePickerType}
-    value={new Date()} /* value work as initialValue */
+    type={'range' as DatePickerType}
     {...args}
   />
 );
 
-export const Range = (args) => (
-  <Template
+export const RangeControlled = (args) => (
+  <TemplateControlled
     name="input"
     type={'range' as DatePickerType}
     {...args}
@@ -62,6 +62,14 @@ export const MonthPicker = (args) => (
   />
 );
 
+export const MonthControlled = (args) => (
+  <TemplateControlled
+    name="input"
+    type={'month' as DatePickerType}
+    {...args}
+  />
+);
+
 export const YearPicker = (args) => (
   <Template
     type={'year' as DatePickerType}
@@ -71,12 +79,10 @@ export const YearPicker = (args) => (
   />
 );
 
-export const TimePicker = (args) => (
-  <Template
+export const YearControlled = (args) => (
+  <TemplateControlled
     name="input"
-    type={'time' as DatePickerType}
-    time="analog"
-    displayFormat="HH:mm:ss"
+    type={'year' as DatePickerType}
     {...args}
   />
 );
@@ -87,6 +93,14 @@ export const Multiple = (args) => (
     type={'multiple' as DatePickerType}
     time="analog"
     displayFormat="HH:mm:ss"
+    {...args}
+  />
+);
+
+export const MultipleControlled = (args) => (
+  <TemplateControlled
+    name="input"
+    type={'multiple' as DatePickerType}
     {...args}
   />
 );

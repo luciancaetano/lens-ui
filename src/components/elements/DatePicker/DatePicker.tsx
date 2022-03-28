@@ -5,20 +5,47 @@ import get from 'lodash/get';
 import DatePanel from 'react-multi-date-picker/plugins/date_panel';
 import opacity from 'react-element-popper/animations/opacity';
 import styles from './DatePicker.module.scss';
-import { IDatePickerPropsType } from './DatePicker.types';
-import { init } from './utils';
+import { IDatePickerPropsType, DatePickerType } from './DatePicker.types';
 import { getPortalContainer } from '../../../utils';
 import 'react-multi-date-picker/styles/layouts/mobile.css';
+import TextInput from '../TextInput/TextInput';
+import MaskedInput from '../MaskedInput/MaskedInput';
+
+function init(value, defaultValue, type: DatePickerType) {
+  if (defaultValue === undefined) {
+    if (type === 'month') {
+      const dt = new Date();
+      dt.setMonth(value);
+      return dt;
+    } if (type === 'year') {
+      const dt = new Date();
+      dt.setFullYear(value);
+      return dt;
+    }
+
+    return value;
+  }
+  if (type === 'month') {
+    const dt = new Date();
+    dt.setMonth(defaultValue);
+    return dt;
+  } if (type === 'year') {
+    const dt = new Date();
+    dt.setFullYear(defaultValue);
+    return dt;
+  }
+
+  return defaultValue;
+}
 
 const DatePicker: React.FC<IDatePickerPropsType> = ({
   className, children, disabled, isError, onPickerClose, onPickerOpen, readOnly, name,
   onChange, required, testingID, value, type, defaultValue, isMobile, locale, ...props
 }) => {
-  const [date, setDate] = useState(init(value, defaultValue, type));
+  const renderType = useMemo(() => type || 'date', [type]);
+  const [date, setDate] = useState(init(defaultValue, value, renderType));
 
   const format = useMemo(() => get(props, 'displayFormat', undefined), [props]);
-
-  const renderType = useMemo(() => type || 'date', [type]);
   const hideWeekDays = useMemo(() => get(props, 'hideWeekDays', false), [props]);
   const displayWeekNumbers = useMemo(() => get(props, 'displayWeekNumbers', false), [props]);
   const portalTarget = useMemo(() => getPortalContainer('lens-ui-date-picker__portal'), []);
@@ -26,26 +53,76 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
   const handleDateChange = useCallback((dt: DateObject | DateObject[]) => {
     setDate(dt);
 
-    if (onChange) {
-      if (type === 'date' && !Array.isArray(dt)) {
-        onChange(dt ? dt.toDate() : undefined);
-      } else if (type === 'range' && Array.isArray(dt)) {
-        onChange(dt && dt.length === 0 ? [] : dt.map((d) => d.toDate()));
-      } else if (type === 'month' && !Array.isArray(dt)) {
-        onChange(dt ? dt.month.number : undefined);
-      } else if (type === 'year' && !Array.isArray(dt)) {
-        onChange(dt ? dt.year : undefined);
-      } else if (type === 'multiple' && Array.isArray(dt)) {
-        onChange(dt && dt.length === 0 ? [] : dt.map((d) => d.toDate()));
-      }
+    const value: any = Array.isArray(dt) ? dt.map((d) => d?.toDate()) : dt?.toDate();
+
+    if (type === 'year' && onChange) {
+      onChange((value as Date)?.getFullYear() || null);
+    } else if (type === 'month' && onChange) {
+      onChange(value !== null && value !== undefined && typeof value.getMonth === 'function' ? (value as Date).getMonth() + 1 : null);
+    } else if (onChange) {
+      onChange(value || null);
     }
   }, [onChange, type]);
 
-  const handleRender = useCallback((strDate: string, openCalendar: Function, handleValueChange: React.ChangeEventHandler<HTMLElement>) => {
+  const handleRender = useCallback((strDate: string, openCalendar: () => void, handleValueChange: React.ChangeEventHandler<HTMLElement>) => {
     if (children) {
-      children(strDate, openCalendar, handleValueChange);
+      return children(strDate, openCalendar, handleValueChange);
     }
-  }, [children]);
+
+    if (renderType === 'date') {
+      return (
+        <MaskedInput
+          mask="99/99/9999"
+          value={strDate}
+          onClick={openCalendar}
+          onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
+            handleValueChange(e);
+          }}
+        />
+      );
+    }
+
+    if (renderType === 'month') {
+      return (
+        <TextInput
+          type="number"
+          maxLength={2}
+          value={strDate}
+          max={12}
+          min={1}
+          onClick={openCalendar}
+          onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
+            handleValueChange(e);
+          }}
+        />
+      );
+    }
+
+    if (renderType === 'year') {
+      return (
+        <TextInput
+          type="number"
+          max={9999}
+          min={1901}
+          value={strDate}
+          onClick={openCalendar}
+          onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
+            handleValueChange(e);
+          }}
+        />
+      );
+    }
+
+    return (
+      <TextInput
+        value={strDate}
+        onClick={openCalendar}
+        onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
+          handleValueChange(e);
+        }}
+      />
+    );
+  }, [children, renderType]);
 
   const Component: typeof Calendar & typeof RMDatePicker = useMemo(() => get(props, 'inline', false) ? Calendar : RMDatePicker, [props]);
 
@@ -56,7 +133,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       data-lens-element="date-picker"
       className={clsx(styles.container, isError && styles.error, className)}
     >
-      {(renderType === 'date') && !Array.isArray(date) && (
+      {(renderType === 'date') && (
         <Component
           locale={locale}
           className={clsx({ 'rmdp-mobile': isMobile })}
@@ -72,12 +149,13 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           name={name}
           disabled={disabled}
           format={format}
-          render={children && handleRender}
+          render={handleRender}
           hideWeekDays={hideWeekDays}
           displayWeekNumbers={displayWeekNumbers}
+          minDate={get(props, 'minDate', undefined)}
         />
       )}
-      {(renderType === 'range') && Array.isArray(date) && (
+      {(renderType === 'range') && (
         <Component
           locale={locale}
           className={clsx({ 'rmdp-mobile': isMobile })}
@@ -95,12 +173,14 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           disabled={disabled}
           range
           numberOfMonths={get(props, 'numberOfMonths', 2)}
-          render={children && handleRender}
+          render={handleRender}
           hideWeekDays={hideWeekDays}
           displayWeekNumbers={displayWeekNumbers}
+          minDate={get(props, 'minDate', undefined)}
+          maxDate={get(props, 'maxDate', undefined)}
         />
       )}
-      {(renderType === 'month') && !Array.isArray(date) && (
+      {(renderType === 'month') && (
         <Component
           locale={locale}
           className={clsx({ 'rmdp-mobile': isMobile }, styles.monthPicker)}
@@ -119,10 +199,10 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           disabled={disabled}
           onlyMonthPicker
           disableYearPicker
-          render={children && handleRender}
+          render={handleRender}
         />
       )}
-      {(renderType === 'year') && !Array.isArray(date) && (
+      {(renderType === 'year') && (
         <Component
           locale={locale}
           className={clsx({ 'rmdp-mobile': isMobile })}
@@ -139,10 +219,10 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           format="YYYY"
           disabled={disabled}
           onlyYearPicker
-          render={children && handleRender}
+          render={handleRender}
         />
       )}
-      {(renderType === 'multiple') && Array.isArray(date) && (
+      {(renderType === 'multiple') && (
         <Component
           locale={locale}
           className={clsx({ 'rmdp-mobile': isMobile })}
@@ -160,13 +240,15 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           disabled={disabled}
           multiple
           numberOfMonths={get(props, 'numberOfMonths', 2)}
-          render={children && handleRender}
+          render={handleRender}
           plugins={[<DatePanel />]}
           hideWeekDays={hideWeekDays}
           displayWeekNumbers={displayWeekNumbers}
+          minDate={get(props, 'minDate', undefined)}
+          maxDate={get(props, 'maxDate', undefined)}
         />
       )}
-      {(renderType === 'week') && Array.isArray(date) && (
+      {(renderType === 'week') && (
         <Component
           locale={locale}
           className={clsx({ 'rmdp-mobile': isMobile })}
@@ -185,8 +267,10 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           weekPicker
           hideWeekDays={hideWeekDays}
           displayWeekNumbers={displayWeekNumbers}
+          minDate={get(props, 'minDate', undefined)}
+          maxDate={get(props, 'maxDate', undefined)}
           numberOfMonths={get(props, 'numberOfMonths', 2)}
-          render={children && handleRender}
+          render={handleRender}
         />
       )}
     </div>

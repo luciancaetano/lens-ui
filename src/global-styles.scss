@@ -352,7 +352,7 @@ h6 {
 }
 
 .rmdp-day.rmdp-today span {
-  background-color: var(--lens-ui-intents-primary-light) !important;
+  background-color: var(--lens-ui-intents-warning) !important;
 }
 
 .rmdp-day.rmdp-selected span:not(.highlight) {
@@ -382,4 +382,20 @@ h6 {
 
 .rmdp-wrapper {
   border: none !important;
+}
+
+.rmdp-container {
+  flex: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -moz-appearance: textfield;
 }

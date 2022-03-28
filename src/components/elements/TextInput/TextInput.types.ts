@@ -6,10 +6,10 @@ interface IBaseTextInputProps extends ITestableProps, Omit<React.HtmlHTMLAttribu
   value?: string;
   placeholder?: string;
   defaultValue?: string;
-  onChange?: (value: string) => void;
   tabIndex?: number;
   disabled?: boolean;
   autoFocus?: boolean;
+  readonly?: boolean;
   isError?: boolean;
   maxLength?: number;
   required?: boolean;
@@ -24,6 +24,8 @@ export type TextInputPropsType = {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   multiline?: true;
   onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void;
+  min?: number;
+  max?: number;
 } & IBaseTextInputProps |
 {
   inputProps?: Omit<React.HtmlHTMLAttributes<HTMLTextAreaElement>,

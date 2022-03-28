@@ -43,6 +43,8 @@ export interface IDatePickerProps extends IBasePickerProps {
   displayFormat?: string;
   hideWeekDays?: boolean;
   displayWeekNumbers?: boolean;
+  minDate?: Date;
+  maxDate?: Date;
 }
 
 export interface IMonthPickerProps extends IBasePickerProps {
@@ -69,6 +71,8 @@ export interface IRangeDatePickerProps extends IBasePickerProps {
   displayFormat?: string;
   hideWeekDays?: boolean;
   displayWeekNumbers?: boolean;
+  minDate?: Date;
+  maxDate?: Date;
 }
 
 export interface IWeekDatePickerProps extends IBasePickerProps {
@@ -81,6 +85,8 @@ export interface IWeekDatePickerProps extends IBasePickerProps {
   displayFormat?: string;
   hideWeekDays?: boolean;
   displayWeekNumbers?: boolean;
+  minDate?: Date;
+  maxDate?: Date;
 }
 
 export interface IMultiDatePickerProps extends IBasePickerProps {
@@ -93,6 +99,8 @@ export interface IMultiDatePickerProps extends IBasePickerProps {
   displayFormat?: string;
   hideWeekDays?: boolean;
   displayWeekNumbers?: boolean;
+  minDate?: Date;
+  maxDate?: Date;
 }
 
 export type IDatePickerPropsType = IDatePickerProps | IMonthPickerProps | IRangeDatePickerProps | IYearPickerProps | IMultiDatePickerProps | IWeekDatePickerProps;

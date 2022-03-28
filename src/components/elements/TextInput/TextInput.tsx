@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { get } from 'lodash';
 import React, { useCallback } from 'react';
 import Icon from '../Icon/Icon';
 import styles from './TextInput.module.scss';
@@ -10,11 +11,11 @@ import { TextInputPropsType } from './TextInput.types';
 const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
   className, testingID, id, onChange, tabIndex, maxLength, required, placeholder,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, type = 'text',
-  multiline, inputProps, ...props
+  multiline, inputProps, readonly, ...props
 }, ref) => {
   const handleChange = useCallback((e: React.ChangeEvent<any>) => {
     if (onChange) {
-      onChange(e.target.value);
+      onChange(e.target.value, e);
     }
   }, [onChange]);
 
@@ -44,6 +45,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
           maxLength={maxLength}
           required={required}
           ref={ref as any}
+          readOnly={readonly}
         />
       </div>
     );
@@ -79,6 +81,9 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
         maxLength={maxLength}
         required={required}
         ref={ref as any}
+        readOnly={readonly}
+        min={get(props, 'min', undefined)}
+        max={get(props, 'max', undefined)}
       />
       {type === 'search' && <div className={styles.textInputSearchIcon}><Icon name="BsSearch" /></div>}
     </div>
