@@ -5,7 +5,7 @@ import Card from './index';
 import Layout from '../Layout/index';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import '../../../styles';
-import { Intent } from '../../../types';
+import { Intents } from '../../../types/index';
 
 export default {
   title: '2. Components/Card',
@@ -69,7 +69,7 @@ export const Backgrounds = () => (
   <LensProvider>
     <Layout.Content layout="horizontal">
 
-      {Object.keys(Intent).map(((intent) => (
+      {Object.keys(Intents).map(((intent) => (
         <Card.Card style={cardStyle} intent={intent as any}>
           <Card.Body>
             <Card.Title>{intent.toUpperCase()}</Card.Title>

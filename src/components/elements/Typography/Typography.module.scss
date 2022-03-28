@@ -1,7 +1,13 @@
 @import '../../../style-lib';
 
 .root {
-  @include lens-ui-typography;
+  font-family: var(--lens-ui-typography-font-family);
+  font-style: normal;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: .35em;
+  color: var(--lens-ui-typography-text-color);
 }
 
 .h1 {
@@ -89,4 +95,13 @@
   letter-spacing: .08333em;
   text-transform: uppercase;
   display: block;
+}
+
+.button {
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #495057;
+  text-align: center;
+  vertical-align: middle;
+  font-size: .875rem;
 }

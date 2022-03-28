@@ -16,13 +16,14 @@ const variantMap: { [key: string]: string } = {
   body2: 'p',
   caption: 'span',
   overline: 'span',
+  button: 'span',
 };
 
-const Typography: React.FC<ITypographyProps> = ({ variant, noWrap }) => React.createElement(variantMap[variant], {
+const Typography: React.FC<ITypographyProps> = ({ variant, noWrap, children }) => React.createElement(variantMap[variant], {
   style: {
     whiteSpace: noWrap ? 'nowrap' : 'normal',
   },
   className: clsx(styles.root, styles[variant]),
-}, 'Typography');
+}, children);
 
 export default Typography;

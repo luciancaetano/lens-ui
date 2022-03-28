@@ -162,7 +162,7 @@
   --lens-ui-elements-card-typography-default-text-color: var(--lens-ui-typography-text-color);
   --lens-ui-elements-card-typography-faded-text-color: var(--lens-ui-typography-faded-text-color);
   --lens-ui-elements-card-border-radius: .25rem;
-  --lens-ui-elements-card-box-shadow: 2px 2px 5px rgb(0 0 0 / 32.2%);
+  --lens-ui-elements-card-box-shadow: rgb(0 0 0 / 20%) 0 2px 1px -1px, rgb(0 0 0 / 14%) 0 1px 1px 0, rgb(0 0 0 / 12%) 0 1px 3px 0;
   --lens-ui-elements-card-elements-card-body-padding: 1.25rem 1.25rem;
   --lens-ui-elements-card-elements-card-text-margin: 0 0 1rem 0;
   --lens-ui-elements-card-backgrounds-default-border-color: hsl(var(--lens-ui-hue-bg) 20% 93%);
