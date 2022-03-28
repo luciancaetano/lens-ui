@@ -17,8 +17,8 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
   ...props
 }, ref) => {
   const { isPhone } = useDevice();
-  const backDropRef = useRef<HTMLDivElement>(null);
-  const onEscapeRef = useRef<(e: KeyboardEvent) => void>(null);
+  const backDropRef = useRef<HTMLDivElement | null | undefined>(null);
+  const onEscapeRef = useRef<((e: KeyboardEvent) => void) | null>(null);
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (onBackdropClick && (e.target as HTMLDivElement).getAttribute('data-lens-element') === 'modal__backdrop') {
@@ -34,7 +34,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
       if (typeof window !== 'undefined') {
         const portalRoot = window.document.getElementById(PORTAL_ROOT_ID);
 
-        if (onEscape && e.key === 'Escape' && modalCanEscape(portalRoot, backDropRef)) {
+        if (onEscape && portalRoot && e.key === 'Escape' && modalCanEscape(portalRoot, backDropRef)) {
           onEscape('escape');
         }
       }
@@ -43,11 +43,11 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.document.addEventListener('keydown', onEscapeRef.current);
+      window.document.addEventListener('keydown', onEscapeRef.current as () => void);
     }
     return () => {
       if (typeof window !== 'undefined') {
-        window.document.removeEventListener('keydown', onEscapeRef.current);
+        window.document.removeEventListener('keydown', onEscapeRef.current as () => void);
       }
     };
   }, []);

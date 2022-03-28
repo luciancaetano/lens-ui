@@ -23,7 +23,7 @@ function DropDownMenu<TPayload = any | undefined>({
 }: IDropDownMenuProps<TPayload>) {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const timeout = useRef<NodeJS.Timeout | undefined>();
+  const timeout = useRef<NodeJS.Timeout | undefined | null>();
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -50,7 +50,7 @@ function DropDownMenu<TPayload = any | undefined>({
     }
   }, [onItemClick]);
 
-  const listItems = useMemo(() => items.map((item: IDropdownClickableItemType<TPayload>, key) => {
+  const listItems = useMemo(() => (items as IDropdownClickableItemType<TPayload>[]).map((item, key) => {
     if (!item) return null;
 
     if ((item as any).divider) {

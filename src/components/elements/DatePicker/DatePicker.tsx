@@ -3,7 +3,6 @@ import React, { useCallback, useMemo, useState } from 'react';
 import RMDatePicker, { DateObject, Calendar } from 'react-multi-date-picker';
 import get from 'lodash/get';
 import DatePanel from 'react-multi-date-picker/plugins/date_panel';
-import opacity from 'react-element-popper/animations/opacity';
 import styles from './DatePicker.module.scss';
 import { IDatePickerPropsType, DatePickerType } from './DatePicker.types';
 import { getPortalContainer } from '../../../utils';
@@ -11,7 +10,7 @@ import 'react-multi-date-picker/styles/layouts/mobile.css';
 import TextInput from '../TextInput/TextInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
 
-function init(value, defaultValue, type: DatePickerType) {
+function init(value: any, defaultValue: any, type: DatePickerType) {
   if (defaultValue === undefined) {
     if (type === 'month') {
       const dt = new Date();
@@ -56,9 +55,9 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
     const value: any = Array.isArray(dt) ? dt.map((d) => d?.toDate()) : dt?.toDate();
 
     if (type === 'year' && onChange) {
-      onChange((value as Date)?.getFullYear() || null);
+      (onChange as any)((value as Date)?.getFullYear() || null);
     } else if (type === 'month' && onChange) {
-      onChange(value !== null && value !== undefined && typeof value.getMonth === 'function' ? (value as Date).getMonth() + 1 : null);
+      (onChange as any)(value !== null && value !== undefined && typeof value.getMonth === 'function' ? (value as Date).getMonth() + 1 : null);
     } else if (onChange) {
       onChange(value || null);
     }
@@ -124,7 +123,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
     );
   }, [children, format, props, renderType]);
 
-  const Component: typeof Calendar & typeof RMDatePicker = useMemo(() => get(props, 'inline', false) ? Calendar : RMDatePicker, [props]);
+  const Component: any = useMemo(() => get(props, 'inline', false) ? Calendar : RMDatePicker, [props]);
 
   return (
     <div
@@ -142,7 +141,6 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           required={required}
           portal
           portalTarget={portalTarget}
-          animations={[opacity()]}
           onOpen={onPickerOpen}
           onClose={onPickerClose}
           readOnly={readOnly}
@@ -164,7 +162,6 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           required={required}
           portal
           portalTarget={portalTarget}
-          animations={[opacity()]}
           onOpen={onPickerOpen}
           onClose={onPickerClose}
           readOnly={readOnly}
@@ -190,7 +187,6 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           required={required}
           portal
           portalTarget={portalTarget}
-          animations={[opacity()]}
           onOpen={onPickerOpen}
           onClose={onPickerClose}
           readOnly={readOnly}
@@ -211,7 +207,6 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           required={required}
           portal
           portalTarget={portalTarget}
-          animations={[opacity()]}
           onOpen={onPickerOpen}
           onClose={onPickerClose}
           readOnly={readOnly}
@@ -231,7 +226,6 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           required={required}
           portal
           portalTarget={portalTarget}
-          animations={[opacity()]}
           onOpen={onPickerOpen}
           onClose={onPickerClose}
           readOnly={readOnly}
@@ -257,7 +251,6 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           required={required}
           portal
           portalTarget={portalTarget}
-          animations={[opacity()]}
           onOpen={onPickerOpen}
           onClose={onPickerClose}
           readOnly={readOnly}

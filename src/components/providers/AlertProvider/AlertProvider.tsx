@@ -90,7 +90,7 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
     }
   }, [queue, activeAlert]);
 
-  const addAlert = useCallback((alert: IAlertItemRequest, id: string = null) => {
+  const addAlert = useCallback((alert: IAlertItemRequest, id: string | null = null) => {
     const currId = id || randomId();
     const promise = new Promise<IAlertResult>((resolve) => {
       promiseResolvers.current[currId] = resolve;

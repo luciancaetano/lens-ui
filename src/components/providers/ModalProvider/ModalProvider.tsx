@@ -51,8 +51,8 @@ const ModalProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     forEach(isOpenLayers, (open, layer) => {
-      if (!open && resolver.current && typeof resolver.current[layer] === 'function') {
-        resolver.current[layer](null);
+      if (!open && resolver.current && typeof resolver.current[Number(layer)] === 'function') {
+        resolver.current[Number(layer)](null);
         resolver.current = omit(resolver.current, layer);
       }
     });
@@ -74,7 +74,7 @@ const ModalProvider: React.FC = ({ children }) => {
         activeModalComponent.current,
         (ModalComponent: any, layer) => ReactDOM.createPortal(
           <ModalComponent key={layer} {...(props || {})[layer] || {}} />,
-          typeof window !== 'undefined' ? getPortalContainer('lens-ui-portal-modal-root') : null,
+          getPortalContainer('lens-ui-portal-modal-root'),
         ),
       )}
       {React.Children.toArray(children)}

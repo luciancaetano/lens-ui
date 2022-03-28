@@ -1,5 +1,5 @@
 import isNaN from 'lodash/isNaN';
-import { MutableRefObject } from 'react';
+import { MutableRefObject, RefObject } from 'react';
 import { CLASSES } from '../css-classes/index';
 
 const possibilities = {
@@ -32,7 +32,7 @@ export function randomId(prefix = '', len = 30, pattern = 'aA0') {
 
 export const getPortalContainer = (id: string, zIndex?: number) => {
   if (typeof window === 'undefined') {
-    return null;
+    return (null as any) as HTMLElement;
   }
 
   let root = window.document.getElementById(CLASSES.PortalRootContainer);
@@ -69,7 +69,7 @@ export const Layers = {
   Select: 1080,
 };
 
-export const sleep = (ms: number, clear?: MutableRefObject<Function>) => new Promise<'completed' | 'canceled'>((resolve) => {
+export const sleep = (ms: number, clear?: MutableRefObject<(() => void) | null>) => new Promise<'completed' | 'canceled'>((resolve) => {
   const to = setTimeout(() => resolve('completed'), ms);
   if (clear) {
     clear.current = () => {
@@ -79,7 +79,7 @@ export const sleep = (ms: number, clear?: MutableRefObject<Function>) => new Pro
   }
 });
 
-export const modalCanEscape = (portalRoot: HTMLElement, backDropRef: MutableRefObject<HTMLDivElement>) => portalRoot && portalRoot.lastChild === backDropRef.current;
+export const modalCanEscape = (portalRoot: HTMLElement, backDropRef: any) => portalRoot && portalRoot.lastChild === backDropRef.current;
 
 export function rem2px(rem: number) {
   return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);

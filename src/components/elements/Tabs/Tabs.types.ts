@@ -13,5 +13,5 @@ export interface ITabsProps extends ITestableProps, Omit<React.HtmlHTMLAttribute
   initialActiveTab?: string | null;
   activeTab?: string | null;
   onChange?: (id: string, e: React.MouseEvent<HTMLDivElement>) => void;
-  children?: (activeTab: ITabsItem | null) => React.ReactNode;
+  children?: (activeTab: ITabsItem | null | undefined) => React.ReactNode;
 }

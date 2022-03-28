@@ -25,7 +25,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
     if (isMulti && Array.isArray(defaultValue)) {
       return defaultValue !== undefined
         ? defaultValue.map((option) => {
-          const index = options.findIndex((opt) => opt.value === option);
+          const index = (options as ISelectOption[]).findIndex((opt) => opt.value === option);
 
           return get(options, index, undefined);
         })
@@ -40,7 +40,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
     if (isMulti && Array.isArray(value)) {
       return value !== undefined
         ? value.map((option) => {
-          const index = options.findIndex((opt) => opt.value === option);
+          const index = (options as ISelectOption[]).findIndex((opt) => opt.value === option);
 
           return get(options, index, undefined);
         })
@@ -53,7 +53,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
 
   const handleFormatOptionLabel = useMemo(() => {
     if (formatOptionLabel === undefined) return undefined;
-    return (option: ISelectOption, { selectValue }) => formatOptionLabel(option, selectValue);
+    return (option: ISelectOption, { selectValue }: any) => formatOptionLabel(option, selectValue);
   }, [formatOptionLabel]);
 
   return (
@@ -66,7 +66,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
     >
       <ReactSelect
         placeholder={placeholder}
-        className={isError && 'select-input-error'}
+        className={clsx(isError && 'select-input-error')}
         classNamePrefix="lens-ui-select-input"
         isMulti={isMulti}
         isLoading={isLoading}
@@ -79,7 +79,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
         tabIndex={tabIndex}
         onBlur={onBlur}
         isDisabled={disabled}
-        formatGroupLabel={formatGroupLabel}
+        formatGroupLabel={formatGroupLabel as any}
         formatOptionLabel={handleFormatOptionLabel}
         onChange={handleChange}
         autoFocus={autoFocus}

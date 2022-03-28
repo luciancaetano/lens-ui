@@ -43,7 +43,7 @@ const Toast:React.FC<IToastProps> = ({
       initialized.current = true;
       if (isNumber(data.dismiss)) {
         interval.current = setInterval(() => {
-          if (timeProgress.current >= data.dismiss) {
+          if (data.dismiss && timeProgress.current >= data.dismiss) {
             clearInterval(interval.current);
             setTimeout(() => removeToast(data.id), INTERVAL);
           } else {

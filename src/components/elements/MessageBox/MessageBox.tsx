@@ -24,7 +24,7 @@ const MessageBox: React.FC<IMessageBoxProps> = ({
   const [renderDisabled, setRenderDisabled] = useState(false);
   const progressBar = useRef<HTMLDivElement>(null);
   const progressDone = useRef(false);
-  const timeOutRef = useRef<Function>(null);
+  const timeOutRef = useRef<(() => void) | null>(null);
 
   const renderDisableTimeout = useRef(async () => {
     if (!timeOutRef.current) {
@@ -62,7 +62,7 @@ const MessageBox: React.FC<IMessageBoxProps> = ({
   }, [stopProgress, onClose, updateProgressBar]);
 
   useEffect(() => {
-    if (timeout > 0 && !inProgress.current && !progressDone.current) {
+    if (timeout && timeout > 0 && !inProgress.current && !progressDone.current) {
       progressDone.current = true;
       start(timeout);
     }
