@@ -2,10 +2,11 @@
   "compilerOptions": {
     "rootDir": "src",
     "declaration": true,
+    "importHelpers": true,
     "declarationDir": "build",
     "module": "esnext",
-    "target": "ES5",
-    "lib": ["es6", "dom", "DOM.Iterable", "es2016", "es2017", "ESNext"],
+    "target": "ESNext",
+    "lib": ["es5", "es6", "dom", "DOM.Iterable", "es2016", "es2017", "ESNext"],
     "sourceMap": true,
     "skipLibCheck": true,
     "jsx": "react",
