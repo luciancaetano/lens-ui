@@ -1,6 +1,6 @@
 {
   "name": "lens-ui",
-  "version": "4.8.0-32",
+  "version": "4.8.0-33",
   "source": "src/index.ts",
   "main": "dist/main.js",
   "module": "dist/module.js",
@@ -10,12 +10,12 @@
   ],
   "description": "LensUI Design System",
   "scripts": {
-    "build": "rimraf dist && rimraf .parcel-cache && parcel build --no-cache && npm run copy:files",
+    "build": "rimraf dist/ && cross-env NODE_ENV=production webpack --mode production && npm run check:licenses && npm run types",
     "test": "tsc --noEmit && jest --coverage --silent",
-    "check:licenses": "license-checker --production --csv --out build/licenses.csv",
+    "check:licenses": "license-checker --production --csv --out dist/licenses.csv",
     "test:dev": "jest --watchAll --coverage",
     "lint": "npm run lint:code && npm run lint:styles",
-    "types": "tsc src/index.ts --declaration --allowJs --emitDeclarationOnly --outDir build/types --esModuleInterop --jsx react --skipLibCheck",
+    "types": "tsc src/index.ts --declaration --allowJs --emitDeclarationOnly --outDir dist/types --esModuleInterop --jsx react --skipLibCheck",
     "lint:code": "eslint ./src --ext .tsx --ext .ts --max-warnings=0 --fix",
     "lint:styles": "stylelint \"src/**/*.scss\" --fix",
     "release:minor": "standard-version --release-as minor && npm run build && git push --follow-tags origin main && npm publish",
@@ -24,8 +24,7 @@
     "release:pre": "standard-version --prerelease && npm run build && git push --follow-tags origin main && npm publish --tag next",
     "prepare": "husky install",
     "storybook": "start-storybook -p 3003",
-    "deploy-storybook": "build-storybook && storybook-to-ghpages",
-    "copy:files": "cp ./scripts/getBemCssLocalIdent.js ./dist/getBemCssLocalIdent.js && cp ./node_modules/reset-css/reset.css ./dist/reset.css"
+    "deploy-storybook": "build-storybook && storybook-to-ghpages"
   },
   "repository": {
     "type": "git",
@@ -58,10 +57,6 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@namics/stylelint-bem": "^7.0.0",
-    "@parcel/packager-ts": "^2.4.0",
-    "@parcel/transformer-sass": "^2.4.0",
-    "@parcel/transformer-typescript-tsc": "^2.4.0",
-    "@parcel/transformer-typescript-types": "^2.4.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
@@ -86,8 +81,11 @@
     "@typescript-eslint/parser": "^5.16.0",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -104,8 +102,6 @@
     "lint-staged": "^12.3.7",
     "loader-utils": "^3.2.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "parcel": "^2.4.0",
-    "parcel-plugin-copy-files": "^0.0.7",
     "postcss": "^8.4.12",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-sass": "^0.5.0",
@@ -123,7 +119,10 @@
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.2.0",
     "ts-jest": "^27.1.4",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-node-externals": "^3.0.0"
   },
   "husky": {
     "hooks": {
