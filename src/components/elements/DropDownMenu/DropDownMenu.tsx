@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 import ReactDOM from 'react-dom';
 import { useFloating } from '@floating-ui/react-dom';
-import {offset, shift, flip} from '@floating-ui/core';
+import { offset, flip } from '@floating-ui/core';
 import styles from './DropDownMenu.module.scss';
 import {
   IDropDownMenuProps, IDropdownClickableItemType,
@@ -35,7 +35,7 @@ function DropDownMenu<TPayload = any | undefined>({
     middleware: [...(offsetX || offsetY ? [offset({
       ...(offsetX ? { alignmentAxis: rem2px(offsetX) } : {}),
       ...(offsetY ? { mainAxis: rem2px(offsetY) } : {}),
-    })] : []), shift({ padding: rem2px(0.5) }), flip()],
+    })] : []) /*, shift({ padding: rem2px(0.5) })*/, flip()],
   });
 
   useOnClickOutside([ref], () => {
