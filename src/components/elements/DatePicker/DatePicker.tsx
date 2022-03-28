@@ -72,7 +72,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
     if (renderType === 'date') {
       return (
         <MaskedInput
-          mask="99/99/9999"
+          mask={format?.replace(/[a-zA-Z]/g, '9') || '9999/99/99'}
           value={strDate}
           onClick={openCalendar}
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
