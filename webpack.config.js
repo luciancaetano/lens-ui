@@ -20,6 +20,14 @@ module.exports = {
     library: 'lens-ui',
     umdNamedDefine: true,
   },
+  externals: {
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React',
+    },
+  },
   devtool: isDevelopment ? 'inline-source-map' : 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
@@ -39,7 +47,13 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+  },
+  resolveLoader: {
+    modules: ['node_modules'],
+  },
+  optimization: {
+    minimize: true,
   },
   module: {
     rules: [
@@ -50,7 +64,13 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-typescript', '@babel/react', ['@babel/env', { modules: false }]],
-            plugins: ['@babel/plugin-transform-typescript'],
+            plugins: [
+              '@babel/plugin-transform-typescript',
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-proposal-object-rest-spread',
+              '@babel/plugin-syntax-dynamic-import',
+              '@babel/plugin-transform-runtime',
+            ],
           },
         },
       },
