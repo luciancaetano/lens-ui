@@ -8,7 +8,7 @@
   -moz-osx-font-smoothing: grayscale;
   margin-bottom: .35em;
   margin-top: 0;
-  color: var(--lens-ui-typography-text-color);
+  color: var(--typography-intent-color, var(--lens-ui-typography-text-color));
 
   svg,
   [data-lens-element='toast__icon'] {

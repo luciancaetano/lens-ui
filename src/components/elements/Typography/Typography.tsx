@@ -19,9 +19,12 @@ const variantMap: { [key: string]: string } = {
   button: 'span',
 };
 
-const Typography: React.FC<ITypographyProps> = ({ variant, noWrap, children }) => React.createElement(variantMap[variant], {
+const Typography: React.FC<ITypographyProps> = ({
+  variant, noWrap, intent, children,
+}) => React.createElement(variantMap[variant], {
   style: {
     whiteSpace: noWrap ? 'nowrap' : 'normal',
+    '--typography-intent-color': `var(--lens-ui-intents-${intent})`,
   },
   className: clsx(styles.root, styles[variant]),
 }, children);
