@@ -15,6 +15,7 @@
   margin-bottom: .2rem;
   box-sizing: border-box;
   transition: opacity linear .3s;
+  box-shadow: var(--lens-ui-elements-card-box-shadow);
 
   &--hidden {
     opacity: 0;

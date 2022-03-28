@@ -71,8 +71,10 @@ const Toast:React.FC<IToastProps> = ({
       className={clsx(styles.toast, isPhone && styles.toastMobile, styles[`toast--intent-${data.intent}`], data.className)}
     >
       <div className={styles.toastMain}>
-        {data.icon && (<div className={styles.toastIcon}>{data.icon}</div>)}
-        <div className={styles.toastContent} data-lens-element="toast__content">{data.content}</div>
+        {data.icon && (<div data-lens-element="toast__icon" className={styles.toastIcon}>{data.icon}</div>)}
+        <div className={styles.toastContent} data-lens-element="toast__content">
+          {data.content}
+        </div>
         {actions.length > 0 && (
           <div data-lens-element="toast__actions" className={clsx(styles.toastActionsContainer, data.actionsContainerClassName)}>
             {actions}
