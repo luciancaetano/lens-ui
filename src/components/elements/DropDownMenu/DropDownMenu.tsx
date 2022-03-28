@@ -4,9 +4,8 @@ import React, {
   useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
 import ReactDOM from 'react-dom';
-import {
-  useFloating, shift, flip, offset as offsetFloating,
-} from '@floating-ui/react-dom';
+import { useFloating } from '@floating-ui/react-dom';
+import { shift, flip, offset as offsetFloating } from '@floating-ui/dom';
 import styles from './DropDownMenu.module.scss';
 import {
   IDropDownMenuProps, IDropdownClickableItemType,
