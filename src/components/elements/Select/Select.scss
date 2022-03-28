@@ -12,9 +12,6 @@
   padding-bottom: .75rem;
   z-index: 1;
 
-  &* {
-    z-index: 1;
-  }
   /* stylelint-disable */
   .lens-ui-select-input__control {
     border: var(--lens-ui-input-base-border);
