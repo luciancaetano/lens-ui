@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.0-0](https://github.com/luciancaetano/lens-ui/compare/v4.7.15-5...v4.8.0-0) (2022-03-28)
+
+
+### Features
+
+* :sparkles: implemented date picker input ([0657a9e](https://github.com/luciancaetano/lens-ui/commit/0657a9ec6df4e2272da3e932652614587b07a918))
+
+
+### Bug Fixes
+
+* :bug: fix date input bugs ([c50df3e](https://github.com/luciancaetano/lens-ui/commit/c50df3e1a60b1d335058d619d0b47d0f40def0b5))
+* :bug: fix input bug ([3d7faf0](https://github.com/luciancaetano/lens-ui/commit/3d7faf0612c0128bec07c91eb594592de6d199ca))
+
 ### [4.7.15-5](https://github.com/luciancaetano/lens-ui/compare/v4.7.15-4...v4.7.15-5) (2022-03-24)
 
 ### [4.7.15-4](https://github.com/luciancaetano/lens-ui/compare/v4.7.15-3...v4.7.15-4) (2022-03-24)
