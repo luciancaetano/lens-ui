@@ -10,7 +10,7 @@
   ],
   "description": "LensUI Design System",
   "scripts": {
-    "build": "rimraf dist && rimraf .parcel-cache && parcel build --no-cache",
+    "build": "rimraf dist && rimraf .parcel-cache && parcel build --no-cache && npm run copy:files",
     "test": "tsc --noEmit && jest --coverage --silent",
     "check:licenses": "license-checker --production --csv --out build/licenses.csv",
     "test:dev": "jest --watchAll --coverage",
@@ -24,7 +24,8 @@
     "release:pre": "standard-version --prerelease && npm run build && git push --follow-tags origin main && npm publish --tag next",
     "prepare": "husky install",
     "storybook": "start-storybook -p 3003",
-    "deploy-storybook": "build-storybook && storybook-to-ghpages"
+    "deploy-storybook": "build-storybook && storybook-to-ghpages",
+    "copy:files": "cp ./scripts/getBemCssLocalIdent.js ./dist/getBemCssLocalIdent.js && cp ./node_modules/reset-css/reset.css ./dist/reset.css"
   },
   "repository": {
     "type": "git",
@@ -59,6 +60,7 @@
     "@namics/stylelint-bem": "^7.0.0",
     "@parcel/packager-ts": "^2.4.0",
     "@parcel/transformer-sass": "^2.4.0",
+    "@parcel/transformer-typescript-tsc": "^2.4.0",
     "@parcel/transformer-typescript-types": "^2.4.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
@@ -103,6 +105,7 @@
     "loader-utils": "^3.2.0",
     "mini-css-extract-plugin": "^2.6.0",
     "parcel": "^2.4.0",
+    "parcel-plugin-copy-files": "^0.0.7",
     "postcss": "^8.4.12",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-sass": "^0.5.0",
