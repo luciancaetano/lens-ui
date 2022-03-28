@@ -19,7 +19,7 @@ module.exports = {
     filename: '[name].min.js',
     path: path.resolve(__dirname, 'build'),
     library: {
-      type: 'commonjs2',
+      type: 'umd',
     },
   },
   plugins: [
@@ -40,7 +40,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.ts', '.tsx', '.module.scss', '.module.css'],
+    extensions: ['.ts', '.tsx'],
   },
   devtool: 'source-map',
   module: {
@@ -51,9 +51,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-typescript', '@babel/react', ['@babel/env', {
-              modules: false,
-            }]],
+            presets: ['@babel/preset-typescript', '@babel/react', ['@babel/env', { modules: false }]],
             plugins: ['@babel/plugin-transform-typescript'],
           },
         },

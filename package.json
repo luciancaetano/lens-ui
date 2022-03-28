@@ -8,7 +8,8 @@
   "types": "build/types/index.d.ts",
   "description": "LensUI Design System",
   "scripts": {
-    "build": "rimraf build/ && cross-env NODE_ENV=production webpack --mode production && npm run check:licenses && npm run types",
+    "build": "rimraf build/ && cross-env NODE_ENV=production webpack --mode production",
+    "postbuild": "npm run check:licenses && npm run types",
     "test": "jest --coverage --silent",
     "check:licenses": "license-checker --production --csv --out build/licenses.csv",
     "test:dev": "jest --watchAll --coverage",
