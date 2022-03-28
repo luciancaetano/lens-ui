@@ -18,9 +18,9 @@ module.exports = {
   output: {
     filename: '[name].min.js',
     path: path.resolve(__dirname, 'build'),
-    library: {
-      type: 'umd',
-    },
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    globalObject: 'this',
   },
   plugins: [
     new CleanWebpackPlugin(),
