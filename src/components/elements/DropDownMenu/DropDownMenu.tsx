@@ -5,7 +5,6 @@ import React, {
 } from 'react';
 import ReactDOM from 'react-dom';
 import { useFloating } from '@floating-ui/react-dom';
-import { offset, shift, flip } from '@floating-ui/core';
 import styles from './DropDownMenu.module.scss';
 import {
   IDropDownMenuProps, IDropdownClickableItemType,
@@ -15,7 +14,7 @@ import { rem2px, getPortalContainer } from '../../../utils';
 import { useOnClickOutside } from '../../../hooks';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-console.info(require('@floating-ui/core'), { offset, shift, flip });
+const { offset, shift, flip } = require('@floating-ui/core');
 
 /**
  * DropDownMenu display a list of choices on temporary surfaces.

@@ -14,7 +14,7 @@ module.exports = {
     regenerator: 'regenerator-runtime/runtime',
     index: './src/index.ts',
   },
-  externals: [nodeExternals()],
+  externals: [nodeExternals(), '@floating-ui/core'],
   output: {
     filename: '[name].min.js',
     path: path.resolve(__dirname, 'build'),
