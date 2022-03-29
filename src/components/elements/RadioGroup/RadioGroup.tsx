@@ -22,11 +22,11 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
     }
   }, [value, defaultValue]);
 
-  const handleChange = useCallback((value: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(String(value));
+  const handleChange = useCallback((v: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(String(v));
 
     if (onChange) {
-      onChange(value, e);
+      onChange(v, e);
     }
   }, [onChange]);
 

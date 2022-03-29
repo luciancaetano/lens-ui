@@ -4,11 +4,11 @@ import { fireEvent, render } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import RadioGroup from './RadioGroup';
-import { IRadioGroupOption, RadioGroupOptionValueType } from './RadioGroup.types';
+import { IRadioGroupOption } from './RadioGroup.types';
 
 const options: IRadioGroupOption[] = [
-  { label: 'option1', value: 1, testingID: 'option1_testing' },
-  { label: 'option2', value: 0, testingID: 'option2_testing' },
+  { label: 'option1', value: '1', testingID: 'option1_testing' },
+  { label: 'option2', value: '0', testingID: 'option2_testing' },
   { label: 'option3', value: 'option_3_value', testingID: 'option3_testing' },
 ];
 
@@ -40,7 +40,7 @@ describe('<RadioGroup/>', () => {
 
     const hook = renderHook(() => useState(null));
 
-    const onChange = (e: any, value: RadioGroupOptionValueType) => {
+    const onChange = (value: string) => {
       act(() => {
         hook.result.current[1](value);
       });
@@ -70,7 +70,7 @@ describe('<RadioGroup/>', () => {
 
     const hook = renderHook(() => useState(null));
 
-    const onChange = (e: any, value: RadioGroupOptionValueType) => {
+    const onChange = (value: string) => {
       act(() => {
         hook.result.current[1](value);
       });
@@ -90,7 +90,7 @@ describe('<RadioGroup/>', () => {
 
     expect(getByTestId(testingID)).toBeInTheDocument();
 
-    const getElement = (index: number) => getByTestId(options[index].testingID);
+    const getElement = (index: number) => getByTestId(options[index].testingID).querySelector('input');
 
     fireEvent.click(getElement(0));
     fireEvent.blur(getElement(0));

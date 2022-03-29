@@ -10,7 +10,6 @@ const tabs:ITabsItem[] = [
   {
     id: '1',
     title: 'Tab1',
-    onClick: jest.fn(),
   },
   {
     id: '2',
@@ -107,8 +106,6 @@ describe('<Tabs/>', () => {
       fireEvent.click(getByText(tab.title as string));
       expect(getByText(`${tab.title}_content`)).toBeInTheDocument();
     });
-
-    expect((tabs[0].onClick as jest.Mock<any, any>)).toHaveBeenCalled();
   });
 
   it('test <Tabs/> vertical prop', async () => {

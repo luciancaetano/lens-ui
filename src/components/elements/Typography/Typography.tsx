@@ -20,13 +20,14 @@ const variantMap: { [key: string]: string } = {
 };
 
 const Typography: React.FC<ITypographyProps> = ({
-  variant, noWrap, intent, children,
+  variant, noWrap, intent, children, testingID,
 }) => React.createElement(variantMap[variant], {
-  style: {
-    whiteSpace: noWrap ? 'nowrap' : 'normal',
+  style: intent ? {
     '--typography-intent-color': `var(--lens-ui-intents-${intent})`,
-  },
-  className: clsx(styles.root, styles[variant]),
+  } : {},
+  'data-lens-element': 'typography',
+  className: clsx(styles.root, styles[variant], noWrap && styles.noWrap),
+  ...({ 'data-testid': testingID } as any),
 }, children);
 
 export default Typography;

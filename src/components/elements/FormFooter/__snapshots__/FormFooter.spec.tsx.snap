@@ -18,7 +18,7 @@ exports[`<FormFooter/> should render children positions 1`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -43,7 +43,7 @@ exports[`<FormFooter/> should render children positions 2`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -66,7 +66,7 @@ exports[`<FormFooter/> should render children positions 3`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
   My-Children-Component
 </div>
@@ -91,7 +91,7 @@ exports[`<FormFooter/> should render children positions 4`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -116,7 +116,7 @@ exports[`<FormFooter/> should render children positions 5`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -140,7 +140,7 @@ exports[`<FormFooter/> should render children positions 6`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -164,7 +164,7 @@ exports[`<FormFooter/> should validate "cancelIsReset" option 1`] = `
     disabled=""
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -188,7 +188,7 @@ exports[`<FormFooter/> should validate "canceling" state 1`] = `
     disabled=""
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -212,7 +212,7 @@ exports[`<FormFooter/> should validate "deleting" state 1`] = `
     disabled=""
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -235,7 +235,7 @@ exports[`<FormFooter/> should validate "ready" state 1`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/save
+    Save
   </button>
 </div>
 `;
@@ -258,7 +258,7 @@ exports[`<FormFooter/> should validate "ready" state when isUpdate 1`] = `
     data-lens-intent="success"
     type="submit"
   >
-    FormFooter/update
+    Update
   </button>
 </div>
 `;
@@ -282,7 +282,7 @@ exports[`<FormFooter/> should validate "saving" state 1`] = `
     disabled=""
     type="submit"
   >
-    FormFooter/saving
+    Saving
   </button>
 </div>
 `;
@@ -306,7 +306,7 @@ exports[`<FormFooter/> should validate "saving" state when cancelIsReset is fals
     disabled=""
     type="submit"
   >
-    FormFooter/saving
+    Saving
   </button>
 </div>
 `;
@@ -330,7 +330,7 @@ exports[`<FormFooter/> should validate "saving" state when cancelIsReset is true
     disabled=""
     type="submit"
   >
-    FormFooter/saving
+    Saving
   </button>
 </div>
 `;
@@ -354,7 +354,7 @@ exports[`<FormFooter/> should validate "saving" state when isUpdate 1`] = `
     disabled=""
     type="submit"
   >
-    FormFooter/updating
+    Updating
   </button>
 </div>
 `;

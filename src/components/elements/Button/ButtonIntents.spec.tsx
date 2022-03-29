@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 import {
-  Intent,
+  Intents,
 } from '../../../types';
 import Buttom from './Button';
 import { ButtonAppearanceEnum, IButtonProps, ButtonSizeEnum } from './Button.types';
@@ -67,7 +67,7 @@ describe('<Button/> intents ,variations and appearances', () => {
       appearance: jest.fn(),
     };
 
-    Object.keys(Intent).forEach((intent) => {
+    Object.keys(Intents).forEach((intent) => {
       btnProps.intent = intent as any;
       rerender(testingJSX());
 
@@ -89,7 +89,7 @@ describe('<Button/> intents ,variations and appearances', () => {
       interationCalls.appearance();
     });
 
-    expect(interationCalls.intent).toBeCalledTimes(Object.keys(Intent).length);
+    expect(interationCalls.intent).toBeCalledTimes(Object.keys(Intents).length);
     expect(interationCalls.appearance).toBeCalledTimes(Object.keys(ButtonAppearanceEnum).length);
   });
 

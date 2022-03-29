@@ -16,8 +16,6 @@
     "noFallthroughCasesInSwitch": true,
     "pretty": true,
     "resolveJsonModule": true,
-    "strict": true,
-    "strictNullChecks": true,
     "esModuleInterop": true,
     "types": [
       "@types/node", "jest", "@types/testing-library__jest-dom"

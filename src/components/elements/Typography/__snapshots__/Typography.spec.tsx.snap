@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Typography/> should render 1`] = `
+<div>
+  <h1
+    class="root h1"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with children 1`] = `
+<div>
+  <h1
+    class="root h1"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with children and intent 1`] = `
+<div>
+  <h1
+    class="root h1"
+    data-lens-element="typography"
+    style="--typography-intent-color: var(--lens-ui-intents-primary);"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with children and noWrap 1`] = `
+<div>
+  <h1
+    class="root h1 noWrap"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with children and noWrap and intent 1`] = `
+<div>
+  <h1
+    class="root h1 noWrap"
+    data-lens-element="typography"
+    style="--typography-intent-color: var(--lens-ui-intents-primary);"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with intent 1`] = `
+<div>
+  <h1
+    class="root h1"
+    data-lens-element="typography"
+    style="--typography-intent-color: var(--lens-ui-intents-primary);"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with noWrap 1`] = `
+<div>
+  <h1
+    class="root h1 noWrap"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with variant body1 1`] = `
+<div>
+  <p
+    class="root body1"
+    data-lens-element="typography"
+  >
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`<Typography/> should render with variant body2 1`] = `
+<div>
+  <p
+    class="root body2"
+    data-lens-element="typography"
+  >
+    Hello World
+  </p>
+</div>
+`;
+
+exports[`<Typography/> should render with variant button 1`] = `
+<div>
+  <span
+    class="root button"
+    data-lens-element="typography"
+  >
+    Hello World
+  </span>
+</div>
+`;
+
+exports[`<Typography/> should render with variant caption 1`] = `
+<div>
+  <span
+    class="root caption"
+    data-lens-element="typography"
+  >
+    Hello World
+  </span>
+</div>
+`;
+
+exports[`<Typography/> should render with variant h1 1`] = `
+<div>
+  <h1
+    class="root h1"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h1>
+</div>
+`;
+
+exports[`<Typography/> should render with variant h2 1`] = `
+<div>
+  <h2
+    class="root h2"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h2>
+</div>
+`;
+
+exports[`<Typography/> should render with variant h3 1`] = `
+<div>
+  <h3
+    class="root h3"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h3>
+</div>
+`;
+
+exports[`<Typography/> should render with variant h4 1`] = `
+<div>
+  <h4
+    class="root h4"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h4>
+</div>
+`;
+
+exports[`<Typography/> should render with variant h5 1`] = `
+<div>
+  <h5
+    class="root h5"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h5>
+</div>
+`;
+
+exports[`<Typography/> should render with variant h6 1`] = `
+<div>
+  <h6
+    class="root h6"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h6>
+</div>
+`;
+
+exports[`<Typography/> should render with variant overline 1`] = `
+<div>
+  <span
+    class="root overline"
+    data-lens-element="typography"
+  >
+    Hello World
+  </span>
+</div>
+`;
+
+exports[`<Typography/> should render with variant subtitle1 1`] = `
+<div>
+  <h6
+    class="root subtitle1"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h6>
+</div>
+`;
+
+exports[`<Typography/> should render with variant subtitle2 1`] = `
+<div>
+  <h6
+    class="root subtitle2"
+    data-lens-element="typography"
+  >
+    Hello World
+  </h6>
+</div>
+`;

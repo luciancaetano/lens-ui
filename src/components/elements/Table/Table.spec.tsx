@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import Table from './Table';
-import { ITableColumns, ITableItem } from './Table.types';
+import { TableClumnsRecordType, ITableItem } from './Table.types';
 
 interface IItemTypeData extends ITableItem {
   id: number;
@@ -11,7 +11,7 @@ interface IItemTypeData extends ITableItem {
   phone: string;
 }
 
-const columnsData: ITableColumns<IItemTypeData> = {
+const columnsData: TableClumnsRecordType<IItemTypeData> = {
   id: {
     header: '#ID',
   },
@@ -40,7 +40,7 @@ describe('<Table/>', () => {
   it('render <Table/>', async () => {
     const { getByText } = render(
       <LensProvider>
-        <Table columns={columnsData} items={itemsData} />
+        <Table cols={columnsData} items={itemsData} />
       </LensProvider>,
     );
 
@@ -58,7 +58,7 @@ describe('<Table/>', () => {
     const myFooterText = 'myFooterText';
     const { getByText } = render(
       <LensProvider>
-        <Table columns={columnsData} items={itemsData} footer={() => <div>{myFooterText}</div>} />
+        <Table cols={columnsData} items={itemsData} footer={() => <div>{myFooterText}</div>} />
       </LensProvider>,
     );
 
