@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.3](https://github.com/luciancaetano/lens-ui/compare/v4.8.2...v4.8.3) (2022-04-01)
+
+
+### Bug Fixes
+
+* :memo: fix table storybook ([d7ea3be](https://github.com/luciancaetano/lens-ui/commit/d7ea3be333edfdf478346a46ab6ec3b6fcfe4be2))
+
 ### [4.8.2](https://github.com/luciancaetano/lens-ui/compare/v4.8.2-0...v4.8.2) (2022-04-01)
 
 ### [4.8.2-0](https://github.com/luciancaetano/lens-ui/compare/v4.8.1...v4.8.2-0) (2022-04-01)
