@@ -1,0 +1,64 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Badge from './Badge';
+import LensProvider from '../../providers/LensProvider/LensProvider';
+
+<Meta title="Components/Badge" component={Badge}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+
+
+# Badge
+
+This is a small emblem commonly used to represent tags.
+
+<Canvas>
+    <Badge type="solid" intent="primary">Hello Badge</Badge>
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|type|`solid`, `subtle`, `outlined` |solid | The type of the badge.|No|
+|intent|`primary`, `secondary`, `success`, <br/>`info`, `warning`, `danger`|primary | The intent of the badge.|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+---
+
+### Solid
+
+<Canvas>
+    <Badge type="solid" intent="primary">Hello World</Badge>
+    <Badge type="solid" intent="secondary">Hello World</Badge>
+    <Badge type="solid" intent="success">Hello World</Badge>
+    <Badge type="solid" intent="danger">Danger</Badge>
+    <Badge type="solid" intent="info">Info</Badge>
+    <Badge type="solid" intent="warning">Warning</Badge>
+</Canvas>
+
+---
+
+### Outlined
+
+<Canvas>
+    <Badge type="outlined" intent="primary">Hello World</Badge>
+    <Badge type="outlined" intent="secondary">Hello World</Badge>
+    <Badge type="outlined" intent="success">Hello World</Badge>
+    <Badge type="outlined" intent="danger">Danger</Badge>
+    <Badge type="outlined" intent="info">Info</Badge>
+    <Badge type="outlined" intent="warning">Warning</Badge>
+</Canvas>
+
+---
+
+### Subtle
+
+<Canvas>
+    <Badge type="subtle" intent="primary">Hello World</Badge>
+    <Badge type="subtle" intent="secondary" type="outlined">Hello World</Badge>
+    <Badge type="subtle" intent="success" type="subtle">Hello World</Badge>
+    <Badge type="subtle" intent="danger">Danger</Badge>
+    <Badge type="subtle" intent="info">Info</Badge>
+    <Badge type="subtle" intent="warning">Warning</Badge>
+</Canvas>
+
+---

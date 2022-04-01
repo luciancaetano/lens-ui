@@ -1,0 +1,111 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Button from './Button';
+import LensProvider from '../../providers/LensProvider/LensProvider';
+import Icon from '../Icon/Icon';
+
+<Meta title="Components/Button" component={Button}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+
+# Button
+
+Buttons allow users to take actions, and make actions, with a single click.
+
+<Canvas>
+    <Button>
+        Click me!
+    </Button>
+</Canvas>
+
+### Properties
+The button properties extends the [HTML button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button).
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|type|`button`, `submit`, `reset`|'button'|The type of button.|No|
+|intent|`primary`, `secondary`, `success`, <br/>`info`, `warning`, `danger`|primary | The intent of the badge.|No|
+|disabled|boolean|false|Whether the button is disabled.|No|
+|active|boolean|false|Whether the button is active.|No|
+|size|`normal`, `small`, `large`|'normal'|The size of the button.|No|
+|appearance|`outlined`, `default`, `minimal`|'default'|The appearance of the button.|No|
+|onClick|function|undefined|The function to call when the button is clicked.|No|
+|onBlur|function|undefined|The function to call when the button loses focus.|No|
+|onDoubleClick|function|undefined|The function to call when the button is double clicked.|No|
+|onFocus|function|undefined|The function to call when the button gains focus.|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+---
+
+### Intents
+
+<Canvas>
+    <Button intent="primary">primary</Button>
+    <Button intent="secondary">secondary</Button>
+    <Button intent="success">success</Button>
+    <Button intent="info">info</Button>
+    <Button intent="warning">warning</Button>
+    <Button intent="danger">danger</Button>
+    <Button intent="dark">dark</Button>
+    <Button intent="light">light</Button>
+</Canvas>
+
+---
+
+### Appearances
+
+<Canvas>
+    {/* default */}
+    <Button appearance="default" intent="primary">default - primary</Button>
+    <Button appearance="default" intent="secondary">default - secondary</Button>
+    <Button appearance="default" intent="success">default - success</Button>
+    <Button appearance="default" intent="info">default - info</Button>
+    <Button appearance="default" intent="warning">default - warning</Button>
+    <Button appearance="default" intent="danger">default - danger</Button>
+    <Button appearance="default" intent="dark">default - dark</Button>
+    <Button appearance="default" intent="light">default - light</Button>
+    {/* minimal */}
+    <Button appearance="minimal" intent="primary">minimal - primary</Button>
+    <Button appearance="minimal" intent="secondary">minimal - secondary</Button>
+    <Button appearance="minimal" intent="success">minimal - success</Button>
+    <Button appearance="minimal" intent="info">minimal - info</Button>
+    <Button appearance="minimal" intent="warning">minimal - warning</Button>
+    <Button appearance="minimal" intent="danger">minimal - danger</Button>
+    <Button appearance="minimal" intent="dark">minimal - dark</Button>
+    <Button appearance="minimal" intent="light">minimal - light</Button>
+    {/* outlined */}
+    <Button appearance="outlined" intent="primary">outlined - primary</Button>
+    <Button appearance="outlined" intent="secondary">outlined - secondary</Button>
+    <Button appearance="outlined" intent="success">outlined - success</Button>
+    <Button appearance="outlined" intent="info">outlined - info</Button>
+    <Button appearance="outlined" intent="warning">outlined - warning</Button>
+    <Button appearance="outlined" intent="danger">outlined - danger</Button>
+    <Button appearance="outlined" intent="dark">outlined - dark</Button>
+    <Button appearance="outlined" intent="light">outlined - light</Button>
+</Canvas>
+
+### with icon
+
+<Canvas>
+    <Button appearance="default">
+        <Icon name="BsHouse" />
+    </Button>
+    <Button appearance="minimal">
+        <Icon name="BsHouse" />
+    </Button>
+    <Button appearance="outlined">
+        <Icon name="BsHouse" />
+    </Button>
+</Canvas>
+
+### sizes
+
+<Canvas>
+    <Button size="small">
+       small
+    </Button>
+    <Button size="normal">
+       normal
+    </Button>
+    <Button size="large">
+       large
+    </Button>
+</Canvas>
