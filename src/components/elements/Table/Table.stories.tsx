@@ -37,18 +37,16 @@ const columnsData: TableClumnsRecordType<IItemTypeData> = {
 };
 
 const itemsData: IItemTypeData[] = [
-  { id: 1, name: 'Lucian', phone: '(11) 97885-8888' },
-  { id: 2, name: 'Adriele', phone: '(22) 92365-1235' },
-  { id: 3, name: 'Maria', phone: '(33) 91258-4783' },
+  { id: 1, name: 'Alexa', phone: '(11) 97885-8888' },
+  { id: 2, name: 'Ok', phone: '(22) 92365-1235' },
+  { id: 3, name: 'Ciri', phone: '(33) 91258-4783' },
   {
     id: 4, name: 'Helena', phone: '(44) 94521-8725', rowIntent: 'danger',
   },
-  { id: 5, name: 'Clara', phone: '(81) 98546-5564' },
-  { id: 6, name: 'Carlos', phone: '(11) 98541-54521' },
 ];
 
 export const _Table = TableTemplate.bind({});
 _Table.args = {
-  columns: columnsData,
+  cols: columnsData,
   items: itemsData,
 };
