@@ -1,5 +1,7 @@
 # Documentation
 
+You can view components working here: https://luciancaetano.github.io/lens-ui/
+
 - [Badge](https://github.com/luciancaetano/lens-ui/blob/main/docs/components/Badge.md)
 - [Breadcrumbs](https://github.com/luciancaetano/lens-ui/blob/main/docs/components/Breadcrumbs.md)
 - [Button](https://github.com/luciancaetano/lens-ui/blob/main/docs/components/Button.md)
