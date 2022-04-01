@@ -2,8 +2,6 @@
 
 Lens-ui is a basic design system focused on stability and simplicity.
 
-Seed Docs Here 
-
 ### Installation
 
 LensUI is available in [npm](https://www.npmjs.com/package/lens-ui).
