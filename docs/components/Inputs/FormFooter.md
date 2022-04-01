@@ -1,0 +1,51 @@
+# FormFooter
+
+FormFooter display's form actions like, save, cancel delete etc.
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|saveAppearance|`outlined`, `default`, `minimal`|'default'|Appearance of the save button|No|
+|cancelAppearance|`outlined`, `default`, `minimal`|'default'|Appearance of the cancel button|No|
+|deleteAppearance|`outlined`, `default`, `minimal`|'default'|Appearance of the delete button|No|
+|isUpdate|boolean|false|If true, the delete button will be shown|No|
+|state|`saving`, `deleting`, `canceling`, `ready`|'ready'|State of the form footer|No|
+|onSave|function|undefined|Callback function to be called when the save button is clicked|No|
+|onCancel|function|undefined|Callback function to be called when the cancel button is clicked|No|
+|onDelete|function|undefined|Callback function to be called when the delete button is clicked|No|
+|saveDisabled|boolean|false|If true, the save button will be disabled|No|
+|cancelDisabled|boolean|false|If true, the cancel button will be disabled|No|
+|deleteDisabled|boolean|false|If true, the delete button will be disabled|No|
+|cancelIsReset|boolean|false|If true, the cancel button will be reset|No|
+|childrenPos|`afterDelete`, `beforeDelete`, `afterCancel`, `beforeCancel`, `betweenSaveAndCancel`, `afterSave`|'afterSave'|Position of the children|No|
+|locale|IFormFooterLocale|-|Localization object|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+## IFormFooterLocale (Object)
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|update|ReactNode|'Update'|Text for the update button|No|
+|updating|ReactNode|'Updating'|Text for the updating button|No|
+|save|ReactNode|'Save'|Text for the save button|No|
+|saving|ReactNode|'Saving'|Text for the saving button|No|
+|clear|ReactNode|'Clear'|Text for the clear button|No|
+|cleaning|ReactNode|'Cleaning'|Text for the cleaning button|No|
+|canceling|ReactNode|'Canceling'|Text for the canceling button|No|
+|cancel|ReactNode|'Cancel'|Text for the cancel button|No|
+|delete|ReactNode|'Delete'|Text for the delete button|No|
+|deleting|ReactNode|'Deleting'|Text for the deleting button|No|
+
+### Playground
+
+```tsx
+    <FormFooter
+      state="ready"
+      onSave={() => {}}
+      onCancel={() => {}}
+      onDelete={() => {}}
+    />
+```

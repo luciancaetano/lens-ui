@@ -1,0 +1,20 @@
+# ProgressBar
+
+Progress indicators express the length of a process.
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|progress|number|0|The progress value.|Yes|
+|intent|`primary`, `secondary`, `success`, <br/>`info`, `warning`, `danger`|primary | The intent of the badge.|No|
+|withLabel|boolean|false|Whether to show the label.|No|
+|striped|boolean|false|Whether to show the striped effect.|No|
+|size|`tiny`, `normal`, `medium`, `big`| `normal`|The size of the badge.|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Playground
+
+```tsx
+  <ProgressBar progress={30} intent="success" />
+```

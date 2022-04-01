@@ -1,0 +1,33 @@
+# MoneyInput
+
+The MoneyInput is a wrapper around the native input element that allows you to mask the input value.
+
+## Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|value|number|-|Value of the input|No|
+|defaultValue|number|undefined|Default value of the input|No|
+|decimalSeparator|string|undefined|The decimal separator to use|No|
+|thousandSeparator|string|undefined|The thousand separator to use|No|
+|precision|number|undefined|The number of decimal places to use|No|
+|prefix|string|undefined|The prefix to use|No|
+|suffix|string|undefined|The suffix to use|No|
+|placeholder|string|undefined|The placeholder to use for the input|No|
+|onChange|`function(number,ChangeEvent)`|undefined|Callback for when the input changes|No|
+|onBlur |`function(FocusEvent)`|undefined|Callback for when the input loses focus|No|
+|tabIndex|number|undefined|The tab index of the input|No|
+|disabled|boolean|undefined|Whether the input is disabled|No|
+|autoFocus|boolean|undefined|Whether the input should be focused on mount|No|
+|name|string|undefined|The name of the input|No|
+|isError|boolean|undefined|Whether the input is in an error state|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+## Playground
+
+```tsx
+     <MoneyInput
+      name="input"
+      defaultValue="100"
+    />
+```

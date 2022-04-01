@@ -1,6 +1,8 @@
-# LensUi Design System
+# Getting Started
 
 Lens-ui is a basic design system focused on stability and simplicity.
+
+Seed Docs Here 
 
 ### Installation
 
@@ -19,6 +21,8 @@ Lens-ui uses contexts from LensProvider and css file, just import `lens-ui/dist/
 
 Here's a quick example to get you started, **it's literally all you need**:
 
+**Note: In this doc's we dot import reset.css**
+
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -36,9 +40,6 @@ function App() {
 
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
-
-# Components
-- [Badge](docs/Badge.md)
 ### Responsive meta tag
 
 To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.

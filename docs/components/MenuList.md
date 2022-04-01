@@ -1,0 +1,51 @@
+# MenuList
+
+A MenuList is a list of items that can be selected.
+
+## Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|items|IMenuListItem[]|solid | The type of the badge.|No|
+|activeIndex|number| undefined | The index of the item that is currently active.|No|
+|onItemClick|`function(IMenuListItem, MouseEvent)`| undefined | The function to call when an item is clicked.|No|
+|renderer|`function(IMenuListItem, number) => ReactNode`| undefined | The function to render each item.|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+#### IMenuListItem (Object)
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|intent|IntentType| null | The type of the badge.|No|
+|isHeading|boolean| false | Whether the item is a heading.|No|
+|content|React.ReactNode| - | The content of the item.|Yes|
+|payload|any| - | The payload of the item.|No|
+|className|string| - | The class name of the item.|No|
+
+## Playground
+
+```tsx
+  <MenuList
+    activeIndex={-1}
+    items={[
+      {
+        content: 'Item 1'
+      },
+      {
+        content: 'Heading',
+        isHeading: true
+      },
+      {
+        content: 'Item 2'
+      },
+      {
+        content: 'Item 3'
+      },
+      {
+        content: 'Item 4'
+      }
+    ]}
+    onItemClick={() => {}}
+  />
+```

@@ -1,0 +1,73 @@
+# Select
+
+The Select component are used for collecting user provided information from a list of options.
+
+## Properties
+
+**Note:** ValueType must be string, number or boolean.
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|options|`Array<ISelectOption> \| Array<ISelectGroupedOption>`|-|The options to display in the select.|Yes|
+|name|string|undefined|The name of the input|No|
+|isSearchable|boolean|false|Whether the select can be searched.|No|
+|isMulti|boolean|false|Whether the select can be selected multiple times.|No|
+|isRtl|boolean|false|Whether the select is right to left.|No|
+|placeholder|string|-|The placeholder text to display when the select is empty.|No|
+|value|ValueType|-|Value of the input|No|
+|isLoading|boolean|false|If true, the select will be loading|No|
+|defaultValue|ValueType|undefined|Default value of the input|No|
+|onChange|`function(ValueType,ChangeEvent)`|undefined|Callback for when the input changes|No|
+|onBlur |`function(FocusEvent)`|undefined|Callback for when the input loses focus|No|
+|tabIndex|number|undefined|The tab index of the input|No|
+|disabled|boolean|undefined|Whether the input is disabled|No|
+|autoFocus|boolean|undefined|Whether the input should be focused on mount|No|
+|isError|boolean|undefined|Whether the input is in an error state|No|
+|formatGroupLabel|`function(ISelectGroupedOption)`|undefined|Function to format the group label|No|
+|formatOptionLabel|`function(ISelectOption,ValueType)`|undefined|Function to format the option label|No|
+|menuPortalTarget|HTMLElement|undefined|The element to render the menu portal to|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+### ISelectOption (Object)
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|label|ReactNode|-|The label of the option|Yes|
+|value|ValueType|-|The value of the option|Yes|
+|isFixed|boolean|false|Whether the option is fixed|No|
+|isDisabled|boolean|false|Whether the option is disabled|No|
+
+### ISelectGroupedOption (Object)
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|label|string|-|The label of the group|Yes|
+|options|`Array<ISelectOption>`|-|The options of the group|Yes|
+
+
+
+## Playground
+
+```tsx
+  <RadioGroup
+    defaultValue="2"
+    name="input"
+    onBlur={() => {}}
+    onChange={function noRefCheck() {}}
+    options={[
+      {
+        label: 'Option1',
+        value: '1'
+      },
+      {
+        label: 'Option2',
+        value: '2'
+      },
+      {
+        label: 'Option3',
+        value: '3'
+      }
+    ]}
+  />
+```

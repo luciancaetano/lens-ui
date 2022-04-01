@@ -1,0 +1,68 @@
+# Tabs
+
+The Tabs component make easy to explore and switch between different views.
+
+## Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|vertical|boolean|false|Whether the tabs should be vertical.|No|
+|tabs|ITabsItem[]|[]|The tabs to render.|Yes|
+|initialActiveTab|string|undefined|The initial active tab.|No|
+|activeTab|string|undefined|The active tab.|No|
+|onChange|`function(id, MouseEvent)`|undefined|The callback to call when the active tab changes.|No|
+|children|`function (ITabsItem \| null): React.ReactNode`|-|The callback to render the tab content.|Yes|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### ITabsItem (Object)
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|title|React.ReactNode|null|The title of the tab.|No|
+|id|string|null|The id of the tab.|No|
+|className|string|null|The class name of the tab.|No|
+
+
+## Playground
+
+```tsx
+  <Tabs
+    initialActiveTab="1"
+    tabs={[
+      {
+        id: '1',
+        title: 'Tab1'
+      },
+      {
+        id: '2',
+        title: 'Tab2'
+      },
+      {
+        id: '3',
+        title: 'Tab3'
+      }
+    ]}>
+    {(activeTab) => (
+        <>
+            {activeTab && activeTab.id === '1' && (
+            <div>
+                <h1>Tab 1 content</h1>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+            )}
+            {activeTab && activeTab.id === '2' && (
+            <div>
+                <h1>Tab 2 content</h1>
+                Duis rhoncus lorem vel lacus pretium vehicula.
+            </div>
+            )}
+            {activeTab && activeTab.id === '3' && (
+            <div>
+                <h1>Tab 3 content</h1>
+                Donec id diam dolor. Curabitur id nisl et tortor rutrum facilisis id sit amet purus.
+            </div>
+            )}
+        </>
+    )}
+  </Tabs>
+```

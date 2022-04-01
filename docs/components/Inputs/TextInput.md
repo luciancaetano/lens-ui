@@ -1,0 +1,31 @@
+# TextInput
+
+The TextInput is a wrapper around the native input element that allows you to mask the input value.
+
+## Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|placeholder|string|undefined|The placeholder to use for the input|No|
+|value|string|-|Value of the input|No|
+|type|`text`, `search`, `string`|`text`|The type of the input|No|
+|maxLength|number|undefined|The maximum length of the input|No|
+|defaultValue|string|undefined|Default value of the input|No|
+|onChange|`function(string,ChangeEvent)`|undefined|Callback for when the input changes|No|
+|onBlur |`function(FocusEvent)`|undefined|Callback for when the input loses focus|No|
+|tabIndex|number|undefined|The tab index of the input|No|
+|disabled|boolean|undefined|Whether the input is disabled|No|
+|autoFocus|boolean|undefined|Whether the input should be focused on mount|No|
+|name|string|undefined|The name of the input|No|
+|multiline|boolean|undefined|Whether the input is a textarea|No|
+|isError|boolean|undefined|Whether the input is in an error state|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+## Playground
+
+```tsx
+     <TextInput
+      defaultValue="Lorem ipsum dolor sit amet"
+    />
+```
