@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Divider from './Divider';
+import LensProvider from '../../providers/LensProvider/LensProvider';
+
+<Meta title="Components/Divider" component={Divider}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+
+
+# Divider
+
+A divider is a thin line that groups content in layouts.
+
+<Canvas>
+    <Divider type="solid" intent="primary">Hello World</Divider>
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|children|Node|-|A node to render within the divider|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|

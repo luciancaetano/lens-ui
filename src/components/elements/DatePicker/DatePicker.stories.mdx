@@ -1,0 +1,108 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import DatePicker from './DatePicker';
+import LensProvider from '../../providers/LensProvider/LensProvider';
+
+<Meta title="Components/DatePicker" component={DatePicker}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+
+# DatePicker
+
+This is a small emblem commonly used to represent tags.
+
+<Canvas>
+    <DatePicker type="date" defaultValue={new Date()}/>
+</Canvas>
+
+### Base Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|type|`date`, `month`, `range`, `year`, `multiple`, `week` | undefined | The type of the badge.|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+|name| string | - | The name of the input.|No|
+|placeholder| string | - | The placeholder of the input.|No|
+|readOnly| boolean | false | If the input is read only.|No|
+|ariaLabel| string | - | The aria label of the input.|No|
+|disabled| boolean | false | If the input is disabled.|No|
+|isError| boolean | false | If the input is in error state.|No|
+|required| boolean | false | If the input is required.|No|
+|isMobile| boolean | false | If the input is in mobile mode.|No|
+|inline| boolean | false | If the input is in inline mode.|No|
+|locale| IDatePickerLocale | - | The locale of the input.|No|
+|onPickerOpen| `function()` | - | The function called when the calendar is opened.|No|
+|onPickerClose| `function()` | - | The function called when the calendar is closed.|No|
+|children| function (strDate: string, openCalendar: Function, handleValueChange: ChangeEvent): ReactNode | - | The function called when the calendar is closed.|No|
+
+---
+
+### Properties when type is  *date*
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|value|Date | - | The value of the input.|No|
+|defaultValue|Date | - | The default value of the input.|No|
+|onChange|`function(date: Date)` | - | The function called when the value of the input changes.|No|
+|numberOfMonths|number | 1 | The number of months to display.|No|
+|displayFormat|string | 'DD/MM/YYYY' | The format of the date to display.|No|
+|maskFormat|string | 'DD/MM/YYYY' | The format of the date to mask.|No|
+|hideWeekDays|boolean | false | If the week days should be hidden.|No|
+|displayWeekNumbers|boolean | false | If the week numbers should be displayed.|No|
+|minDate|Date | - | The minimum date.|No|
+|maxDate|Date | - | The maximum date.|No|
+
+
+<Canvas>
+    <DatePicker type="date" defaultValue={new Date()}/>
+</Canvas>
+
+---
+
+### Properties when type is *month*
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|value|number | - | The value of the input.|No|
+|defaultValue|number | - | The default value of the input.|No|
+|onChange|`function(month: number)` | - | The function called when the value of the input changes.|No|
+
+<Canvas>
+    <DatePicker type="month" defaultValue={3}/>
+</Canvas>
+
+---
+
+### Properties when type is *year*
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|value|number | - | The value of the input.|No|
+|defaultValue|number | - | The default value of the input.|No|
+|onChange|`function(year: number)` | - | The function called when the value of the input changes.|No|
+
+
+<Canvas>
+    <DatePicker type="year" defaultValue={3}/>
+</Canvas>
+
+---
+
+### Properties when type is *range*, *multiple* or *week*
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|value|Date[] | - | The value of the input.|No|
+|defaultValue|Date[] | - | The default value of the input.|No|
+|onChange|`function(value: Date[])` | - | The function called when the value of the input changes.|No|
+|format|string | 'DD/MM/YYYY' | The format of the date to display.|No|
+|numberOfMonths|number | 1 | The number of months to display.|No|
+|displayFormat|string | 'DD/MM/YYYY' | The format of the date to display.|No|
+|hideWeekDays|boolean | false | If the week days should be hidden.|No|
+|displayWeekNumbers|boolean | false | If the week numbers should be displayed.|No|
+|minDate|Date | - | The minimum date.|No|
+|maxDate|Date | - | The maximum date.|No|
+
+
+<Canvas>
+    <DatePicker type="range" defaultValue={[new Date(), new Date()]}/>
+</Canvas>
+

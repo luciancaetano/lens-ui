@@ -58,7 +58,7 @@ export interface IMonthPickerProps extends IBasePickerProps {
 export interface IYearPickerProps extends IBasePickerProps {
   value?: number | undefined | null;
   defaultValue?: number | undefined | null;
-  onChange?: (month: number | undefined) => void;
+  onChange?: (year: number | undefined) => void;
   type: 'year';
 }
 
