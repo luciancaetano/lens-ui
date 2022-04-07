@@ -14,7 +14,7 @@ function init(value: any, defaultValue: any, type: DatePickerType) {
   if (defaultValue === undefined) {
     if (type === 'month') {
       const dt = new Date();
-      dt.setMonth(value);
+      dt.setMonth(value - 1);
       return dt;
     } if (type === 'year') {
       const dt = new Date();
@@ -26,7 +26,7 @@ function init(value: any, defaultValue: any, type: DatePickerType) {
   }
   if (type === 'month') {
     const dt = new Date();
-    dt.setMonth(defaultValue);
+    dt.setMonth(defaultValue - 1);
     return dt;
   } if (type === 'year') {
     const dt = new Date();
