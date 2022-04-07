@@ -25,10 +25,11 @@
   }
 
   &--inline {
-    flex-direction: column;
+    flex-direction: row;
 
     [data-lens-form-group-role='label'] {
       margin-right: .7em;
+      padding-top: .6rem;
     }
   }
 

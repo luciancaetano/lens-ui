@@ -1,0 +1,80 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Layout from './index';
+import TextInput from '../TextInput/TextInput';
+import LensProvider from '../../providers/LensProvider/LensProvider';
+
+<Meta title="Components/Layout" component={Layout}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+The Layout component's handles application layout.
+
+### Layout.AppLayout properties
+The properties of Layout.AppLayout extends the `<div>` element.
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|testingID| string | undefined | The id used for testing purposes, `<div data-testid="my-test-id"/>` |No|
+
+### Layout.Content properties
+The properties of Layout.AppLayout extends the `<div>` element.
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|layout|`horizontal`, `vertical`|`vertical`|The layout orientation.|Yes|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Layout.SideBar properties
+The properties of Layout.AppLayout extends the `<aside>` element.
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|testingID| string | undefined | The id used for testing purposes, `<div data-testid="my-test-id"/>` |No|
+
+
+### CSS Variables
+The following CSS variables are available for use in the Layout component.
+
+|Variable|Description|Default Value|
+|---|---|---|
+|**--lens-ui-app-layout-width**|The width of the app layout|`100vw`|
+|**--lens-ui-app-layout-height**|The height of the app layout|`100vh`|
+
+### Basic layout
+
+<Canvas>
+    <LensProvider>
+        <Layout.AppLayout style={{'--lens-ui-app-layout-width': '100%'}}>
+            <div>
+                App Header
+            </div>
+            <Layout.Content>
+                Hello world
+            </Layout.Content>
+            <div>
+                AppFooter
+            </div>
+        </Layout.AppLayout>
+    </LensProvider>
+</Canvas>
+
+### Layout wit sidebar
+
+<Canvas>
+  <LensProvider>
+      <Layout.AppLayout style={{'--lens-ui-app-layout-width': '100%'}}>
+      <div>
+          App Header
+      </div>
+      <Layout.Content layout="horizontal">
+          <Layout.Sidebar>
+              Side content
+          </Layout.Sidebar>
+          <Layout.Content>
+              Hello world
+          </Layout.Content>
+      </Layout.Content>
+      <div>
+          AppFooter
+      </div>
+      </Layout.AppLayout>
+  </LensProvider>
+</Canvas>

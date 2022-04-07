@@ -1,6 +1,9 @@
 .app-layout {
+  --lens-ui-app-layout-width: 100vw;
+  --lens-ui-app-layout-height: 100vh;
+
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: var(--lens-ui-app-layout-width);
+  height: var(--lens-ui-app-layout-height);
 }

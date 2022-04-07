@@ -1,0 +1,49 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import List from './List';
+import ListItem from './ListItem';
+import TextInput from '../TextInput/TextInput';
+import LensProvider from '../../providers/LensProvider/LensProvider';
+
+<Meta title="Components/List" component={List}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+# List
+
+The List component is used to display a list of items.
+
+<Canvas>
+    <List>
+        <ListItem key="1">
+            Item 1
+        </ListItem>
+        <ListItem key="1" isHeading>
+            Heading
+        </ListItem>
+        <ListItem key="1">
+            Item 2
+        </ListItem>
+        <ListItem key="1">
+            Item 3
+        </ListItem>
+        <ListItem key="1">
+            Item 4
+        </ListItem>
+    </List>
+</Canvas>
+
+### List component Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|`intent`|`IntentType`|`None`|The intent of the list.|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+### ListItem component Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|`intent`|`IntentType`|`'none'`|The intent of the list item|No|
+|`isActive`|`boolean`|`false`|Whether the list item is active|No|
+|`isHeading`|`boolean`|`false`|Whether the list item is a heading|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
