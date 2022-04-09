@@ -9,7 +9,7 @@ const LensProvider = ({
   children,
   deviceContextDebounceTimmer = 100,
   toastsPlacement = 'bottom-right',
-}: React.PropsWithChildren<ILensProviderProps>) => (
+}: ILensProviderProps) => (
   <DeviceProvider debounceTime={deviceContextDebounceTimmer}>
     <AlertProvider>
       <ToastProvider placement={toastsPlacement}>

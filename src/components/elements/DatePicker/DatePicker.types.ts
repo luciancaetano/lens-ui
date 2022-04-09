@@ -29,7 +29,7 @@ export interface IBasePickerProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   locale?: IDatePickerLocale;
   onPickerOpen?: () => void;
   onPickerClose?: () => void;
-  children?: (strDate: string, openCalendar: Function, handleValueChange: React.ChangeEventHandler<HTMLElement>) => React.ReactNode;
+  children?: (strDate: string, openCalendar: Function, handleValueChange: React.ChangeEventHandler<HTMLElement>) => JSX.Element | JSX.Element[];
 }
 
 export type DatePickerType = 'date' | 'month' | 'range' | 'year' | 'multiple' | 'week';

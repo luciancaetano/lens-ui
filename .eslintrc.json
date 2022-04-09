@@ -191,7 +191,8 @@
     "browser": true,
     "cy": true,
     "BigInt": true,
-    "NodeJS": true
+    "NodeJS": true,
+    "JSX": true
   },
   "settings": {
     "react": {

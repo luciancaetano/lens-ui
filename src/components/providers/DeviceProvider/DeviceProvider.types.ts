@@ -10,6 +10,7 @@ export interface IDeviceWindow {
 
 export interface IDeviceProviderProps {
   debounceTime?: number;
+  children: JSX.Element | JSX.Element[];
 }
 
 export interface IDeviceContextType {

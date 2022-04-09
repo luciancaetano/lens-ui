@@ -16,8 +16,8 @@ export const ButtonSizeEnum = {
 export type ButtonAppearanceType = keyof typeof ButtonAppearanceEnum;
 export type ButtonSizeType = keyof typeof ButtonSizeEnum;
 
-export interface IButtonProps extends React.PropsWithChildren<ITestableProps &
-Omit<React.HTMLProps<HTMLButtonElement>, 'onClick' | 'OnBlur' | 'type' | 'onDoubleClick' | 'onFocus' | 'tabIndex' | 'style' | 'size'>>
+export interface IButtonProps extends ITestableProps,
+  Omit<React.HTMLProps<HTMLButtonElement>, 'onClick' | 'OnBlur' | 'type' | 'onDoubleClick' | 'onFocus' | 'tabIndex' | 'style' | 'size'>
 {
   type?: 'submit' | 'reset' | 'button';
   intent?: AdvancedIntentType | null;
@@ -32,4 +32,5 @@ Omit<React.HTMLProps<HTMLButtonElement>, 'onClick' | 'OnBlur' | 'type' | 'onDoub
   onBlur?: React.FocusEventHandler<HTMLButtonElement>;
   onDoubleClick?: React.MouseEventHandler<HTMLButtonElement>;
   onFocus?: React.FocusEventHandler<HTMLButtonElement>;
+  children?: JSX.Element | JSX.Element[];
 }
