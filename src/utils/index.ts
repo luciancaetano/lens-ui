@@ -1,5 +1,5 @@
 import isNaN from 'lodash/isNaN';
-import { MutableRefObject, RefObject } from 'react';
+import { MutableRefObject } from 'react';
 import { CLASSES } from '../css-classes/index';
 
 const possibilities = {

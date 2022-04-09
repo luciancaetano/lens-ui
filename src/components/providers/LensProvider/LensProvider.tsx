@@ -6,17 +6,13 @@ import ToastProvider from '../ToastProvider/ToastProvider';
 import { ILensProviderProps } from './LensProvider.types';
 
 const LensProvider = ({
-  children, deviceContextUpdateDebounceTime = 100,
-  alertSettings = {
-    responseLimit: 10,
-  },
-  toastSettings = {
-    placement: 'bottom-right',
-  },
+  children,
+  deviceContextDebounceTimmer = 100,
+  toastsPlacement = 'bottom-right',
 }: React.PropsWithChildren<ILensProviderProps>) => (
-  <DeviceProvider debounceTime={deviceContextUpdateDebounceTime}>
-    <AlertProvider {...alertSettings}>
-      <ToastProvider {...toastSettings}>
+  <DeviceProvider debounceTime={deviceContextDebounceTimmer}>
+    <AlertProvider>
+      <ToastProvider placement={toastsPlacement}>
         <ModalProvider>
           {children}
         </ModalProvider>

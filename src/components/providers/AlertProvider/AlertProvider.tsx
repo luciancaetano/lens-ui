@@ -1,4 +1,3 @@
-import sortBy from 'lodash/sortBy';
 import omit from 'lodash/omit';
 import React, {
   useState, useEffect, useCallback,
@@ -8,16 +7,10 @@ import swal from 'sweetalert2';
 import { randomId } from '../../../utils/index';
 import AlertContext from './AlertContext';
 import {
-  IAlertItemData, IAlertItemRequest, IAlertProviderProps, IAlertResult,
+  IAlertItemData, IAlertItemRequest, IAlertResult,
 } from './AlertProvider.types';
 
-const limitResponses = (responses: Record<string, IAlertResult>, responseLimit: number) => {
-  const sortedItems = sortBy(responses, ['at']);
-  const omitKeys = sortedItems.splice(0, sortedItems.length - responseLimit).map((item) => item.alertId);
-  return omit(responses, omitKeys);
-};
-
-const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit }) => {
+const AlertProvider: React.FC = ({ children }) => {
   const [activeAlert, setActiveAlert] = useState<IAlertItemData | null>(null);
   const [queue, setQueue] = useState<IAlertItemData[]>([]);
   const [results, setResults] = useState<Record<string, IAlertResult>>({});
@@ -62,10 +55,9 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
           value: response.value === true,
           at: new Date(),
         };
-        setResults((r) => limitResponses({
-          ...r,
+        setResults(() => ({
           [id]: result,
-        }, responseLimit));
+        }));
         setActiveAlert(null);
         setShowingId(null);
         if (promiseResolvers.current[id]) {
@@ -74,7 +66,7 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
         }
       });
     }
-  }, [activeAlert, responseLimit, showingId]);
+  }, [activeAlert, showingId]);
 
   runAlert();
 
@@ -90,8 +82,8 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
     }
   }, [queue, activeAlert]);
 
-  const addAlert = useCallback((alert: IAlertItemRequest, id: string | null = null) => {
-    const currId = id || randomId();
+  const addAlert = useCallback((alert: IAlertItemRequest) => {
+    const currId = randomId();
     const promise = new Promise<IAlertResult>((resolve) => {
       promiseResolvers.current[currId] = resolve;
     });
@@ -101,8 +93,11 @@ const AlertProvider: React.FC<IAlertProviderProps> = ({ children, responseLimit 
     return promise;
   }, []);
 
-  const cancelAlert = useCallback((id: string) => {
-    setQueue((q) => q.filter((item) => item.id !== id));
+  const cancelAlert = useCallback(() => {
+    setShowingId((id) => {
+      setQueue((q) => q.filter((item) => item.id !== id));
+      return null;
+    });
   }, []);
 
   const clearQueue = useCallback(() => {

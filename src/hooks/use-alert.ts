@@ -4,17 +4,12 @@ import AlertContext from '../components/providers/AlertProvider/AlertContext';
 
 const useAlert = (): IUseAlertHookReponse => {
   const {
-    addAlert, cancelAlert, clearQueue, clearResults, activeAlert, queue, results,
+    addAlert, cancelAlert,
   } = useContext(AlertContext);
 
   return {
     addAlert,
     cancelAlert,
-    clearQueue,
-    clearResults,
-    queue,
-    alertResults: results,
-    activeAlert,
   };
 };
 

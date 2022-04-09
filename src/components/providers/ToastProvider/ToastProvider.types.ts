@@ -1,8 +1,11 @@
 import React from 'react';
-import { IntentType } from '../../../types';
-import { IButtonProps } from '../../elements/Button/Button.types';
+import { AdvancedIntentType, IntentType } from '../../../types';
 
-export interface IToastAction extends Omit<IButtonProps, 'size' | 'type'| 'content' | 'disabled' | 'onBlur' | 'onDoubleClick' | 'onFocus' | 'active' | 'style' | 'tabIndex'> {
+export interface IToastAction {
+  intent?: AdvancedIntentType | null;
+  disabled?: boolean;
+  active?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   content?: React.ReactNode;
 }
 export interface IToastCreationData {
@@ -26,8 +29,9 @@ export interface IUserToasttHookReponse {
   clearToasts: () => void;
 }
 
+export type ToastPlacementType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
 export interface IToastProviderProps {
-  placement: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
+  placement: ToastPlacementType;
 }
 export interface IToastContextType {
   toasts: IToastData[];
@@ -35,5 +39,5 @@ export interface IToastContextType {
   add: (data: IToastCreationData, id?: string) => string;
   close:(id: string) => void;
   closeAll: () => void;
-  placement: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
+  placement: ToastPlacementType;
 }

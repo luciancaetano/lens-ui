@@ -31,14 +31,8 @@ export interface IAlertResult {
 }
 
 export interface IUseAlertHookReponse {
-  addAlert: (alert: IAlertItemRequest, id?: string) => Promise<IAlertResult>;
-  alertResults: Record<string, IAlertResult>;
-  queue: IAlertItemData[];
-  activeAlert?: IAlertItemData | null;
-
-  cancelAlert: (id: string) => void;
-  clearQueue: () => void;
-  clearResults: () => void;
+  addAlert: (alert: IAlertItemRequest) => Promise<IAlertResult>;
+  cancelAlert: () => void;
 }
 
 export interface IAlertContextType {
@@ -46,12 +40,8 @@ export interface IAlertContextType {
   queue: IAlertItemData[];
   results: Record<string, IAlertResult>;
 
-  addAlert: (alert: IAlertItemRequest, id?: string) => Promise<IAlertResult>;
-  cancelAlert: (id: string) => void;
+  addAlert: (alert: IAlertItemRequest) => Promise<IAlertResult>;
+  cancelAlert: () => void;
   clearQueue: () => void;
   clearResults: () => void;
-}
-
-export interface IAlertProviderProps {
-  responseLimit: number;
 }
