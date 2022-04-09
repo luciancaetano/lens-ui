@@ -2,7 +2,7 @@ import React from 'react';
 import { ITestableProps } from '../../../types';
 
 export interface IBreadcrumbLink {
-  title: JSX.Element | JSX.Element[];
+  title: React.ReactNode | React.ReactNode[];
   url?: string;
   testingID?: string;
 }

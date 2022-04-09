@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type DeviceOrientationType = 'portrait' | 'landscape';
 export type DeviceOSType = 'android' | 'ios' | false;
 
@@ -10,7 +12,7 @@ export interface IDeviceWindow {
 
 export interface IDeviceProviderProps {
   debounceTime?: number;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode | React.ReactNode[];
 }
 
 export interface IDeviceContextType {

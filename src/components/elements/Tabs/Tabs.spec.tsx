@@ -21,7 +21,7 @@ const tabs:ITabsItem[] = [
   },
 ];
 
-const tabsRenderer = (activeTab: ITabsItem | null | undefined): JSX.Element | JSX.Element[] => (
+const tabsRenderer = (activeTab: ITabsItem | null | undefined): React.ReactNode | React.ReactNode[] => (
   <div>{`${activeTab?.title}_content`}</div>
 );
 

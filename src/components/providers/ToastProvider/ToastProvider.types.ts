@@ -6,13 +6,13 @@ export interface IToastAction {
   disabled?: boolean;
   active?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  content?: JSX.Element | JSX.Element[];
+  content?: React.ReactNode | React.ReactNode[];
   className?: string;
 }
 export interface IToastCreationData {
   intent: IntentType;
-  icon?: JSX.Element | JSX.Element[];
-  content: JSX.Element | JSX.Element[];
+  icon?: React.ReactNode | React.ReactNode[];
+  content: React.ReactNode | React.ReactNode[];
   dismiss?: 'button' | number;
   className?: string;
   actionsContainerClassName?: string;
@@ -33,7 +33,7 @@ export interface IUserToasttHookReponse {
 export type ToastPlacementType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
 export interface IToastProviderProps {
   placement: ToastPlacementType;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode | React.ReactNode[];
 }
 export interface IToastContextType {
   toasts: IToastData[];

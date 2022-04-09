@@ -1,3 +1,4 @@
+import React from 'react';
 import { ToastPlacementType } from '../ToastProvider/ToastProvider.types';
 
 export interface ILensProviderProps {
@@ -5,5 +6,5 @@ export interface ILensProviderProps {
   deviceContextDebounceTimmer?: number;
   /** @description The placement of the toast. */
   toastsPlacement?: ToastPlacementType;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode | React.ReactNode[];
 }

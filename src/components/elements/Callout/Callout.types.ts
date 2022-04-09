@@ -4,7 +4,7 @@ import {
 } from '../../../types';
 
 export interface ICalloutProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLDivElement>, 'title'> {
-  icon?: JSX.Element | JSX.Element[];
+  icon?: React.ReactNode | React.ReactNode[];
   intent?: IntentType;
-  title?: JSX.Element | JSX.Element[];
+  title?: React.ReactNode | React.ReactNode[];
 }

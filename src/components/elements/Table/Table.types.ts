@@ -6,10 +6,10 @@ export interface ITableItem {
   rowIntent?: IntentType;
 }
 
-export type TableCellRendererType<T extends ITableItem> = (item: T) => JSX.Element | JSX.Element[];
+export type TableCellRendererType<T extends ITableItem> = (item: T) => React.ReactNode | React.ReactNode[];
 
 export interface ITableCol<T extends ITableItem> {
-  header: JSX.Element | JSX.Element[];
+  header: React.ReactNode | React.ReactNode[];
   headerClassName?: string;
 
   cellRenderer?: TableCellRendererType<T>;
@@ -21,6 +21,6 @@ export type TableClumnsRecordType<T extends ITableItem> = Record<keyof Omit<T, '
 export interface ITableProps<T extends ITableItem> extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   items: T[];
   cols: TableClumnsRecordType<T>;
-  footer?: () => JSX.Element | JSX.Element[];
+  footer?: () => React.ReactNode | React.ReactNode[];
   onRowClick?: (item: T, index: number) => void;
 }

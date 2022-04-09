@@ -10,7 +10,7 @@ import {
   IAlertItemData, IAlertItemRequest, IAlertResult,
 } from './AlertProvider.types';
 
-const AlertProvider: React.FC<{children: JSX.Element | JSX.Element[]}> = ({ children }) => {
+const AlertProvider: React.FC<{children: React.ReactNode | React.ReactNode[]}> = ({ children }) => {
   const [activeAlert, setActiveAlert] = useState<IAlertItemData | null>(null);
   const [queue, setQueue] = useState<IAlertItemData[]>([]);
   const [results, setResults] = useState<Record<string, IAlertResult>>({});

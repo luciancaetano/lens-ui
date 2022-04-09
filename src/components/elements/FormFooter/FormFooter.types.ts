@@ -3,16 +3,16 @@ import { ITestableProps } from '../../../types';
 import { ButtonAppearanceType } from '../Button/Button.types';
 
 interface IFormFooterLocale {
-  update: JSX.Element | JSX.Element[];
-  updating: JSX.Element | JSX.Element[];
-  save: JSX.Element | JSX.Element[];
-  saving: JSX.Element | JSX.Element[];
-  clear: JSX.Element | JSX.Element[];
-  cleaning: JSX.Element | JSX.Element[];
-  canceling: JSX.Element | JSX.Element[];
-  cancel: JSX.Element | JSX.Element[];
-  delete: JSX.Element | JSX.Element[];
-  deleting: JSX.Element | JSX.Element[];
+  update: React.ReactNode | React.ReactNode[];
+  updating: React.ReactNode | React.ReactNode[];
+  save: React.ReactNode | React.ReactNode[];
+  saving: React.ReactNode | React.ReactNode[];
+  clear: React.ReactNode | React.ReactNode[];
+  cleaning: React.ReactNode | React.ReactNode[];
+  canceling: React.ReactNode | React.ReactNode[];
+  cancel: React.ReactNode | React.ReactNode[];
+  delete: React.ReactNode | React.ReactNode[];
+  deleting: React.ReactNode | React.ReactNode[];
 }
 
 export interface IFormFooterProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {

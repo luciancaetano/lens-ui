@@ -2,10 +2,10 @@ import React from 'react';
 import { IntentType, ITestableProps } from '../../../types';
 
 export interface IFormGroupProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
-  label?: JSX.Element | JSX.Element[];
+  label?: React.ReactNode | React.ReactNode[];
   contentClassName?: string;
   inline?: boolean;
-  helperText?: JSX.Element | JSX.Element[];
+  helperText?: React.ReactNode | React.ReactNode[];
   helperTextIntent?: IntentType;
   labelFor?: string;
   required?: boolean;

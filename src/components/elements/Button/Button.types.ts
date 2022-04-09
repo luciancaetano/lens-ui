@@ -32,5 +32,5 @@ export interface IButtonProps extends ITestableProps,
   onBlur?: React.FocusEventHandler<HTMLButtonElement>;
   onDoubleClick?: React.MouseEventHandler<HTMLButtonElement>;
   onFocus?: React.FocusEventHandler<HTMLButtonElement>;
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode | React.ReactNode[];
 }

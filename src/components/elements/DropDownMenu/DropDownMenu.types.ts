@@ -2,14 +2,14 @@ import React from 'react';
 import { ITestableProps } from '../../../types';
 
 export type IDropdownClickableItemType<TPayload = any, TId = string> = {
-  label: JSX.Element | JSX.Element[];
+  label: React.ReactNode | React.ReactNode[];
   id: TId;
   className?: string;
   payload?: TPayload;
 };
 
 export type IDropdownItemDividerType = {
-  label?: JSX.Element | JSX.Element[];
+  label?: React.ReactNode | React.ReactNode[];
   className?: string;
   divider: true;
 };
