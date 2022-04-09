@@ -7,6 +7,7 @@ export interface IToastAction {
   active?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   content?: React.ReactNode;
+  className?: string;
 }
 export interface IToastCreationData {
   intent: IntentType;
