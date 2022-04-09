@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.4](https://github.com/luciancaetano/lens-ui/compare/v4.8.3...v4.8.4) (2022-04-09)
+
+
+### Features
+
+* :sparkles: add new features to typography ([5df59c9](https://github.com/luciancaetano/lens-ui/commit/5df59c9690cd0c51471b22c3a8732421b89216ed))
+* :sparkles: improve some modal styles and forward modal components refs ([3db6010](https://github.com/luciancaetano/lens-ui/commit/3db60100c13421e70f3683ee959f1d76ae47fced))
+
+
+### Bug Fixes
+
+* :bug: fix a bug with datepick value ([0a49ab2](https://github.com/luciancaetano/lens-ui/commit/0a49ab27b20dbdd63d5eae2849e74fd119f81471))
+* :lipstick: fix modal styles ([b795c5c](https://github.com/luciancaetano/lens-ui/commit/b795c5c4ba955304aca7e8d40e6c55b908b5c92a))
+* :lipstick: fix money input prefix and suffix spacing ([ff55613](https://github.com/luciancaetano/lens-ui/commit/ff55613bde418cb6df680876d8c8bcf18a281590))
+* :lipstick: fix switch styles ([e5a1a13](https://github.com/luciancaetano/lens-ui/commit/e5a1a132150bc29ca623023dd3eaceb6bd441ed2))
+
 ### [4.8.3](https://github.com/luciancaetano/lens-ui/compare/v4.8.2...v4.8.3) (2022-04-01)
 
 
