@@ -14,7 +14,7 @@ import Button from '../Button/Button';
 import { ModalSizeEnum } from './Modal.types';
 
 export default {
-  title: '3. Hooks/useModal',
+  title: 'Hooks/useModal/examples',
   component: Modal,
   decorators: [
     (Story) => <LensProvider><Story /></LensProvider>,

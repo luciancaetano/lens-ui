@@ -1,0 +1,21 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Modal from './Modal';
+import ModalContent from '../ModalContent/ModalContent';
+import ModalFooter from '../ModalFooter/ModalFooter';
+import ModalHeader from '../ModalHeader/ModalHeader';
+import useModal from '../../../hooks/use-modal';
+import Button from '../Button/Button';
+
+<Meta title="Hooks/useModal/useModal hook" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+# useModal
+
+The useModal hook is used to handle the modal rendering using context provided by `<LensProvider/>`, which is used to provide the modal state and actions.
+The useModal hook can stack multiple modals on top of each other.
+
+
+## Hook response (Object)
+**useModal** returns an object with the following properties:
+- **isOpen**: Boolean, whether the modal is open or not.
+- **showModal**: `function(React.ComponentType<Props>, props: Props) => Promise`, show the provided modal component.
+- **closeModal**: Function, closes active modal.

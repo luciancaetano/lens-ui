@@ -1,0 +1,93 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Modal from './Modal';
+import ModalContent from '../ModalContent/ModalContent';
+import ModalFooter from '../ModalFooter/ModalFooter';
+import ModalHeader from '../ModalHeader/ModalHeader';
+import Button from '../Button/Button';
+
+<Meta title="Components/Modal" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+# Modal
+
+A Modal is a container that can be used to display content in a modal window.
+
+__in this sample we replace some css variables to handle preview__
+<Canvas>
+  <div style={{position: 'relative', height: 500, width: '100%'}}>
+    <Modal backdropProps={{style:{'--lens-ui-modal-backgrop-position': 'absolute', '--lens-ui-modal-backgrop-width': '100%', '--lens-ui-modal-backgrop-height': '100%'}}}>
+      <ModalHeader>Title</ModalHeader>
+      <ModalContent>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+      </ModalContent>
+      <ModalFooter>
+        <Button intent="danger">Cancel</Button>
+        <Button>Save</Button>
+      </ModalFooter>
+    </Modal>
+  </div>
+</Canvas>
+
+## `<Modal/>` Properties
+- Extends HTMLElement properties**
+- **refs are fowarded to the modal element**
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|size|`normal`, `medium`, `fullscreen`|`normal`|Size of the modal|No|
+|onBackdropClick|`function(reason: 'backdrop')`|`undefined`|Callback when the backdrop is clicked|No|
+|backdropProps|HTMLElementProps|`undefined`|Properties to pass to the backdrop|No|
+|hideBackdrop|`boolean`|`false`|Hide the backdrop|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### CSS Variables
+
+|Variable|Description|Default Value|
+|---|---|---|
+|--lens-ui-modal-backgrop-position|Position of the backdrop|fixed|
+|--lens-ui-modal-backgrop-width|Width of the backdrop|100vw|
+|--lens-ui-modal-backgrop-height|Height of the backdrop|100vh|
+
+## `<ModalHeader/>` Properties
+- **Extends HTMLElement properties**
+- **refs are fowarded to the content element**
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|onClose|`function(reason: 'x-close-header')`|`undefined`|Callback when the close button is clicked|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+## `<ModalContent/>` Properties
+- **Extends HTMLElement properties**
+- **refs are fowarded to the content element**
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+## `<ModalFooter/>` Properties
+- **Extends HTMLElement properties**
+- **refs are fowarded to the content element**
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+---
+
+### Hidden backdrop
+
+<Canvas>
+  <div style={{position: 'relative', height: 500, width: '100%'}}>
+    <Modal hideBackdrop backdropProps={{style:{'--lens-ui-modal-backgrop-position': 'absolute', '--lens-ui-modal-backgrop-width': '100%', '--lens-ui-modal-backgrop-height': '100%'}}}>
+      <ModalHeader>Title</ModalHeader>
+      <ModalContent>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+      </ModalContent>
+      <ModalFooter>
+        <Button intent="danger">Cancel</Button>
+        <Button>Save</Button>
+      </ModalFooter>
+    </Modal>
+  </div>
+</Canvas>
