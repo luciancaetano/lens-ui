@@ -6,9 +6,10 @@
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-bottom: .35em;
+  margin-bottom: var(--typography-gutter-bottom);
   margin-top: 0;
   color: var(--typography-intent-color, var(--lens-ui-typography-text-color));
+  text-align: var(--typography-align);
 
   svg,
   [data-lens-element='toast__icon'] {
@@ -93,7 +94,6 @@
   line-height: 1.66;
   letter-spacing: .03333em;
   margin-top: .35em;
-  margin-bottom: .35em;
   display: block;
 }
 

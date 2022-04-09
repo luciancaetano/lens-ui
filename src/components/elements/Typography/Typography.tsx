@@ -20,11 +20,15 @@ const variantMap: { [key: string]: string } = {
 };
 
 const Typography: React.FC<ITypographyProps> = ({
-  variant, noWrap, intent, children, testingID,
+  variant, noWrap, intent, children, testingID, align = 'inherit', gutterBottom,
 }) => React.createElement(variantMap[variant], {
-  style: intent ? {
-    '--typography-intent-color': `var(--lens-ui-intents-${intent})`,
-  } : {},
+  style: {
+    ...(intent ? {
+      '--typography-intent-color': `var(--lens-ui-intents-${intent})`,
+    } : {}),
+    '--typography-align': align,
+    '--typography-gutter-bottom': gutterBottom ? '0.35em' : '0',
+  },
   'data-lens-element': 'typography',
   className: clsx(styles.root, styles[variant], noWrap && styles.noWrap),
   ...({ 'data-testid': testingID } as any),
