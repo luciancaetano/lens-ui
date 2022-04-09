@@ -23,7 +23,7 @@
     "release:pre": "standard-version --prerelease && npm run build && git push --follow-tags origin main && npm publish --tag next",
     "prepare": "husky install",
     "storybook": "start-storybook -p 3003",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "build-storybook && storybook-to-ghpages"
   },
   "repository": {
     "type": "git",
