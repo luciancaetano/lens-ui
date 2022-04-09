@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.9.0](https://github.com/luciancaetano/lens-ui/compare/v4.8.5...v4.9.0) (2022-04-09)
+
+
+### Features
+
+* :arrow_up: upgrade react and other deps ([608f1fb](https://github.com/luciancaetano/lens-ui/commit/608f1fbc80401dff8bd8b01e3f0ebdd25b90f7a2))
+
+
+### Bug Fixes
+
+* :label: Update types due to react 18 breaking changes ([fbe83d2](https://github.com/luciancaetano/lens-ui/commit/fbe83d2f11b7a17b2bb3f45843b832c427f0aa9d))
+
 ### [4.8.5](https://github.com/luciancaetano/lens-ui/compare/v4.8.4...v4.8.5) (2022-04-09)
 
 ### [4.8.4](https://github.com/luciancaetano/lens-ui/compare/v4.8.3...v4.8.4) (2022-04-09)
