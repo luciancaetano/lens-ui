@@ -1,22 +1,22 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { ComponentMeta } from '@storybook/react';
-import Toast from './Toast';
-import LensProvider from '../../providers/LensProvider/LensProvider';
-import '../../../styles';
-import { useToast } from '../../../hooks';
-import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
+import '../styles';
+import Toast from '../components/elements/Toast/Toast';
+import { LensProvider } from '../components/providers';
+import useToast from './use-toast';
+import Button from '../components/elements/Button/Button';
+import Icon from '../components/elements/Icon/Icon';
 
 export default {
-  title: '3. Hooks/useToast',
+  title: 'Hooks/useToast/Example',
   component: Toast,
   decorators: [
     (Story) => <LensProvider><Story /></LensProvider>,
   ],
 } as ComponentMeta<typeof Toast>;
 
-export const _Toast = () => {
+export const Example = () => {
   const { addToast } = useToast();
 
   return (

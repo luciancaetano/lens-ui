@@ -1,4 +1,4 @@
-# LensUi Design System [[storybooks]](https://luciancaetano.github.io/lens-ui) [[docs]](https://github.com/luciancaetano/lens-ui/blob/main/docs/introduction.md)
+# LensUi Design System [[docs]](https://luciancaetano.github.io/lens-ui)
 
 Lens-ui is a basic design system focused on stability and simplicity.
 

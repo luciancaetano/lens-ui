@@ -1,19 +1,14 @@
-/* eslint-disable react/destructuring-assignment */
-import React from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Typography from './Typography';
 import LensProvider from '../../providers/LensProvider/LensProvider';
-import '../../../styles';
 
-export default {
-  title: '2. Components/Typography',
-  component: Typography,
-  decorators: [
-    (Story) => <LensProvider>{Story()}</LensProvider>,
-  ],
-} as ComponentMeta<typeof Typography>;
+<Meta title="Components/Typography" component={Typography}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
 
-export const Default = () => (
+# Typography
+
+Typography is a component that renders text with a specific font.
+
+<Canvas>
   <div style={{ maxWidth: 700 }}>
     <Typography variant="h1">h1. Heading</Typography>
     <Typography variant="h2">h2. Heading</Typography>
@@ -36,4 +31,15 @@ export const Default = () => (
     <Typography variant="caption">caption text</Typography>
     <Typography variant="overline">OVERLINE TEXT</Typography>
   </div>
-);
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|variant|string|'body1'|The variant of the typography.|Yes|
+|align|string|'inherit'|The alignment of the typography.|No|
+|noWrap|boolean|false|Whether or not the typography should wrap.|No|
+|intent|string|null|The intent of the typography.|No|
+|gutterBottom|boolean|false | Whether to add a bottom margin.|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|

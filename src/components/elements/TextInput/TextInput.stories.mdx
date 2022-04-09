@@ -1,6 +1,17 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import TextInput from './TextInput';
+
+<Meta title="Components/TextInput" component={TextInput}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
 # TextInput
 
 The TextInput is a wrapper around the native input element that allows you to mask the input value.
+
+<Canvas>
+  <TextInput
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+</Canvas>
 
 ## Properties
 
@@ -21,11 +32,24 @@ The TextInput is a wrapper around the native input element that allows you to ma
 |isError|boolean|undefined|Whether the input is in an error state|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
+---
 
-## Playground
+#### ``multiline`` variant
 
-```tsx
-     <TextInput
-      defaultValue="Lorem ipsum dolor sit amet"
-    />
-```
+<Canvas>
+  <TextInput
+    multiline
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+</Canvas>
+
+---
+
+### ``search`` variant
+
+<Canvas>
+  <TextInput
+    type="search"
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+</Canvas>

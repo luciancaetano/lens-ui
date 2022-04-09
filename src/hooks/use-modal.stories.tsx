@@ -1,17 +1,17 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Modal from './Modal';
-import LensProvider from '../../providers/LensProvider/LensProvider';
-import '../../../styles';
-import useModal from '../../../hooks/use-modal';
-import Select from '../Select/Select';
-import useAlert from '../../../hooks/use-alert';
-import ModalHeader from '../ModalHeader/ModalHeader';
-import ModalContent from '../ModalContent/ModalContent';
-import ModalFooter from '../ModalFooter/ModalFooter';
-import Button from '../Button/Button';
-import { ModalSizeEnum } from './Modal.types';
+import Modal from '../components/elements/Modal/Modal';
+import ModalHeader from '../components/elements/ModalHeader/ModalHeader';
+import ModalContent from '../components/elements/ModalContent/ModalContent';
+import ModalFooter from '../components/elements/ModalFooter/ModalFooter';
+import Button from '../components/elements/Button/Button';
+import '../styles';
+import Select from '../components/elements/Select/Select';
+import useAlert from './use-alert';
+import { LensProvider } from '../components/providers';
+import useModal from './use-modal';
+import { ModalSizeEnum } from '../components/elements/Modal/Modal.types';
 
 export default {
   title: 'Hooks/useModal/examples',
@@ -103,7 +103,7 @@ const SimpleModalStackedCMP: React.FC<ISimpleModalCMPProps> = ({ size }) => {
             addAlert({
               title: 'Modal Result is',
               text: result,
-            }, '123');
+            });
           }}
         >
           OpenAnotherLayer

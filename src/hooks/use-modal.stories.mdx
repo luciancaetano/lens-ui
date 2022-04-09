@@ -1,12 +1,11 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import Modal from './Modal';
-import ModalContent from '../ModalContent/ModalContent';
-import ModalFooter from '../ModalFooter/ModalFooter';
-import ModalHeader from '../ModalHeader/ModalHeader';
-import useModal from '../../../hooks/use-modal';
-import Button from '../Button/Button';
+import Modal from '../components/elements/Modal/Modal';
+import ModalHeader from '../components/elements/ModalHeader/ModalHeader';
+import ModalContent from '../components/elements/ModalContent/ModalContent';
+import ModalFooter from '../components/elements/ModalFooter/ModalFooter';
+import Button from '../components/elements/Button/Button';
 
-<Meta title="Hooks/useModal/useModal hook" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Hooks/useModal/Introduction" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
 
 # useModal
 

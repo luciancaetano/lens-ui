@@ -1,0 +1,44 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Modal from '../components/elements/Modal/Modal';
+import ModalHeader from '../components/elements/ModalHeader/ModalHeader';
+import ModalContent from '../components/elements/ModalContent/ModalContent';
+import ModalFooter from '../components/elements/ModalFooter/ModalFooter';
+import Button from '../components/elements/Button/Button';
+
+<Meta title="Hooks/useToast/Introduction" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+# useToast
+
+The hook `useToast` is used to display a toast message in user interface.
+
+
+## Hook response (Object)
+**useToast** returns an object with the following properties:
+- **function addToast(IToastCreationData, id: string | undefined)** - Adds a toast message to the user interface.
+- **removeToast(id: string)** - Removes a toast message from the user interface.
+- **clearToasts()** - Removes all toast messages from the user interface.
+
+--
+
+#### IToastCreationData Object
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|intent|`primary`, `secondary`, `success`, <br/>`info`, `warning`, `danger`|primary | The intent of the badge.|Yes|
+|icon|React.ReactNode|undefined|The icon of the toast message.|No|
+|content|React.ReactNode|undefined|The content of the toast message.|Yes|
+|dismiss|'button' \| number | The number of milliseconds to wait before automatically dismissing the toast message.|No|
+|className|string|undefined|The class name of the toast message.|No|
+|actionsContainerClassName|string|undefined|The class name of the actions container of the toast message.|No|
+|actions|IToastAction[]|undefined|The actions of the toast message.|No|
+
+#### IToastAction Object
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|intent|`primary`, `secondary`, `success`, <br/>`info`, `warning`, `danger`|primary | The intent of the badge.|No|
+|disabled|boolean|false|Whether the toast action is disabled.|No|
+|active|boolean|false|Whether the toast action is active.|No|
+|onClick|`MouseEventHandler<HTMLButtonElement>`|undefined|The onClick handler of the toast action.|No|
+|content|ReactNode|undefined|The content of the toast action.|No|
+
