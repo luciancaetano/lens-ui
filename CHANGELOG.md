@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.9.1](https://github.com/luciancaetano/lens-ui/compare/v4.9.0...v4.9.1) (2022-04-09)
+
+
+### Bug Fixes
+
+* :label:  fixing children types ([f79904b](https://github.com/luciancaetano/lens-ui/commit/f79904b7d351e190ccb1aa140c48a9a7689dc36e))
+
 ## [4.9.0](https://github.com/luciancaetano/lens-ui/compare/v4.8.5...v4.9.0) (2022-04-09)
 
 
