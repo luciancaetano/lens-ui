@@ -34,12 +34,14 @@ describe('utils', () => {
   });
 
   it('sleep clear', async () => {
-    const cancelRef = { current: null };
+    const cancelRef = { current: null as any };
     const resolved = jest.fn();
 
     sleep(1000, cancelRef).then(resolved);
 
-    cancelRef.current();
+    if (typeof cancelRef.current === 'function') {
+      cancelRef.current();
+    }
 
     await sleep(100);
 
