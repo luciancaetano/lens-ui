@@ -46,8 +46,8 @@ const MoneyInput: React.FC<IMoneyInputProps> = ({
         decimalSeparator={decimalSeparator}
         precision={precision}
         thousandSeparator={thousandSeparator}
-        prefix={prefix}
-        suffix={suffix}
+        prefix={prefix ? `${prefix} ` : ''}
+        suffix={suffix ? ` ${suffix}` : ''}
       />
     </div>
   );
