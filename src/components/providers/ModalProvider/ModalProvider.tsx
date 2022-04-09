@@ -11,7 +11,7 @@ import ModalContext from './ModalContext';
 import { PORTAL_ROOT_ID } from '../../../css-classes';
 import { getPortalContainer } from '../../../utils';
 
-const ModalProvider: React.FC = ({ children }) => {
+const ModalProvider: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const [isOpenLayers, setIsOpen] = useState<Record<number, boolean>>({});
   const activeModalComponent = useRef<React.ComponentType[]>([]);
   const [props, setProps] = useState<Record<number, any>>({});

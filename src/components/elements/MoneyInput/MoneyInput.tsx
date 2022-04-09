@@ -11,7 +11,7 @@ const MoneyInput: React.FC<IMoneyInputProps> = ({
   className, testingID, id, onChange, tabIndex, decimalSeparator = ',', precision = 3, thousandSeparator = '.',
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, prefix, suffix, ...props
 }) => {
-  const handleChange = useCallback((event, maskedvalue, floatvalue) => {
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>, maskedvalue: string, floatvalue: number) => {
     if (onChange) {
       onChange(floatvalue, maskedvalue, event);
     }

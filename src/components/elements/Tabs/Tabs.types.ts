@@ -7,7 +7,7 @@ export interface ITabsItem {
   className?: string;
 }
 
-export interface ITabsProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange'> {
+export interface ITabsProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'children'> {
   vertical?: boolean;
   tabs: ITabsItem[];
   initialActiveTab?: string | null;

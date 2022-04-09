@@ -16,7 +16,7 @@ export interface IDatePickerLocale {
   digits: string[];
   meridiems: Array<string[]>;
 }
-export interface IBasePickerProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'defaultValue'>{
+export interface IBasePickerProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'defaultValue' | 'children'>{
   name?: string;
   placeholder?: string;
   readOnly?: boolean;
