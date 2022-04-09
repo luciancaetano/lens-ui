@@ -18,19 +18,19 @@ export const Example = () => {
   return (
     <Button onClick={async () => {
       addAlert({
-        text: 'Deseja mover para lixeira/excluir este registro?',
+        text: 'This is an alert',
         settings: {
           showConfirmButton: true,
           showCancelButton: true,
           showDenyButton: true,
-          cancelButtonText: 'Cancelar',
-          confirmButtonText: 'Mover para lixeira',
-          denyButtonText: 'Excluir',
+          cancelButtonText: 'Cancel',
+          confirmButtonText: 'Move to trash',
+          denyButtonText: 'Deny',
         },
       });
 
       addAlert({
-        text: 'Notificação simples',
+        text: 'Hello world',
       });
     }}
     >
