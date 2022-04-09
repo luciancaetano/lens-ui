@@ -13,4 +13,6 @@ export interface IModalProps extends ITestableProps, React.HtmlHTMLAttributes<HT
   size?: ModalSizeEnumType;
   onBackdropClick?: (reason: 'backdrop') => void;
   onEscape?: (reason: 'escape') => void;
+  hideBackdrop?: boolean;
+  backdropProps?: React.HTMLAttributes<HTMLDivElement>;
 }

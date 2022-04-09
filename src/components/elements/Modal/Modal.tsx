@@ -13,11 +13,11 @@ import { IModalProps } from './Modal.types';
  * @example showModal(SimpleModalCMP, args);
  */
 const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
-  className, testingID, id, children, size = 'normal', onBackdropClick, onEscape,
+  className, testingID, id, children, size = 'normal', onBackdropClick, onEscape, backdropProps = {}, hideBackdrop,
   ...props
 }, ref) => {
   const { isPhone } = useDevice();
-  const backDropRef = useRef<HTMLDivElement | null | undefined>(null);
+  const backDropRef = useRef<HTMLDivElement | null>(null);
   const onEscapeRef = useRef<((e: KeyboardEvent) => void) | null>(null);
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -52,23 +52,13 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
     };
   }, []);
 
-  const handleRef = useCallback((element: HTMLDivElement) => {
-    backDropRef.current = element;
-    if (typeof ref === 'function') {
-      ref(element);
-    } else if (ref) {
-      ref.current = element;
-    }
-  }, [ref]);
-
   return (
     <div
       onClick={handleBackdropClick}
-      className={styles.backdrop}
-      data-lens-element="modal__backdrop"
-      data-lens-modal-size={isPhone ? 'fullscreen' : size}
-      ref={handleRef}
+      className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden)}
+      ref={backDropRef}
       aria-modal="true"
+      {...backdropProps}
     >
       <div
         {...props}
@@ -76,7 +66,8 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
         data-lens-element="modal"
         aria-modal="true"
         data-testid={testingID}
-        className={clsx(styles.modal, styles[`modal--size-${isPhone ? 'fullscreen' : size}`], className)}
+        className={clsx(styles.modal, hideBackdrop && styles.modalNoBackdrop, styles[`modal--size-${isPhone ? 'fullscreen' : size}`], className)}
+        ref={ref}
       >
         {children}
       </div>
