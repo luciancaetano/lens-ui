@@ -42,12 +42,12 @@
         }
 
         &--active {
-          color: var(--lens-ui-typography-text-color);
-          background-color: #fff;
-          border-top-color: var(--lens-ui-elements-tabs-border);
-          border-bottom-color: var(--lens-ui-elements-tabs-border);
-          border-left-color: var(--lens-ui-elements-tabs-border);
-          border-right-color: #fff;
+          color: var(--lens-ui-typography-text-color) !important;
+          background-color: #fff !important;
+          border-top-color: var(--lens-ui-elements-tabs-border) !important;
+          border-bottom-color: var(--lens-ui-elements-tabs-border) !important;
+          border-left-color: var(--lens-ui-elements-tabs-border) !important;
+          border-right-color: #fff !important;
         }
       }
     }

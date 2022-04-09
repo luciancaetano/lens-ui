@@ -36,6 +36,7 @@ const Tabs:React.FC<ITabsProps> = ({
     <div
       className={clsx(
         styles[`${tabStylePrefix}__container__tab-item`],
+        activeTabId === tab.id && 'lens-ui-active-tab',
         activeTabId === tab.id && styles[`${tabStylePrefix}__container__tab-item--active`],
         tab.className,
       )}
