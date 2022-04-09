@@ -47,7 +47,7 @@ describe('<Toast/>', () => {
       </LensProvider>,
     );
 
-    expect(container.querySelector('.lens-ui-toasts-toast')).toMatchSnapshot();
+    expect(container.querySelector<HTMLElement>('.lens-ui-toasts-toast')).toMatchSnapshot();
   });
 
   it('render <Toast/> with invalid dismiss', async () => {
@@ -57,7 +57,7 @@ describe('<Toast/>', () => {
       </LensProvider>,
     );
 
-    expect(container.querySelector('.lens-ui-toasts-toast')).toMatchSnapshot();
+    expect(container.querySelector<HTMLElement>('.lens-ui-toasts-toast')).toMatchSnapshot();
   });
 
   it('render <Toast/> close toast', async () => {
@@ -68,7 +68,7 @@ describe('<Toast/>', () => {
     );
     jest.advanceTimersByTime(1000);
 
-    fireEvent.click(window.document.querySelector('[data-lens-element="toast__close-button"]'));
+    fireEvent.click(window.document.querySelector<HTMLElement>('[data-lens-element="toast__close-button"]') as HTMLElement);
 
     expect(removeToast).toHaveBeenCalled();
   });

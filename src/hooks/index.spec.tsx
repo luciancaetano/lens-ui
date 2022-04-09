@@ -38,15 +38,11 @@ describe('src/hooks', () => {
 
     act(() => {
       current.addAlert({ title: 'title' });
-      current.cancelAlert('123');
-      current.clearQueue();
-      current.clearResults();
+      current.cancelAlert();
     });
 
     expect(context.addAlert).toHaveBeenCalled();
     expect(context.cancelAlert).toHaveBeenCalled();
-    expect(context.clearQueue).toHaveBeenCalled();
-    expect(context.clearResults).toHaveBeenCalled();
   });
 
   it('useModal', async () => {

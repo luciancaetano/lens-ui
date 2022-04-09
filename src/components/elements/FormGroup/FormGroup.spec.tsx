@@ -26,7 +26,7 @@ describe('<FormGroup/>', () => {
   it('test helperTextIntent attibute', () => {
     const testRender = (helperTextIntent: IntentType) => render(
       <FormGroup testingID="testing-target" helperTextIntent={helperTextIntent} helperText="helper text" />,
-    ).container.querySelector(`[data-lens-form-group-helpertext-intent="${helperTextIntent}"]`);
+    ).container.querySelector<HTMLElement>(`[data-lens-form-group-helpertext-intent="${helperTextIntent}"]`);
 
     expect(testRender('danger')).toBeInTheDocument();
     expect(testRender('info')).toBeInTheDocument();
@@ -41,7 +41,7 @@ describe('<FormGroup/>', () => {
       <FormGroup testingID="testing-target" required />,
     );
 
-    expect(container.querySelector('[data-lens-element="form-group__required_helper"]')).toBeInTheDocument();
-    expect(container.querySelector('[data-lens-element="form-group__required_helper"]').innerHTML).toBe('&nbsp;*');
+    expect(container.querySelector<HTMLElement>('[data-lens-element="form-group__required_helper"]')).toBeInTheDocument();
+    expect(container.querySelector<HTMLElement>('[data-lens-element="form-group__required_helper"]')?.innerHTML).toBe('&nbsp;*');
   });
 });

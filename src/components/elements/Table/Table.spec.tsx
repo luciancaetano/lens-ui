@@ -1,5 +1,5 @@
 import React from 'react';
-
+import get from 'lodash/get';
 import { render } from '@testing-library/react';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import Table from './Table';
@@ -49,7 +49,7 @@ describe('<Table/>', () => {
       expect(getByText(`${item.phone}_MyCustomIcon`)).toBeInTheDocument();
     });
 
-    Object.keys(columnsData).map((k) => columnsData[k]).forEach((column) => {
+    Object.keys(columnsData).map((k: string) => get(columnsData, k)).forEach((column) => {
       expect(getByText(column.header as string)).toBeInTheDocument();
     });
   });

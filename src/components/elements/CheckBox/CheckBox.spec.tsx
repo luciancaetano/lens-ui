@@ -9,7 +9,7 @@ describe('<CheckBox/>', () => {
       <CheckBox label="TestCheckbox" id="testing-id" checked testingID="testing-target" />,
     );
 
-    expect(container.querySelector('input')).toBeInTheDocument();
+    expect((container.querySelector<HTMLElement>('input') as HTMLElement)).toBeInTheDocument();
   });
 
   it('should render checkbox input with defaultChecked prop', () => {
@@ -17,7 +17,7 @@ describe('<CheckBox/>', () => {
       <CheckBox label="TestCheckbox" defaultChecked testingID="testing-target" />,
     );
 
-    expect(container.querySelector('input')).toBeInTheDocument();
+    expect((container.querySelector<HTMLElement>('input') as HTMLElement)).toBeInTheDocument();
   });
 
   it('should test input with defaultChecked prop', () => {
@@ -25,8 +25,8 @@ describe('<CheckBox/>', () => {
       <CheckBox label="TestCheckBox" defaultChecked testingID="testing-target" />,
     );
 
-    expect(container.querySelector('input')).toBeInTheDocument();
-    expect(container.querySelector('input').attributes).toHaveProperty('checked');
+    expect((container.querySelector<HTMLElement>('input') as HTMLElement)).toBeInTheDocument();
+    expect((container.querySelector<HTMLElement>('input') as HTMLElement).attributes).toHaveProperty('checked');
   });
 
   it('should test input with defaultChecked prop to be false', () => {
@@ -34,8 +34,8 @@ describe('<CheckBox/>', () => {
       <CheckBox label="TestCheckBox" defaultChecked={false} testingID="testing-target" />,
     );
 
-    expect(container.querySelector('input')).toBeInTheDocument();
-    expect(container.querySelector('input').attributes).not.toHaveProperty('checked');
+    expect((container.querySelector<HTMLElement>('input') as HTMLElement)).toBeInTheDocument();
+    expect((container.querySelector<HTMLElement>('input') as HTMLElement).attributes).not.toHaveProperty('checked');
   });
 
   it('should return checked status in onChange event', async () => {
@@ -45,11 +45,11 @@ describe('<CheckBox/>', () => {
       <CheckBox label="TestCheckbox" testingID="testing-target" onChange={onChange} onBlur={onBlur} />,
     );
 
-    fireEvent.click(container.querySelector('input'));
-    fireEvent.click(container.querySelector('input'));
+    fireEvent.click((container.querySelector<HTMLElement>('input') as HTMLElement));
+    fireEvent.click((container.querySelector<HTMLElement>('input') as HTMLElement));
 
-    fireEvent.blur(container.querySelector('input'));
-    fireEvent.blur(container.querySelector('input'));
+    fireEvent.blur((container.querySelector<HTMLElement>('input') as HTMLElement));
+    fireEvent.blur((container.querySelector<HTMLElement>('input') as HTMLElement));
 
     await new Promise((r) => setTimeout(r, 1000));
 

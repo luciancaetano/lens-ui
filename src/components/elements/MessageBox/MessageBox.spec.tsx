@@ -51,16 +51,15 @@ describe('<MessageBox/>', () => {
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByText(title)).toBeInTheDocument();
     expect(childrenEl).toBeInTheDocument();
-    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
 
-    fireEvent.click(container.querySelector('[data-lens-element="message-box__close-button"]'));
+    fireEvent.click(container.querySelector<HTMLElement>('[data-lens-element="message-box__close-button"]') as HTMLElement);
 
     jest.advanceTimersByTime(10000);
 
-    await sleep(1000);
+    await sleep(500);
 
-    expect(childrenEl).not.toBeInTheDocument();
-    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).not.toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it('should test automatic closing', async () => {
@@ -71,25 +70,23 @@ describe('<MessageBox/>', () => {
 
     const { getByTestId, getByText, container } = render(
       <LensProvider>
-        <MessageBox title={title} testingID={testingId} timeout={3000} onClose={onClose} icon={<>Icon</>} striped>
+        <MessageBox title={title} testingID={testingId} timeout={100} onClose={onClose} icon={<>Icon</>} striped>
           {children}
         </MessageBox>
       </LensProvider>,
     );
 
-    const childrenEl = getByText(children);
-
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByText(title)).toBeInTheDocument();
-    expect(childrenEl).toBeInTheDocument();
-    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).toBeInTheDocument();
+    expect(getByText(children)).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot();
 
     jest.advanceTimersByTime(10000);
 
-    await sleep(1000);
+    await sleep(500);
 
     expect(onClose).toBeCalled();
-    expect(childrenEl).not.toBeInTheDocument();
-    expect(container.querySelector('[data-lens-element="message-box__close-button"]')).not.toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });

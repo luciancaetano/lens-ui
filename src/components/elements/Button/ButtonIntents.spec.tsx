@@ -10,7 +10,7 @@ import { ButtonAppearanceEnum, IButtonProps, ButtonSizeEnum } from './Button.typ
 describe('<Button/> intents ,variations and appearances', () => {
   let btnProps: IButtonProps = {};
 
-  const testingJSX = () => (<Buttom testingID={btnProps.testingID} {...btnProps}>Hello World</Buttom>);
+  const testingJSX = () => (<Buttom testingID={String(btnProps.testingID)} {...btnProps}>Hello World</Buttom>);
 
   beforeEach(() => {
     btnProps = {
@@ -33,7 +33,7 @@ describe('<Button/> intents ,variations and appearances', () => {
     btnProps.className = mockedClasses.join(' ');
     const { getByTestId } = render(testingJSX());
 
-    const renderedButton = getByTestId(btnProps.testingID);
+    const renderedButton = getByTestId(String(btnProps.testingID));
 
     mockedClasses.forEach((className) => {
       expect(renderedButton.classList.contains(className)).toBe(true);
@@ -49,7 +49,7 @@ describe('<Button/> intents ,variations and appearances', () => {
       btnProps.appearance = appearance as any;
       rerender(testingJSX());
 
-      const renderedButton = getByTestId(btnProps.testingID);
+      const renderedButton = getByTestId(String(btnProps.testingID));
 
       expect(renderedButton.getAttribute('data-lens-appearance')).toBeTruthy();
 
@@ -71,7 +71,7 @@ describe('<Button/> intents ,variations and appearances', () => {
       btnProps.intent = intent as any;
       rerender(testingJSX());
 
-      const renderedButton = getByTestId(btnProps.testingID);
+      const renderedButton = getByTestId(String(btnProps.testingID));
 
       expect(renderedButton.getAttribute('data-lens-intent')).toBe(intent);
 
@@ -82,7 +82,7 @@ describe('<Button/> intents ,variations and appearances', () => {
       btnProps.appearance = appearance as any;
       rerender(testingJSX());
 
-      const renderedButton = getByTestId(btnProps.testingID);
+      const renderedButton = getByTestId(String(btnProps.testingID));
 
       expect(renderedButton.getAttribute('data-lens-appearance')).toBe(appearance);
 
@@ -102,7 +102,7 @@ describe('<Button/> intents ,variations and appearances', () => {
       btnProps.size = size as any;
       rerender(testingJSX());
 
-      expect(container.querySelector(`[data-lens-button-size="${size}"]`)).toBeInTheDocument();
+      expect(container.querySelector<HTMLElement>(`[data-lens-button-size="${size}"]`)).toBeInTheDocument();
 
       interationCalls();
     });
@@ -114,7 +114,7 @@ describe('<Button/> intents ,variations and appearances', () => {
 describe('<Button/> states (disabled, large)', () => {
   let btnProps: IButtonProps = {};
 
-  const testingJSX = () => (<Buttom testingID={btnProps.testingID} {...btnProps}>Hello World</Buttom>);
+  const testingJSX = () => (<Buttom testingID={String(btnProps.testingID)} {...btnProps}>Hello World</Buttom>);
 
   beforeEach(() => {
     btnProps = {
@@ -136,7 +136,7 @@ describe('<Button/> states (disabled, large)', () => {
     btnProps.disabled = true;
     btnProps.onClick = jest.fn();
     const { getByTestId } = render(testingJSX());
-    const renderedButton = getByTestId(btnProps.testingID);
+    const renderedButton = getByTestId(String(btnProps.testingID));
 
     expect(renderedButton.getAttributeNames().find((attrName) => attrName === 'disabled')).toBe('disabled');
 
@@ -149,7 +149,7 @@ describe('<Button/> states (disabled, large)', () => {
     btnProps.disabled = false;
     btnProps.onClick = jest.fn();
     const { getByTestId } = render(testingJSX());
-    const renderedButton = getByTestId(btnProps.testingID);
+    const renderedButton = getByTestId(String(btnProps.testingID));
 
     expect(renderedButton.getAttributeNames().find((attrName) => attrName === 'disabled')).toBe(undefined);
 

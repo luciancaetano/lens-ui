@@ -10,9 +10,9 @@ export interface IRadioGroupOption extends ITestableProps {
 
 export interface IRadioGroupProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'value' | 'defaultValue'> {
   options: IRadioGroupOption[];
-  value?: string;
+  value?: string | null;
   name: string;
-  defaultValue?: string;
+  defaultValue?: string | null;
   onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
   tabIndex?: number;

@@ -7,7 +7,9 @@ import ProgressBar from './ProgressBar';
 import { ProgressBarSizeEnum, ProgressBarSizeEnumType } from './ProgressBar.types';
 import { Intents, IntentType } from '../../../types';
 
-const ProgressBarSizeValues = {
+const ProgressBarSizeValues: {
+  [key in ProgressBarSizeEnumType]: number;
+} = {
   tiny: 0.400,
   normal: 0.625,
   medium: 0.925,
@@ -32,7 +34,7 @@ describe('<ProgressBar/>', () => {
   it('test <ProgressBar/> sizes', async () => {
     const testingId = 'myTestingId';
 
-    const renderTest = (size) => <LensProvider><ProgressBar progress={50} size={size as ProgressBarSizeEnumType} testingID={testingId} /></LensProvider>;
+    const renderTest = (size: number | string) => <LensProvider><ProgressBar progress={50} size={size} testingID={testingId} /></LensProvider>;
 
     const { getByTestId, rerender } = render(renderTest('100px'));
 
@@ -42,8 +44,8 @@ describe('<ProgressBar/>', () => {
       height: '100px',
     });
 
-    forEach(ProgressBarSizeEnum, (size) => {
-      rerender(renderTest(size as any));
+    forEach(ProgressBarSizeEnum, (size: string) => {
+      rerender(renderTest(size));
       expect(getByTestId(testingId)).toHaveStyle({
         height: `${ProgressBarSizeValues[size]}rem`,
       });
@@ -53,15 +55,15 @@ describe('<ProgressBar/>', () => {
   it('test <ProgressBar/> intents', async () => {
     const testingId = 'myTestingId';
 
-    const renderTest = (intent) => <LensProvider><ProgressBar progress={50} intent={intent as IntentType} testingID={testingId} /></LensProvider>;
+    const renderTest = (intent: IntentType) => <LensProvider><ProgressBar progress={50} intent={intent as IntentType} testingID={testingId} /></LensProvider>;
 
-    const { getByTestId, rerender, container } = render(renderTest('100px'));
+    const { getByTestId, rerender, container } = render(renderTest('primary'));
 
     expect(getByTestId(testingId)).toBeInTheDocument();
 
-    forEach(Intents, (intent) => {
-      rerender(renderTest(intent as any));
-      expect(container.querySelector('[data-lens-element="progress-bar__indicator"]').getAttribute('data-lens-intent')).toBe(intent);
+    forEach(Intents, (intent: string) => {
+      rerender(renderTest(intent as IntentType));
+      expect(container.querySelector<HTMLElement>('[data-lens-element="progress-bar__indicator"]')?.getAttribute('data-lens-intent')).toBe(intent);
     });
   });
 

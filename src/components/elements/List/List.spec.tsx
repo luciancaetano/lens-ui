@@ -27,8 +27,8 @@ describe('<List/>', () => {
       expect(getByText(item.children as any)).toBeInTheDocument();
     });
 
-    expect(container.querySelector('[data-lens-element="list__item--heading"]')).toBeInTheDocument();
-    expect(getByText(items[1].children as string).classList.contains(items[1].className)).toBe(true);
+    expect(container.querySelector<HTMLElement>('[data-lens-element="list__item--heading"]')).toBeInTheDocument();
+    expect(getByText(items[1].children as string).classList.contains(items[1].className as string)).toBe(true);
   });
 
   it('should render correct intent', () => {

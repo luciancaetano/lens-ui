@@ -18,27 +18,27 @@ describe('<Breadcrumbs/>', () => {
     const { getByTestId, rerender } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
     links.forEach((link) => {
       rerender(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
-      expect(getByTestId(link.testingID)).toBeInTheDocument();
+      expect(getByTestId(String(link.testingID))).toBeInTheDocument();
     });
   });
 
   it('should render item[0, 2, 3] as an span', () => {
     const { getByTestId } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
 
-    expect(getByTestId(links[0].testingID).tagName).toBe('SPAN');
-    expect(getByTestId(links[2].testingID).tagName).toBe('SPAN');
-    expect(getByTestId(links[3].testingID).tagName).toBe('SPAN');
+    expect(getByTestId(String(links[0].testingID)).tagName).toBe('SPAN');
+    expect(getByTestId(String(links[2].testingID)).tagName).toBe('SPAN');
+    expect(getByTestId(String(links[3].testingID)).tagName).toBe('SPAN');
   });
 
   it('should render item[1] as an link', () => {
     const { getByTestId } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
 
-    expect(getByTestId(links[1].testingID).tagName).toBe('A');
+    expect(getByTestId(String(links[1].testingID)).tagName).toBe('A');
   });
 
   it('should render last item as span', () => {
     const { getByTestId } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
 
-    expect(getByTestId(links[4].testingID).tagName).toBe('SPAN');
+    expect(getByTestId(String(links[4].testingID)).tagName).toBe('SPAN');
   });
 });

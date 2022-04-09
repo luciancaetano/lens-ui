@@ -1,8 +1,7 @@
 import clsx from 'clsx';
-import React, { useCallback, useRef, useEffect } from 'react';
-import { PORTAL_ROOT_ID } from '../../../css-classes';
+import React, { useCallback } from 'react';
 import { useDevice } from '../../../hooks';
-import { modalCanEscape } from '../../../utils';
+import { isBackdropClick } from '../../../utils';
 import styles from './Modal.module.scss';
 import { IModalProps } from './Modal.types';
 
@@ -13,15 +12,13 @@ import { IModalProps } from './Modal.types';
  * @example showModal(SimpleModalCMP, args);
  */
 const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
-  className, testingID, id, children, size = 'normal', onBackdropClick, onEscape, backdropProps = {}, hideBackdrop,
+  className, testingID, id, children, size = 'normal', onBackdropClick, backdropProps = {}, hideBackdrop,
   ...props
 }, ref) => {
   const { isPhone } = useDevice();
-  const backDropRef = useRef<HTMLDivElement | null>(null);
-  const onEscapeRef = useRef<((e: KeyboardEvent) => void) | null>(null);
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (onBackdropClick && (e.target as HTMLDivElement).getAttribute('data-lens-element') === 'modal__backdrop') {
+    if (onBackdropClick && e.target && isBackdropClick(e.target as HTMLElement)) {
       e.preventDefault();
       e.stopPropagation();
 
@@ -29,36 +26,14 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
     }
   }, [onBackdropClick]);
 
-  useEffect(() => {
-    onEscapeRef.current = (e: KeyboardEvent) => {
-      if (typeof window !== 'undefined') {
-        const portalRoot = window.document.getElementById(PORTAL_ROOT_ID);
-
-        if (onEscape && portalRoot && e.key === 'Escape' && modalCanEscape(portalRoot, backDropRef)) {
-          onEscape('escape');
-        }
-      }
-    };
-  }, [onEscape]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.document.addEventListener('keydown', onEscapeRef.current as () => void);
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.document.removeEventListener('keydown', onEscapeRef.current as () => void);
-      }
-    };
-  }, []);
-
   return (
     <div
+      {...backdropProps}
       onClick={handleBackdropClick}
       className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden)}
-      ref={backDropRef}
       aria-modal="true"
-      {...backdropProps}
+      data-lens-element="modal__backdrop"
+      data-lens-modal-size={isPhone ? 'fullscreen' : size}
     >
       <div
         {...props}

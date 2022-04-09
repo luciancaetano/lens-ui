@@ -9,7 +9,7 @@ describe('<Switch/>', () => {
       <Switch label="TestSwitch" id="testing-id" checked testingID="testing-target" />,
     );
 
-    expect(container.querySelector('input')).toBeInTheDocument();
+    expect(container.querySelector<HTMLElement>('input')).toBeInTheDocument();
   });
 
   it('should test input with defaultChecked prop', () => {
@@ -17,8 +17,8 @@ describe('<Switch/>', () => {
       <Switch label="TestSwitch" defaultChecked testingID="testing-target" />,
     );
 
-    expect(container.querySelector('input')).toBeInTheDocument();
-    expect(container.querySelector('input').attributes).toHaveProperty('checked');
+    expect(container.querySelector<HTMLElement>('input')).toBeInTheDocument();
+    expect(container.querySelector<HTMLElement>('input')?.attributes).toHaveProperty('checked');
   });
 
   it('should test input with defaultChecked prop to be false', () => {
@@ -26,8 +26,8 @@ describe('<Switch/>', () => {
       <Switch label="TestSwitch" defaultChecked={false} testingID="testing-target" />,
     );
 
-    expect(container.querySelector('input')).toBeInTheDocument();
-    expect(container.querySelector('input').attributes).not.toHaveProperty('checked');
+    expect(container.querySelector<HTMLElement>('input')).toBeInTheDocument();
+    expect(container.querySelector<HTMLElement>('input')?.attributes).not.toHaveProperty('checked');
   });
 
   it('should return checked status in onChange event', async () => {
@@ -37,11 +37,11 @@ describe('<Switch/>', () => {
       <Switch label="TestSwitch" testingID="testing-target" onChange={onChange} onBlur={onBlur} />,
     );
 
-    fireEvent.click(container.querySelector('input'));
-    fireEvent.click(container.querySelector('input'));
+    fireEvent.click(container.querySelector<HTMLElement>('input') as HTMLElement);
+    fireEvent.click(container.querySelector<HTMLElement>('input') as HTMLElement);
 
-    fireEvent.blur(container.querySelector('input'));
-    fireEvent.blur(container.querySelector('input'));
+    fireEvent.blur(container.querySelector<HTMLElement>('input') as HTMLElement);
+    fireEvent.blur(container.querySelector<HTMLElement>('input') as HTMLElement);
 
     await new Promise((r) => setTimeout(r, 1000));
 

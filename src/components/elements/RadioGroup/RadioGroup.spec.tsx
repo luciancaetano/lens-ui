@@ -32,7 +32,7 @@ describe('<RadioGroup/>', () => {
 
     expect(getByTestId(testingID)).toBeInTheDocument();
 
-    expect(getByText(options[0].label as string).parentElement.firstChild).toHaveAttribute('checked');
+    expect(getByText(options[0].label as string)?.parentElement?.firstChild).toHaveAttribute('checked');
   });
 
   it('<RadioGroup/> controlled', async () => {
@@ -40,7 +40,7 @@ describe('<RadioGroup/>', () => {
 
     const hook = renderHook(() => useState(null));
 
-    const onChange = (value: string) => {
+    const onChange = (value: any) => {
       act(() => {
         hook.result.current[1](value);
       });
@@ -70,7 +70,7 @@ describe('<RadioGroup/>', () => {
 
     const hook = renderHook(() => useState(null));
 
-    const onChange = (value: string) => {
+    const onChange = (value: any) => {
       act(() => {
         hook.result.current[1](value);
       });
@@ -90,7 +90,7 @@ describe('<RadioGroup/>', () => {
 
     expect(getByTestId(testingID)).toBeInTheDocument();
 
-    const getElement = (index: number) => getByTestId(options[index].testingID).querySelector('input');
+    const getElement = (index: number): HTMLElement => getByTestId(String(options[index].testingID))?.querySelector<HTMLElement>('input') as HTMLElement;
 
     fireEvent.click(getElement(0));
     fireEvent.blur(getElement(0));

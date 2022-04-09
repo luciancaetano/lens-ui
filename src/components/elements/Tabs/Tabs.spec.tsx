@@ -21,7 +21,7 @@ const tabs:ITabsItem[] = [
   },
 ];
 
-const tabsRenderer = (activeTab: ITabsItem | null) => (
+const tabsRenderer = (activeTab: ITabsItem | null | undefined): React.ReactNode => (
   <div>{`${activeTab?.title}_content`}</div>
 );
 
@@ -58,7 +58,7 @@ describe('<Tabs/>', () => {
   it('test <Tabs/> controlled', async () => {
     const hook = renderHook(() => useState('1'));
 
-    const onChange = (id) => {
+    const onChange = (id: string) => {
       act(() => {
         hook.result.current[1](id);
       });
@@ -117,7 +117,7 @@ describe('<Tabs/>', () => {
       </LensProvider>,
     );
 
-    expect(document.querySelector('[data-lens-tabs-orientation="tabs--vertical"]')).toBeInTheDocument();
+    expect(document.querySelector<HTMLElement>('[data-lens-tabs-orientation="tabs--vertical"]')).toBeInTheDocument();
 
     rerender(
       <LensProvider>
@@ -127,6 +127,6 @@ describe('<Tabs/>', () => {
       </LensProvider>,
     );
 
-    expect(document.querySelector('[data-lens-tabs-orientation="tabs--horizontal"]')).toBeInTheDocument();
+    expect(document.querySelector<HTMLElement>('[data-lens-tabs-orientation="tabs--horizontal"]')).toBeInTheDocument();
   });
 });

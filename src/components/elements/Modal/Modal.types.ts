@@ -12,7 +12,6 @@ export type ModalSizeEnumType = keyof typeof ModalSizeEnum;
 export interface IModalProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   size?: ModalSizeEnumType;
   onBackdropClick?: (reason: 'backdrop') => void;
-  onEscape?: (reason: 'escape') => void;
   hideBackdrop?: boolean;
-  backdropProps?: React.HTMLAttributes<HTMLDivElement>;
+  backdropProps?: Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'className'>;
 }

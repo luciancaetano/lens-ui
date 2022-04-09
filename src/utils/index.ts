@@ -88,3 +88,7 @@ export function rem2px(rem: number) {
 export function px2rem(pixels: number) {
   return pixels / parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
+
+export function isBackdropClick(target: HTMLElement) {
+  return target.getAttribute('data-lens-element') === 'modal__backdrop';
+}
