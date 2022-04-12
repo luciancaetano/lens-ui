@@ -1,3 +1,5 @@
+/** ====generated-code-element===== */
+export { default as Image } from './Image/Image';
 export { default as Button } from './Button/Button';
 export { default as List } from './List/List';
 export { default as ListItem } from './List/ListItem';
@@ -31,9 +33,8 @@ export { default as Tabs } from './Tabs/Tabs';
 export { default as Table } from './Table/Table';
 export { default as Typography } from './Typography/Typography';
 export { default as DatePicker } from './DatePicker/DatePicker';
-/**
- * Export Component types
- */
+/** ====generated-code-types===== */
+export * from './Image/Image.types';
 export * from './DatePicker/DatePicker.types';
 export * from './Typography/Typography.types';
 export * from './Table/Table.types';
@@ -67,3 +68,4 @@ export * from './FormFooter/FormFooter.types';
 export * from './Divider/Divider.types';
 export * from './Card/Card.types';
 export * from './Layout/Content/Content.types';
+/* autogen - types */

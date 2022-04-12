@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Image from './Image';
+import LensProvider from '../../providers/LensProvider/LensProvider';
+
+<Meta title="Components/Image" component={Image}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+# Image
+
+This is a small emblem commonly used to represent tags.
+
+<Canvas>
+    <Image>Hello World!Image</Image>
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
