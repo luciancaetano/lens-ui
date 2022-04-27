@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.9.3](https://github.com/luciancaetano/lens-ui/compare/v4.9.2...v4.9.3) (2022-04-27)
+
+
+### Features
+
+* :rocket: add code generator ([788f45c](https://github.com/luciancaetano/lens-ui/commit/788f45c33869e053762974c4bd715b4b9e99144e))
+
+
+### Bug Fixes
+
+* :pushpin: ping mdx due to a breaking change with react-18 and storybooks ([a3772f7](https://github.com/luciancaetano/lens-ui/commit/a3772f7695928e0272390024621eed810a3f88ce))
+
 ### [4.9.2](https://github.com/luciancaetano/lens-ui/compare/v4.9.1...v4.9.2) (2022-04-09)
 
 
