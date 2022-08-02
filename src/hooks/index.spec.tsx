@@ -1,6 +1,6 @@
 import { useContext } from 'react';
+import { renderHook, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { renderHook, act } from '@testing-library/react-hooks';
 import { clear as clearUserAgent, mockUserAgent } from 'jest-useragent-mock';
 import {
   useAlert, useDevice, useModal, useProgressiveTimeout, useToast,

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import { fireEvent, render } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks';
+import {
+  fireEvent, render, renderHook, act,
+} from '@testing-library/react';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import Tabs from './Tabs';
 import { ITabsItem } from './Tabs.types';

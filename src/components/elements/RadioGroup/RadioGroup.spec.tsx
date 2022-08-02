@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import { fireEvent, render } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks';
+import {
+  fireEvent, render, renderHook, act,
+} from '@testing-library/react';
 import LensProvider from '../../providers/LensProvider/LensProvider';
 import RadioGroup from './RadioGroup';
 import { IRadioGroupOption } from './RadioGroup.types';
