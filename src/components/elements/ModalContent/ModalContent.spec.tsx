@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 import ModalContent from './ModalContent';
 
 describe('<ModalContent/>', () => {
   it('render <ModalContent/> with children content', async () => {
     const myChildren = 'SweetChiledOMine';
-    const { getByText } = render(<LensProvider><ModalContent>{myChildren}</ModalContent></LensProvider>);
+    const { getByText } = render(<ApplicationProvider><ModalContent>{myChildren}</ModalContent></ApplicationProvider>);
 
     expect(getByText(myChildren)).toBeInTheDocument();
   });
@@ -15,7 +15,7 @@ describe('<ModalContent/>', () => {
   it('<ModalContent/> must contain class', async () => {
     const myClass = 'settClassCustom';
     const testingId = 'myTestingId';
-    const { getByTestId } = render(<LensProvider><ModalContent className={myClass} testingID={testingId} /></LensProvider>);
+    const { getByTestId } = render(<ApplicationProvider><ModalContent className={myClass} testingID={testingId} /></ApplicationProvider>);
 
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByTestId(testingId)).toHaveClass(myClass);

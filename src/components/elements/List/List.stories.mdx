@@ -2,9 +2,9 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import List from './List';
 import ListItem from './ListItem';
 import TextInput from '../TextInput/TextInput';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 
-<Meta title="Components/List" component={List}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Components/List" component={List}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
 
 # List
 

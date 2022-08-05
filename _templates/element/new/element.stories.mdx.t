@@ -3,9 +3,9 @@ to: src/components/elements/<%= name %>/<%= name %>.stories.mdx
 ---
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import <%= name %> from './<%= name %>';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 
-<Meta title="Components/<%= name %>" component={<%= name %>}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Components/<%= name %>" component={<%= name %>}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
 
 # <%= name %>
 

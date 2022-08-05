@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 import Toast from './Toast';
 import { IToastData } from '../../providers';
 
@@ -42,9 +42,9 @@ describe('<Toast/>', () => {
 
   it('render <Toast/>', async () => {
     const { container } = render(
-      <LensProvider>
+      <ApplicationProvider>
         <Toast data={data} />
-      </LensProvider>,
+      </ApplicationProvider>,
     );
 
     expect(container.querySelector<HTMLElement>('.lens-ui-toasts-toast')).toMatchSnapshot();
@@ -52,9 +52,9 @@ describe('<Toast/>', () => {
 
   it('render <Toast/> with invalid dismiss', async () => {
     const { container } = render(
-      <LensProvider>
+      <ApplicationProvider>
         <Toast data={{ ...data, dismiss: 'invalidvalue' as any }} />
-      </LensProvider>,
+      </ApplicationProvider>,
     );
 
     expect(container.querySelector<HTMLElement>('.lens-ui-toasts-toast')).toMatchSnapshot();
@@ -62,9 +62,9 @@ describe('<Toast/>', () => {
 
   it('render <Toast/> close toast', async () => {
     render(
-      <LensProvider>
+      <ApplicationProvider>
         <Toast data={{ ...data, dismiss: 300 }} />
-      </LensProvider>,
+      </ApplicationProvider>,
     );
     jest.advanceTimersByTime(1000);
 
@@ -75,9 +75,9 @@ describe('<Toast/>', () => {
 
   it('render <Toast/> autoDismiss toast', async () => {
     render(
-      <LensProvider>
+      <ApplicationProvider>
         <Toast data={{ ...data, dismiss: 300 }} />
-      </LensProvider>,
+      </ApplicationProvider>,
     );
     jest.advanceTimersByTime(1000);
 

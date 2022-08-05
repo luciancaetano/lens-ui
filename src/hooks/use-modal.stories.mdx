@@ -5,11 +5,11 @@ import ModalContent from '../components/elements/ModalContent/ModalContent';
 import ModalFooter from '../components/elements/ModalFooter/ModalFooter';
 import Button from '../components/elements/Button/Button';
 
-<Meta title="Hooks/useModal/Introduction" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Hooks/useModal/Introduction" component={Modal}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
 
 # useModal
 
-The useModal hook is used to handle the modal rendering using context provided by `<LensProvider/>`, which is used to provide the modal state and actions.
+The useModal hook is used to handle the modal rendering using context provided by `<ApplicationProvider/>`, which is used to provide the modal state and actions.
 The useModal hook can stack multiple modals on top of each other.
 
 

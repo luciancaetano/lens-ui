@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta } from '@storybook/react';
 import '../styles';
 import Toast from '../components/elements/Toast/Toast';
-import { LensProvider } from '../components/providers';
+import { ApplicationProvider } from '../components/providers';
 import useToast from './use-toast';
 import Button from '../components/elements/Button/Button';
 import Icon from '../components/elements/Icon/Icon';
@@ -12,7 +12,7 @@ export default {
   title: 'Hooks/useToast/Example',
   component: Toast,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <ApplicationProvider><Story /></ApplicationProvider>,
   ],
 } as ComponentMeta<typeof Toast>;
 

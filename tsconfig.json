@@ -3,7 +3,7 @@
     "rootDir": "src",
     "declaration": true,
     "importHelpers": false,
-    "declarationDir": "build",
+    "declarationDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "module": "ES6",
     "target": "ESNext",

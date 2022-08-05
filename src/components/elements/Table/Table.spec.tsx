@@ -1,7 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 import { render } from '@testing-library/react';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 import Table from './Table';
 import { TableClumnsRecordType, ITableItem } from './Table.types';
 
@@ -39,9 +39,9 @@ const itemsData: IItemTypeData[] = [
 describe('<Table/>', () => {
   it('render <Table/>', async () => {
     const { getByText } = render(
-      <LensProvider>
+      <ApplicationProvider>
         <Table cols={columnsData} items={itemsData} />
-      </LensProvider>,
+      </ApplicationProvider>,
     );
 
     itemsData.forEach((item) => {
@@ -57,9 +57,9 @@ describe('<Table/>', () => {
   it('render <Table/> render footer', async () => {
     const myFooterText = 'myFooterText';
     const { getByText } = render(
-      <LensProvider>
+      <ApplicationProvider>
         <Table cols={columnsData} items={itemsData} footer={() => <div>{myFooterText}</div>} />
-      </LensProvider>,
+      </ApplicationProvider>,
     );
 
     expect(getByText(myFooterText)).toBeInTheDocument();

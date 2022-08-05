@@ -9,7 +9,7 @@ import Button from '../components/elements/Button/Button';
 import '../styles';
 import Select from '../components/elements/Select/Select';
 import useAlert from './use-alert';
-import { LensProvider } from '../components/providers';
+import { ApplicationProvider } from '../components/providers';
 import useModal from './use-modal';
 import { ModalSizeEnum } from '../components/elements/Modal/Modal.types';
 
@@ -17,7 +17,7 @@ export default {
   title: 'Hooks/useModal/examples',
   component: Modal,
   decorators: [
-    (Story) => <LensProvider><Story /></LensProvider>,
+    (Story) => <ApplicationProvider><Story /></ApplicationProvider>,
   ],
 } as ComponentMeta<typeof Modal>;
 

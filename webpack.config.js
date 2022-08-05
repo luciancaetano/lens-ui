@@ -5,20 +5,20 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const loaderUtils = require('loader-utils');
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
+const isProduction = process.argv[process.argv.indexOf('--mode') + 1] === 'production';
 
 module.exports = {
   entry: {
     index: './src/index.ts',
   },
   output: {
-    filename: '[name].min.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd',
-    library: 'lens-ui',
-    umdNamedDefine: true,
+    filename: 'index.min.js',
+    path: path.join(__dirname, 'dist'),
+    library: {
+      name: 'lens-ui',
+      type: 'umd',
+    },
   },
   externals: {
     react: {
@@ -28,24 +28,24 @@ module.exports = {
       root: 'React',
     },
   },
-  devtool: isDevelopment ? 'inline-source-map' : 'source-map',
+  devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
-    new CssMinimizerPlugin(),
+    isProduction && new CssMinimizerPlugin(),
     new CopyPlugin({
       patterns: [
         { from: path.resolve(__dirname, 'scripts', 'getBemCssLocalIdent.js'), to: path.resolve(__dirname, 'dist', 'getBemCssLocalIdent.js') },
-        { from: path.resolve(__dirname, 'node_modules', 'reset-css', 'reset.css'), to: path.resolve(__dirname, 'dist', 'reset.css') },
+        { from: require.resolve(__dirname, 'node_modules', 'reset-css', 'reset.css'), to: path.resolve(__dirname, 'dist', 'reset.css') },
       ],
       options: {
         concurrency: 100,
       },
     }),
-  ],
+  ].filter(Boolean),
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
@@ -53,7 +53,7 @@ module.exports = {
     modules: ['node_modules'],
   },
   optimization: {
-    minimize: true,
+    minimize: isProduction,
   },
   module: {
     rules: [
@@ -99,40 +99,13 @@ module.exports = {
       {
         test: /\.module\.s(a|c)ss$/,
         use: [
-          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: {
                 auto: true,
                 exportLocalsConvention: 'camelCase',
-                getLocalIdent: (context, _, exportName, options) => {
-                  const relativePath = path
-                    .relative(context.rootContext, context.resourcePath)
-                    .replace(/\\+/g, '/');
-
-                  const hash = loaderUtils.getHashDigest(
-                    Buffer.from(`${relativePath}`),
-                    'sha1',
-                    'base64',
-                    128,
-                  );
-
-                  return (
-                    loaderUtils
-                      .interpolateName(
-                        context,
-                        `lens-ui__${exportName}__${hash}`,
-                        options,
-                      )
-                      .replace(
-                        /\.module_/,
-                        '_',
-                      )
-                      .replace(/[^a-zA-Z0-9-_]/g, '_')
-                      .replace(/^(\d|--|-\d)/, '__$1')
-                  );
-                },
               },
               sourceMap: true,
             },
@@ -149,7 +122,7 @@ module.exports = {
         test: /\.s(a|c)ss$/,
         exclude: /\.module.(s(a|c)ss)$/,
         use: [
-          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',

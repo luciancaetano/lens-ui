@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 import Card from '.';
 
 describe('<Card/>', () => {
@@ -23,7 +23,7 @@ describe('<Card/>', () => {
 
     const result = render(
       (
-        <LensProvider>
+        <ApplicationProvider>
           <Card.Card>
             <Card.Body>
               <Card.Title testingID={titleTestingId}>
@@ -47,7 +47,7 @@ describe('<Card/>', () => {
             </Card.Body>
             <Card.Image roudBottom src={mockedCardImg} />
           </Card.Card>
-        </LensProvider>
+        </ApplicationProvider>
       ),
     );
 
@@ -63,7 +63,7 @@ describe('<Card/>', () => {
   it('should test card element intents', () => {
     const result = render(
       (
-        <LensProvider>
+        <ApplicationProvider>
           <Card.Card intent="primary" testingID="primary">
             content here
           </Card.Card>
@@ -82,7 +82,7 @@ describe('<Card/>', () => {
           <Card.Card intent="danger" testingID="danger">
             content here
           </Card.Card>
-        </LensProvider>
+        </ApplicationProvider>
       ),
     );
 

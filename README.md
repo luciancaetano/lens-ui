@@ -15,22 +15,22 @@ To install just run:
 `yarn add lens-ui`
 
 ### Configuration
-Lens-ui uses contexts from LensProvider and css file, just import `lens-ui/dist/index.css` ,  `lens-ui/dist/reset.css` and declare `LensProvider` on app root.
+Lens-ui uses contexts from ApplicationProvider and css file, just import `lens-ui/dist/index.css` ,  `lens-ui/dist/reset.css` and declare `ApplicationProvider` on app root.
 
 Here's a quick example to get you started, **it's literally all you need**:
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, LensProvider } from 'lens-ui';
+import { Button, ApplicationProvider } from 'lens-ui';
 import 'node_modules/lens-ui/dist/reset.css';
 import 'node_modules/lens-ui/dist/main.css';
 
 function App() {
   return (
-      <LensProvider>
+      <ApplicationProvider>
         <Button intent="success">Hello World</Button>
-      </LensProvider>
+      </ApplicationProvider>
   );
 }
 

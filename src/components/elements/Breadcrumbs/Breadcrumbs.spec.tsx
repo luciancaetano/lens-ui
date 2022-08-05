@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Breadcrumbs from './Breadcrumbs';
 import { IBreadcrumbLink } from './Breadcrumbs.types';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 
 const links: IBreadcrumbLink[] = [
   { title: 'item_1', testingID: 'testingId_1' },
@@ -15,15 +15,15 @@ const links: IBreadcrumbLink[] = [
 
 describe('<Breadcrumbs/>', () => {
   it('should render correct Breadcrumbs links', () => {
-    const { getByTestId, rerender } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
+    const { getByTestId, rerender } = render(<ApplicationProvider><Breadcrumbs history={links} /></ApplicationProvider>);
     links.forEach((link) => {
-      rerender(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
+      rerender(<ApplicationProvider><Breadcrumbs history={links} /></ApplicationProvider>);
       expect(getByTestId(String(link.testingID))).toBeInTheDocument();
     });
   });
 
   it('should render item[0, 2, 3] as an span', () => {
-    const { getByTestId } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
+    const { getByTestId } = render(<ApplicationProvider><Breadcrumbs history={links} /></ApplicationProvider>);
 
     expect(getByTestId(String(links[0].testingID)).tagName).toBe('SPAN');
     expect(getByTestId(String(links[2].testingID)).tagName).toBe('SPAN');
@@ -31,13 +31,13 @@ describe('<Breadcrumbs/>', () => {
   });
 
   it('should render item[1] as an link', () => {
-    const { getByTestId } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
+    const { getByTestId } = render(<ApplicationProvider><Breadcrumbs history={links} /></ApplicationProvider>);
 
     expect(getByTestId(String(links[1].testingID)).tagName).toBe('A');
   });
 
   it('should render last item as span', () => {
-    const { getByTestId } = render(<LensProvider><Breadcrumbs history={links} /></LensProvider>);
+    const { getByTestId } = render(<ApplicationProvider><Breadcrumbs history={links} /></ApplicationProvider>);
 
     expect(getByTestId(String(links[4].testingID)).tagName).toBe('SPAN');
   });

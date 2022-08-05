@@ -1,14 +1,14 @@
 /* eslint react/jsx-pascal-case: 0 */
 import React from 'react';
 import Button from '../components/elements/Button/Button';
-import { LensProvider } from '../components/providers';
+import { ApplicationProvider } from '../components/providers';
 import useAlert from './use-alert';
 
 export default {
   title: 'Hooks/useAlert/Example',
   excludeStories: /__.*$/,
   decorators: [
-    (Story) => (<LensProvider><Story /></LensProvider>),
+    (Story) => (<ApplicationProvider><Story /></ApplicationProvider>),
   ],
 };
 

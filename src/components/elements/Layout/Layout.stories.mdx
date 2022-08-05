@@ -1,9 +1,9 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Layout from './index';
 import TextInput from '../TextInput/TextInput';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 
-<Meta title="Components/Layout" component={Layout}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Components/Layout" component={Layout}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
 
 The Layout component's handles application layout.
 
@@ -41,7 +41,7 @@ The following CSS variables are available for use in the Layout component.
 ### Basic layout
 
 <Canvas>
-    <LensProvider>
+    <ApplicationProvider>
         <Layout.AppLayout style={{'--lens-ui-app-layout-width': '100%'}}>
             <div>
                 App Header
@@ -53,13 +53,13 @@ The following CSS variables are available for use in the Layout component.
                 AppFooter
             </div>
         </Layout.AppLayout>
-    </LensProvider>
+    </ApplicationProvider>
 </Canvas>
 
 ### Layout wit sidebar
 
 <Canvas>
-  <LensProvider>
+  <ApplicationProvider>
       <Layout.AppLayout style={{'--lens-ui-app-layout-width': '100%'}}>
       <div>
           App Header
@@ -76,5 +76,5 @@ The following CSS variables are available for use in the Layout component.
           AppFooter
       </div>
       </Layout.AppLayout>
-  </LensProvider>
+  </ApplicationProvider>
 </Canvas>
