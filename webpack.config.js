@@ -39,7 +39,6 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: path.resolve(__dirname, 'scripts', 'getBemCssLocalIdent.js'), to: path.resolve(__dirname, 'dist', 'getBemCssLocalIdent.js') },
-        { from: require.resolve(__dirname, 'node_modules', 'reset-css', 'reset.css'), to: path.resolve(__dirname, 'dist', 'reset.css') },
       ],
       options: {
         concurrency: 100,

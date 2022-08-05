@@ -1,5 +1,6 @@
 /* eslint-disable import/no-relative-packages */
 // roboto
+import 'reset-css';
 import '@fontsource/roboto/index.css';
 import '@fontsource/roboto/100.css';
 import '@fontsource/roboto/100-italic.css';
