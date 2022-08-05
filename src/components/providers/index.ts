@@ -1,7 +1,7 @@
-export { default as LensProvider } from './LensProvider/LensProvider';
+export { default as ApplicationProvider } from './ApplicationProvider/ApplicationProvider';
 
 export * from './ModalProvider/ModalProvider.types';
 export * from './DeviceProvider/DeviceProvider.types';
 export * from './AlertProvider/AlertProvider.types';
-export * from './LensProvider/LensProvider.types';
+export * from './ApplicationProvider/ApplicationProvider.types';
 export * from './ToastProvider/ToastProvider.types';
