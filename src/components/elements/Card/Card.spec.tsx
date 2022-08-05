@@ -24,7 +24,7 @@ describe('<Card/>', () => {
     const result = render(
       (
         <ApplicationProvider>
-          <Card.Card>
+          <Card>
             <Card.Body>
               <Card.Title testingID={titleTestingId}>
                 {titleMockedText}
@@ -46,7 +46,7 @@ describe('<Card/>', () => {
               </Card.Link>
             </Card.Body>
             <Card.Image roudBottom src={mockedCardImg} />
-          </Card.Card>
+          </Card>
         </ApplicationProvider>
       ),
     );
@@ -64,24 +64,24 @@ describe('<Card/>', () => {
     const result = render(
       (
         <ApplicationProvider>
-          <Card.Card intent="primary" testingID="primary">
+          <Card intent="primary" testingID="primary">
             content here
-          </Card.Card>
-          <Card.Card intent="secondary" testingID="secondary">
+          </Card>
+          <Card intent="secondary" testingID="secondary">
             content here
-          </Card.Card>
-          <Card.Card intent="success" testingID="success">
+          </Card>
+          <Card intent="success" testingID="success">
             content here
-          </Card.Card>
-          <Card.Card intent="info" testingID="info">
+          </Card>
+          <Card intent="info" testingID="info">
             content here
-          </Card.Card>
-          <Card.Card intent="warning" testingID="warning">
+          </Card>
+          <Card intent="warning" testingID="warning">
             content here
-          </Card.Card>
-          <Card.Card intent="danger" testingID="danger">
+          </Card>
+          <Card intent="danger" testingID="danger">
             content here
-          </Card.Card>
+          </Card>
         </ApplicationProvider>
       ),
     );
