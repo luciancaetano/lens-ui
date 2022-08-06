@@ -3,22 +3,21 @@
 This is the roadmap for next version
 
 ### Components
+- [ ] Menu (Menu.Item, Menu.Divider, Menu.SubMenu)
+- [ ] Grid (Grid.Col, Grid.Row)
+- [ ] Bottom Navigation (BottomNavigation.Action)
 - [ ] Image
-- [ ] Grid.Row
-- [ ] Grid.Col
 - [ ] Pagination
-- [ ] Autocomplete Input
 - [ ] InputNumber
 - [ ] Slider
 - [ ] TransferList
-- [ ] Upload
-- [ ] Collapse
 - [ ] Timeline
-- [ ] Tree
+- [ ] Collapse
+- [ ] TreeList
+- [ ] Upload
 - [ ] Drawer
+- [ ] Autocomplete Input
 - [ ] PopConfirm
-- [ ] Bottom Navigation (BottomNavigation.Action)
-- [ ] Menu (Menu.Item, Menu.Divider, Menu.SubMenu)
 - [ ] Tooltip component
 
 ### Providers
