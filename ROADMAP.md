@@ -19,6 +19,7 @@ This is the roadmap for next version
 - [ ] PopConfirm
 - [ ] Bottom Navigation (BottomNavigation.Action)
 - [ ] Menu (Menu.Item, Menu.Divider, Menu.SubMenu)
+- [ ] Tooltip component
 
 ### Providers
 
@@ -28,8 +29,9 @@ This is the roadmap for next version
 
 
 ### Improvments
-- [ ] Implement scrool on popover
+- [ ] Implement scrool on toast
 - [ ] Improve list item layout
 
 ### Reworks
-- [ ] Tooltip
+- [ ] Extract menu to Menu from DropDownMenu component
+- [ ] Handle Dropdown content in DropdownMenu component
