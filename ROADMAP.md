@@ -34,3 +34,4 @@ This is the roadmap for next version
 ### Reworks
 - [ ] Extract menu to Menu from DropDownMenu component
 - [ ] Handle Dropdown content in DropdownMenu component
+- [ ] Rethink useModal and useAlert, make more simple to use, maybe we need only Device Provider
