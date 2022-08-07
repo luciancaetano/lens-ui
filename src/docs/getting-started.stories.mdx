@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Typography from '../components/elements/Typography/Typography';
 
-<Meta title="Overview/Installation"/>
+<Meta title="Overview/Installation and Usage"/>
 
 # Installation
 
@@ -20,5 +20,20 @@ $ npm install lens-ui
 ```bash
 $ yarn add lens-ui
 ```
+# Usage
 
-# Getting Started
+```jsx
+import { Button } from 'lens-ui';
+
+ReactDOM.render(<Button>Hello World!</Button>, mountNode);
+```
+
+And import stylesheets manually:
+
+```jsx
+import 'lens-ui/dist/index.css'; // or 'lens-ui/dist/lens-ui.less'
+```
+
+### TypeScript
+
+`lens-ui` provides a built-in ts definition.

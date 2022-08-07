@@ -1,0 +1,46 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Typography from '../components/elements/Typography/Typography';
+import ThemeVars from './ThemeVars';
+
+<Meta title="Overview/Customization"/>
+
+<Typography variant="h4">Html Data Attributes and Customization</Typography>
+<br/>
+<Typography variant="body1">
+All LensUi components have a `data-lens-element` attribute as well as its internal elements that make up a component.
+Making use of these selectors you can perform more selective customization by css.
+</Typography>
+<br/>
+
+**TIP:** _You can just do an inspect element in your browser to seed selectors structure._
+
+**See an example of how to perform this customization:**
+```css
+
+.myCustomCardsContainer [data-lens-element="card"] {
+  width: 200px;
+}
+/* você conseque selection elemetros filhos que compõe o componente*/
+.myCustomCardsContainer [data-lens-element="card"] [data-lens-element="card_body"] {
+  padding: 5rem;
+}
+
+```
+
+```tsx
+<div className="myCustomCardsContainer">
+  <Card>
+    <Card.Body>
+      Hello world
+    </Card.Body>
+  </Card>
+</div>
+```
+
+### CSS Variables
+_In the near future we will be simplifying theme settings and implementing a visual tool for customizing themes._
+<Typography variant="body1">
+Here is a list of css variables and their default values, you can see the reflection of these changes in real time.
+</Typography>
+
+<ThemeVars/>

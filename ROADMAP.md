@@ -30,6 +30,7 @@ This is the roadmap for next version
 ### Improvments
 - [ ] Implement scrool on toast
 - [x] Improve list item layout
+- [ ] Update styles to match with typography
 
 ### Reworks
 - [ ] Extract menu to Menu from DropDownMenu component

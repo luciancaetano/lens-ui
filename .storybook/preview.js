@@ -22,6 +22,7 @@ export const parameters = {
       return anysort(previousMeta.kind, nextMeta.kind, [
         'Overview/Introduction',
         'Overview/Getting Started',
+        'Overview/Installation and Usage',
         'General/**',
         'Navigation/**',
         'Layout/**',
