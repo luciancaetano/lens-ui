@@ -1,9 +1,10 @@
 /* stylelint-disable selector-class-pattern */
 @import 'reset-css';
 @import './style-lib';
+@import './typography-lib';
 
 body {
-  @include lens-ui-typography-base;
+  @include typography-component-base;
 }
 
 .swal2-styled.swal2-confirm {
@@ -24,42 +25,6 @@ body {
 
 .lens-ui-typography {
   @include lens-ui-typography-no-color;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include lens-ui-typography-base;
-
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-}
-
-h3 {
-  font-size: 1.6rem;
-}
-
-h4 {
-  font-size: 1.4rem;
-}
-
-h5 {
-  font-size: 1.2rem;
-}
-
-h6 {
-  font-size: 1rem;
 }
 
 @keyframes lens-ui-fade-in {
@@ -415,4 +380,62 @@ a {
   color: var(--lens-ui-intents-primary-dark);
   cursor: pointer;
   text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+sub,
+caption,
+span {
+  @include typography-component-base;
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
+}
+
+h6 {
+  @include h6;
+}
+
+code {
+  @include body2;
+}
+
+p,
+span {
+  @include body1;
+}
+
+button {
+  @include button;
+}
+
+sub {
+  @include subtitle1;
+}
+
+caption {
+  @include caption;
 }
