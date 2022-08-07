@@ -7,8 +7,13 @@ export interface IListItemProps extends ITestableProps, Omit<React.HtmlHTMLAttri
   isHeading?: boolean;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
+  cursor?: string;
+  prefixMargin?: number | string;
+  suffixMargin?: number | string;
 }
 
 export interface IListProps extends ITestableProps, React.HtmlHTMLAttributes<HTMLElement> {
   intent?: IntentType;
+  prefixMinWidth?: string | number;
+  suffixMinWidth?: string | number;
 }

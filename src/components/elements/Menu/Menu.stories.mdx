@@ -29,12 +29,15 @@ A Menu is a list of items that can be selected.
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
-#### IMenuItem (Object)
+#### Menu.Item (Object)
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
-|intent|IntentType| null | The type of the badge.|No|
-|isHeading|boolean| false | Whether the item is a heading.|No|
-|content|React.ReactNode| - | The content of the item.|Yes|
-|payload|any| - | The payload of the item.|No|
-|className|string| - | The class name of the item.|No|
+|`intent`|`IntentType`|`'none'`|The intent of the list item|No|
+|`isActive`|`boolean`|`false`|Whether the list item is active|No|
+|`isHeading`|`boolean`|`false`|Whether the list item is a heading|No|
+|`prefix`|`React.ReactNode`|`undefined`|Prefix elements, ex you can put an icon|No|
+|`suffix`|`React.ReactNode`|`undefined`|Suffix elements, ex you can put an icon|No|
+|`cursor`|`string`|`default`|Set cursor|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+

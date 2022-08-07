@@ -15,6 +15,10 @@
   &--shadow {
     box-shadow: var(--lens-ui-overlay-box-shadow);
   }
+
+  [data-lens-element='menu__item'] {
+    --lens-ui-list--item--cursor: pointer;
+  }
 }
 
 .active-menu-item {

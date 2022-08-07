@@ -12,7 +12,7 @@ The List component is used to display a list of items.
 
 <Canvas>
     <List>
-        <List.Item key="1" prefix={<Icon name="BsPower" />}>
+        <List.Item cursor="pointer" key="1" prefix={<Icon name="AiFillGithub" />}>
             Item 1
         </List.Item>
         <List.Item key="1" isHeading>
@@ -34,18 +34,23 @@ The List component is used to display a list of items.
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
-|`intent`|`IntentType`|`None`|The intent of the list.|No|
+|intent|IntentType|primary|The intent of the list.|No|
+|prefixMinWidth|number \| string|undefined|Min width of prefix container.|No|
+|suffixMinWidth|number \| string|undefined|Min width of suffix container.|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
-
 
 ### List.Item component Properties
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
-|`intent`|`IntentType`|`'none'`|The intent of the list item|No|
-|`isActive`|`boolean`|`false`|Whether the list item is active|No|
-|`isHeading`|`boolean`|`false`|Whether the list item is a heading|No|
-|`prefix`|`boolean`|`false`|Prefix elements, ex you can put an icon|No|
-|`suffix`|`boolean`|`false`|Suffix elements, ex you can put an icon|No|
+|intent|IntentType|'none'|The intent of the list item|No|
+|isActive|boolean|false|Whether the list item is active|No|
+|isHeading|boolean|false|Whether the list item is a heading|No|
+|prefix|React.ReactNode|undefined|Prefix elements, ex you can put an icon|No|
+|suffix|React.ReactNode|undefined|Suffix elements, ex you can put an icon|No|
+|prefixMargin|number \| string|undefined|Set's margin from content to prefix|No|
+|suffixMargin|number \| string|undefined|Set's margin from content to suffix|No|
+|suffix|React.ReactNode|undefined|Suffix elements, ex you can put an icon|No|
+|cursor|string|default|Set cursor|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 

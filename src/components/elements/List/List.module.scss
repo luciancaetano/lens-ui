@@ -3,12 +3,17 @@
 .list {
   @include lens-ui-typography;
 
-  --lens-ui-list-prefix-and-suffix-padding: .5rem;
+  --lens-ui-list-prefix-min-width: initial;
+  --lens-ui-list-suffix-min-width: initial;
 
   list-style: none;
   padding: 0;
 
   &__item {
+    --lens-ui-list--item--cursor: default;
+    --lens-ui-list-prefix-padding: .5rem;
+    --lens-ui-list-suffix-padding: .5rem;
+
     @include lens-ui-typography;
 
     padding: .75rem;
@@ -16,17 +21,20 @@
     border-top: 1px solid var(--lens-ui-elements-list-border);
     display: flex;
     align-items: center;
+    cursor: var(--lens-ui-list--item--cursor);
 
     &__prefix {
       display: flex;
       align-items: center;
-      padding-right: var(--lens-ui-list-prefix-and-suffix-padding);
+      padding-right: var(--lens-ui-list-prefix-padding);
+      min-width: var(--lens-ui-list-prefix-min-width);
     }
 
     &__sufix {
       display: flex;
       align-items: center;
-      padding-left: var(--lens-ui-list-prefix-and-suffix-padding);
+      padding-left: var(--lens-ui-list-suffix-padding);
+      min-width: var(--lens-ui-list-suffix-min-width);
     }
 
     &__content {
@@ -61,10 +69,14 @@
   }
 
   &__heading {
+    --lens-ui-list-prefix-padding: .5rem;
+    --lens-ui-list-suffix-padding: .5rem;
+
     border-top: 1px solid var(--lens-ui-elements-list-border);
     padding: .3rem .75rem;
     font-size: .8rem;
     background-color: var(--lens-ui-elements-tabs-header-bg);
+    cursor: var(--lens-ui-list--item--cursor);
 
     &:last-child {
       border-bottom: 1px solid var(--lens-ui-elements-list-border);
@@ -72,6 +84,20 @@
 
     &:hover {
       background-color: var(--lens-ui-elements-tabs-header-bg);
+    }
+
+    &__prefix {
+      display: flex;
+      align-items: center;
+      padding-right: var(--lens-ui-list-prefix-padding);
+      min-width: var(--lens-ui-list-prefix-min-width);
+    }
+
+    &__sufix {
+      display: flex;
+      align-items: center;
+      padding-left: var(--lens-ui-list-suffix-padding);
+      min-width: var(--lens-ui-list-suffix-min-width);
     }
   }
 }
