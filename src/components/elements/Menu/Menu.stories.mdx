@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import Menu from './Menu';
+import Menu from '.';
 
 <Meta title="Components/Menu" component={Menu}/>
 
@@ -9,27 +9,14 @@ A Menu is a list of items that can be selected.
 
 <Canvas>
   <Menu
-    activeIndex={-1}
-    items={[
-      {
-        content: 'Item 1'
-      },
-      {
-        content: 'Heading',
-        isHeading: true
-      },
-      {
-        content: 'Item 2'
-      },
-      {
-        content: 'Item 3'
-      },
-      {
-        content: 'Item 4'
-      }
-    ]}
-    onItemClick={() => {}}
-  />
+    shadow={false}
+  >
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item isHeading>Heading</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item>Item 4</Menu.Item>
+  </Menu>
 </Canvas>
 
 ## Properties
@@ -37,6 +24,7 @@ A Menu is a list of items that can be selected.
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
 |items|IMenuItem[]|solid | The type of the badge.|No|
+|shadow|boolean|true| Show shadow.|No|
 |activeIndex|number| undefined | The index of the item that is currently active.|No|
 |onItemClick|`function(IMenuItem, MouseEvent)`| undefined | The function to call when an item is clicked.|No|
 |renderer|`function(IMenuItem, number) => ReactNode`| undefined | The function to render each item.|No|

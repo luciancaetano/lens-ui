@@ -15,7 +15,7 @@ export { default as TextInput } from './TextInput/TextInput';
 export { default as Callout } from './Callout/Callout';
 export { default as ProgressBar } from './ProgressBar/ProgressBar';
 export { default as MoneyInput } from './MoneyInput/MoneyInput';
-export { default as Menu } from './Menu/Menu';
+export { default as Menu } from './Menu';
 export { default as MaskedInput } from './MaskedInput/MaskedInput';
 export { default as RadioGroup } from './RadioGroup/RadioGroup';
 export { default as Modal } from './Modal';
@@ -41,9 +41,7 @@ export * from './Breadcrumbs/Breadcrumbs.types';
 export * from './Callout/Callout.types';
 export * from './Button/Button.types';
 export * from './Toast/Toast.types';
-export type {
-  IModalContentProps, IModalFooterProps, IModalHeaderProps, IModalProps, ModalSizeEnum, ModalSizeEnumType,
-} from './Modal';
+export * from './Modal/index.types';
 export * from './DropDownMenu/DropDownMenu.types';
 export * from './MessageBox/MessageBox.types';
 export * from './CheckBox/CheckBox.types';

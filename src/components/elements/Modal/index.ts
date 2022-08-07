@@ -16,9 +16,3 @@ export default Object.assign(Modal, {
   Content: ModalContent,
   Footer: ModalFooter,
 }) as ICompoundedComponent;
-
-export { ModalSizeEnum } from './Modal/Modal.types';
-export type { IModalProps, ModalSizeEnumType } from './Modal/Modal.types';
-export type { IModalContentProps } from './ModalContent/ModalContent.types';
-export type { IModalFooterProps } from './ModalFooter/ModalFooter.types';
-export type { IModalHeaderProps } from './ModalHeader/ModalHeader.types';

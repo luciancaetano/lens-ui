@@ -9,9 +9,12 @@
   background-clip: border-box;
   border: 0 solid var(--lens-ui-elements-card-backgrounds-default-border-color);
   border-radius: var(--lens-ui-elements-card-border-radius);
-  box-shadow: var(--lens-ui-elements-card-box-shadow);
   box-sizing: border-box;
   overflow: hidden;
+
+  &--shadow {
+    box-shadow: var(--lens-ui-overlay-box-shadow);
+  }
 }
 
 .active-menu-item {
