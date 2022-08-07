@@ -1,33 +1,34 @@
 /* eslint react/jsx-pascal-case: 0 */
 import React from 'react';
-import Button from '../components/elements/Button/Button';
-import useAlert from './use-alert';
+import Button from '../../components/elements/Button/Button';
+import useAlert from './index';
 
 export default {
   title: 'Hooks/useAlert/Example',
   excludeStories: /__.*$/,
 };
 
+useAlert.setDefaultButtonsText({
+  cancelButtonText: 'Cancel Button',
+  confirmButtonText: 'Confirm Button',
+  denyButtonText: 'Deny Button',
+});
+
 export const Example = () => {
   const { alert } = useAlert();
 
   return (
     <Button onClick={async () => {
-      alert({
-        text: 'This is an alert',
-        settings: {
+      alert(
+        'This is an alert',
+        null,
+        null,
+        {
           showConfirmButton: true,
           showCancelButton: true,
           showDenyButton: true,
-          cancelButtonText: 'Cancel',
-          confirmButtonText: 'Move to trash',
-          denyButtonText: 'Deny',
         },
-      });
-
-      alert({
-        text: 'Hello world',
-      });
+      );
     }}
     >
       Show Alert
