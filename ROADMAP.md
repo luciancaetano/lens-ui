@@ -9,6 +9,7 @@ This is the roadmap for next version
 - [ ] Image
 - [ ] Pagination
 - [ ] InputNumber
+- [ ] InputSlider
 - [ ] Slider
 - [ ] TransferList
 - [ ] Timeline
@@ -28,7 +29,7 @@ This is the roadmap for next version
 
 
 ### Improvments
-- [ ] Implement scrool on toast
+- [x] Fix toast
 - [x] Improve list item layout
 - [x] Update styles to match with typography
 

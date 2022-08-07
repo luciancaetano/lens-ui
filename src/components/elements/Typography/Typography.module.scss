@@ -2,7 +2,7 @@
 @import '../../../typography-lib';
 
 .root {
-  @include typography-base;
+  @include typography-component-base;
 }
 
 .h1 {
