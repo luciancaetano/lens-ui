@@ -7,7 +7,7 @@
   "files": [
     "dist"
   ],
-  "description": "LensUI Design System",
+  "description": "LensUi Design System",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production && npm run check:licenses && npm run types",
     "start:dev": "run-p start:dev:source start:dev:types --print-label --race",
@@ -73,6 +73,7 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.9",
     "@storybook/storybook-deployer": "^2.8.12",
+    "@storybook/theming": "^6.5.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.4.0",

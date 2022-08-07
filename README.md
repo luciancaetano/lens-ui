@@ -4,7 +4,7 @@ Lens-ui is a basic design system focused on stability and simplicity.
 
 ### Installation
 
-LensUI is available in [npm](https://www.npmjs.com/package/lens-ui).
+LensUi is available in [npm](https://www.npmjs.com/package/lens-ui).
 
 To install just run:
 

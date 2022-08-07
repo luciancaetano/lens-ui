@@ -14,7 +14,7 @@ const icons = {
   ...BsIcons, ...AiIcons, ...FaIcons, ...GoIcons, ...MdIcons,
 };
 /**
- * Guidance and suggestions for using icons with LensUI.
+ * Guidance and suggestions for using icons with LensUi.
  */
 const Icon:React.FC<IIconProps> = ({
   className, testingID, id, name, fill = null, size = '1rem', spin, iconsSet = icons, ...props
