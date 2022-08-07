@@ -1,11 +1,32 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
 
 <Meta title="Feedback/Toast" />
 
 # useToast
+#### [Click to view example](/story/examples-toast--toast)
 
 The hook `useToast` is used to display a toast message in user interface.
 
+```tsx
+const { addToast } = useToast();
+
+return (
+    <Button
+        intent="success"
+        onClick={async () => {
+            addToast({
+                content: 'lorem impsum',
+                icon: <Icon name="BsExclamationTriangleFill" />,
+                intent: 'success',
+                dismiss: 3000,
+            });
+        }}
+    >
+        Show Toast
+    </Button>
+);
+```
 
 ## Hook response (Object)
 **useToast** returns an object with the following properties:

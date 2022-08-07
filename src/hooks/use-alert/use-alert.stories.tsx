@@ -4,7 +4,7 @@ import Button from '../../components/elements/Button/Button';
 import useAlert from './index';
 
 export default {
-  title: 'Hooks/useAlert/Example',
+  title: 'Examples/Alert',
   excludeStories: /__.*$/,
 };
 
@@ -14,7 +14,7 @@ useAlert.setDefaultButtonsText({
   denyButtonText: 'Deny Button',
 });
 
-export const Example = () => {
+export const _Alert = () => {
   const { alert } = useAlert();
 
   return (
