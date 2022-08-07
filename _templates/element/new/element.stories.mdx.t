@@ -3,9 +3,8 @@ to: src/components/elements/<%= name %>/<%= name %>.stories.mdx
 ---
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import <%= name %> from './<%= name %>';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 
-<Meta title="Components/<%= name %>" component={<%= name %>}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
+<Meta title="Components/<%= name %>" component={<%= name %>} />
 
 # <%= name %>
 

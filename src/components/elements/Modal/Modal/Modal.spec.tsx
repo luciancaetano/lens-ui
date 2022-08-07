@@ -3,7 +3,6 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Modal from './Modal';
 import { IDeviceInfo } from '../../../providers/DeviceProvider/DeviceProvider.types';
-import ApplicationProvider from '../../../providers/ApplicationProvider/ApplicationProvider';
 import { useDevice } from '../../../../hooks';
 import { ModalSizeEnum, ModalSizeEnumType } from './Modal.types';
 
@@ -33,7 +32,7 @@ jest.mock('../../../utils', () => ({
 describe('<Modal/>', () => {
   it('render modal with children content', async () => {
     const myChildren = 'SweetChiledOMine';
-    const { getByText } = render(<ApplicationProvider><Modal>{myChildren}</Modal></ApplicationProvider>);
+    const { getByText } = render(<Modal>{myChildren}</Modal>);
 
     expect(getByText(myChildren)).toBeInTheDocument();
   });
@@ -41,9 +40,8 @@ describe('<Modal/>', () => {
   it('trigger onBackdropClick event', async () => {
     const onBackdropClick = jest.fn();
     const { container } = render(
-      <ApplicationProvider>
-        <Modal onBackdropClick={onBackdropClick}>Hello world</Modal>
-      </ApplicationProvider>,
+      <Modal onBackdropClick={onBackdropClick}>Hello world</Modal>
+      ,
     );
 
     const backdrop: HTMLElement = container.querySelector<HTMLElement>('[data-lens-element="modal__backdrop"]') as HTMLElement;
@@ -58,11 +56,11 @@ describe('<Modal/>', () => {
   // it('trigger onEscape event', async () => {
   //   const onEscape = jest.fn();
   //   render(
-  //     <ApplicationProvider>
+  //
   //       <div id={PORTAL_ROOT_ID}>
   //         <Modal onEscape={onEscape}>Hello world</Modal>
   //       </div>
-  //     </ApplicationProvider>,
+  //     ,
   //   );
 
   //   fireEvent.keyDown(document, {
@@ -90,9 +88,9 @@ describe('<Modal/>', () => {
     } as IDeviceInfo);
 
     render(
-      <ApplicationProvider>
-        <Modal>Hello world</Modal>
-      </ApplicationProvider>,
+
+      <Modal>Hello world</Modal>
+      ,
     );
 
     expect(window.document.querySelector<HTMLElement>(`[data-lens-modal-size="${ModalSizeEnum.fullscreen}"]`)).toBeInTheDocument();
@@ -113,9 +111,9 @@ describe('<Modal/>', () => {
     } as IDeviceInfo);
 
     const runTest = (size: string): any => (
-      <ApplicationProvider>
-        <Modal size={size as ModalSizeEnumType}>Hello world</Modal>
-      </ApplicationProvider>
+
+      <Modal size={size as ModalSizeEnumType}>Hello world</Modal>
+
     );
 
     const { rerender } = render(runTest(ModalSizeEnum.normal));

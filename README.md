@@ -27,9 +27,9 @@ import 'node_modules/lens-ui/dist/main.css';
 
 function App() {
   return (
-      <ApplicationProvider>
+      <>
         <Button intent="success">Hello World</Button>
-      </ApplicationProvider>
+      </>
   );
 }
 

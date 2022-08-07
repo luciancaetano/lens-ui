@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {
   fireEvent, render, renderHook, act,
 } from '@testing-library/react';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
+
 import Tabs from './Tabs';
 import { ITabsItem } from './Tabs.types';
 
@@ -29,11 +29,9 @@ const tabsRenderer = (activeTab: ITabsItem | null | undefined): React.ReactNode 
 describe('<Tabs/>', () => {
   it('render <Tabs/>', async () => {
     const { getByText } = render(
-      <ApplicationProvider>
-        <Tabs tabs={tabs}>
-          {tabsRenderer}
-        </Tabs>
-      </ApplicationProvider>,
+      <Tabs tabs={tabs}>
+        {tabsRenderer}
+      </Tabs>,
     );
 
     tabs.forEach((tab) => {
@@ -43,11 +41,9 @@ describe('<Tabs/>', () => {
 
   it('test <Tabs/> rendering change', async () => {
     const { getByText } = render(
-      <ApplicationProvider>
-        <Tabs tabs={tabs}>
-          {tabsRenderer}
-        </Tabs>
-      </ApplicationProvider>,
+      <Tabs tabs={tabs}>
+        {tabsRenderer}
+      </Tabs>,
     );
 
     tabs.forEach((tab) => {
@@ -66,11 +62,9 @@ describe('<Tabs/>', () => {
     };
 
     const { getByText, rerender } = render(
-      <ApplicationProvider>
-        <Tabs tabs={tabs} activeTab={hook.result.current[0]} onChange={onChange}>
-          {tabsRenderer}
-        </Tabs>
-      </ApplicationProvider>,
+      <Tabs tabs={tabs} activeTab={hook.result.current[0]} onChange={onChange}>
+        {tabsRenderer}
+      </Tabs>,
     );
 
     tabs.forEach((tab) => {
@@ -84,11 +78,9 @@ describe('<Tabs/>', () => {
     });
 
     rerender(
-      <ApplicationProvider>
-        <Tabs tabs={tabs} activeTab={hook.result.current[0]} onChange={onChange}>
-          {tabsRenderer}
-        </Tabs>
-      </ApplicationProvider>,
+      <Tabs tabs={tabs} activeTab={hook.result.current[0]} onChange={onChange}>
+        {tabsRenderer}
+      </Tabs>,
     );
 
     expect(getByText(`${tabs[2].title}_content`)).toBeInTheDocument();
@@ -96,11 +88,9 @@ describe('<Tabs/>', () => {
 
   it('test <Tabs/> run tabClick event', async () => {
     const { getByText } = render(
-      <ApplicationProvider>
-        <Tabs tabs={tabs}>
-          {tabsRenderer}
-        </Tabs>
-      </ApplicationProvider>,
+      <Tabs tabs={tabs}>
+        {tabsRenderer}
+      </Tabs>,
     );
 
     tabs.forEach((tab) => {
@@ -111,21 +101,17 @@ describe('<Tabs/>', () => {
 
   it('test <Tabs/> vertical prop', async () => {
     const { rerender } = render(
-      <ApplicationProvider>
-        <Tabs tabs={tabs} vertical testingID="testingID">
-          {tabsRenderer}
-        </Tabs>
-      </ApplicationProvider>,
+      <Tabs tabs={tabs} vertical testingID="testingID">
+        {tabsRenderer}
+      </Tabs>,
     );
 
     expect(document.querySelector<HTMLElement>('[data-lens-tabs-orientation="tabs--vertical"]')).toBeInTheDocument();
 
     rerender(
-      <ApplicationProvider>
-        <Tabs tabs={tabs} testingID="testingID">
-          {tabsRenderer}
-        </Tabs>
-      </ApplicationProvider>,
+      <Tabs tabs={tabs} testingID="testingID">
+        {tabsRenderer}
+      </Tabs>,
     );
 
     expect(document.querySelector<HTMLElement>('[data-lens-tabs-orientation="tabs--horizontal"]')).toBeInTheDocument();

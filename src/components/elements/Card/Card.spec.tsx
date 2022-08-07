@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
+
 import Card from '.';
 
 describe('<Card/>', () => {
@@ -23,31 +23,29 @@ describe('<Card/>', () => {
 
     const result = render(
       (
-        <ApplicationProvider>
-          <Card>
-            <Card.Body>
-              <Card.Title testingID={titleTestingId}>
-                {titleMockedText}
-              </Card.Title>
+        <Card>
+          <Card.Body>
+            <Card.Title testingID={titleTestingId}>
+              {titleMockedText}
+            </Card.Title>
 
-              <Card.Title subtitle>
-                {titleMockedText}
-              </Card.Title>
-            </Card.Body>
-            <Card.Image roudTop src={mockedCardImg} testingID={imgTextingId} />
-            <Card.Body>
-              <Card.Text testingID={textTestingId}>
-                {mockedCardText}
-              </Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Card.Link href={mockedCardLink.url} target="_blank" testingID={mockedCardLink.testingId}>
-                {mockedCardLink.text}
-              </Card.Link>
-            </Card.Body>
-            <Card.Image roudBottom src={mockedCardImg} />
-          </Card>
-        </ApplicationProvider>
+            <Card.Title subtitle>
+              {titleMockedText}
+            </Card.Title>
+          </Card.Body>
+          <Card.Image roudTop src={mockedCardImg} testingID={imgTextingId} />
+          <Card.Body>
+            <Card.Text testingID={textTestingId}>
+              {mockedCardText}
+            </Card.Text>
+          </Card.Body>
+          <Card.Body>
+            <Card.Link href={mockedCardLink.url} target="_blank" testingID={mockedCardLink.testingId}>
+              {mockedCardLink.text}
+            </Card.Link>
+          </Card.Body>
+          <Card.Image roudBottom src={mockedCardImg} />
+        </Card>
       ),
     );
 
@@ -63,7 +61,7 @@ describe('<Card/>', () => {
   it('should test card element intents', () => {
     const result = render(
       (
-        <ApplicationProvider>
+        <>
           <Card intent="primary" testingID="primary">
             content here
           </Card>
@@ -82,7 +80,7 @@ describe('<Card/>', () => {
           <Card intent="danger" testingID="danger">
             content here
           </Card>
-        </ApplicationProvider>
+        </>
       ),
     );
 

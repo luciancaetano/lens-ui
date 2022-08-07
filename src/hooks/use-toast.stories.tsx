@@ -3,7 +3,6 @@ import React from 'react';
 import { ComponentMeta } from '@storybook/react';
 import '../styles';
 import Toast from '../components/elements/Toast/Toast';
-import { ApplicationProvider } from '../components/providers';
 import useToast from './use-toast';
 import Button from '../components/elements/Button/Button';
 import Icon from '../components/elements/Icon/Icon';
@@ -12,7 +11,7 @@ export default {
   title: 'Hooks/useToast/Example',
   component: Toast,
   decorators: [
-    (Story) => <ApplicationProvider><Story /></ApplicationProvider>,
+    (Story) => <Story />,
   ],
 } as ComponentMeta<typeof Toast>;
 

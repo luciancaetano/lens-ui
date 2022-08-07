@@ -1,13 +1,12 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import ApplicationProvider from '../../../providers/ApplicationProvider/ApplicationProvider';
 import ModalHeader from './ModalHeader';
 
 describe('<ModalHeader/>', () => {
   it('render <ModalHeader/> with children content', async () => {
     const myChildren = 'SweetChiledOMine';
-    const { getByText } = render(<ApplicationProvider><ModalHeader>{myChildren}</ModalHeader></ApplicationProvider>);
+    const { getByText } = render(<ModalHeader>{myChildren}</ModalHeader>);
 
     expect(getByText(myChildren)).toBeInTheDocument();
   });
@@ -15,7 +14,7 @@ describe('<ModalHeader/>', () => {
   it('receive onClose event', async () => {
     const onClose = jest.fn();
 
-    render(<ApplicationProvider><ModalHeader onClose={onClose} /></ApplicationProvider>);
+    render(<ModalHeader onClose={onClose} />);
 
     fireEvent.click(window.document.querySelector<HTMLElement>('[data-lens-element="modal__header__close-button"]') as HTMLElement);
 
@@ -25,7 +24,7 @@ describe('<ModalHeader/>', () => {
   it('<ModalHeader/> must contain class', async () => {
     const myClass = 'settClassCustom';
     const testingId = 'myTestingId';
-    const { getByTestId } = render(<ApplicationProvider><ModalHeader className={myClass} testingID={testingId} /></ApplicationProvider>);
+    const { getByTestId } = render(<ModalHeader className={myClass} testingID={testingId} />);
 
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByTestId(testingId)).toHaveClass(myClass);

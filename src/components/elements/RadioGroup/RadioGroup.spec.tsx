@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {
   fireEvent, render, renderHook, act,
 } from '@testing-library/react';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
+
 import RadioGroup from './RadioGroup';
 import { IRadioGroupOption } from './RadioGroup.types';
 
@@ -17,7 +17,7 @@ describe('<RadioGroup/>', () => {
   it('render <RadioGroup/>', async () => {
     const testingID = 'myTetingId';
 
-    const { getByTestId, getByText } = render(<ApplicationProvider><RadioGroup options={options} name="myRadioGroup" testingID={testingID} /></ApplicationProvider>);
+    const { getByTestId, getByText } = render(<RadioGroup options={options} name="myRadioGroup" testingID={testingID} />);
 
     expect(getByTestId(testingID)).toBeInTheDocument();
 
@@ -29,7 +29,7 @@ describe('<RadioGroup/>', () => {
   it('<RadioGroup/> default value', async () => {
     const testingID = 'myTetingId';
 
-    const { getByTestId, getByText } = render(<ApplicationProvider><RadioGroup options={options} defaultValue={options[0].value} name="myRadioGroup" testingID={testingID} /></ApplicationProvider>);
+    const { getByTestId, getByText } = render(<RadioGroup options={options} defaultValue={options[0].value} name="myRadioGroup" testingID={testingID} />);
 
     expect(getByTestId(testingID)).toBeInTheDocument();
 
@@ -48,15 +48,13 @@ describe('<RadioGroup/>', () => {
     };
 
     const { getByTestId, getByText } = render(
-      <ApplicationProvider>
-        <RadioGroup
-          value={hook.result.current[0]}
-          options={options}
-          onChange={onChange}
-          name="myRadioGroup"
-          testingID={testingID}
-        />
-      </ApplicationProvider>,
+      <RadioGroup
+        value={hook.result.current[0]}
+        options={options}
+        onChange={onChange}
+        name="myRadioGroup"
+        testingID={testingID}
+      />,
     );
 
     fireEvent.click(getByText(options[0].label as string));
@@ -78,15 +76,13 @@ describe('<RadioGroup/>', () => {
     };
 
     const { getByTestId } = render(
-      <ApplicationProvider>
-        <RadioGroup
-          value={hook.result.current[0]}
-          options={options}
-          onChange={onChange}
-          name="myRadioGroup"
-          testingID={testingID}
-        />
-      </ApplicationProvider>,
+      <RadioGroup
+        value={hook.result.current[0]}
+        options={options}
+        onChange={onChange}
+        name="myRadioGroup"
+        testingID={testingID}
+      />,
     );
 
     expect(getByTestId(testingID)).toBeInTheDocument();

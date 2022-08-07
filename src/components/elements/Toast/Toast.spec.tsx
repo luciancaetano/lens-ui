@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
+
 import Toast from './Toast';
 import { IToastData } from '../../providers';
 
@@ -42,9 +42,7 @@ describe('<Toast/>', () => {
 
   it('render <Toast/>', async () => {
     const { container } = render(
-      <ApplicationProvider>
-        <Toast data={data} />
-      </ApplicationProvider>,
+      <Toast data={data} />,
     );
 
     expect(container.querySelector<HTMLElement>('.lens-ui-toasts-toast')).toMatchSnapshot();
@@ -52,9 +50,7 @@ describe('<Toast/>', () => {
 
   it('render <Toast/> with invalid dismiss', async () => {
     const { container } = render(
-      <ApplicationProvider>
-        <Toast data={{ ...data, dismiss: 'invalidvalue' as any }} />
-      </ApplicationProvider>,
+      <Toast data={{ ...data, dismiss: 'invalidvalue' as any }} />,
     );
 
     expect(container.querySelector<HTMLElement>('.lens-ui-toasts-toast')).toMatchSnapshot();
@@ -62,9 +58,7 @@ describe('<Toast/>', () => {
 
   it('render <Toast/> close toast', async () => {
     render(
-      <ApplicationProvider>
-        <Toast data={{ ...data, dismiss: 300 }} />
-      </ApplicationProvider>,
+      <Toast data={{ ...data, dismiss: 300 }} />,
     );
     jest.advanceTimersByTime(1000);
 
@@ -75,9 +69,7 @@ describe('<Toast/>', () => {
 
   it('render <Toast/> autoDismiss toast', async () => {
     render(
-      <ApplicationProvider>
-        <Toast data={{ ...data, dismiss: 300 }} />
-      </ApplicationProvider>,
+      <Toast data={{ ...data, dismiss: 300 }} />,
     );
     jest.advanceTimersByTime(1000);
 

@@ -1,13 +1,12 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import ApplicationProvider from '../../../providers/ApplicationProvider/ApplicationProvider';
 import ModalFooter from './ModalFooter';
 
 describe('<ModalFooter/>', () => {
   it('render <ModalFooter/> with children content', async () => {
     const myChildren = 'SweetChiledOMine';
-    const { getByText } = render(<ApplicationProvider><ModalFooter>{myChildren}</ModalFooter></ApplicationProvider>);
+    const { getByText } = render(<ModalFooter>{myChildren}</ModalFooter>);
 
     expect(getByText(myChildren)).toBeInTheDocument();
   });
@@ -15,7 +14,7 @@ describe('<ModalFooter/>', () => {
   it('<ModalFooter/> must contain class', async () => {
     const myClass = 'settClassCustom';
     const testingId = 'myTestingId';
-    const { getByTestId } = render(<ApplicationProvider><ModalFooter className={myClass} testingID={testingId} /></ApplicationProvider>);
+    const { getByTestId } = render(<ModalFooter className={myClass} testingID={testingId} />);
 
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByTestId(testingId)).toHaveClass(myClass);

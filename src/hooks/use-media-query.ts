@@ -30,6 +30,7 @@ const useMediaQuery = (query: string) => {
       if (matchMedia.removeListener) {
         matchMedia.removeListener(handleMediaChange.current);
       } else {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         matchMedia.removeEventListener('change', handleMediaChange.current);
       }
     };
