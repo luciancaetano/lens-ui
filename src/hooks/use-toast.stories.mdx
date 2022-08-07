@@ -8,23 +8,30 @@ import LinkTo from '@storybook/addon-links/react';
 
 The hook `useToast` is used to display a toast message in user interface.
 
+#### Attention: You need context of &lt;ToastProvider&gt;
+
 ```tsx
+
+import {ToastProvider} from 'lens-ui';
+
 const { addToast } = useToast();
 
 return (
-    <Button
-        intent="success"
-        onClick={async () => {
-            addToast({
-                content: 'lorem impsum',
-                icon: <Icon name="BsExclamationTriangleFill" />,
-                intent: 'success',
-                dismiss: 3000,
-            });
-        }}
-    >
-        Show Toast
-    </Button>
+    <ToastProvider>
+        <Button
+            intent="success"
+            onClick={async () => {
+                addToast({
+                    content: 'lorem impsum',
+                    icon: <Icon name="BsExclamationTriangleFill" />,
+                    intent: 'success',
+                    dismiss: 3000,
+                });
+            }}
+        >
+            Show Toast
+        </Button>
+    <ToastProvider>
 );
 ```
 
