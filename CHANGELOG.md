@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0-0](https://github.com/luciancaetano/lens-ui/compare/v4.9.4...v5.1.0-0) (2022-08-07)
+
+
+### Features
+
+* :memo: Add lensUi logo and adjust storybooks  theming ([e259a21](https://github.com/luciancaetano/lens-ui/commit/e259a211ce529eb92ccb646ef5e5d1c15ca7aa8f))
+* **hooks:** :sparkles:  implemented useMediaQuery hook ([444b3da](https://github.com/luciancaetano/lens-ui/commit/444b3daba3ea1ebdccbc6c0b5bdd7886f74d2593))
+
+
+### Bug Fixes
+
+* **elements:** :bug: fixed type of modal component ([d271945](https://github.com/luciancaetano/lens-ui/commit/d271945cea74b9f4e095ec878c05f30ba90280c3))
+* **elements:** :lipstick: fixing styles and docs ([cdc574f](https://github.com/luciancaetano/lens-ui/commit/cdc574fed97e9bc93126b35da3c2868d68b78099))
+
 ### [4.9.4](https://github.com/luciancaetano/lens-ui/compare/v4.9.4-0...v4.9.4) (2022-08-02)
 
 ### [4.9.4-0](https://github.com/luciancaetano/lens-ui/compare/v4.9.3...v4.9.4-0) (2022-08-02)
