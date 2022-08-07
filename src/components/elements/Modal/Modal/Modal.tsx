@@ -7,8 +7,6 @@ import { IModalProps } from './Modal.types';
 
 /**
  * The modal component provides a solid foundation for creating dialogs interrupting the user's task.
- * You can call modals using useModal hook
- * @example const { showModal } = useModal();
  * @example showModal(SimpleModalCMP, args);
  */
 const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({

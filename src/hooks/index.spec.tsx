@@ -3,7 +3,7 @@ import { renderHook, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { clear as clearUserAgent, mockUserAgent } from 'jest-useragent-mock';
 import {
-  useAlert, useDevice, useModal, useProgressiveTimeout, useToast,
+  useAlert, useDevice, useProgressiveTimeout, useToast,
 } from '.';
 
 jest.mock('react', () => ({
@@ -37,30 +37,12 @@ describe('src/hooks', () => {
     expect(current).toMatchObject({});
 
     act(() => {
-      current.addAlert({ title: 'title' });
+      current.alert({ title: 'title' });
       current.cancelAlert();
     });
 
     expect(context.addAlert).toHaveBeenCalled();
     expect(context.cancelAlert).toHaveBeenCalled();
-  });
-
-  it('useModal', async () => {
-    const context = {
-      isOpen: false, closeModal: jest.fn(), showModal: jest.fn(),
-    };
-
-    useContextFn.mockReturnValueOnce(context);
-
-    const { result: { current } } = renderHook(() => useModal());
-
-    act(() => {
-      current.showModal(null as any, {});
-      current.closeModal(null);
-    });
-
-    expect(context.showModal).toHaveBeenCalled();
-    expect(context.closeModal).toHaveBeenCalled();
   });
 
   it('useDevice', async () => {
