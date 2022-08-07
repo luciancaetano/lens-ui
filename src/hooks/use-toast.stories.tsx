@@ -6,16 +6,17 @@ import Toast from '../components/elements/Toast/Toast';
 import useToast from './use-toast';
 import Button from '../components/elements/Button/Button';
 import Icon from '../components/elements/Icon/Icon';
+import { ToastProvider } from '../components/providers';
 
 export default {
-  title: 'Hooks/useToast/Example',
+  title: 'Examples/Toast',
   component: Toast,
   decorators: [
-    (Story) => <Story />,
+    (Story) => <ToastProvider><Story /></ToastProvider>,
   ],
 } as ComponentMeta<typeof Toast>;
 
-export const Example = () => {
+export const _Toast = () => {
   const { addToast } = useToast();
 
   return (

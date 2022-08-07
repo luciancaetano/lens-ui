@@ -3,7 +3,7 @@ import Layout from './index';
 import TextInput from '../TextInput/TextInput';
 
 
-<Meta title="Components/Layout" component={Layout}/>
+<Meta title="Layout/Layout" component={Layout}/>
 
 The Layout component's handles application layout.
 
@@ -41,7 +41,7 @@ The following CSS variables are available for use in the Layout component.
 ### Basic layout
 
 <Canvas>
-        <Layout.AppLayout style={{'--lens-ui-app-layout-width': '100%'}}>
+        <Layout style={{'--lens-ui-app-layout-width': '100%'}}>
             <div>
                 App Header
             </div>
@@ -51,13 +51,13 @@ The following CSS variables are available for use in the Layout component.
             <div>
                 AppFooter
             </div>
-        </Layout.AppLayout>
+        </Layout>
 </Canvas>
 
 ### Layout wit sidebar
 
 <Canvas>
-      <Layout.AppLayout style={{'--lens-ui-app-layout-width': '100%'}}>
+      <Layout style={{'--lens-ui-app-layout-width': '100%'}}>
       <div>
           App Header
       </div>
@@ -72,5 +72,5 @@ The following CSS variables are available for use in the Layout component.
       <div>
           AppFooter
       </div>
-      </Layout.AppLayout>
+      </Layout>
 </Canvas>

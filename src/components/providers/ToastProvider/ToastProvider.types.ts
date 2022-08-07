@@ -32,7 +32,7 @@ export interface IUserToasttHookReponse {
 
 export type ToastPlacementType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center';
 export interface IToastProviderProps {
-  placement: ToastPlacementType;
+  placement?: ToastPlacementType;
   children: React.ReactNode | React.ReactNode[];
 }
 export interface IToastContextType {
