@@ -3,13 +3,13 @@ import clsx from 'clsx';
 import React, { useMemo } from 'react';
 import List from '../List/List';
 import ListItem from '../List/ListItem';
-import styles from './MenuList.module.scss';
-import { IMenuListProps } from './MenuList.types';
+import styles from './Menu.module.scss';
+import { IMenuProps } from './Menu.types';
 
 /**
- * MenuList display a list of choices on constant surfaces.
+ * Menu display a list of choices on constant surfaces.
  */
-const MenuList: React.FC<IMenuListProps> = ({ items, activeIndex }) => {
+const Menu: React.FC<IMenuProps> = ({ items, activeIndex, className }) => {
   const menuItems = useMemo(() => items.map((item, index) => {
     const className = clsx(styles.menuItem, {
       [styles.activeMenuItem]: index === activeIndex,
@@ -30,10 +30,10 @@ const MenuList: React.FC<IMenuListProps> = ({ items, activeIndex }) => {
   }), [activeIndex, items]);
 
   return (
-    <List>
+    <List className={clsx(styles.menuList, className)}>
       {menuItems}
     </List>
   );
 };
 
-export default MenuList;
+export default Menu;

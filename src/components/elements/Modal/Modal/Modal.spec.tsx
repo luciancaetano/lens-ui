@@ -2,9 +2,9 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 import Modal from './Modal';
-import { IDeviceInfo } from '../../providers/DeviceProvider/DeviceProvider.types';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
-import { useDevice } from '../../../hooks';
+import { IDeviceInfo } from '../../../providers/DeviceProvider/DeviceProvider.types';
+import ApplicationProvider from '../../../providers/ApplicationProvider/ApplicationProvider';
+import { useDevice } from '../../../../hooks';
 import { ModalSizeEnum, ModalSizeEnumType } from './Modal.types';
 
 jest.useFakeTimers();

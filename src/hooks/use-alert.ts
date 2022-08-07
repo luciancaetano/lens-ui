@@ -8,7 +8,7 @@ const useAlert = (): IUseAlertHookReponse => {
   } = useContext(AlertContext);
 
   return {
-    addAlert,
+    alert: addAlert,
     cancelAlert,
   };
 };

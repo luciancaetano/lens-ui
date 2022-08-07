@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps } from '../../../../types';
 
 export const ModalSizeEnum = {
   normal: 'normal',

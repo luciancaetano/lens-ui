@@ -1,8 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import Modal from './Modal';
-import ModalContent from '../ModalContent/ModalContent';
-import ModalFooter from '../ModalFooter/ModalFooter';
-import ModalHeader from '../ModalHeader/ModalHeader';
+import Modal from '.';
 import Button from '../Button/Button';
 
 <Meta title="Components/Modal" component={Modal}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
@@ -15,14 +12,14 @@ __in this sample we replace some css variables to handle preview__
 <Canvas>
   <div style={{position: 'relative', height: 500, width: '100%'}}>
     <Modal backdropProps={{style:{'--lens-ui-modal-backgrop-position': 'absolute', '--lens-ui-modal-backgrop-width': '100%', '--lens-ui-modal-backgrop-height': '100%'}}}>
-      <ModalHeader>Title</ModalHeader>
-      <ModalContent>
+      <Modal.Header>Title</Modal.Header>
+      <Modal.Content>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
-      </ModalContent>
-      <ModalFooter>
+      </Modal.Content>
+      <Modal.Footer>
         <Button intent="danger">Cancel</Button>
         <Button>Save</Button>
-      </ModalFooter>
+      </Modal.Footer>
     </Modal>
   </div>
 </Canvas>
@@ -47,7 +44,7 @@ __in this sample we replace some css variables to handle preview__
 |--lens-ui-modal-backgrop-width|Width of the backdrop|100vw|
 |--lens-ui-modal-backgrop-height|Height of the backdrop|100vh|
 
-## `<ModalHeader/>` Properties
+## `<Modal.Header/>` Properties
 - **Extends HTMLElement properties**
 - **refs are fowarded to the content element**
 
@@ -57,7 +54,7 @@ __in this sample we replace some css variables to handle preview__
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
-## `<ModalContent/>` Properties
+## `<Modal.Content/>` Properties
 - **Extends HTMLElement properties**
 - **refs are fowarded to the content element**
 
@@ -65,7 +62,7 @@ __in this sample we replace some css variables to handle preview__
 |---|---|---|---|---|
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
-## `<ModalFooter/>` Properties
+## `<Modal.Footer/>` Properties
 - **Extends HTMLElement properties**
 - **refs are fowarded to the content element**
 
@@ -80,14 +77,14 @@ __in this sample we replace some css variables to handle preview__
 <Canvas>
   <div style={{position: 'relative', height: 500, width: '100%'}}>
     <Modal hideBackdrop backdropProps={{style:{'--lens-ui-modal-backgrop-position': 'absolute', '--lens-ui-modal-backgrop-width': '100%', '--lens-ui-modal-backgrop-height': '100%'}}}>
-      <ModalHeader>Title</ModalHeader>
-      <ModalContent>
+      <Modal.Header>Title</Modal.Header>
+      <Modal.Content>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
-      </ModalContent>
-      <ModalFooter>
+      </Modal.Content>
+      <Modal.Footer>
         <Button intent="danger">Cancel</Button>
         <Button>Save</Button>
-      </ModalFooter>
+      </Modal.Footer>
     </Modal>
   </div>
 </Canvas>

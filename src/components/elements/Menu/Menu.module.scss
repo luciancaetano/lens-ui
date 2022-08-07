@@ -1,0 +1,38 @@
+.menu-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: var(--lens-ui-elements-card-backgrounds-default-background-color);
+  color: var(--lens-ui-elements-card-backgrounds-default-color);
+  background-clip: border-box;
+  border: 0 solid var(--lens-ui-elements-card-backgrounds-default-border-color);
+  border-radius: var(--lens-ui-elements-card-border-radius);
+  box-shadow: var(--lens-ui-elements-card-box-shadow);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.active-menu-item {
+  font-weight: bold;
+  border-right: .3rem solid var(--lens-ui-intents-primary);
+  padding-right: .45rem;
+}
+
+.menu-item {
+  font-size: .875rem !important;
+  padding: .7rem .75rem !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-heading {
+  font-size: .7rem !important;
+  padding: .2rem .75rem !important;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}

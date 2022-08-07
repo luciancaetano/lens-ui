@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
+import ApplicationProvider from '../../../providers/ApplicationProvider/ApplicationProvider';
 import ModalHeader from './ModalHeader';
 
 describe('<ModalHeader/>', () => {

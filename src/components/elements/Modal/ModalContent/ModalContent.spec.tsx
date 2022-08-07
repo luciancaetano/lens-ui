@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
+import ApplicationProvider from '../../../providers/ApplicationProvider/ApplicationProvider';
 import ModalContent from './ModalContent';
 
 describe('<ModalContent/>', () => {

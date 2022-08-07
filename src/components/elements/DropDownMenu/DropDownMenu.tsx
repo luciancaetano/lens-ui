@@ -63,7 +63,7 @@ function DropDownMenu<TPayload = any | undefined>({
         role="menuitem"
         data-lens-element="drop-down-menu__list_item"
         key={key}
-        className={clsx(item.className, { [styles.dropDownMenuListActiveItem]: activeId === item.id })}
+        className={clsx(item.className, { [styles.dropDownMenuActiveItem]: activeId === item.id })}
         onClick={handleItemClick(item)}
       >{item.label}
       </li>
@@ -109,7 +109,7 @@ function DropDownMenu<TPayload = any | undefined>({
           (
             <div
               role="list"
-              className={clsx(styles.dropDownMenuList, !isOpen && styles.dropDownMenuListHide, dropDownClassName)}
+              className={clsx(styles.dropDownMenu, !isOpen && styles.dropDownMenuHide, dropDownClassName)}
               data-lens-element="drop-down-menu__list"
               ref={floating}
               style={{

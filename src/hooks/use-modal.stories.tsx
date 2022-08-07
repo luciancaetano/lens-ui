@@ -1,17 +1,13 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Modal from '../components/elements/Modal/Modal';
-import ModalHeader from '../components/elements/ModalHeader/ModalHeader';
-import ModalContent from '../components/elements/ModalContent/ModalContent';
-import ModalFooter from '../components/elements/ModalFooter/ModalFooter';
+import Modal, { ModalSizeEnum } from '../components/elements/Modal';
 import Button from '../components/elements/Button/Button';
 import '../styles';
 import Select from '../components/elements/Select/Select';
 import useAlert from './use-alert';
 import { ApplicationProvider } from '../components/providers';
 import useModal from './use-modal';
-import { ModalSizeEnum } from '../components/elements/Modal/Modal.types';
 
 export default {
   title: 'Hooks/useModal/examples',
@@ -31,19 +27,19 @@ const SimpleModalCMP: React.FC<ISimpleModalCMPProps> = (args) => {
   const { closeModal } = useModal();
   return (
     <ModalTemplate {...args} onBackdropClick={(r) => closeModal(r)} onEscape={(r) => closeModal(r)}>
-      <ModalHeader onClose={(r) => closeModal(r)}>Header</ModalHeader>
-      <ModalContent>
+      <Modal.Header onClose={(r) => closeModal(r)}>Header</Modal.Header>
+      <Modal.Content>
         Content ${args.size}
         <Select options={[{ label: 'option1', value: 1 }, { label: 'option2', value: 2 }]} />
-      </ModalContent>
-      <ModalFooter>
+      </Modal.Content>
+      <Modal.Footer>
         <Button intent="danger" onClick={() => closeModal('cancel')}>
           Cancel
         </Button>
         <Button intent="success" onClick={() => closeModal('ok')}>
           Ok
         </Button>
-      </ModalFooter>
+      </Modal.Footer>
     </ModalTemplate>
   );
 };
@@ -91,11 +87,11 @@ const SimpleModalStackedCMP: React.FC<ISimpleModalCMPProps> = ({ size }) => {
   const { addAlert } = useAlert();
   return (
     <ModalTemplate onBackdropClick={(r) => closeModal(r)} size={size as any} onEscape={(r) => closeModal(r)}>
-      <ModalHeader onClose={(r) => closeModal(r)}>Layers :D</ModalHeader>
-      <ModalContent>
+      <Modal.Header onClose={(r) => closeModal(r)}>Layers :D</Modal.Header>
+      <Modal.Content>
         Modal Layers ${size}
-      </ModalContent>
-      <ModalFooter>
+      </Modal.Content>
+      <Modal.Footer>
         <Button
           intent="danger"
           onClick={async () => {
@@ -111,7 +107,7 @@ const SimpleModalStackedCMP: React.FC<ISimpleModalCMPProps> = ({ size }) => {
         <Button intent="success" onClick={() => closeModal('ok')}>
           Ok
         </Button>
-      </ModalFooter>
+      </Modal.Footer>
     </ModalTemplate>
   );
 };

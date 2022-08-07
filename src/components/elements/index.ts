@@ -1,7 +1,6 @@
 /** ====generated-code-element===== */
 export { default as Button } from './Button/Button';
-export { default as List } from './List/List';
-export { default as ListItem } from './List/ListItem';
+export { default as List } from './List';
 export { default as MessageBox } from './MessageBox/MessageBox';
 export { default as ButtonGroup } from './ButtonGroup/ButtonGroup';
 export { default as FormGroup } from './FormGroup/FormGroup';
@@ -16,13 +15,10 @@ export { default as TextInput } from './TextInput/TextInput';
 export { default as Callout } from './Callout/Callout';
 export { default as ProgressBar } from './ProgressBar/ProgressBar';
 export { default as MoneyInput } from './MoneyInput/MoneyInput';
-export { default as MenuList } from './MenuList/MenuList';
+export { default as Menu } from './Menu/Menu';
 export { default as MaskedInput } from './MaskedInput/MaskedInput';
 export { default as RadioGroup } from './RadioGroup/RadioGroup';
-export { default as Modal } from './Modal/Modal';
-export { default as ModalHeader } from './ModalHeader/ModalHeader';
-export { default as ModalFooter } from './ModalFooter/ModalFooter';
-export { default as ModalContent } from './ModalContent/ModalContent';
+export { default as Modal } from './Modal';
 export { default as DropDownMenu } from './DropDownMenu/DropDownMenu';
 export { default as Badge } from './Badge/Badge';
 export { default as Card } from './Card/index';
@@ -40,16 +36,15 @@ export * from './Tabs/Tabs.types';
 export * from './List/List.types';
 export * from './Icon/Icon.types';
 export * from './Badge/Badge.types';
-export * from './MenuList/MenuList.types';
+export * from './Menu/Menu.types';
 export * from './Breadcrumbs/Breadcrumbs.types';
 export * from './Callout/Callout.types';
 export * from './Button/Button.types';
 export * from './Toast/Toast.types';
-export * from './Modal/Modal.types';
+export type {
+  IModalContentProps, IModalFooterProps, IModalHeaderProps, IModalProps, ModalSizeEnum, ModalSizeEnumType,
+} from './Modal';
 export * from './DropDownMenu/DropDownMenu.types';
-export * from './ModalContent/ModalContent.types';
-export * from './ModalHeader/ModalHeader.types';
-export * from './ModalFooter/ModalFooter.types';
 export * from './MessageBox/MessageBox.types';
 export * from './CheckBox/CheckBox.types';
 export * from './ProgressBar/ProgressBar.types';

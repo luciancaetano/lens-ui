@@ -1,14 +1,14 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import MenuList from './MenuList';
+import Menu from './Menu';
 
-<Meta title="Components/MenuList" component={MenuList}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
+<Meta title="Components/Menu" component={Menu}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
 
-# MenuList
+# Menu
 
-A MenuList is a list of items that can be selected.
+A Menu is a list of items that can be selected.
 
 <Canvas>
-  <MenuList
+  <Menu
     activeIndex={-1}
     items={[
       {
@@ -36,14 +36,14 @@ A MenuList is a list of items that can be selected.
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
-|items|IMenuListItem[]|solid | The type of the badge.|No|
+|items|IMenuItem[]|solid | The type of the badge.|No|
 |activeIndex|number| undefined | The index of the item that is currently active.|No|
-|onItemClick|`function(IMenuListItem, MouseEvent)`| undefined | The function to call when an item is clicked.|No|
-|renderer|`function(IMenuListItem, number) => ReactNode`| undefined | The function to render each item.|No|
+|onItemClick|`function(IMenuItem, MouseEvent)`| undefined | The function to call when an item is clicked.|No|
+|renderer|`function(IMenuItem, number) => ReactNode`| undefined | The function to render each item.|No|
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
-#### IMenuListItem (Object)
+#### IMenuItem (Object)
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|

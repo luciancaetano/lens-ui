@@ -31,7 +31,7 @@ export interface IAlertResult {
 }
 
 export interface IUseAlertHookReponse {
-  addAlert: (alert: IAlertItemRequest) => Promise<IAlertResult>;
+  alert: (alert: IAlertItemRequest) => Promise<IAlertResult>;
   cancelAlert: () => void;
 }
 

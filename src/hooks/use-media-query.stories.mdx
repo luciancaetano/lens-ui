@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Hooks/useMediaQuery/Introduction"  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
+
+# useMediaQuery
+
+This is a CSS media query hook for React. It listens for matches to a CSS media query. It allows the rendering of components based on whether the query matches or not.
+
+
+```ts
+
+import { useMediaQuery } from 'lens-ui';
+
+export default function SimpleMediaQuery() {
+  const matches = useMediaQuery('(min-width:1024px)');
+
+  return <span>{`(min-width:1024px) matches: ${matches}`}</span>;
+}
+```

@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import Card from './index';
+import Card from '.';
 import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 
 <Meta title="Components/Card" component={Card}  decorators={[(Story) => <ApplicationProvider>{Story()}</ApplicationProvider>]}/>
@@ -29,8 +29,8 @@ Cards are used to display content in a way that is easily digestible and discove
 </Canvas>
 
 
-### Card.Card
-The Card.Card component is the main component of the Card.
+### Card
+The Card component is the main component of the Card.
 The properties of card title extends the `<div>` element.
 
 | Property | Type | Default Value | Description | Required |
@@ -80,7 +80,7 @@ The properties of card image extends the `<img>` element.
 
 <Canvas>
   <div style={{maxWidth: '20rem', padding: '0rem 5rem'}}>
-    <Card.Card intent="warning">
+    <Card intent="warning">
       <Card.Body>
         <Card.Title>Hello world</Card.Title>
         <Card.Title subtitle>subtitle</Card.Title>
@@ -94,6 +94,6 @@ The properties of card image extends the `<img>` element.
           Card Link
         </Card.Link>
       </Card.Body>
-    </Card.Card>
+    </Card>
   </div>
 </Canvas>

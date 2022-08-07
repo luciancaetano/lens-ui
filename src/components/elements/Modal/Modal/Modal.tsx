@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
-import { useDevice } from '../../../hooks';
-import { isBackdropClick } from '../../../utils';
+import { useDevice } from '../../../../hooks';
+import { isBackdropClick } from '../../../../utils';
 import styles from './Modal.module.scss';
 import { IModalProps } from './Modal.types';
 

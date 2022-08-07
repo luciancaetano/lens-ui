@@ -1,6 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import List from './List';
-import ListItem from './ListItem';
+import List from '.';
 import TextInput from '../TextInput/TextInput';
 import ApplicationProvider from '../../providers/ApplicationProvider/ApplicationProvider';
 
@@ -12,21 +11,21 @@ The List component is used to display a list of items.
 
 <Canvas>
     <List>
-        <ListItem key="1">
+        <List.Item key="1">
             Item 1
-        </ListItem>
-        <ListItem key="1" isHeading>
+        </List.Item>
+        <List.Item key="1" isHeading>
             Heading
-        </ListItem>
-        <ListItem key="1">
+        </List.Item>
+        <List.Item key="1">
             Item 2
-        </ListItem>
-        <ListItem key="1">
+        </List.Item>
+        <List.Item key="1">
             Item 3
-        </ListItem>
-        <ListItem key="1">
+        </List.Item>
+        <List.Item key="1">
             Item 4
-        </ListItem>
+        </List.Item>
     </List>
 </Canvas>
 

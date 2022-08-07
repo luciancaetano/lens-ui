@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
-import Icon from '../Icon/Icon';
+import Icon from '../../Icon/Icon';
 import styles from './ModalHeader.module.scss';
 import { IModalHeaderProps } from './ModalHeader.types';
 

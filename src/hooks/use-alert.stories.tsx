@@ -13,11 +13,11 @@ export default {
 };
 
 export const Example = () => {
-  const { addAlert } = useAlert();
+  const { alert } = useAlert();
 
   return (
     <Button onClick={async () => {
-      addAlert({
+      alert({
         text: 'This is an alert',
         settings: {
           showConfirmButton: true,
@@ -29,7 +29,7 @@ export const Example = () => {
         },
       });
 
-      addAlert({
+      alert({
         text: 'Hello world',
       });
     }}
