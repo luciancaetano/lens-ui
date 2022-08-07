@@ -11,7 +11,7 @@ import { IMenuProps } from './Menu.types';
 const Menu = React.forwardRef<HTMLDivElement, IMenuProps>(({
   shadow = true, className, children, ...props
 }, ref) => (
-  <List {...props} className={clsx(styles.menuList, shadow && styles.menuListShadow, className)} ref={ref}>
+  <List {...props} data-lens-element="menu" className={clsx(styles.menuList, shadow && styles.menuListShadow, className)} ref={ref}>
     {children}
   </List>
 ));

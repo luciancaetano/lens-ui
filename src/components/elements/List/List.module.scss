@@ -3,6 +3,8 @@
 .list {
   @include lens-ui-typography;
 
+  --lens-ui-list-prefix-and-suffix-padding: .5rem;
+
   list-style: none;
   padding: 0;
 
@@ -12,6 +14,26 @@
     padding: .75rem;
     font-size: .95rem;
     border-top: 1px solid var(--lens-ui-elements-list-border);
+    display: flex;
+    align-items: center;
+
+    &__prefix {
+      display: flex;
+      align-items: center;
+      padding-right: var(--lens-ui-list-prefix-and-suffix-padding);
+    }
+
+    &__sufix {
+      display: flex;
+      align-items: center;
+      padding-left: var(--lens-ui-list-prefix-and-suffix-padding);
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
 
     &:last-child {
       border-bottom: 1px solid var(--lens-ui-elements-list-border);
@@ -46,6 +68,10 @@
 
     &:last-child {
       border-bottom: 1px solid var(--lens-ui-elements-list-border);
+    }
+
+    &:hover {
+      background-color: var(--lens-ui-elements-tabs-header-bg);
     }
   }
 }

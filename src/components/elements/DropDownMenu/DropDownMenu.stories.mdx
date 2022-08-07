@@ -1,5 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import DropDownMenu from './DropDownMenu';
+import Menu from '../Menu';
+import Icon from '../Icon/Icon';
 
 
 <Meta title="Components/DropDownMenu" component={DropDownMenu}/>
@@ -10,25 +12,14 @@ DropDownMenu display a list of choices on temporary surfaces.
 
 <Canvas>
   <DropDownMenu
-    activeId="sp"
-    items={[
-      {
-        id: 'settings',
-        label: 'Settings'
-      },
-      {
-        id: 'profile',
-        label: 'Profile'
-      },
-      {
-        divider: true
-      },
-      {
-        id: 'logout',
-        label: 'Logout'
-      }
-    ]}
-    onItemClick={function noRefCheck(){}}
+    contentRender={(close) => (
+      <Menu>
+          <Menu.Item prefix={<Icon name="BsFillGearFill" />} suffix={<Icon name="BsFillGearFill" />}>Settings</Menu.Item>
+          <Menu.Item prefix={<Icon name="BsPeopleFill" />}>Profile</Menu.Item>
+          <Menu.Item isHeading></Menu.Item>
+          <Menu.Item prefix={<Icon name="BsPower" />}>Logout</Menu.Item>
+      </Menu>
+    )}
   >
     Menu
   </DropDownMenu>
@@ -39,28 +30,11 @@ DropDownMenu display a list of choices on temporary surfaces.
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
 |items|IDropdownItemType|-|The items to display in the menu.|Yes|
-|onItemClick|(item: IDropdownItemType) => void|undefined|The function to call when an item is clicked.|Yes|
 |offsetX|number|0|The horizontal offset of the menu.|No|
 |offsetY|number|0|The vertical offset of the menu.|No|
+|closeOnClick|boolean|true|Close when click inside floating menu.|No|
 |dropDownClassName|string|undefined|The class name to apply to the dropdown.|No|
+|chevron|boolean|true|Show dropdown chevron.|No|
 |children|ReactNode|-|The content to display in the menu.|No|
+|contentRender|function(close: Function) => React.ReactNode|-|Render Contents of function|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
-
-### IDropdownItemType (Object)
-
-|Property|Type|Default Value|Description|Required|
-|---|---|---|---|---|
-|label|ReactNode|-|The label of the item.|Yes|
-|id|any|-|The id of the item.|Yes|
-|className|string|undefined|The class name to apply to the item.|No|
-|payload|any|-|The payload of the item.|No|
-
-### IDropdownItemType as Divider (Object)
-Divider is a special type of item that is used to separate items in the menu.
-The divider object should have the property `divider` set to true and not have `id` and `payload` properties.
-
-|Property|Type|Default Value|Description|Required|
-|---|---|---|---|---|
-|label|ReactNode|-|The label of the item.|Yes|
-|className|string|undefined|The class name to apply to the item.|No|
-|divider|boolean|false|Whether the item is a divider.|No|

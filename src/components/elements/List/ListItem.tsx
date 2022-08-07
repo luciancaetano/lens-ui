@@ -7,20 +7,23 @@ import { IListItemProps } from './List.types';
  * ListItem is a component that represents a single item in a list.
  */
 const ListItem = React.forwardRef<HTMLDivElement, IListItemProps>(({
-  intent = 'primary', isActive, onClick, children, isHeading, className,
+  intent = 'primary', isActive, onClick, children, isHeading, className, prefix, suffix, ...props
 }, ref) => (
   <div
+    data-lens-element={isHeading ? 'list__item--heading' : 'list__item'}
+    {...props}
     className={clsx(
       isHeading ? styles.listHeading : styles.listItem,
       styles[`list__item--intent-${intent}`],
       isActive && styles[`list__item--active-intent-${intent}`],
       className,
     )}
-    data-lens-element={isHeading ? 'list__item--heading' : 'list__item'}
     onClick={onClick}
     ref={ref}
   >
-    {children}
+    {prefix && <div className={styles.listItemPrefix} data-lens-element={isHeading ? 'list__item--heading__prefix' : 'list__item__prefix'}>{prefix}</div>}
+    <span data-lens-element={isHeading ? 'list__item--heading__content' : 'list__item__content'} className={styles.listItemContent}>{children}</span>
+    {suffix && <div className={styles.listItemSuffix} data-lens-element={isHeading ? 'list__item--heading__suffix' : 'list__item__suffix'}>{suffix}</div>}
   </div>
 ));
 

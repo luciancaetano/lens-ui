@@ -1,5 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import List from '.';
+import Icon from '../Icon/Icon';
 import TextInput from '../TextInput/TextInput';
 
 
@@ -11,7 +12,7 @@ The List component is used to display a list of items.
 
 <Canvas>
     <List>
-        <List.Item key="1">
+        <List.Item key="1" prefix={<Icon name="BsPower" />}>
             Item 1
         </List.Item>
         <List.Item key="1" isHeading>
@@ -37,12 +38,14 @@ The List component is used to display a list of items.
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
-### ListItem component Properties
+### List.Item component Properties
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
 |`intent`|`IntentType`|`'none'`|The intent of the list item|No|
 |`isActive`|`boolean`|`false`|Whether the list item is active|No|
 |`isHeading`|`boolean`|`false`|Whether the list item is a heading|No|
+|`prefix`|`boolean`|`false`|Prefix elements, ex you can put an icon|No|
+|`suffix`|`boolean`|`false`|Suffix elements, ex you can put an icon|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 

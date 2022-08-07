@@ -11,10 +11,10 @@ const List = React.forwardRef<HTMLDivElement, IListProps>(({
   className, testingID, id, intent = 'primary', children, ...props
 }, ref) => (
   <div
+    data-lens-element="list"
     {...props}
     id={id}
     data-testid={testingID}
-    data-lens-element="list"
     data-lens-intent={intent}
     className={clsx(styles.list, className)}
     data-role="list"

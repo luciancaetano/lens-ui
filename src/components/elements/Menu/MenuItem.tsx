@@ -20,6 +20,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, IMenuItemProps>(({
     isActive={isActive}
     isHeading={isHeading}
     ref={ref}
+    data-lens-element={isHeading ? 'menu__heading' : 'menu__item'}
   >
     {children}
   </List.Item>
