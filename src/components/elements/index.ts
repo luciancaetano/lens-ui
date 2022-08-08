@@ -1,4 +1,5 @@
 /** ====generated-code-element===== */
+export { Col, Row } from './Grid';
 export { default as Button } from './Button/Button';
 export { default as List } from './List';
 export { default as MessageBox } from './MessageBox/MessageBox';
@@ -29,6 +30,7 @@ export { default as Table } from './Table/Table';
 export { default as Typography } from './Typography/Typography';
 export { default as DatePicker } from './DatePicker/DatePicker';
 /** ====generated-code-types===== */
+export * from './Grid/Grid.types';
 export * from './DatePicker/DatePicker.types';
 export * from './Typography/Typography.types';
 export * from './Table/Table.types';
