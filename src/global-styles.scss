@@ -1,6 +1,5 @@
 /* stylelint-disable selector-class-pattern */
 @import 'reset-css';
-@import 'flexboxgrid';
 @import './style-lib';
 @import './typography-lib';
 
@@ -396,47 +395,93 @@ span {
   @include typography-component-base;
 }
 
-h1 {
+h1:not([class^='sbdocs']) {
   @include h1;
 }
 
-h2 {
+h2:not([class^='sbdocs']) {
   @include h2;
 }
 
-h3 {
+h3:not([class^='sbdocs']) {
   @include h3;
 }
 
-h4 {
+h4:not([class^='sbdocs']) {
   @include h4;
 }
 
-h5 {
+h5:not([class^='sbdocs']) {
   @include h5;
 }
 
-h6 {
+h6:not([class^='sbdocs']) {
   @include h6;
 }
 
-code {
+code:not([class^='sbdocs']) {
   @include body2;
 }
 
-p,
-span {
+p:not([class^='sbdocs']),
+span:not([class^='sbdocs']) {
   @include body1;
 }
 
-button {
-  @include button;
-}
-
-sub {
+sub:not([class^='sbdocs']) {
   @include subtitle1;
 }
 
-caption {
+caption:not([class^='sbdocs']) {
   @include caption;
+}
+
+.debug-col {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1rem;
+  background: #0d9ef8b6;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+  &.darken {
+    background: #045a8fb6;
+  }
+}
+
+.debug-col-nested-1 {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1rem;
+  background: #35a9f1b6;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.debug-col-nested-2 {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1rem;
+  background: #83cfffb6;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+}
+
+.debug-col-nested-2,
+.debug-col-nested-1 {
+  .debug-col {
+    margin: 1rem;
+  }
 }

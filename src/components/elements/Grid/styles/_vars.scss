@@ -1,0 +1,11 @@
+$gutter-width: 1rem;
+$outer-margin: 2rem;
+$gutter-compensation: ($gutter-width * .5) * -1;
+$xs-min: 30rem;
+$sm-min: 48rem;
+$md-min: 64rem;
+$lg-min: 75rem;
+$container-sm: $sm-min + $gutter-width;
+$container-md: $md-min + $gutter-width;
+$container-lg: $lg-min + $gutter-width;
+$grid-step: 8.33333333%;

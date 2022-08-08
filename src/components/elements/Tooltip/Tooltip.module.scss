@@ -1,0 +1,70 @@
+@import '../../../style-lib';
+
+.float {
+  background: rgb(0 0 0 / 72%);
+  color: var(--lens-ui-intents-dark-text);
+  box-shadow: var(--lens-ui-overlay-box-shadow);
+  pointer-events: none;
+  padding: 4px 6px;
+  font-size: .8rem;
+
+  &__arrow {
+    overflow: hidden;
+    position: absolute;
+    width: 1em;
+    height: .71em;
+    box-sizing: border-box;
+    color: rgb(97 97 97 / 90%);
+
+    &::before {
+      content: '';
+      margin: auto;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: currentcolor;
+      transform: rotate(45deg);
+      transform-origin: 0 100%;
+    }
+  }
+
+  &--placement-bottom {
+    top: 0;
+    margin-top: -.71em;
+
+    &::before {
+      transform-origin: 0 100%;
+    }
+  }
+
+  &--placement-top {
+    bottom: 0;
+    margin-bottom: -.71em;
+
+    &::before {
+      transform-origin: 100% 0;
+    }
+  }
+
+  &--placement-right {
+    left: 0;
+    margin-left: -.71em;
+    height: 1em;
+    width: .71em;
+
+    &::before {
+      transform-origin: 100% 100%;
+    }
+  }
+
+  &--placement-left {
+    right: 0;
+    margin-right: -.71em;
+    height: 1em;
+    width: .71em;
+
+    &::before {
+      transform-origin: 0 0;
+    }
+  }
+}

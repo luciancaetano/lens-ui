@@ -4,7 +4,7 @@ This is the roadmap for next version
 
 ### Components
 - [x] Menu (Menu.Item, Menu.Divider, Menu.SubMenu)
-- [ ] Grid (Grid.Col, Grid.Row)
+- [x] Grid (Grid.Col, Grid.Row)
 - [ ] Bottom Navigation (BottomNavigation.Action)
 - [ ] Image
 - [ ] Pagination
@@ -19,7 +19,7 @@ This is the roadmap for next version
 - [ ] Drawer
 - [ ] Autocomplete Input
 - [ ] PopConfirm
-- [ ] Tooltip component
+- [x] Tooltip component
 
 ### Providers
 
@@ -32,6 +32,7 @@ This is the roadmap for next version
 - [x] Fix toast
 - [x] Improve list item layout
 - [x] Update styles to match with typography
+- [ ] Inject license in source using webpack.BannerPlugin
 
 ### Reworks
 - [x] Extract menu to Menu from DropDownMenu component

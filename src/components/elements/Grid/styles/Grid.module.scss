@@ -1,0 +1,76 @@
+@import 'vars';
+@import 'mixins';
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+
+  &--fluid {
+    padding-right: $outer-margin;
+    padding-left: $outer-margin;
+  }
+
+  @include sm-viewport {
+    width: $container-sm;
+  }
+
+  @include md-viewport {
+    width: $container-md;
+  }
+
+  @include lg-viewport {
+    width: $container-lg;
+  }
+}
+
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: $gutter-compensation;
+  margin-right: $gutter-compensation;
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  @include gen-row-breakpoints('xs');
+
+  @include sm-viewport {
+    @include gen-row-breakpoints('sm');
+  }
+
+  @include md-viewport {
+    @include gen-row-breakpoints('md');
+  }
+
+  @include lg-viewport {
+    @include gen-row-breakpoints('lg');
+  }
+}
+
+.col {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: $gutter-width * .5;
+  padding-left: $gutter-width * .5;
+
+  &--reverse {
+    flex-direction: column-reverse;
+  }
+
+  @include gen-col-breakpoints('xs');
+
+  @include sm-viewport {
+    @include gen-col-breakpoints('sm');
+  }
+
+  @include md-viewport {
+    @include gen-col-breakpoints('md');
+  }
+
+  @include lg-viewport {
+    @include gen-col-breakpoints('lg');
+  }
+}

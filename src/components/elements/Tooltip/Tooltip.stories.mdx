@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Tooltip from './Tooltip';
+
+<Meta title="Feedback/Tooltip" component={Tooltip} />
+
+# Tooltip
+
+Tips display informational text when users hover, hover, or tap an element.
+
+<Canvas>
+    <div style={{display: 'flex'}}>
+        <Tooltip tip="Hello World!"><div>Top</div></Tooltip>
+    </div>
+    <div style={{display: 'flex'}}>
+        <Tooltip placement="bottom" tip="Hello World!"><div>Bottom</div></Tooltip>
+    </div>
+    <div style={{display: 'flex'}}>
+        <Tooltip placement="left" tip="Hello World!"><div>Left</div></Tooltip>
+    </div>
+    <div style={{display: 'flex'}}>
+        <Tooltip placement="right" tip="Hello World!"><div>Right</div></Tooltip>
+    </div>
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|tooltip| React.ReactNode \| Function():React.ReactNode | - | Render function or element |No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|

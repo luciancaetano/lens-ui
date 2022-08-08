@@ -1,0 +1,83 @@
+@import 'vars';
+
+@mixin sm-viewport {
+  @media only screen and (min-width: 48em) { @content; }
+}
+
+@mixin md-viewport {
+  @media only screen and (min-width: 64em) { @content; }
+}
+
+@mixin lg-viewport {
+  @media only screen and (min-width: 75em) { @content; }
+}
+
+@mixin gen-row-breakpoints($breakpoint) {
+  &--start-#{$breakpoint} {
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  &--evenly-#{$breakpoint} {
+    justify-content: space-evenly;
+  }
+
+  &--center-#{$breakpoint} {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &--end-#{$breakpoint} {
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+  &--top-#{$breakpoint} {
+    align-items: flex-start;
+  }
+
+  &--middle-#{$breakpoint} {
+    align-items: center;
+  }
+
+  &--bottom-#{$breakpoint} {
+    align-items: flex-end;
+  }
+
+  &--around-#{$breakpoint} {
+    justify-content: space-around;
+  }
+
+  &--between-#{$breakpoint} {
+    justify-content: space-between;
+  }
+}
+
+@mixin gen-col-breakpoints($breakpoint) {
+  &--#{$breakpoint} {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  @for $i from 1 through 12 {
+    &--#{$breakpoint}-#{$i} {
+      flex-basis: $grid-step * $i;
+      max-width: $grid-step * $i;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    &--#{$breakpoint}-offset-#{$i} {
+      margin-left: $grid-step * $i;
+    }
+  }
+
+  &--first-#{$breakpoint} {
+    order: -1;
+  }
+
+  &--last-#{$breakpoint} {
+    order: 1;
+  }
+}
