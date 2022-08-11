@@ -7,15 +7,11 @@ This is the roadmap for next version
 - [x] Grid (Grid.Col, Grid.Row)
 - [x] Bottom Navigation (BottomNavigation.Action)
 - [x] Tooltip component
-- [ ] Image
 - [ ] Pagination
-- [ ] Link (Extended Typography)
 - [ ] Collapse
 - [ ] Timeline
 - [ ] Upload
-- [ ] PopConfirm
 - [ ] Drawer
-- [ ] InputNumber
 - [ ] TransferList
 - [ ] Autocomplete Input
 - [ ] InputSlider
@@ -26,8 +22,6 @@ This is the roadmap for next version
 - [ ] DarkMode
 - [ ] Reorganize and simplify theming and css variables
 
-### Providers
-
 ### Hooks
 
 - [x] useMediaQuery
@@ -37,7 +31,7 @@ This is the roadmap for next version
 - [x] Fix toast
 - [x] Improve list item layout
 - [x] ~~Update styles to match with typography~~
-- [ ] Inject license in source using webpack.BannerPlugin
+- [x] Inject license in source using webpack.BannerPlugin
 
 ### Reworks
 - [x] Extract menu to Menu from DropDownMenu component

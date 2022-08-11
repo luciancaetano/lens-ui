@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const fs = require('fs');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 const isProduction = process.argv[process.argv.indexOf('--mode') + 1] === 'production';
+
+const banner = fs.readFileSync(path.join(__dirname, 'LICENSE'));
 
 module.exports = {
   entry: {
@@ -30,6 +34,10 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    isProduction && new webpack.BannerPlugin({
+      banner,
+      entryOnly: false,
+    }),
     isProduction && new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
