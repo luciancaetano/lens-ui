@@ -11,7 +11,7 @@ const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps
   className, testingID, id, children, activeId, defaultActiveId, keepLabel, onChange, style, ...props
 }, ref) => {
   const [active, setActive] = useState<string | null | undefined>(activeId || defaultActiveId);
-  const applyCssVars = useTheme();
+  const theme = useTheme(style);
 
   const handleSelect = useCallback((newId: string) => {
     if (active === newId) return;
@@ -45,7 +45,7 @@ const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps
         styles.bottomNavigation,
         className,
       )}
-      style={applyCssVars(style)}
+      style={theme}
       ref={ref}
     >
       <BottomNavigationContext.Provider value={contextValue}>
