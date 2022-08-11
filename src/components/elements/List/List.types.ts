@@ -16,4 +16,5 @@ export interface IListProps extends ITestableProps, React.HtmlHTMLAttributes<HTM
   intent?: IntentType;
   prefixMinWidth?: string | number;
   suffixMinWidth?: string | number;
+  border?: boolean;
 }

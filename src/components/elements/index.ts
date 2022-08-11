@@ -1,6 +1,6 @@
 /** ====generated-code-element===== */
+export { default as BottomNavigation } from './BottomNavigation';
 export { default as Tooltip } from './Tooltip/Tooltip';
-export { default as BottomNavigation } from './BottomNavigation/BottomNavigation';
 export { Col, Row } from './Grid';
 export { default as Button } from './Button/Button';
 export { default as List } from './List';
@@ -20,7 +20,7 @@ export { default as ProgressBar } from './ProgressBar/ProgressBar';
 export { default as MoneyInput } from './MoneyInput/MoneyInput';
 export { default as Menu } from './Menu';
 export { default as MaskedInput } from './MaskedInput/MaskedInput';
-export { default as RadioGroup } from './RadioGroup/RadioGroup';
+export { default as Radio } from './Radio';
 export { default as Modal } from './Modal';
 export { default as DropDownMenu } from './DropDownMenu/DropDownMenu';
 export { default as Badge } from './Badge/Badge';
@@ -32,8 +32,8 @@ export { default as Table } from './Table/Table';
 export { default as Typography } from './Typography/Typography';
 export { default as DatePicker } from './DatePicker/DatePicker';
 /** ====generated-code-types===== */
+export * from './BottomNavigation/index.types';
 export * from './Tooltip/Tooltip.types';
-export * from './BottomNavigation/BottomNavigation.types';
 export * from './Grid/Grid.types';
 export * from './DatePicker/DatePicker.types';
 export * from './Typography/Typography.types';
@@ -57,7 +57,7 @@ export * from './Select/Select.types';
 export * from './TextInput/TextInput.types';
 export * from './MaskedInput/MaskedInput.types';
 export * from './MoneyInput/MoneyInput.types';
-export * from './RadioGroup/RadioGroup.types';
+export * from './Radio/Radio.types';
 export * from './ButtonGroup/ButtonGroup.types';
 export * from './FormGroup/FormGroup.types';
 export * from './Layout/Sidebar/Sidebar.types';

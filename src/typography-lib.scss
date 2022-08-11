@@ -8,13 +8,12 @@
   -moz-osx-font-smoothing: grayscale;
   margin-bottom: var(--typography-gutter-bottom);
   margin-top: 0;
-  color: var(--typography-intent-color);
   text-align: var(--typography-align);
 
-  [data-lens-element='toast__icon'] {
-    fill: var(--lens-ui-typography-text-color);
-    color: var(--lens-ui-typography-text-color);
-  }
+  // [data-lens-element='toast__icon'] {
+  //   fill: var(--lens-ui-typography-text-color);
+  //   color: var(--lens-ui-typography-text-color);
+  // }
 }
 
 @mixin h1 {

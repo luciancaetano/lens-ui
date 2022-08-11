@@ -1,39 +1,43 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import RadioGroup from './RadioGroup';
+import Radio from './Radio';
 
-<Meta title="Data Entry/RadioGroup" component={RadioGroup}/>
+<Meta title="Data Entry/Radio" component={Radio}/>
 
 
-# RadioGroup
+# Radio
 
-RadioGroup allow the user to select one option from a set.
+Radio allow the user to select one option from a set.
 
 <Canvas>
-  <RadioGroup
-    defaultValue="2"
-    name="input"
-    options={[
-      {
-        label: 'Option1',
-        value: '1'
-      },
-      {
-        label: 'Option2',
-        value: '2'
-      },
-      {
-        label: 'Option3',
-        value: '3'
-      }
-    ]}
-  />
+  <Radio.Group defaultValue="2" name="input">
+    <Radio
+      value="1"
+      label="Option 1"
+      checked
+    />
+    <Radio
+      value="2"
+      label="Option 2"
+      checked
+    />
+    <Radio
+      value="3"
+      label="Option 3"
+      checked
+    />
+    <Radio
+      value="4"
+      label="Option 4"
+      checked
+    />
+  </Radio.Group>
 </Canvas>
 
 ## Properties
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
-|options|`Array<IRadioGroupOption>`|-|The options to display in the radio group.|Yes|
+|options|`Array<IRadioOption>`|-|The options to display in the radio group.|Yes|
 |name|string|undefined|The name of the input|No|
 |value|string|-|Value of the input|No|
 |defaultValue|string|undefined|Default value of the input|No|
@@ -47,7 +51,7 @@ RadioGroup allow the user to select one option from a set.
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
-### IRadioGroupOption (Object)
+### IRadioOption (Object)
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
@@ -62,23 +66,26 @@ RadioGroup allow the user to select one option from a set.
 #### Inline Variation
 
 <Canvas>
-  <RadioGroup
-    defaultValue="2"
-    name="input"
-    inline
-    options={[
-      {
-        label: 'Option1',
-        value: '1'
-      },
-      {
-        label: 'Option2',
-        value: '2'
-      },
-      {
-        label: 'Option3',
-        value: '3'
-      }
-    ]}
-  />
+  <Radio.Group defaultValue="2" name="input2" inline>
+    <Radio
+      value="1"
+      label="Option 1"
+      checked
+    />
+    <Radio
+      value="2"
+      label="Option 2"
+      checked
+    />
+    <Radio
+      value="3"
+      label="Option 3"
+      checked
+    />
+    <Radio
+      value="4"
+      label="Option 4"
+      checked
+    />
+  </Radio.Group>
 </Canvas>

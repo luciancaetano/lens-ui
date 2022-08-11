@@ -6,7 +6,21 @@
   --lens-ui-list-prefix-min-width: initial;
   --lens-ui-list-suffix-min-width: initial;
 
-  list-style: none;
+  &--bordered {
+    border: 1px solid var(--lens-ui-elements-list-border);
+
+    [data-lens-element='list__item'],
+    [data-lens-element='list__item--heading'] {
+      &:first-child {
+        border-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
   padding: 0;
 
   &__item {

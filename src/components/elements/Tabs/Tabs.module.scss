@@ -74,10 +74,10 @@
         margin-bottom: -1px;
         background: 0 0;
         border: 1px solid transparent;
-        border-top-left-radius: .25rem;
-        border-top-right-radius: .25rem;
         cursor: pointer;
         user-select: none;
+        border-top-left-radius: .15rem;
+        border-top-right-radius: .15rem;
 
         &:hover {
           color: var(--lens-ui-typography-faded-text-color);

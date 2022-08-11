@@ -12,19 +12,19 @@ The List component is used to display a list of items.
 
 <Canvas>
     <List>
-        <List.Item cursor="pointer" key="1" prefix={<Icon name="AiFillGithub" />}>
+        <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
             Item 1
         </List.Item>
-        <List.Item key="1" isHeading>
+        <List.Item isHeading>
             Heading
         </List.Item>
-        <List.Item key="1">
+        <List.Item>
             Item 2
         </List.Item>
-        <List.Item key="1">
+        <List.Item>
             Item 3
         </List.Item>
-        <List.Item key="1">
+        <List.Item>
             Item 4
         </List.Item>
     </List>
@@ -37,6 +37,7 @@ The List component is used to display a list of items.
 |intent|IntentType|primary|The intent of the list.|No|
 |prefixMinWidth|number \| string|undefined|Min width of prefix container.|No|
 |suffixMinWidth|number \| string|undefined|Min width of suffix container.|No|
+|border|boolean|true|Render left and right border.|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 ### List.Item component Properties

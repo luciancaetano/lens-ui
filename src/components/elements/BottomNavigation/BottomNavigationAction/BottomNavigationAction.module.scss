@@ -1,0 +1,82 @@
+@import '../../../../style-lib';
+
+.action {
+  @include lens-ui-typography;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(.4, 0, .2, 1) 0ms, padding-top 250ms cubic-bezier(.4, 0, .2, 1) 0ms;
+  min-width: 80px;
+  max-width: 168px;
+  flex-direction: column;
+  flex: 1 1 0%;
+  color: var(--lens-ui-elements-card-typography-faded-text-color);
+  padding: .25rem .5rem;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    transition: all .1s ease-in-out;
+    line-height: 0;
+
+    &__keepLabel {
+      font-size: .8rem;
+      line-height: 1rem;
+    }
+
+    &__active {
+      color: var(--lens-ui-intents-primary);
+      font-size: .8rem;
+      line-height: 1rem;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s ease-in-out;
+
+    svg {
+      width: 2.3rem;
+      height: 2.3rem;
+    }
+
+    &__keepLabel {
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+    }
+
+    &__active {
+      color: var(--lens-ui-intents-primary);
+
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+    }
+  }
+
+  &__active {
+    color: var(--lens-ui-intents-primary);
+  }
+}

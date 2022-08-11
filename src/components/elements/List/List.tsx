@@ -8,7 +8,7 @@ import { IListProps } from './List.types';
  * List is a component that represents a list of items.
  */
 const List = React.forwardRef<HTMLDivElement, IListProps>(({
-  className, testingID, id, intent = 'primary', children, prefixMinWidth, suffixMinWidth, ...props
+  className, testingID, id, intent = 'primary', border = true, children, prefixMinWidth, suffixMinWidth, ...props
 }, ref) => (
   <div
     data-lens-element="list"
@@ -16,7 +16,7 @@ const List = React.forwardRef<HTMLDivElement, IListProps>(({
     id={id}
     data-testid={testingID}
     data-lens-intent={intent}
-    className={clsx(styles.list, className)}
+    className={clsx(styles.list, border && styles.listBordered, className)}
     data-role="list"
     ref={ref}
     style={{

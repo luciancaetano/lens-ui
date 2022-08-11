@@ -5,21 +5,26 @@ This is the roadmap for next version
 ### Components
 - [x] Menu (Menu.Item, Menu.Divider, Menu.SubMenu)
 - [x] Grid (Grid.Col, Grid.Row)
-- [ ] Bottom Navigation (BottomNavigation.Action)
+- [x] Bottom Navigation (BottomNavigation.Action)
+- [x] Tooltip component
 - [ ] Image
 - [ ] Pagination
-- [ ] InputNumber
-- [ ] InputSlider
-- [ ] Slider
-- [ ] TransferList
-- [ ] Timeline
+- [ ] Link (Extended Typography)
 - [ ] Collapse
-- [ ] TreeList
+- [ ] Timeline
 - [ ] Upload
-- [ ] Drawer
-- [ ] Autocomplete Input
 - [ ] PopConfirm
-- [x] Tooltip component
+- [ ] Drawer
+- [ ] InputNumber
+- [ ] TransferList
+- [ ] Autocomplete Input
+- [ ] InputSlider
+- [ ] TreeList
+
+### Theming
+- [ ] Theme Provider
+- [ ] DarkMode
+- [ ] Reorganize and simplify theming and css variables
 
 ### Providers
 
@@ -31,7 +36,7 @@ This is the roadmap for next version
 ### Improvments
 - [x] Fix toast
 - [x] Improve list item layout
-- [x] Update styles to match with typography
+- [x] ~~Update styles to match with typography~~
 - [ ] Inject license in source using webpack.BannerPlugin
 
 ### Reworks
@@ -39,3 +44,15 @@ This is the roadmap for next version
 - [x] Handle Dropdown content in DropdownMenu component
 - [x] Rethink useModal and useAlert, make more simple to use, maybe we need only DeviceProvider and ToastProvider
 - [x] Update Docs
+- [ ] Separate Radio from RadioGroup using context (Radio, Radio.Group)
+- [ ] RadioGroup Component
+
+# Concepts of theming
+
+<ThemeProvider settings={(
+    <Theme.Setting>
+        <Theme.Button intent="danger" backgroundColor="red" />
+    </Theme.Setting>
+)}>
+    ...
+</ThemeProvider>

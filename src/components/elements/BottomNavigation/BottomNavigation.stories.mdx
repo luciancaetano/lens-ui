@@ -1,18 +1,51 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import BottomNavigation from './BottomNavigation';
+import BottomNavigation from '.';
+import Icon from '../Icon/Icon';
 
-<Meta title="Components/BottomNavigation" component={BottomNavigation} />
+<Meta title="Navigation/BottomNavigation" component={BottomNavigation} />
 
 # BottomNavigation
 
 This is a small emblem commonly used to represent tags.
 
 <Canvas>
-    <BottomNavigation>Hello World!BottomNavigation</BottomNavigation>
+    <BottomNavigation activeIndex={1}>
+        <BottomNavigation.Action id="recents" icon={<Icon name="MdRestore" />}>Recents</BottomNavigation.Action>
+        <BottomNavigation.Action id="favorites" icon={<Icon name="MdFavorite" />}>Favorites</BottomNavigation.Action>
+        <BottomNavigation.Action id="nearby" icon={<Icon name="MdEditLocation" />}>Nearby</BottomNavigation.Action>
+    </BottomNavigation>
 </Canvas>
 
 ### Properties
 
+#### BottomNavigation
+
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
+|activeId| string | - | id of active item |No|
+|defaultActiveId| string | - | default id of active item |No|
+|keepLabel| string | - | keep's action label when item not selected |No|
+|onChange| Function(id: string) | - | change handler |No|
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+#### BottomNavigation.Action
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|id| string | - | id of active item, this must be unique per BottomNavigation |No|
+|icon| React.ReactNode | - | Icon of Action |No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+## Basic Example
+
+<Canvas>
+    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1}}>
+        <div style={{display: 'flex', flexDirection: 'column-reverse', width: 400, padding: '0', backgroundColor: 'rgb(245 245 245)', minHeight: 500, boxShadow: '0px 0px 1px #000'}}>
+            <BottomNavigation keepLabel activeIndex={1}>
+                <BottomNavigation.Action id="recents" icon={<Icon name="MdRestore" />}>Recents</BottomNavigation.Action>
+                <BottomNavigation.Action id="favorites" icon={<Icon name="MdFavorite" />}>Favorites</BottomNavigation.Action>
+                <BottomNavigation.Action id="nearby" icon={<Icon name="MdEditLocation" />}>Nearby</BottomNavigation.Action>
+            </BottomNavigation>
+        </div>
+    </div>
+</Canvas>

@@ -2,7 +2,7 @@
 
 $default-padding: .5rem;
 
-.radio-group {
+.radio {
   @include lens-ui-typography;
 
   display: flex;
@@ -50,8 +50,8 @@ $default-padding: .5rem;
 
   &__input {
     display: inline-block;
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.2rem;
+    height: 1.2rem;
     vertical-align: top;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -66,7 +66,6 @@ $default-padding: .5rem;
     position: absolute;
     margin-top: .1rem;
 
-    &__checked,
     &:checked {
       background-color: #525ce5;
       border-color: #525ce5;
@@ -81,11 +80,6 @@ $default-padding: .5rem;
       border-color: #b1bbc4;
       outline: 0;
       box-shadow: var(--lens-ui-input-base--active-box-shadow);
-    }
-
-    &--mobile {
-      width: 1.3rem;
-      height: 1.3rem;
     }
   }
 
@@ -102,10 +96,5 @@ $default-padding: .5rem;
     box-sizing: border-box;
     color: var(--lens-ui-typography-faded-text-color);
     padding-left: 1.8rem;
-
-    &--mobile {
-      font-size: 1rem;
-      padding-left: 2rem;
-    }
   }
 }
