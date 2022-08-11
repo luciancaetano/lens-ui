@@ -17,6 +17,15 @@
   --lens-ui-hue-light-text: 0;
   --lens-ui-hue-dark-text: 210;
   --lens-ui-hue-bg-text: 210;
+  --lens-ui-hue-primary-text-active: 207;
+  --lens-ui-hue-success-text-active: 160;
+  --lens-ui-hue-secondary-text-active: 230;
+  --lens-ui-hue-danger-text-active: 0;
+  --lens-ui-hue-info-text-active: 195;
+  --lens-ui-hue-warning-text-active: 38;
+  --lens-ui-hue-light-text-active: 220;
+  --lens-ui-hue-dark-text-active: 210;
+  --lens-ui-hue-bg-text-active: 207;
 
   /* calculated */
   --lens-ui-hue-primary-dark: calc(var(--lens-ui-hue-primary) - 1);
@@ -168,6 +177,7 @@
   --lens-ui-elements-card-backgrounds-default-border-color: hsl(var(--lens-ui-hue-bg) 20% 93%);
   --lens-ui-elements-card-backgrounds-default-background-color: hsl(var(--lens-ui-hue-bg) 0% 100%);
   --lens-ui-elements-card-backgrounds-default-color: var(--lens-ui-typography-text-color);
+  --lens-ui-elements-card-backgrounds-default-color-active: var(--lens-ui-typography-text-color-active);
   --lens-ui-elements-card-backgrounds-default-card-title-color: var(--lens-ui-typography-text-color);
   --lens-ui-elements-card-backgrounds-default-card-sub-title-color: hsl(var(--lens-ui-hue-secondary) 10% 50%);
   --lens-ui-elements-card-backgrounds-default-card-link-color: var(--lens-ui-intents-primary);
@@ -175,6 +185,7 @@
   --lens-ui-elements-card-backgrounds-primary-border-color: var(--lens-ui-intents-primary-border);
   --lens-ui-elements-card-backgrounds-primary-background-color: var(--lens-ui-intents-primary);
   --lens-ui-elements-card-backgrounds-primary-color: var(--lens-ui-intents-primary-text);
+  --lens-ui-elements-card-backgrounds-primary-color-active: var(--lens-ui-intents-primary-text-active);
   --lens-ui-elements-card-backgrounds-primary-card-title-color: var(--lens-ui-intents-primary-text);
   --lens-ui-elements-card-backgrounds-primary-card-sub-title-color: var(--lens-ui-intents-primary-light-text);
   --lens-ui-elements-card-backgrounds-primary-card-link-color: var(--lens-ui-intents-primary-text);
@@ -182,6 +193,7 @@
   --lens-ui-elements-card-backgrounds-secondary-border-color: var(--lens-ui-intents-secondary-border);
   --lens-ui-elements-card-backgrounds-secondary-background-color: var(--lens-ui-intents-secondary);
   --lens-ui-elements-card-backgrounds-secondary-color: var(--lens-ui-intents-secondary-text);
+  --lens-ui-elements-card-backgrounds-secondary-color-active: var(--lens-ui-intents-secondary-text-active);
   --lens-ui-elements-card-backgrounds-secondary-card-title-color: var(--lens-ui-intents-secondary-text);
   --lens-ui-elements-card-backgrounds-secondary-card-sub-title-color: var(--lens-ui-intents-secondary-light-text);
   --lens-ui-elements-card-backgrounds-secondary-card-link-color: var(--lens-ui-intents-secondary-text);
@@ -189,6 +201,7 @@
   --lens-ui-elements-card-backgrounds-success-border-color: var(--lens-ui-intents-success-border);
   --lens-ui-elements-card-backgrounds-success-background-color: var(--lens-ui-intents-success);
   --lens-ui-elements-card-backgrounds-success-color: var(--lens-ui-intents-success-text);
+  --lens-ui-elements-card-backgrounds-success-color-active: var(--lens-ui-intents-success-text-active);
   --lens-ui-elements-card-backgrounds-success-card-title-color: var(--lens-ui-intents-success-text);
   --lens-ui-elements-card-backgrounds-success-card-sub-title-color: var(--lens-ui-intents-success-light-text);
   --lens-ui-elements-card-backgrounds-success-card-link-color: var(--lens-ui-intents-success-text);
@@ -196,6 +209,7 @@
   --lens-ui-elements-card-backgrounds-info-border-color: var(--lens-ui-intents-info-border);
   --lens-ui-elements-card-backgrounds-info-background-color: var(--lens-ui-intents-info);
   --lens-ui-elements-card-backgrounds-info-color: var(--lens-ui-intents-info-text);
+  --lens-ui-elements-card-backgrounds-info-color-active: var(--lens-ui-intents-info-text-active);
   --lens-ui-elements-card-backgrounds-info-card-title-color: var(--lens-ui-intents-info-text);
   --lens-ui-elements-card-backgrounds-info-card-sub-title-color: var(--lens-ui-intents-info-light-text);
   --lens-ui-elements-card-backgrounds-info-card-link-color: var(--lens-ui-intents-info-text);
@@ -203,6 +217,7 @@
   --lens-ui-elements-card-backgrounds-warning-border-color: var(--lens-ui-intents-warning-border);
   --lens-ui-elements-card-backgrounds-warning-background-color: var(--lens-ui-intents-warning);
   --lens-ui-elements-card-backgrounds-warning-color: var(--lens-ui-intents-warning-text);
+  --lens-ui-elements-card-backgrounds-warning-color-active: var(--lens-ui-intents-warning-text-active);
   --lens-ui-elements-card-backgrounds-warning-card-title-color: var(--lens-ui-intents-warning-text);
   --lens-ui-elements-card-backgrounds-warning-card-sub-title-color: var(--lens-ui-intents-warning-light-text);
   --lens-ui-elements-card-backgrounds-warning-card-link-color: var(--lens-ui-intents-warning-text);
@@ -210,6 +225,7 @@
   --lens-ui-elements-card-backgrounds-danger-border-color: var(--lens-ui-intents-danger-border);
   --lens-ui-elements-card-backgrounds-danger-background-color: var(--lens-ui-intents-danger);
   --lens-ui-elements-card-backgrounds-danger-color: var(--lens-ui-intents-danger-text);
+  --lens-ui-elements-card-backgrounds-danger-color-active: var(--lens-ui-intents-danger-text-active);
   --lens-ui-elements-card-backgrounds-danger-card-title-color: var(--lens-ui-intents-danger-text);
   --lens-ui-elements-card-backgrounds-danger-card-sub-title-color: var(--lens-ui-intents-danger-light-text);
   --lens-ui-elements-card-backgrounds-danger-card-link-color: var(--lens-ui-intents-danger-text);
@@ -233,6 +249,7 @@
   --lens-ui-elements-divider-text-color: hsl(var(--lens-ui-hue-dark) 16% 43%);
   --lens-ui-intents-primary: hsl(var(--lens-ui-hue-primary) 74% 61%);
   --lens-ui-intents-primary-text: hsl(var(--lens-ui-hue-primary-text) 0% 100%);
+  --lens-ui-intents-primary-text-active: hsl(var(--lens-ui-hue-primary-text-active) 100% 100%);
   --lens-ui-intents-primary-border: hsl(var(--lens-ui-hue-primary) 74% 61%);
   --lens-ui-intents-primary-light: hsl(var(--lens-ui-hue-primary) 86% 66%);
   --lens-ui-intents-primary-light-text: hsl(var(--lens-ui-hue-primary-text) 0% 100%);
@@ -248,6 +265,7 @@
   --lens-ui-intents-primary-darken-border: hsl(var(--lens-ui-hue-primary-darken) 50% 42%);
   --lens-ui-intents-secondary: hsl(var(--lens-ui-hue-secondary) 10% 50%);
   --lens-ui-intents-secondary-text: hsl(var(--lens-ui-hue-secondary-text) 29% 95%);
+  --lens-ui-intents-secondary-text-active: hsl(var(--lens-ui-hue-secondary-text-active) 29% 95%);
   --lens-ui-intents-secondary-border: hsl(var(--lens-ui-hue-secondary) 10% 50%);
   --lens-ui-intents-secondary-light: hsl(var(--lens-ui-hue-secondary-light) 14% 60%);
   --lens-ui-intents-secondary-light-text: hsl(var(--lens-ui-hue-secondary-text) 29% 95%);
@@ -263,6 +281,7 @@
   --lens-ui-intents-secondary-darken-border: hsl(var(--lens-ui-hue-secondary-darken) 10% 30%);
   --lens-ui-intents-success: hsl(var(--lens-ui-hue-success) 70% 45%);
   --lens-ui-intents-success-text: hsl(var(--lens-ui-hue-success-text) 0% 100%);
+  --lens-ui-intents-success-text-active: hsl(var(--lens-ui-hue-success-text-active) 0% 100%);
   --lens-ui-intents-success-border: hsl(var(--lens-ui-hue-success) 70% 45%);
   --lens-ui-intents-success-light: hsl(var(--lens-ui-hue-success-light) 67% 56%);
   --lens-ui-intents-success-light-text: hsl(var(--lens-ui-hue-success-text) 0% 100%);
@@ -278,6 +297,7 @@
   --lens-ui-intents-success-darken-border: hsl(var(--lens-ui-hue-success) 66% 25%);
   --lens-ui-intents-danger: hsl(var(--lens-ui-hue-danger) 85% 63%);
   --lens-ui-intents-danger-text: hsl(var(--lens-ui-hue-danger-text) 0% 100%);
+  --lens-ui-intents-danger-text-active: hsl(var(--lens-ui-hue-danger-text-active) 0% 100%);
   --lens-ui-intents-danger-border: hsl(var(--lens-ui-hue-danger) 85% 63%);
   --lens-ui-intents-danger-light: hsl(var(--lens-ui-hue-danger) 100% 71%);
   --lens-ui-intents-danger-light-text: hsl(var(--lens-ui-hue-danger-text) 0% 100%);
@@ -293,6 +313,7 @@
   --lens-ui-intents-danger-darken-border: hsl(var(--lens-ui-hue-danger) 55% 48%);
   --lens-ui-intents-info: hsl(var(--lens-ui-hue-info) 73% 63%);
   --lens-ui-intents-info-text: hsl(var(--lens-ui-hue-info-text) 0% 100%);
+  --lens-ui-intents-info-text-active: hsl(var(--lens-ui-hue-info-text-active) 0% 100%);
   --lens-ui-intents-info-border: hsl(var(--lens-ui-hue-info) 73% 63%);
   --lens-ui-intents-info-light: hsl(var(--lens-ui-hue-info) 71% 66%);
   --lens-ui-intents-info-light-text: hsl(var(--lens-ui-hue-info-text) 0% 100%);
@@ -308,6 +329,7 @@
   --lens-ui-intents-info-darken-border: hsl(var(--lens-ui-hue-info) 48% 34%);
   --lens-ui-intents-warning: hsl(var(--lens-ui-hue-warning) 83% 61%);
   --lens-ui-intents-warning-text: hsl(var(--lens-ui-hue-warning-text) 0% 100%);
+  --lens-ui-intents-warning-text-active: hsl(var(--lens-ui-hue-warning-text-active) 0% 100%);
   --lens-ui-intents-warning-border: hsl(var(--lens-ui-hue-warning) 83% 61%);
   --lens-ui-intents-warning-light: hsl(var(--lens-ui-hue-warning) 83% 65%);
   --lens-ui-intents-warning-light-text: hsl(var(--lens-ui-hue-warning-text) 0% 100%);
@@ -323,13 +345,16 @@
   --lens-ui-intents-warning-darken-border: hsl(var(--lens-ui-hue-warning) 65% 40%);
   --lens-ui-intents-light: hsl(var(--lens-ui-hue-light) 33% 98%);
   --lens-ui-intents-light-text: hsl(var(--lens-ui-hue-light-text) 0% 0%);
+  --lens-ui-intents-light-text-active: hsl(var(--lens-ui-hue-light-text-active) 0% 0%);
   --lens-ui-intents-light-border: hsl(var(--lens-ui-hue-light) 37% 96%);
   --lens-ui-intents-dark: hsl(var(--lens-ui-hue-dark-text) 10% 23%);
   --lens-ui-intents-dark-text: hsl(var(--lens-ui-hue-dark-text) 29% 95%);
+  --lens-ui-intents-dark-text-active: hsl(var(--lens-ui-hue-dark-text-active) 29% 95%);
   --lens-ui-intents-dark-border: hsl(var(--lens-ui-hue-dark-text) 10% 23%);
   --lens-ui-typography-font-family: 'Roboto', sans-serif;
   --lens-ui-typography-font-size: .9333333333rem;
   --lens-ui-typography-text-color: hsl(var(--lens-ui-hue-bg-text) 9% 31%);
+  --lens-ui-typography-text-color-active: hsl(var(--lens-ui-hue-bg-text-active) 100% 70%);
   --lens-ui-typography-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 48%);
   --lens-ui-typography-most-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 80%);
   --lens-ui-scrollbar-thumb: hsl(210deg 2% 76%);

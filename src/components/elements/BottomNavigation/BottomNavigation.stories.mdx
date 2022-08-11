@@ -9,7 +9,7 @@ import Icon from '../Icon/Icon';
 This is a small emblem commonly used to represent tags.
 
 <Canvas>
-    <BottomNavigation activeIndex={1}>
+    <BottomNavigation>
         <BottomNavigation.Action id="recents" icon={<Icon name="MdRestore" />}>Recents</BottomNavigation.Action>
         <BottomNavigation.Action id="favorites" icon={<Icon name="MdFavorite" />}>Favorites</BottomNavigation.Action>
         <BottomNavigation.Action id="nearby" icon={<Icon name="MdEditLocation" />}>Nearby</BottomNavigation.Action>
@@ -41,7 +41,7 @@ This is a small emblem commonly used to represent tags.
 <Canvas>
     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1}}>
         <div style={{display: 'flex', flexDirection: 'column-reverse', width: 400, padding: '0', backgroundColor: 'rgb(245 245 245)', minHeight: 500, boxShadow: '0px 0px 1px #000'}}>
-            <BottomNavigation keepLabel activeIndex={1}>
+            <BottomNavigation keepLabel>
                 <BottomNavigation.Action id="recents" icon={<Icon name="MdRestore" />}>Recents</BottomNavigation.Action>
                 <BottomNavigation.Action id="favorites" icon={<Icon name="MdFavorite" />}>Favorites</BottomNavigation.Action>
                 <BottomNavigation.Action id="nearby" icon={<Icon name="MdEditLocation" />}>Nearby</BottomNavigation.Action>

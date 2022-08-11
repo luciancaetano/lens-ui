@@ -41,7 +41,7 @@
     }
 
     &__active {
-      color: var(--lens-ui-intents-primary);
+      color: var(--lens-ui-elements-card-backgrounds-default-color-active);
       font-size: .8rem;
       line-height: 1rem;
     }
@@ -67,7 +67,7 @@
     }
 
     &__active {
-      color: var(--lens-ui-intents-primary);
+      color: var(--lens-ui-elements-card-backgrounds-default-color-active);
 
       svg {
         width: 1.7rem;
@@ -77,6 +77,6 @@
   }
 
   &__active {
-    color: var(--lens-ui-intents-primary);
+    color: var(--lens-ui-elements-card-backgrounds-default-color-active);
   }
 }

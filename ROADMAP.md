@@ -20,7 +20,7 @@ This is the roadmap for next version
 ### Theming
 - [ ] Theme Provider
 - [ ] DarkMode
-- [ ] Reorganize and simplify theming and css variables
+- [ ] Theme Builder (A simple to for changing css variables and creating custom themes)
 
 ### Hooks
 

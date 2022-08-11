@@ -1,0 +1,26 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import ThemeProvider from './ThemeProvider';
+import BottomNavigation from '../BottomNavigation';
+import Icon from '../Icon/Icon';
+
+<Meta title="Theming/ThemeProvider" component={ThemeProvider} />
+
+# ThemeProvider
+
+With the theme provider you can change the theme of the application in a specific location/component or in the whole application.
+
+<Canvas>
+    <ThemeProvider theme="dark">
+        <BottomNavigation>
+            <BottomNavigation.Action id="recents" icon={<Icon name="MdRestore" />}>Recents</BottomNavigation.Action>
+            <BottomNavigation.Action id="favorites" icon={<Icon name="MdFavorite" />}>Favorites</BottomNavigation.Action>
+            <BottomNavigation.Action id="nearby" icon={<Icon name="MdEditLocation" />}>Nearby</BottomNavigation.Action>
+        </BottomNavigation>
+    </ThemeProvider>
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|

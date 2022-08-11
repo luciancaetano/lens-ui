@@ -5,11 +5,13 @@ import React, {
 import { IBottomNavigationProps } from './BottomNavigation.types';
 import styles from './BottomNavigation.module.scss';
 import { BottomNavigationContext, IBottomNavigationContextData } from '../BottomNavigationContext';
+import { useTheme } from '../../../../hooks/use-theme';
 
 const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps>(({
-  className, testingID, id, children, activeId, defaultActiveId, keepLabel, onChange, ...props
+  className, testingID, id, children, activeId, defaultActiveId, keepLabel, onChange, style, ...props
 }, ref) => {
   const [active, setActive] = useState<string | null | undefined>(activeId || defaultActiveId);
+  const applyCssVars = useTheme();
 
   const handleSelect = useCallback((newId: string) => {
     if (active === newId) return;
@@ -43,6 +45,7 @@ const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps
         styles.bottomNavigation,
         className,
       )}
+      style={applyCssVars(style)}
       ref={ref}
     >
       <BottomNavigationContext.Provider value={contextValue}>

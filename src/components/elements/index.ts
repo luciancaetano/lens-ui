@@ -1,4 +1,5 @@
 /** ====generated-code-element===== */
+export { default as ThemeProvider } from './ThemeProvider/ThemeProvider';
 export { default as BottomNavigation } from './BottomNavigation';
 export { default as Tooltip } from './Tooltip/Tooltip';
 export { Col, Row } from './Grid';
@@ -32,6 +33,7 @@ export { default as Table } from './Table/Table';
 export { default as Typography } from './Typography/Typography';
 export { default as DatePicker } from './DatePicker/DatePicker';
 /** ====generated-code-types===== */
+export * from './ThemeProvider/ThemeProvider.types';
 export * from './BottomNavigation/index.types';
 export * from './Tooltip/Tooltip.types';
 export * from './Grid/Grid.types';
