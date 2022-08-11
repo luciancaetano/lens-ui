@@ -44,8 +44,7 @@ This is the roadmap for next version
 - [x] Handle Dropdown content in DropdownMenu component
 - [x] Rethink useModal and useAlert, make more simple to use, maybe we need only DeviceProvider and ToastProvider
 - [x] Update Docs
-- [ ] Separate Radio from RadioGroup using context (Radio, Radio.Group)
-- [ ] RadioGroup Component
+- [x] Separate Radio from RadioGroup using context (Radio, Radio.Group)
 
 # Concepts of theming
 
