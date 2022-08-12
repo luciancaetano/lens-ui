@@ -1,6 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Button from './Button';
-
 import Icon from '../Icon/Icon';
 
 <Meta title="General/Button" component={Button}/>
@@ -108,4 +107,36 @@ The button properties extends the [HTML button element](https://developer.mozill
     <Button size="large">
        large
     </Button>
+</Canvas>
+
+
+## Dark Theme
+
+<Canvas>
+    <div className="lens-ui-dark-theme-bg">
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="primary">default - primary</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="secondary">default - secondary</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="success">default - success</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="info">default - info</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="warning">default - warning</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="danger">default - danger</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="dark">default - dark</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="light">default - light</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="primary">minimal - primary</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="secondary">minimal - secondary</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="success">minimal - success</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="info">minimal - info</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="warning">minimal - warning</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="danger">minimal - danger</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="dark">minimal - dark</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="minimal" intent="light">minimal - light</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="primary">outlined - primary</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="secondary">outlined - secondary</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="success">outlined - success</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="info">outlined - info</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="warning">outlined - warning</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="danger">outlined - danger</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="dark">outlined - dark</Button></span>
+            <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="light">outlined - light</Button></span>
+    </div>
 </Canvas>

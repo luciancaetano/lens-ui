@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import BottomNavigation from '.';
 import Icon from '../Icon/Icon';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Navigation/BottomNavigation" component={BottomNavigation} />
 
@@ -48,4 +49,23 @@ This is a small emblem commonly used to represent tags.
             </BottomNavigation>
         </div>
     </div>
+</Canvas>
+
+
+## Dark Theme
+
+<Canvas>
+    <ThemeProvider theme="dark">
+        <BottomNavigation>
+            <BottomNavigation.Action id="recents" icon={<Icon name="MdRestore" />}>Recents</BottomNavigation.Action>
+            <BottomNavigation.Action id="favorites" icon={<Icon name="MdFavorite" />}>Favorites</BottomNavigation.Action>
+            <BottomNavigation.Action id="nearby" icon={<Icon name="MdEditLocation" />}>Nearby</BottomNavigation.Action>
+        </BottomNavigation>
+        <br/>
+        <BottomNavigation keepLabel>
+            <BottomNavigation.Action id="recents" icon={<Icon name="MdRestore" />}>Recents</BottomNavigation.Action>
+            <BottomNavigation.Action id="favorites" icon={<Icon name="MdFavorite" />}>Favorites</BottomNavigation.Action>
+            <BottomNavigation.Action id="nearby" icon={<Icon name="MdEditLocation" />}>Nearby</BottomNavigation.Action>
+        </BottomNavigation>
+    </ThemeProvider>
 </Canvas>

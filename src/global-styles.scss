@@ -27,6 +27,10 @@ body {
   @include lens-ui-typography-no-color;
 }
 
+.lens-ui-dark-theme-bg {
+  background-color: #464646;
+}
+
 @keyframes lens-ui-fade-in {
   0.0% {
     opacity: 0;

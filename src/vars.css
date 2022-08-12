@@ -39,6 +39,7 @@
   --lens-ui-elements-link-link-text: hsl(var(--lens-ui-hue-primary) 74% 61%);
   --lens-ui-elements-link-link-font-weight: 400;
   --lens-ui-elements-button-font-family: var(--lens-ui-typography-font-family);
+  --lens-ui-elements-button-outlined-bg-color: rgb(255 255 255);
   --lens-ui-elements-button-primary-text-color: var(--lens-ui-intents-primary-text);
   --lens-ui-elements-button-primary-border-color: var(--lens-ui-intents-primary-border);
   --lens-ui-elements-button-primary-background-color: var(--lens-ui-intents-primary);

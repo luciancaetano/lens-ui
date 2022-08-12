@@ -1,11 +1,10 @@
-import React, { useContext, useMemo } from 'react';
+import { useContext } from 'react';
 import ThemeContext from '../components/elements/ThemeProvider/ThemeContext';
 
-export function useTheme(styles: React.CSSProperties = {}) {
-  const { cssVars } = useContext(ThemeContext);
+function useTheme() {
+  const { className } = useContext(ThemeContext);
 
-  return useMemo(() => ({
-    ...styles,
-    ...cssVars,
-  }), [cssVars, styles]);
+  return className;
 }
+
+export default useTheme;

@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import React, {
-  useCallback, useMemo, useState, useEffect,
+  useCallback, useMemo,
 } from 'react';
+import { useControllableState } from '../../../hooks';
 import styles from './Radio.module.scss';
 import { IRadioGroupProps } from './Radio.types';
 import RadioGroupContext, { IRadioGroupContextData } from './RadioGroupContext';
@@ -12,17 +13,15 @@ import RadioGroupContext, { IRadioGroupContextData } from './RadioGroupContext';
 const RadioGroup: React.FC<IRadioGroupProps> = ({
   className, testingID, defaultValue, disabled, id, onChange, value, inline, children, name, ...props
 }) => {
-  const isControlled = useMemo(() => value !== undefined, [value]);
-  const [selected, setSelected] = useState<string | number | undefined>(value || defaultValue);
+  const [selected, setSelected] = useControllableState<string | number>(value, defaultValue);
 
   const handleChange = useCallback((v: string | number | undefined, e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange && v !== undefined) {
       onChange(v, e);
     }
-    if (!isControlled) {
-      setSelected(v);
-    }
-  }, [isControlled, onChange]);
+
+    setSelected(v);
+  }, [onChange, setSelected]);
 
   const providerData = useMemo<IRadioGroupContextData>(() => ({
     inline,
@@ -32,12 +31,6 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
     isContextPresent: true,
     name,
   }), [disabled, handleChange, inline, name, selected]);
-
-  useEffect(() => {
-    if (isControlled) {
-      setSelected(value);
-    }
-  }, [isControlled, value]);
 
   return (
     <div

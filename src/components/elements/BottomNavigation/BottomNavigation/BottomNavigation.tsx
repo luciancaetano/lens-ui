@@ -1,39 +1,33 @@
 import clsx from 'clsx';
 import React, {
-  useCallback, useEffect, useMemo, useState,
+  useCallback, useMemo,
 } from 'react';
 import { IBottomNavigationProps } from './BottomNavigation.types';
 import styles from './BottomNavigation.module.scss';
 import { BottomNavigationContext, IBottomNavigationContextData } from '../BottomNavigationContext';
-import { useTheme } from '../../../../hooks/use-theme';
+import useTheme from '../../../../hooks/use-theme';
+import { useControllableState } from '../../../../hooks';
 
 const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps>(({
-  className, testingID, id, children, activeId, defaultActiveId, keepLabel, onChange, style, ...props
+  className, testingID, id, children, activeId, defaultActiveId, keepLabel, onChange, ...props
 }, ref) => {
-  const [active, setActive] = useState<string | null | undefined>(activeId || defaultActiveId);
-  const theme = useTheme(style);
+  const [active, setActive] = useControllableState<string | null | undefined>(activeId, defaultActiveId);
+  const theme = useTheme();
 
   const handleSelect = useCallback((newId: string) => {
     if (active === newId) return;
 
-    setActive(newId);
-
     if (onChange) {
       onChange(newId);
     }
-  }, [active, onChange]);
+    setActive(newId);
+  }, [active, onChange, setActive]);
 
   const contextValue = useMemo<IBottomNavigationContextData>(() => ({
     onSelect: handleSelect,
     activeId: active,
     keepLabel,
   }), [active, handleSelect, keepLabel]);
-
-  useEffect(() => {
-    if (activeId !== undefined) {
-      setActive(activeId);
-    }
-  }, [activeId]);
 
   return (
     <div
@@ -43,9 +37,9 @@ const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps
       data-lens-element="bottomNavigation"
       className={clsx(
         styles.bottomNavigation,
+        theme,
         className,
       )}
-      style={theme}
       ref={ref}
     >
       <BottomNavigationContext.Provider value={contextValue}>

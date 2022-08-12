@@ -40,7 +40,7 @@
     border-color: var(--lens-ui-elements-button-primary-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-primary-background-color);
       color: var(--lens-ui-elements-button-primary-background-color);
     }
@@ -92,7 +92,7 @@
     border-color: var(--lens-ui-elements-button-secondary-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-secondary-background-color);
       color: var(--lens-ui-elements-button-secondary-background-color);
     }
@@ -144,7 +144,7 @@
     border-color: var(--lens-ui-elements-button-success-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-success-background-color);
       color: var(--lens-ui-elements-button-success-background-color);
     }
@@ -196,7 +196,7 @@
     border-color: var(--lens-ui-elements-button-info-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-info-background-color);
       color: var(--lens-ui-elements-button-info-background-color);
     }
@@ -248,7 +248,7 @@
     border-color: var(--lens-ui-elements-button-warning-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-warning-background-color);
       color: var(--lens-ui-elements-button-warning-background-color);
     }
@@ -300,7 +300,7 @@
     border-color: var(--lens-ui-elements-button-danger-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-danger-background-color);
       color: var(--lens-ui-elements-button-danger-background-color);
     }
@@ -352,7 +352,7 @@
     border-color: var(--lens-ui-elements-button-light-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-light-background-color);
       color: var(--lens-ui-elements-button-light-text-color);
     }
@@ -404,7 +404,7 @@
     border-color: var(--lens-ui-elements-button-dark-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
       border-color: var(--lens-ui-elements-button-dark-background-color);
       color: var(--lens-ui-elements-button-dark-background-color);
     }
@@ -458,7 +458,7 @@
 
   &--appearance-outlined {
     &:focus {
-      background-color: #fff;
+      background-color: var(--lens-ui-elements-button-outlined-bg-color);
     }
   }
 }
