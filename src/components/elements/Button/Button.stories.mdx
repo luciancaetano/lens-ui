@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Button from './Button';
 import Icon from '../Icon/Icon';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="General/Button" component={Button}/>
 
@@ -112,8 +113,8 @@ The button properties extends the [HTML button element](https://developer.mozill
 
 ## Dark Theme
 
-<Canvas>
-    <div className="lens-ui-dark-theme-bg">
+<Canvas className="dark">
+    <ThemeProvider theme="dark">
             <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="primary">default - primary</Button></span>
             <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="secondary">default - secondary</Button></span>
             <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="default" intent="success">default - success</Button></span>
@@ -138,5 +139,5 @@ The button properties extends the [HTML button element](https://developer.mozill
             <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="danger">outlined - danger</Button></span>
             <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="dark">outlined - dark</Button></span>
             <span style={{padding: '1rem', display: 'inline-flex'}}><Button appearance="outlined" intent="light">outlined - light</Button></span>
-    </div>
+    </ThemeProvider>
 </Canvas>

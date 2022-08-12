@@ -19,7 +19,8 @@ function filterCssVars(theme: Record<string, string> | null | undefined) {
 }
 
 const ThemeProvider:React.FC<IThemeProviderProps> = ({ children, theme }) => {
-  const id = useMemo(() => `${randomId()}-${randomId()}-${randomId()}`, []);
+  const id = useMemo(() => `${randomId()}`, []);
+  const elementId = useMemo(() => `${randomId()}-${randomId()}-${randomId()}`, []);
   const className = useMemo(() => `lens-ui-theme-${id}`, [id]);
   const cssVars = useMemo(() => (typeof theme === 'string' ? defaultThemes[theme] || {} : filterCssVars(theme)), [theme]);
 
@@ -28,9 +29,13 @@ const ThemeProvider:React.FC<IThemeProviderProps> = ({ children, theme }) => {
   }), [className]);
 
   useEffect(() => {
-    const sheet = document.createElement('style');
+    let sheet: Element = document.querySelector(`[data-lens-ui-style-id="${elementId}"]`) as unknown as Element;
 
-    sheet.setAttribute('data-lens-ui-style-id', id);
+    if (!sheet) {
+      sheet = document.createElement('style');
+    }
+
+    sheet.setAttribute('data-lens-ui-style-id', elementId);
 
     sheet.innerHTML = `
       .${`lens-ui-theme-${id}`} {
@@ -42,13 +47,13 @@ const ThemeProvider:React.FC<IThemeProviderProps> = ({ children, theme }) => {
     return () => {
       document.head.removeChild(sheet);
 
-      const elements = document.head.querySelectorAll(`[data-lens-ui-style-id="${id}"]`);
+      const elements = document.head.querySelectorAll(`[data-lens-ui-style-id="${elementId}"]`);
 
       elements.forEach((element) => {
         document.head.removeChild(element);
       });
     };
-  }, [cssVars, id]);
+  }, [cssVars, elementId, id]);
 
   return (
     <ThemeContext.Provider value={value}>
