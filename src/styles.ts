@@ -16,5 +16,5 @@ import '@fontsource/roboto/900-italic.css';
 // fontawesome
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 // others
-import './vars.css';
+import './theme/index.scss';
 import './global-styles.scss';

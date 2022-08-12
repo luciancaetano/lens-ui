@@ -1,0 +1,7 @@
+@import './base';
+@import './button';
+
+:root {
+  @include base-theme;
+  @include button-theme;
+}

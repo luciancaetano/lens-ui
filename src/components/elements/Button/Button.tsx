@@ -41,7 +41,7 @@ const Button: React.FC<IButtonProps> = ({
       data-lens-intent={intent}
       data-lens-appearance={appearance}
       data-lens-button-size={size}
-      className={clsx(styles.button, styles.root, [
+      className={clsx(styles.button, [
         styles[`button--intent-${intent}`],
         styles[`button--size-${size}`],
         styles[`button--appearance-${appearance}`],
