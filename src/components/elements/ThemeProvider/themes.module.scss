@@ -1,0 +1,24 @@
+.dark {
+  --lens-ui-elements-card-backgrounds-default-background-color: var(--lens-ui-intents-dark);
+  --lens-ui-elements-card-backgrounds-default-border-color: #444;
+  --lens-ui-elements-button-outlined-bg-color: var(--lens-ui-intents-dark);
+  --lens-ui-elements-button-dark-background-color: var(--lens-ui-intents-dark);
+  --lens-ui-elements-button-light-text-color: hsl(var(--lens-ui-hue-dark-text) 10% 35%);
+  --lens-ui-elements-button-dark-text-color: var(--lens-ui-intents-lighten);
+  --lens-ui-elements-button-primary-background-color--outlined: var(--lens-ui-intents-primary-light);
+  --lens-ui-elements-button-secondary-background-color--minimal: var(--lens-ui-intents-secondary-lighten);
+  --lens-ui-elements-button-success-background-color--minimal: var(--lens-ui-intents-success-lighten);
+  --lens-ui-elements-button-info-background-color--minimal: var(--lens-ui-intents-info-lighten);
+  --lens-ui-elements-button-warning-background-color--minimal: var(--lens-ui-intents-warning-lighten);
+  --lens-ui-elements-button-danger-background-color--minimal: var(--lens-ui-intents-danger-lighten);
+  --lens-ui-elements-button-dark-background-color--minimal: var(--lens-ui-intents-dark-text);
+  --lens-ui-elements-button-light-text-color--minimal: var(--lens-ui-intents-lighten);
+  --lens-ui-elements-button-secondary-background-color--outlined: var(--lens-ui-intents-secondary-lighten);
+  --lens-ui-elements-button-dark-background-color--outlined: var(--lens-ui-intents-dark-text);
+  --lens-ui-elements-button-light-background-color--outlined: var(--lens-ui-intents-lighten);
+  --lens-ui-elements-button-light-text-color--outlined: var(--lens-ui-intents-lighten);
+  --lens-ui-elements-button-light-background-color: hsl(var(--lens-ui-hue-light) 33% 90%);
+  --lens-ui-elements-button-outlined-bg-color--outlined: hsl(var(--lens-ui-hue-dark-text) 10% 23%);
+  --lens-ui-elements-button-outlined-bg-color--outlined-light: hsl(var(--lens-ui-hue-dark-text) 10% 30%);
+  --lens-ui-elements-button-light-background-color--minimal: var(--lens-ui-elements-button-outlined-bg-color--outlined-light);
+}
