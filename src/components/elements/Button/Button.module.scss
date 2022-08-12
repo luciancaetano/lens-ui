@@ -3,6 +3,8 @@
 .root {
   --lens-ui-elements-button-font-family: var(--lens-ui-typography-font-family);
   --lens-ui-elements-button-outlined-bg-color: rgb(255 255 255);
+  --lens-ui-elements-button-outlined-bg-color--outlined: rgb(255 255 255);
+  --lens-ui-elements-button-outlined-bg-color--outlined-light: rgb(255 255 255);
   --lens-ui-elements-button-primary-text-color: var(--lens-ui-intents-primary-text);
   --lens-ui-elements-button-primary-border-color: var(--lens-ui-intents-primary-border);
   --lens-ui-elements-button-primary-background-color: var(--lens-ui-intents-primary);
@@ -42,6 +44,7 @@
   --lens-ui-elements-button-success-border-color: var(--lens-ui-intents-success-border);
   --lens-ui-elements-button-success-background-color: var(--lens-ui-intents-success);
   --lens-ui-elements-button-success-background-color--outlined: var(--lens-ui-intents-success);
+  --lens-ui-elements-button-success-background-color--minimal: var(--lens-ui-intents-success);
   --lens-ui-elements-button-success-hover-text-color: var(--lens-ui-intents-success-text);
   --lens-ui-elements-button-success-hover-background-color: hsl(var(--lens-ui-hue-success) 70% 39%);
   --lens-ui-elements-button-success-hover-border-color: hsl(var(--lens-ui-hue-success) 70% 36%);
@@ -58,6 +61,7 @@
   --lens-ui-elements-button-info-text-color: var(--lens-ui-intents-info-text);
   --lens-ui-elements-button-info-border-color: var(--lens-ui-intents-info-border);
   --lens-ui-elements-button-info-background-color: var(--lens-ui-intents-info);
+  --lens-ui-elements-button-info-background-color--minimal: var(--lens-ui-intents-info);
   --lens-ui-elements-button-info-background-color--outlined: var(--lens-ui-intents-info);
   --lens-ui-elements-button-info-hover-text-color: var(--lens-ui-intents-info-text);
   --lens-ui-elements-button-info-hover-background-color: hsl(var(--lens-ui-hue-info) 50% 53%);
@@ -75,6 +79,7 @@
   --lens-ui-elements-button-warning-text-color: var(--lens-ui-intents-warning-text);
   --lens-ui-elements-button-warning-border-color: var(--lens-ui-intents-warning-border);
   --lens-ui-elements-button-warning-background-color: var(--lens-ui-intents-warning);
+  --lens-ui-elements-button-warning-background-color--minimal: var(--lens-ui-intents-warning);
   --lens-ui-elements-button-warning-background-color--outlined: var(--lens-ui-intents-warning);
   --lens-ui-elements-button-warning-hover-text-color: var(--lens-ui-intents-warning-text);
   --lens-ui-elements-button-warning-hover-background-color: hsl(var(--lens-ui-hue-warning) 57% 52%);
@@ -92,6 +97,7 @@
   --lens-ui-elements-button-danger-text-color: var(--lens-ui-intents-danger-text);
   --lens-ui-elements-button-danger-border-color: var(--lens-ui-intents-danger-border);
   --lens-ui-elements-button-danger-background-color: var(--lens-ui-intents-danger);
+  --lens-ui-elements-button-danger-background-color--minimal: var(--lens-ui-intents-danger);
   --lens-ui-elements-button-danger-background-color--outlined: var(--lens-ui-intents-danger);
   --lens-ui-elements-button-danger-hover-text-color: var(--lens-ui-intents-danger-text);
   --lens-ui-elements-button-danger-hover-background-color: hsl(var(--lens-ui-hue-danger) 58% 53%);
@@ -107,8 +113,11 @@
   --lens-ui-elements-button-danger-disabled-background-color: hsl(var(--lens-ui-hue-danger) 85% 63%);
   --lens-ui-elements-button-danger-disabled-border-color: hsl(var(--lens-ui-hue-danger) 85% 63%);
   --lens-ui-elements-button-light-text-color: var(--lens-ui-intents-light-text);
+  --lens-ui-elements-button-light-text-color--outlined: var(--lens-ui-intents-light-text);
+  --lens-ui-elements-button-light-text-color--minimal: var(--lens-ui-intents-light-text);
   --lens-ui-elements-button-light-border-color: var(--lens-ui-intents-light-border);
   --lens-ui-elements-button-light-background-color: var(--lens-ui-intents-light);
+  --lens-ui-elements-button-light-background-color--minimal: var(--lens-ui-intents-light);
   --lens-ui-elements-button-light-background-color--outlined: var(--lens-ui-intents-light);
   --lens-ui-elements-button-light-hover-text-color: var(--lens-ui-intents-light-text);
   --lens-ui-elements-button-light-hover-background-color: hsl(var(--lens-ui-hue-light) 25% 98%);
@@ -126,6 +135,7 @@
   --lens-ui-elements-button-dark-text-color: var(--lens-ui-intents-dark-text);
   --lens-ui-elements-button-dark-border-color: var(--lens-ui-intents-dark-border);
   --lens-ui-elements-button-dark-background-color: var(--lens-ui-intents-dark);
+  --lens-ui-elements-button-dark-background-color--minimal: var(--lens-ui-intents-dark);
   --lens-ui-elements-button-dark-background-color--outlined: var(--lens-ui-intents-dark);
   --lens-ui-elements-button-dark-hover-text-color: var(--lens-ui-intents-dark-text);
   --lens-ui-elements-button-dark-hover-background-color: hsl(var(--lens-ui-hue-dark) 10% 19%);
@@ -314,7 +324,7 @@
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-success-background-color);
+      color: var(--lens-ui-elements-button-success-background-color--minimal);
     }
 
     &:disabled {
@@ -366,7 +376,7 @@
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-info-background-color);
+      color: var(--lens-ui-elements-button-info-background-color--minimal);
     }
 
     &:disabled {
@@ -418,7 +428,7 @@
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-warning-background-color);
+      color: var(--lens-ui-elements-button-warning-background-color--minimal);
     }
 
     &:disabled {
@@ -470,7 +480,7 @@
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-danger-background-color);
+      color: var(--lens-ui-elements-button-danger-background-color--minimal);
     }
 
     &:disabled {
@@ -494,7 +504,7 @@
     border-color: var(--lens-ui-elements-button-light-border-color);
 
     &--appearance-outlined {
-      background-color: var(--lens-ui-elements-button-outlined-bg-color-);
+      background-color: var(--lens-ui-elements-button-outlined-bg-color--outlined-light);
       border-color: var(--lens-ui-elements-button-light-background-color--outlined);
       color: var(--lens-ui-elements-button-light-text-color--outlined);
     }
@@ -520,9 +530,9 @@
     }
 
     &--appearance-minimal {
-      background-color: transparent;
+      background-color: var(--lens-ui-elements-button-light-background-color--minimal);
       border-color: transparent;
-      color: var(--lens-ui-elements-button-light-text-color);
+      color: var(--lens-ui-elements-button-light-text-color--minimal);
     }
 
     &:disabled {
@@ -546,7 +556,7 @@
     border-color: var(--lens-ui-elements-button-dark-border-color);
 
     &--appearance-outlined {
-      background-color: var(--lens-ui-elements-button-outlined-bg-color-);
+      background-color: var(--lens-ui-elements-button-outlined-bg-color--outlined);
       border-color: var(--lens-ui-elements-button-dark-background-color--outlined);
       color: var(--lens-ui-elements-button-dark-background-color--outlined);
     }
@@ -574,7 +584,7 @@
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-dark-background-color);
+      color: var(--lens-ui-elements-button-dark-background-color--minimal);
     }
 
     &:disabled {
@@ -600,7 +610,7 @@
 
   &--appearance-outlined {
     &:focus {
-      background-color: var(--lens-ui-elements-button-outlined-bg-color-);
+      background-color: var(--lens-ui-elements-button-outlined-bg-color--outlined);
     }
   }
 }

@@ -215,6 +215,7 @@
   --lens-ui-intents-warning-darken-text: hsl(var(--lens-ui-hue-warning-text) 0% 100%);
   --lens-ui-intents-warning-darken-border: hsl(var(--lens-ui-hue-warning) 65% 40%);
   --lens-ui-intents-light: hsl(var(--lens-ui-hue-light) 33% 98%);
+  --lens-ui-intents-lighten: hsl(var(--lens-ui-hue-light) 33% 98%);
   --lens-ui-intents-light-text: hsl(var(--lens-ui-hue-light-text) 0% 0%);
   --lens-ui-intents-light-text-active: hsl(var(--lens-ui-hue-light-text-active) 0% 0%);
   --lens-ui-intents-light-border: hsl(var(--lens-ui-hue-light) 37% 96%);
