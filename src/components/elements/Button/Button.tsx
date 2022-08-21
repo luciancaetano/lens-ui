@@ -23,7 +23,7 @@ const Button: React.FC<IButtonProps> = ({
   style,
   ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return (
     <button

@@ -10,7 +10,8 @@ import useTheme from '../../../hooks/use-theme';
 const Badge:React.FC<IBadgeProps> = ({
   className, testingID, id, children, intent = 'primary', type = 'solid', ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
+
   return (
     <div
       {...props}

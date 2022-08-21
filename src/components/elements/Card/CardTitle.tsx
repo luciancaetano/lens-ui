@@ -7,7 +7,7 @@ import useTheme from '../../../hooks/use-theme';
 const CardTitle: React.FC<ICardTitleProps> = ({
   children, className, subtitle, testingID, ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   if (subtitle) {
     return (

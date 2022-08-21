@@ -7,7 +7,7 @@ import styles from './Card.module.scss';
 const CardLink: React.FC<React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> & ITestableProps> = ({
   children, className, testingID, ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return (
     <a

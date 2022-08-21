@@ -4,7 +4,7 @@
   background-color: var(--lens-ui-elements-layout-sidebar-background-color);
   min-width: 16.875rem;
   color: var(--lens-ui-elements-layout-sidebar-text-color);
-  border-right: var(--lens-ui-elements-layout-sidebar-border-right);
+  border-right: 1px solid var(--lens-ui-elements-layout-sidebar-border-right-color);
   max-height: 100%;
   z-index: 1;
 }

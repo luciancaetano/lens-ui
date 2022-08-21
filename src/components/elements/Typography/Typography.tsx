@@ -23,7 +23,7 @@ const variantMap: { [key: string]: string } = {
 const Typography = React.forwardRef<HTMLElement, ITypographyProps>(({
   variant, noWrap, intent, children, testingID, align = 'inherit', className, gutterBottom,
 }, ref) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return React.createElement(variantMap[variant], {
     style: {

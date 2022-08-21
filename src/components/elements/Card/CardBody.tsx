@@ -7,7 +7,7 @@ import styles from './Card.module.scss';
 const CardBody: React.FC<React.HtmlHTMLAttributes<HTMLDivElement> & ITestableProps> = ({
   children, className, testingID, ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div

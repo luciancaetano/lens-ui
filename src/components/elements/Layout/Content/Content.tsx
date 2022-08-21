@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
+import { useTheme } from '../../../../hooks';
 import styles from './Content.module.scss';
 import { ILayoutContentProps } from './Content.types';
 
@@ -8,19 +9,24 @@ import { ILayoutContentProps } from './Content.types';
  */
 const Content: React.FC<ILayoutContentProps> = ({
   children, layout = 'vertical', className, testingID, ...props
-}) => (
-  <div
-    {...props}
-    data-testid={testingID}
-    data-lens-element="layout__content"
-    className={clsx(
-      styles.content,
-      styles[`content--direction-${layout === 'vertical' ? 'column' : 'row'}`],
-      className,
-    )}
-  >
-    {children}
-  </div>
-);
+}) => {
+  const [theme] = useTheme();
+
+  return (
+    <div
+      {...props}
+      data-testid={testingID}
+      data-lens-element="layout__content"
+      className={clsx(
+        styles.content,
+        styles[`content--direction-${layout === 'vertical' ? 'column' : 'row'}`],
+        theme,
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default Content;

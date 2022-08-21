@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Layout from './index';
 import TextInput from '../TextInput/TextInput';
-
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Layout/Layout" component={Layout}/>
 
@@ -73,4 +73,27 @@ The following CSS variables are available for use in the Layout component.
           AppFooter
       </div>
       </Layout>
+</Canvas>
+
+### DarkTheme
+
+<Canvas className="dark">
+        <ThemeProvider theme="dark">
+            <Layout style={{'--lens-ui-app-layout-width': '100%'}}>
+                <div>
+                App Header
+                </div>
+                <Layout.Content layout="horizontal">
+                    <Layout.Sidebar>
+                        Side content
+                    </Layout.Sidebar>
+                    <Layout.Content>
+                        Hello world
+                    </Layout.Content>
+                </Layout.Content>
+                <div>
+                    AppFooter
+                </div>
+            </Layout>
+      </ThemeProvider>
 </Canvas>

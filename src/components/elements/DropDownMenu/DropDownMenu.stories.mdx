@@ -2,7 +2,8 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import DropDownMenu from './DropDownMenu';
 import Menu from '../Menu';
 import Icon from '../Icon/Icon';
-
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
+import Typography from '../Typography/Typography';
 
 <Meta title="Navigation/DropDownMenu" component={DropDownMenu}/>
 
@@ -38,3 +39,23 @@ DropDownMenu display a list of choices on temporary surfaces.
 |children|ReactNode|-|The content to display in the menu.|No|
 |contentRender|function(close: Function) => React.ReactNode|-|Render Contents of function|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+### dark theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <DropDownMenu
+      contentRender={(close) => (
+        <Menu>
+            <Menu.Item prefix={<Icon name="BsFillGearFill" />}>Settings</Menu.Item>
+            <Menu.Item prefix={<Icon name="BsPeopleFill" />}>Profile</Menu.Item>
+            <Menu.Item divider></Menu.Item>
+            <Menu.Item prefix={<Icon name="BsPower" />}>Logout</Menu.Item>
+        </Menu>
+      )}
+    >
+      Menu
+    </DropDownMenu>
+  </ThemeProvider>
+</Canvas>

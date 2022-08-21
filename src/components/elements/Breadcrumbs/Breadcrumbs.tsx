@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import React, { Fragment, useCallback, useMemo } from 'react';
 import { IBreadcrumbsProps, IBreadcrumbLink } from './Breadcrumbs.types';
 import styles from './Breadcrumbs.module.scss';
+import useTheme from '../../../hooks/use-theme';
 
 /**
  * Breadcrumbs allow users to make selections from a range of pages or navigation history.
@@ -15,6 +16,8 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
       onItemClick(item, event);
     }
   }, [onItemClick]);
+
+  const [theme] = useTheme();
 
   const items = useMemo(() => history.map((item, index) => {
     const last = index === history.length - 1;
@@ -53,7 +56,7 @@ const Breadcrumbs:React.FC<IBreadcrumbsProps> = ({
       id={id}
       data-lens-element="breadcrumbs"
       data-testid={testingID}
-      className={clsx(styles.breadcrumbs, className)}
+      className={clsx(styles.breadcrumbs, theme, className)}
     >
       {items}
     </div>

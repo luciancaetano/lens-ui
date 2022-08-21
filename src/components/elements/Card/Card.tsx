@@ -10,7 +10,7 @@ import useTheme from '../../../hooks/use-theme';
 const Card: React.FC<ICardProps> = ({
   children, className, intent, testingID, ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div

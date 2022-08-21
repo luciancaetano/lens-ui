@@ -10,7 +10,7 @@ import useTheme from '../../../hooks/use-theme';
 const Callout: React.FC<ICalloutProps> = ({
   className, testingID, id, children, icon, intent, title, ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div

@@ -22,12 +22,12 @@
   }
 
   &__last {
-    color: var(--lens-ui-intents-primary-darken);
+    color: var(--lens-ui-breadcrumbs-last-item);
     cursor: default;
     font-weight: bold;
 
     &:hover {
-      color: var(--lens-ui-intents-primary-darken);
+      color: var(--lens-ui-breadcrumbs-last-item);
     }
   }
 }

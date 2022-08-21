@@ -7,7 +7,7 @@ import useTheme from '../../../hooks/use-theme';
 const CardImage: React.FC<ICardImageProps> = ({
   className, roudTop, roudBottom, testingID, alt, ...props
 }) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return (
     <img

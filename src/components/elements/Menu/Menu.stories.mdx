@@ -1,5 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Menu from '.';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Navigation/Menu" component={Menu}/>
 
@@ -42,3 +43,17 @@ A Menu is a list of items that can be selected.
 |`cursor`|`string`|`default`|Set cursor|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
+### Dark theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <Menu>
+      <Menu.Item>Item 1</Menu.Item>
+      <Menu.Item divider>divider</Menu.Item>
+      <Menu.Item>Item 2</Menu.Item>
+      <Menu.Item>Item 3</Menu.Item>
+      <Menu.Item heading>heading</Menu.Item>
+      <Menu.Item>Item 4</Menu.Item>
+    </Menu>
+  </ThemeProvider>
+</Canvas>

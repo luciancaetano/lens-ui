@@ -12,7 +12,7 @@ import ListIntentContext from './ListIntentContext';
 const List = React.forwardRef<HTMLDivElement, IListProps>(({
   className, testingID, id, intent = 'primary', border = true, children, prefixMinWidth, suffixMinWidth, ...props
 }, ref) => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   const providerValue = useMemo(() => ({ intent }), [intent]);
 

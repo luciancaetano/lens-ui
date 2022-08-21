@@ -12,7 +12,7 @@ const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps
   className, testingID, id, children, activeId, defaultActiveId, keepLabel, onChange, ...props
 }, ref) => {
   const [active, setActive] = useControllableState<string | null | undefined>(activeId, defaultActiveId);
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   const handleSelect = useCallback((newId: string) => {
     if (active === newId) return;

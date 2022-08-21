@@ -13,6 +13,7 @@ import {
 } from './DropDownMenu.types';
 import Icon from '../Icon/Icon';
 import { rem2px } from '../../../utils';
+import { useTheme } from '../../../hooks';
 
 /**
  * DropDownMenu display a list of choices on temporary surfaces.
@@ -22,6 +23,8 @@ function DropDownMenu({
   chevron = true, offsetX, offsetY, placement = 'bottom-end', ...props
 }: IDropDownMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [theme] = useTheme();
 
   const nodeId = useFloatingNodeId();
 
@@ -62,7 +65,7 @@ function DropDownMenu({
         id={id}
         data-testid={testingID}
         data-lens-element="drop-down-menu"
-        className={clsx(styles.dropDownMenu, className)}
+        className={clsx(styles.dropDownMenu, theme, className)}
         ref={reference}
         {...getReferenceProps()}
       >
@@ -78,7 +81,7 @@ function DropDownMenu({
       <FloatingPortal id={`lens-ui-floating__${nodeId}`}>
         <div
           role="list"
-          className={clsx(styles.dropDownMenuList, !isOpen && styles.dropDownMenuListHide, dropDownClassName)}
+          className={clsx(styles.dropDownMenuList, !isOpen && styles.dropDownMenuListHide, dropDownClassName, theme)}
           data-lens-element="drop-down-menu__list"
           style={{
             '--strategy': strategy,

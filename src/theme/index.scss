@@ -3,6 +3,9 @@
 @import './badge';
 @import './card';
 @import './list';
+@import './breadcrumbs';
+@import './divider';
+@import './layout';
 
 @mixin default-theme {
   @include base-theme;
@@ -10,6 +13,9 @@
   @include badge-theme;
   @include card-theme;
   @include list-theme;
+  @include breadcrumbs-theme;
+  @include divider-theme;
+  @include layout-theme;
 }
 
 :root {

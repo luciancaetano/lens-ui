@@ -103,6 +103,7 @@
 
     &:hover {
       background-color: var(--lens-ui-elements-list-heading-bg);
+      border-color: var(--lens-ui-elements-list-border-hover);
     }
 
     &--intent-primary {
@@ -181,13 +182,13 @@
   }
 
   &__divider {
-    background-color: var(--lens-ui-list-item--background);
-    color: var(--lens-ui-list-item--text);
+    background-color: var(--lens-ui-elements-list-item-divider-background);
+    color: var(--lens-ui-elements-list-item-divider-text);
     padding: .1rem;
 
     &:hover {
-      background-color: var(--lens-ui-list-item--background);
-      color: var(--lens-ui-list-item--text);
+      background-color: var(--lens-ui-elements-list-item-divider-background);
+      color: var(--lens-ui-elements-list-item-divider-text);
     }
   }
 }

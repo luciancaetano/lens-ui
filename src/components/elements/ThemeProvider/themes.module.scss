@@ -28,12 +28,21 @@
   --lens-ui-elements-card-backgrounds-default-card-title-color: #fff;
   --lens-ui-elements-card-backgrounds-default-card-sub-title-color: #fff;
   --lens-ui-elements-card-backgrounds-default-card-link-color: var(--lens-ui-intents-primary-lighten);
-  --lens-ui-elements-list-border: hsl(210deg 14% 83%);
+  --lens-ui-elements-list-border: hsl(0deg 0% 0%);
+  --lens-ui-elements-list-border-hover: hsl(210deg 14% 83%);
   --lens-ui-elements-list-bg: var(--lens-ui-elements-button-dark-background-color);
   --lens-ui-elements-list-heading-bg: var(--lens-ui-elements-button-dark-background-color);
   --lens-ui-elements-list-color: var(--lens-ui-typography-text-color);
   --lens-ui-elements-list-hover-saturation: 40%;
   --lens-ui-elements-list-hover-lightness: 50%;
+  --lens-ui-breadcrumbs-last-item: #fff;
+  --lens-ui-elements-list-item-divider-background: #333;
+  --lens-ui-elements-divider-text-color: var(--lens-ui-typography-text-color);
+  --lens-ui-elements-divider-color: var(--lens-ui-typography-text-color);
+  --lens-ui-conent-bg-color: #444;
+  --lens-ui-elements-layout-sidebar-background-color: #333;
+  --lens-ui-elements-layout-sidebar-border-right-color: hsl(0deg 0% 39%);
+  --lens-ui-elements-layout-sidebar-text-color: var(--lens-ui-typography-text-color);
 }
 
 .default {
