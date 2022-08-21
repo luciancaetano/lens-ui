@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import FormGroup from './FormGroup';
 import TextInput from '../TextInput/TextInput';
-
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Data Entry/FormGroup" component={FormGroup}/>
 
@@ -59,6 +59,15 @@ The FormGroup component can be used handle a form control and offer additional f
 
 <Canvas>
     <FormGroup label="Name" helperText="Please enter your name" helperTextIntent="danger" inline required>
+        <TextInput type="text" name="name" />
+    </FormGroup>
+</Canvas>
+
+
+### Dark theme
+
+<Canvas className="dark">
+    <FormGroup label="Name">
         <TextInput type="text" name="name" />
     </FormGroup>
 </Canvas>
