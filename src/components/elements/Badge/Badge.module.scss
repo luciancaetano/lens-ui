@@ -18,21 +18,21 @@
 
   @each $intent in $intent-type {
     &--solid-#{$intent} {
-      color: var(--lens-ui-intents-#{$intent}-text);
-      border: .063rem solid var(--lens-ui-intents-#{$intent}-border);
-      background-color: var(--lens-ui-intents-#{$intent});
+      color: var(--lens-ui-intents-#{$intent}-text--solid);
+      border: .063rem solid var(--lens-ui-intents-#{$intent}-border--solid);
+      background-color: var(--lens-ui-intents-#{$intent}-background-color--solid);
     }
 
     &--outlined-#{$intent} {
-      color: var(--lens-ui-intents-#{$intent}-border);
-      border: .063rem solid var(--lens-ui-intents-#{$intent}-border);
-      background-color: #fff;
+      color: var(--lens-ui-intents-#{$intent}-text--outlined);
+      border: .063rem solid var(--lens-ui-intents-#{$intent}-border--outlined);
+      background-color: var(--lens-ui-intents-#{$intent}-background-color--outlined);
     }
 
     &--subtle-#{$intent} {
-      color: var(--lens-ui-intents-#{$intent}-lighten-text);
-      border: .063rem solid var(--lens-ui-intents-#{$intent}-lighten-border);
-      background-color: var(--lens-ui-intents-#{$intent}-lighten);
+      color: var(--lens-ui-intents-#{$intent}-text--subtle);
+      border: .063rem solid var(--lens-ui-intents-#{$intent}-border--subtle);
+      background-color: var(--lens-ui-intents-#{$intent}-background-color--subtle);
     }
   }
 }

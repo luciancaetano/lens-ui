@@ -1,0 +1,8 @@
+@mixin list-theme {
+  --lens-ui-elements-list-border: hsl(210deg 14% 83%);
+  --lens-ui-elements-list-bg: #fff;
+  --lens-ui-elements-list-heading-bg: hsl(210deg 29% 95%);
+  --lens-ui-elements-list-color: var(--lens-ui-typography-text-color);
+  --lens-ui-elements-list-hover-saturation: 70%;
+  --lens-ui-elements-list-hover-lightness: 90%;
+}

@@ -1,7 +1,17 @@
 @import './base';
 @import './button';
+@import './badge';
+@import './card';
+@import './list';
 
-:root {
+@mixin default-theme {
   @include base-theme;
   @include button-theme;
+  @include badge-theme;
+  @include card-theme;
+  @include list-theme;
+}
+
+:root {
+  @include default-theme;
 }

@@ -1,3 +1,5 @@
+@import '../../../theme/index';
+
 .dark {
   --lens-ui-elements-card-backgrounds-default-background-color: var(--lens-ui-intents-dark);
   --lens-ui-elements-card-backgrounds-default-border-color: #444;
@@ -21,4 +23,19 @@
   --lens-ui-elements-button-outlined-bg-color--outlined: hsl(var(--lens-ui-hue-dark-text) 10% 23%);
   --lens-ui-elements-button-outlined-bg-color--outlined-light: hsl(var(--lens-ui-hue-dark-text) 10% 30%);
   --lens-ui-elements-button-light-background-color--minimal: var(--lens-ui-elements-button-outlined-bg-color--outlined-light);
+  --lens-ui-typography-text-color: #fff;
+  --lens-ui-typography-faded-text-color: rgb(214 214 214);
+  --lens-ui-elements-card-backgrounds-default-card-title-color: #fff;
+  --lens-ui-elements-card-backgrounds-default-card-sub-title-color: #fff;
+  --lens-ui-elements-card-backgrounds-default-card-link-color: var(--lens-ui-intents-primary-lighten);
+  --lens-ui-elements-list-border: hsl(210deg 14% 83%);
+  --lens-ui-elements-list-bg: var(--lens-ui-elements-button-dark-background-color);
+  --lens-ui-elements-list-heading-bg: var(--lens-ui-elements-button-dark-background-color);
+  --lens-ui-elements-list-color: var(--lens-ui-typography-text-color);
+  --lens-ui-elements-list-hover-saturation: 40%;
+  --lens-ui-elements-list-hover-lightness: 50%;
+}
+
+.default {
+  @include default-theme;
 }

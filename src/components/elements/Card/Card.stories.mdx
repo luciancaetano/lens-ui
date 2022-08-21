@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Card from '.';
-
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Data Display/Card" component={Card}/>
 
@@ -96,4 +96,28 @@ The properties of card image extends the `<img>` element.
       </Card.Body>
     </Card>
   </div>
+</Canvas>
+
+## Dark Theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <div style={{maxWidth: '20rem', padding: '0rem 5rem'}}>
+      <Card>
+        <Card.Body>
+          <Card.Title>Hello world</Card.Title>
+          <Card.Title subtitle>subtitle</Card.Title>
+        </Card.Body>
+        <Card.Image src="https://picsum.photos/1024" />
+        <Card.Body>
+          <Card.Text>
+            Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+          </Card.Text>
+          <Card.Link>
+            Card Link
+          </Card.Link>
+        </Card.Body>
+      </Card>
+    </div>
+  </ThemeProvider>
 </Canvas>

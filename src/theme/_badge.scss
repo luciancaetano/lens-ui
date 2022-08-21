@@ -1,0 +1,15 @@
+@import '../style-lib';
+
+@mixin badge-theme {
+  @each $intent in $intent-type {
+    --lens-ui-intents-#{$intent}-text--solid: var(--lens-ui-intents-#{$intent}-text);
+    --lens-ui-intents-#{$intent}-border--solid: var(--lens-ui-intents-#{$intent}-border);
+    --lens-ui-intents-#{$intent}-background-color--solid: var(--lens-ui-intents-#{$intent});
+    --lens-ui-intents-#{$intent}-text--outlined: var(--lens-ui-intents-#{$intent}-border);
+    --lens-ui-intents-#{$intent}-border--outlined: var(--lens-ui-intents-#{$intent}-border);
+    --lens-ui-intents-#{$intent}-background-color--outlined: #fff;
+    --lens-ui-intents-#{$intent}-text--subtle: var(--lens-ui-intents-#{$intent}-lighten-text);
+    --lens-ui-intents-#{$intent}-border--subtle: var(--lens-ui-intents-#{$intent}-lighten-border);
+    --lens-ui-intents-#{$intent}-background-color--subtle: var(--lens-ui-intents-#{$intent}-lighten);
+  }
+}
