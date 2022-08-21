@@ -3,8 +3,9 @@ import { IntentType, ITestableProps } from '../../../types';
 
 export interface IListItemProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLDivElement>, 'prefix'> {
   intent?: IntentType;
-  isActive?: boolean;
-  isHeading?: boolean;
+  active?: boolean;
+  heading?: boolean;
+  divider?: boolean;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   cursor?: string;

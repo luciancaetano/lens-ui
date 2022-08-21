@@ -179,4 +179,15 @@
       min-width: var(--lens-ui-list-suffix-min-width);
     }
   }
+
+  &__divider {
+    background-color: var(--lens-ui-list-item--background);
+    color: var(--lens-ui-list-item--text);
+    padding: .1rem;
+
+    &:hover {
+      background-color: var(--lens-ui-list-item--background);
+      color: var(--lens-ui-list-item--text);
+    }
+  }
 }

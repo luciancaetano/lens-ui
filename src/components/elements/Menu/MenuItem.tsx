@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-array-index-key */
 import clsx from 'clsx';
 import React from 'react';
@@ -9,18 +10,22 @@ import { IMenuItemProps } from './Menu.types';
  * Menu display a list of choices on constant surfaces.
  */
 const MenuItem = React.forwardRef<HTMLDivElement, IMenuItemProps>(({
-  className, isActive, isHeading, children, ...props
+  className, active, heading, divider, children, ...props
 }, ref) => (
   <List.Item
     {...props}
-    className={clsx(styles.menuItem, {
-      [styles.activeMenuItem]: isActive,
-      [styles.menuHeading]: isHeading,
-    }, className)}
-    isActive={isActive}
-    isHeading={isHeading}
+    className={clsx(
+      styles.menuItem,
+      divider && styles['menu-item--divider'],
+      active && styles.activeMenuItem,
+      heading && styles.menuHeading,
+      className,
+    )}
+    active={active}
+    heading={heading}
+    divider={divider}
     ref={ref}
-    data-lens-element={isHeading ? 'menu__heading' : 'menu__item'}
+    data-lens-element={!divider && heading ? 'menu__heading' : divider ? 'menu__divider' : 'menu__item'}
   >
     {children}
   </List.Item>

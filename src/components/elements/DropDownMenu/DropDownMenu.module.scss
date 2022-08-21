@@ -51,6 +51,7 @@
   }
 
   [data-lens-element='menu__item'],
+  [data-lens-element='menu__divider'],
   [data-lens-element='menu__heading'] {
     &:last-child {
       border-bottom: 0;
@@ -80,6 +81,12 @@
   &__active-item {
     color: hsl(0deg 0% 40%) !important;
     font-weight: bold;
+  }
+
+  [data-lens-element='drop-down-menu__heading'] {
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   [data-lens-element='drop-down-menu__divider'] {

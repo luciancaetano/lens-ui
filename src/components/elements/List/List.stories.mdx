@@ -12,17 +12,17 @@ The List component is used to display a list of items.
 
 <Canvas>
     <div>
-        <hr/>
         <List intent="primary">
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 primary
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
                 Item 2
             </List.Item>
+            <List.Item divider/>
             <List.Item>
                 Item 3
             </List.Item>
@@ -35,7 +35,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 secondary
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -53,7 +53,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 success
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -71,7 +71,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 info
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -89,7 +89,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 warning
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -107,7 +107,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 danger
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -139,7 +139,8 @@ The List component is used to display a list of items.
 |---|---|---|---|---|
 |intent|IntentType|'none'|The intent of the list item|No|
 |isActive|boolean|false|Whether the list item is active|No|
-|isHeading|boolean|false|Whether the list item is a heading|No|
+|divider|boolean|false|Set item to divider (**no children rendering**)|No|
+|heading|boolean|false|Whether the list item is a heading|No|
 |prefix|React.ReactNode|undefined|Prefix elements, ex you can put an icon|No|
 |suffix|React.ReactNode|undefined|Suffix elements, ex you can put an icon|No|
 |prefixMargin|number \| string|undefined|Set's margin from content to prefix|No|
@@ -156,7 +157,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 primary
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -174,7 +175,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 success
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -192,7 +193,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 info
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -210,7 +211,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 warning
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>
@@ -228,7 +229,7 @@ The List component is used to display a list of items.
             <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
                 danger
             </List.Item>
-            <List.Item isHeading>
+            <List.Item heading>
                 Heading
             </List.Item>
             <List.Item>

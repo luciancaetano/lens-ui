@@ -28,15 +28,20 @@
 }
 
 .menu-item {
-  font-size: .875rem !important;
-  padding: .7rem .75rem !important;
+  font-size: .875rem;
+  padding: .7rem .75rem;
   cursor: pointer;
   user-select: none;
+
+  &--divider {
+    padding: .1rem;
+    cursor: default;
+  }
 }
 
 .menu-heading {
-  font-size: .7rem !important;
-  padding: .2rem .75rem !important;
+  font-size: .7rem;
+  padding: .2rem .75rem;
   font-weight: bold;
   display: flex;
   align-items: center;
