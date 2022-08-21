@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import CheckBox from './CheckBox';
-
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Data Entry/CheckBox" component={CheckBox}/>
 
@@ -27,3 +27,12 @@ The checkbox is a simple checkbox that can be used to toggle the checked state o
 |name|string|undefined|The name of the checkbox|No|
 |inputProps|object|undefined|Additional props to pass to the input element, [HtmlInputElement at mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes)|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+### Dark theme
+
+<Canvas className="dark">
+   <ThemeProvider theme="dark">
+      <CheckBox label="It's all ok, 🔥"/>
+   </ThemeProvider>
+</Canvas>

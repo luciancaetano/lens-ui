@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
+import { useTheme } from '../../../hooks';
 import { randomId } from '../../../utils';
 import styles from './CheckBox.module.scss';
 import { ICheckBoxProps } from './CheckBox.types';
@@ -12,6 +13,8 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
   className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
   autoFocus, inputProps, ...props
 }, ref) => {
+  const [theme] = useTheme();
+
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       if (checked !== undefined) {
@@ -34,7 +37,7 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
       id={id}
       data-testid={testingID}
       data-lens-element="checkbox"
-      className={clsx(styles.container, className)}
+      className={clsx(styles.container, theme, className)}
     >
       <input
         {...inputProps}

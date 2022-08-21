@@ -68,7 +68,7 @@ The FormGroup component can be used handle a form control and offer additional f
 
 <Canvas className="dark">
     <ThemeProvider theme="dark">
-        <FormGroup label="Name">
+        <FormGroup label="Name" helperText="Please enter your name" helperTextIntent="danger" required>
             <TextInput type="text" name="name" />
         </FormGroup>
     </ThemeProvider>

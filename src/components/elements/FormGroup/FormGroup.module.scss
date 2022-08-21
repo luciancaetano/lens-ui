@@ -19,6 +19,10 @@
     font-weight: 500;
   }
 
+  input {
+    color: var(--lens-ui-input-text-color);
+  }
+
   &__required-helper {
     font-weight: bold;
     color: var(--lens-ui-intents-danger);

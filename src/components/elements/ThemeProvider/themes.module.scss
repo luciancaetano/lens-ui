@@ -24,7 +24,7 @@
   --lens-ui-elements-button-outlined-bg-color--outlined-light: hsl(var(--lens-ui-hue-dark-text) 10% 30%);
   --lens-ui-elements-button-light-background-color--minimal: var(--lens-ui-elements-button-outlined-bg-color--outlined-light);
   --lens-ui-typography-text-color: #fff;
-  --lens-ui-typography-faded-text-color: rgb(214 214 214);
+  --lens-ui-typography-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 90%);
   --lens-ui-elements-card-backgrounds-default-card-title-color: #fff;
   --lens-ui-elements-card-backgrounds-default-card-sub-title-color: #fff;
   --lens-ui-elements-card-backgrounds-default-card-link-color: var(--lens-ui-intents-primary-lighten);
@@ -43,6 +43,8 @@
   --lens-ui-elements-layout-sidebar-background-color: #333;
   --lens-ui-elements-layout-sidebar-border-right-color: hsl(0deg 0% 39%);
   --lens-ui-elements-layout-sidebar-text-color: var(--lens-ui-typography-text-color);
+  --lens-ui-typography-most-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 80%);
+  --lens-ui-input-base--active-box-shadow: #fff;
 }
 
 .default {
