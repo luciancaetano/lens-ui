@@ -13,9 +13,11 @@
 
   &__prefix {
     position: absolute;
-    background: #ced4da;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    background: var(--lens-ui-input-base-border-color);
     top: .05rem;
-    left: .05rem;
+    left: .1249rem;
     bottom: .05rem;
     display: flex;
     align-items: center;
@@ -23,15 +25,17 @@
     width: 2.4rem;
     border-top-left-radius: .1rem;
     border-bottom-left-radius: .1rem;
-    border-right: 1px solid #ced4da;
-    color: #79838d;
+    border-right: var(--lens-ui-input-base-border);
+    color: var(--lens-ui-elements-input-prefix-text-color);
     pointer-events: none;
     z-index: 1;
   }
 
   &__suffix {
     position: absolute;
-    background: #ced4da;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    background: var(--lens-ui-input-base-border-color);
     top: .05rem;
     right: .05rem;
     bottom: .05rem;
@@ -41,8 +45,8 @@
     width: 2.4rem;
     border-top-right-radius: .1rem;
     border-bottom-right-radius: .1rem;
-    border-right: 1px solid #ced4da;
-    color: #79838d;
+    border-right: var(--lens-ui-input-base-border);
+    color: var(--lens-ui-elements-input-prefix-text-color);
     pointer-events: none;
     z-index: 1;
   }
@@ -56,20 +60,20 @@
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--lens-ui-typography-text-color);
-    background-color: #fff;
+    color: var(--lens-ui-input-text-color);
+    background-color: var(--lens-ui-elements-input-background);
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: var(--lens-ui-input-base-border);
     appearance: none;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     &--with-prefix {
-      padding-left: 3.3rem;
+      padding-left: 3.8rem;
     }
 
     &--with-prefix {
-      padding-right: 3.3rem;
+      padding-right: 3.8rem;
     }
 
     &--search {
@@ -95,10 +99,10 @@
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--lens-ui-typography-text-color);
+    color: var(--lens-ui-input-text-color);
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: var(--lens-ui-input-base-border);
     appearance: none;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;

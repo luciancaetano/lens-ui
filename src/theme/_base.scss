@@ -40,15 +40,6 @@
   --lens-ui-elements-link-link-font-weight: 400;
   --lens-ui-elements-drop-down-menu-shadow-color: #dedede;
   --lens-ui-elements-drop-down-menu-divider-shadow-color: #f1f1f1;
-  --lens-ui-elements-tabs-border: hsl(210deg 14% 83%);
-  --lens-ui-elements-tabs-border-faded: hsl(210deg 29% 95%);
-  --lens-ui-elements-tabs-header-bg: hsl(210deg 29% 95%);
-  --lens-ui-table-bg: transparent;
-  --lens-ui-table-active-color: #495057;
-  --lens-ui-table-active-bg: #f9fafc;
-  --lens-ui-table-hover-color: #495057;
-  --lens-ui-table-hover-bg: #f9fafc;
-  --lens-ui-table-border-color: #edf1f5;
   --lens-ui-intents-primary: hsl(var(--lens-ui-hue-primary) 74% 61%);
   --lens-ui-intents-primary-text: hsl(var(--lens-ui-hue-primary-text) 0% 100%);
   --lens-ui-intents-primary-text-active: hsl(var(--lens-ui-hue-primary-text-active) 100% 100%);
@@ -157,18 +148,11 @@
   --lens-ui-typography-font-family: 'Roboto', sans-serif;
   --lens-ui-typography-font-size: .9333333333rem;
   --lens-ui-typography-text-color: hsl(var(--lens-ui-hue-bg-text) 9% 31%);
-  --lens-ui-input-text-color: hsl(var(--lens-ui-hue-bg-text) 9% 31%);
   --lens-ui-typography-text-color-active: hsl(var(--lens-ui-hue-bg-text-active) 100% 70%);
-  --lens-ui-typography-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 48%);
+  --lens-ui-typography-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 67%);
   --lens-ui-typography-most-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 80%);
   --lens-ui-scrollbar-thumb: hsl(210deg 2% 76%);
   --lens-ui-scrollbar-track: hsl(0deg 0% 100%);
-  --lens-ui-input-base-border: 1px solid hsl(210deg 14% 83%);
-  --lens-ui-input-base-border--active: 1px solid hsl(210deg 97% 65%);
-  --lens-ui-input-base-bg--active: hsl(210deg 97% 65%);
-  --lens-ui-input-base--active-box-shadow: 0 0 0 .15rem rgb(82 92 229 / 25%);
-  --lens-ui-conent-bg-color: hsl(0deg 0% 97%);
-  --lens-ui-elements-modal-background-color: hsl(var(--lens-ui-hue-bg) 0% 100%);
-  --lens-ui-elements-modal-border-color: hsl(var(--lens-ui-hue-bg) 29% 95%);
+  --lens-ui-content-bg-color: hsl(0deg 0% 97%);
   --lens-ui-overlay-box-shadow: rgb(0 0 0 / 20%) 0 5px 5px -3px, rgb(0 0 0 / 14%) 0 8px 10px 1px, rgb(0 0 0 / 12%) 0 3px 14px 2px;
 }

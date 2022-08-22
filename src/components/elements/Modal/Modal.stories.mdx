@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Modal from '.';
 import Button from '../Button/Button';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Data Display/Modal" component={Modal}/>
 
@@ -87,4 +88,24 @@ __in this sample we replace some css variables to handle preview__
       </Modal.Footer>
     </Modal>
   </div>
+</Canvas>
+
+
+### Dark theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <div style={{position: 'relative', height: 500, width: '100%'}}>
+      <Modal backdropProps={{style:{'--lens-ui-modal-backgrop-position': 'absolute', '--lens-ui-modal-backgrop-width': '100%', '--lens-ui-modal-backgrop-height': '100%'}}}>
+        <Modal.Header>Title</Modal.Header>
+        <Modal.Content>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+        </Modal.Content>
+        <Modal.Footer>
+          <Button intent="danger">Cancel</Button>
+          <Button>Save</Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  </ThemeProvider>
 </Canvas>

@@ -7,8 +7,10 @@ import styles from './DatePicker.module.scss';
 import { IDatePickerPropsType, DatePickerType } from './DatePicker.types';
 import { getPortalContainer } from '../../../utils';
 import 'react-multi-date-picker/styles/layouts/mobile.css';
+import 'react-multi-date-picker/styles/backgrounds/bg-dark.css';
 import TextInput from '../TextInput/TextInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
+import { useMediaQuery, useTheme } from '../../../hooks';
 
 function init(value: any, defaultValue: any, type: DatePickerType) {
   if (defaultValue === undefined) {
@@ -39,10 +41,12 @@ function init(value: any, defaultValue: any, type: DatePickerType) {
 
 const DatePicker: React.FC<IDatePickerPropsType> = ({
   className, children, disabled, isError, onPickerClose, onPickerOpen, readOnly, name,
-  onChange, required, testingID, value, type, defaultValue, isMobile, locale, ...props
+  onChange, required, testingID, value, type, defaultValue, locale, ...props
 }) => {
   const renderType = useMemo(() => type || 'date', [type]);
   const [date, setDate] = useState(init(defaultValue, value, renderType));
+  const [theme, themeName] = useTheme();
+  const isMobile = useMediaQuery('only screen and (max-width:768px)');
 
   const format = useMemo(() => get(props, 'displayFormat', undefined), [props]);
   const hideWeekDays = useMemo(() => get(props, 'hideWeekDays', false), [props]);
@@ -130,12 +134,12 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {...props}
       data-testid={testingID}
       data-lens-element="date-picker"
-      className={clsx(styles.container, isError && styles.error, className)}
+      className={clsx(styles.container, isError && styles.error, theme, className)}
     >
       {(renderType === 'date') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -156,7 +160,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'range') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -180,7 +184,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'month') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile }, styles.monthPicker)}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' }, styles.monthPicker)}
           containerClassName={styles.monthPicker}
           value={date}
           onChange={handleDateChange}
@@ -201,7 +205,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'year') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -220,7 +224,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'multiple') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -245,7 +249,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'week') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
           value={date}
           onChange={handleDateChange}
           required={required}

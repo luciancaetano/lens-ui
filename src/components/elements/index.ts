@@ -28,7 +28,7 @@ export { default as Badge } from './Badge/Badge';
 export { default as Card } from './Card/index';
 export { default as Layout } from './Layout';
 export { default as Icon } from './Icon/Icon';
-export { default as Tabs } from './Tabs/Tabs';
+export { default as Tabs } from './Tabs';
 export { default as Table } from './Table/Table';
 export { default as Typography } from './Typography/Typography';
 export { default as DatePicker } from './DatePicker/DatePicker';

@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
+import { useTheme } from '../../../hooks';
 import { randomId } from '../../../utils';
 import styles from './Switch.module.scss';
 import { ISwitchProps } from './Switch.types';
@@ -11,6 +12,8 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>(({
   className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
   autoFocus, ...props
 }, ref) => {
+  const [theme] = useTheme();
+
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(!!e.target.checked);
@@ -29,7 +32,7 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>(({
       id={id}
       data-testid={testingID}
       data-lens-element="switch"
-      className={clsx(styles.switch, className)}
+      className={clsx(styles.switch, theme, className)}
     >
       <input
         type="checkbox"

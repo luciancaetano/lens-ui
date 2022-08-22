@@ -1,5 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import Tabs from './Tabs';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
+import Tabs from '.';
+import Icon from '../Icon/Icon'
 
 <Meta title="Data Display/Tabs" component={Tabs}/>
 
@@ -8,44 +10,19 @@ import Tabs from './Tabs';
 The Tabs component make easy to explore and switch between different views.
 
 <Canvas>
-  <Tabs
-    initialActiveTab="1"
-    tabs={[
-      {
-        id: '1',
-        title: 'Tab1'
-      },
-      {
-        id: '2',
-        title: 'Tab2'
-      },
-      {
-        id: '3',
-        title: 'Tab3'
-      }
-    ]}>
-    {(activeTab) => (
-        <>
-            {activeTab && activeTab.id === '1' && (
-            <div>
-                <h1>Tab 1 content</h1>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
-            )}
-            {activeTab && activeTab.id === '2' && (
-            <div>
-                <h1>Tab 2 content</h1>
-                Duis rhoncus lorem vel lacus pretium vehicula.
-            </div>
-            )}
-            {activeTab && activeTab.id === '3' && (
-            <div>
-                <h1>Tab 3 content</h1>
-                Donec id diam dolor. Curabitur id nisl et tortor rutrum facilisis id sit amet purus.
-            </div>
-            )}
-        </>
-    )}
+  <Tabs initialActiveTab="1">
+    <Tabs.Tab tabId="1" title="Tab 1" icon={<Icon name="MdPestControl"/>}>
+      <h1>Tab 1 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
+    <Tabs.Tab tabId="2" title="Tab 1" description="tab description">
+      <h1>Tab 2 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
+    <Tabs.Tab tabId="3" title="Tab 1" closable icon={<Icon name="MdPestControl"/>}>
+      <h1>Tab 3 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
   </Tabs>
 </Canvas>
 
@@ -54,19 +31,27 @@ The Tabs component make easy to explore and switch between different views.
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
 |vertical|boolean|false|Whether the tabs should be vertical.|No|
-|tabs|ITabsItem[]|[]|The tabs to render.|Yes|
 |initialActiveTab|string|undefined|The initial active tab.|No|
+|tabId|string|undefined|Set unique tab id.|Yes|
 |activeTab|string|undefined|The active tab.|No|
-|onChange|`function(id, MouseEvent)`|undefined|The callback to call when the active tab changes.|No|
+|onTabClose|`function(tabId, MouseEvent)`|undefined|Handle tab close event.|No|
+|tabBarExtraContentLeft|React.ReactNode|undefined|Left extract content|No|
+|tabBarExtraContentRight|React.ReactNode|undefined|Right extract content|No|
+|onChange|`function(tabId, MouseEvent)`|undefined|The callback to call when the active tab changes.|No|
 |children|`function (ITabsItem \| null): React.ReactNode`|-|The callback to render the tab content.|Yes|
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
-### ITabsItem (Object)
+### Tabs.Tab
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
 |title|React.ReactNode|null|The title of the tab.|No|
-|id|string|null|The id of the tab.|No|
+|description|React.ReactNode|null|Description of the tab.|No|
+|icon|React.ReactNode|null|Icon of the tab.|No|
+|closeIcon|React.ReactNode|null|Define tab close icon.|No|
+|closable|React.ReactNode|null|Define tab can show close icon and trigger close event.|No|
+|tabId|string|-|The id of the tab.|Yes|
+|tabRender|`function(props: IBaseTabProps) => React.ReactNode`|-|Custom tab pane render.|Yes|
 |className|string|null|The class name of the tab.|No|
 
 
@@ -74,44 +59,59 @@ The Tabs component make easy to explore and switch between different views.
 
 
 <Canvas>
-  <Tabs
-    initialActiveTab="1"
-    vertical
-    tabs={[
-      {
-        id: '1',
-        title: 'Tab1'
-      },
-      {
-        id: '2',
-        title: 'Tab2'
-      },
-      {
-        id: '3',
-        title: 'Tab3'
-      }
-    ]}>
-    {(activeTab) => (
-        <>
-            {activeTab && activeTab.id === '1' && (
-            <div>
-                <h1>Tab 1 content</h1>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
-            )}
-            {activeTab && activeTab.id === '2' && (
-            <div>
-                <h1>Tab 2 content</h1>
-                Duis rhoncus lorem vel lacus pretium vehicula.
-            </div>
-            )}
-            {activeTab && activeTab.id === '3' && (
-            <div>
-                <h1>Tab 3 content</h1>
-                Donec id diam dolor. Curabitur id nisl et tortor rutrum facilisis id sit amet purus.
-            </div>
-            )}
-        </>
-    )}
+  <Tabs initialActiveTab="1" vertical>
+    <Tabs.Tab tabId="1" title="Tab 1">
+      <h1>Tab 1 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
+    <Tabs.Tab tabId="2" title="Tab 1">
+      <h1>Tab 2 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
+    <Tabs.Tab tabId="3" title="Tab 1">
+      <h1>Tab 3 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
   </Tabs>
+</Canvas>
+
+### With extra content
+
+<Canvas>
+  <Tabs initialActiveTab="1" tabBarExtraContentLeft="Left extra content" tabBarExtraContentRight="Right extra content">
+    <Tabs.Tab tabId="1" title="Tab 1" icon={<Icon name="MdPestControl"/>}>
+      <h1>Tab 1 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
+    <Tabs.Tab tabId="2" title="Tab 1" description="tab description">
+      <h1>Tab 2 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
+    <Tabs.Tab tabId="3" title="Tab 1" closable icon={<Icon name="MdPestControl"/>}>
+      <h1>Tab 3 content</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Tabs.Tab>
+  </Tabs>
+</Canvas>
+
+
+### Theme dark
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <Tabs initialActiveTab="1">
+      <Tabs.Tab tabId="1" title="Tab 1" icon={<Icon name="MdPestControl"/>}>
+        <h1>Tab 1 content</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </Tabs.Tab>
+      <Tabs.Tab tabId="2" title="Tab 1" description="tab description">
+        <h1>Tab 2 content</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </Tabs.Tab>
+      <Tabs.Tab tabId="3" title="Tab 1" closable icon={<Icon name="MdPestControl"/>}>
+        <h1>Tab 3 content</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </Tabs.Tab>
+    </Tabs>
+  </ThemeProvider>
 </Canvas>

@@ -21,6 +21,7 @@
 
   input {
     color: var(--lens-ui-input-text-color);
+    background-color: var(--lens-ui-elements-input-background);
   }
 
   &__required-helper {

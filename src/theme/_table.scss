@@ -1,0 +1,8 @@
+@mixin table-theme {
+  --lens-ui-table-bg: transparent;
+  --lens-ui-table-active-color: #495057;
+  --lens-ui-table-active-bg: #f9fafc;
+  --lens-ui-table-hover-color: #495057;
+  --lens-ui-table-hover-bg: #f9fafc;
+  --lens-ui-table-border-color: #edf1f5;
+}

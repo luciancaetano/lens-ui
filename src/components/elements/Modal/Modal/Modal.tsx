@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
-import { useDevice } from '../../../../hooks';
+import { useDevice, useTheme } from '../../../../hooks';
 import { isBackdropClick } from '../../../../utils';
 import styles from './Modal.module.scss';
 import { IModalProps } from './Modal.types';
@@ -14,6 +14,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
   ...props
 }, ref) => {
   const { isPhone } = useDevice();
+  const [theme] = useTheme();
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (onBackdropClick && e.target && isBackdropClick(e.target as HTMLElement)) {
@@ -28,7 +29,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
     <div
       {...backdropProps}
       onClick={handleBackdropClick}
-      className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden)}
+      className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden, theme)}
       aria-modal="true"
       data-lens-element="modal__backdrop"
       data-lens-modal-size={isPhone ? 'fullscreen' : size}

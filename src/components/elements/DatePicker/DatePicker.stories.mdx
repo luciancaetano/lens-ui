@@ -1,5 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import DatePicker from './DatePicker';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 
 <Meta title="Data Entry/DatePicker" component={DatePicker}/>
@@ -106,3 +107,11 @@ This is a small emblem commonly used to represent tags.
     <DatePicker type="range" defaultValue={[new Date(), new Date()]}/>
 </Canvas>
 
+
+### Dark theme
+
+<Canvas className="dark">
+    <ThemeProvider theme="dark">
+        <DatePicker type="date" defaultValue={new Date()}/>
+    </ThemeProvider>
+</Canvas>

@@ -18,8 +18,8 @@ This is the roadmap for next version
 - [ ] TreeList
 
 ### Theming
-- [ ] Theme Provider
-- [ ] DarkMode
+- [x] Theme Provider
+- [x] DarkMode
 - [ ] Theme Builder (A simple to for changing css variables and creating custom themes)
 
 ### Hooks
@@ -33,6 +33,7 @@ This is the roadmap for next version
 - [x] ~~Update styles to match with typography~~
 - [x] Inject license in source using webpack.BannerPlugin
 - [ ] Improve tabs component using context
+- [x] Update useDevice with media queries
 
 ### Reworks
 - [x] Extract menu to Menu from DropDownMenu component
@@ -40,13 +41,3 @@ This is the roadmap for next version
 - [x] Rethink useModal and useAlert, make more simple to use, maybe we need only DeviceProvider and ToastProvider
 - [x] Update Docs
 - [x] Separate Radio from RadioGroup using context (Radio, Radio.Group)
-
-# Concepts of theming
-
-<ThemeProvider settings={(
-    <Theme.Setting>
-        <Theme.Button intent="danger" backgroundColor="red" />
-    </Theme.Setting>
-)}>
-    ...
-</ThemeProvider>

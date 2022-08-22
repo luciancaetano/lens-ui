@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import React, {
   useCallback, useContext, useEffect, useState,
 } from 'react';
+import { useTheme } from '../../../hooks';
 import { randomId } from '../../../utils';
 import styles from './Radio.module.scss';
 import { IRadioProps } from './Radio.types';
@@ -15,6 +16,7 @@ const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
 }, ref) => {
   const { isContextPresent, ...ctx } = useContext(RadioGroupContext);
   const [isChecked, setIsChecked] = useState(checked || defaultChecked);
+  const [theme] = useTheme();
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -37,7 +39,7 @@ const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
   return (
     <div
       {...props}
-      className={clsx(styles.radioContainer, ctx.inline && styles.radioContainerInline, className)}
+      className={clsx(styles.radioContainer, ctx.inline && styles.radioContainerInline, theme, className)}
       data-testid={testingID}
       data-lens-element="radio"
       id={id}

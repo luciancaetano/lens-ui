@@ -17,7 +17,7 @@
   height: 1em;
   margin-top: .17em;
   vertical-align: top;
-  background-color: #fff;
+  background-color: var(--lens-ui-elements-checkbox-unchecked-bg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -32,8 +32,8 @@
   position: absolute;
 
   &:checked {
-    background-color: var(--lens-ui-intents-primary-dark);
-    border-color: var(--lens-ui-intents-primary-dark);
+    background-color: var(--lens-ui-elements-checkbox-checked-bg);
+    border-color: var(--lens-ui-elements-checkbox-checked-border);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
   }
 
@@ -42,9 +42,9 @@
   }
 
   &:focus {
-    border-color: var(--lens-ui-intents-primary-lighten);
+    border-color: var(--lens-ui-elements-checkbox-focused-border);
     outline: 0;
-    box-shadow: var(--lens-ui-input-base--active-box-shadow);
+    box-shadow: var(--lens-ui-elements-checkbox-focused-box-shadow);
   }
 }
 
@@ -56,5 +56,5 @@
   margin-bottom: 0;
   font-weight: 500;
   box-sizing: border-box;
-  color: var(--lens-ui-typography-faded-text-color);
+  color: var(--lens-ui-elements-input-label-color);
 }

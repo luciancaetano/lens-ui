@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import get from 'lodash/get';
 import React, { useCallback, useMemo } from 'react';
+import { useTheme } from '../../../hooks';
 import Icon from '../Icon/Icon';
 import styles from './TextInput.module.scss';
 import { TextInputPropsType } from './TextInput.types';
@@ -15,6 +16,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
 }, ref) => {
   const prefix = useMemo(() => get(props, 'prefix', null), [props]);
   const suffix = useMemo(() => type !== 'search' && get(props, 'suffix', null), [props, type]);
+  const [theme] = useTheme();
 
   const handleChange = useCallback((e: React.ChangeEvent<any>) => {
     if (onChange) {
@@ -30,7 +32,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
 
   if (multiline) {
     return (
-      <div {...props} data-lens-element="text-input" id={id} data-testid={testingID} className={clsx(styles.textInput, className)}>
+      <div {...props} data-lens-element="text-input" id={id} data-testid={testingID} className={clsx(styles.textInput, theme, className)}>
         <textarea
           {...inputProps as any}
           data-lens-element="text-input__input"
@@ -60,7 +62,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
       id={id}
       data-lens-element="text-input"
       data-testid={testingID}
-      className={clsx(styles.textInput, type === 'search' && styles.textInputSearch, className, { search: type === 'search' })}
+      className={clsx(styles.textInput, type === 'search' && styles.textInputSearch, { search: type === 'search' }, theme, className)}
     >
       {prefix && <div data-lens-element="text-input__input__prefix" className={styles.textInputPrefix}>{prefix}</div>}
       <input

@@ -1,4 +1,4 @@
-import { useMemo, useContext } from 'react';
+import { useMemo, useContext, useEffect } from 'react';
 import { IDeviceInfo, DeviceOSType } from '../components/providers';
 import DeviceContext from '../components/providers/DeviceProvider/DeviceContext';
 
@@ -21,18 +21,29 @@ export interface IUseDeviceProps {
 }
 
 const useDevice = (): IDeviceInfo => {
-  const { orientation, online, windowSize } = useContext(DeviceContext);
+  const {
+    orientation, online, windowSize, isUsingDeviceProvider,
+    darkMode, lg, md, sm, xs,
+  } = useContext(DeviceContext);
+
+  useEffect(() => {
+    if (!isUsingDeviceProvider) {
+      throw new Error('This hooks need use of device provider to works, include <DeviceProvider> in your app entry');
+    }
+  }, [isUsingDeviceProvider]);
 
   return useMemo(() => ({
     orientation,
     cordova: !!(window as any).cordova, // support cordova instance checking
     online,
     os: getOS(),
-    isPhone: windowSize.width < 450,
-    isTablet: windowSize.width >= 450 && windowSize.width <= 850,
-    isDesktop: windowSize.width > 850,
     windowSize,
-  }), [online, orientation, windowSize]);
+    darkMode,
+    lg,
+    md,
+    sm,
+    xs,
+  }), [orientation, online, windowSize, darkMode, lg, md, sm, xs]);
 };
 
 export default useDevice;

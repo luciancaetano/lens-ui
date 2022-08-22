@@ -7,6 +7,7 @@ const ThemeProvider:React.FC<IThemeProviderProps> = ({ children, theme, addition
   const value = useMemo<IThemeContext>(() => ({
     className: theme === 'dark' || theme === 'default' ? themes[theme] : theme,
     customSettings: additionalSettings,
+    theme,
   }), [theme, additionalSettings]);
 
   return (

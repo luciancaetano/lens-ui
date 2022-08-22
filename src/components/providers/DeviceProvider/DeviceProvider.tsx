@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect, useMemo } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
-import { DeviceOrientationType, IDeviceProviderProps } from './DeviceProvider.types';
+import { DeviceOrientationType, IDeviceContextType, IDeviceProviderProps } from './DeviceProvider.types';
 import DeviceContext from './DeviceContext';
+import { useMediaQuery } from '../../../hooks';
 
 const DeviceProvider = ({ children, debounceTime = 100 }: IDeviceProviderProps) => {
   if (typeof window === 'undefined') {
@@ -13,6 +14,12 @@ const DeviceProvider = ({ children, debounceTime = 100 }: IDeviceProviderProps) 
   const [height, setHeight] = useState(window.innerHeight);
   const [orientation, setOrientation] = useState<DeviceOrientationType>(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
   const [online, setOnline] = useState<boolean>(window.navigator.onLine);
+
+  const darkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const lg = useMediaQuery('only screen and (min-width: 75em)');
+  const md = useMediaQuery('only screen and (min-width: 64em)');
+  const sm = useMediaQuery('only screen and (min-width: 48em)');
+  const xs = useMediaQuery('only screen and (min-width: 75.063em)');
 
   const handleWindowResize = useDebouncedCallback(() => {
     setWidth(window.innerWidth);
@@ -46,7 +53,17 @@ const DeviceProvider = ({ children, debounceTime = 100 }: IDeviceProviderProps) 
     };
   });
 
-  const data = useMemo(() => ({ online, orientation, windowSize: { width, height } }), [online, orientation, width, height]);
+  const data = useMemo<IDeviceContextType>(() => ({
+    online,
+    orientation,
+    windowSize: { width, height },
+    darkMode,
+    lg,
+    md,
+    sm,
+    xs,
+    isUsingDeviceProvider: true,
+  }), [online, orientation, width, height, darkMode, xs, sm, md, lg]);
 
   return (
     <DeviceContext.Provider value={data}>

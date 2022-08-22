@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import InputMask from 'react-input-mask';
+import { useTheme } from '../../../hooks';
 import styles from './MaskedInput.module.scss';
 import { IMaskedInputProps } from './MaskedInput.types';
 
@@ -9,6 +10,8 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, mask,
   alwaysShowMask, beforeMaskedStateChange, maskPlaceholder, filter, ...props
 }) => {
+  const [theme] = useTheme();
+
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(filter ? filter(event.target.value) : event.target.value, event);
@@ -26,7 +29,7 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
       id={id}
       data-testid={testingID}
       data-lens-element="masked-input"
-      className={clsx(styles.maskedInput, className)}
+      className={clsx(styles.maskedInput, theme, className)}
     >
       <InputMask
         {...props}

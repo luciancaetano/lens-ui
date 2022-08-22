@@ -1,4 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 import Switch from './Switch';
 
 <Meta title="Data Entry/Switch" component={Switch}/>
@@ -27,4 +28,10 @@ The Switch component toggle the state of a single setting on or off.
 |inputProps|object|undefined|Additional props to pass to the input element [Html Input Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes)|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
-### Playground
+### Dark theme
+
+<Canvas className="dark">
+   <ThemeProvider theme="dark">
+      <Switch label="It's all ok, 🔥"/>
+   </ThemeProvider>
+</Canvas>

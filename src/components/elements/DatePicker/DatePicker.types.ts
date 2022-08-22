@@ -24,7 +24,6 @@ export interface IBasePickerProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   disabled?: boolean;
   isError?: boolean;
   required?: boolean;
-  isMobile?: boolean;
   inline?: boolean;
   locale?: IDatePickerLocale;
   onPickerOpen?: () => void;

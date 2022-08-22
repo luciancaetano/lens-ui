@@ -38,13 +38,33 @@
   --lens-ui-breadcrumbs-last-item: #fff;
   --lens-ui-elements-list-item-divider-background: #333;
   --lens-ui-elements-divider-text-color: var(--lens-ui-typography-text-color);
-  --lens-ui-elements-divider-color: var(--lens-ui-typography-text-color);
-  --lens-ui-conent-bg-color: #444;
+  --lens-ui-elements-divider-color: #1e1e1e;
+  --lens-ui-content-bg-color: #444;
   --lens-ui-elements-layout-sidebar-background-color: #333;
   --lens-ui-elements-layout-sidebar-border-right-color: hsl(0deg 0% 39%);
   --lens-ui-elements-layout-sidebar-text-color: var(--lens-ui-typography-text-color);
   --lens-ui-typography-most-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 80%);
-  --lens-ui-input-base--active-box-shadow: #fff;
+  --lens-ui-elements-input-label-color: var(--lens-ui-typography-text-color);
+  --lens-ui-input-base--active-box-shadow: 0 0 0 .15rem rgb(255 255 255 / 32%);
+  --lens-ui-elements-checkbox-focused-box-shadow: var(--lens-ui-input-base--active-box-shadow);
+  --lens-ui-input-text-color: #333;
+  --lens-ui-elements-modal-background-color: var(--lens-ui-content-bg-color);
+  --lens-ui-elements-modal-border-color: #333;
+  --lens-ui-table-bg: var(--lens-ui-conent-bg-color);
+  --lens-ui-table-active-color: #495057;
+  --lens-ui-table-active-bg: #636363;
+  --lens-ui-table-hover-color: #636363;
+  --lens-ui-table-hover-bg: #636363;
+  --lens-ui-table-border-color: #333;
+  --lens-ui-elements-tabs-container-color: var(--lens-ui-typography-text-color);
+  --lens-ui-elements-tabs-active-bg: var(--lens-ui-content-bg-color);
+  --lens-ui-elements-tabs-hover-bg: #333;
+  --lens-ui-elements-tabs-border: #333;
+  --lens-ui-elements-tabs-border-faded: #777;
+  --lens-ui-elements-tabs-border-hovered: #5c5c5c;
+  --lens-ui-elements-tabs-text-color: #f7f7f7;
+  --lens-ui-elements-tabs-border-active: #333;
+  --lens-ui-elements-tabs-bg: #444;
 }
 
 .default {

@@ -15,6 +15,7 @@
   /* stylelint-disable */
   .lens-ui-select-input__control {
     border: var(--lens-ui-input-base-border);
+    background-color: var(--lens-ui-elements-input-background);
   }
 
   .lens-ui-select-input__control--is-focused:hover,

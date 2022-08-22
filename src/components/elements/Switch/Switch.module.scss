@@ -18,7 +18,7 @@
     height: 1em;
     margin-top: .2em;
     vertical-align: top;
-    background-color: #fff;
+    background-color: var(--lens-ui-elements-input-background);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: contain;
@@ -35,7 +35,7 @@
 
     &--checked,
     &:checked {
-      background-color: #525ce5;
+      background-color: var(--lens-ui-elements-checkbox-checked-bg);
       border-color: #525ce5;
       background-position: right center;
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
@@ -60,6 +60,6 @@
     margin-bottom: 0;
     font-weight: 500;
     box-sizing: border-box;
-    color: var(--lens-ui-typography-faded-text-color);
+    color: var(--lens-ui-elements-input-label-color);
   }
 }

@@ -6,6 +6,7 @@ import ReactSelect from 'react-select';
 import { randomId } from '../../../utils';
 import './Select.scss';
 import { ISelectOption, ISelectProps } from './Select.types';
+import { useTheme } from '../../../hooks';
 
 /**
  * The Select component are used for collecting user provided information from a list of options.
@@ -15,6 +16,8 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
   isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '', menuPortalTarget = document.body,
   autoFocus, isError, ...props
 }, ref) => {
+  const [theme] = useTheme();
+
   const handleChange = useCallback((option: any) => {
     if (onChange) {
       onChange(Array.isArray(option) ? map(option, (opt) => opt.value) : option.value);
@@ -62,7 +65,7 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
       id={id}
       data-testid={testingID}
       data-lens-element="select"
-      className={clsx('lens-ui-select-input', className)}
+      className={clsx('lens-ui-select-input', theme, className)}
     >
       <ReactSelect
         placeholder={placeholder}
