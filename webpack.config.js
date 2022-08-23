@@ -10,7 +10,7 @@ const webpack = require('webpack');
 
 const isProduction = process.argv[process.argv.indexOf('--mode') + 1] === 'production';
 
-const banner = fs.readFileSync(path.join(__dirname, 'LICENSE'));
+const banner = fs.readFileSync(path.join(__dirname, 'LICENSE')).toString('utf-8');
 
 module.exports = {
   entry: {
