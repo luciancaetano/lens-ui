@@ -27,12 +27,20 @@ $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'dange
   font-size: var(--lens-ui-typography-font-size);
 }
 
-@function l-var($component, $var) {
-  @return var(--lens-ui--elements-#{$component}-#{$var});
+@function l-var($component, $var, $modifier) {
+  @if $modifier {
+    @return var(--lens-ui--elements-#{$component}__#{$var}--#{$modifier});
+  }
+
+  @return var(--lens-ui--elements-#{$component}__#{$var});
 }
 
-@mixin l-def($component, $var, $value) {
-  --lens-ui--elements-#{$component}-#{$var}: $value;
+@mixin l-def($component, $var, $modifier, $value) {
+  @if $modifier {
+    --lens-ui--elements-#{$component}__#{$var}--#{$modifier}: $value;
+  } @else {
+    --lens-ui--elements-#{$component}__#{$var}: $value;
+  }
 }
 
 .lens-ui-font-definition {
