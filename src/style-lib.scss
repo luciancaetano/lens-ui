@@ -27,6 +27,14 @@ $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'dange
   font-size: var(--lens-ui-typography-font-size);
 }
 
+@function l-var($component, $var) {
+  @return var(--lens-ui--elements-#{$component}-#{$var});
+}
+
+@mixin l-def($component, $var, $value) {
+  --lens-ui--elements-#{$component}-#{$var}: $value;
+}
+
 .lens-ui-font-definition {
   font-family: var(--lens-ui-typography-font-family);
   font-size: var(--lens-ui-typography-font-size);
