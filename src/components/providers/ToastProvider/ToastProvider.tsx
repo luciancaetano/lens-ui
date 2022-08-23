@@ -13,7 +13,7 @@ import Toast from '../../elements/Toast/Toast';
 
 const ToastProvider: React.FC<IToastProviderProps> = ({ children, placement = 'bottom-right' }) => {
   const [toasts, setToasts] = useState<IToastData[]>([]);
-  const { isPhone } = useDevice();
+  const { md, sm } = useDevice();
 
   const add = useCallback((data: IToastCreationData, id?: string) => {
     const toast: IToastData = { ...data, id: id || randomId('toast') };
@@ -43,7 +43,7 @@ const ToastProvider: React.FC<IToastProviderProps> = ({ children, placement = 'b
           className={clsx(
             styles.toastsProvider,
             styles[`toasts-provider--${placement}`],
-            isPhone && styles.toastsProviderMobile,
+            (md || sm) && styles.toastsProviderMobile,
           )}
         >
           {toatsItems}

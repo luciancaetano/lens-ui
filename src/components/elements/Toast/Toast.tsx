@@ -25,7 +25,7 @@ const Toast:React.FC<IToastProps> = ({
   const interval = useRef<any>(INTERVAL);
   const timeProgress = useRef<number>(0);
   const progressBar = useRef<HTMLDivElement>(null);
-  const { isPhone } = useDevice();
+  const { md, sm } = useDevice();
 
   const autoDismiss = useMemo(() => isNumber(data.dismiss), [data]);
 
@@ -69,7 +69,7 @@ const Toast:React.FC<IToastProps> = ({
         data-lens-element="toast"
         data-lens-intent={data.intent}
         data-testid={testingID}
-        className={clsx(styles.toast, isPhone && styles.toastMobile, styles[`toast--intent-${data.intent}`], data.className)}
+        className={clsx(styles.toast, (md || sm) && styles.toastMobile, styles[`toast--intent-${data.intent}`], data.className)}
       >
         <div className={styles.toastMain}>
           {data.icon && (<div data-lens-element="toast__icon" className={styles.toastIcon}>{data.icon}</div>)}

@@ -13,7 +13,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
   className, testingID, id, children, size = 'normal', onBackdropClick, backdropProps = {}, hideBackdrop,
   ...props
 }, ref) => {
-  const { isPhone } = useDevice();
+  const { md, sm } = useDevice();
   const [theme] = useTheme();
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -32,7 +32,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
       className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden, theme)}
       aria-modal="true"
       data-lens-element="modal__backdrop"
-      data-lens-modal-size={isPhone ? 'fullscreen' : size}
+      data-lens-modal-size={(md || sm) ? 'fullscreen' : size}
     >
       <div
         {...props}
@@ -40,7 +40,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
         data-lens-element="modal"
         aria-modal="true"
         data-testid={testingID}
-        className={clsx(styles.modal, hideBackdrop && styles.modalNoBackdrop, styles[`modal--size-${isPhone ? 'fullscreen' : size}`], className)}
+        className={clsx(styles.modal, hideBackdrop && styles.modalNoBackdrop, styles[`modal--size-${(md || sm) ? 'fullscreen' : size}`], className)}
         ref={ref}
       >
         {children}
