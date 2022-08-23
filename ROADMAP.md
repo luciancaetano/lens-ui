@@ -32,7 +32,7 @@ This is the roadmap for next version
 - [x] Improve list item layout
 - [x] ~~Update styles to match with typography~~
 - [x] Inject license in source using webpack.BannerPlugin
-- [ ] Improve tabs component using context
+- [x] Improve tabs component using context
 - [x] Update useDevice with media queries
 
 ### Reworks
