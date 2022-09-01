@@ -10,6 +10,9 @@
 @import './modal';
 @import './table';
 @import './tabs';
+@import './collapse';
+@import './checkbox';
+@import './form-group';
 
 @mixin default-theme {
   @include base-theme;
@@ -24,6 +27,9 @@
   @include modal-theme;
   @include table-theme;
   @include tabs-theme;
+  @include collapse-theme;
+  @include checkbox-theme;
+  @include form-group-theme;
 }
 
 :root {

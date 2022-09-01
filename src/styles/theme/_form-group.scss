@@ -1,0 +1,11 @@
+@import '../lib';
+
+@mixin form-group-theme {
+  @include lens-def(form-group, required-helper__text-color, null, var(--lens-ui-intents-danger));
+  @include lens-def(form-group, helper-text__text-color, intent-primary, var(--lens-ui-intents-primary-dark));
+  @include lens-def(form-group, helper-text__text-color, intent-secondary, var(--lens-ui-intents-secondary));
+  @include lens-def(form-group, helper-text__text-color, intent-success, var(--lens-ui-intents-success));
+  @include lens-def(form-group, helper-text__text-color, intent-info, var(--lens-ui-intents-info-dark));
+  @include lens-def(form-group, helper-text__text-color, intent-warning, var(--lens-ui-intents-warning));
+  @include lens-def(form-group, helper-text__text-color, intent-danger, var(--lens-ui-intents-danger));
+}

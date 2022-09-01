@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .container {
   @include lens-ui-typography;
@@ -12,7 +12,7 @@
   width: 100%;
 
   input {
-    color: var(--lens-ui-input-text-color);
+    color: lens-var(input, text-color);
   }
 }
 

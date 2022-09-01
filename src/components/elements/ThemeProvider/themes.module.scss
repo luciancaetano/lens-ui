@@ -1,53 +1,70 @@
-@import '../../../theme/index';
+@import '../../../styles/theme/index';
+@import '../../../styles/lib';
 
 .dark {
-  --lens-ui-elements-card-backgrounds-default-background-color: var(--lens-ui-intents-dark);
-  --lens-ui-elements-card-backgrounds-default-border-color: #444;
-  --lens-ui-elements-button-outlined-bg-color: var(--lens-ui-intents-dark);
-  --lens-ui-elements-button-dark-background-color: var(--lens-ui-intents-dark);
-  --lens-ui-elements-button-light-text-color: hsl(var(--lens-ui-hue-dark-text) 10% 35%);
-  --lens-ui-elements-button-dark-text-color: var(--lens-ui-intents-lighten);
-  --lens-ui-elements-button-primary-background-color--outlined: var(--lens-ui-intents-primary-light);
-  --lens-ui-elements-button-secondary-background-color--minimal: var(--lens-ui-intents-secondary-lighten);
-  --lens-ui-elements-button-success-background-color--minimal: var(--lens-ui-intents-success-lighten);
-  --lens-ui-elements-button-info-background-color--minimal: var(--lens-ui-intents-info-lighten);
-  --lens-ui-elements-button-warning-background-color--minimal: var(--lens-ui-intents-warning-lighten);
-  --lens-ui-elements-button-danger-background-color--minimal: var(--lens-ui-intents-danger-lighten);
-  --lens-ui-elements-button-dark-background-color--minimal: var(--lens-ui-intents-dark-text);
-  --lens-ui-elements-button-light-text-color--minimal: var(--lens-ui-intents-lighten);
-  --lens-ui-elements-button-secondary-background-color--outlined: var(--lens-ui-intents-secondary-lighten);
-  --lens-ui-elements-button-dark-background-color--outlined: var(--lens-ui-intents-dark-text);
-  --lens-ui-elements-button-light-background-color--outlined: var(--lens-ui-intents-lighten);
-  --lens-ui-elements-button-light-text-color--outlined: var(--lens-ui-intents-lighten);
-  --lens-ui-elements-button-light-background-color: hsl(var(--lens-ui-hue-light) 33% 90%);
-  --lens-ui-elements-button-outlined-bg-color--outlined: hsl(var(--lens-ui-hue-dark-text) 10% 23%);
-  --lens-ui-elements-button-outlined-bg-color--outlined-light: hsl(var(--lens-ui-hue-dark-text) 10% 30%);
-  --lens-ui-elements-button-light-background-color--minimal: var(--lens-ui-elements-button-outlined-bg-color--outlined-light);
-  --lens-ui-typography-text-color: #fff;
-  --lens-ui-typography-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 90%);
-  --lens-ui-elements-card-backgrounds-default-card-title-color: #fff;
-  --lens-ui-elements-card-backgrounds-default-card-sub-title-color: #fff;
-  --lens-ui-elements-card-backgrounds-default-card-link-color: var(--lens-ui-intents-primary-lighten);
+  @include lens-def(typography, font-family, null, "'Roboto', sans-serif");
+  @include lens-def(typography, font-size, null, .9333333333rem);
+  @include lens-def(typography, text-color, null, #fff);
+  @include lens-def(typography, text-color, active, #fff);
+  @include lens-def(typography, text-color, faded, hsl(var(--lens-ui-hue-bg-text) 14% 90%));
+  @include lens-def(typography, text-color, disabled, hsl(var(--lens-ui-hue-bg-text) 14% 80%));
+  @include lens-def(card, backgrounds-default-background-color, null, var(--lens-ui-intents-dark));
+  @include lens-def(card, backgrounds-default-border-color, null, #444);
+  @include lens-def(card, backgrounds-default-card-title-color, null, #fff);
+  @include lens-def(card, backgrounds-default-card-sub-title-color, null, #fff);
+  @include lens-def(card, backgrounds-default-card-link-color, null, var(--lens-ui-intents-primary-lighten));
+  @include lens-def(button, outlined-bg-color, null, var(--lens-ui-intents-dark));
+  @include lens-def(button, dark-background-color, null, var(--lens-ui-intents-dark));
+  @include lens-def(button, light-text-color, null, hsl(var(--lens-ui-hue-dark-text) 10% 35%));
+  @include lens-def(button, dark-text-color, null, var(--lens-ui-intents-lighten));
+  @include lens-def(button, primary-background-color, outlined, var(--lens-ui-intents-primary-light));
+  @include lens-def(button, secondary-background-color, minimal, var(--lens-ui-intents-secondary-lighten));
+  @include lens-def(button, success-background-color, minimal, var(--lens-ui-intents-success-lighten));
+  @include lens-def(button, info-background-color, minimal, var(--lens-ui-intents-info-lighten));
+  @include lens-def(button, warning-background-color, minimal, var(--lens-ui-intents-warning-lighten));
+  @include lens-def(button, danger-background-color, minimal, var(--lens-ui-intents-danger-lighten));
+  @include lens-def(button, dark-background-color, minimal, var(--lens-ui-intents-dark-text));
+  @include lens-def(button, light-text-color, minimal, var(--lens-ui-intents-lighten));
+  @include lens-def(button, secondary-background-color, outlined, var(--lens-ui-intents-secondary-lighten));
+  @include lens-def(button, dark-background-color, outlined, var(--lens-ui-intents-dark-text));
+  @include lens-def(button, light-background-color, outlined, var(--lens-ui-intents-lighten));
+  @include lens-def(button, light-text-color, outlined, var(--lens-ui-intents-lighten));
+  @include lens-def(button, light-background-color, null, hsl(var(--lens-ui-hue-light) 33% 90%));
+  @include lens-def(button, outlined-bg-color, outlined, hsl(var(--lens-ui-hue-dark-text) 10% 23%));
+  @include lens-def(button, outlined-bg-color, outlined-light, hsl(var(--lens-ui-hue-dark-text) 10% 30%));
+  @include lens-def(button, light-background-color, minimal, var(--lens-ui-elements-button-outlined-bg-color--outlined-light));
+
   --lens-ui-elements-list-border: hsl(0deg 0% 0%);
   --lens-ui-elements-list-border-hover: hsl(210deg 14% 83%);
   --lens-ui-elements-list-bg: var(--lens-ui-elements-button-dark-background-color);
   --lens-ui-elements-list-heading-bg: var(--lens-ui-elements-button-dark-background-color);
-  --lens-ui-elements-list-color: var(--lens-ui-typography-text-color);
+
+  @include replace-me-var-copy(--lens-ui-elements-list-color, lens-var(typography, text-color));
+
   --lens-ui-elements-list-hover-saturation: 40%;
   --lens-ui-elements-list-hover-lightness: 50%;
-  --lens-ui-breadcrumbs-last-item: #fff;
+
+  @include lens-def(breadcrumbs, last-item, null, lens-var(typography, text-color));
+  @include lens-def(breadcrumbs, item-text-color, null, lens-var(typography, text-color, disabled));
+  @include lens-def(breadcrumbs, item-text-color, hover, var(--lens-ui-intents-primary-lighten));
+
   --lens-ui-elements-list-item-divider-background: #333;
-  --lens-ui-elements-divider-text-color: var(--lens-ui-typography-text-color);
-  --lens-ui-elements-divider-color: #1e1e1e;
+
+  @include lens-def(divider, text-color, null, lens-var(typography, text-color));
+  @include lens-def(divider, border-bottom-color, null, #fff);
+
   --lens-ui-content-bg-color: #444;
   --lens-ui-elements-layout-sidebar-background-color: #333;
   --lens-ui-elements-layout-sidebar-border-right-color: hsl(0deg 0% 39%);
-  --lens-ui-elements-layout-sidebar-text-color: var(--lens-ui-typography-text-color);
-  --lens-ui-typography-most-faded-text-color: hsl(var(--lens-ui-hue-bg-text) 14% 80%);
-  --lens-ui-elements-input-label-color: var(--lens-ui-typography-text-color);
+
+  @include replace-me-var-copy(--lens-ui-elements-layout-sidebar-text-color, lens-var(typography, text-color));
+  @include lens-def(input, label-color, null, lens-var(typography, text-color));
+
   --lens-ui-input-base--active-box-shadow: 0 0 0 .15rem rgb(255 255 255 / 32%);
-  --lens-ui-elements-checkbox-focused-box-shadow: var(--lens-ui-input-base--active-box-shadow);
   --lens-ui-input-text-color: #333;
+
+  @include lens-def(checkbox, focused-box-shadow, null, lens-var(input, box-shadow, active));
+
   --lens-ui-elements-modal-background-color: var(--lens-ui-content-bg-color);
   --lens-ui-elements-modal-border-color: #333;
   --lens-ui-table-bg: var(--lens-ui-conent-bg-color);
@@ -56,7 +73,9 @@
   --lens-ui-table-hover-color: #636363;
   --lens-ui-table-hover-bg: #636363;
   --lens-ui-table-border-color: #333;
-  --lens-ui-elements-tabs-container-color: var(--lens-ui-typography-text-color);
+
+  @include replace-me-var-copy(--lens-ui-elements-tabs-container-color, lens-var(typography, text-color));
+
   --lens-ui-elements-tabs-active-bg: var(--lens-ui-content-bg-color);
   --lens-ui-elements-tabs-hover-bg: #333;
   --lens-ui-elements-tabs-border: #333;
@@ -65,6 +84,12 @@
   --lens-ui-elements-tabs-text-color: #f7f7f7;
   --lens-ui-elements-tabs-border-active: #333;
   --lens-ui-elements-tabs-bg: #444;
+
+  @include lens-def(collapse, text-color, null, lens-var(typography, text-color));
+  @include lens-def(collapse, background-color, null, #333);
+  @include lens-def(collapse, border-color, null, #222);
+  @include lens-def(collapse, content-background-color, null, #333);
+  @include lens-def(collapse, content-text-color, null, lens-var(typography, text-color));
 }
 
 .default {

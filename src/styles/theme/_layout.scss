@@ -1,5 +1,7 @@
+@import '../lib';
+
 @mixin layout-theme {
   --lens-ui-elements-layout-sidebar-background-color: hsl(var(--lens-ui-hue-bg) 0% 100%);
   --lens-ui-elements-layout-sidebar-border-right-color: hsl(var(--lens-ui-hue-bg) 0% 87%);
-  --lens-ui-elements-layout-sidebar-text-color: var(--lens-ui-typography-text-color);
+  --lens-ui-elements-layout-sidebar-text-color: lens-var(typography, text-color);
 }

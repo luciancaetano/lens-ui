@@ -1,7 +1,7 @@
-@import 'style-lib';
+@import './lib';
 
 @mixin typography-component-base {
-  font-family: var(--lens-ui-typography-font-family);
+  font-family: lens-var(typography, font-family);
   font-style: normal;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -9,7 +9,7 @@
   margin-bottom: var(--typography-gutter-bottom);
   margin-top: 0;
   text-align: var(--typography-align);
-  color: var(--lens-ui-typography-text-color);
+  color: lens-var(typography, text-color);
 }
 
 @mixin h1 {

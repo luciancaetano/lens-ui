@@ -1,7 +1,7 @@
 $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'danger');
 
 @mixin lens-ui-typography-no-color {
-  font-family: var(--lens-ui-typography-font-family);
+  font-family: lens-var(typography, font-family);
   line-height: 1rem;
   font-style: normal;
   letter-spacing: 0;
@@ -18,16 +18,16 @@ $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'dange
 @mixin lens-ui-typography-base {
   @include lens-ui-typography-no-color;
 
-  color: var(--lens-ui-typography-text-color);
+  color: lens-var(typography, text-color);
 }
 
 @mixin lens-ui-typography {
   @include lens-ui-typography-base;
 
-  font-size: var(--lens-ui-typography-font-size);
+  font-size: lens-var(typography, font-size);
 }
 
-@function l-var($component, $var, $modifier) {
+@function lens-var($component, $var, $modifier: null) {
   @if $modifier {
     @return var(--lens-ui--elements-#{$component}__#{$var}--#{$modifier});
   }
@@ -35,17 +35,21 @@ $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'dange
   @return var(--lens-ui--elements-#{$component}__#{$var});
 }
 
-@mixin l-def($component, $var, $modifier, $value) {
+@mixin lens-def($component, $var, $modifier: null, $value) {
   @if $modifier {
-    --lens-ui--elements-#{$component}__#{$var}--#{$modifier}: $value;
+    --lens-ui--elements-#{$component}__#{$var}--#{$modifier}: #{$value};
   } @else {
-    --lens-ui--elements-#{$component}__#{$var}: $value;
+    --lens-ui--elements-#{$component}__#{$var}: #{$value};
   }
 }
 
+@mixin replace-me-var-copy($var, $value) {
+  #{$var}: #{$value};
+}
+
 .lens-ui-font-definition {
-  font-family: var(--lens-ui-typography-font-family);
-  font-size: var(--lens-ui-typography-font-size);
+  font-family: lens-var(typography, font-family);
+  font-size: lens-var(typography, font-size);
   font-style: normal;
   letter-spacing: 0;
   text-align: left;

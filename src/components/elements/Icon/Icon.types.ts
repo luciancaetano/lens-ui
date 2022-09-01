@@ -16,6 +16,7 @@ export interface IIconProps<T extends IconType = IconType> extends ITestableProp
   size?: number | string;
   spin?: boolean;
   iconsSet?: Record<string, React.ComponentType<any>>;
+  rotation?: number;
 }
 
 export const IconsNameEnum = Object.keys({

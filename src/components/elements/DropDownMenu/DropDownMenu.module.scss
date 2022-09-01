@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .drop-down-menu {
   @include lens-ui-typography;
@@ -13,7 +13,7 @@
     flex: 1;
     height: 100%;
     cursor: pointer;
-    color: var(--lens-ui-typography-text-color);
+    color: lens-var(typography, text-color);
   }
 
   &__chevron {

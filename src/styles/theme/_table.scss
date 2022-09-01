@@ -1,3 +1,5 @@
+@import '../lib';
+
 @mixin table-theme {
   --lens-ui-table-bg: transparent;
   --lens-ui-table-active-color: #495057;

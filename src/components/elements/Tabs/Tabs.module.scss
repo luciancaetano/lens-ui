@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .tabs {
   display: flex;
@@ -45,7 +45,7 @@
     &__container {
       display: flex;
       flex-direction: column;
-      color: var(--lens-ui-typography-faded-text-color);
+      color: lens-var(typography, text-color, faded);
       border-right: 1px solid var(--lens-ui-elements-tabs-border);
 
       &__tab-item {
@@ -66,7 +66,7 @@
         min-height: var(--lens-ui-elements-tabs-var--vertical-min-height);
 
         &:hover {
-          color: var(--lens-ui-typography-faded-text-color);
+          color: lens-var(typography, text-color, faded);
           border-top-color: var(--lens-ui-elements-tabs-border-faded);
           border-bottom-color: var(--lens-ui-elements-tabs-border-faded);
           border-left-color: var(--lens-ui-elements-tabs-border-faded);
@@ -75,7 +75,7 @@
         }
 
         &--active {
-          color: var(--lens-ui-typography-text-color) !important;
+          color: lens-var(typography, text-color) !important;
           background: var(--lens-ui-elements-tabs-active-bg) !important;
           border-top-color: var(--lens-ui-elements-tabs-border) !important;
           border-bottom-color: var(--lens-ui-elements-tabs-border) !important;
@@ -110,7 +110,7 @@
           display: flex;
           flex-direction: row;
           font-size: .8rem;
-          color: var(--lens-ui-typography-faded-text-color);
+          color: lens-var(typography, text-color, faded);
           opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
@@ -157,13 +157,13 @@
     &__container {
       display: flex;
       flex-direction: row;
-      color: var(--lens-ui-typography-faded-text-color);
+      color: lens-var(typography, text-color, faded);
       flex: 1;
 
       &__tab-item {
         @include lens-ui-typography;
 
-        font-size: var(--lens-ui-typography-font-size);
+        font-size: lens-var(typography, font-size);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -194,20 +194,20 @@
         }
 
         &:hover {
-          color: var(--lens-ui-typography-faded-text-color);
+          color: lens-var(typography, text-color, faded);
           border-bottom-color: var(--lens-ui-elements-tabs-border-active);
           isolation: isolate;
           background: var(--lens-ui-elements-tabs-hover-bg);
         }
 
         &--active {
-          color: var(--lens-ui-typography-text-color);
+          color: lens-var(typography, text-color);
           background: var(--lens-ui-elements-tabs-active-bg);
           border-color: var(--lens-ui-elements-tabs-border-active) var(--lens-ui-elements-tabs-border-active) transparent;
           opacity: 1;
 
           &:hover {
-            color: var(--lens-ui-typography-text-color);
+            color: lens-var(typography, text-color);
             background: var(--lens-ui-elements-tabs-active-bg);
             border-color: var(--lens-ui-elements-tabs-border-active) var(--lens-ui-elements-tabs-border-active) transparent;
           }
@@ -240,7 +240,7 @@
           display: flex;
           flex-direction: row;
           font-size: .8rem;
-          color: var(--lens-ui-typography-faded-text-color);
+          color: lens-var(typography, text-color, faded);
           opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 

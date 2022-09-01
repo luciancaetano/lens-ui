@@ -7,8 +7,9 @@ This is the roadmap for next version
 - [x] Grid (Grid.Col, Grid.Row)
 - [x] Bottom Navigation (BottomNavigation.Action)
 - [x] Tooltip component
-- [ ] In new elements css vars use prefix --lens-ui-elements-var--element-name-var-name
-- [ ] Collapse
+- [x] Collapse
+- [ ] Isolate all components colors using lens-var and lens-def
+- [ ] Add size to inputs and handle defaultSize in the theme
 - [ ] Pagination
 - [ ] Timeline
 - [ ] Upload
@@ -22,7 +23,6 @@ This is the roadmap for next version
 - [x] Theme Provider
 - [x] DarkMode
 - [ ] Theme Builder (A simple to for changing css variables and creating custom themes)
-- [ ] Isolate all components variables using l-var and l-def helpers
 
 ### Hooks
 

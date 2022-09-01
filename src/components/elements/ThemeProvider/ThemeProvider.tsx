@@ -3,12 +3,15 @@ import { IThemeProviderProps } from './ThemeProvider.types';
 import ThemeContext, { IThemeContext } from './ThemeContext';
 import themes from './themes.module.scss';
 
-const ThemeProvider:React.FC<IThemeProviderProps> = ({ children, theme, additionalSettings }) => {
+const ThemeProvider:React.FC<IThemeProviderProps> = ({
+  children, theme, additionalSettings, defaultSize = 'medium',
+}) => {
   const value = useMemo<IThemeContext>(() => ({
     className: theme === 'dark' || theme === 'default' ? themes[theme] : theme,
     customSettings: additionalSettings,
     theme,
-  }), [theme, additionalSettings]);
+    defaultSize,
+  }), [theme, additionalSettings, defaultSize]);
 
   return (
     <ThemeContext.Provider value={value}>

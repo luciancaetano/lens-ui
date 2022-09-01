@@ -27,7 +27,7 @@
     border: 0;
     padding: 0;
     background: transparent;
-    color: var(--lens-ui-typography-faded-text-color);
+    color: lens-var(typography, text-color, faded);
     cursor: pointer;
   }
 }

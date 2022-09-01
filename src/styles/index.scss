@@ -1,7 +1,8 @@
 /* stylelint-disable selector-class-pattern */
 @import 'reset-css';
-@import './style-lib';
-@import './typography-lib';
+@import './lib';
+@import './typography';
+@import './theme/index';
 
 body {
   @include typography-component-base;
@@ -20,7 +21,7 @@ body {
 }
 
 :root {
-  --bs-font-sans-serif: var(--lens-ui-typography-font-family);
+  --bs-font-sans-serif: lens-var(typography, font-family);
 }
 
 .lens-ui-typography {
@@ -51,7 +52,7 @@ body {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 1rem;
-  color: var(--lens-ui-typography-text-color);
+  color: lens-var(typography, text-color);
   vertical-align: top;
   border-color: var(--lens-ui-table-border-color);
   cursor: default;
@@ -305,7 +306,7 @@ em {
 
 .rmdp-panel-body li {
   background-color: var(--lens-ui-intents-primary) !important;
-  box-shadow: var(--lens-ui-input-base--active-box-shadow) !important;
+  box-shadow: lens-var(input, box-shadow, active) !important;
 }
 
 .rmdp-week-day {
@@ -318,12 +319,12 @@ em {
 
 .rmdp-range {
   background-color: var(--lens-ui-intents-primary) !important;
-  box-shadow: var(--lens-ui-input-base--active-box-shadow) !important;
+  box-shadow: lens-var(input, box-shadow, active) !important;
 }
 
 .rmdp-arrow-container:hover {
   background-color: var(--lens-ui-intents-primary) !important;
-  box-shadow: var(--lens-ui-input-base--active-box-shadow) !important;
+  box-shadow: lens-var(input, box-shadow, active) !important;
 }
 
 .rmdp-panel-body::-webkit-scrollbar-thumb {

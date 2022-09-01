@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .form-group {
   @include lens-ui-typography;
@@ -14,19 +14,19 @@
 
     margin-bottom: .5rem;
     margin-right: 0;
-    color: var(--lens-ui-typography-faded-text-color);
+    color: lens-var(typography, text-color, faded);
     box-sizing: border-box;
     font-weight: 500;
   }
 
   input {
-    color: var(--lens-ui-input-text-color);
-    background-color: var(--lens-ui-elements-input-background);
+    color: lens-var(input, text-color);
+    background-color: lens-var(input, background);
   }
 
   &__required-helper {
     font-weight: bold;
-    color: var(--lens-ui-intents-danger);
+    color: lens-var(form-group, required-helper__text-color);
   }
 
   &--inline {
@@ -46,44 +46,44 @@
     font-weight: 500;
 
     &--intent-default {
-      color: var(--lens-ui-typography-faded-text-color);
+      color: lens-var(typography, text-color, faded);
     }
 
     &--intent-primary {
-      color: var(--lens-ui-intents-primary-dark);
+      color: lens-var(form-group, helper-text__text-color, intent-primary);
     }
 
     &--intent-secondary {
-      color: var(--lens-ui-intents-secondary);
+      color: lens-var(form-group, helper-text__text-color, intent-secondary);
     }
 
     &--intent-success {
-      color: var(--lens-ui-intents-success);
+      color: lens-var(form-group, helper-text__text-color, intent-success);
     }
 
     &--intent-info {
-      color: var(--lens-ui-intents-infoDark);
+      color: lens-var(form-group, helper-text__text-color, intent-info);
     }
 
     &--intent-warning {
-      color: var(--lens-ui-intents-warning);
+      color: lens-var(form-group, helper-text__text-color, intent-warning);
     }
 
     &--intent-danger {
-      color: var(--lens-ui-intents-danger);
+      color: lens-var(form-group, helper-text__text-color, intent-danger);
     }
   }
 
-  [data-lens-element='radio-group'] {
-    padding-left: 1.3rem;
+  [data-lens-element='checkbox'] {
+    margin-left: 1.5rem;
   }
 
-  [data-lens-element='checkbox'] {
-    padding-left: 2.5rem;
+  [data-lens-element='radio'] {
+    margin-left: 1.5rem;
   }
 
   [data-lens-element='switch'] {
-    padding-left: 3.3rem;
+    margin-left: 1.5rem;
   }
 }
 

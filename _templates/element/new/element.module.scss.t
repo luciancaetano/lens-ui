@@ -1,7 +1,7 @@
 ---
 to: src/components/elements/<%= name %>/<%= name %>.module.scss
 ---
-@import '../../../style-lib';
+@import '../../../styles/lib';
 <%
 const ccname = name.replace(/\s+/g, '').replace(/\W+/g, '').replace(/^\w/, c => c.toLowerCase());
 %>

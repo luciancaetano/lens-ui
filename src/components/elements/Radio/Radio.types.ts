@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 export interface IRadioOption extends ITestableProps {
   label: ReactNode;
@@ -17,6 +17,7 @@ export interface IRadioProps extends ITestableProps, Omit<React.HtmlHTMLAttribut
   onChange?: (checked: boolean, e: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   inputClassName?: string;
+  size?: SizeType;
 }
 
 export interface IRadioGroupProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLDivElement>, 'onChange' | 'value' | 'defaultValue'>{
@@ -26,4 +27,5 @@ export interface IRadioGroupProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   value?: string | number ;
   defaultValue?: string | number ;
   inline?: boolean;
+  size?: SizeType;
 }

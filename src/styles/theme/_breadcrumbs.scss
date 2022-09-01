@@ -1,0 +1,7 @@
+@import '../lib';
+
+@mixin breadcrumbs-theme {
+  @include lens-def(breadcrumbs, last-item, null, var(--lens-ui-intents-primary-darken));
+  @include lens-def(breadcrumbs, item-text-color, null, lens-var(typography, text-color, disabled));
+  @include lens-def(breadcrumbs, item-text-color, hover, var(--lens-ui-intents-primary-lighten));
+}

@@ -3,6 +3,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import RMDatePicker, { DateObject, Calendar } from 'react-multi-date-picker';
 import get from 'lodash/get';
 import DatePanel from 'react-multi-date-picker/plugins/date_panel';
+import DatePickerHeader from 'react-multi-date-picker/plugins/date_picker_header';
 import styles from './DatePicker.module.scss';
 import { IDatePickerPropsType, DatePickerType } from './DatePicker.types';
 import { getPortalContainer } from '../../../utils';
@@ -40,12 +41,12 @@ function init(value: any, defaultValue: any, type: DatePickerType) {
 }
 
 const DatePicker: React.FC<IDatePickerPropsType> = ({
-  className, children, disabled, isError, onPickerClose, onPickerOpen, readOnly, name,
+  className, children, disabled, isError, onPickerClose, onPickerOpen, readOnly, size, name,
   onChange, required, testingID, value, type, defaultValue, locale, ...props
 }) => {
   const renderType = useMemo(() => type || 'date', [type]);
   const [date, setDate] = useState(init(defaultValue, value, renderType));
-  const [theme, themeName] = useTheme();
+  const [theme, { themeName }] = useTheme();
   const isMobile = useMediaQuery('only screen and (max-width:768px)');
 
   const format = useMemo(() => get(props, 'displayFormat', undefined), [props]);
@@ -239,7 +240,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           multiple
           numberOfMonths={get(props, 'numberOfMonths', 2)}
           render={handleRender}
-          plugins={[<DatePanel />]}
+          plugins={[<DatePanel />, get(props, 'header') && <DatePickerHeader />].filter(Boolean)}
           hideWeekDays={hideWeekDays}
           displayWeekNumbers={displayWeekNumbers}
           minDate={get(props, 'minDate', undefined)}

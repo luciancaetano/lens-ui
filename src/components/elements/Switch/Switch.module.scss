@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .switch {
   @include lens-ui-typography;
@@ -14,11 +14,11 @@
   &__input {
     @include lens-ui-typography;
 
-    width: 2em;
-    height: 1em;
-    margin-top: .2em;
+    width: 2rem;
+    height: 1rem;
+    margin-top: .2rem;
     vertical-align: top;
-    background-color: var(--lens-ui-elements-input-background);
+    background-color: lens-var(input, background);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: contain;
@@ -35,7 +35,7 @@
 
     &--checked,
     &:checked {
-      background-color: var(--lens-ui-elements-checkbox-checked-bg);
+      background-color: lens-var(checkbox, checked-bg);
       border-color: #525ce5;
       background-position: right center;
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
@@ -48,7 +48,7 @@
     &:focus {
       border-color: #b1bbc4;
       outline: 0;
-      box-shadow: var(--lens-ui-input-base--active-box-shadow);
+      box-shadow: lens-var(input, box-shadow, active);
     }
   }
 
@@ -60,6 +60,6 @@
     margin-bottom: 0;
     font-weight: 500;
     box-sizing: border-box;
-    color: var(--lens-ui-elements-input-label-color);
+    color: lens-var(input, label-color);
   }
 }

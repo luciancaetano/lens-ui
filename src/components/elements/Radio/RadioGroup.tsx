@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, {
   useCallback, useMemo,
 } from 'react';
-import { useControllableState } from '../../../hooks';
+import { useControllableState, useTheme } from '../../../hooks';
 import styles from './Radio.module.scss';
 import { IRadioGroupProps } from './Radio.types';
 import RadioGroupContext, { IRadioGroupContextData } from './RadioGroupContext';
@@ -11,9 +11,10 @@ import RadioGroupContext, { IRadioGroupContextData } from './RadioGroupContext';
  * RadioGroup allow the user to select one option from a set.
  */
 const RadioGroup: React.FC<IRadioGroupProps> = ({
-  className, testingID, defaultValue, disabled, id, onChange, value, inline, children, name, ...props
+  className, testingID, defaultValue, disabled, id, onChange, size, value, inline, children, name, ...props
 }) => {
   const [selected, setSelected] = useControllableState<string | number>(value, defaultValue);
+  const [, { defaultSize }] = useTheme();
 
   const handleChange = useCallback((v: string | number | undefined, e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange && v !== undefined) {
@@ -30,7 +31,8 @@ const RadioGroup: React.FC<IRadioGroupProps> = ({
     disabled,
     isContextPresent: true,
     name,
-  }), [disabled, handleChange, inline, name, selected]);
+    size: size || defaultSize,
+  }), [defaultSize, disabled, handleChange, inline, name, selected, size]);
 
   return (
     <div

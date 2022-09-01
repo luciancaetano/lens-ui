@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .lens-ui-select-input {
   @include lens-ui-typography;
@@ -14,13 +14,13 @@
 
   /* stylelint-disable */
   .lens-ui-select-input__control {
-    border: var(--lens-ui-input-base-border);
-    background-color: var(--lens-ui-elements-input-background);
+    border: lens-var(input, border);
+    background-color: lens-var(input, background);
   }
 
   .lens-ui-select-input__control--is-focused:hover,
   .lens-ui-select-input__control--is-focused {
-    border: var(--lens-ui-input-base-border--active);
+    border: lens-var(input, border, active);
     outline: 0;
   }
 

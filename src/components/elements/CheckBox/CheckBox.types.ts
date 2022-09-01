@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 export interface ICheckBoxProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur'> {
   label: ReactNode;
@@ -15,4 +15,5 @@ export interface ICheckBoxProps extends ITestableProps, Omit<React.HtmlHTMLAttri
   'onChange' | 'onBlur' | 'value' | 'defaultValue' | 'placeholder' | 'tabIndex' | 'disabled'
   | 'name' | 'autoFocus' | 'maxLength' | 'required'
   >;
+  size?: SizeType;
 }

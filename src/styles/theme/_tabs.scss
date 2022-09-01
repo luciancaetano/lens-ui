@@ -1,5 +1,7 @@
+@import '../lib';
+
 @mixin tabs-theme {
-  --lens-ui-elements-tabs-container-color: var(--lens-ui-typography-most-faded-text-color);
+  --lens-ui-elements-tabs-container-color: lens-var(typography, text-color, disabled);
   --lens-ui-elements-tabs-border: #ced4da;
   --lens-ui-elements-tabs-border-faded: #eff2f6;
   --lens-ui-elements-tabs-header-bg: hsl(210deg 29% 95%);

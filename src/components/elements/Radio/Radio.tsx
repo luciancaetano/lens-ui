@@ -12,11 +12,11 @@ import RadioGroupContext from './RadioGroupContext';
  * RadioGroup allow the user to select one option from a set.
  */
 const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
-  className, testingID, id = randomId(), name, tabIndex, disabled, inputClassName, label, onChange, value, checked, defaultChecked, ...props
+  className, testingID, id = randomId(), name, tabIndex, size, disabled, inputClassName, label, onChange, value, checked, defaultChecked, ...props
 }, ref) => {
   const { isContextPresent, ...ctx } = useContext(RadioGroupContext);
   const [isChecked, setIsChecked] = useState(checked || defaultChecked);
-  const [theme] = useTheme();
+  const [theme, { defaultSize }] = useTheme();
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -50,7 +50,7 @@ const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
         type="radio"
         name={isContextPresent ? ctx.name : name}
         data-lens-element="radio-group__input"
-        className={clsx(styles.radioInput, inputClassName)}
+        className={clsx(styles.radioInput, styles[`radio__input--size-${size || defaultSize}`], inputClassName)}
         disabled={disabled || ctx.disabled}
         onChange={handleChange}
         checked={isContextPresent ? ctx.value === value : isChecked}
@@ -60,7 +60,7 @@ const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
       />
       <label
         htmlFor={`${id}_input`}
-        className={styles.radioLabel}
+        className={clsx(styles.radioLabel, styles[`radio__label--size-${size || defaultSize}`], disabled && styles.radioLabelDisabled)}
         data-lens-element="radio-group__label"
       >
         {label}

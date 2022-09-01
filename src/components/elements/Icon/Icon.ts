@@ -17,7 +17,7 @@ const icons = {
  * Guidance and suggestions for using icons with LensUi.
  */
 const Icon:React.FC<IIconProps> = ({
-  className, testingID, id, name, fill = null, size = '1rem', spin, iconsSet = icons, ...props
+  className, testingID, id, name, fill = null, size, spin, iconsSet = icons, style = {}, rotation, ...props
 }) => React.createElement(get(iconsSet, name || '', ''), {
   ...props,
   ...(fill ? { fill: Object.keys(Intents).indexOf(fill) > -1 ? `var(--lens-ui-intents-${fill})` : fill } : {}),
@@ -26,6 +26,11 @@ const Icon:React.FC<IIconProps> = ({
   ...({ 'data-testid': testingID } as any),
   size,
   id,
+  style: {
+    ...style,
+    ...(rotation ? { '--lens-ui-icon-rotation': `${rotation}deg` } : {}),
+  },
+
 });
 
 export default Icon;

@@ -1,0 +1,15 @@
+@import '../lib';
+
+@mixin badge-theme {
+  @each $intent in $intent-type {
+    @include lens-def(badge, #{$intent}-text, solid, var(--lens-ui-intents-#{$intent}-text));
+    @include lens-def(badge, #{$intent}-border, solid, var(--lens-ui-intents-#{$intent}-border));
+    @include lens-def(badge, #{$intent}-background-color, solid, var(--lens-ui-intents-#{$intent}));
+    @include lens-def(badge, #{$intent}-text, outlined, var(--lens-ui-intents-#{$intent}-border));
+    @include lens-def(badge, #{$intent}-border, outlined, var(--lens-ui-intents-#{$intent}-border));
+    @include lens-def(badge, #{$intent}-background-color, outlined, #fff);
+    @include lens-def(badge, #{$intent}-text, subtle, var(--lens-ui-intents-#{$intent}-lighten-text));
+    @include lens-def(badge, #{$intent}-border, subtle, var(--lens-ui-intents-#{$intent}-lighten-border));
+    @include lens-def(badge, #{$intent}-background-color, subtle, var(--lens-ui-intents-#{$intent}-lighten));
+  }
+}

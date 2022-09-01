@@ -1,0 +1,14 @@
+@import '../lib';
+
+@mixin forms-theme {
+  @include lens-def(input, border-color, null, hsl(210deg 14% 83%));
+  @include lens-def(input, border, null, 1px solid lens-var(input, border-color));
+  @include lens-def(input, border, active, 1px solid hsl(210deg 97% 65%));
+  @include lens-def(input, bg, active, hsl(210deg 97% 65%));
+  @include lens-def(input, box-shadow, active, 0 0 0 .15rem rgb(82 92 229 / 25%));
+  @include lens-def(input, text-color, null, hsl(var(--lens-ui-hue-bg-text) 9% 31%));
+  @include lens-def(input, label-color, null, lens-var(typography, text-color, faded));
+  @include lens-def(input, background, null, #fff);
+  @include lens-def(input, prefix-text-color, null, #7c7c7c);
+  @include lens-def(input, label-color-disabled, null, #7c7c7c);
+}
