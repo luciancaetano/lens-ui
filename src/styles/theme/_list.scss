@@ -1,12 +1,12 @@
 @import '../lib';
 
 @mixin list-theme {
-  --lens-ui-elements-list-border: hsl(210deg 14% 83%);
-  --lens-ui-elements-list-bg: #fff;
-  --lens-ui-elements-list-heading-bg: hsl(210deg 29% 95%);
-  --lens-ui-elements-list-color: lens-var(typography, text-color);
-  --lens-ui-elements-list-hover-saturation: 70%;
-  --lens-ui-elements-list-hover-lightness: 90%;
-  --lens-ui-elements-list-item-divider-background: #dedede;
-  --lens-ui-elements-list-item-divider-text: #777;
+  @include lens-def(list, border, null, hsl(210deg 14% 83%));
+  @include lens-def(list, bg, null, #fff);
+  @include lens-def(list, heading-bg, null, hsl(210deg 29% 95%));
+  @include lens-def(list, color, null, lens-var(typography, text-color));
+  @include lens-def(list, hover-saturation, null, 70%);
+  @include lens-def(list, hover-lightness, null, 90%);
+  @include lens-def(list, item-divider-background, null, #dedede);
+  @include lens-def(list, item-divider-text, null, #777);
 }

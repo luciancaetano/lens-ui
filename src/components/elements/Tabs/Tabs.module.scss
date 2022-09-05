@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
 
-  --lens-ui-elements-tabs-var--vertical-min-height: 0;
+  --tabs-min-height: 0;
 
   &__holder {
     display: flex;
     flex-direction: row;
     flex: 1;
-    border-bottom: 1px solid var(--lens-ui-elements-tabs-border-active);
+    border-bottom: 1px solid lens-var(tabs, border-active);
 
     &--vertical {
       flex: initial;
@@ -45,8 +45,8 @@
     &__container {
       display: flex;
       flex-direction: column;
-      color: lens-var(typography, text-color, faded);
-      border-right: 1px solid var(--lens-ui-elements-tabs-border);
+      color: lens-var(tabs, text-color, faded);
+      border-right: 1px solid lens-var(tabs, border);
 
       &__tab-item {
         @include lens-ui-typography;
@@ -63,31 +63,31 @@
         margin-bottom: .2rem;
         cursor: pointer;
         user-select: none;
-        min-height: var(--lens-ui-elements-tabs-var--vertical-min-height);
+        min-height: var(--tabs-min-height);
 
         &:hover {
-          color: lens-var(typography, text-color, faded);
-          border-top-color: var(--lens-ui-elements-tabs-border-faded);
-          border-bottom-color: var(--lens-ui-elements-tabs-border-faded);
-          border-left-color: var(--lens-ui-elements-tabs-border-faded);
-          border-right-color: var(--lens-ui-elements-tabs-border);
+          color: lens-var(typography, text-color);
+          border-top-color: lens-var(tabs, border-faded);
+          border-bottom-color: lens-var(tabs, border-faded);
+          border-left-color: lens-var(tabs, border-faded);
+          border-right-color: lens-var(tabs, border);
           isolation: isolate;
+          opacity: 1;
         }
 
         &--active {
           color: lens-var(typography, text-color) !important;
-          background: var(--lens-ui-elements-tabs-active-bg) !important;
-          border-top-color: var(--lens-ui-elements-tabs-border) !important;
-          border-bottom-color: var(--lens-ui-elements-tabs-border) !important;
-          border-left-color: var(--lens-ui-elements-tabs-border) !important;
-          border-right-color: var(--lens-ui-elements-tabs-active-bg) !important;
+          background: lens-var(tabs, active-bg) !important;
+          border-top-color: lens-var(tabs, border) !important;
+          border-bottom-color: lens-var(tabs, border) !important;
+          border-left-color: lens-var(tabs, border) !important;
+          border-right-color: lens-var(tabs, active-bg) !important;
         }
 
         &__content {
           display: flex;
           flex-direction: row;
           flex: 1;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -98,7 +98,6 @@
         &__title-holder {
           display: flex;
           flex-direction: row;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -110,8 +109,7 @@
           display: flex;
           flex-direction: row;
           font-size: .8rem;
-          color: lens-var(typography, text-color, faded);
-          opacity: .7;
+          color: lens-var(tabs, text-color, faded);
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -123,7 +121,6 @@
           display: flex;
           flex-direction: row;
           padding-right: .28rem;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -136,7 +133,6 @@
           flex-direction: row;
           padding-left: .28rem;
           cursor: pointer;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -157,7 +153,7 @@
     &__container {
       display: flex;
       flex-direction: row;
-      color: lens-var(typography, text-color, faded);
+      color: lens-var(tabs, text-color, faded);
       flex: 1;
 
       &__tab-item {
@@ -174,13 +170,13 @@
         padding-right: 1rem;
         margin-right: .2rem;
         background: 0 0;
-        background-color: var(--lens-ui-elements-tabs-bg);
+        background-color: lens-var(tabs, bg);
         border: 1px solid transparent;
         user-select: none;
         border-top-left-radius: .3rem;
         border-top-right-radius: .3rem;
-        border-color: var(--lens-ui-elements-tabs-border-faded) var(--lens-ui-elements-tabs-border-faded) var(--lens-ui-elements-tabs-border-active) var(--lens-ui-elements-tabs-border-faded);
-        color: var(--lens-ui-elements-tabs-text-color);
+        border-color: lens-var(tabs, border-faded) lens-var(tabs, border-faded) lens-var(tabs, border-active) lens-var(tabs, border-faded);
+        color: lens-var(tabs, text-color);
         box-sizing: border-box;
         transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
         margin-bottom: -1px;
@@ -194,22 +190,23 @@
         }
 
         &:hover {
-          color: lens-var(typography, text-color, faded);
-          border-bottom-color: var(--lens-ui-elements-tabs-border-active);
+          color: lens-var(tabs, text-color, active);
+          border-bottom-color: lens-var(tabs, border-active);
           isolation: isolate;
-          background: var(--lens-ui-elements-tabs-hover-bg);
+          background: lens-var(tabs, hover-bg);
+          opacity: 1;
         }
 
         &--active {
-          color: lens-var(typography, text-color);
-          background: var(--lens-ui-elements-tabs-active-bg);
-          border-color: var(--lens-ui-elements-tabs-border-active) var(--lens-ui-elements-tabs-border-active) transparent;
+          color: lens-var(tabs, text-color, active);
+          background: lens-var(tabs, active-bg);
+          border-color: lens-var(tabs, border-active) lens-var(tabs, border-active) transparent;
           opacity: 1;
 
           &:hover {
-            color: lens-var(typography, text-color);
-            background: var(--lens-ui-elements-tabs-active-bg);
-            border-color: var(--lens-ui-elements-tabs-border-active) var(--lens-ui-elements-tabs-border-active) transparent;
+            color: lens-var(tabs, text-color, active);
+            background: lens-var(tabs, active-bg);
+            border-color: lens-var(tabs, border-active) lens-var(tabs, border-active) transparent;
           }
         }
 
@@ -217,7 +214,6 @@
           display: flex;
           flex-direction: row;
           flex: 1;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -228,7 +224,6 @@
         &__title-holder {
           display: flex;
           flex-direction: row;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -240,8 +235,7 @@
           display: flex;
           flex-direction: row;
           font-size: .8rem;
-          color: lens-var(typography, text-color, faded);
-          opacity: .7;
+          color: lens-var(tabs, text-color, faded);
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -253,7 +247,6 @@
           display: flex;
           flex-direction: row;
           padding-right: .28rem;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {
@@ -266,7 +259,6 @@
           flex-direction: row;
           padding-left: .28rem;
           cursor: pointer;
-          opacity: .7;
           transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
 
           &--active {

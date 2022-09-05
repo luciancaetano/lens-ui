@@ -1,6 +1,7 @@
 @import '../lib';
 
 @mixin modal-theme {
-  --lens-ui-elements-modal-background-color: hsl(var(--lens-ui-hue-bg) 0% 100%);
-  --lens-ui-elements-modal-border-color: hsl(var(--lens-ui-hue-bg) 29% 95%);
+  @include lens-def(modal, background-color, null, hsl(var(--lens-ui-hue-bg) 0% 100%));
+  @include lens-def(modal, border-color, null, hsl(var(--lens-ui-hue-bg) 29% 95%));
+  @include lens-def(modal, backdrop-color, null, hsla(0deg, 0%, 20%, .5));
 }

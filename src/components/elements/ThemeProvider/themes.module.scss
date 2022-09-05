@@ -33,58 +33,49 @@
   @include lens-def(button, outlined-bg-color, outlined, hsl(var(--lens-ui-hue-dark-text) 10% 23%));
   @include lens-def(button, outlined-bg-color, outlined-light, hsl(var(--lens-ui-hue-dark-text) 10% 30%));
   @include lens-def(button, light-background-color, minimal, var(--lens-ui-elements-button-outlined-bg-color--outlined-light));
-
-  --lens-ui-elements-list-border: hsl(0deg 0% 0%);
-  --lens-ui-elements-list-border-hover: hsl(210deg 14% 83%);
-  --lens-ui-elements-list-bg: var(--lens-ui-elements-button-dark-background-color);
-  --lens-ui-elements-list-heading-bg: var(--lens-ui-elements-button-dark-background-color);
-
-  @include replace-me-var-copy(--lens-ui-elements-list-color, lens-var(typography, text-color));
-
-  --lens-ui-elements-list-hover-saturation: 40%;
-  --lens-ui-elements-list-hover-lightness: 50%;
-
+  @include lens-def(callout, text-color, null, #fff);
+  @include lens-def(modal, backdrop-color, null, hsla(0deg, 0%, 20%, .5));
+  @include lens-def(list, border, null, hsl(0deg 0% 0%));
+  @include lens-def(list, border-hover, null, hsl(210deg 14% 83%));
+  @include lens-def(list, bg, null, var(--lens-ui-elements-button-dark-background-color));
+  @include lens-def(list, heading-bg, null, var(--lens-ui-elements-button-dark-background-color));
+  @include lens-def(list, hover-saturation, null,  40%);
+  @include lens-def(list, hover-lightness, null,  50%);
+  @include lens-def(list, item-divider-background, null,  #333);
+  @include lens-def(list, color, null, lens-var(typography, text-color));
   @include lens-def(breadcrumbs, last-item, null, lens-var(typography, text-color));
   @include lens-def(breadcrumbs, item-text-color, null, lens-var(typography, text-color, disabled));
   @include lens-def(breadcrumbs, item-text-color, hover, var(--lens-ui-intents-primary-lighten));
-
-  --lens-ui-elements-list-item-divider-background: #333;
-
   @include lens-def(divider, text-color, null, lens-var(typography, text-color));
   @include lens-def(divider, border-bottom-color, null, #fff);
-
-  --lens-ui-content-bg-color: #444;
-  --lens-ui-elements-layout-sidebar-background-color: #333;
-  --lens-ui-elements-layout-sidebar-border-right-color: hsl(0deg 0% 39%);
-
-  @include replace-me-var-copy(--lens-ui-elements-layout-sidebar-text-color, lens-var(typography, text-color));
+  @include lens-def(content, bg-color, null, #444);
+  @include lens-def(layout-sidebar, background-color, null, #333);
+  @include lens-def(layout-sidebar, border-right-color, null, hsl(0deg 0% 39%));
+  @include lens-def(layout-sidebar, text-color, null, lens-var(typography, text-color));
   @include lens-def(input, label-color, null, lens-var(typography, text-color));
-
-  --lens-ui-input-base--active-box-shadow: 0 0 0 .15rem rgb(255 255 255 / 32%);
-  --lens-ui-input-text-color: #333;
-
   @include lens-def(checkbox, focused-box-shadow, null, lens-var(input, box-shadow, active));
-
-  --lens-ui-elements-modal-background-color: var(--lens-ui-content-bg-color);
-  --lens-ui-elements-modal-border-color: #333;
-  --lens-ui-table-bg: var(--lens-ui-conent-bg-color);
-  --lens-ui-table-active-color: #495057;
-  --lens-ui-table-active-bg: #636363;
-  --lens-ui-table-hover-color: #636363;
-  --lens-ui-table-hover-bg: #636363;
-  --lens-ui-table-border-color: #333;
-
-  @include replace-me-var-copy(--lens-ui-elements-tabs-container-color, lens-var(typography, text-color));
-
-  --lens-ui-elements-tabs-active-bg: var(--lens-ui-content-bg-color);
-  --lens-ui-elements-tabs-hover-bg: #333;
-  --lens-ui-elements-tabs-border: #333;
-  --lens-ui-elements-tabs-border-faded: #777;
-  --lens-ui-elements-tabs-border-hovered: #5c5c5c;
-  --lens-ui-elements-tabs-text-color: #f7f7f7;
-  --lens-ui-elements-tabs-border-active: #333;
-  --lens-ui-elements-tabs-bg: #444;
-
+  @include lens-def(modal, background-color, null, lens-var(content, bg-color));
+  @include lens-def(modal, border-color, null, #333);
+  @include lens-def(modal, backdrop-color, null, rgba(51, 51, 51, .801));
+  @include lens-def(table, bg, null, var(--lens-ui-conent-bg-color));
+  @include lens-def(table, active-color, null, #495057);
+  @include lens-def(table, active-bg, null, #636363);
+  @include lens-def(table, hover-color, null, #636363);
+  @include lens-def(table, hover-bg, null, #636363);
+  @include lens-def(table, border-color, null, #333);
+  @include lens-def(tabs, container-color, null, lens-var(typography, text-color));
+  @include lens-def(tabs, container-color, null, lens-var(typography, text-color));
+  @include lens-def(tabs, active-bg, null, lens-var(content, bg-color));
+  @include lens-def(tabs, hover-bg, null, #333);
+  @include lens-def(tabs, border, null, #333);
+  @include lens-def(tabs, border-faded, null, #777);
+  @include lens-def(tabs, border-hovered, null, #5c5c5c);
+  @include lens-def(tabs, text-color, null, #f7f7f7);
+  @include lens-def(tabs, border-active, null, #333);
+  @include lens-def(tabs, bg, null, #444);
+  @include lens-def(tabs, header-bg, null, hsl(210deg 29% 95%));
+  @include lens-def(tabs, text-color, faded, lens-var(typography, text-color, faded));
+  @include lens-def(tabs, text-color, active, lens-var(typography, text-color));
   @include lens-def(collapse, text-color, null, lens-var(typography, text-color));
   @include lens-def(collapse, background-color, null, #333);
   @include lens-def(collapse, border-color, null, #222);

@@ -8,8 +8,8 @@ This is the roadmap for next version
 - [x] Bottom Navigation (BottomNavigation.Action)
 - [x] Tooltip component
 - [x] Collapse
-- [ ] Isolate all components colors using lens-var and lens-def
-- [ ] Add size to inputs and handle defaultSize in the theme
+- [x] Isolate components colors using lens-var and lens-def
+- [x] Add size to inputs and handle defaultSize in the theme
 - [ ] Pagination
 - [ ] Timeline
 - [ ] Upload

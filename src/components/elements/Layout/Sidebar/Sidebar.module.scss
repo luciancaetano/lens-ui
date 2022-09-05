@@ -1,10 +1,12 @@
+@import '../../../../styles/lib';
+
 .sidebar {
   display: flex;
   flex-direction: column;
-  background-color: var(--lens-ui-elements-layout-sidebar-background-color);
+  background-color: lens-var(layout-sidebar, background-color);
   min-width: 16.875rem;
-  color: var(--lens-ui-elements-layout-sidebar-text-color);
-  border-right: 1px solid var(--lens-ui-elements-layout-sidebar-border-right-color);
+  color: lens-var(layout-sidebar, text-color);
+  border-right: 1px solid lens-var(layout-sidebar, border-right-color);
   max-height: 100%;
   z-index: 1;
 }

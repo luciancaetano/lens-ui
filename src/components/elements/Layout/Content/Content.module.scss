@@ -12,7 +12,7 @@
   font-weight: 400;
   line-height: 1.5;
   color: lens-var(typography, text-color);
-  background-color: var(--lens-ui-content-bg-color);
+  background-color: lens-var(content, bg-color);
 
   &--direction-column {
     flex-direction: column;

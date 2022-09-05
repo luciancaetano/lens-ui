@@ -42,7 +42,6 @@ const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
       className={clsx(styles.radioContainer, ctx.inline && styles.radioContainerInline, theme, className)}
       data-testid={testingID}
       data-lens-element="radio"
-      id={id}
       ref={ref}
     >
       <input
@@ -56,10 +55,10 @@ const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
         checked={isContextPresent ? ctx.value === value : isChecked}
         defaultChecked={defaultChecked}
         value={value}
-        id={`${id}_input`}
+        id={id}
       />
       <label
-        htmlFor={`${id}_input`}
+        htmlFor={id}
         className={clsx(styles.radioLabel, styles[`radio__label--size-${size || defaultSize}`], disabled && styles.radioLabelDisabled)}
         data-lens-element="radio-group__label"
       >

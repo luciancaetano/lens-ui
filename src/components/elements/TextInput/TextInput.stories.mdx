@@ -33,6 +33,7 @@ The TextInput is a wrapper around the native input element that allows you to ma
 |name|string|undefined|The name of the input|No|
 |multiline|boolean|undefined|Whether the input is a textarea|No|
 |isError|boolean|undefined|Whether the input is in an error state|No|
+|size|small, medium, large|undefined|The size of the checkbox|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 ---
@@ -53,6 +54,23 @@ The TextInput is a wrapper around the native input element that allows you to ma
 <Canvas>
   <TextInput
     type="search"
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+</Canvas>
+
+### Size variation
+
+<Canvas>
+  <TextInput
+    size="small"
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+  <TextInput
+    size="medium"
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+  <TextInput
+    size="large"
     defaultValue="Lorem ipsum dolor sit amet"
   />
 </Canvas>

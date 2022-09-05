@@ -42,11 +42,11 @@ function init(value: any, defaultValue: any, type: DatePickerType) {
 
 const DatePicker: React.FC<IDatePickerPropsType> = ({
   className, children, disabled, isError, onPickerClose, onPickerOpen, readOnly, size, name,
-  onChange, required, testingID, value, type, defaultValue, locale, ...props
+  onChange, required, testingID, value, type, defaultValue, locale, dark, ...props
 }) => {
   const renderType = useMemo(() => type || 'date', [type]);
   const [date, setDate] = useState(init(defaultValue, value, renderType));
-  const [theme, { themeName }] = useTheme();
+  const [theme, { themeName, defaultSize }] = useTheme();
   const isMobile = useMediaQuery('only screen and (max-width:768px)');
 
   const format = useMemo(() => get(props, 'displayFormat', undefined), [props]);
@@ -82,6 +82,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
             handleValueChange(e);
           }}
+          size={size || defaultSize}
         />
       );
     }
@@ -98,6 +99,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
             handleValueChange(e);
           }}
+          size={size || defaultSize}
         />
       );
     }
@@ -113,6 +115,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
             handleValueChange(e);
           }}
+          size={size || defaultSize}
         />
       );
     }
@@ -124,9 +127,10 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
         onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
           handleValueChange(e);
         }}
+        size={size || defaultSize}
       />
     );
-  }, [children, format, props, renderType]);
+  }, [children, defaultSize, format, props, renderType, size]);
 
   const Component: any = useMemo(() => get(props, 'inline', false) ? Calendar : RMDatePicker, [props]);
 
@@ -140,7 +144,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'date') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -161,7 +165,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'range') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -185,7 +189,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'month') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' }, styles.monthPicker)}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark }, styles.monthPicker)}
           containerClassName={styles.monthPicker}
           value={date}
           onChange={handleDateChange}
@@ -206,7 +210,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'year') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -225,7 +229,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'multiple') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -250,7 +254,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'week') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}

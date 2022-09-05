@@ -14,9 +14,9 @@ import { useTheme } from '../../../hooks';
 const Select: React.FC<ISelectProps> = React.forwardRef(({
   className, testingID, id = randomId('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
   isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '', menuPortalTarget = document.body,
-  autoFocus, isError, ...props
+  autoFocus, isError, size, ...props
 }, ref) => {
-  const [theme] = useTheme();
+  const [theme, { defaultSize }] = useTheme();
 
   const handleChange = useCallback((option: any) => {
     if (onChange) {
@@ -62,14 +62,14 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
   return (
     <div
       {...props}
-      id={id}
       data-testid={testingID}
       data-lens-element="select"
       className={clsx('lens-ui-select-input', theme, className)}
     >
       <ReactSelect
+        id={id}
         placeholder={placeholder}
-        className={clsx(isError && 'select-input-error')}
+        className={clsx(isError && 'select-input-error', `lens-ui-select-input--size-${size || defaultSize}`)}
         classNamePrefix="lens-ui-select-input"
         isMulti={isMulti}
         isLoading={isLoading}

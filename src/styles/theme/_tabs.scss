@@ -1,14 +1,16 @@
 @import '../lib';
 
 @mixin tabs-theme {
-  --lens-ui-elements-tabs-container-color: lens-var(typography, text-color, disabled);
-  --lens-ui-elements-tabs-border: #ced4da;
-  --lens-ui-elements-tabs-border-faded: #eff2f6;
-  --lens-ui-elements-tabs-header-bg: hsl(210deg 29% 95%);
-  --lens-ui-elements-tabs-active-bg: #fff;
-  --lens-ui-elements-tabs-border-hovered: red;
-  --lens-ui-elements-tabs-hover-bg: #fbfbfb;
-  --lens-ui-elements-tabs-border-active: #ddd;
-  --lens-ui-elements-tabs-text-color: #787878;
-  --lens-ui-elements-tabs-bg: hsl(var(--lens-ui-hue-bg) 0% 100%);
+  @include lens-def(tabs, container-color, null, lens-var(typography, text-color, disabled));
+  @include lens-def(tabs, border, null, #ced4da);
+  @include lens-def(tabs, border-faded, null, #eff2f6);
+  @include lens-def(tabs, header-bg, null, hsl(210deg 29% 95%));
+  @include lens-def(tabs, active-bg, null, #fff);
+  @include lens-def(tabs, border-hovered, null, red);
+  @include lens-def(tabs, hover-bg, null, #fbfbfb);
+  @include lens-def(tabs, border-active, null, #ddd);
+  @include lens-def(tabs, text-color, null, lens-var(typography, text-color));
+  @include lens-def(tabs, text-color, faded, lens-var(typography, text-color, faded));
+  @include lens-def(tabs, bg, null, hsl(var(--lens-ui-hue-bg) 0% 100%));
+  @include lens-def(tabs, text-color, active, lens-var(typography, text-color));
 }

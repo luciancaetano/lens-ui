@@ -12,9 +12,7 @@
   }
 
   &__prefix {
-    position: absolute;
-    padding-left: .25rem;
-    padding-right: .25rem;
+    padding: .47rem .75rem;
     background: lens-var(input, border-color);
     top: .05rem;
     left: .05rem;
@@ -22,19 +20,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.4rem;
-    border-top-left-radius: .1rem;
-    border-bottom-left-radius: .1rem;
+    min-width: 2.4rem;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
     border-right: lens-var(input, border);
     color: lens-var(input, prefix-text-color);
     pointer-events: none;
-    z-index: 1;
   }
 
   &__suffix {
-    position: absolute;
-    padding-left: .25rem;
-    padding-right: .25rem;
+    padding: .47rem .75rem;
     background: lens-var(input, border-color);
     top: .05rem;
     right: .05rem;
@@ -42,13 +37,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.4rem;
-    border-top-right-radius: .1rem;
-    border-bottom-right-radius: .1rem;
+    min-width: 2.4rem;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
     border-right: lens-var(input, border);
     color: lens-var(input, prefix-text-color);
     pointer-events: none;
-    z-index: 1;
   }
 
   &__input {
@@ -68,25 +62,31 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
-    &--with-prefix {
-      padding-left: 3.8rem;
-    }
-
-    &--with-prefix {
-      padding-right: 3.8rem;
-    }
-
     &--search {
       padding-right: 2.125rem;
     }
 
     &:focus {
       outline: 0;
-      border: lens-var(input, border, active);
+      border-color: lens-var(input, border, active-color);
     }
+
+    @include input-size-mixin;
 
     &--error {
       border: 1px solid var(--lens-ui-intents-danger-border);
+    }
+
+    &--with-prefix {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+
+    &--with-suffix {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
     }
   }
 

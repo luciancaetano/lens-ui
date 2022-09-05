@@ -34,7 +34,6 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
   return (
     <div
       {...props}
-      id={id}
       data-testid={testingID}
       data-lens-element="checkbox"
       className={clsx(styles.container, theme, className)}
@@ -42,7 +41,7 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
       <input
         {...inputProps}
         type="checkbox"
-        id={`${id}-input`}
+        id={id}
         tabIndex={tabIndex}
         className={clsx(styles.input, styles[`input--size-${size || defaultSize}`])}
         onChange={handleChange}
@@ -54,7 +53,7 @@ const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
         {...(checked !== undefined ? ({ checked }) : { defaultChecked })}
       />
       <label
-        htmlFor={`${id}-input`}
+        htmlFor={id}
         className={clsx(styles.label, styles[`label--size-${size || defaultSize}`], disabled && styles['label--disabled'])}
       >
         {label}

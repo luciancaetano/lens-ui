@@ -53,6 +53,7 @@ The Select component are used for collecting user provided information from a li
 |formatGroupLabel|`function(ISelectGroupedOption)`|undefined|Function to format the group label|No|
 |formatOptionLabel|`function(ISelectOption,ValueType)`|undefined|Function to format the option label|No|
 |menuPortalTarget|HTMLElement|undefined|The element to render the menu portal to|No|
+|size|small, medium, large|undefined|The size of the checkbox|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
@@ -72,6 +73,67 @@ The Select component are used for collecting user provided information from a li
 |label|string|-|The label of the group|Yes|
 |options|`Array<ISelectOption>`|-|The options of the group|Yes|
 
+### Size variations
+
+<Canvas>
+  <Select
+    defaultValue="2"
+    name="input"
+    options={[
+      {
+        label: 'Option1',
+        value: '1'
+      },
+      {
+        label: 'Option2',
+        value: '2'
+      },
+      {
+        label: 'Option3',
+        value: '3'
+      }
+    ]}
+    size="small"
+  />
+  <Select
+    defaultValue="2"
+    name="input"
+    options={[
+      {
+        label: 'Option1',
+        value: '1'
+      },
+      {
+        label: 'Option2',
+        value: '2'
+      },
+      {
+        label: 'Option3',
+        value: '3'
+      }
+    ]}
+    size="medium"
+  />
+  <Select
+    defaultValue="2"
+    name="input"
+    options={[
+      {
+        label: 'Option1',
+        value: '1'
+      },
+      {
+        label: 'Option2',
+        value: '2'
+      },
+      {
+        label: 'Option3',
+        value: '3'
+      }
+    ]}
+    size="large"
+  />
+</Canvas>
 
 ### Theme dark
 

@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import CurrencyInput from 'react-currency-input';
+import { useTheme } from '../../../hooks';
 import styles from './MoneyInput.module.scss';
 import { IMoneyInputProps } from './MoneyInput.types';
 
@@ -9,8 +10,9 @@ import { IMoneyInputProps } from './MoneyInput.types';
  */
 const MoneyInput: React.FC<IMoneyInputProps> = ({
   className, testingID, id, onChange, tabIndex, decimalSeparator = ',', precision = 3, thousandSeparator = '.',
-  onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, prefix, suffix, ...props
+  onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, prefix, suffix, size, ...props
 }) => {
+  const [theme, { defaultSize }] = useTheme();
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>, maskedvalue: string, floatvalue: number) => {
     if (onChange) {
       onChange(floatvalue, maskedvalue, event);
@@ -27,7 +29,6 @@ const MoneyInput: React.FC<IMoneyInputProps> = ({
     <div
       {...props}
       data-lens-element="money-input"
-      id={id}
       data-testid={testingID}
       className={clsx(styles.moneyInput, className)}
     >
@@ -35,9 +36,9 @@ const MoneyInput: React.FC<IMoneyInputProps> = ({
         name={name}
         placeholder={placeholder}
         data-lens-element="money-input__input"
-        id={`${id}-input`}
+        id={id}
         tabIndex={tabIndex}
-        className={clsx(styles.moneyInputField, isError && styles.moneyInputFieldError)}
+        className={clsx(styles.moneyInputField, theme, isError && styles.moneyInputFieldError, styles[`money-input__field--size-${size || defaultSize}`])}
         onChangeEvent={handleChange}
         value={defaultValue || value}
         onBlur={handleBlur}

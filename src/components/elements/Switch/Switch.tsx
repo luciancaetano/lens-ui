@@ -9,10 +9,10 @@ import { ISwitchProps } from './Switch.types';
  * The Switch component toggle the state of a single setting on or off.
  */
 const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>(({
-  className, testingID, id = randomId(), label, onChange, checked, defaultChecked, tabIndex, onBlur, name, disabled,
+  className, testingID, id = randomId(), label, onChange, checked, size, defaultChecked, tabIndex, onBlur, name, disabled,
   autoFocus, ...props
 }, ref) => {
-  const [theme] = useTheme();
+  const [theme, { defaultSize }] = useTheme();
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -29,16 +29,15 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>(({
   return (
     <div
       {...props}
-      id={id}
       data-testid={testingID}
       data-lens-element="switch"
       className={clsx(styles.switch, theme, className)}
     >
       <input
         type="checkbox"
-        id={`${id}-input`}
+        id={id}
         tabIndex={tabIndex}
-        className={clsx(styles.switchInput, checked && styles.switchInputChecked)}
+        className={clsx(styles.switchInput, checked && styles.switchInputChecked, styles[`switch__input--size-${size || defaultSize}`])}
         onChange={handleChange}
         checked={checked}
         defaultChecked={defaultChecked}
@@ -48,7 +47,7 @@ const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>(({
         ref={ref}
         name={name}
       />
-      <label htmlFor={`${id}-input`} className={styles.switchLabel}>{label}</label>
+      <label htmlFor={id} className={clsx(styles.switchLabel, styles[`switch__label--size-${size || defaultSize}`], disabled && styles.switchLabelDisabled)}>{label}</label>
     </div>
   );
 });

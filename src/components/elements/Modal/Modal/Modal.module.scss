@@ -21,7 +21,7 @@
   overflow-y: hidden;
   z-index: map-get($layers, 'Modal');
   box-sizing: border-box;
-  background-color: hsl(0deg 0% 20% / 50%);
+  background-color: lens-var(modal, backdrop-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,8 +56,8 @@
   background-clip: padding-box;
   border-radius: 0;
   outline: 0;
-  background-color: var(--lens-ui-elements-modal-background-color);
-  border: 1px solid var(--lens-ui-elements-modal-border-color);
+  background-color: lens-var(modal, background-color);
+  border: 1px solid lens-var(modal, border-color);
 
   &--no-backdrop {
     box-shadow: var(--lens-ui-overlay-box-shadow);

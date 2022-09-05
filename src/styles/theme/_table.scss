@@ -1,10 +1,10 @@
 @import '../lib';
 
 @mixin table-theme {
-  --lens-ui-table-bg: transparent;
-  --lens-ui-table-active-color: #495057;
-  --lens-ui-table-active-bg: #f9fafc;
-  --lens-ui-table-hover-color: #495057;
-  --lens-ui-table-hover-bg: #f9fafc;
-  --lens-ui-table-border-color: #edf1f5;
+  @include lens-def(table, bg, null, transparent);
+  @include lens-def(table, active-color, null, #495057);
+  @include lens-def(table, active-bg, null, #f9fafc);
+  @include lens-def(table, hover-color, null, #495057);
+  @include lens-def(table, hover-bg, null, #f9fafc);
+  @include lens-def(table, border-color, null, #edf1f5);
 }

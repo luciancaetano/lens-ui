@@ -13,6 +13,7 @@
 @import './collapse';
 @import './checkbox';
 @import './form-group';
+@import './callout';
 
 @mixin default-theme {
   @include base-theme;
@@ -30,6 +31,7 @@
   @include collapse-theme;
   @include checkbox-theme;
   @include form-group-theme;
+  @include callout-theme;
 }
 
 :root {

@@ -3,14 +3,14 @@
 .list {
   @include lens-ui-typography;
 
-  --lens-ui-list-prefix-min-width: initial;
-  --lens-ui-list-suffix-min-width: initial;
+  --lens-ui---var-list-prefix-min-width: initial;
+  --lens-ui---var-list-suffix-min-width: initial;
 
-  background-color: var(--lens-ui-elements-list-bg);
-  color: var(--lens-ui-elements-list-color);
+  background-color: lens-var(list, bg);
+  color: lens-var(list, color);
 
   &--bordered {
-    border: 1px solid var(--lens-ui-elements-list-border);
+    border: 1px solid lens-var(list, border);
 
     [data-lens-element='list__item'],
     [data-lens-element='list__item--heading'] {
@@ -35,24 +35,24 @@
 
     padding: .75rem;
     font-size: .95rem;
-    border-top: 1px solid var(--lens-ui-elements-list-border);
+    border-top: 1px solid lens-var(list, border);
     display: flex;
     align-items: center;
-    color: var(--lens-ui-elements-list-color);
+    color: lens-var(list, color);
     cursor: var(--lens-ui-list--item--cursor);
 
     &__prefix {
       display: flex;
       align-items: center;
       padding-right: var(--lens-ui-list-prefix-padding);
-      min-width: var(--lens-ui-list-prefix-min-width);
+      min-width: var(--lens-ui---var-list-prefix-min-width);
     }
 
     &__sufix {
       display: flex;
       align-items: center;
       padding-left: var(--lens-ui-list-suffix-padding);
-      min-width: var(--lens-ui-list-suffix-min-width);
+      min-width: var(--lens-ui---var-list-suffix-min-width);
     }
 
     &__content {
@@ -62,13 +62,13 @@
     }
 
     &:last-child {
-      border-bottom: 1px solid var(--lens-ui-elements-list-border);
+      border-bottom: 1px solid lens-var(list, border);
     }
 
     @each $intent in $intent-type {
       &--intent-#{$intent} {
         &:hover {
-          background-color: hsl(var(--lens-ui-hue-#{$intent}) var(--lens-ui-elements-list-hover-saturation) var(--lens-ui-elements-list-hover-lightness));
+          background-color: hsl(var(--lens-ui-hue-#{$intent}) lens-var(list, hover-saturation) lens-var(list, hover-lightness));
         }
       }
     }
@@ -90,20 +90,20 @@
     --lens-ui-list-prefix-padding: .5rem;
     --lens-ui-list-suffix-padding: .5rem;
 
-    border-top: 1px solid var(--lens-ui-elements-list-border);
+    border-top: 1px solid lens-var(list, border);
     padding: .3rem .75rem;
     font-size: .8rem;
-    background-color: var(--lens-ui-elements-list-heading-bg);
-    color: var(--lens-ui-elements-list-color);
+    background-color: lens-var(list, heading-bg);
+    color: lens-var(list, color);
     cursor: var(--lens-ui-list--item--cursor);
 
     &:last-child {
-      border-bottom: 1px solid var(--lens-ui-elements-list-border);
+      border-bottom: 1px solid lens-var(list, border);
     }
 
     &:hover {
-      background-color: var(--lens-ui-elements-list-heading-bg);
-      border-color: var(--lens-ui-elements-list-border-hover);
+      background-color: lens-var(list, heading-bg);
+      border-color: lens-var(list, border-hover);
     }
 
     &--intent-primary {
@@ -170,25 +170,25 @@
       display: flex;
       align-items: center;
       padding-right: var(--lens-ui-list-prefix-padding);
-      min-width: var(--lens-ui-list-prefix-min-width);
+      min-width: var(--lens-ui---var-list-prefix-min-width);
     }
 
     &__sufix {
       display: flex;
       align-items: center;
       padding-left: var(--lens-ui-list-suffix-padding);
-      min-width: var(--lens-ui-list-suffix-min-width);
+      min-width: var(--lens-ui---var-list-suffix-min-width);
     }
   }
 
   &__divider {
-    background-color: var(--lens-ui-elements-list-item-divider-background);
-    color: var(--lens-ui-elements-list-item-divider-text);
+    background-color: lens-var(list, item-divider-background);
+    color: lens-var(list, item-divider-text);
     padding: .1rem;
 
     &:hover {
-      background-color: var(--lens-ui-elements-list-item-divider-background);
-      color: var(--lens-ui-elements-list-item-divider-text);
+      background-color: lens-var(list, item-divider-background);
+      color: lens-var(list, item-divider-text);
     }
   }
 }

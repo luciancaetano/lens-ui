@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 export interface IMoneyInputProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange' | 'onBlur' | 'placeholder' | 'value'> {
   name?: string;
@@ -17,4 +17,5 @@ export interface IMoneyInputProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   precision?: number;
   prefix?: string;
   suffix?: string;
+  size?: SizeType;
 }

@@ -34,9 +34,34 @@ The MoneyInput is a wrapper around the native input element that allows you to m
 |disabled|boolean|undefined|Whether the input is disabled|No|
 |autoFocus|boolean|undefined|Whether the input should be focused on mount|No|
 |name|string|undefined|The name of the input|No|
+|size|small, medium, large|undefined|The size of the checkbox|No|
 |isError|boolean|undefined|Whether the input is in an error state|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
+### Size variations
+
+<Canvas>
+    <MoneyInput
+      name="input"
+      defaultValue="100"
+      suffix="€"
+      size="small"
+    />
+    <MoneyInput
+      name="input"
+      defaultValue="100"
+      suffix="€"
+      size="medium"
+    />
+    <MoneyInput
+      name="input"
+      defaultValue="100"
+      suffix="€"
+      size="large"
+    />
+</Canvas>
+
+### Theme dark
 
 <Canvas className="dark">
   <ThemeProvider theme="dark">

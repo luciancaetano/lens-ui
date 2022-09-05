@@ -10,13 +10,13 @@ import { TextInputPropsType } from './TextInput.types';
  * MoneyInput fields let users enter and edit text.
  */
 const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
-  className, testingID, id, onChange, tabIndex, maxLength, required, placeholder,
+  className, testingID, id, onChange, tabIndex, maxLength, required, placeholder, size,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, type = 'text',
   multiline, inputProps, readonly, ...props
 }, ref) => {
   const prefix = useMemo(() => get(props, 'prefix', null), [props]);
   const suffix = useMemo(() => type !== 'search' && get(props, 'suffix', null), [props, type]);
-  const [theme] = useTheme();
+  const [theme, { defaultSize }] = useTheme();
 
   const handleChange = useCallback((e: React.ChangeEvent<any>) => {
     if (onChange) {
@@ -40,7 +40,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
           name={name}
           id={id && `${id}-input`}
           tabIndex={tabIndex}
-          className={clsx(styles.textInputTextarea, isError && styles.textInputTextareaError)}
+          className={clsx(styles.textInputTextarea, isError && styles.textInputTextareaError, size && styles[`text-input__input--size-${size || defaultSize}`])}
           onChange={handleChange as any}
           value={value}
           defaultValue={defaultValue}
@@ -59,7 +59,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
   return (
     <div
       {...props}
-      id={id}
       data-lens-element="text-input"
       data-testid={testingID}
       className={clsx(styles.textInput, type === 'search' && styles.textInputSearch, { search: type === 'search' }, theme, className)}
@@ -71,12 +70,13 @@ const TextInput = React.forwardRef<HTMLElement, TextInputPropsType>(({
         data-lens-element="text-input__input"
         name={name}
         type={type}
-        id={id && `${id}-input`}
+        id={id}
         tabIndex={tabIndex}
         className={clsx(
           styles.textInputInput,
           isError && styles.textInputInputError,
           type === 'search' && styles.textInputInputSearch,
+          styles[`text-input__input--size-${size || defaultSize}`],
           prefix && styles.textInputInputWithPrefix,
           suffix && styles.textInputInputWithSuffix,
         )}
