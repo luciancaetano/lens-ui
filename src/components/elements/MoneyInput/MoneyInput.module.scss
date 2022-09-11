@@ -35,5 +35,12 @@
     &--error {
       border: 1px solid var(--lens-ui-intents-danger-border);
     }
+
+    &:disabled {
+      background-color: lens-var(input, background, disabled);
+      color: lens-var(input, text-color, disabled);
+      border: lens-var(input, border, disabled);
+      cursor: not-allowed;
+    }
   }
 }

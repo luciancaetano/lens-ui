@@ -88,6 +88,13 @@
       border-bottom-right-radius: 0;
       border-right: none;
     }
+
+    &:disabled {
+      background-color: lens-var(input, background, disabled);
+      color: lens-var(input, text-color, disabled);
+      border: lens-var(input, border, disabled);
+      cursor: not-allowed;
+    }
   }
 
   &__textarea {
@@ -133,6 +140,13 @@
 
     &--error {
       border: 1px solid var(--lens-ui-intents-danger-border);
+    }
+
+    &:disabled {
+      background-color: lens-var(input, background, disabled);
+      color: lens-var(input, text-color, disabled);
+      border: lens-var(input, border, disabled);
+      cursor: not-allowed;
     }
   }
 
