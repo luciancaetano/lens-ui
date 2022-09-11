@@ -11,7 +11,7 @@ This is the roadmap for next version
 - [x] Isolate components colors using lens-var and lens-def
 - [x] Add size to inputs and handle defaultSize in the theme
 - [x] Pagination
-- [ ] InputSlider
+- [x] Slider
 - [ ] TransferList
 - [ ] Drawer
 - [ ] Upload
