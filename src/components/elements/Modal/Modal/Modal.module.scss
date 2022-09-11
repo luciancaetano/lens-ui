@@ -1,10 +1,5 @@
 @import '../../../../styles/lib';
 
-@keyframes lens-ui-modal-fade-in-animation {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .backdrop {
   --lens-ui-modal-backgrop-position: fixed;
   --lens-ui-modal-backgrop-width: 100vw;
@@ -25,11 +20,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: lens-ui-modal-fade-in-animation .2s;
+  overscroll-behavior: contain;
 
   &--hidden {
     background-color: transparent;
-    pointer-events: none;
   }
 }
 

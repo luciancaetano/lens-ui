@@ -12,6 +12,7 @@ const ModalContent = React.forwardRef<HTMLElement, IModalContentProps>(({
     data-testid={testingID}
     data-lens-element="modal__content"
     className={clsx(styles.modalContent, className)}
+    role="document"
     ref={ref}
   >
     {children}

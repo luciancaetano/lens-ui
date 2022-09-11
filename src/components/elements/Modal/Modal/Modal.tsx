@@ -1,7 +1,10 @@
 import clsx from 'clsx';
-import React, { useCallback } from 'react';
+import React, {
+  useCallback, useEffect, useRef,
+} from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { mergeRefs } from 'react-merge-refs';
 import { useDevice, useTheme } from '../../../../hooks';
 import { isBackdropClick } from '../../../../utils';
 import styles from './Modal.module.scss';
@@ -12,11 +15,14 @@ import { IModalProps } from './Modal.types';
  */
 const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
   className, testingID, id, children, size = 'normal', onClose, portalTarget,
-  backdropClassName, hideBackdrop, isOpen, backdropProps = {},
+  backdropClassName, hideBackdrop, isOpen, backdropProps = {}, autoFocus,
   ...props
 }, ref) => {
   const { md, sm } = useDevice();
   const [theme] = useTheme();
+  const localRef = useRef<HTMLDivElement>(null);
+  const sentinelStartRef = useRef<HTMLDivElement>(null);
+  const sentinelEndRef = useRef<HTMLDivElement>(null);
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (onClose && e.target && isBackdropClick(e.target as HTMLElement)) {
@@ -27,8 +33,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
     }
   }, [onClose]);
 
-  // handle escape key
-  React.useEffect(() => {
+  useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && onClose) {
         onClose('escape');
@@ -40,9 +45,40 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
     };
   }, [onClose]);
 
+  useEffect(() => {
+    const { body } = document;
+    if (isOpen) {
+      body.classList.add('lens-ui-overlay-open');
+    } else {
+      body.classList.remove('lens-ui-overlay-open');
+    }
+  }, [isOpen]);
+
+  const handleOpen = useCallback(() => {
+    setTimeout(() => {
+      if (!localRef.current || !autoFocus) return;
+
+      const focusable = localRef.current.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length > 0) {
+        if (!focusable[0].hasAttribute('tabindex')) {
+          focusable[0].setAttribute('tabindex', '0');
+        }
+        (focusable[0] as HTMLElement).focus();
+      }
+    }, 200);
+  }, [autoFocus]);
+
+  useEffect(() => {
+    if (isOpen) {
+      if (document.activeElement) {
+        (document.activeElement as HTMLElement).blur();
+      }
+    }
+  }, [isOpen]);
+
   return createPortal(
     <AnimatePresence>
-      {(
+      {isOpen && (
         <motion.div
           data-isOpen={isOpen}
           {...backdropProps as unknown as Record<string, unknown>}
@@ -55,11 +91,14 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
             closed: { opacity: 0, visibility: 'hidden', transition: { duration: 0.2 } },
           }}
           onClick={handleBackdropClick}
-          className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden, 'theme1', theme, 'theme', backdropClassName)}
-          aria-modal="true"
+          className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden, theme, backdropClassName)}
           data-lens-element="modal__backdrop"
           data-lens-modal-size={(md || sm) ? 'fullscreen' : size}
+          role="presentation"
+          aria-hidden="true"
+          ref={handleOpen}
         >
+          <div tabIndex={0} ref={sentinelStartRef} />
           <motion.div
             {...props as unknown as Record<string, unknown>}
             id={id}
@@ -67,31 +106,35 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
             initial="closed"
             animate={isOpen ? 'open' : 'closed'}
             exit="closed"
+            role="dialog"
+            tabIndex={-1}
             variants={{
               // animate back in up from the bottom
               open: {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  duration: 0.2,
+                  duration: 0,
                 },
               },
               closed: {
                 opacity: 0,
                 y: 20,
                 transition: {
-                  duration: 0.2,
+                  duration: 0,
                 },
               },
             }}
             data-lens-element="modal"
             aria-modal="true"
+            aria-roledescription="modal"
             data-testid={testingID}
             className={clsx(styles.modal, hideBackdrop && styles.modalNoBackdrop, styles[`modal--size-${(md || sm) ? 'fullscreen' : size}`], className)}
-            ref={ref}
+            ref={mergeRefs([ref, localRef])}
           >
-            {isOpen && children}
+            {children}
           </motion.div>
+          <div tabIndex={0} ref={sentinelEndRef} />
         </motion.div>
       )}
     </AnimatePresence>,
