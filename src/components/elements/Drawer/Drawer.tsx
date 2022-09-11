@@ -101,6 +101,7 @@ const Drawer:React.FC<IDrawerProps> = ({
               className,
             )}
             style={!sizeValue ? { width: size } : {}}
+            tabIndex={-1}
           >
             <div
               className={clsx(styles.containerHeader, styles[`container__header--placement-${placement}`])}

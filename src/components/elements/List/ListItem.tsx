@@ -39,6 +39,7 @@ const ListItem = React.forwardRef<HTMLDivElement, IListItemProps>(({
         ...(suffixMargin ? { '--lens-ui-list-suffix-padding': suffixMargin } : {}),
         ...props.style || {},
       }}
+      tabIndex={props.tabIndex || 0}
     >
       {!divider && (
         <>

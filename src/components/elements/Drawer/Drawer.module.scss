@@ -43,7 +43,8 @@
     transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 
     &--size-small {
-      min-width: 20.25rem;
+      width: 22rem;
+      min-width: 22rem;
       max-width: 30vw;
       max-height: 100vh;
       min-height: 100vh;
@@ -71,7 +72,8 @@
     transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 
     &--size-small {
-      min-width: 31.25rem;
+      width: 22rem;
+      min-width: 22rem;
       max-width: 30vw;
       max-height: 100vh;
       min-height: 100vh;
@@ -99,7 +101,8 @@
     transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 
     &--size-small {
-      min-height: 20rem;
+      height: 22rem;
+      min-height: 22rem;
       max-height: 30vh;
       max-width: 100vw;
       min-width: 100vw;
@@ -127,7 +130,8 @@
     transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 
     &--size-small {
-      min-height: 20rem;
+      height: 22rem;
+      min-height: 22rem;
       max-height: 30vh;
       max-width: 100vw;
       min-width: 100vw;
