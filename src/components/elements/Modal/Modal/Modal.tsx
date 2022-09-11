@@ -42,19 +42,17 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
 
   return createPortal(
     <AnimatePresence>
-      {isOpen && (
+      {(
         <motion.div
+          data-isOpen={isOpen}
           {...backdropProps as unknown as Record<string, unknown>}
           key="backdrop"
           initial="closed"
-          animate="open"
+          animate={isOpen ? 'open' : 'closed'}
           exit="closed"
           variants={{
-            open: { opacity: 1 },
-            closed: { opacity: 0 },
-          }}
-          transition={{
-            duration: 0.2,
+            open: { opacity: 1, visibility: 'visible', transition: { duration: 0.2 } },
+            closed: { opacity: 0, visibility: 'hidden', transition: { duration: 0.2 } },
           }}
           onClick={handleBackdropClick}
           className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden, 'theme1', theme, 'theme', backdropClassName)}
@@ -62,17 +60,38 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
           data-lens-element="modal__backdrop"
           data-lens-modal-size={(md || sm) ? 'fullscreen' : size}
         >
-          <div
-            {...props}
+          <motion.div
+            {...props as unknown as Record<string, unknown>}
             id={id}
+            key="backdrop"
+            initial="closed"
+            animate={isOpen ? 'open' : 'closed'}
+            exit="closed"
+            variants={{
+              // animate back in up from the bottom
+              open: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.2,
+                },
+              },
+              closed: {
+                opacity: 0,
+                y: 20,
+                transition: {
+                  duration: 0.2,
+                },
+              },
+            }}
             data-lens-element="modal"
             aria-modal="true"
             data-testid={testingID}
             className={clsx(styles.modal, hideBackdrop && styles.modalNoBackdrop, styles[`modal--size-${(md || sm) ? 'fullscreen' : size}`], className)}
             ref={ref}
           >
-            {children}
-          </div>
+            {isOpen && children}
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>,
