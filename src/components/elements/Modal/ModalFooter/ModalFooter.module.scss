@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: flex-end;
   padding: .75rem;
-  border-top: 1px solid var(--lens-ui-elements-modal-border-color);
+  border-top: 1px solid lens-var(modal, border-color);
   border-bottom-right-radius: calc(.4rem - 1px);
   border-bottom-left-radius: calc(.4rem - 1px);
 

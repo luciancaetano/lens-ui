@@ -50,7 +50,7 @@ function Table<T extends ITableItem = {}>({
       id={id}
       data-testid={testingID}
       data-lens-element="table"
-      className={clsx(styles.table, theme, className)}
+      className={clsx(styles.table, 'lens-ui-table', theme, className)}
       data-role="table-container"
     >
       <table className={CLASSES.Table}>
