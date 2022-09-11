@@ -1,4 +1,5 @@
 /** ====imports===== */
+@import './drawer';
 @import './slider';
 @import './paginator';
 @import './base';
@@ -20,6 +21,7 @@
 
 @mixin default-theme {
   /** ====theme===== */
+  @include drawer-theme;
   @include slider-theme;
   @include paginator-theme;
   @include base-theme;

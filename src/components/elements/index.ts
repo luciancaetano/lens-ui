@@ -1,4 +1,5 @@
 /** ====generated-code-element===== */
+export { default as Drawer } from './Drawer/Drawer';
 export { default as Slider } from './Slider/Slider';
 export { default as Paginator } from './Paginator/Paginator';
 export { default as Collapse } from './Collapse';
@@ -36,6 +37,7 @@ export { default as Table } from './Table/Table';
 export { default as Typography } from './Typography/Typography';
 export { default as DatePicker } from './DatePicker/DatePicker';
 /** ====generated-code-types===== */
+export * from './Drawer/Drawer.types';
 export * from './Slider/Slider.types';
 export * from './Paginator/Paginator.types';
 export * from './Collapse/Collapse.types';

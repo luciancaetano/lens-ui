@@ -12,7 +12,7 @@ This is the roadmap for next version
 - [x] Add size to inputs and handle defaultSize in the theme
 - [x] Pagination
 - [x] Slider
-- [ ] TransferList
+- [ ] Portal
 - [ ] Drawer
 - [ ] Upload
 - [ ] Timeline

@@ -62,11 +62,12 @@ export const getPortalContainer = (id: string, zIndex?: number) => {
  */
 export const Layers = {
   default: 1,
-  OverlaySurfaces: 1040,
   Modal: 1050,
   Alerts: 1060,
   Toast: 1070,
   Select: 1080,
+  Drawer: 1090,
+  OverlaySurfaces: 1100,
 };
 
 export const sleep = (ms: number, clear?: MutableRefObject<(() => void) | null>) => new Promise<'completed' | 'canceled'>((resolve) => {

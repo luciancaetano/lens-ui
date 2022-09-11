@@ -1,0 +1,18 @@
+@import '../lib';
+
+@mixin drawer-theme {
+  @include lens-def(drawer, variable-name, modifier, #000);
+  @include lens-def(drawer, backdrop-color, null, rgba(0, 0, 0, .5));
+  @include lens-def(drawer, background-color, null, #fff);
+  @include lens-def(drawer, border-color, null, #e0e0e0);
+  @include lens-def(drawer, border-radius, null, 0);
+  @include lens-def(drawer, box-shadow, null, '0 0 0 1px rgb(0 0 0 / 10%), 0 4px 11px 0 rgb(0 0 0 / 10%)');
+  @include lens-def(drawer, header-background-color, null, #fff);
+  @include lens-def(drawer, header-title-color, null, lens-var(typography, text-color));
+  @include lens-def(drawer, header-close-color, null, lens-var(typography, text-color));
+  @include lens-def(drawer, header-close-color, hover, #000);
+  @include lens-def(drawer, header-close-background-color, hover, rgba(0, 0, 0, .1));
+  @include lens-def(drawer, header-close-background-color, active, rgba(0, 0, 0, .2));
+  @include lens-def(drawer, body-padding, null, 1rem);
+  @include lens-def(drawer, header__font-size, null, 1.2rem);
+}

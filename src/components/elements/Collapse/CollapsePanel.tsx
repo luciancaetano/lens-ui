@@ -78,6 +78,9 @@ const CollapsePanel = React.forwardRef<HTMLDivElement, ICollapsePanelProps>(({
               open: { visibility: 'visible', height: 'auto' },
               closed: { visibility: 'hidden', height: 0 },
             }}
+            transition={{
+              duration: 0.2,
+            }}
             className={clsx(
               styles.collapse__panel__content,
               'collapse__panel__content',
@@ -85,9 +88,7 @@ const CollapsePanel = React.forwardRef<HTMLDivElement, ICollapsePanelProps>(({
               isActive && styles['collapse__panel__content--expanded'],
             )}
             data-lens-element="collapse__panel__content"
-            transition={{
-              duration: 0.2,
-            }}
+
           >
 
             {children}

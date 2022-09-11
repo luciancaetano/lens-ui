@@ -68,7 +68,9 @@ $layers: (
   'Modal': 1050,
   'Alerts': 1060,
   'Toast': 1070,
-  'OverlaySurfaces': 1080,
+  'Select': 1080,
+  'Drawer': 1090,
+  'OverlaySurfaces': 1100,
 );
 
 @mixin input-size-mixin {
