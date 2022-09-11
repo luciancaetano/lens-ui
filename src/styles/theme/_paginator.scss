@@ -1,0 +1,58 @@
+@import '../lib';
+
+@mixin paginator-theme {
+  @each $intent in $intent-type {
+    @include lens-def(paginator, #{$intent}-text, solid, var(--lens-ui-intents-#{$intent}-text));
+    @include lens-def(paginator, #{$intent}-border, solid, var(--lens-ui-intents-#{$intent}-border));
+    @include lens-def(paginator, #{$intent}-background-color, solid, var(--lens-ui-intents-#{$intent}));
+    @include lens-def(paginator, #{$intent}-text, solid--active, var(--lens-ui-intents-#{$intent}-dark-text));
+    @include lens-def(paginator, #{$intent}-border, solid--active, var(--lens-ui-intents-#{$intent}-dark-border));
+    @include lens-def(paginator, #{$intent}-background-color, solid--active, var(--lens-ui-intents-#{$intent}-dark));
+    @include lens-def(paginator, #{$intent}-text, solid--hover, var(--lens-ui-intents-#{$intent}-lighten-text));
+    @include lens-def(paginator, #{$intent}-border, solid--hover, var(--lens-ui-intents-#{$intent}-lighten-border));
+    @include lens-def(paginator, #{$intent}-background-color, solid--hover, var(--lens-ui-intents-#{$intent}-lighten));
+    @include lens-def(paginator, #{$intent}-text, solid--focus, var(--lens-ui-intents-#{$intent}-darken-text));
+    @include lens-def(paginator, #{$intent}-border, solid--focus, var(--lens-ui-intents-#{$intent}-darken-border));
+    @include lens-def(paginator, #{$intent}-background-color, solid--focus, var(--lens-ui-intents-#{$intent}-darken));
+  }
+
+  @each $intent in $intent-type {
+    @include lens-def(paginator, #{$intent}-text, outlined, var(--lens-ui-intents-#{$intent}));
+    @include lens-def(paginator, #{$intent}-border, outlined, var(--lens-ui-intents-#{$intent}-border));
+    @include lens-def(paginator, #{$intent}-background-color, outlined, var(--lens-ui-intents-#{$intent}-text));
+    @include lens-def(paginator, #{$intent}-text, outlined--active, var(--lens-ui-intents-#{$intent}-text));
+    @include lens-def(paginator, #{$intent}-border, outlined--active, var(--lens-ui-intents-#{$intent}-border));
+    @include lens-def(paginator, #{$intent}-background-color, outlined--active, var(--lens-ui-intents-#{$intent}));
+    @include lens-def(paginator, #{$intent}-text, outlined--hover, var(--lens-ui-intents-#{$intent}-lighten-text));
+    @include lens-def(paginator, #{$intent}-border, outlined--hover, var(--lens-ui-intents-#{$intent}-lighten-border));
+    @include lens-def(paginator, #{$intent}-background-color, outlined--hover, var(--lens-ui-intents-#{$intent}-lighten));
+    @include lens-def(paginator, #{$intent}-text, outlined--focus, var(--lens-ui-intents-#{$intent}-text));
+    @include lens-def(paginator, #{$intent}-border, outlined--focus, var(--lens-ui-intents-#{$intent}-border));
+    @include lens-def(paginator, #{$intent}-background-color, outlined--focus, var(--lens-ui-intents-#{$intent}));
+  }
+
+  @include lens-def(paginator, default-text, solid, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, solid, transparent);
+  @include lens-def(paginator, default-background-color, solid, transparent);
+  @include lens-def(paginator, default-text, solid--active, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, solid--active, transparent);
+  @include lens-def(paginator, default-background-color, solid--active, transparent);
+  @include lens-def(paginator, default-text, solid--hover, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, solid--hover, lens-var(typography, text-color, disabled));
+  @include lens-def(paginator, default-background-color, solid--hover, rgb(0 0 0 / 5%));
+  @include lens-def(paginator, default-text, solid--focus, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, solid--focus, lens-var(typography, text-color, disabled));
+  @include lens-def(paginator, default-background-color, solid--focus, rgb(0 0 0 / 10%));
+  @include lens-def(paginator, default-text, outlined, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, outlined, transparent);
+  @include lens-def(paginator, default-background-color, outlined, transparent);
+  @include lens-def(paginator, default-text, outlined--active, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, outlined--active, transparent);
+  @include lens-def(paginator, default-background-color, outlined--active, transparent);
+  @include lens-def(paginator, default-text, outlined--hover, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, outlined--hover, lens-var(typography, text-color, disabled));
+  @include lens-def(paginator, default-background-color, outlined--hover, rgb(0 0 0 / 5%));
+  @include lens-def(paginator, default-text, outlined--focus, lens-var(typography, text-color));
+  @include lens-def(paginator, default-border, outlined--focus, lens-var(typography, text-color, disabled));
+  @include lens-def(paginator, default-background-color, outlined--focus, rgb(0 0 0 / 10%));
+}

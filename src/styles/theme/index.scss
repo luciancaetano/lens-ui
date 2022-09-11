@@ -1,3 +1,6 @@
+/** ====imports===== */
+@import './slider';
+@import './paginator';
 @import './base';
 @import './button';
 @import './badge';
@@ -16,6 +19,9 @@
 @import './callout';
 
 @mixin default-theme {
+  /** ====theme===== */
+  @include slider-theme;
+  @include paginator-theme;
   @include base-theme;
   @include button-theme;
   @include badge-theme;

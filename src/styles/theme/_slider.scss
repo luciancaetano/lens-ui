@@ -1,0 +1,12 @@
+@import '../lib';
+
+@mixin slider-theme {
+  @each $intent in $intent-type {
+    @include lens-def(slider, track-bg, #{$intent}, #e9e9e9);
+    @include lens-def(slider, track-color, #{$intent}, var(--lens-ui-intents-#{$intent}));
+    @include lens-def(slider, slider-dot-border, #{$intent}, lens-var(slider, track-bg, #{$intent}));
+    @include lens-def(slider, slider-dot-bg, #{$intent}, #fff);
+    @include lens-def(slider, slider-dot-border, #{$intent}--active, var(--lens-ui-intents-#{$intent}));
+    @include lens-def(slider, slider-dot-bg, #{$intent}--active, #fff);
+  }
+}

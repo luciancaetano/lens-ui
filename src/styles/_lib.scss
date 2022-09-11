@@ -1,4 +1,5 @@
 $intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'danger');
+$intent-type-with-default: ('default', 'secondary' , 'primary' , 'success' , 'info' , 'warning' , 'danger');
 
 @mixin lens-ui-typography-no-color {
   font-family: lens-var(typography, font-family);

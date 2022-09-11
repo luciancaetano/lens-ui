@@ -10,13 +10,13 @@ This is the roadmap for next version
 - [x] Collapse
 - [x] Isolate components colors using lens-var and lens-def
 - [x] Add size to inputs and handle defaultSize in the theme
-- [ ] Pagination
-- [ ] Timeline
-- [ ] Upload
-- [ ] Drawer
-- [ ] TransferList
-- [ ] Autocomplete Input
+- [x] Pagination
 - [ ] InputSlider
+- [ ] TransferList
+- [ ] Drawer
+- [ ] Upload
+- [ ] Timeline
+- [ ] Autocomplete Input
 - [ ] TreeList
 
 ### Theming

@@ -1,0 +1,108 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Slider from './Slider';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
+
+<Meta title="Data Entry/Slider" component={Slider} />
+
+# Slider
+
+This is a small emblem commonly used to represent tags.
+
+<Canvas>
+    <Slider min={0} max={100}/>
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|`min`|`number`|undefined|The minimum value of the slider.|`true`|
+|`max`|`number`|undefined|The maximum value of the slider.|`true`|
+|`step`|`number`|`1`|The granularity the slider can step through values.|`false`|
+|`marks`|`Record<string | number, React.ReactNode[]>`|`{}`|Marks on the slider. The key determines the position, and the value determines what will be displayed.|`false`|
+|`vertical`|`boolean`|`false`|Whether the slider is vertical.|`false`|
+|`tooltip`|`(value: number) => React.ReactNode`|`undefined`|Customize the tooltip.|`false`|
+|`value`|`ValueType`|`undefined`|The current value of the slider.|`false`|
+|`defaultValue`|`ValueType`|`undefined`|The initial value of the slider.|`false`|
+|`onChange`|`(value: ValueType) => void`|`undefined`|A callback function that is triggered when the value of the slider changes.|`false`|
+|`range`|`number`|`1`|The number of handles that can be moved.|`false`|
+|`reverse`|`boolean`|`false`|Whether the slider is reversed.|`false`|
+|`dots`|`boolean`|`false`|Whether to display the slider step.|`false`|
+|`inputDebounceWait`|`number`|`50`|The debounce wait time for the input.|`false`|
+|`allowCross`|`boolean`|`false`|Whether the handles can cross.|`false`|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Tooltip
+
+<Canvas>
+    <Slider
+        min={0}
+        max={100}
+        tooltip={(value) => <>{value}%</>}
+    />
+</Canvas>
+
+### Intents
+
+<Canvas>
+    <div style={{display: 'flex', flexDirection: "column"}}>
+    <Slider
+        min={0}
+        max={100}
+        intent="primary"
+        value={50}
+    />
+    <Slider
+        min={0}
+        max={100}
+        intent="secondary"
+        value={55}
+    />
+    <Slider
+        min={0}
+        max={100}
+        intent="success"
+        value={60}
+    />
+    <Slider
+        min={0}
+        max={100}
+        intent="info"
+        value={65}
+    />
+    <Slider
+        min={0}
+        max={100}
+        intent="warning"
+        value={70}
+    />
+    <Slider
+        min={0}
+        max={100}
+        intent="danger"
+        value={75}
+    />
+    </div>
+</Canvas>
+
+### Dots
+
+<Canvas>
+    <Slider
+        min={0}
+        max={100}
+        step={10}
+        dots
+    />
+</Canvas>
+
+### Dark theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <Slider
+        min={0}
+        max={100}
+    />
+  </ThemeProvider>
+</Canvas>
