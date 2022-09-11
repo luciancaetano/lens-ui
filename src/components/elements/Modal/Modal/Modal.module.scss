@@ -14,7 +14,7 @@
   height: var(--lens-ui-modal-backgrop-height);
   overflow-x: hidden;
   overflow-y: hidden;
-  z-index: map-get($layers, 'Modal');
+  z-index: calc(map-get($layers, 'Modal') - 1);
   box-sizing: border-box;
   background-color: lens-var(modal, backdrop-color);
   display: flex;
@@ -52,6 +52,11 @@
   outline: 0;
   background-color: lens-var(modal, background-color);
   border: 1px solid lens-var(modal, border-color);
+  z-index: map-get($layers, 'Modal');
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   &--no-backdrop {
     box-shadow: var(--lens-ui-overlay-box-shadow);

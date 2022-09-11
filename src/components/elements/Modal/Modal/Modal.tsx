@@ -15,7 +15,7 @@ import { IModalProps } from './Modal.types';
  */
 const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
   className, testingID, id, children, size = 'normal', onClose, portalTarget,
-  backdropClassName, hideBackdrop, isOpen, backdropProps = {}, autoFocus,
+  backdropClassName, hideBackdrop, isOpen, backdropProps = {},
   ...props
 }, ref) => {
   const { md, sm } = useDevice();
@@ -54,20 +54,6 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
     }
   }, [isOpen]);
 
-  const handleOpen = useCallback(() => {
-    setTimeout(() => {
-      if (!localRef.current || !autoFocus) return;
-
-      const focusable = localRef.current.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-      if (focusable.length > 0) {
-        if (!focusable[0].hasAttribute('tabindex')) {
-          focusable[0].setAttribute('tabindex', '0');
-        }
-        (focusable[0] as HTMLElement).focus();
-      }
-    }, 200);
-  }, [autoFocus]);
-
   useEffect(() => {
     if (isOpen) {
       if (document.activeElement) {
@@ -79,47 +65,51 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
   return createPortal(
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          data-isOpen={isOpen}
-          {...backdropProps as unknown as Record<string, unknown>}
-          key="backdrop"
-          initial="closed"
-          animate={isOpen ? 'open' : 'closed'}
-          exit="closed"
-          variants={{
-            open: { opacity: 1, visibility: 'visible', transition: { duration: 0.2 } },
-            closed: { opacity: 0, visibility: 'hidden', transition: { duration: 0.2 } },
-          }}
-          onClick={handleBackdropClick}
-          className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden, theme, backdropClassName)}
-          data-lens-element="modal__backdrop"
-          data-lens-modal-size={(md || sm) ? 'fullscreen' : size}
-          role="presentation"
-          aria-hidden="true"
-          ref={handleOpen}
-        >
+        <>
+          <motion.div
+            data-isOpen={isOpen}
+            {...backdropProps as unknown as Record<string, unknown>}
+            key="backdrop"
+            initial="closed"
+            animate="open"
+            exit="exit"
+            variants={{
+              open: { opacity: 1, visibility: 'visible', transition: { duration: 0.2 } },
+              closed: { opacity: 0, visibility: 'hidden', transition: { duration: 0.2 } },
+              exit: { opacity: 0, visibility: 'hidden', transition: { duration: 0.2 } },
+            }}
+            onClick={handleBackdropClick}
+            className={clsx(styles.backdrop, hideBackdrop && styles.backdropHidden, theme, backdropClassName)}
+            data-lens-element="modal__backdrop"
+            data-lens-modal-size={(md || sm) ? 'fullscreen' : size}
+          />
           <div tabIndex={0} ref={sentinelStartRef} />
           <motion.div
             {...props as unknown as Record<string, unknown>}
             id={id}
             key="backdrop"
             initial="closed"
-            animate={isOpen ? 'open' : 'closed'}
-            exit="closed"
+            animate="open"
+            exit="exit"
             role="dialog"
             tabIndex={-1}
             variants={{
-              // animate back in up from the bottom
               open: {
                 opacity: 1,
-                y: 0,
+                transform: 'translate(-50%, -50%)',
                 transition: {
                   duration: 0,
                 },
               },
               closed: {
                 opacity: 0,
-                y: 20,
+                transform: 'translate(-50%, -50%) scale(0.9)',
+                transition: {
+                  duration: 0,
+                },
+              },
+              exit: {
+                opacity: 0,
                 transition: {
                   duration: 0,
                 },
@@ -135,7 +125,7 @@ const Modal = React.forwardRef<HTMLDivElement, IModalProps>(({
             {children}
           </motion.div>
           <div tabIndex={0} ref={sentinelEndRef} />
-        </motion.div>
+        </>
       )}
     </AnimatePresence>,
     portalTarget || document.body,

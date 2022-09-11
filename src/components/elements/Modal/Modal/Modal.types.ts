@@ -17,5 +17,4 @@ export interface IModalProps extends ITestableProps, React.HtmlHTMLAttributes<HT
   isOpen?: boolean;
   onClose?: (reason: 'close' | 'escape' | 'backdrop') => void;
   portalTarget?: HTMLElement;
-  autoFocus?: boolean;
 }
