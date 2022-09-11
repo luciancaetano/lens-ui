@@ -105,6 +105,18 @@
   @include lens-def(paginator, default-text, outlined--focus, lens-var(typography, text-color));
   @include lens-def(paginator, default-border, outlined--focus, lens-var(typography, text-color, disabled));
   @include lens-def(paginator, default-background-color, outlined--focus, rgb(0 0 0 / 10%));
+  @include lens-def(drawer, backdrop-color, null, rgba(0, 0, 0, .5));
+  @include lens-def(drawer, background-color, null, #444);
+  @include lens-def(drawer, border-color, null, #555);
+  @include lens-def(drawer, border-radius, null, 0);
+  @include lens-def(drawer, box-shadow, null, '0 0 0 1px rgb(0 0 0 / 10%), 0 4px 11px 0 rgb(0 0 0 / 10%)');
+  @include lens-def(drawer, header-background-color, null, #333);
+  @include lens-def(drawer, header-title-color, null, lens-var(typography, text-color));
+  @include lens-def(drawer, header-close-color, null, lens-var(typography, text-color));
+  @include lens-def(drawer, header-close-color, hover, #fff);
+  @include lens-def(drawer, header-close-background-color, hover, rgba(255, 255, 255, .1));
+  @include lens-def(drawer, header-close-background-color, active, rgba(255, 255, 255, .2));
+  @include lens-def(drawer, body-padding, null, 1rem);
 }
 
 .default {

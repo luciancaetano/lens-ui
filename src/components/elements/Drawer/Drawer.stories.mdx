@@ -3,6 +3,7 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Drawer from './Drawer';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
 <Meta title="Navigation/Drawer" component={Drawer} />
 
@@ -10,29 +11,31 @@ import ButtonGroup from '../ButtonGroup/ButtonGroup';
 
 This is a small emblem commonly used to represent tags.
 
-export const OpenButton = () => {
+export const ToggleButton = ({children}) => {
   const [open, setOpen] = useState(false);
   const [side, setSide] = useState('left');
-  return (
-    <>
-        <Drawer isOpen={open} onClose={() => setOpen(false)} title="Basic Drawer" placement={side}>
-            <p>Drawer content</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-        </Drawer>
-        <ButtonGroup>
-            <Button onClick={() => {setSide('left');setOpen(open => !open);}}>Open Left</Button>
-            <Button onClick={() => {setSide('right');setOpen(open => !open);}}>Open Right</Button>
-            <Button onClick={() => {setSide('top');setOpen(open => !open);}}>Open Top</Button>
-            <Button onClick={() => {setSide('bottom');setOpen(open => !open);}}>Open Bottom</Button>
-        </ButtonGroup>
-    </>
-  )
+  return children({open, setOpen, side, setSide});
 }
 
 <Canvas>
-    <OpenButton/>
+    <ToggleButton>
+        {({open, setOpen, side, setSide}) => (
+            <>
+                <Drawer isOpen={open} onClose={() => setOpen(false)} title="Basic Drawer" placement={side}>
+                    <p>Drawer content</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Drawer>
+                <ButtonGroup>
+                    <Button onClick={() => {setSide('left');setOpen(open => !open);}}>Open Left</Button>
+                    <Button onClick={() => {setSide('right');setOpen(open => !open);}}>Open Right</Button>
+                    <Button onClick={() => {setSide('top');setOpen(open => !open);}}>Open Top</Button>
+                    <Button onClick={() => {setSide('bottom');setOpen(open => !open);}}>Open Bottom</Button>
+                </ButtonGroup>
+            </>
+        )}
+    </ToggleButton>
 </Canvas>
 
 ```tsx
@@ -63,3 +66,27 @@ export const OpenButton = () => {
 |title|React.ReactNode|-|Drawer title|false|
 |closeIcon|React.ReactNode|-|Close icon|false|
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+### Dark Mode
+
+<Canvas className="dark">
+    <ToggleButton>
+        {({open, setOpen, side, setSide}) => (
+            <ThemeProvider theme="dark">
+                <Drawer isOpen={open} onClose={() => setOpen(false)} title="Basic Drawer" placement={side}>
+                    <p>Drawer content</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Drawer>
+                <ButtonGroup>
+                    <Button onClick={() => {setSide('left');setOpen(open => !open);}}>Open Left</Button>
+                    <Button onClick={() => {setSide('right');setOpen(open => !open);}}>Open Right</Button>
+                    <Button onClick={() => {setSide('top');setOpen(open => !open);}}>Open Top</Button>
+                    <Button onClick={() => {setSide('bottom');setOpen(open => !open);}}>Open Bottom</Button>
+                </ButtonGroup>
+            </ThemeProvider>
+        )}
+    </ToggleButton>
+</Canvas>
