@@ -1,13 +1,15 @@
+@import '../../../styles/lib';
+
 .menu-list {
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: var(--lens-ui-elements-card-backgrounds-default-background-color);
-  color: var(--lens-ui-elements-card-backgrounds-default-color);
+  background-color: lens-var(card, backgrounds-default-background-color);
+  color: lens-var(card, typography-default-text-color);
   background-clip: border-box;
-  border: 0 solid var(--lens-ui-elements-card-backgrounds-default-border-color);
+  border: 0 solid lens-var(card, backgrounds-default-border-color);
   border-radius: 0;
   box-sizing: border-box;
   overflow: hidden;

@@ -2,6 +2,8 @@
 @import '../../../styles/lib';
 
 .dark {
+  --lens-theme-id: 'dark';
+
   @include lens-def(typography, font-family, null, "'Roboto', sans-serif");
   @include lens-def(typography, font-size, null, .9333333333rem);
   @include lens-def(typography, text-color, null, #fff);
