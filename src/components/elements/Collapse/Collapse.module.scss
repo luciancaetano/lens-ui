@@ -75,7 +75,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        background-color: lens-var(collapse, content-background-color);
+        background-color: lens-var(collapse, background-color);
         transition: all .2s ease-in-out;
         color: lens-var(collapse, text-color);
         font-size: 1.5rem;

@@ -67,7 +67,7 @@ const CollapsePanel = React.forwardRef<HTMLDivElement, ICollapsePanelProps>(({
           {header}
         </div>
       </div>
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         {isActive && (
           <motion.div
             key="content"
@@ -75,12 +75,18 @@ const CollapsePanel = React.forwardRef<HTMLDivElement, ICollapsePanelProps>(({
             animate="open"
             exit="closed"
             variants={{
-              open: { visibility: 'visible', height: 'auto' },
-              closed: { visibility: 'hidden', height: 0 },
+              open: {
+                height: 'auto',
+                opacity: 1,
+                padding: '1rem',
+              },
+              closed: {
+                height: 0,
+                opacity: 0,
+                padding: 0,
+              },
             }}
-            transition={{
-              duration: 0.2,
-            }}
+            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             className={clsx(
               styles.collapse__panel__content,
               'collapse__panel__content',
@@ -88,9 +94,7 @@ const CollapsePanel = React.forwardRef<HTMLDivElement, ICollapsePanelProps>(({
               isActive && styles['collapse__panel__content--expanded'],
             )}
             data-lens-element="collapse__panel__content"
-
           >
-
             {children}
           </motion.div>
         )}
