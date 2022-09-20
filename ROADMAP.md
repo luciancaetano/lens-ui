@@ -13,14 +13,11 @@ This is the roadmap for next version
 - [x] Pagination
 - [x] Slider
 - [x] Drawer
-- [ ] Upload
-- [ ] Timeline
 - [ ] List.Group [collapsable]
 
 ### Theming
 - [x] Theme Provider
 - [x] DarkMode
-- [ ] Theme Builder (A simple to for changing css variables and creating custom themes)
 
 ### Hooks
 

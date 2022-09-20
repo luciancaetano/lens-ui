@@ -58,7 +58,8 @@ const CollapsePanel = React.forwardRef<HTMLDivElement, ICollapsePanelProps>(({
         <div
           className={clsx(styles.collapse__panel__header__icon, 'collapse__panel__header__icon')}
           data-lens-element="collapse__panel__header__icon"
-        >{icon}
+        >
+          {icon}
         </div>
         <div
           className={clsx(styles.collapse__panel__header__title, 'collapse__panel__header__title')}
