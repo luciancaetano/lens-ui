@@ -13,7 +13,6 @@ This is the roadmap for next version
 - [x] Pagination
 - [x] Slider
 - [x] Drawer
-- [ ] List.Group [collapsable]
 
 ### Theming
 - [x] Theme Provider
@@ -27,7 +26,6 @@ This is the roadmap for next version
 ### Improvments
 - [x] Fix toast
 - [x] Improve list item layout
-- [x] ~~Update styles to match with typography~~
 - [x] Inject license in source using webpack.BannerPlugin
 - [x] Improve tabs component using context
 - [x] Update useDevice with media queries
