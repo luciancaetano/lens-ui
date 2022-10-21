@@ -13,7 +13,7 @@
   @include lens-def(input, prefix-text-color, null, #7c7c7c);
   @include lens-def(input, label-color-disabled, null, #7c7c7c);
 
-  // ** Input sizing heights must be 28px 38px 50px
+  // ** Input sizing
   @include lens-def(input_size, padding, small, .25rem .5rem);
   @include lens-def(input_size, font-size, small, .75rem);
   @include lens-def(input_size, line-height, small, 1.5);
@@ -22,9 +22,9 @@
   @include lens-def(input_size, font-size, medium, .875rem);
   @include lens-def(input_size, line-height, medium, 1.5);
   @include lens-def(input_size, border-radius, medium, .25rem);
-  @include lens-def(input_size, padding, large, .75rem 1rem);
+  @include lens-def(input_size, padding, large, .5rem .5rem);
   @include lens-def(input_size, font-size, large, 1rem);
-  @include lens-def(input_size, line-height, large, 1.5);
+  @include lens-def(input_size, line-height, large, 1.5rem);
   @include lens-def(input_size, border-radius, large, .3rem);
 
   // ** Disabled
@@ -36,50 +36,50 @@
 .lens-ui-input-text {
   @include lens-ui-typography;
 
-  display: block;
-  width: 100%;
-  padding: .47rem .75rem;
-  font-size: .875rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: lens-var(input, text-color);
+  display         : block;
+  width           : 100%;
+  padding         : .47rem .75rem;
+  font-size       : .875rem;
+  font-weight     : 400;
+  line-height     : 1.5;
+  color           : lens-var(input, text-color);
   background-color: lens-var(input, background);
-  background-clip: padding-box;
-  border: lens-var(input, border);
-  appearance: none;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  background-clip : padding-box;
+  border          : lens-var(input, border);
+  appearance      : none;
+  border-radius   : .25rem;
+  transition      : border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
   &:focus {
-    outline: 0;
+    outline     : 0;
     border-color: lens-var(input, border, active-color);
   }
 
   &.size-small {
-    padding: lens-var(input_size, padding, small);
-    font-size: lens-var(input_size, font-size, small);
-    line-height: lens-var(input_size, line-height, small);
+    padding      : lens-var(input_size, padding, small);
+    font-size    : lens-var(input_size, font-size, small);
+    line-height  : lens-var(input_size, line-height, small);
     border-radius: lens-var(input_size, border-radius, small);
   }
 
   &.size-medium {
-    padding: lens-var(input_size, padding, medium);
-    font-size: lens-var(input_size, font-size, medium);
-    line-height: lens-var(input_size, line-height, medium);
+    padding      : lens-var(input_size, padding, medium);
+    font-size    : lens-var(input_size, font-size, medium);
+    line-height  : lens-var(input_size, line-height, medium);
     border-radius: lens-var(input_size, border-radius, medium);
   }
 
   &.size-large {
-    padding: lens-var(input_size, padding, large);
-    font-size: lens-var(input_size, font-size, large);
-    line-height: lens-var(input_size, line-height, large);
+    padding      : lens-var(input_size, padding, large);
+    font-size    : lens-var(input_size, font-size, large);
+    line-height  : lens-var(input_size, line-height, large);
     border-radius: lens-var(input_size, border-radius, large);
   }
 
   &:disabled {
     background-color: lens-var(input, background, disabled);
-    color: lens-var(input, text-color, disabled);
-    border: lens-var(input, border, disabled);
-    cursor: not-allowed;
+    color           : lens-var(input, text-color, disabled);
+    border          : lens-var(input, border, disabled);
+    cursor          : not-allowed;
   }
 }

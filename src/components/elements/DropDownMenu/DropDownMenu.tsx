@@ -46,7 +46,7 @@ function DropDownMenu({
   const { getReferenceProps, getFloatingProps } = useInteractions([
     useClick(context, {
       toggle: true,
-      pointerDown: true,
+      event: 'click',
     }),
     useRole(context, { role: 'menu' }),
     useDismiss(context),
