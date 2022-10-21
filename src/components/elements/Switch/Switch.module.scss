@@ -3,41 +3,42 @@
 .switch {
   @include lens-ui-typography;
 
-  position: relative;
-  text-align: left;
-  display: inline-flex;
+  position   : relative;
+  text-align : left;
+  display    : inline-flex;
   align-items: center;
-  min-height: 1.3125rem;
-  padding-left: 2.4em;
+  min-height : 1.3125rem;
+
+  // padding-left: 2.4em;
   box-sizing: border-box;
 
   &__input {
     @include lens-ui-typography;
 
-    width: 2rem;
-    height: 1rem;
-    margin-top: .1rem;
-    vertical-align: top;
-    background-color: lens-var(input, background);
-    background-repeat: no-repeat;
+    width              : 2rem;
+    height             : 1rem;
+    margin-top         : .1rem;
+    vertical-align     : top;
+    background-color   : lens-var(input, background);
+    background-repeat  : no-repeat;
     background-position: left center;
-    background-size: contain;
-    border: .063rem solid rgb(0 0 0 / 25%);
-    appearance: none;
-    box-sizing: border-box;
-    cursor: pointer;
-    float: left;
-    position: absolute;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
-    border-radius: 2em;
-    transition: background-position .15s ease-in-out;
+    background-size    : contain;
+    border             : .063rem solid rgb(0 0 0 / 25%);
+    appearance         : none;
+    box-sizing         : border-box;
+    cursor             : pointer;
+    float              : left;
+    position           : absolute;
+    background-image   : url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+    border-radius      : 2em;
+    transition         : background-position .15s ease-in-out;
 
     &--checked,
     &:checked {
-      background-color: lens-var(checkbox, checked-bg);
-      border-color: #525ce5;
+      background-color   : lens-var(checkbox, checked-bg);
+      border-color       : #525ce5;
       background-position: right center;
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+      background-image   : url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
     }
 
     &:active {
@@ -46,22 +47,22 @@
 
     &:focus {
       border-color: #b1bbc4;
-      outline: 0;
-      box-shadow: lens-var(input, box-shadow, active);
+      outline     : 0;
+      box-shadow  : lens-var(input, box-shadow, active);
     }
 
     &--size-small {
-      width: 1.5rem;
+      width : 1.5rem;
       height: .75rem;
     }
 
     &--size-medium {
-      width: 2rem;
+      width : 2rem;
       height: 1rem;
     }
 
     &--size-large {
-      width: 2.5rem;
+      width : 2.5rem;
       height: 1.25rem;
     }
   }
@@ -69,25 +70,25 @@
   &__label {
     @include lens-ui-typography;
 
-    user-select: none;
-    cursor: pointer;
+    user-select  : none;
+    cursor       : pointer;
     margin-bottom: 0;
-    font-weight: 500;
-    box-sizing: border-box;
-    color: lens-var(input, label-color);
+    font-weight  : 500;
+    box-sizing   : border-box;
+    color        : lens-var(input, label-color);
 
     &--size-small {
-      font-size: .8rem;
+      font-size   : .8rem;
       padding-left: 2rem;
     }
 
     &--size-medium {
-      font-size: 1rem;
+      font-size   : 1rem;
       padding-left: 2.5rem;
     }
 
     &--size-large {
-      font-size: 1.2rem;
+      font-size   : 1.2rem;
       padding-left: 3rem;
     }
 
