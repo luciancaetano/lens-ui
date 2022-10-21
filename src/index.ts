@@ -8,7 +8,7 @@ export * from './hooks/index';
 export * from './types/index';
 
 export {
-  Layers, getPortalContainer, randomId, sleep, rem2px, px2rem,
+  Layers, getPortalContainer, randomID, sleep, rem2px, px2rem,
 } from './utils';
 
 export { CLASSES } from './css-classes';

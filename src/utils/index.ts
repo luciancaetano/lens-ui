@@ -8,7 +8,7 @@ const possibilities = {
   num: '0123456789',
 };
 
-export function randomId(prefix = '', len = 30, pattern = 'aA0') {
+export function randomID(prefix = '', len = 30, pattern = 'aA0') {
   let chars = '';
 
   pattern.split('').forEach((a) => {
