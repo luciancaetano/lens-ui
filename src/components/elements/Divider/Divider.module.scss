@@ -1,9 +1,9 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .divider {
   @include lens-ui-typography;
 
-  color: var(--lens-ui-elements-divider-text-color);
+  color: lens-var(divider, text-color);
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -23,7 +23,7 @@
   &::before {
     content: '';
     flex: 1;
-    border-bottom: 2px solid var(--lens-ui-elements-divider-color);
+    border-bottom: 2px solid lens-var(divider, border-bottom-color);
   }
 
   &::before {

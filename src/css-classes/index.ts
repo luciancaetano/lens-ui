@@ -43,4 +43,14 @@ export const CLASSES = {
   IntentWarningDarken: 'lens-ui-intent-warning-darken',
 
   PortalRootContainer: 'lens-ui-portal-root',
+
+  InputText: {
+    className: 'lens-ui-input-text',
+    size: {
+      large: 'size-large',
+      small: 'size-small',
+      medium: 'size-medium',
+    },
+  },
+
 };

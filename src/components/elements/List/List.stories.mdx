@@ -1,49 +1,247 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import List from './List';
-import ListItem from './ListItem';
+import List from '.';
+import Icon from '../Icon/Icon';
 import TextInput from '../TextInput/TextInput';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
-<Meta title="Components/List" component={List}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Display/List" component={List}/>
 
 # List
 
 The List component is used to display a list of items.
 
 <Canvas>
-    <List>
-        <ListItem key="1">
-            Item 1
-        </ListItem>
-        <ListItem key="1" isHeading>
-            Heading
-        </ListItem>
-        <ListItem key="1">
-            Item 2
-        </ListItem>
-        <ListItem key="1">
-            Item 3
-        </ListItem>
-        <ListItem key="1">
-            Item 4
-        </ListItem>
-    </List>
+    <div>
+        <List intent="primary">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                primary
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item divider/>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="secondary">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                secondary
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="success">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                success
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="info">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                info
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="warning">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                warning
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="danger">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                danger
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+    </div>
 </Canvas>
 
 ### List component Properties
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
-|`intent`|`IntentType`|`None`|The intent of the list.|No|
+|intent|IntentType|primary|The intent of the list.|No|
+|prefixMinWidth|number \| string|undefined|Min width of prefix container.|No|
+|suffixMinWidth|number \| string|undefined|Min width of suffix container.|No|
+|border|boolean|true|Render left and right border.|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
-
-### ListItem component Properties
+### List.Item component Properties
 
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
-|`intent`|`IntentType`|`'none'`|The intent of the list item|No|
-|`isActive`|`boolean`|`false`|Whether the list item is active|No|
-|`isHeading`|`boolean`|`false`|Whether the list item is a heading|No|
+|intent|IntentType|'none'|The intent of the list item|No|
+|isActive|boolean|false|Whether the list item is active|No|
+|divider|boolean|false|Set item to divider (**no children rendering**)|No|
+|heading|boolean|false|Whether the list item is a heading|No|
+|prefix|React.ReactNode|undefined|Prefix elements, ex you can put an icon|No|
+|suffix|React.ReactNode|undefined|Suffix elements, ex you can put an icon|No|
+|prefixMargin|number \| string|undefined|Set's margin from content to prefix|No|
+|suffixMargin|number \| string|undefined|Set's margin from content to suffix|No|
+|suffix|React.ReactNode|undefined|Suffix elements, ex you can put an icon|No|
+|cursor|string|default|Set cursor|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
+### Dark mode
+<Canvas className="dark">
+    <ThemeProvider theme="dark">
+        <hr/>
+        <List intent="primary">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                primary
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item divider/>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="success">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                success
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="info">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                info
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="warning">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                warning
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+        <hr/>
+        <List intent="danger">
+            <List.Item cursor="pointer" prefix={<Icon name="AiFillGithub" />}>
+                danger
+            </List.Item>
+            <List.Item heading>
+                Heading
+            </List.Item>
+            <List.Item>
+                Item 2
+            </List.Item>
+            <List.Item>
+                Item 3
+            </List.Item>
+            <List.Item>
+                Item 4
+            </List.Item>
+        </List>
+    </ThemeProvider>
+</Canvas>

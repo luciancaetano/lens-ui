@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 export interface ISwitchProps extends ITestableProps, Omit<React.HTMLAttributes<HTMLElement>, 'onChange' | 'onBlur' | 'value' | 'defaultValue'> {
   label: ReactNode;
@@ -11,4 +11,5 @@ export interface ISwitchProps extends ITestableProps, Omit<React.HTMLAttributes<
   disabled?: boolean;
   autoFocus?: boolean;
   name?: string;
+  size?: SizeType;
 }

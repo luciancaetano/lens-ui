@@ -1,26 +1,74 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .list {
   @include lens-ui-typography;
 
-  list-style: none;
+  --lens-ui---var-list-prefix-min-width: initial;
+  --lens-ui---var-list-suffix-min-width: initial;
+
+  background-color: lens-var(list, bg);
+  color: lens-var(list, color);
+
+  &--bordered {
+    border: 1px solid lens-var(list, border);
+
+    [data-lens-element='list__item'],
+    [data-lens-element='list__item--heading'] {
+      &:first-child {
+        border-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
   padding: 0;
 
   &__item {
+    --lens-ui-list--item--cursor: default;
+    --lens-ui-list-prefix-padding: .5rem;
+    --lens-ui-list-suffix-padding: .5rem;
+
     @include lens-ui-typography;
 
     padding: .75rem;
     font-size: .95rem;
-    border-top: 1px solid var(--lens-ui-elements-list-border);
+    border-top: 1px solid lens-var(list, border);
+    display: flex;
+    align-items: center;
+    color: lens-var(list, color);
+    cursor: var(--lens-ui-list--item--cursor);
+
+    &__prefix {
+      display: flex;
+      align-items: center;
+      padding-right: var(--lens-ui-list-prefix-padding);
+      min-width: var(--lens-ui---var-list-prefix-min-width);
+    }
+
+    &__sufix {
+      display: flex;
+      align-items: center;
+      padding-left: var(--lens-ui-list-suffix-padding);
+      min-width: var(--lens-ui---var-list-suffix-min-width);
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
 
     &:last-child {
-      border-bottom: 1px solid var(--lens-ui-elements-list-border);
+      border-bottom: 1px solid lens-var(list, border);
     }
 
     @each $intent in $intent-type {
       &--intent-#{$intent} {
         &:hover {
-          background-color: hsl(var(--lens-ui-hue-#{$intent}) 74% 95%);
+          background-color: hsl(var(--lens-ui-hue-#{$intent}) lens-var(list, hover-saturation) lens-var(list, hover-lightness));
         }
       }
     }
@@ -39,13 +87,108 @@
   }
 
   &__heading {
-    border-top: 1px solid var(--lens-ui-elements-list-border);
+    --lens-ui-list-prefix-padding: .5rem;
+    --lens-ui-list-suffix-padding: .5rem;
+
+    border-top: 1px solid lens-var(list, border);
     padding: .3rem .75rem;
     font-size: .8rem;
-    background-color: var(--lens-ui-elements-tabs-header-bg);
+    background-color: lens-var(list, heading-bg);
+    color: lens-var(list, color);
+    cursor: var(--lens-ui-list--item--cursor);
 
     &:last-child {
-      border-bottom: 1px solid var(--lens-ui-elements-list-border);
+      border-bottom: 1px solid lens-var(list, border);
+    }
+
+    &:hover {
+      background-color: lens-var(list, heading-bg);
+      border-color: lens-var(list, border-hover);
+    }
+
+    &--intent-primary {
+      background-color: hsl(var(--lens-ui-hue-primary) 74% 61%);
+      color: #fff;
+      box-shadow: inset 0 -1px 0 hsl(var(--lens-ui-hue-primary) 74% 50%), inset 0 1px 0 hsl(var(--lens-ui-hue-primary) 74% 50%);
+
+      &:hover {
+        background-color: hsl(var(--lens-ui-hue-primary) 74% 61%);
+      }
+    }
+
+    &--intent-secondary {
+      background-color: hsl(var(--lens-ui-hue-secondary) 10% 50%);
+      color: #fff;
+      box-shadow: inset 0 -1px 0 hsl(var(--lens-ui-hue-secondary) 25% 38%), inset 0 1px 0 hsl(var(--lens-ui-hue-secondary) 25% 38%);
+
+      &:hover {
+        background-color: hsl(var(--lens-ui-hue-secondary) 10% 50%);
+      }
+    }
+
+    &--intent-success {
+      background-color: hsl(var(--lens-ui-hue-success) 70% 45%);
+      color: #fff;
+      box-shadow: inset 0 -1px 0 hsl(var(--lens-ui-hue-success) 74% 50%), inset 0 1px 0 hsl(var(--lens-ui-hue-success) 74% 50%);
+
+      &:hover {
+        background-color: hsl(var(--lens-ui-hue-success) 70% 45%);
+      }
+    }
+
+    &--intent-info {
+      background-color: hsl(var(--lens-ui-hue-info) 73% 63%);
+      color: #fff;
+      box-shadow: inset 0 -1px 0 hsl(var(--lens-ui-hue-info) 74% 50%), inset 0 1px 0 hsl(var(--lens-ui-hue-info) 74% 50%);
+
+      &:hover {
+        background-color: hsl(var(--lens-ui-hue-info) 73% 63%);
+      }
+    }
+
+    &--intent-warning {
+      background-color: hsl(var(--lens-ui-hue-warning) 68% 64%);
+      color: #fff;
+      box-shadow: inset 0 -1px 0 hsl(var(--lens-ui-hue-warning) 74% 50%), inset 0 1px 0 hsl(var(--lens-ui-hue-warning) 74% 50%);
+
+      &:hover {
+        background-color: hsl(var(--lens-ui-hue-warning) 68% 64%);
+      }
+    }
+
+    &--intent-danger {
+      background-color: hsl(var(--lens-ui-hue-danger) 68% 64%);
+      color: #fff;
+      box-shadow: inset 0 -1px 0 hsl(var(--lens-ui-hue-danger) 74% 50%), inset 0 1px 0 hsl(var(--lens-ui-hue-danger) 74% 50%);
+
+      &:hover {
+        background-color: hsl(var(--lens-ui-hue-danger) 68% 64%);
+      }
+    }
+
+    &__prefix {
+      display: flex;
+      align-items: center;
+      padding-right: var(--lens-ui-list-prefix-padding);
+      min-width: var(--lens-ui---var-list-prefix-min-width);
+    }
+
+    &__sufix {
+      display: flex;
+      align-items: center;
+      padding-left: var(--lens-ui-list-suffix-padding);
+      min-width: var(--lens-ui---var-list-suffix-min-width);
+    }
+  }
+
+  &__divider {
+    background-color: lens-var(list, item-divider-background);
+    color: lens-var(list, item-divider-text);
+    padding: .1rem;
+
+    &:hover {
+      background-color: lens-var(list, item-divider-background);
+      color: lens-var(list, item-divider-text);
     }
   }
 }

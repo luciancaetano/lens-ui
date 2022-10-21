@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 import forEach from 'lodash/forEach';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+
 import ProgressBar from './ProgressBar';
 import { ProgressBarSizeEnum, ProgressBarSizeEnumType } from './ProgressBar.types';
 import { Intents, IntentType } from '../../../types';
@@ -19,14 +19,14 @@ const ProgressBarSizeValues: {
 describe('<ProgressBar/>', () => {
   it('render <ProgressBar/>', async () => {
     const testingId = 'myTetingId';
-    const { getByTestId } = render(<LensProvider><ProgressBar progress={100} testingID={testingId} /></LensProvider>);
+    const { getByTestId } = render(<ProgressBar progress={100} testingID={testingId} />);
 
     expect(getByTestId(testingId)).toBeInTheDocument();
   });
 
   it('render <ProgressBar/> with label', async () => {
     const testingId = 'myTetingId';
-    const { getByText } = render(<LensProvider><ProgressBar progress={35} withLabel testingID={testingId} /></LensProvider>);
+    const { getByText } = render(<ProgressBar progress={35} withLabel testingID={testingId} />);
 
     expect(getByText('35%')).toBeInTheDocument();
   });
@@ -34,7 +34,7 @@ describe('<ProgressBar/>', () => {
   it('test <ProgressBar/> sizes', async () => {
     const testingId = 'myTestingId';
 
-    const renderTest = (size: number | string) => <LensProvider><ProgressBar progress={50} size={size} testingID={testingId} /></LensProvider>;
+    const renderTest = (size: number | string) => <ProgressBar progress={50} size={size} testingID={testingId} />;
 
     const { getByTestId, rerender } = render(renderTest('100px'));
 
@@ -55,7 +55,7 @@ describe('<ProgressBar/>', () => {
   it('test <ProgressBar/> intents', async () => {
     const testingId = 'myTestingId';
 
-    const renderTest = (intent: IntentType) => <LensProvider><ProgressBar progress={50} intent={intent as IntentType} testingID={testingId} /></LensProvider>;
+    const renderTest = (intent: IntentType) => <ProgressBar progress={50} intent={intent as IntentType} testingID={testingId} />;
 
     const { getByTestId, rerender, container } = render(renderTest('primary'));
 
@@ -71,9 +71,7 @@ describe('<ProgressBar/>', () => {
     const testingId = 'myTestingId';
 
     const { getByTestId } = render(
-      <LensProvider>
-        <ProgressBar progress={50} size={10020022 as ProgressBarSizeEnumType} testingID={testingId} />
-      </LensProvider>,
+      <ProgressBar progress={50} size={10020022 as ProgressBarSizeEnumType} testingID={testingId} />,
     );
 
     expect(getByTestId(testingId)).toBeInTheDocument();
@@ -86,7 +84,7 @@ describe('<ProgressBar/>', () => {
   it('<ProgressBar/> must contain class', async () => {
     const myClass = 'settClassCustom';
     const testingId = 'myTestingId';
-    const { getByTestId } = render(<LensProvider><ProgressBar progress={50} className={myClass} testingID={testingId} /></LensProvider>);
+    const { getByTestId } = render(<ProgressBar progress={50} className={myClass} testingID={testingId} />);
 
     expect(getByTestId(testingId)).toBeInTheDocument();
     expect(getByTestId(testingId)).toHaveClass(myClass);

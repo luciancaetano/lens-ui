@@ -13,6 +13,11 @@
 }
 
 .icon {
+  --lens-ui-icon-rotation: 0;
+
+  transform: rotate(var(--lens-ui-icon-rotation));
+  transition: transform .3s ease-in-out;
+
   svg {
     /* stylelint-disable-next-line value-keyword-case */
     fill: currentColor;

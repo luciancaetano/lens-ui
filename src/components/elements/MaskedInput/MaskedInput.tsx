@@ -1,14 +1,17 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import InputMask from 'react-input-mask';
+import { useTheme } from '../../../hooks';
 import styles from './MaskedInput.module.scss';
 import { IMaskedInputProps } from './MaskedInput.types';
 
 const MaskedInput: React.FC<IMaskedInputProps> = ({
-  className, testingID, id, onChange, tabIndex, placeholder,
+  className, testingID, id, onChange, tabIndex, placeholder, size,
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, mask,
   alwaysShowMask, beforeMaskedStateChange, maskPlaceholder, filter, ...props
 }) => {
+  const [theme, { defaultSize }] = useTheme();
+
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(filter ? filter(event.target.value) : event.target.value, event);
@@ -23,10 +26,9 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
 
   return (
     <div
-      id={id}
       data-testid={testingID}
       data-lens-element="masked-input"
-      className={clsx(styles.maskedInput, className)}
+      className={clsx(styles.maskedInput, theme, className)}
     >
       <InputMask
         {...props}
@@ -37,9 +39,9 @@ const MaskedInput: React.FC<IMaskedInputProps> = ({
         alwaysShowMask={alwaysShowMask}
         maskPlaceholder={maskPlaceholder}
         type="MaskedInput"
-        id={`${id}-input`}
+        id={id}
         tabIndex={tabIndex}
-        className={clsx(styles.maskedInputField, isError && styles.maskedInputFieldError)}
+        className={clsx(styles.maskedInputField, styles[`masked-input__field--size-${size || defaultSize}`], isError && styles.maskedInputFieldError)}
         onChange={handleChange}
         value={value}
         defaultValue={defaultValue}

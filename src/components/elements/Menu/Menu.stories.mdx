@@ -1,0 +1,59 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Menu from '.';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
+
+<Meta title="Navigation/Menu" component={Menu}/>
+
+# Menu
+
+A Menu is a list of items that can be selected.
+
+<Canvas>
+  <Menu>
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item divider>divider</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item heading>heading</Menu.Item>
+    <Menu.Item>Item 4</Menu.Item>
+  </Menu>
+</Canvas>
+
+## Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|items|IMenuItem[]|solid | The type of the badge.|No|
+|shadow|boolean|true| Show shadow.|No|
+|activeIndex|number| undefined | The index of the item that is currently active.|No|
+|onItemClick|`function(IMenuItem, MouseEvent)`| undefined | The function to call when an item is clicked.|No|
+|renderer|`function(IMenuItem, number) => ReactNode`| undefined | The function to render each item.|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+#### Menu.Item (Object)
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|`intent`|`IntentType`|`'none'`|The intent of the list item|No|
+|`isActive`|`boolean`|`false`|Whether the list item is active|No|
+|`isHeading`|`boolean`|`false`|Whether the list item is a heading|No|
+|`prefix`|`React.ReactNode`|`undefined`|Prefix elements, ex you can put an icon|No|
+|`suffix`|`React.ReactNode`|`undefined`|Suffix elements, ex you can put an icon|No|
+|`cursor`|`string`|`default`|Set cursor|No|
+|testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Dark theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <Menu>
+      <Menu.Item>Item 1</Menu.Item>
+      <Menu.Item divider>divider</Menu.Item>
+      <Menu.Item>Item 2</Menu.Item>
+      <Menu.Item>Item 3</Menu.Item>
+      <Menu.Item heading>heading</Menu.Item>
+      <Menu.Item>Item 4</Menu.Item>
+    </Menu>
+  </ThemeProvider>
+</Canvas>

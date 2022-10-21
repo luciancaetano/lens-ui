@@ -1,8 +1,9 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 import FormFooter from './FormFooter';
-import LensProvider from '../../providers/LensProvider/LensProvider';
 
-<Meta title="Components/FormFooter" component={FormFooter}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+
+<Meta title="Data Entry/FormFooter" component={FormFooter}/>
 
 
 # FormFooter
@@ -54,3 +55,16 @@ FormFooter display's form actions like, save, cancel delete etc.
 |cancel|ReactNode|'Cancel'|Text for the cancel button|No|
 |delete|ReactNode|'Delete'|Text for the delete button|No|
 |deleting|ReactNode|'Deleting'|Text for the deleting button|No|
+
+### Theme dark
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <FormFooter
+      state="ready"
+      onSave={() => {}}
+      onCancel={() => {}}
+      onDelete={() => {}}
+    />
+  </ThemeProvider>
+</Canvas>

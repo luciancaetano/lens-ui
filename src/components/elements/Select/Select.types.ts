@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 export type SelectOptionValueType = string | number | boolean;
 
@@ -34,4 +34,5 @@ export interface ISelectProps extends ITestableProps, Omit<React.HtmlHTMLAttribu
   formatGroupLabel?: (group: ISelectGroupedOption) => ReactNode;
   formatOptionLabel?: (option: ISelectOption, selectValue: SelectOptionValueType | SelectOptionValueType[]) => ReactNode;
   menuPortalTarget?: HTMLElement;
+  size?: SizeType;
 }

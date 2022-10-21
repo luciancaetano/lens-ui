@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .button {
   @include lens-ui-typography;
@@ -25,429 +25,427 @@
   &--size-small {
     padding: .25rem .5rem;
     font-size: .76563rem;
-    border-radius: .25rem;
     min-height: 2rem;
   }
 
   &--size-large {
     padding: .5rem 1rem;
     font-size: 1.09375rem;
-    border-radius: .25rem;
     min-height: 2.5rem;
   }
 
   &--intent-primary {
-    color: var(--lens-ui-elements-button-primary-text-color);
-    background-color: var(--lens-ui-elements-button-primary-background-color);
-    border-color: var(--lens-ui-elements-button-primary-border-color);
+    color: lens-var(button, primary-text-color);
+    background-color: lens-var(button, primary-background-color);
+    border-color: lens-var(button, primary-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-primary-background-color);
-      color: var(--lens-ui-elements-button-primary-background-color);
+      background-color: lens-var(button, outlined-bg-color);
+      border-color: lens-var(button, primary-background-color, outlined);
+      color: lens-var(button, primary-background-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, primary-focus-text-color);
+      background-color: lens-var(button, primary-focus-background-color);
+      border-color: lens-var(button, primary-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, primary-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, primary-hover-text-color);
+      background-color: lens-var(button, primary-hover-background-color);
+      border-color: lens-var(button, primary-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-primary-active-text-color);
-      background-color: var(--lens-ui-elements-button-primary-active-background-color);
-      border-color: var(--lens-ui-elements-button-primary-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-primary-focus-text-color);
-      background-color: var(--lens-ui-elements-button-primary-focus-background-color);
-      border-color: var(--lens-ui-elements-button-primary-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-primary-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-primary-hover-text-color);
-      background-color: var(--lens-ui-elements-button-primary-hover-background-color);
-      border-color: var(--lens-ui-elements-button-primary-hover-border-color);
+      color: lens-var(button, primary-active-text-color);
+      background-color: lens-var(button, primary-active-background-color);
+      border-color: lens-var(button, primary-active-border-color);
     }
 
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-primary-background-color);
+      color: lens-var(button, primary-background-color);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-primary-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-primary-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-primary-disabled-border-color);
+      color: lens-var(button, primary-disabled-text-color);
+      background-color: lens-var(button, primary-disabled-background-color);
+      border-color: lens-var(button, primary-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-primary-background-color);
+        color: lens-var(button, primary-background-color);
       }
     }
   }
 
   &--intent-secondary {
-    color: var(--lens-ui-elements-button-secondary-text-color);
-    background-color: var(--lens-ui-elements-button-secondary-background-color);
-    border-color: var(--lens-ui-elements-button-secondary-border-color);
+    color: lens-var(button, secondary-text-color);
+    background-color: lens-var(button, secondary-background-color);
+    border-color: lens-var(button, secondary-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-secondary-background-color);
-      color: var(--lens-ui-elements-button-secondary-background-color);
+      background-color: lens-var(button, outlined-bg-color);
+      border-color: lens-var(button, secondary-background-color, outlined);
+      color: lens-var(button, secondary-background-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, secondary-focus-text-color);
+      background-color: lens-var(button, secondary-focus-background-color);
+      border-color: lens-var(button, secondary-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, secondary-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, secondary-hover-text-color);
+      background-color: lens-var(button, secondary-hover-background-color);
+      border-color: lens-var(button, secondary-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-secondary-active-text-color);
-      background-color: var(--lens-ui-elements-button-secondary-active-background-color);
-      border-color: var(--lens-ui-elements-button-secondary-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-secondary-focus-text-color);
-      background-color: var(--lens-ui-elements-button-secondary-focus-background-color);
-      border-color: var(--lens-ui-elements-button-secondary-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-secondary-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-secondary-hover-text-color);
-      background-color: var(--lens-ui-elements-button-secondary-hover-background-color);
-      border-color: var(--lens-ui-elements-button-secondary-hover-border-color);
+      color: lens-var(button, secondary-active-text-color);
+      background-color: lens-var(button, secondary-active-background-color);
+      border-color: lens-var(button, secondary-active-border-color);
     }
 
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-secondary-background-color);
+      color: lens-var(button, secondary-background-color, minimal);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-secondary-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-secondary-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-secondary-disabled-border-color);
+      color: lens-var(button, secondary-disabled-text-color);
+      background-color: lens-var(button, secondary-disabled-background-color);
+      border-color: lens-var(button, secondary-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-secondary-background-color);
+        color: lens-var(button, secondary-background-color, outlined);
       }
     }
   }
 
   &--intent-success {
-    color: var(--lens-ui-elements-button-success-text-color);
-    background-color: var(--lens-ui-elements-button-success-background-color);
-    border-color: var(--lens-ui-elements-button-success-border-color);
+    color: lens-var(button, success-text-color);
+    background-color: lens-var(button, success-background-color);
+    border-color: lens-var(button, success-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-success-background-color);
-      color: var(--lens-ui-elements-button-success-background-color);
+      background-color: lens-var(button, outlined-bg-color);
+      border-color: lens-var(button, success-background-color, outlined);
+      color: lens-var(button, success-background-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, success-focus-text-color);
+      background-color: lens-var(button, success-focus-background-color);
+      border-color: lens-var(button, success-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, success-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, success-hover-text-color);
+      background-color: lens-var(button, success-hover-background-color);
+      border-color: lens-var(button, success-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-success-active-text-color);
-      background-color: var(--lens-ui-elements-button-success-active-background-color);
-      border-color: var(--lens-ui-elements-button-success-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-success-focus-text-color);
-      background-color: var(--lens-ui-elements-button-success-focus-background-color);
-      border-color: var(--lens-ui-elements-button-success-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-success-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-success-hover-text-color);
-      background-color: var(--lens-ui-elements-button-success-hover-background-color);
-      border-color: var(--lens-ui-elements-button-success-hover-border-color);
+      color: lens-var(button, success-active-text-color);
+      background-color: lens-var(button, success-active-background-color);
+      border-color: lens-var(button, success-active-border-color);
     }
 
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-success-background-color);
+      color: lens-var(button, success-background-color, minimal);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-success-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-success-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-success-disabled-border-color);
+      color: lens-var(button, success-disabled-text-color);
+      background-color: lens-var(button, success-disabled-background-color);
+      border-color: lens-var(button, success-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-success-background-color);
+        color: lens-var(button, success-background-color, outlined);
       }
     }
   }
 
   &--intent-info {
-    color: var(--lens-ui-elements-button-info-text-color);
-    background-color: var(--lens-ui-elements-button-info-background-color);
-    border-color: var(--lens-ui-elements-button-info-border-color);
+    color: lens-var(button, info-text-color);
+    background-color: lens-var(button, info-background-color);
+    border-color: lens-var(button, info-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-info-background-color);
-      color: var(--lens-ui-elements-button-info-background-color);
+      background-color: lens-var(button, outlined-bg-color);
+      border-color: lens-var(button, info-background-color, outlined);
+      color: lens-var(button, info-background-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, info-focus-text-color);
+      background-color: lens-var(button, info-focus-background-color);
+      border-color: lens-var(button, info-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, info-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, info-hover-text-color);
+      background-color: lens-var(button, info-hover-background-color);
+      border-color: lens-var(button, info-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-info-active-text-color);
-      background-color: var(--lens-ui-elements-button-info-active-background-color);
-      border-color: var(--lens-ui-elements-button-info-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-info-focus-text-color);
-      background-color: var(--lens-ui-elements-button-info-focus-background-color);
-      border-color: var(--lens-ui-elements-button-info-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-info-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-info-hover-text-color);
-      background-color: var(--lens-ui-elements-button-info-hover-background-color);
-      border-color: var(--lens-ui-elements-button-info-hover-border-color);
+      color: lens-var(button, info-active-text-color);
+      background-color: lens-var(button, info-active-background-color);
+      border-color: lens-var(button, info-active-border-color);
     }
 
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-info-background-color);
+      color: lens-var(button, info-background-color, minimal);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-info-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-info-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-info-disabled-border-color);
+      color: lens-var(button, info-disabled-text-color);
+      background-color: lens-var(button, info-disabled-background-color);
+      border-color: lens-var(button, info-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-info-background-color);
+        color: lens-var(button, info-background-color, outlined);
       }
     }
   }
 
   &--intent-warning {
-    color: var(--lens-ui-elements-button-warning-text-color);
-    background-color: var(--lens-ui-elements-button-warning-background-color);
-    border-color: var(--lens-ui-elements-button-warning-border-color);
+    color: lens-var(button, warning-text-color);
+    background-color: lens-var(button, warning-background-color);
+    border-color: lens-var(button, warning-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-warning-background-color);
-      color: var(--lens-ui-elements-button-warning-background-color);
+      background-color: lens-var(button, outlined-bg-color);
+      border-color: lens-var(button, warning-background-color, outlined);
+      color: lens-var(button, warning-background-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, warning-focus-text-color);
+      background-color: lens-var(button, warning-focus-background-color);
+      border-color: lens-var(button, warning-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, warning-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, warning-hover-text-color);
+      background-color: lens-var(button, warning-hover-background-color);
+      border-color: lens-var(button, warning-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-warning-active-text-color);
-      background-color: var(--lens-ui-elements-button-warning-active-background-color);
-      border-color: var(--lens-ui-elements-button-warning-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-warning-focus-text-color);
-      background-color: var(--lens-ui-elements-button-warning-focus-background-color);
-      border-color: var(--lens-ui-elements-button-warning-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-warning-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-warning-hover-text-color);
-      background-color: var(--lens-ui-elements-button-warning-hover-background-color);
-      border-color: var(--lens-ui-elements-button-warning-hover-border-color);
+      color: lens-var(button, warning-active-text-color);
+      background-color: lens-var(button, warning-active-background-color);
+      border-color: lens-var(button, warning-active-border-color);
     }
 
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-warning-background-color);
+      color: lens-var(button, warning-background-color, minimal);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-warning-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-warning-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-warning-disabled-border-color);
+      color: lens-var(button, warning-disabled-text-color);
+      background-color: lens-var(button, warning-disabled-background-color);
+      border-color: lens-var(button, warning-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-warning-background-color);
+        color: lens-var(button, warning-background-color, outlined);
       }
     }
   }
 
   &--intent-danger {
-    color: var(--lens-ui-elements-button-danger-text-color);
-    background-color: var(--lens-ui-elements-button-danger-background-color);
-    border-color: var(--lens-ui-elements-button-danger-border-color);
+    color: lens-var(button, danger-text-color);
+    background-color: lens-var(button, danger-background-color);
+    border-color: lens-var(button, danger-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-danger-background-color);
-      color: var(--lens-ui-elements-button-danger-background-color);
+      background-color: lens-var(button, outlined-bg-color);
+      border-color: lens-var(button, danger-background-color, outlined);
+      color: lens-var(button, danger-background-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, danger-focus-text-color);
+      background-color: lens-var(button, danger-focus-background-color);
+      border-color: lens-var(button, danger-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, danger-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, danger-hover-text-color);
+      background-color: lens-var(button, danger-hover-background-color);
+      border-color: lens-var(button, danger-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-danger-active-text-color);
-      background-color: var(--lens-ui-elements-button-danger-active-background-color);
-      border-color: var(--lens-ui-elements-button-danger-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-danger-focus-text-color);
-      background-color: var(--lens-ui-elements-button-danger-focus-background-color);
-      border-color: var(--lens-ui-elements-button-danger-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-danger-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-danger-hover-text-color);
-      background-color: var(--lens-ui-elements-button-danger-hover-background-color);
-      border-color: var(--lens-ui-elements-button-danger-hover-border-color);
+      color: lens-var(button, danger-active-text-color);
+      background-color: lens-var(button, danger-active-background-color);
+      border-color: lens-var(button, danger-active-border-color);
     }
 
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-danger-background-color);
+      color: lens-var(button, danger-background-color, minimal);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-danger-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-danger-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-danger-disabled-border-color);
+      color: lens-var(button, danger-disabled-text-color);
+      background-color: lens-var(button, danger-disabled-background-color);
+      border-color: lens-var(button, danger-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-danger-background-color);
+        color: lens-var(button, danger-background-color, outlined);
       }
     }
   }
 
   &--intent-light {
-    color: var(--lens-ui-elements-button-light-text-color);
-    background-color: var(--lens-ui-elements-button-light-background-color);
-    border-color: var(--lens-ui-elements-button-light-border-color);
+    color: lens-var(button, light-text-color);
+    background-color: lens-var(button, light-background-color);
+    border-color: lens-var(button, light-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-light-background-color);
-      color: var(--lens-ui-elements-button-light-text-color);
+      background-color: lens-var(button, outlined-bg-color, outlined-light);
+      border-color: lens-var(button, light-background-color, outlined);
+      color: lens-var(button, light-text-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, light-focus-text-color);
+      background-color: lens-var(button, light-focus-background-color);
+      border-color: lens-var(button, light-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, light-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, light-hover-text-color);
+      background-color: lens-var(button, light-hover-background-color);
+      border-color: lens-var(button, light-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-light-active-text-color);
-      background-color: var(--lens-ui-elements-button-light-active-background-color);
-      border-color: var(--lens-ui-elements-button-light-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-light-focus-text-color);
-      background-color: var(--lens-ui-elements-button-light-focus-background-color);
-      border-color: var(--lens-ui-elements-button-light-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-light-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-light-hover-text-color);
-      background-color: var(--lens-ui-elements-button-light-hover-background-color);
-      border-color: var(--lens-ui-elements-button-light-hover-border-color);
+      color: lens-var(button, light-active-text-color);
+      background-color: lens-var(button, light-active-background-color);
+      border-color: lens-var(button, light-active-border-color);
     }
 
     &--appearance-minimal {
-      background-color: transparent;
+      background-color: lens-var(button, light-background-color, minimal);
       border-color: transparent;
-      color: var(--lens-ui-elements-button-light-text-color);
+      color: lens-var(button, light-text-color, minimal);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-light-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-light-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-light-disabled-border-color);
+      color: lens-var(button, light-disabled-text-color);
+      background-color: lens-var(button, light-disabled-background-color);
+      border-color: lens-var(button, light-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-light-text-color);
+        color: lens-var(button, light-text-color, outlined);
       }
     }
   }
 
   &--intent-dark {
-    color: var(--lens-ui-elements-button-dark-text-color);
-    background-color: var(--lens-ui-elements-button-dark-background-color);
-    border-color: var(--lens-ui-elements-button-dark-border-color);
+    color: lens-var(button, dark-text-color);
+    background-color: lens-var(button, dark-background-color);
+    border-color: lens-var(button, dark-border-color);
 
     &--appearance-outlined {
-      background-color: #fff;
-      border-color: var(--lens-ui-elements-button-dark-background-color);
-      color: var(--lens-ui-elements-button-dark-background-color);
+      background-color: lens-var(button, outlined-bg-color, outlined);
+      border-color: lens-var(button, dark-background-color, outlined);
+      color: lens-var(button, dark-background-color, outlined);
+    }
+
+    &:focus {
+      color: lens-var(button, dark-focus-text-color);
+      background-color: lens-var(button, dark-focus-background-color);
+      border-color: lens-var(button, dark-focus-border-color);
+      box-shadow: 0 0 0 .15rem lens-var(button, dark-focus-box-shadow-color);
+    }
+
+    &:hover {
+      color: lens-var(button, dark-hover-text-color);
+      background-color: lens-var(button, dark-hover-background-color);
+      border-color: lens-var(button, dark-hover-border-color);
     }
 
     &--active,
     &:active {
-      color: var(--lens-ui-elements-button-dark-active-text-color);
-      background-color: var(--lens-ui-elements-button-dark-active-background-color);
-      border-color: var(--lens-ui-elements-button-dark-active-border-color);
-    }
-
-    &:focus {
-      color: var(--lens-ui-elements-button-dark-focus-text-color);
-      background-color: var(--lens-ui-elements-button-dark-focus-background-color);
-      border-color: var(--lens-ui-elements-button-dark-focus-border-color);
-      box-shadow: 0 0 0 .15rem var(--lens-ui-elements-button-dark-focus-box-shadow-color);
-    }
-
-    &:hover {
-      color: var(--lens-ui-elements-button-dark-hover-text-color);
-      background-color: var(--lens-ui-elements-button-dark-hover-background-color);
-      border-color: var(--lens-ui-elements-button-dark-hover-border-color);
+      color: lens-var(button, dark-active-text-color);
+      background-color: lens-var(button, dark-active-background-color);
+      border-color: lens-var(button, dark-active-border-color);
     }
 
     &--appearance-minimal {
       background-color: transparent;
       border-color: transparent;
-      color: var(--lens-ui-elements-button-dark-background-color);
+      color: lens-var(button, dark-background-color, minimal);
     }
 
     &:disabled {
       pointer-events: none;
       opacity: .65;
-      color: var(--lens-ui-elements-button-dark-disabled-text-color);
-      background-color: var(--lens-ui-elements-button-dark-disabled-background-color);
-      border-color: var(--lens-ui-elements-button-dark-disabled-border-color);
+      color: lens-var(button, dark-disabled-text-color);
+      background-color: lens-var(button, dark-disabled-background-color);
+      border-color: lens-var(button, dark-disabled-border-color);
     }
 
     &--appearance-outlined {
       &:focus {
-        color: var(--lens-ui-elements-button-dark-background-color);
+        color: lens-var(button, dark-background-color, outlined);
       }
     }
   }
@@ -460,7 +458,7 @@
 
   &--appearance-outlined {
     &:focus {
-      background-color: #fff;
+      background-color: lens-var(button, outlined-bg-color, outlined);
     }
   }
 }

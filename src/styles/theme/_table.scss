@@ -1,0 +1,10 @@
+@import '../lib';
+
+@mixin table-theme {
+  @include lens-def(table, bg, null, transparent);
+  @include lens-def(table, active-color, null, #495057);
+  @include lens-def(table, active-bg, null, #f9fafc);
+  @include lens-def(table, hover-color, null, #495057);
+  @include lens-def(table, hover-bg, null, #f9fafc);
+  @include lens-def(table, border-color, null, #edf1f5);
+}

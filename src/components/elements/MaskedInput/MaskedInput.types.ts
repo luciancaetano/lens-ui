@@ -1,10 +1,10 @@
 import React from 'react';
 import { BeforeMaskedStateChangeStates, InputState, Props as InputMaskProps } from 'react-input-mask';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 export type MakedInputFilterType = (value: string) => string;
 
-export interface IMaskedInputProps extends ITestableProps, Omit<InputMaskProps, 'onChange' | 'onBlur'> {
+export interface IMaskedInputProps extends ITestableProps, Omit<InputMaskProps, 'onChange' | 'onBlur' | 'size'> {
   /**
    * Mask string. Format characters are:
    * * `9`: `0-9`
@@ -29,6 +29,7 @@ export interface IMaskedInputProps extends ITestableProps, Omit<InputMaskProps, 
   inputRef?: React.Ref<HTMLInputElement>;
   placeholder?: string;
   filter?: MakedInputFilterType;
+  size?: SizeType;
   /**
     * In case you need to implement more complex masking behavior, you can provide
     * beforeMaskedStateChange function to change masked value and cursor position

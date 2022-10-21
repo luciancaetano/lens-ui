@@ -1,0 +1,94 @@
+@import '../../../styles/lib';
+
+.collapse {
+  @include lens-ui-typography;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: lens-var(collapse, text-color);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  background-color: lens-var(collapse, background-color);
+  border: 1px solid lens-var(collapse, border-color);
+  border-radius: 2px;
+
+  &__panel {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    line-height: 1.5715;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-bottom: none;
+
+      [data-lens-element='collapse__panel__header'] {
+        border-bottom: none;
+      }
+    }
+
+    &:first-child {
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+    }
+
+    &--expanded {
+      &:last-child {
+        [data-lens-element='collapse__panel__header'] {
+          border-bottom: 1px solid lens-var(collapse, border-color);
+        }
+
+        [data-lens-element='collapse__panel__content'] {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: .5rem 1rem;
+      background-color: lens-var(collapse, background-color);
+      user-select: none;
+      color: lens-var(collapse, text-color);
+      border-bottom: 1px solid lens-var(collapse, border-color);
+
+      &__title {
+        display: flex;
+        flex: 1;
+        font-size: 1rem;
+        margin: 0;
+        color: lens-var(collapse, text-color);
+      }
+
+      &__icon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: lens-var(collapse, background-color);
+        transition: all .2s ease-in-out;
+        color: lens-var(collapse, text-color);
+        font-size: 1.5rem;
+      }
+    }
+
+    &__content {
+      display: inline-block;
+      color: lens-var(collapse, content-text-color);
+      background-color: lens-var(collapse, content-background-color);
+      padding: 1rem;
+      overflow: hidden;
+      border-bottom: 1px solid lens-var(collapse, border-color);
+    }
+  }
+}

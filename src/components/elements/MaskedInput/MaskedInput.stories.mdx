@@ -1,7 +1,8 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 import MaskedInput from './MaskedInput';
 
-<Meta title="Components/MaskedInput" component={MaskedInput}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Entry/MaskedInput" component={MaskedInput}/>
 
 
 # MaskedInput
@@ -35,6 +36,7 @@ The MaskedInput is a wrapper around the native input element that allows you to 
 |autoFocus|boolean|undefined|Whether the input should be focused on mount|No|
 |name|string|undefined|The name of the input|No|
 |isError|boolean|undefined|Whether the input is in an error state|No|
+|size|small, medium, large|undefined|The size of the checkbox|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
@@ -50,3 +52,38 @@ The MaskedInput is a wrapper around the native input element that allows you to 
 
 
 **This components uses [react-input-mask](https://www.npmjs.com/package/react-input-mask) internally.**
+
+### Size variation
+
+<Canvas>
+  <MaskedInput
+    mask="99/99/9999"
+    name="input"
+    defaultValue="03/01/1990"
+    size="small"
+  />
+  <MaskedInput
+    mask="99/99/9999"
+    name="input"
+    defaultValue="03/01/1990"
+    size="medium"
+  />
+  <MaskedInput
+    mask="99/99/9999"
+    name="input"
+    defaultValue="03/01/1990"
+    size="large"
+  />
+</Canvas>
+
+### Theme dark
+
+<Canvas className="dark">
+   <ThemeProvider theme="dark">
+     <MaskedInput
+      mask="99/99/9999"
+      name="input"
+      defaultValue="03/01/1990"
+    />
+   </ThemeProvider>
+</Canvas>

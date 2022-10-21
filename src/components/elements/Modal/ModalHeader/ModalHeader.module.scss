@@ -1,0 +1,35 @@
+@import '../../../../styles/lib';
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: .0625rem solid lens-var(modal, border-color);
+  border-top-left-radius: calc(.4rem - .0625rem);
+  border-top-right-radius: calc(.4rem - .0625rem);
+  position: relative;
+
+  &--has-close-button {
+    padding-right: .8rem;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+
+  &__close-button-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.9375rem;
+    width: 1.9375rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: lens-var(typography, text-color, faded);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,92 @@
+import {useState} from 'react';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Drawer from './Drawer';
+import Button from '../Button/Button';
+import ButtonGroup from '../ButtonGroup/ButtonGroup';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
+
+<Meta title="Navigation/Drawer" component={Drawer} />
+
+# Drawer
+
+This is a small emblem commonly used to represent tags.
+
+export const ToggleButton = ({children}) => {
+  const [open, setOpen] = useState(false);
+  const [side, setSide] = useState('left');
+  return children({open, setOpen, side, setSide});
+}
+
+<Canvas>
+    <ToggleButton>
+        {({open, setOpen, side, setSide}) => (
+            <>
+                <Drawer isOpen={open} onClose={() => setOpen(false)} title="Basic Drawer" placement={side}>
+                    <p>Drawer content</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Drawer>
+                <ButtonGroup>
+                    <Button onClick={() => {setSide('left');setOpen(open => !open);}}>Open Left</Button>
+                    <Button onClick={() => {setSide('right');setOpen(open => !open);}}>Open Right</Button>
+                    <Button onClick={() => {setSide('top');setOpen(open => !open);}}>Open Top</Button>
+                    <Button onClick={() => {setSide('bottom');setOpen(open => !open);}}>Open Bottom</Button>
+                </ButtonGroup>
+            </>
+        )}
+    </ToggleButton>
+</Canvas>
+
+```tsx
+    const [open, setOpen] = useState(false);
+
+    return (
+        <>
+            <Drawer isOpen={open} onClose={() => setOpen(false)} title="Basic Drawer" placement="left">
+                <p>Drawer content</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+            </Drawer>
+            <button onClick={() => setOpen(open => !open)}>Open</button>
+        </>
+    )
+```
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|children|React.ReactNode|-|Drawer content|false|
+|isOpen|boolean|false|Open drawer|false|
+|onClose|() => void|undefined|Close drawer|false|
+|placement|'left' \| 'right' \| 'top' \| 'bottom'|'left'|Drawer placement|false|
+|size|'small' \| 'medium' \| 'fullscreen' \| string \| number|'medium'|Drawer size|false|
+|title|React.ReactNode|-|Drawer title|false|
+|closeIcon|React.ReactNode|-|Close icon|false|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+
+### Dark Mode
+
+<Canvas className="dark">
+    <ToggleButton>
+        {({open, setOpen, side, setSide}) => (
+            <ThemeProvider theme="dark">
+                <Drawer isOpen={open} onClose={() => setOpen(false)} title="Basic Drawer" placement={side}>
+                    <p>Drawer content</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Drawer>
+                <ButtonGroup>
+                    <Button onClick={() => {setSide('left');setOpen(open => !open);}}>Open Left</Button>
+                    <Button onClick={() => {setSide('right');setOpen(open => !open);}}>Open Right</Button>
+                    <Button onClick={() => {setSide('top');setOpen(open => !open);}}>Open Top</Button>
+                    <Button onClick={() => {setSide('bottom');setOpen(open => !open);}}>Open Bottom</Button>
+                </ButtonGroup>
+            </ThemeProvider>
+        )}
+    </ToggleButton>
+</Canvas>

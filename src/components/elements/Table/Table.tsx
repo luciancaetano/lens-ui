@@ -7,6 +7,7 @@ import get from 'lodash/get';
 import styles from './Table.module.scss';
 import { ITableItem, ITableProps } from './Table.types';
 import { CLASSES } from '../../../css-classes';
+import { useTheme } from '../../../hooks';
 
 /**
  * Table display sets of data.
@@ -14,6 +15,8 @@ import { CLASSES } from '../../../css-classes';
 function Table<T extends ITableItem = {}>({
   className, testingID, id, cols, items, footer, ...props
 }: ITableProps<T>) {
+  const [theme] = useTheme();
+
   const heading = useMemo(() => map(cols, (col, key) => (
     <th key={key} className={col.headerClassName}>
       {col.header}
@@ -47,7 +50,7 @@ function Table<T extends ITableItem = {}>({
       id={id}
       data-testid={testingID}
       data-lens-element="table"
-      className={clsx(styles.table, className)}
+      className={clsx(styles.table, 'lens-ui-table', theme, className)}
       data-role="table-container"
     >
       <table className={CLASSES.Table}>

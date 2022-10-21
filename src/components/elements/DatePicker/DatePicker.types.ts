@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 export interface IDateInputLocale {
   name: string;
@@ -24,12 +24,13 @@ export interface IBasePickerProps extends ITestableProps, Omit<React.HtmlHTMLAtt
   disabled?: boolean;
   isError?: boolean;
   required?: boolean;
-  isMobile?: boolean;
   inline?: boolean;
   locale?: IDatePickerLocale;
   onPickerOpen?: () => void;
   onPickerClose?: () => void;
   children?: (strDate: string, openCalendar: Function, handleValueChange: React.ChangeEventHandler<HTMLElement>) => React.ReactNode | React.ReactNode[];
+  size?: SizeType;
+  dark?: boolean;
 }
 
 export type DatePickerType = 'date' | 'month' | 'range' | 'year' | 'multiple' | 'week';
@@ -46,6 +47,7 @@ export interface IDatePickerProps extends IBasePickerProps {
   displayWeekNumbers?: boolean;
   minDate?: Date;
   maxDate?: Date;
+  header?: boolean;
 }
 
 export interface IMonthPickerProps extends IBasePickerProps {

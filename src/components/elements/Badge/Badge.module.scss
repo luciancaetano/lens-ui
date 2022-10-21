@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .badge {
   @include lens-ui-typography;
@@ -18,21 +18,21 @@
 
   @each $intent in $intent-type {
     &--solid-#{$intent} {
-      color: var(--lens-ui-intents-#{$intent}-text);
-      border: .063rem solid var(--lens-ui-intents-#{$intent}-border);
-      background-color: var(--lens-ui-intents-#{$intent});
+      color: lens-var(badge, #{$intent}-text, solid);
+      border: .063rem solid lens-var(badge, #{$intent}-border, solid);
+      background-color: lens-var(badge, #{$intent}-background-color, solid);
     }
 
     &--outlined-#{$intent} {
-      color: var(--lens-ui-intents-#{$intent}-border);
-      border: .063rem solid var(--lens-ui-intents-#{$intent}-border);
-      background-color: #fff;
+      color: lens-var(badge, #{$intent}-text, outlined);
+      border: .063rem solid lens-var(badge, #{$intent}-border, outlined);
+      background-color: lens-var(badge, #{$intent}-background-color, outlined);
     }
 
     &--subtle-#{$intent} {
-      color: var(--lens-ui-intents-#{$intent}-lighten-text);
-      border: .063rem solid var(--lens-ui-intents-#{$intent}-lighten-border);
-      background-color: var(--lens-ui-intents-#{$intent}-lighten);
+      color: lens-var(badge, #{$intent}-text, subtle);
+      border: .063rem solid lens-var(badge, #{$intent}-border, subtle);
+      background-color: lens-var(badge, #{$intent}-background-color, subtle);
     }
   }
 }

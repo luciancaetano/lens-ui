@@ -1,0 +1,47 @@
+/** ====imports===== */
+@import './drawer';
+@import './slider';
+@import './paginator';
+@import './base';
+@import './button';
+@import './badge';
+@import './card';
+@import './list';
+@import './breadcrumbs';
+@import './divider';
+@import './layout';
+@import './forms';
+@import './modal';
+@import './table';
+@import './tabs';
+@import './collapse';
+@import './checkbox';
+@import './form-group';
+@import './callout';
+
+@mixin default-theme {
+  /** ====theme===== */
+  @include drawer-theme;
+  @include slider-theme;
+  @include paginator-theme;
+  @include base-theme;
+  @include button-theme;
+  @include badge-theme;
+  @include card-theme;
+  @include list-theme;
+  @include breadcrumbs-theme;
+  @include divider-theme;
+  @include layout-theme;
+  @include forms-theme;
+  @include modal-theme;
+  @include table-theme;
+  @include tabs-theme;
+  @include collapse-theme;
+  @include checkbox-theme;
+  @include form-group-theme;
+  @include callout-theme;
+}
+
+:root {
+  @include default-theme;
+}

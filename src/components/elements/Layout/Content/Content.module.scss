@@ -1,4 +1,4 @@
-@import '../../../../style-lib';
+@import '../../../../styles/lib';
 
 .content {
   @include lens-ui-typography;
@@ -11,8 +11,8 @@
   font-size: .875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--lens-ui-typography-text-color);
-  background-color: var(--lens-ui-conent-bg-color);
+  color: lens-var(typography, text-color);
+  background-color: lens-var(content, bg-color);
 
   &--direction-column {
     flex-direction: column;

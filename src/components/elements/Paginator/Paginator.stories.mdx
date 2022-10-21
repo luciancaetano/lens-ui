@@ -1,0 +1,175 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Paginator from './Paginator';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
+
+<Meta title="Navigation/Paginator" component={Paginator} />
+
+# Paginator
+
+This is a small emblem commonly used to represent tags.
+
+<Canvas>
+    <Paginator
+        showFirstButton
+        showLastButton
+        count={100}
+        pageNeighbours={1}
+    />
+</Canvas>
+
+### Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|count|number|0|The total number of items.|true|
+|currentPage|number|1|The current page number.|false|
+|disabled|boolean|false|If true, the component will be disabled.|false|
+|defaultCurrentPage|number|1|The default current page number.|false|
+|pageNeighbours|number|1|The number of items to show on each side of the current page.|false|
+|color|string|undefined|The color of the component. It supports those theme colors that make sense for this component.|false|
+|size|small, medium, large|undefined|The size of the checkbox|No|
+|itemRender|function|undefined|The render function for the page items.|false|
+|nextIcon|node|undefined|The icon to display for the next page button.|false|
+|prevIcon|node|undefined|The icon to display for the previous page button.|false|
+|firstIcon|node|undefined|The icon to display for the first page button.|false|
+|lastIcon|node|undefined|The icon to display for the last page button.|false|
+|showFirstButton|bool|false|If true, the first-page button will be displayed.|false|
+|showLastButton|bool|false|If true, the last-page button will be displayed.|false|
+|outlined|bool|false|If true, the component will be outlined.|false|
+|showLastItem|bool|false|If true, the last item will be displayed.|false|
+|disabled|bool|false|If true, the component will be disabled.|false|
+|showNextButton|bool|true|If true, the next-page button will be displayed.|false|
+|showPreviousButton|bool|true|If true, the previous-page button will be displayed.|false|
+|intent|`primary`, `secondary`, `success`, <br/>`info`, `warning`, `danger`|primary | The intent of the badge.|No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+## Outlined
+
+<Canvas>
+    <Paginator
+        showFirstButton
+        showLastButton
+        count={100}
+        pageNeighbours={1}
+        outlined
+    />
+</Canvas>
+
+### Intents
+
+<Canvas>
+    <div style={{display: 'flex', flexDirection: "column"}}>
+        <Paginator
+            showFirstButton
+            showLastButton
+            count={100}
+            pageNeighbours={1}
+            intent="primary"
+        />
+        <br/>
+        <Paginator
+            showFirstButton
+            showLastButton
+            count={100}
+            pageNeighbours={1}
+            intent="secondary"
+        />
+        <br/>
+        <Paginator
+            showFirstButton
+            showLastButton
+            count={100}
+            pageNeighbours={1}
+            intent="success"
+        />
+        <br/>
+        <Paginator
+            showFirstButton
+            showLastButton
+            count={100}
+            pageNeighbours={1}
+            intent="info"
+        />
+        <br/>
+        <Paginator
+            showFirstButton
+            showLastButton
+            count={100}
+            pageNeighbours={1}
+            intent="warning"
+        />
+        <br/>
+        <Paginator
+            showFirstButton
+            showLastButton
+            count={100}
+            pageNeighbours={1}
+            intent="danger"
+        />
+    </div>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+    <Paginator
+        showFirstButton
+        showLastButton
+        count={100}
+        pageNeighbours={1}
+        disabled
+    />
+</Canvas>
+
+
+### Sizes
+
+#### Small
+
+<Canvas>
+    <Paginator
+        showFirstButton
+        showLastButton
+        count={100}
+        pageNeighbours={1}
+        size="small"
+    />
+</Canvas>
+
+#### Medium
+
+<Canvas>
+    <Paginator
+        showFirstButton
+        showLastButton
+        count={100}
+        pageNeighbours={1}
+        size="medium"
+    />
+</Canvas>
+
+#### Large
+
+<Canvas>
+    <Paginator
+        showFirstButton
+        showLastButton
+        count={100}
+        pageNeighbours={1}
+        size="large"
+    />
+</Canvas>
+
+
+### Dark theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <Paginator
+        showFirstButton
+        showLastButton
+        count={100}
+        pageNeighbours={1}
+    />
+  </ThemeProvider>
+</Canvas>

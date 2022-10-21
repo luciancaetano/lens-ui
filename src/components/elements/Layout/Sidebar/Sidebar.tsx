@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
+import { useTheme } from '../../../../hooks';
 import styles from './Sidebar.module.scss';
 import { ILayoutSidebarProps } from './Sidebar.types';
 
@@ -8,15 +9,19 @@ import { ILayoutSidebarProps } from './Sidebar.types';
  */
 const Sidebar:React.FC<ILayoutSidebarProps> = ({
   className, testingID, children, ...props
-}) => (
-  <aside
-    {...props}
-    data-testid={testingID}
-    data-lens-element="layout__sidebar"
-    className={clsx(styles.sidebar, className)}
-  >
-    {children}
-  </aside>
-);
+}) => {
+  const [theme] = useTheme();
+
+  return (
+    <aside
+      {...props}
+      data-testid={testingID}
+      data-lens-element="layout__sidebar"
+      className={clsx(styles.sidebar, theme, className)}
+    >
+      {children}
+    </aside>
+  );
+};
 
 export default Sidebar;

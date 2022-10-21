@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .breadcrumbs {
   @include lens-ui-typography;
@@ -7,27 +7,27 @@
 
   &__item {
     text-decoration: none;
-    color: var(--lens-ui-typography-most-faded-text-color);
-    cursor: pointer;
+    color: lens-var(breadcrumbs, item-text-color);
     transition: color linear .3s;
+    cursor: pointer;
 
     &:hover {
-      color: var(--lens-ui-intents-primary-lighten);
+      color: lens-var(breadcrumbs, item-text-color, hover);
     }
   }
 
   &__spacer {
     padding: 0 .5rem;
-    color: var(--lens-ui-typography-faded-text-color);
+    color: lens-var(typography, text-color, faded);
   }
 
   &__last {
-    color: var(--lens-ui-intents-primary-darken);
+    color: lens-var(breadcrumbs, last-item);
     cursor: default;
     font-weight: bold;
 
     &:hover {
-      color: var(--lens-ui-intents-primary-darken);
+      color: lens-var(breadcrumbs, last-item);
     }
   }
 }

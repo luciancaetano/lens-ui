@@ -1,8 +1,8 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Breadcrumbs from './Breadcrumbs';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
-<Meta title="Components/Breadcrumbs" component={Breadcrumbs}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Navigation/Breadcrumbs" component={Breadcrumbs}/>
 
 
 # Breadcrumbs
@@ -47,3 +47,23 @@ Breadcrumbs allow users to make selections from a range of pages or navigation h
 
 ---
 
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <Breadcrumbs
+      history={[
+        {
+          title: 'Home'
+        },
+        {
+          title: 'Profile'
+        },
+        {
+          title: 'Settings'
+        }
+      ]}
+      onItemClick={function noRefCheck(){}}
+    >
+      Hello World
+    </Breadcrumbs>
+  </ThemeProvider>
+</Canvas>

@@ -25,7 +25,7 @@ const Toast:React.FC<IToastProps> = ({
   const interval = useRef<any>(INTERVAL);
   const timeProgress = useRef<number>(0);
   const progressBar = useRef<HTMLDivElement>(null);
-  const { isPhone } = useDevice();
+  const { md, sm } = useDevice();
 
   const autoDismiss = useMemo(() => isNumber(data.dismiss), [data]);
 
@@ -64,29 +64,33 @@ const Toast:React.FC<IToastProps> = ({
   )), [data.actions]);
 
   return (
-    <div
-      data-lens-element="toast"
-      data-lens-intent={data.intent}
-      data-testid={testingID}
-      className={clsx(styles.toast, isPhone && styles.toastMobile, styles[`toast--intent-${data.intent}`], data.className)}
-    >
-      <div className={styles.toastMain}>
-        {data.icon && (<div data-lens-element="toast__icon" className={styles.toastIcon}>{data.icon}</div>)}
-        <div className={styles.toastContent} data-lens-element="toast__content">
-          {data.content}
-        </div>
-        {actions.length > 0 && (
-          <div data-lens-element="toast__actions" className={clsx(styles.toastActionsContainer, data.actionsContainerClassName)}>
-            {actions}
+    <div className={styles.clickable}>
+      <div
+        data-lens-element="toast"
+        data-lens-intent={data.intent}
+        data-testid={testingID}
+        className={clsx(styles.toast, (md || sm) && styles.toastMobile, styles[`toast--intent-${data.intent}`], data.className)}
+      >
+        <div className={styles.toastMain}>
+          {data.icon && (<div data-lens-element="toast__icon" className={styles.toastIcon}>{data.icon}</div>)}
+          <div className={styles.toastContent} data-lens-element="toast__content">
+            <div>
+              {data.content}
+            </div>
           </div>
-        )}
-        <div className={styles.toastButtonContainer} onClick={handleClose}>
-          <button data-lens-element="toast__close-button">
-            <Icon name="BsXSquareFill" />
-          </button>
+          {actions.length > 0 && (
+            <div data-lens-element="toast__actions" className={clsx(styles.toastActionsContainer, data.actionsContainerClassName)}>
+              {actions}
+            </div>
+          )}
+          <div className={styles.toastButtonContainer} onClick={handleClose}>
+            <button data-lens-element="toast__close-button" className={styles.toastButtonContainerButton}>
+              <Icon name="BsXSquareFill" />
+            </button>
+          </div>
         </div>
+        {autoDismiss && <ProgressBar progress={0} size="tiny" ref={progressBar} />}
       </div>
-      {autoDismiss && <ProgressBar progress={0} size="tiny" ref={progressBar} />}
     </div>
   );
 };

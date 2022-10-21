@@ -1,8 +1,8 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Badge from './Badge';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
-<Meta title="Components/Badge" component={Badge}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Display/Badge" component={Badge}/>
 
 
 
@@ -62,3 +62,28 @@ This is a small emblem commonly used to represent tags.
 </Canvas>
 
 ---
+
+### Dark Theme
+
+<Canvas className="dark">
+    <ThemeProvider theme="dark">
+        <Badge type="solid" intent="primary">Hello World</Badge>
+        <Badge type="solid" intent="secondary">Hello World</Badge>
+        <Badge type="solid" intent="success">Hello World</Badge>
+        <Badge type="solid" intent="danger">Danger</Badge>
+        <Badge type="solid" intent="info">Info</Badge>
+        <Badge type="solid" intent="warning">Warning</Badge>
+        <Badge type="outlined" intent="primary">Hello World</Badge>
+        <Badge type="outlined" intent="secondary">Hello World</Badge>
+        <Badge type="outlined" intent="success">Hello World</Badge>
+        <Badge type="outlined" intent="danger">Danger</Badge>
+        <Badge type="outlined" intent="info">Info</Badge>
+        <Badge type="outlined" intent="warning">Warning</Badge>
+        <Badge type="subtle" intent="primary">Hello World</Badge>
+        <Badge type="subtle" intent="secondary" type="outlined">Hello World</Badge>
+        <Badge type="subtle" intent="success" type="subtle">Hello World</Badge>
+        <Badge type="subtle" intent="danger">Danger</Badge>
+        <Badge type="subtle" intent="info">Info</Badge>
+        <Badge type="subtle" intent="warning">Warning</Badge>
+    </ThemeProvider>
+</Canvas>

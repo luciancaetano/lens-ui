@@ -1,7 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 import { render } from '@testing-library/react';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+
 import Table from './Table';
 import { TableClumnsRecordType, ITableItem } from './Table.types';
 
@@ -39,9 +39,7 @@ const itemsData: IItemTypeData[] = [
 describe('<Table/>', () => {
   it('render <Table/>', async () => {
     const { getByText } = render(
-      <LensProvider>
-        <Table cols={columnsData} items={itemsData} />
-      </LensProvider>,
+      <Table cols={columnsData} items={itemsData} />,
     );
 
     itemsData.forEach((item) => {
@@ -57,9 +55,7 @@ describe('<Table/>', () => {
   it('render <Table/> render footer', async () => {
     const myFooterText = 'myFooterText';
     const { getByText } = render(
-      <LensProvider>
-        <Table cols={columnsData} items={itemsData} footer={() => <div>{myFooterText}</div>} />
-      </LensProvider>,
+      <Table cols={columnsData} items={itemsData} footer={() => <div>{myFooterText}</div>} />,
     );
 
     expect(getByText(myFooterText)).toBeInTheDocument();

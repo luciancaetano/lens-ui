@@ -1,0 +1,6 @@
+@import '../lib';
+
+@mixin divider-theme {
+  @include lens-def(divider, text-color, null, hsl(var(--lens-ui-hue-dark) 16% 43%));
+  @include lens-def(divider, border-bottom-color, null, hsl(var(--lens-ui-hue-dark) 16% 43%));
+}

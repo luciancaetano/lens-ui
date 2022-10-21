@@ -1,8 +1,37 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .tabs {
   display: flex;
   flex-direction: column;
+
+  --tabs-min-height: 0;
+
+  &__holder {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    border-bottom: 1px solid lens-var(tabs, border-active);
+
+    &--vertical {
+      flex: initial;
+      border-bottom: none;
+      flex-direction: column;
+    }
+  }
+
+  &__tab-bar-extra-content {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+
+    &--left {
+      padding-left: 0;
+    }
+
+    &--right {
+      padding-right: 0;
+    }
+  }
 
   &--vertical {
     flex-direction: row;
@@ -16,38 +45,99 @@
     &__container {
       display: flex;
       flex-direction: column;
-      color: var(--lens-ui-typography-most-faded-text-color);
-      border-right: 1px solid var(--lens-ui-elements-tabs-border);
+      color: lens-var(tabs, text-color, faded);
+      border-right: 1px solid lens-var(tabs, border);
 
       &__tab-item {
         @include lens-ui-typography;
 
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: .5rem 1rem;
         margin-right: -1px;
         background: 0 0;
         border: 1px solid transparent;
         border-top-left-radius: .25rem;
         border-bottom-left-radius: .25rem;
+        margin-bottom: .2rem;
         cursor: pointer;
         user-select: none;
+        min-height: var(--tabs-min-height);
 
         &:hover {
-          color: var(--lens-ui-typography-faded-text-color);
-          border-top-color: var(--lens-ui-elements-tabs-border-faded);
-          border-bottom-color: var(--lens-ui-elements-tabs-border-faded);
-          border-left-color: var(--lens-ui-elements-tabs-border-faded);
-          border-right-color: var(--lens-ui-elements-tabs-border);
+          color: lens-var(typography, text-color);
+          border-top-color: lens-var(tabs, border-faded);
+          border-bottom-color: lens-var(tabs, border-faded);
+          border-left-color: lens-var(tabs, border-faded);
+          border-right-color: lens-var(tabs, border);
           isolation: isolate;
+          opacity: 1;
         }
 
         &--active {
-          color: var(--lens-ui-typography-text-color) !important;
-          background-color: #fff !important;
-          border-top-color: var(--lens-ui-elements-tabs-border) !important;
-          border-bottom-color: var(--lens-ui-elements-tabs-border) !important;
-          border-left-color: var(--lens-ui-elements-tabs-border) !important;
-          border-right-color: #fff !important;
+          color: lens-var(typography, text-color) !important;
+          background: lens-var(tabs, active-bg) !important;
+          border-top-color: lens-var(tabs, border) !important;
+          border-bottom-color: lens-var(tabs, border) !important;
+          border-left-color: lens-var(tabs, border) !important;
+          border-right-color: lens-var(tabs, active-bg) !important;
+        }
+
+        &__content {
+          display: flex;
+          flex-direction: row;
+          flex: 1;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__title-holder {
+          display: flex;
+          flex-direction: row;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__description {
+          display: flex;
+          flex-direction: row;
+          font-size: .8rem;
+          color: lens-var(tabs, text-color, faded);
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__icon {
+          display: flex;
+          flex-direction: row;
+          padding-right: .28rem;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__close {
+          display: flex;
+          flex-direction: row;
+          padding-left: .28rem;
+          cursor: pointer;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
         }
       }
     }
@@ -63,32 +153,117 @@
     &__container {
       display: flex;
       flex-direction: row;
-      color: var(--lens-ui-typography-most-faded-text-color);
-      border-bottom: 1px solid var(--lens-ui-elements-tabs-border);
+      color: lens-var(tabs, text-color, faded);
+      flex: 1;
 
       &__tab-item {
         @include lens-ui-typography;
 
-        display: block;
-        padding: .5rem 1rem;
-        margin-bottom: -1px;
+        font-size: lens-var(typography, font-size);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: .5rem 1rem .5rem .25rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-right: .2rem;
         background: 0 0;
+        background-color: lens-var(tabs, bg);
         border: 1px solid transparent;
-        border-top-left-radius: .25rem;
-        border-top-right-radius: .25rem;
-        cursor: pointer;
         user-select: none;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+        border-color: lens-var(tabs, border-faded) lens-var(tabs, border-faded) lens-var(tabs, border-active) lens-var(tabs, border-faded);
+        color: lens-var(tabs, text-color);
+        box-sizing: border-box;
+        transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+        margin-bottom: -1px;
+
+        &--with-left-icon {
+          padding-left: .25rem;
+        }
+
+        &--with-right-icon {
+          padding-right: .25rem;
+        }
 
         &:hover {
-          color: var(--lens-ui-typography-faded-text-color);
-          border-color: var(--lens-ui-elements-tabs-border-faded) var(--lens-ui-elements-tabs-border-faded) var(--lens-ui-elements-tabs-border);
+          color: lens-var(tabs, text-color, active);
+          border-bottom-color: lens-var(tabs, border-active);
           isolation: isolate;
+          background: lens-var(tabs, hover-bg);
+          opacity: 1;
         }
 
         &--active {
-          color: var(--lens-ui-typography-text-color);
-          background-color: #fff;
-          border-color: var(--lens-ui-elements-tabs-border) var(--lens-ui-elements-tabs-border) #fff;
+          color: lens-var(tabs, text-color, active);
+          background: lens-var(tabs, active-bg);
+          border-color: lens-var(tabs, border-active) lens-var(tabs, border-active) transparent;
+          opacity: 1;
+
+          &:hover {
+            color: lens-var(tabs, text-color, active);
+            background: lens-var(tabs, active-bg);
+            border-color: lens-var(tabs, border-active) lens-var(tabs, border-active) transparent;
+          }
+        }
+
+        &__content {
+          display: flex;
+          flex-direction: row;
+          flex: 1;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__title-holder {
+          display: flex;
+          flex-direction: row;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__description {
+          display: flex;
+          flex-direction: row;
+          font-size: .8rem;
+          color: lens-var(tabs, text-color, faded);
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__icon {
+          display: flex;
+          flex-direction: row;
+          padding-right: .28rem;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
+        }
+
+        &__close {
+          display: flex;
+          flex-direction: row;
+          padding-left: .28rem;
+          cursor: pointer;
+          transition: opacity ease-in-out .3s, background-color ease-in-out .3s;
+
+          &--active {
+            opacity: 1;
+          }
         }
       }
     }

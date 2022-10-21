@@ -1,0 +1,512 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Row from './Row';
+import Col from './Col';
+
+<Meta title="Layout/Grid" />
+
+# Grid System
+
+LensUi implement a flex based grid system.
+
+- 🖥️ Responsive modifiers for specifying different column sizes, offsets, alignment etc, using xs, sm, md and lg viewport widths.
+- 💯 Percent based widths allow fluid resizing of columns and rows.
+- ⭐ Simple and clear usage.
+
+<Canvas>
+    <div>
+        <Row className="row debug-row">
+            <Col xs="12" sm="3" md="2" lg="1">
+                <div className="debug-col"></div>
+            </Col>
+            <Col xs="6" sm="6" md="8" lg="10">
+                <div className="debug-col"></div>
+            </Col>
+            <Col xs="6" sm="3" md="2" lg="1">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row className="row debug-row">
+            <Col xs="12" sm="3" md="2" lg="1">
+                <div className="debug-col"></div>
+            </Col>
+            <Col xs="12" sm="9" md="10" lg="11">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row className="row debug-row">
+            <Col xs="10" sm="6" md="8" lg="10">
+                <div className="debug-col"></div>
+            </Col>
+            <Col xs="2" sm="6" md="4" lg="2">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Offsets
+
+Offset a column
+
+<Canvas>
+    <div>
+        <Row>
+            <Col offsetXs="11" xs="1">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="10" xs="2">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="9" xs="3">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="8" xs="4">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="7" xs="5">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="6" xs="6">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="5" xs="7">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="4" xs="8">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="3" xs="9">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="2" xs="10">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col offsetXs="0" xs="12">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Auto Width
+Add any number of auto sizing columns to a row. Let the grid figure it out.
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs>
+                <div className="debug-col"></div>
+            </Col>
+            <Col xs>
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+        <Row>
+            <Col xs md sm lg>
+                <div className="debug-col"></div>
+            </Col>
+            <Col xs>
+                <div className="debug-col"></div>
+            </Col>
+            <Col xs>
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Nested Grids
+Nest grids inside grids inside grids.
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="7">
+                <div className="debug-col-nested-2">
+                    <Row>
+                        <Col xs="9">
+                            <div className="debug-col-nested-1">
+                                <Row>
+                                    <Col xs="4">
+                                        <div className="debug-col"></div>
+                                    </Col>
+                                    <Col xs="8">
+                                        <div className="debug-col"></div>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                        <Col xs="3">
+                            <div className="debug-col-nested-1">
+                                <Row>
+                                    <Col xs>
+                                        <div className="debug-col"></div>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+            <Col xs="5">
+                <div className="debug-col-nested-2">
+                    <Row>
+                        <Col xs="12">
+                            <div className="debug-col-nested-1">
+                                <Row>
+                                    <Col xs="6">
+                                        <div className="debug-col"></div>
+                                    </Col>
+                                    <Col xs="6">
+                                        <div className="debug-col"></div>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Alignment
+Align elements to the start or end of a row as well as the top, bottom, or center of a column.
+
+### start
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row start={['xs']}>
+                        <Col xs="6">
+                            <div className="debug-col"></div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### center
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row center={['xs']}>
+                        <Col xs="6">
+                            <div className="debug-col"></div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### evenly
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row evenly={['xs']}>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### end
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row end={['xs']}>
+                        <Col xs="6">
+                            <div className="debug-col"></div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### top
+
+<Canvas>
+    <div>
+        <Row top={['xs']}>
+            <Col xs="6">
+                <div className="debug-col" style={{height: '11rem'}}></div>
+            </Col>
+            <Col xs="6">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### middle
+
+<Canvas>
+    <div>
+        <Row middle={['xs']}>
+            <Col xs="6">
+                <div className="debug-col" style={{height: '11rem'}}></div>
+            </Col>
+            <Col xs="6">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### bottom
+
+<Canvas>
+    <div>
+        <Row bottom={['xs']}>
+            <Col xs="6">
+                <div className="debug-col" style={{height: '11rem'}}></div>
+            </Col>
+            <Col xs="6">
+                <div className="debug-col"></div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Distribution
+Distribute the contents of a row or column.
+
+### around
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row around={['xs']}>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### between
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row between={['xs']}>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col"></div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Reordering
+Reorder columns.
+
+
+### first
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row>
+                        <Col xs="2">
+                            <div className="debug-col">1</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">2</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">3</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">4</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">5</div>
+                        </Col>
+                        <Col xs="2" first={['xs']}>
+                            <div className="debug-col darken">6</div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+### last
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row>
+                        <Col xs="2" last={['xs']}>
+                            <div className="debug-col darken">1</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">2</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">3</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">4</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">5</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col">6</div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Reversing
+
+<Canvas>
+    <div>
+        <Row>
+            <Col xs="12">
+                <div className="debug-col-nested-2">
+                    <Row reverse>
+                        <Col xs="2">
+                            <div className="debug-col darken">1</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col darken">2</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col darken">3</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col darken">4</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col darken">5</div>
+                        </Col>
+                        <Col xs="2">
+                            <div className="debug-col darken">6</div>
+                        </Col>
+                    </Row>
+                </div>
+            </Col>
+        </Row>
+    </div>
+</Canvas>
+
+## Components properties
+
+### Row Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|start| Array&lt;xs \| sm \| md \| lg&gt; | - | Align elements to the start of the row |No|
+|center| Array&lt;xs \| sm \| md \| lg&gt; | - | Align elements to the center of the row |No|
+|evenly| Array&lt;xs \| sm \| md \| lg&gt; | - | Distribute items evenly |No|
+|end| Array&lt;xs \| sm \| md \| lg&gt; | - | Align elements to the end of the row |No|
+|top| Array&lt;xs \| sm \| md \| lg&gt; | - | Align elements to the top of the row |No|
+|middle| Array&lt;xs \| sm \| md \| lg&gt; | - | Align elements to the middle of the row |No|
+|bottom| Array&lt;xs \| sm \| md \| lg&gt; | - | Align elements to the bottom of the row |No|
+|around| Array&lt;xs \| sm \| md \| lg&gt; | - | Distribute the contents around of a row or column |No|
+|between| Array&lt;xs \| sm \| md \| lg&gt; | - | Distribute the contents between of a row or column |No|
+|reverse| Array&lt;xs \| sm \| md \| lg&gt; | - | Reverse elements distribuition |No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Col Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|first| Array&lt;xs \| sm \| md \| lg&gt; | - | order col at first |No|
+|last| Array&lt;xs \| sm \| md \| lg&gt; | - | order col at last |No|
+|xs| string(1...12) | - | xs breaking points |No|
+|sm| string(1...12) | - | sm breaking points |No|
+|md| string(1...12) | - | md breaking points |No|
+|lg| string(1...12) | - | lg breaking points |No|
+|offsetXs| string(1...12) | - | offset of col im xs screens |No|
+|offsetSm| string(1...12) | - | offset of col im sm screens |No|
+|offsetMd| string(1...12) | - | offset of col im Md screens |No|
+|offsetLg| string(1...12) | - | offset of col im Lg screens |No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Container Properties
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|fluid| boolean | - | set container to fluid |No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+

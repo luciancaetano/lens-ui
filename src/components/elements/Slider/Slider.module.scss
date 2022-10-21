@@ -1,0 +1,40 @@
+@import '../../../styles/lib';
+
+.slider {
+  @include lens-ui-typography;
+
+  @each $intent in $intent-type {
+    &--intent-#{$intent} {
+      div[class*='rc-slider-rail'] {
+        background-color: lens-var(slider, track-bg, #{$intent});
+      }
+
+      div[class*='rc-slider-track'] {
+        background-color: lens-var(slider, track-color, #{$intent});
+      }
+
+      div[class*='rc-slider-handle'] {
+        border-color: lens-var(slider, track-color, #{$intent});
+        background-color: lens-var(slider, track-color, #{$intent});
+        opacity: 1;
+      }
+
+      div[class*='rc-slider-handle-dragging'] {
+        border-color: lens-var(slider, track-color, #{$intent}) !important;
+        background-color: lens-var(slider, track-color, #{$intent}) !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+      }
+
+      span[class*='rc-slider-dot'] {
+        border-color: lens-var(slider, slider-dot-border, #{$intent});
+        background-color: lens-var(slider, slider-dot-bg, #{$intent});
+      }
+
+      span[class*='rc-slider-dot-active'] {
+        border-color: lens-var(slider, slider-dot-border, #{$intent}--active);
+        background-color: lens-var(slider, slider-dot-bg, #{$intent}--active);
+      }
+    }
+  }
+}

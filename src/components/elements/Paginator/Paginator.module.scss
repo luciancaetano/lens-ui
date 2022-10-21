@@ -1,0 +1,265 @@
+@import '../../../styles/lib';
+
+.paginator {
+  @include lens-ui-typography;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  border-radius: .25rem;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .2s ease-in-out;
+    user-select: none;
+    margin-right: .25rem;
+
+    &--disabled {
+      cursor: not-allowed;
+      opacity: .5;
+    }
+
+    &--size-small {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &--size-medium {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &--size-large {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      outline: none;
+      transition: background-color .2s ease-in-out;
+
+      &--disabled {
+        cursor: not-allowed;
+        opacity: .5;
+      }
+
+      @each $intent in $intent-type-with-default {
+        &--intent-solid-#{$intent} {
+          color: lens-var(paginator, #{$intent}-text, solid);
+          border: .063rem solid lens-var(paginator, #{$intent}-border, solid);
+          background-color: lens-var(paginator, #{$intent}-background-color, solid);
+
+          &:hover {
+            color: lens-var(paginator, #{$intent}-text, solid--hover);
+            border: .063rem solid lens-var(paginator, #{$intent}-border, solid--hover);
+            background-color: lens-var(paginator, #{$intent}-background-color, solid--hover);
+          }
+
+          &:active,
+          &--active {
+            color: lens-var(paginator, #{$intent}-text, solid--active);
+            border: .063rem solid lens-var(paginator, #{$intent}-border, solid--active);
+            background-color: lens-var(paginator, #{$intent}-background-color, solid--active);
+            font-weight: bold;
+
+            &:hover {
+              color: lens-var(paginator, #{$intent}-text, solid--active);
+              border: .063rem solid lens-var(paginator, #{$intent}-border, solid--active);
+              background-color: lens-var(paginator, #{$intent}-background-color, solid--active);
+            }
+          }
+
+          &:focus {
+            color: lens-var(paginator, #{$intent}-text, solid--focus);
+            border: .063rem solid lens-var(paginator, #{$intent}-border, solid--focus);
+            background-color: lens-var(paginator, #{$intent}-background-color, solid--focus);
+            font-weight: bold;
+            text-decoration: underline;
+          }
+        }
+
+        &--intent-outlined-#{$intent} {
+          color: lens-var(paginator, #{$intent}-text, outlined);
+          border: .063rem solid lens-var(paginator, #{$intent}-border, outlined);
+          background-color: lens-var(paginator, #{$intent}-background-color, outlined);
+
+          &:hover {
+            color: lens-var(paginator, #{$intent}-text, outlined--hover);
+            border: .063rem solid lens-var(paginator, #{$intent}-border, outlined--hover);
+            background-color: lens-var(paginator, #{$intent}-background-color, outlined--hover);
+          }
+
+          &:active,
+          &--active {
+            color: lens-var(paginator, #{$intent}-text, outlined--active);
+            border: .063rem solid lens-var(paginator, #{$intent}-border, outlined--active);
+            background-color: lens-var(paginator, #{$intent}-background-color, outlined--active);
+            font-weight: bold;
+
+            &:hover {
+              color: lens-var(paginator, #{$intent}-text, outlined--active);
+              border: .063rem solid lens-var(paginator, #{$intent}-border, outlined--active);
+              background-color: lens-var(paginator, #{$intent}-background-color, outlined--active);
+            }
+          }
+
+          &:focus {
+            color: lens-var(paginator, #{$intent}-text, outlined--focus);
+            border: .063rem solid lens-var(paginator, #{$intent}-border, outlined--focus);
+            background-color: lens-var(paginator, #{$intent}-background-color, outlined--focus);
+            text-decoration: underline;
+            font-weight: bold;
+          }
+        }
+      }
+
+      &--size-small {
+        width: 2rem;
+        height: 2rem;
+        font-size: .8rem;
+      }
+
+      &--size-medium {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1rem;
+      }
+
+      &--size-large {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.2rem;
+      }
+
+      &__first {
+        margin-right: .5rem;
+      }
+
+      &__last {
+        margin-left: .5rem;
+      }
+
+      &__prev {
+        margin-right: .5rem;
+      }
+
+      &__next {
+        margin-left: .5rem;
+      }
+
+      &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        &--size-small {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        &--size-medium {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        &--size-large {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .2s ease-in-out;
+    user-select: none;
+    margin-right: .25rem;
+
+    &--size-small {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &--size-medium {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &--size-large {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background: transparent;
+      cursor: default;
+      outline: none;
+      transition: background-color .2s ease-in-out;
+
+      &--size-small {
+        width: 2rem;
+        height: 2rem;
+        font-size: .8rem;
+      }
+
+      &--size-medium {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1rem;
+      }
+
+      &--size-large {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.2rem;
+      }
+
+      @each $intent in $intent-type-with-default {
+        &--intent-solid-#{$intent} {
+          color: lens-var(paginator, #{$intent}-text, solid);
+          border: .063rem solid lens-var(paginator, #{$intent}-border, solid);
+          background-color: lens-var(paginator, #{$intent}-background-color, solid);
+        }
+
+        &--intent-outlined-#{$intent} {
+          color: lens-var(paginator, #{$intent}-text, outlined);
+          border: .063rem solid lens-var(paginator, #{$intent}-border, outlined);
+          background-color: lens-var(paginator, #{$intent}-background-color, outlined);
+        }
+      }
+    }
+  }
+}

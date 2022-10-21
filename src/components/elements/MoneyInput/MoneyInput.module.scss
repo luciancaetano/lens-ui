@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .money-input {
   @include lens-ui-typography;
@@ -17,21 +17,30 @@
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--lens-ui-typography-text-color);
-    background-color: #fff;
+    color: lens-var(input, text-color);
+    background-color: lens-var(input, background);
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid lens-var(input, border-color);
     appearance: none;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
+    @include input-size-mixin;
+
     &:focus {
       outline: 0;
-      border: var(--lens-ui-input-base-border--active);
+      border: lens-var(input, border, active);
     }
 
     &--error {
       border: 1px solid var(--lens-ui-intents-danger-border);
+    }
+
+    &:disabled {
+      background-color: lens-var(input, background, disabled);
+      color: lens-var(input, text-color, disabled);
+      border: lens-var(input, border, disabled);
+      cursor: not-allowed;
     }
   }
 }

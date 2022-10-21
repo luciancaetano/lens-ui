@@ -1,0 +1,10 @@
+@import '../../../../styles/lib';
+
+.modal-content {
+  @include lens-ui-typography;
+
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  overflow-y: auto;
+}

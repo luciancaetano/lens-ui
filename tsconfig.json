@@ -3,7 +3,7 @@
     "rootDir": "src",
     "declaration": true,
     "importHelpers": false,
-    "declarationDir": "build",
+    "declarationDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "module": "ES6",
     "target": "ESNext",
@@ -19,6 +19,7 @@
     "strict": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
+    "declarationMap": true,
     "types": [
       "@types/node", "jest", "@types/testing-library__jest-dom"
     ]

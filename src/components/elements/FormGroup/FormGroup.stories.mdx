@@ -1,9 +1,12 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import FormGroup from './FormGroup';
 import TextInput from '../TextInput/TextInput';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import CheckBox from '../CheckBox/CheckBox';
+import Switch from '../Switch/Switch';
+import Radio from '../Radio';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
-<Meta title="Components/FormGroup" component={FormGroup}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Entry/FormGroup" component={FormGroup}/>
 
 # FormGroup
 
@@ -61,4 +64,44 @@ The FormGroup component can be used handle a form control and offer additional f
     <FormGroup label="Name" helperText="Please enter your name" helperTextIntent="danger" inline required>
         <TextInput type="text" name="name" />
     </FormGroup>
+</Canvas>
+
+### With CheckBox
+
+<Canvas>
+    <FormGroup label="Name">
+        <CheckBox name="name" label="item1" />
+        <CheckBox name="name" label="item2" />
+        <CheckBox name="name" label="item3" />
+    </FormGroup>
+</Canvas>
+
+### With Switch
+
+<Canvas>
+    <FormGroup label="Name">
+        <Switch name="name" label="item1" />
+        <Switch name="name" label="item2" />
+        <Switch name="name" label="item3" />
+    </FormGroup>
+</Canvas>
+
+### With Radio
+
+<Canvas>
+    <FormGroup label="Name">
+        <Radio name="name" label="item1" value="1" />
+        <Radio name="name" label="item2" value="2" />
+        <Radio name="name" label="item3" value="3" />
+    </FormGroup>
+</Canvas>
+
+### Dark theme
+
+<Canvas className="dark">
+    <ThemeProvider theme="dark">
+        <FormGroup label="Name" helperText="Please enter your name" helperTextIntent="danger" required>
+            <TextInput type="text" name="name" />
+        </FormGroup>
+    </ThemeProvider>
 </Canvas>

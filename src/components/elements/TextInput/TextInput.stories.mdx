@@ -1,7 +1,8 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 import TextInput from './TextInput';
 
-<Meta title="Components/TextInput" component={TextInput}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Entry/TextInput" component={TextInput}/>
 
 # TextInput
 
@@ -10,6 +11,8 @@ The TextInput is a wrapper around the native input element that allows you to ma
 <Canvas>
   <TextInput
     defaultValue="Lorem ipsum dolor sit amet"
+    prefix="Prefix"
+    suffix="Suffix"
   />
 </Canvas>
 
@@ -30,6 +33,7 @@ The TextInput is a wrapper around the native input element that allows you to ma
 |name|string|undefined|The name of the input|No|
 |multiline|boolean|undefined|Whether the input is a textarea|No|
 |isError|boolean|undefined|Whether the input is in an error state|No|
+|size|small, medium, large|undefined|The size of the checkbox|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 ---
@@ -52,4 +56,33 @@ The TextInput is a wrapper around the native input element that allows you to ma
     type="search"
     defaultValue="Lorem ipsum dolor sit amet"
   />
+</Canvas>
+
+### Size variation
+
+<Canvas>
+  <TextInput
+    size="small"
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+  <TextInput
+    size="medium"
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+  <TextInput
+    size="large"
+    defaultValue="Lorem ipsum dolor sit amet"
+  />
+</Canvas>
+
+### Theme dark
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <TextInput
+      defaultValue="Lorem ipsum dolor sit amet"
+      prefix="Prefix"
+      suffix="Suffix"
+    />
+  </ThemeProvider>
 </Canvas>

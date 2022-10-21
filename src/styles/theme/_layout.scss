@@ -1,0 +1,7 @@
+@import '../lib';
+
+@mixin layout-theme {
+  @include lens-def(layout-sidebar, background-color, null, hsl(var(--lens-ui-hue-bg) 0% 100%));
+  @include lens-def(layout-sidebar, border-right-color, null, hsl(var(--lens-ui-hue-bg) 0% 87%));
+  @include lens-def(layout-sidebar, text-color, null, lens-var(typography, text-color));
+}

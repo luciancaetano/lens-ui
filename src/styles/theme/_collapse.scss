@@ -1,0 +1,9 @@
+@import '../lib';
+
+@mixin collapse-theme {
+  @include lens-def(collapse, text-color, null, lens-def(typography, text-color));
+  @include lens-def(collapse, background-color, null, #fafafa);
+  @include lens-def(collapse, border-color, null, #d9d9d9);
+  @include lens-def(collapse, content-background-color, null, hsl(var(--lens-ui-hue-bg) 0% 100%));
+  @include lens-def(collapse, content-text-color, null, lens-def(typography, text-color));
+}

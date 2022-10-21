@@ -1,7 +1,7 @@
 import React from 'react';
 import { IToastContextType } from './ToastProvider.types';
 
-const AlertContext = React.createContext<IToastContextType>({
+const ToastContext = React.createContext<IToastContextType>({
   toasts: [],
   close: () => {},
   closeAll: () => {},
@@ -9,4 +9,4 @@ const AlertContext = React.createContext<IToastContextType>({
   placement: 'bottom-right',
 });
 
-export default AlertContext;
+export default ToastContext;

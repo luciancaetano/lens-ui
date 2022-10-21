@@ -3,12 +3,15 @@ import React, { useCallback, useMemo, useState } from 'react';
 import RMDatePicker, { DateObject, Calendar } from 'react-multi-date-picker';
 import get from 'lodash/get';
 import DatePanel from 'react-multi-date-picker/plugins/date_panel';
+import DatePickerHeader from 'react-multi-date-picker/plugins/date_picker_header';
 import styles from './DatePicker.module.scss';
 import { IDatePickerPropsType, DatePickerType } from './DatePicker.types';
 import { getPortalContainer } from '../../../utils';
 import 'react-multi-date-picker/styles/layouts/mobile.css';
+import 'react-multi-date-picker/styles/backgrounds/bg-dark.css';
 import TextInput from '../TextInput/TextInput';
 import MaskedInput from '../MaskedInput/MaskedInput';
+import { useMediaQuery, useTheme } from '../../../hooks';
 
 function init(value: any, defaultValue: any, type: DatePickerType) {
   if (defaultValue === undefined) {
@@ -38,11 +41,13 @@ function init(value: any, defaultValue: any, type: DatePickerType) {
 }
 
 const DatePicker: React.FC<IDatePickerPropsType> = ({
-  className, children, disabled, isError, onPickerClose, onPickerOpen, readOnly, name,
-  onChange, required, testingID, value, type, defaultValue, isMobile, locale, ...props
+  className, children, disabled, isError, onPickerClose, onPickerOpen, readOnly, size, name,
+  onChange, required, testingID, value, type, defaultValue, locale, dark, ...props
 }) => {
   const renderType = useMemo(() => type || 'date', [type]);
   const [date, setDate] = useState(init(defaultValue, value, renderType));
+  const [theme, { themeName, defaultSize }] = useTheme();
+  const isMobile = useMediaQuery('only screen and (max-width:768px)');
 
   const format = useMemo(() => get(props, 'displayFormat', undefined), [props]);
   const hideWeekDays = useMemo(() => get(props, 'hideWeekDays', false), [props]);
@@ -77,6 +82,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
             handleValueChange(e);
           }}
+          size={size || defaultSize}
         />
       );
     }
@@ -93,6 +99,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
             handleValueChange(e);
           }}
+          size={size || defaultSize}
         />
       );
     }
@@ -108,6 +115,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
             handleValueChange(e);
           }}
+          size={size || defaultSize}
         />
       );
     }
@@ -119,9 +127,10 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
         onChange={(v: string, e: React.ChangeEvent<HTMLElement>) => {
           handleValueChange(e);
         }}
+        size={size || defaultSize}
       />
     );
-  }, [children, format, props, renderType]);
+  }, [children, defaultSize, format, props, renderType, size]);
 
   const Component: any = useMemo(() => get(props, 'inline', false) ? Calendar : RMDatePicker, [props]);
 
@@ -130,12 +139,12 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {...props}
       data-testid={testingID}
       data-lens-element="date-picker"
-      className={clsx(styles.container, isError && styles.error, className)}
+      className={clsx(styles.container, isError && styles.error, theme, className)}
     >
       {(renderType === 'date') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -156,7 +165,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'range') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -180,7 +189,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'month') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile }, styles.monthPicker)}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark }, styles.monthPicker)}
           containerClassName={styles.monthPicker}
           value={date}
           onChange={handleDateChange}
@@ -201,7 +210,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'year') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -220,7 +229,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'multiple') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}
@@ -235,7 +244,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
           multiple
           numberOfMonths={get(props, 'numberOfMonths', 2)}
           render={handleRender}
-          plugins={[<DatePanel />]}
+          plugins={[<DatePanel />, get(props, 'header') && <DatePickerHeader />].filter(Boolean)}
           hideWeekDays={hideWeekDays}
           displayWeekNumbers={displayWeekNumbers}
           minDate={get(props, 'minDate', undefined)}
@@ -245,7 +254,7 @@ const DatePicker: React.FC<IDatePickerPropsType> = ({
       {(renderType === 'week') && (
         <Component
           locale={locale}
-          className={clsx({ 'rmdp-mobile': isMobile })}
+          className={clsx({ 'rmdp-mobile': isMobile, 'bg-dark': themeName === 'dark' || dark })}
           value={date}
           onChange={handleDateChange}
           required={required}

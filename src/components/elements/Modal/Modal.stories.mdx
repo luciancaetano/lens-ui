@@ -1,30 +1,43 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import Modal from './Modal';
-import ModalContent from '../ModalContent/ModalContent';
-import ModalFooter from '../ModalFooter/ModalFooter';
-import ModalHeader from '../ModalHeader/ModalHeader';
+import { useState } from 'react';
+import Modal from '.';
 import Button from '../Button/Button';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
-<Meta title="Components/Modal" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Display/Modal" component={Modal}/>
 
 # Modal
 
 A Modal is a container that can be used to display content in a modal window.
 
+export const ToggleButton = ({children}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleModal = () => setIsOpen(!isOpen);
+  const onClose = () => setIsOpen(false);
+  return (
+    <ThemeProvider>
+      <Button onClick={toggleModal}>Toggle Modal</Button>
+      {children(isOpen, onClose)}
+    </ThemeProvider>
+  );
+};
+
 __in this sample we replace some css variables to handle preview__
 <Canvas>
-  <div style={{position: 'relative', height: 500, width: '100%'}}>
-    <Modal backdropProps={{style:{'--lens-ui-modal-backgrop-position': 'absolute', '--lens-ui-modal-backgrop-width': '100%', '--lens-ui-modal-backgrop-height': '100%'}}}>
-      <ModalHeader>Title</ModalHeader>
-      <ModalContent>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
-      </ModalContent>
-      <ModalFooter>
-        <Button intent="danger">Cancel</Button>
-        <Button>Save</Button>
-      </ModalFooter>
-    </Modal>
-  </div>
+     <ToggleButton>
+      {(isOpen, onClose) => (
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <Modal.Header>Title</Modal.Header>
+          <Modal.Content>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+          </Modal.Content>
+          <Modal.Footer>
+            <Button intent="danger" onClick={onClose}>Cancel</Button>
+            <Button onClick={onClose}>Save</Button>
+          </Modal.Footer>
+        </Modal>
+      )}
+    </ToggleButton>
 </Canvas>
 
 ## `<Modal/>` Properties
@@ -34,9 +47,11 @@ __in this sample we replace some css variables to handle preview__
 |Property|Type|Default Value|Description|Required|
 |---|---|---|---|---|
 |size|`normal`, `medium`, `fullscreen`|`normal`|Size of the modal|No|
-|onBackdropClick|`function(reason: 'backdrop')`|`undefined`|Callback when the backdrop is clicked|No|
+|onClose|`function(reason: 'close' \| 'escape' \| 'backdrop')`|`undefined`|Callback when the backdrop is clicked|No|
 |backdropProps|HTMLElementProps|`undefined`|Properties to pass to the backdrop|No|
 |hideBackdrop|`boolean`|`false`|Hide the backdrop|No|
+|isOpen|`boolean`|`false`|Show the modal|No|
+|portalTarget|`HTMLElement`|`document.body`|The element to render the modal in|No|
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 ### CSS Variables
@@ -47,7 +62,7 @@ __in this sample we replace some css variables to handle preview__
 |--lens-ui-modal-backgrop-width|Width of the backdrop|100vw|
 |--lens-ui-modal-backgrop-height|Height of the backdrop|100vh|
 
-## `<ModalHeader/>` Properties
+## `<Modal.Header/>` Properties
 - **Extends HTMLElement properties**
 - **refs are fowarded to the content element**
 
@@ -57,7 +72,7 @@ __in this sample we replace some css variables to handle preview__
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
 
-## `<ModalContent/>` Properties
+## `<Modal.Content/>` Properties
 - **Extends HTMLElement properties**
 - **refs are fowarded to the content element**
 
@@ -65,7 +80,7 @@ __in this sample we replace some css variables to handle preview__
 |---|---|---|---|---|
 |testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
-## `<ModalFooter/>` Properties
+## `<Modal.Footer/>` Properties
 - **Extends HTMLElement properties**
 - **refs are fowarded to the content element**
 
@@ -78,16 +93,40 @@ __in this sample we replace some css variables to handle preview__
 ### Hidden backdrop
 
 <Canvas>
-  <div style={{position: 'relative', height: 500, width: '100%'}}>
-    <Modal hideBackdrop backdropProps={{style:{'--lens-ui-modal-backgrop-position': 'absolute', '--lens-ui-modal-backgrop-width': '100%', '--lens-ui-modal-backgrop-height': '100%'}}}>
-      <ModalHeader>Title</ModalHeader>
-      <ModalContent>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
-      </ModalContent>
-      <ModalFooter>
-        <Button intent="danger">Cancel</Button>
-        <Button>Save</Button>
-      </ModalFooter>
-    </Modal>
-  </div>
+  <ToggleButton>
+    {(isOpen, onClose) => (
+      <Modal hideBackdrop isOpen={isOpen} onClose={onClose}>
+        <Modal.Header>Title</Modal.Header>
+        <Modal.Content>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+        </Modal.Content>
+        <Modal.Footer>
+          <Button intent="danger" onClick={onClose}>Cancel</Button>
+          <Button onClick={onClose}>Save</Button>
+        </Modal.Footer>
+      </Modal>
+    )}
+  </ToggleButton>
+</Canvas>
+
+
+### Dark theme
+
+<Canvas className="dark">
+    <ToggleButton>
+      {(isOpen, onClose) => (
+        <ThemeProvider theme="dark">
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal.Header>Title</Modal.Header>
+            <Modal.Content>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+            </Modal.Content>
+            <Modal.Footer>
+              <Button intent="danger" onClick={onClose}>Cancel</Button>
+              <Button onClick={onClose}>Save</Button>
+            </Modal.Footer>
+          </Modal>
+        </ThemeProvider>
+      )}
+    </ToggleButton>
 </Canvas>

@@ -1,9 +1,9 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Callout from './Callout';
 import Icon from '../Icon/Icon';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 
-<Meta title="Components/Callout" component={Callout}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Display/Callout" component={Callout}/>
 
 # Callout
 
@@ -45,4 +45,60 @@ Callouts contains call to actions in a single subject.
     Etiam ullamcorper nibh ac neque auctor, id sollicitudin velit hendrerit. Curabitur et tortor vel tellus imperdiet rutrum ac tempus est.
     Proin ac sagittis enim.
   </Callout>
+</Canvas>
+
+### Dark Theme
+
+<Canvas className="dark">
+  <ThemeProvider theme="dark">
+    <Callout
+      icon={<Icon name="BsHouse" size="5rem"/>}
+      title="Hello world"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas massa mauris, eget mattis lorem fermentum a. Morbi at pretium ante.
+      Aenean consequat justo vitae ullamcorper feugiat. Etiam nec tortor nec felis vehicula placerat id eu nisl. Aliquam erat volutpat.
+      Etiam ullamcorper nibh ac neque auctor, id sollicitudin velit hendrerit. Curabitur et tortor vel tellus imperdiet rutrum ac tempus est.
+      Proin ac sagittis enim.
+    </Callout>
+    <Callout
+      icon={<Icon name="BsHouse" size="5rem"/>}
+      title="Hello world"
+      intent="success"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas massa mauris, eget mattis lorem fermentum a. Morbi at pretium ante.
+      Aenean consequat justo vitae ullamcorper feugiat. Etiam nec tortor nec felis vehicula placerat id eu nisl. Aliquam erat volutpat.
+      Etiam ullamcorper nibh ac neque auctor, id sollicitudin velit hendrerit. Curabitur et tortor vel tellus imperdiet rutrum ac tempus est.
+      Proin ac sagittis enim.
+    </Callout>
+    <Callout
+      icon={<Icon name="BsHouse" size="5rem"/>}
+      title="Hello world"
+      intent="info"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas massa mauris, eget mattis lorem fermentum a. Morbi at pretium ante.
+      Aenean consequat justo vitae ullamcorper feugiat. Etiam nec tortor nec felis vehicula placerat id eu nisl. Aliquam erat volutpat.
+      Etiam ullamcorper nibh ac neque auctor, id sollicitudin velit hendrerit. Curabitur et tortor vel tellus imperdiet rutrum ac tempus est.
+      Proin ac sagittis enim.
+    </Callout>
+    <Callout
+      icon={<Icon name="BsHouse" size="5rem"/>}
+      title="Hello world"
+      intent="danger"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas massa mauris, eget mattis lorem fermentum a. Morbi at pretium ante.
+      Aenean consequat justo vitae ullamcorper feugiat. Etiam nec tortor nec felis vehicula placerat id eu nisl. Aliquam erat volutpat.
+      Etiam ullamcorper nibh ac neque auctor, id sollicitudin velit hendrerit. Curabitur et tortor vel tellus imperdiet rutrum ac tempus est.
+      Proin ac sagittis enim.
+    </Callout>
+    <Callout
+      icon={<Icon name="BsHouse" size="5rem"/>}
+      title="Hello world"
+      intent="warning"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas massa mauris, eget mattis lorem fermentum a. Morbi at pretium ante.
+      Aenean consequat justo vitae ullamcorper feugiat. Etiam nec tortor nec felis vehicula placerat id eu nisl. Aliquam erat volutpat.
+      Etiam ullamcorper nibh ac neque auctor, id sollicitudin velit hendrerit. Curabitur et tortor vel tellus imperdiet rutrum ac tempus est.
+      Proin ac sagittis enim.
+    </Callout>
+  </ThemeProvider>
 </Canvas>

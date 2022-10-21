@@ -1,0 +1,6 @@
+@import '../lib';
+
+@mixin callout-theme {
+  @include lens-def(callout, text-color, null, lens-var(typography, text-color));
+  @include lens-def(callout, text-color, faded, lens-var(typography, text-color, faded));
+}

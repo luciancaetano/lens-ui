@@ -1,0 +1,68 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import Collapse from './index';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
+
+<Meta title="Navigation/Collapse" component={Collapse} />
+
+# Collapse
+
+This is a small emblem commonly used to represent tags.
+
+<Canvas>
+    <Collapse>
+        <Collapse.Panel header="This is panel header 1" id="1">
+            <p>This is panel content 1</p>
+        </Collapse.Panel>
+        <Collapse.Panel header="This is panel header 2" id="2">
+            <p>This is panel content 2</p>
+        </Collapse.Panel>
+        <Collapse.Panel header="This is panel header 3" id="3">
+            <p>This is panel content 3</p>
+        </Collapse.Panel>
+        <Collapse.Panel header="This is panel header 4" id="4">
+            <p>This is panel content 4</p>
+        </Collapse.Panel>
+    </Collapse>
+</Canvas>
+
+### Collapse props
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|children| React.ReactNode | - | The children of the component. |No|
+|activeId| string[] | - | The id of the panel that is active. |No|
+|defaultActiveId| string[] | - | The id of the panel that is active by default. |No|
+|onChange| (id: string[]) => void | - | The callback that is called when the active panel is changed. |No|
+|expandIcon| (isActive: boolean) => React.ReactNode | - | The icon to use for the expand icon. |No|
+|singleExpand| boolean | false | If true, only one panel can be expanded at a time. |No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Collapse.Panel props
+
+|Property|Type|Default Value|Description|Required|
+|---|---|---|---|---|
+|header| React.ReactNode | - | The header of the panel. |Yes|
+|id| string | - | The id of the panel. |Yes|
+|children| React.ReactNode | - | The children of the panel. |No|
+|testingID| string | - | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
+
+### Dark Theme
+
+<Canvas className="dark">
+    <ThemeProvider theme="dark">
+        <Collapse>
+            <Collapse.Panel header="This is panel header 1" id="1">
+                <p>This is panel content 1</p>
+            </Collapse.Panel>
+            <Collapse.Panel header="This is panel header 2" id="2">
+                <p>This is panel content 2</p>
+            </Collapse.Panel>
+            <Collapse.Panel header="This is panel header 3" id="3">
+                <p>This is panel content 3</p>
+            </Collapse.Panel>
+            <Collapse.Panel header="This is panel header 4" id="4">
+                <p>This is panel content 4</p>
+            </Collapse.Panel>
+        </Collapse>
+    </ThemeProvider>
+</Canvas>

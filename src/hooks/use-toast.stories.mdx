@@ -1,16 +1,44 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import Modal from '../components/elements/Modal/Modal';
-import ModalHeader from '../components/elements/ModalHeader/ModalHeader';
-import ModalContent from '../components/elements/ModalContent/ModalContent';
-import ModalFooter from '../components/elements/ModalFooter/ModalFooter';
-import Button from '../components/elements/Button/Button';
+import LinkTo from '@storybook/addon-links/react';
 
-<Meta title="Hooks/useToast/Introduction" component={Modal}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Feedback/Toast" />
 
 # useToast
 
+<br/>
+<Story id="examples-toast--toast" />
+
+
 The hook `useToast` is used to display a toast message in user interface.
 
+#### Attention: You need context of &lt;ToastProvider&gt;
+
+
+
+```tsx
+
+import {ToastProvider} from 'lens-ui';
+
+const { addToast } = useToast();
+
+return (
+    <ToastProvider>
+        <Button
+            intent="success"
+            onClick={async () => {
+                addToast({
+                    content: 'lorem impsum',
+                    icon: <Icon name="BsExclamationTriangleFill" />,
+                    intent: 'success',
+                    dismiss: 3000,
+                });
+            }}
+        >
+            Show Toast
+        </Button>
+    <ToastProvider>
+);
+```
 
 ## Hook response (Object)
 **useToast** returns an object with the following properties:

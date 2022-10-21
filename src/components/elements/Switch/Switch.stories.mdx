@@ -1,7 +1,8 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import ThemeProvider from '../ThemeProvider/ThemeProvider';
 import Switch from './Switch';
 
-<Meta title="Components/Switch" component={Switch}  decorators={[(Story) => <LensProvider>{Story()}</LensProvider>]}/>
+<Meta title="Data Entry/Switch" component={Switch}/>
 
 # Switch
 
@@ -24,7 +25,22 @@ The Switch component toggle the state of a single setting on or off.
 |disabled|boolean|undefined|Whether the switch is disabled|No|
 |autoFocus|boolean|undefined|Whether the switch should be focused on mount|No|
 |name|string|undefined|The name of the switch|No|
+|size|small, medium, large|undefined|The size of the checkbox|No|
 |inputProps|object|undefined|Additional props to pass to the input element [Html Input Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes)|No|
 |testingID| string | undefined | The id used for testing purposes.<br/>`<div data-testid="my-test-id"/>` |No|
 
-### Playground
+### Size variations
+
+<Canvas>
+   <Switch label="Small" size="small"/>
+   <Switch label="Medium" size="medium"/>
+   <Switch label="Large" size="large"/>
+</Canvas>
+
+### Dark theme
+
+<Canvas className="dark">
+   <ThemeProvider theme="dark">
+      <Switch label="It's all ok, 🔥"/>
+   </ThemeProvider>
+</Canvas>

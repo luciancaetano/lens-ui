@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+
 import Card from '.';
 
 describe('<Card/>', () => {
@@ -23,31 +23,29 @@ describe('<Card/>', () => {
 
     const result = render(
       (
-        <LensProvider>
-          <Card.Card>
-            <Card.Body>
-              <Card.Title testingID={titleTestingId}>
-                {titleMockedText}
-              </Card.Title>
+        <Card>
+          <Card.Body>
+            <Card.Title testingID={titleTestingId}>
+              {titleMockedText}
+            </Card.Title>
 
-              <Card.Title subtitle>
-                {titleMockedText}
-              </Card.Title>
-            </Card.Body>
-            <Card.Image roudTop src={mockedCardImg} testingID={imgTextingId} />
-            <Card.Body>
-              <Card.Text testingID={textTestingId}>
-                {mockedCardText}
-              </Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Card.Link href={mockedCardLink.url} target="_blank" testingID={mockedCardLink.testingId}>
-                {mockedCardLink.text}
-              </Card.Link>
-            </Card.Body>
-            <Card.Image roudBottom src={mockedCardImg} />
-          </Card.Card>
-        </LensProvider>
+            <Card.Title subtitle>
+              {titleMockedText}
+            </Card.Title>
+          </Card.Body>
+          <Card.Image roudTop src={mockedCardImg} testingID={imgTextingId} />
+          <Card.Body>
+            <Card.Text testingID={textTestingId}>
+              {mockedCardText}
+            </Card.Text>
+          </Card.Body>
+          <Card.Body>
+            <Card.Link href={mockedCardLink.url} target="_blank" testingID={mockedCardLink.testingId}>
+              {mockedCardLink.text}
+            </Card.Link>
+          </Card.Body>
+          <Card.Image roudBottom src={mockedCardImg} />
+        </Card>
       ),
     );
 
@@ -63,26 +61,26 @@ describe('<Card/>', () => {
   it('should test card element intents', () => {
     const result = render(
       (
-        <LensProvider>
-          <Card.Card intent="primary" testingID="primary">
+        <>
+          <Card intent="primary" testingID="primary">
             content here
-          </Card.Card>
-          <Card.Card intent="secondary" testingID="secondary">
+          </Card>
+          <Card intent="secondary" testingID="secondary">
             content here
-          </Card.Card>
-          <Card.Card intent="success" testingID="success">
+          </Card>
+          <Card intent="success" testingID="success">
             content here
-          </Card.Card>
-          <Card.Card intent="info" testingID="info">
+          </Card>
+          <Card intent="info" testingID="info">
             content here
-          </Card.Card>
-          <Card.Card intent="warning" testingID="warning">
+          </Card>
+          <Card intent="warning" testingID="warning">
             content here
-          </Card.Card>
-          <Card.Card intent="danger" testingID="danger">
+          </Card>
+          <Card intent="danger" testingID="danger">
             content here
-          </Card.Card>
-        </LensProvider>
+          </Card>
+        </>
       ),
     );
 

@@ -1,0 +1,97 @@
+$intent-type: ('secondary' , 'primary' , 'success' , 'info' , 'warning' , 'danger');
+$intent-type-with-default: ('default', 'secondary' , 'primary' , 'success' , 'info' , 'warning' , 'danger');
+
+@mixin lens-ui-typography-no-color {
+  font-family: lens-var(typography, font-family);
+  line-height: 1rem;
+  font-style: normal;
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin lens-ui-typography-base {
+  @include lens-ui-typography-no-color;
+
+  color: lens-var(typography, text-color);
+}
+
+@mixin lens-ui-typography {
+  @include lens-ui-typography-base;
+
+  font-size: lens-var(typography, font-size);
+}
+
+@function lens-var($component, $var, $modifier: null) {
+  @if $modifier {
+    @return var(--lens-ui--elements-#{$component}__#{$var}--#{$modifier});
+  }
+
+  @return var(--lens-ui--elements-#{$component}__#{$var});
+}
+
+@mixin lens-def($component, $var, $modifier: null, $value) {
+  @if $modifier {
+    --lens-ui--elements-#{$component}__#{$var}--#{$modifier}: #{$value};
+  } @else {
+    --lens-ui--elements-#{$component}__#{$var}: #{$value};
+  }
+}
+
+@mixin replace-me-var-copy($var, $value) {
+  #{$var}: #{$value};
+}
+
+.lens-ui-font-definition {
+  font-family: lens-var(typography, font-family);
+  font-size: lens-var(typography, font-size);
+  font-style: normal;
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$layers: (
+  'default': 1,
+  'Modal': 1050,
+  'Alerts': 1060,
+  'Toast': 1070,
+  'Select': 1080,
+  'Drawer': 1090,
+  'OverlaySurfaces': 1100,
+);
+
+@mixin input-size-mixin {
+  &--size-small {
+    padding: lens-var(input_size, padding, small);
+    font-size: lens-var(input_size, font-size, small);
+    line-height: lens-var(input_size, line-height, small);
+    border-radius: lens-var(input_size, border-radius, small);
+  }
+
+  &--size-medium {
+    padding: lens-var(input_size, padding, medium);
+    font-size: lens-var(input_size, font-size, medium);
+    line-height: lens-var(input_size, line-height, medium);
+    border-radius: lens-var(input_size, border-radius, medium);
+  }
+
+  &--size-large {
+    padding: lens-var(input_size, padding, large);
+    font-size: lens-var(input_size, font-size, large);
+    line-height: lens-var(input_size, line-height, large);
+    border-radius: lens-var(input_size, border-radius, large);
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITestableProps } from '../../../types';
+import { ITestableProps, SizeType } from '../../../types';
 
 interface IBaseTextInputProps extends ITestableProps, Omit<React.HtmlHTMLAttributes<HTMLElement>, 'onChange'> {
   name?: string;
@@ -14,6 +14,7 @@ interface IBaseTextInputProps extends ITestableProps, Omit<React.HtmlHTMLAttribu
   maxLength?: number;
   required?: boolean;
   type?: 'text' | 'search' | string;
+  size?: SizeType;
 }
 
 export type TextInputPropsType = {

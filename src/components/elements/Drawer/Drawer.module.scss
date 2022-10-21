@@ -1,0 +1,216 @@
+@import '../../../styles/lib';
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: calc(map-get($layers, 'Drawer') - 1);
+  background-color: lens-var(drawer, backdrop-color);
+
+  &--hidden {
+    background-color: transparent;
+    pointer-events: none;
+  }
+}
+
+.container {
+  @include lens-ui-typography;
+
+  position: fixed;
+  z-index: map-get($layers, 'Drawer');
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  background-color: lens-var(drawer, background-color);
+  border: 1px solid lens-var(drawer, border-color);
+  box-shadow: lens-var(drawer, box-shadow);
+  outline: 0;
+  pointer-events: auto;
+  transform: translateX(100%);
+
+  &--placement-left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+
+    &--size-small {
+      width: 22rem;
+      min-width: 22rem;
+      max-width: 30vw;
+      max-height: 100vh;
+      min-height: 100vh;
+    }
+
+    &--size-medium {
+      min-width: 50vw;
+      max-width: 50vw;
+      max-height: 100vh;
+      min-height: 100vh;
+    }
+
+    &--size-fullcreen {
+      min-width: 70vw;
+      max-width: 70vw;
+      max-height: 100vh;
+      min-height: 100vh;
+    }
+  }
+
+  &--placement-right {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+
+    &--size-small {
+      width: 22rem;
+      min-width: 22rem;
+      max-width: 30vw;
+      max-height: 100vh;
+      min-height: 100vh;
+    }
+
+    &--size-medium {
+      min-width: 50vw;
+      max-width: 50vw;
+      max-height: 100vh;
+      min-height: 100vh;
+    }
+
+    &--size-fullcreen {
+      min-width: 70vw;
+      max-width: 70vw;
+      max-height: 100vh;
+      min-height: 100vh;
+    }
+  }
+
+  &--placement-top {
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+
+    &--size-small {
+      height: 22rem;
+      min-height: 22rem;
+      max-height: 30vh;
+      max-width: 100vw;
+      min-width: 100vw;
+    }
+
+    &--size-medium {
+      min-height: 50vh;
+      max-height: 50vh;
+      max-width: 100vw;
+      min-width: 100vw;
+    }
+
+    &--size-fullcreen {
+      min-height: 70vh;
+      max-height: 70vh;
+      max-width: 100vw;
+      min-width: 100vw;
+    }
+  }
+
+  &--placement-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+
+    &--size-small {
+      height: 22rem;
+      min-height: 22rem;
+      max-height: 30vh;
+      max-width: 100vw;
+      min-width: 100vw;
+    }
+
+    &--size-medium {
+      min-height: 50vh;
+      max-height: 50vh;
+      max-width: 100vw;
+      min-width: 100vw;
+    }
+
+    &--size-fullcreen {
+      min-height: 70vh;
+      max-height: 70vh;
+      max-width: 100vw;
+      min-width: 100vw;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid lens-var(drawer, border-color);
+    background-color: lens-var(drawer, header-background-color);
+
+    &--placement-left {
+      flex-direction: row-reverse;
+    }
+
+    &__title {
+      @include lens-ui-typography;
+
+      display: flex;
+      flex: 1;
+      font-size: lens-var(drawer, header__font-size);
+      font-weight: 500;
+      line-height: 1.6;
+      color: lens-var(drawer, header-title-color);
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    &__close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color .3s ease-out;
+      color: lens-var(drawer, header-close-color);
+
+      &:hover {
+        background-color: lens-var(drawer, header-close-background-color, hover);
+        color: lens-var(drawer, header-close-color, hover);
+      }
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:active {
+        background-color: lens-var(drawer, header-close-background-color, active);
+      }
+    }
+  }
+
+  &__body {
+    @include lens-ui-typography;
+
+    flex: 1;
+    overflow: auto;
+    padding: lens-var(drawer, body-padding);
+  }
+}

@@ -1,0 +1,7 @@
+@mixin checkbox-theme {
+  @include lens-def(checkbox, unchecked-bg, null, #fff);
+  @include lens-def(checkbox, checked-bg, null, var(--lens-ui-intents-primary-light));
+  @include lens-def(checkbox, checked-border, null, var(--lens-ui-intents-primary-dark));
+  @include lens-def(checkbox, focused-box-shadow, null, lens-var(input, box-shadow, active));
+  @include lens-def(checkbox, focused-border, null, var(--lens-ui-intents-primary-lighten));
+}

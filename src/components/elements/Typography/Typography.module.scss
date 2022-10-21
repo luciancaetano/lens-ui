@@ -1,120 +1,62 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
+@import '../../../styles/typography';
 
 .root {
-  font-family: var(--lens-ui-typography-font-family);
-  font-style: normal;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-bottom: var(--typography-gutter-bottom);
-  margin-top: 0;
-  color: var(--typography-intent-color, var(--lens-ui-typography-text-color));
-  text-align: var(--typography-align);
-
-  svg,
-  [data-lens-element='toast__icon'] {
-    fill: var(--lens-ui-typography-text-color);
-    color: var(--lens-ui-typography-text-color);
-  }
+  @include typography-component-base;
 }
 
 .h1 {
-  font-weight: 300;
-  font-size: 6rem;
-  line-height: 1.167;
-  letter-spacing: -.01562em;
+  @include h1;
 }
 
 .h2 {
-  font-weight: 300;
-  font-size: 3.75rem;
-  line-height: 1.2;
-  letter-spacing: -.00833em;
+  @include h2;
 }
 
 .h3 {
-  font-weight: 400;
-  font-size: 3rem;
-  line-height: 1.167;
-  letter-spacing: 0;
+  @include h3;
 }
 
 .h4 {
-  font-weight: 400;
-  font-size: 2.125rem;
-  line-height: 1.235;
-  letter-spacing: .00735em;
+  @include h4;
 }
 
 .h5 {
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.334;
-  letter-spacing: 0;
+  @include h5;
 }
 
 .h6 {
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  letter-spacing: .0075em;
+  @include h6;
 }
 
 .subtitle1 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.75;
-  letter-spacing: .00938em;
+  @include subtitle1;
 }
 
 .subtitle2 {
-  font-weight: 500;
-  font-size: .875rem;
-  line-height: 1.57;
-  letter-spacing: .00714em;
+  @include subtitle2;
 }
 
 .body1 {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: .00938em;
+  @include body1;
 }
 
 .body2 {
-  font-weight: 400;
-  font-size: .875rem;
-  line-height: 1.43;
-  letter-spacing: .01071em;
+  @include body2;
 }
 
 .caption {
-  font-weight: 400;
-  font-size: .75rem;
-  line-height: 1.66;
-  letter-spacing: .03333em;
-  margin-top: .35em;
-  display: block;
+  @include caption;
 }
 
 .overline {
-  font-weight: 400;
-  font-size: .75rem;
-  line-height: 2.66;
-  letter-spacing: .08333em;
-  text-transform: uppercase;
-  display: block;
+  @include overline;
 }
 
 .button {
-  font-weight: 400;
-  line-height: 1.25rem;
-  color: #495057;
-  text-align: center;
-  vertical-align: middle;
-  font-size: .875rem;
+  @include button;
 }
 
 .no-wrap {
-  white-space: nowrap;
+  @include no-wrap;
 }

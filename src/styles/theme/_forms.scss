@@ -1,0 +1,85 @@
+@import '../lib';
+
+@mixin forms-theme {
+  @include lens-def(input, border-color, null, hsl(210deg 14% 83%));
+  @include lens-def(input, border, null, 1px solid lens-var(input, border-color));
+  @include lens-def(input, border, active-color, hsl(210deg 97% 65%));
+  @include lens-def(input, border, active, 1px solid lens-var(input, border, active-color));
+  @include lens-def(input, bg, active, hsl(210deg 97% 65%));
+  @include lens-def(input, box-shadow, active, 0 0 0 .15rem rgb(82 92 229 / 25%));
+  @include lens-def(input, text-color, null, hsl(var(--lens-ui-hue-bg-text) 9% 31%));
+  @include lens-def(input, label-color, null, lens-var(typography, text-color, faded));
+  @include lens-def(input, background, null, #fff);
+  @include lens-def(input, prefix-text-color, null, #7c7c7c);
+  @include lens-def(input, label-color-disabled, null, #7c7c7c);
+
+  // ** Input sizing heights must be 28px 38px 50px
+  @include lens-def(input_size, padding, small, .25rem .5rem);
+  @include lens-def(input_size, font-size, small, .75rem);
+  @include lens-def(input_size, line-height, small, 1.5);
+  @include lens-def(input_size, border-radius, small, .2rem);
+  @include lens-def(input_size, padding, medium, .47rem .75rem);
+  @include lens-def(input_size, font-size, medium, .875rem);
+  @include lens-def(input_size, line-height, medium, 1.5);
+  @include lens-def(input_size, border-radius, medium, .25rem);
+  @include lens-def(input_size, padding, large, .75rem 1rem);
+  @include lens-def(input_size, font-size, large, 1rem);
+  @include lens-def(input_size, line-height, large, 1.5);
+  @include lens-def(input_size, border-radius, large, .3rem);
+
+  // ** Disabled
+  @include lens-def(input, background, disabled, hsl(210deg 14% 93%));
+  @include lens-def(input, text-color, disabled, hsl(210deg 14% 83%));
+  @include lens-def(input, border, disabled, 1px solid hsl(210deg 14% 83%));
+}
+
+.lens-ui-input-text {
+  @include lens-ui-typography;
+
+  display: block;
+  width: 100%;
+  padding: .47rem .75rem;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: lens-var(input, text-color);
+  background-color: lens-var(input, background);
+  background-clip: padding-box;
+  border: lens-var(input, border);
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:focus {
+    outline: 0;
+    border-color: lens-var(input, border, active-color);
+  }
+
+  &.size-small {
+    padding: lens-var(input_size, padding, small);
+    font-size: lens-var(input_size, font-size, small);
+    line-height: lens-var(input_size, line-height, small);
+    border-radius: lens-var(input_size, border-radius, small);
+  }
+
+  &.size-medium {
+    padding: lens-var(input_size, padding, medium);
+    font-size: lens-var(input_size, font-size, medium);
+    line-height: lens-var(input_size, line-height, medium);
+    border-radius: lens-var(input_size, border-radius, medium);
+  }
+
+  &.size-large {
+    padding: lens-var(input_size, padding, large);
+    font-size: lens-var(input_size, font-size, large);
+    line-height: lens-var(input_size, line-height, large);
+    border-radius: lens-var(input_size, border-radius, large);
+  }
+
+  &:disabled {
+    background-color: lens-var(input, background, disabled);
+    color: lens-var(input, text-color, disabled);
+    border: lens-var(input, border, disabled);
+    cursor: not-allowed;
+  }
+}

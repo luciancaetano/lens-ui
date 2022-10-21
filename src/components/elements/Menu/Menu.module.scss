@@ -1,0 +1,52 @@
+@import '../../../styles/lib';
+
+.menu-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: lens-var(card, backgrounds-default-background-color);
+  color: lens-var(card, typography-default-text-color);
+  background-clip: border-box;
+  border: 0 solid lens-var(card, backgrounds-default-border-color);
+  border-radius: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &--shadow {
+    box-shadow: var(--lens-ui-overlay-box-shadow);
+  }
+
+  [data-lens-element='menu__item'] {
+    --lens-ui-list--item--cursor: pointer;
+  }
+}
+
+.active-menu-item {
+  font-weight: bold;
+  border-right: .3rem solid var(--lens-ui-intents-primary);
+  padding-right: .45rem;
+}
+
+.menu-item {
+  font-size: .875rem;
+  padding: .7rem .75rem;
+  cursor: pointer;
+  user-select: none;
+
+  &--divider {
+    padding: .1rem;
+    cursor: default;
+  }
+}
+
+.menu-heading {
+  font-size: .7rem;
+  padding: .2rem .75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}

@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .container {
   @include lens-ui-typography;
@@ -10,6 +10,10 @@
   display: inline-flex;
   align-items: center;
   width: 100%;
+
+  input {
+    color: lens-var(input, text-color);
+  }
 }
 
 .month-picker {

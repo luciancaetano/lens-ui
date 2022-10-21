@@ -19,14 +19,22 @@ export interface IDeviceContextType {
   windowSize: IDeviceWindow;
   orientation: DeviceOrientationType;
   online: boolean;
+  isUsingDeviceProvider: boolean;
+  darkMode: boolean;
+  lg: boolean;
+  md: boolean;
+  sm: boolean;
+  xs: boolean;
 }
 
 export interface IDeviceInfo {
   windowSize: IDeviceWindow;
   orientation: DeviceOrientationType;
-  isPhone: boolean;
-  isTablet: boolean;
-  isDesktop: boolean;
   os: DeviceOSType;
   online: boolean;
+  darkMode: boolean;
+  lg: boolean;
+  md: boolean;
+  sm: boolean;
+  xs: boolean;
 }

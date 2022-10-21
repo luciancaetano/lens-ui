@@ -1,0 +1,16 @@
+@import '../lib';
+
+@mixin tabs-theme {
+  @include lens-def(tabs, container-color, null, lens-var(typography, text-color, disabled));
+  @include lens-def(tabs, border, null, #ced4da);
+  @include lens-def(tabs, border-faded, null, #eff2f6);
+  @include lens-def(tabs, header-bg, null, hsl(210deg 29% 95%));
+  @include lens-def(tabs, active-bg, null, #fff);
+  @include lens-def(tabs, border-hovered, null, red);
+  @include lens-def(tabs, hover-bg, null, #fbfbfb);
+  @include lens-def(tabs, border-active, null, #ddd);
+  @include lens-def(tabs, text-color, null, lens-var(typography, text-color));
+  @include lens-def(tabs, text-color, faded, lens-var(typography, text-color, faded));
+  @include lens-def(tabs, bg, null, hsl(var(--lens-ui-hue-bg) 0% 100%));
+  @include lens-def(tabs, text-color, active, lens-var(typography, text-color));
+}

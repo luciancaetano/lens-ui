@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="120.26963mm"
+   height="49.204021mm"
+   viewBox="0 0 120.26963 49.204022"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="lens-ui-logo.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:export-filename="D:\projects\@lens\packages\lens-ui\lens-ui-logo.png"
+   inkscape:export-xdpi="30.809772"
+   inkscape:export-ydpi="30.809772"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:lockguides="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.4681257"
+     inkscape:cx="267.68825"
+     inkscape:cy="85.483144"
+     inkscape:window-width="2560"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2.860444,-2.14378)">
+    <path
+       id="path858"
+       style="fill:#2b4f91;fill-opacity:0.982987;stroke-width:0.420718;stroke-linecap:round;stroke-linejoin:round"
+       d="M 28.764712,14.542598 A 12.221612,12.221612 0 0 0 16.543341,26.764436 12.221612,12.221612 0 0 0 28.764712,38.985804 12.221612,12.221612 0 0 0 40.986548,26.764436 12.221612,12.221612 0 0 0 39.554901,21.025221 3.9777886,3.9777886 0 0 1 35.740602,23.881972 3.9777886,3.9777886 0 0 1 31.762662,19.90403 3.9777886,3.9777886 0 0 1 34.68253,16.071966 12.221612,12.221612 0 0 0 28.764712,14.542598 Z" />
+    <circle
+       style="fill:#ffffff;stroke-width:0.420718;stroke-linecap:round;stroke-linejoin:round"
+       id="path984"
+       cx="24.498852"
+       cy="31.318501"
+       r="2.5365608" />
+    <path
+       id="circle1396"
+       style="fill:#ffffff;stroke-width:0.420718;stroke-linecap:round;stroke-linejoin:round"
+       d="m 34.68253,16.071966 a 3.9777886,3.9777886 0 0 0 -2.919868,3.832064 3.9777886,3.9777886 0 0 0 3.97794,3.977942 3.9777886,3.9777886 0 0 0 3.814299,-2.856751 12.221612,12.221612 0 0 0 -4.872371,-4.953255 z" />
+    <path
+       style="fill:#2b4e91;fill-opacity:0.984314;stroke:none;stroke-width:0.239387px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9.3598475,5.9781809 10.501243,18.179307 37.679489,4.4866198 38.542315,4.7889488 8.5870605,22.083623 V 6.7276212 Z"
+       id="path1845"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#2b4e91;fill-opacity:0.984314;stroke:none;stroke-width:0.239387px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9.3598412,47.513404 10.501236,35.312277 37.67948,49.004963 38.542306,48.702634 8.5870587,31.407963 v 15.355992 z"
+       id="path1845-0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#2b4e91;fill-opacity:0.984314;stroke:none;stroke-width:0.245516px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 56.604612,39.865192 44.091139,38.694573 58.134352,10.820588 57.824287,9.9356743 40.08687,40.657761 h 15.749103 z"
+       id="path2352-1"
+       sodipodi:nodetypes="ccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.376px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#2b4e91;fill-opacity:0.984314;stroke:none;stroke-width:0.5094"
+       x="56.474201"
+       y="40.361103"
+       id="text8426"><tspan
+         sodipodi:role="line"
+         id="tspan8424"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#2b4e91;fill-opacity:0.984314;stroke-width:0.5094"
+         x="56.474201"
+         y="40.361103">ensUi</tspan></text>
+  </g>
+</svg>

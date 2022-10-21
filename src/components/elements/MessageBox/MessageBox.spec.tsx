@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 import MessageBox from './MessageBox';
-import LensProvider from '../../providers/LensProvider/LensProvider';
+
 import { sleep } from '../../../utils';
 
 jest.useFakeTimers();
@@ -21,11 +21,9 @@ describe('<MessageBox/>', () => {
     const testingId = 'my_testing_id';
 
     const { getByTestId, getByText } = render(
-      <LensProvider>
-        <MessageBox title={title} testingID={testingId}>
-          {children}
-        </MessageBox>
-      </LensProvider>,
+      <MessageBox title={title} testingID={testingId}>
+        {children}
+      </MessageBox>,
     );
 
     expect(getByTestId(testingId)).toBeInTheDocument();
@@ -39,11 +37,9 @@ describe('<MessageBox/>', () => {
     const testingId = 'my_testing_id';
 
     const { getByTestId, getByText, container } = render(
-      <LensProvider>
-        <MessageBox title={title} testingID={testingId} closable>
-          {children}
-        </MessageBox>
-      </LensProvider>,
+      <MessageBox title={title} testingID={testingId} closable>
+        {children}
+      </MessageBox>,
     );
 
     const childrenEl = getByText(children);
@@ -69,11 +65,9 @@ describe('<MessageBox/>', () => {
     const onClose = jest.fn();
 
     const { getByTestId, getByText, container } = render(
-      <LensProvider>
-        <MessageBox title={title} testingID={testingId} timeout={100} onClose={onClose} icon={<>Icon</>} striped>
-          {children}
-        </MessageBox>
-      </LensProvider>,
+      <MessageBox title={title} testingID={testingId} timeout={100} onClose={onClose} icon={<>Icon</>} striped>
+        {children}
+      </MessageBox>,
     );
 
     expect(getByTestId(testingId)).toBeInTheDocument();

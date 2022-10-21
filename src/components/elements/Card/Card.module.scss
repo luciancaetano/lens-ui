@@ -1,4 +1,4 @@
-@import '../../../style-lib';
+@import '../../../styles/lib';
 
 .card {
   @include lens-ui-typography;
@@ -8,38 +8,38 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: var(--lens-ui-elements-card-backgrounds-default-background-color);
-  color: var(--lens-ui-elements-card-backgrounds-default-color);
+  background-color: lens-var(card, backgrounds-default-background-color);
+  color: lens-var(card, backgrounds-default-color);
   background-clip: border-box;
-  border: 0 solid var(--lens-ui-elements-card-backgrounds-default-border-color);
-  border-radius: var(--lens-ui-elements-card-border-radius);
-  box-shadow: var(--lens-ui-elements-card-box-shadow);
+  border: 0 solid lens-var(card, backgrounds-default-border-color);
+  border-radius: lens-var(card, border-radius);
+  box-shadow: lens-var(card, box-shadow);
   box-sizing: border-box;
   overflow: hidden;
 
   @each $intent in $intent-type {
     &--bg-#{$intent} {
-      background-color: var(--lens-ui-elements-card-backgrounds-#{$intent}-background-color);
+      background-color: lens-var(card, backgrounds-#{$intent}-background-color);
       background-clip: border-box;
-      border: 0 solid var(--lens-ui-elements-card-backgrounds-#{$intent}-border-color);
+      border: 0 solid lens-var(card, backgrounds-#{$intent}-border-color);
 
       [data-lens-element='card__title'] {
-        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-title-color);
+        color: lens-var(card, backgrounds-#{$intent}-card-title-color);
       }
 
       [data-lens-element='card__subtitle'] {
-        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-sub-title-color);
+        color: lens-var(card, backgrounds-#{$intent}-card-sub-title-color);
       }
 
       [data-lens-element='card__text'] {
-        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-color);
+        color: lens-var(card, backgrounds-#{$intent}-color);
       }
 
       [data-lens-element='card__link'] {
-        color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-link-color);
+        color: lens-var(card, backgrounds-#{$intent}-card-link-color);
 
         &:hover {
-          color: var(--lens-ui-elements-card-backgrounds-#{$intent}-card-link-hover-color);
+          color: lens-var(card, backgrounds-#{$intent}-card-link-color, hover);
         }
       }
     }
@@ -48,15 +48,15 @@
 
 .card-body {
   flex: 1 1 auto;
-  padding: var(--lens-ui-elements-card-elements-card-body-padding);
+  padding: lens-var(card, elements-card-body-padding);
   box-sizing: border-box;
-  color: var(--lens-ui-typography-text-color);
+  color: lens-var(typography, text-color);
 }
 
 .card-text {
-  margin: var(--lens-ui-elements-card-elements-card-text-margin);
+  margin: lens-var(card, elements-card-text-margin);
   box-sizing: border-box;
-  color: var(--lens-ui-typography-text-color);
+  color: lens-var(typography, text-color);
 }
 
 .card-image {
@@ -66,13 +66,13 @@
   box-sizing: border-box;
 
   &--image-top {
-    border-top-left-radius: var(--lens-ui-elements-card-border-radius);
-    border-top-right-radius: var(--lens-ui-elements-card-border-radius);
+    border-top-left-radius: lens-var(card, border-radius);
+    border-top-right-radius: lens-var(card, border-radius);
   }
 
   &--image-bottom {
-    border-bottom-left-radius: var(--lens-ui-elements-card-border-radius);
-    border-bottom-right-radius: var(--lens-ui-elements-card-border-radius);
+    border-bottom-left-radius: lens-var(card, border-radius);
+    border-bottom-right-radius: lens-var(card, border-radius);
   }
 }
 
@@ -80,31 +80,31 @@
   font-size: 1rem;
   margin-top: 0;
   margin-bottom: .5rem;
-  color: var(--lens-ui-elements-card-backgrounds-default-card-title-color);
+  color: lens-var(card, backgrounds-default-card-title-color);
   font-weight: 500;
   line-height: 1.2;
 }
 
 .card-subtitle {
-  margin-top: -var(--lens-ui-elements-card-border-radius);
+  margin-top: -lens-var(card, border-radius);
   margin-bottom: 0;
   font-weight: 500;
   line-height: 1.2;
   font-size: .875rem;
-  color: var(--lens-ui-elements-card-backgrounds-default-card-sub-title-color);
+  color: lens-var(card, backgrounds-default-card-sub-title-color);
   box-sizing: border-box;
 }
 
 .card-link {
   text-decoration: none;
-  color: var(--lens-ui-elements-card-backgrounds-default-card-link-color);
+  color: lens-var(card, backgrounds-default-card-link-color);
   cursor: pointer;
   user-select: none;
   padding: .47rem .75rem;
   font-size: .875rem;
 
   &:hover {
-    color: var(--lens-ui-elements-card-backgrounds-default-card-link-hover-color);
+    color: lens-var(card, backgrounds-default-card-link-color, hover);
     text-decoration: underline;
   }
 }

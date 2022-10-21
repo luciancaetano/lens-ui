@@ -6,6 +6,7 @@ import ReactSelect from 'react-select';
 import { randomId } from '../../../utils';
 import './Select.scss';
 import { ISelectOption, ISelectProps } from './Select.types';
+import { useTheme } from '../../../hooks';
 
 /**
  * The Select component are used for collecting user provided information from a list of options.
@@ -13,8 +14,10 @@ import { ISelectOption, ISelectProps } from './Select.types';
 const Select: React.FC<ISelectProps> = React.forwardRef(({
   className, testingID, id = randomId('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
   isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '', menuPortalTarget = document.body,
-  autoFocus, isError, ...props
+  autoFocus, isError, size, ...props
 }, ref) => {
+  const [theme, { defaultSize }] = useTheme();
+
   const handleChange = useCallback((option: any) => {
     if (onChange) {
       onChange(Array.isArray(option) ? map(option, (opt) => opt.value) : option.value);
@@ -59,14 +62,14 @@ const Select: React.FC<ISelectProps> = React.forwardRef(({
   return (
     <div
       {...props}
-      id={id}
       data-testid={testingID}
       data-lens-element="select"
-      className={clsx('lens-ui-select-input', className)}
+      className={clsx('lens-ui-select-input', theme, className)}
     >
       <ReactSelect
+        id={id}
         placeholder={placeholder}
-        className={clsx(isError && 'select-input-error')}
+        className={clsx(isError && 'select-input-error', `lens-ui-select-input--size-${size || defaultSize}`)}
         classNamePrefix="lens-ui-select-input"
         isMulti={isMulti}
         isLoading={isLoading}

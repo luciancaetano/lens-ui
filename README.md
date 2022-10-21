@@ -1,10 +1,10 @@
-# LensUi Design System [[docs]**(NEW!)**](https://luciancaetano.github.io/lens-ui)
+# LensUi Design System [[docs]](https://luciancaetano.github.io/lens-ui)
 
 Lens-ui is a basic design system focused on stability and simplicity.
 
 ### Installation
 
-LensUI is available in [npm](https://www.npmjs.com/package/lens-ui).
+LensUi is available in [npm](https://www.npmjs.com/package/lens-ui).
 
 To install just run:
 
@@ -15,22 +15,21 @@ To install just run:
 `yarn add lens-ui`
 
 ### Configuration
-Lens-ui uses contexts from LensProvider and css file, just import `lens-ui/dist/index.css` ,  `lens-ui/dist/reset.css` and declare `LensProvider` on app root.
+Lens-ui uses contexts from ApplicationProvider and css file, just import `lens-ui/dist/index.css` and declare `ApplicationProvider` on app root.
 
 Here's a quick example to get you started, **it's literally all you need**:
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, LensProvider } from 'lens-ui';
-import 'node_modules/lens-ui/dist/reset.css';
+import { Button, ApplicationProvider } from 'lens-ui';
 import 'node_modules/lens-ui/dist/main.css';
 
 function App() {
   return (
-      <LensProvider>
+      <>
         <Button intent="success">Hello World</Button>
-      </LensProvider>
+      </>
   );
 }
 
