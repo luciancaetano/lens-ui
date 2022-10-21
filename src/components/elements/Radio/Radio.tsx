@@ -3,7 +3,7 @@ import React, {
   useCallback, useContext, useEffect, useState,
 } from 'react';
 import { useTheme } from '../../../hooks';
-import { randomId } from '../../../utils';
+import { randomID } from '../../../utils';
 import styles from './Radio.module.scss';
 import { IRadioProps } from './Radio.types';
 import RadioGroupContext from './RadioGroupContext';
@@ -12,7 +12,7 @@ import RadioGroupContext from './RadioGroupContext';
  * RadioGroup allow the user to select one option from a set.
  */
 const Radio = React.forwardRef<HTMLDivElement, IRadioProps>(({
-  className, testingID, id = randomId(), name, tabIndex, size, disabled, inputClassName, label, onChange, value, checked, defaultChecked, ...props
+  className, testingID, id = randomID(), name, tabIndex, size, disabled, inputClassName, label, onChange, value, checked, defaultChecked, ...props
 }, ref) => {
   const { isContextPresent, ...ctx } = useContext(RadioGroupContext);
   const [isChecked, setIsChecked] = useState(checked || defaultChecked);

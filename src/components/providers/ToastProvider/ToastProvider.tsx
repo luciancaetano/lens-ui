@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 import { useDevice } from '../../../hooks';
-import { randomId } from '../../../utils/index';
+import { randomID } from '../../../utils/index';
 import ToastContext from './ToastContext';
 import {
   IToastCreationData, IToastData, IToastProviderProps,
@@ -16,7 +16,7 @@ const ToastProvider: React.FC<IToastProviderProps> = ({ children, placement = 'b
   const { md, sm } = useDevice();
 
   const add = useCallback((data: IToastCreationData, id?: string) => {
-    const toast: IToastData = { ...data, id: id || randomId('toast') };
+    const toast: IToastData = { ...data, id: id || randomID('toast') };
     setToasts((t) => [toast, ...t]);
     return toast.id;
   }, []);

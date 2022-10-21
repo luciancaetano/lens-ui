@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import { useTheme } from '../../../hooks';
-import { randomId } from '../../../utils';
+import { randomID } from '../../../utils';
 import styles from './Switch.module.scss';
 import { ISwitchProps } from './Switch.types';
 
@@ -9,7 +9,7 @@ import { ISwitchProps } from './Switch.types';
  * The Switch component toggle the state of a single setting on or off.
  */
 const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>(({
-  className, testingID, id = randomId(), label, onChange, checked, size, defaultChecked, tabIndex, onBlur, name, disabled,
+  className, testingID, id = randomID(), label, onChange, checked, size, defaultChecked, tabIndex, onBlur, name, disabled,
   autoFocus, ...props
 }, ref) => {
   const [theme, { defaultSize }] = useTheme();

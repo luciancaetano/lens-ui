@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
 import { useTheme } from '../../../hooks';
-import { randomId } from '../../../utils';
+import { randomID } from '../../../utils';
 import styles from './CheckBox.module.scss';
 import { ICheckBoxProps } from './CheckBox.types';
 
@@ -10,7 +10,7 @@ import { ICheckBoxProps } from './CheckBox.types';
  * @tip Checkboxes can be used to turn an option on or off.
  */
 const CheckBox = React.forwardRef<HTMLInputElement, ICheckBoxProps>(({
-  className, testingID, id = randomId(), label, onChange, size, checked, defaultChecked, tabIndex, onBlur, name, disabled,
+  className, testingID, id = randomID(), label, onChange, size, checked, defaultChecked, tabIndex, onBlur, name, disabled,
   autoFocus, inputProps, ...props
 }, ref) => {
   const [theme, { defaultSize }] = useTheme();

@@ -1,5 +1,5 @@
 import {
-  Layers, getPortalContainer, randomId, sleep,
+  Layers, getPortalContainer, randomID, sleep,
 } from '.';
 import { CLASSES } from '..';
 
@@ -16,9 +16,9 @@ describe('utils', () => {
     expect(getPortalContainer('my_portal')).toBeInTheDocument();
   });
 
-  it('randomId', () => {
-    expect(randomId('', 10, 'abcdef0123456789').length).toBe(10);
-    expect(randomId('_prefix', 10, 'abcdef0123456789').startsWith('_prefix')).toBe(true);
+  it('randomID', () => {
+    expect(randomID('', 10, 'abcdef0123456789').length).toBe(10);
+    expect(randomID('_prefix', 10, 'abcdef0123456789').startsWith('_prefix')).toBe(true);
   });
 
   it('sleep', async () => {

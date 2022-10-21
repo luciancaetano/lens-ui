@@ -3,7 +3,7 @@ import map from 'lodash/map';
 import get from 'lodash/get';
 import React, { useCallback, useMemo } from 'react';
 import ReactSelect from 'react-select';
-import { randomId } from '../../../utils';
+import { randomID } from '../../../utils';
 import './Select.scss';
 import { ISelectOption, ISelectProps } from './Select.types';
 import { useTheme } from '../../../hooks';
@@ -12,7 +12,7 @@ import { useTheme } from '../../../hooks';
  * The Select component are used for collecting user provided information from a list of options.
  */
 const Select: React.FC<ISelectProps> = React.forwardRef(({
-  className, testingID, id = randomId('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
+  className, testingID, id = randomID('lens-ui-select-'), onChange, options, value, defaultValue, name, tabIndex, onBlur, disabled,
   isLoading, isRtl, isSearchable = false, isMulti, formatGroupLabel, formatOptionLabel, placeholder = '', menuPortalTarget = document.body,
   autoFocus, isError, size, ...props
 }, ref) => {
