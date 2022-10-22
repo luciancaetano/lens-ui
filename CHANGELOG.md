@@ -2,6 +2,50 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.2](https://github.com/luciancaetano/lens-ui/compare/v5.1.0-0...v5.0.2) (2022-10-22)
+
+
+### Features
+
+* :construction: writing itemGoup ([e70c3f4](https://github.com/luciancaetano/lens-ui/commit/e70c3f47e1c10bf530da1fc3a87d0ae19aa7bd32))
+* :lipstick: set typography styles o basic html elements ([fc5a6a6](https://github.com/luciancaetano/lens-ui/commit/fc5a6a6ee7fcd183d1510d04553e8bc171b9a267))
+* :sparkles: created drawer component and upgraded modal component ([527db52](https://github.com/luciancaetano/lens-ui/commit/527db52801fd8e05b2350c029cd4676a9cda2a08))
+* :sparkles: created drawer component and upgraded modal component ([e298ac8](https://github.com/luciancaetano/lens-ui/commit/e298ac897a0ebcf0f1b303ad700151bb0395169c))
+* :sparkles: handle disabled status in input types ([926b7ef](https://github.com/luciancaetano/lens-ui/commit/926b7efcb8671cbdb01efe5241c4adcc65c51c7f))
+* :sparkles: implement paginator and slider components, update code generator ([07576f8](https://github.com/luciancaetano/lens-ui/commit/07576f8fdbb79c24db0d2c15697f37cba98ddc43))
+* :sparkles: implement some dark themes and update tabs component ([7e9cc0f](https://github.com/luciancaetano/lens-ui/commit/7e9cc0f723c8b69cd0fe54db457caa20eceadd6c))
+* :sparkles: implement theme dark for drawer ([052f641](https://github.com/luciancaetano/lens-ui/commit/052f64107490cd1c502a153fba85599c2ee34a3c))
+* :sparkles: keep list simple ([a2d2f57](https://github.com/luciancaetano/lens-ui/commit/a2d2f57ce84dc0be2571ac29a60d3d17429fb69c))
+* :sparkles: update modal component animation ([5e2ac73](https://github.com/luciancaetano/lens-ui/commit/5e2ac737ab928220e0c2ad0d779f337344382c4e))
+* :sparkles: update roadmap and fix slider docs ([70166a7](https://github.com/luciancaetano/lens-ui/commit/70166a79024516ae32d4163f48121304cc437682))
+* :sparkles: update typography elements and adjust toast ([ab84c8b](https://github.com/luciancaetano/lens-ui/commit/ab84c8bcc41b5cc2c815d49402e9e5e307753461))
+* **elements:** :construction: Working on grid system using flexboxgrid ([57faef7](https://github.com/luciancaetano/lens-ui/commit/57faef77e033da5d538419d3e40759d921b73aaa))
+* **elements:** :sparkles: implement bottom navigation and rework radio component ([b2f8654](https://github.com/luciancaetano/lens-ui/commit/b2f8654e37c96c36b0f2fb874a1ad27ddb6138fe))
+* **elements:** :sparkles: implement grid and tooltip elements ([2d8bc0e](https://github.com/luciancaetano/lens-ui/commit/2d8bc0e5ff1942ec25167c43e3834ac0f928b264))
+* **elements:** :sparkles: update roadmap and webpack ([5646e50](https://github.com/luciancaetano/lens-ui/commit/5646e505ae088b3bde25deab49489835d0bfa46e))
+* **release:** :art:  release ([12ce78e](https://github.com/luciancaetano/lens-ui/commit/12ce78e7f06b01ad874caccfdd00241f36c0f268))
+* **styles:** :sparkles: refactoring styles ([30cc976](https://github.com/luciancaetano/lens-ui/commit/30cc9768ae4534bc8a824ad47d3eba15cd7afb4a))
+* **theming:** :lipstick: implement button dark theme ([7593e31](https://github.com/luciancaetano/lens-ui/commit/7593e31220eb31e38edcbde8d2792f82b9699510))
+* **theming:** :lipstick: implemented darkmode ([e1a7368](https://github.com/luciancaetano/lens-ui/commit/e1a7368275e5af8abc19365b1a08e3d62f98a6d9))
+* **theming:** :lipstick: implemented darkmode in some components ([35de98d](https://github.com/luciancaetano/lens-ui/commit/35de98d2ccb47878154c26e14fb4233b70432dbd))
+* **theming:** :lipstick: implemented darkmode in some components ([f3c21a9](https://github.com/luciancaetano/lens-ui/commit/f3c21a9f9e6cde59bd80a89739b98c7ebad9dbce))
+* **theming:** :lipstick: implemented darkmode in some components ([8500fbb](https://github.com/luciancaetano/lens-ui/commit/8500fbb0db97382ddf7a7b9893bfe732445157cf))
+* **theming:** :lipstick: implemented darkmode in some components ([9a43e73](https://github.com/luciancaetano/lens-ui/commit/9a43e7375f1552e7514261a1bb89af847da87d90))
+* **theming:** :recycle: refactoring theming ([a7f43c3](https://github.com/luciancaetano/lens-ui/commit/a7f43c31c2913c7109172bb9739203e098ecf9e7))
+* **theming:** :sparkles: implement theming engine ([31f477a](https://github.com/luciancaetano/lens-ui/commit/31f477a5f4941750f15b6160325684e0eac0da96))
+* **theming:** :sparkles: writing dark theme for button ([eb01c79](https://github.com/luciancaetano/lens-ui/commit/eb01c79a6001bb180b9c45e4846bee800a211bda))
+
+
+### Bug Fixes
+
+* :bug: fix menu background with dark theme ([a81ffcd](https://github.com/luciancaetano/lens-ui/commit/a81ffcd55f154f998673eef8d5a2427eba519f47))
+* :bug: fix webpack and draft new release ([6083ee4](https://github.com/luciancaetano/lens-ui/commit/6083ee48486b61edd5728f891853c19527f205e3))
+* :bug: fix webpack and draft new release ([2111b94](https://github.com/luciancaetano/lens-ui/commit/2111b94bf741fa878ada909c81bb98dcacdab9f1))
+* :lipstick: fix collapse style ([8e1e880](https://github.com/luciancaetano/lens-ui/commit/8e1e8806a303d94a7e0a60bb500e613de09f75c8))
+* **elements:** :lipstick: fix bottom navigation styles ([ae1e1e6](https://github.com/luciancaetano/lens-ui/commit/ae1e1e6666deb641d7fbd193a1f7fe167db25f4f))
+* **elements:** :lipstick: fix bottom navigation styles ([0ae3b46](https://github.com/luciancaetano/lens-ui/commit/0ae3b4688cbcf479b6d6eca552589528b9377299))
+* **elements:** :lipstick: fix bottom navigation styles ([e3d6f76](https://github.com/luciancaetano/lens-ui/commit/e3d6f761780e67b02e202e7f3d2805e9554eb5a2))
+
 ## [5.1.0-0](https://github.com/luciancaetano/lens-ui/compare/v4.9.4...v5.1.0-0) (2022-08-07)
 
 
