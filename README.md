@@ -1,4 +1,4 @@
-# LensUi Design System [[docs]](https://luciancaetano.github.io/lens-ui)
+# LensUi Design System [[docs]](https://luciancaetano.github.io/lens-ui?v5)
 
 LensUi is a component library designed to be simple and customizable, it includes a comprehensive collection of components ready to use or to compose your own design system.
 LensUi is beautiful and straightforward in its simple design.
