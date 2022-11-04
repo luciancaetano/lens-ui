@@ -7,7 +7,7 @@ import useTheme from '../../../hooks/use-theme';
 /**
  * Buttons allow users to take actions, and make actions, with a single click.
  */
-const Button: React.FC<IButtonProps> = ({
+const Button = React.forwardRef<HTMLButtonElement, IButtonProps>(({
   children,
   intent = 'primary',
   appearance = 'default',
@@ -22,7 +22,7 @@ const Button: React.FC<IButtonProps> = ({
   parentId,
   style,
   ...props
-}) => {
+}, ref) => {
   const [theme] = useTheme();
 
   return (
@@ -50,10 +50,11 @@ const Button: React.FC<IButtonProps> = ({
       ], theme, className)}
       disabled={disabled}
       style={style}
+      ref={ref}
     >
       {children}
     </button>
   );
-};
+});
 
 export default Button;

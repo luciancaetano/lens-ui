@@ -4,9 +4,9 @@ import { IColProps } from './Grid.types';
 import styles from './styles/Grid.module.scss';
 import { sortBreakpoints } from './utils';
 
-const Col:React.FC<IColProps> = ({
+const Col = React.forwardRef<HTMLDivElement, IColProps>(({
   className, testingID, id, children, first, last, lg, md, offsetLg, offsetMd, offsetSm, offsetXs, sm, xs, reverse, ...props
-}) => {
+}, ref) => {
   const classes = useMemo(() => clsx(
     styles.col,
     reverse && styles.colReverse,
@@ -30,10 +30,11 @@ const Col:React.FC<IColProps> = ({
       data-testid={testingID}
       data-lens-element="grid__col"
       className={classes}
+      ref={ref}
     >
       {children}
     </div>
   );
-};
+});
 
 export default Col;
