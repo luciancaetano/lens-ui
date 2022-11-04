@@ -37,7 +37,7 @@ function Table<T extends ITableItem = {}>({
               col.cellClassName,
             )}
           >
-            {typeof col.cellRenderer === 'function' ? col.cellRenderer(item) : get(item, key)}
+            {typeof col.cellRenderer === 'function' ? col.cellRenderer(item) as any : get(item, key) as any}
           </td>
         );
       })}
