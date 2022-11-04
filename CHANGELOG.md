@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.4](https://github.com/luciancaetano/lens-ui/compare/v5.0.3...v5.0.4) (2022-11-04)
+
+
+### Features
+
+* :sparkles: Implement ref forwarding for button and col components ([dc787be](https://github.com/luciancaetano/lens-ui/commit/dc787be05dda5e6dc719b4bf54039ea631525d2e))
+
+
+### Bug Fixes
+
+* :label: fixing type issue ([a263b8a](https://github.com/luciancaetano/lens-ui/commit/a263b8a118df20300f4b4433e216cbcc9a901aa0))
+
 ### [5.0.3](https://github.com/luciancaetano/lens-ui/compare/v5.0.2...v5.0.3) (2022-10-22)
 
 ### [5.0.2](https://github.com/luciancaetano/lens-ui/compare/v5.1.0-0...v5.0.2) (2022-10-22)
