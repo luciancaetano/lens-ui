@@ -1,15 +1,15 @@
 @import 'vars';
 
 @mixin sm-viewport {
-  @media only screen and (min-width: 48em) { @content; }
+  @media only screen and (width >= 48em) { @content; }
 }
 
 @mixin md-viewport {
-  @media only screen and (min-width: 64em) { @content; }
+  @media only screen and (width >= 64em) { @content; }
 }
 
 @mixin lg-viewport {
-  @media only screen and (min-width: 75em) { @content; }
+  @media only screen and (width >= 75em) { @content; }
 }
 
 @mixin gen-row-breakpoints($breakpoint) {

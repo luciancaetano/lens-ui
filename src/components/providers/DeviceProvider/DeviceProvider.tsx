@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect, useMemo } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
-import { DeviceOrientationType, IDeviceContextType, IDeviceProviderProps } from './DeviceProvider.types';
+import { IDeviceProviderProps } from './DeviceProvider.types';
 import DeviceContext from './DeviceContext';
 import { useMediaQuery } from '../../../hooks';
+import { DeviceOrientationType, IDeviceContextType } from '../../../types/device';
 
 const DeviceProvider = ({ children, debounceTime = 100 }: IDeviceProviderProps) => {
   if (typeof window === 'undefined') {

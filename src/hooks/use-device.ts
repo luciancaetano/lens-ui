@@ -1,6 +1,6 @@
 import { useMemo, useContext, useEffect } from 'react';
-import { IDeviceInfo, DeviceOSType } from '../components/providers';
 import DeviceContext from '../components/providers/DeviceProvider/DeviceContext';
+import { DeviceOSType, IDeviceInfo } from '../types';
 
 const getOS = (): DeviceOSType => {
   if (navigator.userAgent.match(/Android/i)) {
