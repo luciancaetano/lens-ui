@@ -1,5 +1,5 @@
 import React from 'react';
-import { IDeviceContextType } from './DeviceProvider.types';
+import { IDeviceContextType } from '../../../types';
 
 const DeviceContext = React.createContext<IDeviceContextType>({
   online: typeof window !== 'undefined' ? window.navigator.onLine : true,
