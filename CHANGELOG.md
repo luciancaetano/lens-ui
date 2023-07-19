@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.7](https://github.com/luciancaetano/lens-ui/compare/v5.0.6...v5.0.7) (2023-07-19)
+
+
+### Bug Fixes
+
+* :label: fixing missing type ([43e253f](https://github.com/luciancaetano/lens-ui/commit/43e253fe3b5ae9139736fb6e9697b65a8f352b6f))
+
 ### [5.0.6](https://github.com/luciancaetano/lens-ui/compare/v5.0.5...v5.0.6) (2023-07-19)
 
 ### [5.0.5](https://github.com/luciancaetano/lens-ui/compare/v5.0.4...v5.0.5) (2023-02-23)
