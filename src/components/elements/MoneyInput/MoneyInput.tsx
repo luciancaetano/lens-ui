@@ -1,21 +1,22 @@
 import clsx from 'clsx';
 import React, { useCallback } from 'react';
-import CurrencyInput from 'react-currency-input';
+import CurrencyInput from 'react-currency-input-field';
 import { useTheme } from '../../../hooks';
 import styles from './MoneyInput.module.scss';
 import { IMoneyInputProps } from './MoneyInput.types';
+import { CurrencyInputOnChangeValues } from 'react-currency-input-field/dist/components/CurrencyInputProps';
 
 /**
  * MoneyInput fields let users enter and edit monetary formated value.
  */
 const MoneyInput: React.FC<IMoneyInputProps> = ({
-  className, testingID, id, onChange, tabIndex, decimalSeparator = ',', precision = 3, thousandSeparator = '.',
+  className, testingID, id, onChange, tabIndex, decimalSeparator = ',', groupSeparator = '.',
   onBlur, disabled, defaultValue, value, autoFocus, name, isError, placeholder, prefix, suffix, size, ...props
 }) => {
   const [theme, { defaultSize }] = useTheme();
-  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>, maskedvalue: string, floatvalue: number) => {
-    if (onChange) {
-      onChange(floatvalue, maskedvalue, event);
+  const handleChange = useCallback((value: string | undefined, name?: string, values?: CurrencyInputOnChangeValues) => {
+    if (onChange && values) {
+      onChange(values.float ?? 0);
     }
   }, [onChange]);
 
@@ -39,16 +40,13 @@ const MoneyInput: React.FC<IMoneyInputProps> = ({
         id={id}
         tabIndex={tabIndex}
         className={clsx(styles.moneyInputField, theme, isError && styles.moneyInputFieldError, styles[`money-input__field--size-${size || defaultSize}`])}
-        onChangeEvent={handleChange}
+        onValueChange={handleChange}
         value={defaultValue || value}
         onBlur={handleBlur}
         disabled={disabled}
         autoFocus={autoFocus}
         decimalSeparator={decimalSeparator}
-        precision={precision}
-        thousandSeparator={thousandSeparator}
-        prefix={prefix ? `${prefix} ` : ''}
-        suffix={suffix ? ` ${suffix}` : ''}
+        groupSeparator={groupSeparator}
       />
     </div>
   );

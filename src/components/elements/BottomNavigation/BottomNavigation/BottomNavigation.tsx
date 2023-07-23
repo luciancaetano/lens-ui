@@ -11,17 +11,12 @@ import { useControllableState } from '../../../../hooks';
 const BottomNavigation = React.forwardRef<HTMLDivElement, IBottomNavigationProps>(({
   className, testingID, id, children, activeId, defaultActiveId, keepLabel, onChange, ...props
 }, ref) => {
-  const [active, setActive] = useControllableState<string | null | undefined>(activeId, defaultActiveId);
+  const [active, setActive] = useControllableState<string>(activeId, { defaultValue: defaultActiveId, onChange });
   const [theme] = useTheme();
 
   const handleSelect = useCallback((newId: string) => {
-    if (active === newId) return;
-
-    if (onChange) {
-      onChange(newId);
-    }
     setActive(newId);
-  }, [active, onChange, setActive]);
+  }, [setActive]);
 
   const contextValue = useMemo<IBottomNavigationContextData>(() => ({
     onSelect: handleSelect,

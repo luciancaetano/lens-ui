@@ -1,25 +1,21 @@
 module.exports = {
-  stories: [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
-  addons: [
-    {
-      name: '@storybook/preset-scss',
-      options: {
-        cssLoaderOptions: {
-          modules: {
-            auto: true,
-            exportLocalsConvention: 'camelCase',
-          },
+  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: ['storybook-addon-swc', {
+    name: '@storybook/preset-scss',
+    options: {
+      cssLoaderOptions: {
+        modules: {
+          auto: true,
+          exportLocalsConvention: 'camelCase'
         }
       }
-    },
-    "@storybook/addon-docs",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-  ],
-  core: {
-    builder: "webpack5",
+    }
+  }, "@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-mdx-gfm"],
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {}
   },
-}
+  docs: {
+    autodocs: true
+  }
+};

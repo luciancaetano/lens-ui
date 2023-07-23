@@ -66,20 +66,25 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "swc-loader",
           options: {
-            presets: ['@babel/preset-typescript', '@babel/react', ['@babel/env', { modules: false }]],
-            plugins: [
-              '@babel/plugin-transform-typescript',
-              '@babel/plugin-proposal-class-properties',
-              '@babel/plugin-proposal-object-rest-spread',
-              '@babel/plugin-syntax-dynamic-import',
-              '@babel/plugin-transform-runtime',
-            ],
-          },
-        },
+            jsc: {
+              parser: {
+                syntax: "typescript"
+              }
+            }
+          }
+        }
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        use: {
+          // `.swcrc` can be used to configure swc
+          loader: "swc-loader"
+        }
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,

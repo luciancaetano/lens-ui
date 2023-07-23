@@ -13,7 +13,7 @@ import RadioGroupContext, { IRadioGroupContextData } from './RadioGroupContext';
 const RadioGroup: React.FC<IRadioGroupProps> = ({
   className, testingID, defaultValue, disabled, id, onChange, size, value, inline, children, name, ...props
 }) => {
-  const [selected, setSelected] = useControllableState<string | number>(value, defaultValue);
+  const [selected, setSelected] = useControllableState<string | number | undefined>(value, { defaultValue });
   const [, { defaultSize }] = useTheme();
 
   const handleChange = useCallback((v: string | number | undefined, e: React.ChangeEvent<HTMLInputElement>) => {

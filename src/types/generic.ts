@@ -7,7 +7,7 @@ export const Intents = {
   danger: 'danger',
 };
 
-export type IntentType = keyof typeof Intents | null;
+export type IntentType = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger';
 
 export const AdvancedIntent = {
   ...Intents,

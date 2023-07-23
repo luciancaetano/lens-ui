@@ -192,7 +192,8 @@
     "cy": true,
     "BigInt": true,
     "NodeJS": true,
-    "JSX": true
+    "JSX": true,
+    "DocumentEventMap": true,
   },
   "settings": {
     "react": {

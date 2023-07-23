@@ -6,6 +6,10 @@ import useTheme from '../../../hooks/use-theme';
 
 /**
  * Badge generates a small badge to the top-right of its child(ren).
+ * @example
+ * ```jsx
+ * <Badge intent="primary" type="solid">Badge</Badge>
+ * ```
  */
 const Badge:React.FC<IBadgeProps> = ({
   className, testingID, id, children, intent = 'primary', type = 'solid', ...props

@@ -8,15 +8,12 @@ import { CollapseContext, ICollapseContextType } from './CollapseContext';
 const Collapse = React.forwardRef<HTMLDivElement, ICollapseProps>(({
   className, testingID, id, children, activeId, defaultActiveId, expandIcon, onChange, singleExpand = true, ...props
 }, ref) => {
-  const [ids, setIds] = useControllableState(activeId, defaultActiveId);
+  const [ids, setIds] = useControllableState(activeId, { defaultValue: defaultActiveId, onChange });
   const theme = useTheme();
 
   const handleChange = useCallback((i: string[]) => {
     setIds(i);
-    if (onChange) {
-      onChange(i);
-    }
-  }, [onChange, setIds]);
+  }, [setIds]);
 
   const contextValue = useMemo<ICollapseContextType>(() => ({
     activeIds: ids || [],

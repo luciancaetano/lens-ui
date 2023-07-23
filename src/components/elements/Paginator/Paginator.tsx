@@ -6,20 +6,19 @@ import { useControllableState, useTheme } from '../../../hooks';
 import Icon from '../Icon/Icon';
 
 const Paginator = React.forwardRef<HTMLUListElement, IPaginatorProps>(({
-  className, testingID, id, count, pageNeighbours = 1, intent = undefined, currentPage, outlined, disabled,
+  className, testingID, id, count, pageNeighbours = 1, intent = undefined, currentPage: currentPageProp, outlined, disabled,
   defaultCurrentPage, firstIcon, itemRender, lastIcon, nextIcon, onChange, showLastItem = true,
   prevIcon, showFirstButton, showLastButton, size, showNextButton = true, showPreviousButton = true, tabIndex, ...props
 }, ref) => {
   const [theme, { defaultSize }] = useTheme();
-  const [state, setState] = useControllableState<number>(currentPage, defaultCurrentPage, 1);
+  const [currentPage, setCurrentPage] = useControllableState<number>(currentPageProp ?? 1, {
+    defaultValue: defaultCurrentPage ?? 1,
+    onChange,
+  });
 
   const handlePagination = useCallback((page: number) => {
-    setState(page);
-
-    if (onChange) {
-      onChange(page);
-    }
-  }, [onChange, setState]);
+    setCurrentPage(page);
+  }, [setCurrentPage]);
 
   const basicItemClassNames = clsx(
     styles.paginator__item,
@@ -42,31 +41,31 @@ const Paginator = React.forwardRef<HTMLUListElement, IPaginatorProps>(({
       key={i}
       className={clsx(
         basicItemClassNames,
-        state === i && styles['paginator__item--active'],
+        currentPage === i && styles['paginator__item--active'],
       )}
       data-lens-element="paginator__item"
     >
       <button
         type="button"
-        className={clsx(basicItemButtonClassNames, state === i && styles[`paginator__item__button--intent-${outlined ? `outlined-${intent || 'default'}` : `solid-${intent || 'default'}`}--active`])}
+        className={clsx(basicItemButtonClassNames, currentPage === i && styles[`paginator__item__button--intent-${outlined ? `outlined-${intent || 'default'}` : `solid-${intent || 'default'}`}--active`])}
         onClick={() => handlePagination(i)}
         disabled={disabled}
         data-lens-element="paginator__item__button"
         tabIndex={(tabIndex || 0) + i}
       >
         {itemRender ? itemRender({
-          active: state === i, disabled: !!disabled, onClick: () => handlePagination(i), page: i,
+          active: currentPage === i, disabled: !!disabled, onClick: () => handlePagination(i), page: i,
         }) : i}
       </button>
 
     </li>
-  ), [basicItemButtonClassNames, basicItemClassNames, disabled, handlePagination, intent, itemRender, outlined, state, tabIndex]);
+  ), [basicItemButtonClassNames, basicItemClassNames, disabled, handlePagination, intent, itemRender, outlined, currentPage, tabIndex]);
 
   const paginationItems = React.useMemo<React.ReactNode[]>(() => {
     const items = [];
 
-    let from = Math.max(1, state - pageNeighbours);
-    let to = Math.min(count, state + pageNeighbours);
+    let from = Math.max(1, currentPage - pageNeighbours);
+    let to = Math.min(count, currentPage + pageNeighbours);
 
     if (from - 1 < pageNeighbours) {
       to = Math.min(count, pageNeighbours * 2 + 1);
@@ -80,33 +79,33 @@ const Paginator = React.forwardRef<HTMLUListElement, IPaginatorProps>(({
       items.push(renderItem(i));
     }
     return items;
-  }, [state, pageNeighbours, count, renderItem]);
+  }, [currentPage, pageNeighbours, count, renderItem]);
 
   const showTreeDots = useMemo(() => showLastItem && count > pageNeighbours * 2 + 2, [count, pageNeighbours, showLastItem]);
 
   const handleNextClick = useCallback(() => {
-    if (state && state < count) {
-      handlePagination(state + 1);
+    if (currentPage && currentPage < count) {
+      handlePagination(currentPage + 1);
     }
-  }, [count, handlePagination, state]);
+  }, [count, handlePagination, currentPage]);
 
   const handlePrevClick = useCallback(() => {
-    if (state && state > 1) {
-      handlePagination(state - 1);
+    if (currentPage && currentPage > 1) {
+      handlePagination(currentPage - 1);
     }
-  }, [handlePagination, state]);
+  }, [handlePagination, currentPage]);
 
   const handleLastClick = useCallback(() => {
-    if (state && state < count) {
+    if (currentPage && currentPage < count) {
       handlePagination(count);
     }
-  }, [count, handlePagination, state]);
+  }, [count, handlePagination, currentPage]);
 
   const handleFirstClick = useCallback(() => {
-    if (state && state > 1) {
+    if (currentPage && currentPage > 1) {
       handlePagination(1);
     }
-  }, [handlePagination, state]);
+  }, [handlePagination, currentPage]);
 
   return (
     <ul
@@ -129,9 +128,9 @@ const Paginator = React.forwardRef<HTMLUListElement, IPaginatorProps>(({
         >
           <button
             type="button"
-            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonFirst, state === 1 && styles['paginator__item--disabled'])}
+            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonFirst, currentPage === 1 && styles['paginator__item--disabled'])}
             onClick={handleFirstClick}
-            disabled={disabled || state === 1}
+            disabled={disabled || currentPage === 1}
             data-lens-element="paginator__first-button__button"
           >
             {firstIcon || <Icon name="MdFirstPage" className={clsx(styles.paginator__item__button__icon, styles[`paginator__item__button__icon--size-${size || defaultSize}`])} />}
@@ -145,9 +144,9 @@ const Paginator = React.forwardRef<HTMLUListElement, IPaginatorProps>(({
         >
           <button
             type="button"
-            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonPrev, state === 1 && styles['paginator__item--disabled'])}
+            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonPrev, currentPage === 1 && styles['paginator__item--disabled'])}
             onClick={handlePrevClick}
-            disabled={disabled || state === 1}
+            disabled={disabled || currentPage === 1}
             data-lens-element="paginator__prev-button__button"
           >
             {prevIcon || <Icon name="MdChevronLeft" className={clsx(styles.paginator__item__button__icon, styles[`paginator__item__button__icon--size-${size || defaultSize}`])} />}
@@ -181,9 +180,9 @@ const Paginator = React.forwardRef<HTMLUListElement, IPaginatorProps>(({
         >
           <button
             type="button"
-            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonNext, state === count && styles['paginator__item--disabled'])}
+            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonNext, currentPage === count && styles['paginator__item--disabled'])}
             onClick={handleNextClick}
-            disabled={disabled || state === count}
+            disabled={disabled || currentPage === count}
             data-lens-element="paginator__next-button__button"
           >
             {nextIcon || <Icon name="MdChevronRight" className={clsx(styles.paginator__item__button__icon, styles[`paginator__item__button__icon--size-${size || defaultSize}`])} />}
@@ -197,9 +196,9 @@ const Paginator = React.forwardRef<HTMLUListElement, IPaginatorProps>(({
         >
           <button
             type="button"
-            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonLast, state === count && styles['paginator__item--disabled'])}
+            className={clsx(basicItemButtonClassNames, styles.paginatorItemButtonLast, currentPage === count && styles['paginator__item--disabled'])}
             onClick={handleLastClick}
-            disabled={disabled || state === count}
+            disabled={disabled || currentPage === count}
             data-lens-element="paginator__last-button__button"
           >
             {lastIcon || <Icon name="MdLastPage" className={clsx(styles.paginator__item__button__icon, styles[`paginator__item__button__icon--size-${size || defaultSize}`])} />}

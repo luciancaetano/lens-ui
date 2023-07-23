@@ -1,7 +1,7 @@
-@import '../../../styles/theme/index';
-@import '../../../styles/lib';
+@import './theme/index';
+@import './lib';
 
-.dark {
+.lens-ui-theme-dark {
   --lens-theme-id: 'dark';
 
   @include lens-def(typography, font-family, null, "'Roboto', sans-serif");
@@ -121,6 +121,6 @@
   @include lens-def(drawer, body-padding, null, 1rem);
 }
 
-.default {
+.lens-ui-theme-default {
   @include default-theme;
 }

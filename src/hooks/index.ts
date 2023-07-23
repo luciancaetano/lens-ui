@@ -6,4 +6,7 @@ export { default as useProgressiveTimeout } from './use-progressive-timeout';
 export { default as useMediaQuery } from './use-media-query';
 export { default as useControllableState } from './use-controllable-state';
 export { default as useTheme } from './use-theme';
+export { default as useCallbackRef } from './use-callback-ref';
+
+export * from './use-event-listener';
 export * from './use-alert';

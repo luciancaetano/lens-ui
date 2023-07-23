@@ -8,7 +8,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   testPathIgnorePatterns: ['node_modules/'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.(t|j)sx?$': '@swc/jest',
   },
   testMatch: ['**/*.spec.(ts|tsx)'],
   moduleNameMapper: {

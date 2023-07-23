@@ -3,6 +3,7 @@
 @import './lib';
 @import './typography';
 @import './theme/index';
+@import './default-themes';
 
 body {
   @include typography-component-base;
